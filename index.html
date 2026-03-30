@@ -48,7 +48,7 @@
       --radius-lg: 22px;
       --radius-md: 16px;
       --max: 1840px;
-      --gutter: clamp(16px, 2.6vw, 32px);
+      --frame-gutter: 24px;
       --nav-h: 110px;
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
@@ -115,7 +115,13 @@
     }
 
     .shell {
-      width: min(var(--max), calc(100% - (2 * var(--gutter))));
+      width: min(var(--max), calc(100% - (2 * var(--frame-gutter))));
+      margin-inline: auto;
+    }
+
+    .frame-shell {
+      width: calc(100% - (2 * var(--frame-gutter)));
+      max-width: none;
       margin-inline: auto;
     }
 
@@ -1135,9 +1141,6 @@
         --nav-h: 96px;
       }
 
-      .shell {
-        width: min(var(--max), calc(100% - (2 * var(--gutter))));
-      }
 
       .brand-title {
         font-size: clamp(1.8rem, 7vw, 2.6rem);
@@ -1242,7 +1245,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" id="siteHeader">
-    <div class="shell header-inner">
+    <div class="frame-shell header-inner">
       <a class="brand" href="#" aria-label="Virtual Research Institute home">
         <h1 class="brand-title">Virtual Research Institute</h1>
         <span class="brand-bar" aria-hidden="true"></span>
@@ -1694,7 +1697,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-grid">
+    <div class="frame-shell footer-grid">
       <div class="footer-brand">
         <h4>Virtual Research Institute</h4>
         <p>
