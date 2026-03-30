@@ -47,7 +47,7 @@
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
-      --max: 1680px;
+      --max: 1880px;
       --nav-h: 110px;
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
@@ -114,7 +114,7 @@
     }
 
     .shell {
-      width: min(var(--max), calc(100% - 24px));
+      width: min(var(--max), calc(100% - 12px));
       margin-inline: auto;
     }
 
@@ -252,7 +252,10 @@
       border-radius: 0;
       cursor: pointer;
       color: rgba(16, 33, 42, 0.86);
+      font-size: 0.96rem;
+      font-weight: 600;
       transition: color .25s ease;
+      white-space: nowrap;
     }
 
     .menu-toggle:hover,
@@ -265,11 +268,15 @@
     .menu-toggle .bars {
       display: grid;
       gap: 5px;
+      width: 24px;
+      justify-items: start;
+      flex: 0 0 24px;
     }
 
     .menu-toggle .bars span {
       display: block;
       width: 24px;
+      min-width: 24px;
       height: 2px;
       background: currentColor;
       border-radius: 999px;
@@ -279,6 +286,7 @@
       font-size: 0.96rem;
       font-weight: 600;
       letter-spacing: 0;
+      line-height: 1;
     }
 
     .btn {
@@ -351,7 +359,7 @@
       -webkit-backdrop-filter: blur(18px);
       border-left: 1px solid rgba(4, 76, 89, 0.12);
       box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
-      padding: 110px 22px 24px;
+      padding: 126px 22px 24px;
       transform: translateX(100%);
       transition: transform .45s var(--ease);
       z-index: 999;
@@ -693,6 +701,10 @@
 
     .section {
       padding: 44px 0;
+    }
+
+    section[id] {
+      scroll-margin-top: calc(var(--nav-h) + 28px);
     }
 
     .section-head {
@@ -1119,7 +1131,7 @@
       }
 
       .shell {
-        width: min(var(--max), calc(100% - 16px));
+        width: min(var(--max), calc(100% - 10px));
       }
 
       .brand-title {
@@ -1237,8 +1249,8 @@
       <nav class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
           <li><a href="#areas">Research Areas</a></li>
+          <li><a href="#programs">Programs</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#archives">Archives</a></li>
         </ul>
@@ -1270,7 +1282,7 @@
       <nav class="mobile-nav">
         <a href="research-areas.html">Research Areas Page</a>
         <a href="past-sessions.html">Past Sessions</a>
-        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="faq.html">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
         <a href="paid-mentorship.html">Paid Mentorship</a>
       </nav>
@@ -1430,6 +1442,51 @@
       </div>
     </section>
 
+    <section class="section" id="areas">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Research Areas</p>
+            <h3>Three primary academic divisions.</h3>
+          </div>
+          <p class="section-intro">
+            VRI’s first public-facing academic areas are intentionally strong and
+            expansive. They establish a serious intellectual identity without
+            limiting future growth.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline I</div>
+            <h4>Mathematics</h4>
+            <p>
+              A home for proof, theory, structure, mathematical experimentation, and
+              original reasoning across pure and applied directions.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline II</div>
+            <h4>Statistics &amp; Data Science</h4>
+            <p>
+              A research area for inference, modeling, computation, analytics, and
+              the disciplined interpretation of complex real-world data.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline III</div>
+            <h4>Computer Science</h4>
+            <p>
+              A broad and future-facing domain encompassing algorithms,
+              computational thinking, systems, and adjacent computational sciences.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="programs">
       <div class="shell">
         <div class="section-head reveal">
@@ -1498,51 +1555,6 @@
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="areas">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Research Areas</p>
-            <h3>Three primary academic divisions.</h3>
-          </div>
-          <p class="section-intro">
-            VRI’s first public-facing academic areas are intentionally strong and
-            expansive. They establish a serious intellectual identity without
-            limiting future growth.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline I</div>
-            <h4>Mathematics</h4>
-            <p>
-              A home for proof, theory, structure, mathematical experimentation, and
-              original reasoning across pure and applied directions.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline II</div>
-            <h4>Statistics &amp; Data Science</h4>
-            <p>
-              A research area for inference, modeling, computation, analytics, and
-              the disciplined interpretation of complex real-world data.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline III</div>
-            <h4>Computer Science</h4>
-            <p>
-              A broad and future-facing domain encompassing algorithms,
-              computational thinking, systems, and adjacent computational sciences.
-            </p>
-          </article>
         </div>
       </div>
     </section>
@@ -1664,7 +1676,7 @@
 
           <div class="quick-links">
             <a class="quick-chip" href="past-sessions.html">Past Sessions</a>
-            <a class="quick-chip" href="faq.html">FAQ &amp; Contact</a>
+            <a class="quick-chip" href="faq.html">FAQ</a>
             <a class="quick-chip" href="policies.html">Policies</a>
             <a class="quick-chip" href="paid-mentorship.html">Paid Mentorship</a>
           </div>
@@ -1680,17 +1692,14 @@
         <p>
           Mentored Research in Mathematics and Computational Sciences
         </p>
-        <p style="margin-top: 10px;">
-          A refined institutional home for serious online research experiences.
-        </p>
       </div>
 
       <div class="footer-col">
         <h5>Institute</h5>
         <nav>
           <a href="#about">About</a>
-          <a href="#programs">Programs</a>
           <a href="#areas">Research Areas</a>
+          <a href="#programs">Programs</a>
           <a href="#projects">Projects</a>
           <a href="#archives">Archives</a>
         </nav>
@@ -1700,7 +1709,7 @@
         <h5>Explore</h5>
         <nav>
           <a href="past-sessions.html">Past Sessions</a>
-          <a href="faq.html">FAQ &amp; Contact</a>
+          <a href="faq.html">FAQ</a>
           <a href="policies.html">Policies &amp; Procedures</a>
           <a href="paid-mentorship.html">Paid Mentorship</a>
         </nav>
@@ -1709,7 +1718,7 @@
       <div class="footer-col">
         <h5>Contact</h5>
         <p>info@virtualresearchinstitute.org</p>
-        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute</p>
+        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute. All rights reserved.</p>
       </div>
     </div>
   </footer>
