@@ -1155,18 +1155,30 @@
     .site-footer {
       margin-top: 34px;
       border-top: 1px solid rgba(4, 76, 89, 0.12);
-      padding: 30px 0 44px;
+      padding-top: 30px;
     }
 
-    .footer-grid {
+    .footer-top {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(140px, 0.42fr) minmax(140px, 0.42fr) minmax(300px, 0.62fr);
+      grid-template-columns: minmax(140px, 0.42fr) minmax(140px, 0.42fr) minmax(300px, 0.62fr);
       gap: 18px;
       align-items: start;
+      padding-bottom: 26px;
+    }
+
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      padding: 26px 0 44px;
+      border-top: 1px solid rgba(4, 76, 89, 0.12);
     }
 
     .footer-col p,
-    .footer-col a {
+    .footer-col a,
+    .footer-meta p,
+    .footer-meta a {
       margin: 0;
       color: var(--muted);
       line-height: 1.8;
@@ -1188,9 +1200,15 @@
     }
 
     .footer-col a:hover,
-    .footer-col a:focus-visible {
+    .footer-col a:focus-visible,
+    .footer-meta a:hover,
+    .footer-meta a:focus-visible {
       color: var(--teal-900);
       outline: none;
+    }
+
+    .footer-meta {
+      text-align: right;
     }
 
     .reveal {
@@ -1267,12 +1285,17 @@
       .section-head,
       .feature-band-grid,
       .cta-panel,
-      .footer-grid {
+      .footer-top,
+      .footer-bottom {
         grid-template-columns: 1fr;
       }
 
       .quick-links {
         justify-content: flex-start;
+      }
+
+      .footer-meta {
+        text-align: left;
       }
 
       .hero-copy h2 {
@@ -1875,39 +1898,46 @@
   </main>
 
   <footer class="site-footer">
-    <div class="frame-shell footer-grid">
-      <div class="footer-brand">
-        <h4 class="footer-brand-title">Virtual Research Institute</h4>
-        <span class="footer-brand-bar" aria-hidden="true"></span>
-        <p class="footer-subtitle">
-          Mentored Research in Mathematics and Computational Sciences
-        </p>
+    <div class="frame-shell">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h5>Institute</h5>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#programs">Research Pathways</a>
+            <a href="#areas">Research Areas</a>
+            <a href="#projects">Projects</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <nav>
+            <a href="past-sessions.html">Past Sessions</a>
+            <a href="faq.html">FAQ</a>
+            <a href="policies.html">Policies &amp; Procedures</a>
+            <a href="paid-mentorship.html">For Mentors</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>info@virtualresearchinstitute.org</p>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Institute</h5>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#programs">Research Pathways</a>
-          <a href="#areas">Research Areas</a>
-          <a href="#projects">Projects</a>
-        </nav>
-      </div>
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <h4 class="footer-brand-title">Virtual Research Institute</h4>
+          <span class="footer-brand-bar" aria-hidden="true"></span>
+          <p class="footer-subtitle">
+            Mentored Research in Mathematics and Computational Sciences
+          </p>
+        </div>
 
-      <div class="footer-col">
-        <h5>Explore</h5>
-        <nav>
-          <a href="past-sessions.html">Past Sessions</a>
-          <a href="faq.html">FAQ</a>
-          <a href="policies.html">Policies &amp; Procedures</a>
-          <a href="paid-mentorship.html">For Mentors</a>
-        </nav>
-      </div>
-
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <p>info@virtualresearchinstitute.org</p>
-        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute LLC. All rights reserved.</p>
+        <div class="footer-meta">
+          <p>&copy; <span id="year"></span> Virtual Research Institute LLC. All rights reserved.</p>
+        </div>
       </div>
     </div>
   </footer>
