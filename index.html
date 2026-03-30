@@ -394,7 +394,7 @@
       display: block;
       position: fixed;
       inset: 0 0 0 auto;
-      width: min(380px, 92vw);
+      width: min(500px, 96vw);
       background: rgba(251, 249, 244, 0.97);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -416,7 +416,7 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 22px;
+      margin-bottom: 34px;
     }
 
     .menu-panel-head {
@@ -435,9 +435,10 @@
     .menu-panel-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 2rem;
-      line-height: 0.98;
+      font-size: 1.85rem;
+      line-height: 1;
       color: var(--teal-950);
+      white-space: nowrap;
     }
 
     .menu-close {
@@ -1393,13 +1394,12 @@
   <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
     <div class="menu-panel-top">
       <div class="menu-panel-head">
-        <h2 class="menu-panel-title">Virtual<br>Research<br>Institute</h2>
+        <h2 class="menu-panel-title">Virtual Research Institute</h2>
       </div>
       <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
     </div>
 
     <div class="menu-section">
-      <p class="menu-section-label">Pages</p>
       <nav class="mobile-nav">
         <a href="research-areas.html">Research Areas Page</a>
         <a href="past-sessions.html">Past Sessions</a>
