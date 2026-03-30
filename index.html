@@ -49,6 +49,7 @@
       --radius-md: 16px;
       --max: 1840px;
       --gutter: clamp(16px, 2.6vw, 32px);
+      --frame-gutter: clamp(40px, 3.2vw, 56px);
       --nav-h: 110px;
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
@@ -115,7 +116,7 @@
     }
 
     .frame-shell {
-      width: calc(100% - (2 * var(--gutter)));
+      width: calc(100% - (2 * var(--frame-gutter)));
       margin-inline: auto;
     }
 
@@ -1138,6 +1139,7 @@
     @media (max-width: 920px) {
       :root {
         --nav-h: 96px;
+        --frame-gutter: clamp(28px, 5vw, 40px);
       }
 
       .shell {
