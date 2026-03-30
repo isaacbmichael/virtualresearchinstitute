@@ -1,89 +1,1709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual Research Institute</title>
+  <meta
+    name="description"
+    content="Virtual Research Institute — Mentored Research in Mathematics and Computational Sciences."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+    :root {
+      --bg: #f6f3eb;
+      --bg-soft: #fbfaf6;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: #ffffff;
+      --ink: #10212a;
+      --muted: #58656d;
+
+      --teal-950: #033843;
+      --teal-900: #044c59;
+      --teal-850: #04555f;
+      --teal-800: #05575c;
+      --teal-700: #0c6170;
+      --teal-600: #00717f;
+
+      --gold-800: #9d6f0c;
+      --gold-700: #b88c0c;
+      --gold-650: #cf9d0e;
+      --gold-600: #d9a302;
+      --gold-500: #e5b53b;
+      --gold-300: #f2e0a9;
+
+      --line: rgba(4, 76, 89, 0.14);
+      --line-strong: rgba(4, 76, 89, 0.24);
+      --shadow-lg: 0 30px 70px rgba(8, 28, 38, 0.14);
+      --shadow-md: 0 16px 36px rgba(8, 28, 38, 0.1);
+      --shadow-sm: 0 10px 22px rgba(8, 28, 38, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1360px;
+      --nav-h: 110px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
     body {
-      font-family: system-ui, -apple-system, sans-serif;
       margin: 0;
-      padding: 40px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      background: #f7fafc;
-      color: #111827;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(229, 181, 59, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 14%, rgba(4, 76, 89, 0.16), transparent 24%),
+        linear-gradient(180deg, #f8f5ee 0%, #f5f1e8 42%, #f8f6f0 100%);
+      overflow-x: hidden;
     }
 
-    h1 {
-      color: #0f5b66;
-      margin-bottom: 5px;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    h2 {
-      margin-top: 40px;
-      color: #0b3f47;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    p {
-      line-height: 1.6;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .tagline {
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--teal-900);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 2000;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(248, 245, 238, 0.72);
+      border-bottom: 1px solid rgba(4, 76, 89, 0.08);
+      transition: background .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(250, 248, 243, 0.9);
+      border-bottom-color: rgba(4, 76, 89, 0.14);
+      box-shadow: 0 10px 30px rgba(16, 33, 42, 0.05);
+    }
+
+    .header-inner {
+      min-height: var(--nav-h);
+      display: grid;
+      grid-template-columns: minmax(320px, 460px) 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      width: fit-content;
+      position: relative;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: balance;
+    }
+
+    .brand-bar {
+      width: min(300px, 85%);
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 0.88rem;
       font-weight: 600;
-      margin-bottom: 30px;
-      color: #374151;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(16, 33, 42, 0.76);
+      max-width: 34ch;
+      line-height: 1.35;
+    }
+
+    .primary-nav {
+      justify-self: end;
+    }
+
+    .primary-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .primary-nav a {
+      position: relative;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: rgba(16, 33, 42, 0.86);
+      padding: 8px 2px;
+      transition: color .25s ease;
+    }
+
+    .primary-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .35s var(--ease);
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible {
+      color: var(--teal-900);
+      outline: none;
+    }
+
+    .primary-nav a:hover::after,
+    .primary-nav a:focus-visible::after,
+    .primary-nav a[aria-current="page"]::after {
+      transform: scaleX(1);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      color: var(--teal-900);
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+      background: rgba(4, 76, 89, 0.08);
+      outline: none;
+    }
+
+    .menu-toggle .bars {
+      display: grid;
+      gap: 5px;
+    }
+
+    .menu-toggle .bars span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      box-shadow: var(--shadow-sm);
+      will-change: transform;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(4, 76, 89, 0.16);
+      color: var(--teal-900);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: white;
+      box-shadow: 0 14px 28px rgba(16, 33, 42, 0.12);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      color: #1e1806;
+    }
+
+    .btn-gold:hover,
+    .btn-gold:focus-visible {
+      box-shadow: 0 18px 34px rgba(184, 140, 12, 0.24);
+    }
+
+    .mobile-panel {
+      display: none;
+    }
+
+    main {
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      padding: 52px 0 42px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 50%;
+      width: min(900px, 92vw);
+      height: 620px;
+      transform: translateX(-35%);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(229, 181, 59, 0.18), transparent 22%),
+        radial-gradient(circle at 74% 36%, rgba(4, 76, 89, 0.18), transparent 20%),
+        radial-gradient(circle at 52% 76%, rgba(4, 76, 89, 0.1), transparent 26%);
+      z-index: -1;
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      align-items: center;
+      gap: clamp(28px, 4vw, 54px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--teal-800);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      box-shadow: 0 0 18px rgba(184, 140, 12, 0.3);
+    }
+
+    .hero-copy h2 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+      color: var(--teal-950);
+      max-width: 11ch;
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 60ch;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      position: relative;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .metric:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: var(--teal-950);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .hero-scene {
+      perspective: 1600px;
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
+
+    .scene-wrap {
+      position: relative;
+      width: min(560px, 100%);
+      height: 600px;
+      transform-style: preserve-3d;
+      transition: transform .25s ease;
+      will-change: transform;
+    }
+
+    .panel {
+      position: absolute;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,0.64), transparent 34%),
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .panel-main {
+      inset: 72px 24px 0 auto;
+      width: 420px;
+      height: 470px;
+      padding: 28px 28px 26px;
+      transform: translateZ(32px);
+    }
+
+    .panel-accent {
+      left: 0;
+      top: 22px;
+      width: 240px;
+      height: 160px;
+      padding: 22px;
+      transform: rotate(-7deg) translateZ(58px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .panel-bottom {
+      left: 34px;
+      bottom: 14px;
+      width: 320px;
+      height: 170px;
+      padding: 22px 24px;
+      transform: rotate(3deg) translateZ(44px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .panel-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 12px;
+    }
+
+    .panel h3 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .panel p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184, 140, 12, 0.65),
+        transparent
+      );
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stack-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px 14px;
+      align-items: start;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.8);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      transform: translateZ(28px);
+    }
+
+    .stack-item .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      box-shadow: 0 8px 20px rgba(4, 76, 89, 0.22);
+    }
+
+    .stack-item strong {
+      display: block;
+      color: var(--teal-950);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .stack-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(184, 140, 12, 0.12);
+      color: var(--gold-800);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(184, 140, 12, 0.18);
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--teal-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .section h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--teal-950);
+    }
+
+    .section-intro {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.94));
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .55s var(--ease),
+        box-shadow .55s var(--ease),
+        border-color .55s var(--ease);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,0.44), transparent 30%);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(4, 76, 89, 0.16);
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 16px;
+    }
+
+    .card-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+    }
+
+    .card h4 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .card ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .card ul li + li {
+      margin-top: 8px;
+    }
+
+    .feature-band {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(4, 76, 89, 0.96), rgba(7, 87, 97, 0.92));
+      color: white;
+      box-shadow: 0 28px 64px rgba(4, 76, 89, 0.22);
+      margin-top: 14px;
+    }
+
+    .feature-band::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -40% auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 181, 59, 0.24), transparent 60%);
+      pointer-events: none;
+    }
+
+    .feature-band-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .feature-band .section-label,
+    .feature-band p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .feature-band h3 {
+      color: white;
+    }
+
+    .feature-quote {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .feature-quote strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--gold-300);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .feature-quote p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.8;
+    }
+
+    .cta-panel {
+      margin-top: 24px;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-panel h3 {
+      margin-bottom: 12px;
+    }
+
+    .cta-panel p {
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .quick-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      color: var(--teal-900);
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+
+    .quick-chip:hover,
+    .quick-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      outline: none;
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      border-top: 1px solid rgba(4, 76, 89, 0.12);
+      padding: 30px 0 44px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(140px, 0.45fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .footer-brand h4 {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.9rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .footer-brand p,
+    .footer-col p,
+    .footer-col a {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .footer-col h5 {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--teal-700);
+    }
+
+    .footer-col nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible {
+      color: var(--teal-900);
+      outline: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-tilt],
+    [data-float] {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 780px;
+      height: 780px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(4, 76, 89, 0.06);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 140, 12, 0.08);
+    }
+
+    .hero-orbit::after {
+      inset: 24%;
+      border-color: rgba(4, 76, 89, 0.08);
+    }
+
+    @keyframes floatA {
+      0%, 100% { transform: rotate(-7deg) translateZ(58px) translateY(0); }
+      50% { transform: rotate(-5deg) translateZ(58px) translateY(-12px); }
+    }
+
+    @keyframes floatB {
+      0%, 100% { transform: rotate(3deg) translateZ(44px) translateY(0); }
+      50% { transform: rotate(1deg) translateZ(44px) translateY(-10px); }
+    }
+
+    @keyframes barGlow {
+      0%, 100% { transform: scaleX(1); filter: saturate(1); }
+      50% { transform: scaleX(1.03); filter: saturate(1.08); }
+    }
+
+    @media (max-width: 1180px) {
+      .header-inner {
+        grid-template-columns: 1fr auto auto;
+      }
+
+      .primary-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-panel {
+        display: block;
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: min(380px, 92vw);
+        background: rgba(251, 249, 244, 0.97);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-left: 1px solid rgba(4, 76, 89, 0.12);
+        box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
+        padding: 110px 22px 24px;
+        transform: translateX(100%);
+        transition: transform .45s var(--ease);
+        z-index: 999;
+      }
+
+      body.menu-open .mobile-panel {
+        transform: translateX(0);
+      }
+
+      .mobile-nav {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 16px;
+        font-weight: 700;
+        color: var(--teal-900);
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(4, 76, 89, 0.1);
+      }
+
+      .mobile-nav a:hover,
+      .mobile-nav a:focus-visible {
+        background: white;
+        outline: none;
+      }
+
+      .hero-grid,
+      .section-head,
+      .feature-band-grid,
+      .cta-panel,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-links {
+        justify-content: flex-start;
+      }
+
+      .hero-copy h2 {
+        max-width: 12ch;
+      }
+
+      .hero-scene {
+        min-height: 560px;
+      }
+
+      .scene-wrap {
+        height: 540px;
+      }
+
+      .panel-main {
+        width: min(420px, calc(100% - 24px));
+      }
+    }
+
+    @media (max-width: 920px) {
+      :root {
+        --nav-h: 96px;
+      }
+
+      .shell {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .brand-title {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+      }
+
+      .brand-subtitle {
+        font-size: 0.76rem;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-metrics,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-scene {
+        min-height: 500px;
+      }
+
+      .scene-wrap {
+        width: 100%;
+        height: 500px;
+      }
+
+      .panel-main {
+        inset: 62px 0 0 auto;
+        width: min(100%, 400px);
+        height: 420px;
+        padding: 24px;
+      }
+
+      .panel-accent {
+        width: 210px;
+        height: 150px;
+        top: 6px;
+      }
+
+      .panel-bottom {
+        width: min(290px, 78%);
+        left: 16px;
+        bottom: 6px;
+      }
+
+      .section,
+      .site-footer {
+        padding-top: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        gap: 12px;
+        align-items: start;
+      }
+
+      .brand-bar {
+        height: 5px;
+      }
+
+      .header-cta .btn {
+        display: none;
+      }
+
+      .hero-copy h2 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        max-width: 10ch;
+      }
+
+      .hero-copy p {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .feature-band,
+      .cta-panel,
+      .card {
+        padding: 24px;
+      }
+
+      .panel h3,
+      .card h4 {
+        font-size: 1.7rem;
+      }
+
+      .footer-brand h4 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <h1>Virtual Research Institute</h1>
-  <div class="tagline">
-    Mentored Research in Mathematics and Computational Sciences
-  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="#" aria-label="Virtual Research Institute home">
+        <h1 class="brand-title">Virtual Research Institute</h1>
+        <span class="brand-bar" aria-hidden="true"></span>
+        <p class="brand-subtitle">
+          Mentored Research in Mathematics and Computational Sciences
+        </p>
+      </a>
 
-  <div class="card">
-    <h2>About</h2>
-    <p>
-      The Virtual Research Institute provides students with guided research experiences
-      in mathematics, statistics, and computational sciences.
-    </p>
-  </div>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#areas">Research Areas</a></li>
+          <li><a href="#mentorship">Paid Mentorship</a></li>
+          <li><a href="#contact">FAQ & Contact</a></li>
+        </ul>
+      </nav>
 
-  <div class="card">
-    <h2>Programs</h2>
-    <p>
-      <strong>Virtual Math Research Circle (VMRC)</strong><br>
-      Collaborative research experiences for motivated students.
-    </p>
-  </div>
+      <div class="header-cta">
+        <a class="btn btn-secondary" href="#programs">Explore Programs</a>
+        <button
+          class="menu-toggle"
+          type="button"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobilePanel"
+          aria-label="Open menu"
+        >
+          <span class="bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <div class="card">
-    <h2>Foundation (Coming Soon)</h2>
-    <p>
-      The Virtual Research Foundation will support scholarships and expand access
-      to research opportunities.
-    </p>
-  </div>
+  <aside class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
+    <nav class="mobile-nav">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#areas">Research Areas</a>
+      <a href="#mentorship">Paid Mentorship</a>
+      <a href="#contact">FAQ & Contact</a>
+      <a href="#policies">Policies & Procedures</a>
+    </nav>
+  </aside>
 
-  <div class="card">
-    <h2>Contact</h2>
-    <p>
-      isaac@virtualresearchinstitute.org
-    </p>
-  </div>
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-orbit" aria-hidden="true"></div>
 
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">A Premier Online Research Institute</div>
+          <h2>Rigorous mentored research for ambitious young scholars.</h2>
+          <p>
+            The Virtual Research Institute provides a more serious, polished, and
+            intellectually ambitious home for high-school students pursuing research
+            in mathematics, statistics, data science, and computational fields.
+            Built around close mentorship and clear academic standards, VRI is
+            designed to feel less like a course and more like an institute.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programs">Explore Programs</a>
+            <a class="btn btn-gold" href="#about">About the Institute</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric" data-tilt>
+              <strong>3</strong>
+              <span>Program pathways: Circles, Groups, and Labs</span>
+            </div>
+            <div class="metric" data-tilt>
+              <strong>3</strong>
+              <span>Core research areas: Mathematics, Statistics &amp; Data Science, and Computer Science</span>
+            </div>
+            <div class="metric" data-tilt>
+              <strong>1</strong>
+              <span>Flagship transition pathway anchored by the Virtual Math Research Circle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-scene reveal" id="heroScene">
+          <div class="scene-wrap" id="sceneWrap">
+            <article class="panel panel-accent" data-float>
+              <div class="panel-kicker">Institute Model</div>
+              <h3>Circles. Groups. Labs.</h3>
+              <p>
+                A clear, prestigious progression from structured entry points to
+                smaller, more intensive, open-ended mentored work.
+              </p>
+            </article>
+
+            <article class="panel panel-main" data-float>
+              <div class="panel-kicker">Fields of Study</div>
+              <h3>Research Areas</h3>
+              <p>
+                VRI is organized around serious quantitative disciplines with room
+                for growth, depth, and future interdisciplinary expansion.
+              </p>
+
+              <div class="gold-line" aria-hidden="true"></div>
+
+              <div class="stack">
+                <div class="stack-item">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>Mathematics</strong>
+                    <span>Proof, abstraction, conjecture, structure, and elegant reasoning.</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>Statistics &amp; Data Science</strong>
+                    <span>Inference, modeling, data analysis, computation, and applied decision-making.</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>Computer Science</strong>
+                    <span>Algorithms, computation, systems, and the broader computational sciences.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel panel-bottom" data-float>
+              <div class="panel-kicker">Current Flagship</div>
+              <h3>VMRC</h3>
+              <p>
+                The Virtual Math Research Circle remains the leading mathematics
+                offering during the transition into the broader VRI umbrella.
+              </p>
+
+              <div class="pill-row" aria-label="Flagship attributes">
+                <span class="pill">Research-first</span>
+                <span class="pill">Mentored</span>
+                <span class="pill">Online</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">About</p>
+            <h3>An institute designed to feel polished, serious, and scholarly.</h3>
+          </div>
+          <p class="section-intro">
+            VRI is intended to be more than a simple program website. It serves as
+            the institutional home for mentored research in mathematics and the
+            computational sciences, combining academic credibility, clear structure,
+            and elegant presentation.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Mission</div>
+            <h4>What VRI exists to do</h4>
+            <p>
+              The Virtual Research Institute brings students into a more authentic
+              research environment through guided inquiry, careful mentorship,
+              intellectual seriousness, and a culture of scholarly refinement.
+            </p>
+            <ul>
+              <li>Support real inquiry rather than surface-level enrichment.</li>
+              <li>Offer a premium online research experience with academic depth.</li>
+              <li>Build a pathway from structured mentorship to open-ended work.</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Positioning</div>
+            <h4>A stronger institutional identity</h4>
+            <p>
+              The VRI umbrella allows the institute to grow beyond a single flagship
+              offering while keeping mathematics explicit and preserving room for
+              future development in statistics, data science, and computer science.
+            </p>
+            <ul>
+              <li>Prestigious academic presentation</li>
+              <li>Clear public-facing structure</li>
+              <li>Scalable brand architecture for future growth</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Programs</p>
+            <h3>Three pathways for different levels of intensity and scale.</h3>
+          </div>
+          <p class="section-intro">
+            The institute’s public model is intentionally clear: students can join
+            VRI through Circles, Groups, or Labs, each with a distinct level of
+            structure, selectivity, and research intensity.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Tier I</div>
+            <h4>Research Circles</h4>
+            <p>
+              Structured, guided, and scalable entry-tier experiences designed to
+              introduce students to serious research habits in an accessible but
+              still rigorous environment.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Tier II</div>
+            <h4>Research Groups</h4>
+            <p>
+              Smaller collaborative cohorts with more intensive mentor interaction,
+              greater ownership, and a closer resemblance to premium boutique
+              research experiences.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Tier III</div>
+            <h4>Research Labs</h4>
+            <p>
+              The highest-prestige pathway: small, highly mentored, open-ended work
+              designed for depth, originality, and stronger intellectual
+              differentiation.
+            </p>
+          </article>
+        </div>
+
+        <div class="feature-band reveal" style="margin-top: 24px;">
+          <div class="feature-band-grid">
+            <div>
+              <p class="section-label">Flagship Program</p>
+              <h3>Virtual Math Research Circle</h3>
+              <p>
+                VMRC remains the flagship mathematics offering during the transition
+                into the broader VRI identity. It represents the institute’s core
+                commitment to serious mentored mathematical work, scholarly
+                communication, and high standards.
+              </p>
+            </div>
+
+            <div class="feature-quote">
+              <strong>Current Foundation</strong>
+              <p>
+                The flagship math pathway anchors the brand while the broader
+                institute grows into a fuller home for research in mathematics and
+                computational sciences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="areas">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Research Areas</p>
+            <h3>Three primary academic divisions.</h3>
+          </div>
+          <p class="section-intro">
+            VRI’s first public-facing academic areas are intentionally strong and
+            expansive. They establish a serious intellectual identity without
+            limiting future growth.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline I</div>
+            <h4>Mathematics</h4>
+            <p>
+              A home for proof, theory, structure, mathematical experimentation, and
+              original reasoning across pure and applied directions.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline II</div>
+            <h4>Statistics &amp; Data Science</h4>
+            <p>
+              A research area for inference, modeling, computation, analytics, and
+              the disciplined interpretation of complex real-world data.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline III</div>
+            <h4>Computer Science</h4>
+            <p>
+              A broad and future-facing domain encompassing algorithms,
+              computational thinking, systems, and adjacent computational sciences.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mentorship">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Paid Mentorship</p>
+            <h3>Scholarly mentorship as a serious professional role.</h3>
+          </div>
+          <p class="section-intro">
+            VRI will include a dedicated paid mentorship pathway for graduate
+            students, postdocs, faculty, and qualified researchers who can lead
+            intellectually substantial student cohorts with professionalism and care.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">For Mentors</div>
+            <h4>Mentor with VRI</h4>
+            <p>
+              Paid mentorship should feel like a meaningful academic opportunity, not
+              a generic jobs page. This section can later expand into eligibility,
+              compensation, proposal expectations, timelines, and mentor FAQs.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">For Access</div>
+            <h4>Future Foundation Support</h4>
+            <p>
+              A future foundation and scholarship structure can support fee relief,
+              access expansion, and grant-aligned student aid while preserving a
+              clear distinction between institute operations and charitable support.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="section-label">Next Steps</p>
+            <h3>Build the full institutional site from here.</h3>
+            <p>
+              This front page is designed as the polished foundation for a fuller VRI
+              website, including About, Programs, Paid Mentorship, FAQ &amp; Contact,
+              Policies &amp; Procedures, and future flagship program pages under the
+              broader institute umbrella.
+            </p>
+          </div>
+
+          <div class="quick-links">
+            <a class="quick-chip" href="#">About</a>
+            <a class="quick-chip" href="#">Programs</a>
+            <a class="quick-chip" href="#">FAQ &amp; Contact</a>
+            <a class="quick-chip" href="#" id="policies">Policies</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <h4>Virtual Research Institute</h4>
+        <p>
+          Mentored Research in Mathematics and Computational Sciences
+        </p>
+        <p style="margin-top: 10px;">
+          A refined institutional home for serious online research experiences.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Institute</h5>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#areas">Research Areas</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Opportunities</h5>
+        <nav>
+          <a href="#mentorship">Paid Mentorship</a>
+          <a href="#">FAQ &amp; Contact</a>
+          <a href="#">Policies &amp; Procedures</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>isaac@virtualresearchinstitute.org</p>
+        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const header = document.getElementById("siteHeader");
+      const onScroll = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 18);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobilePanel = document.getElementById("mobilePanel");
+
+      if (menuToggle && mobilePanel) {
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          menuToggle.setAttribute("aria-expanded", String(!expanded));
+          document.body.classList.toggle("menu-open", !expanded);
+        });
+
+        mobilePanel.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+          }
+        });
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealEls.forEach((el) => io.observe(el));
+
+      if (!prefersReducedMotion) {
+        const tiltItems = document.querySelectorAll("[data-tilt]");
+        tiltItems.forEach((item) => {
+          let rafId = null;
+
+          const reset = () => {
+            cancelAnimationFrame(rafId);
+            item.style.transform = "";
+          };
+
+          item.addEventListener("mousemove", (e) => {
+            const rect = item.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 10;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              item.style.transform =
+                "perspective(1200px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-8px)";
+            });
+          });
+
+          item.addEventListener("mouseleave", reset);
+          item.addEventListener("blur", reset, true);
+        });
+
+        const sceneWrap = document.getElementById("sceneWrap");
+        const heroScene = document.getElementById("heroScene");
+
+        if (sceneWrap && heroScene) {
+          let rafId = null;
+
+          heroScene.addEventListener("mousemove", (e) => {
+            const rect = heroScene.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 12;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              sceneWrap.style.transform =
+                "rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+            });
+          });
+
+          heroScene.addEventListener("mouseleave", () => {
+            sceneWrap.style.transform = "rotateX(0deg) rotateY(0deg)";
+          });
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
