@@ -201,6 +201,18 @@
       white-space: nowrap;
     }
 
+    .footer-subtitle {
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(16, 33, 42, 0.76);
+      max-width: none;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
     .primary-nav {
       justify-self: end;
     }
@@ -407,7 +419,7 @@
       -webkit-backdrop-filter: blur(18px);
       border-left: 1px solid rgba(4, 76, 89, 0.12);
       box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
-      padding: 126px 22px 24px;
+      padding: 148px 22px 24px;
       transform: translateX(100%);
       transition: transform .45s var(--ease);
       z-index: 999;
@@ -1274,7 +1286,8 @@
         white-space: normal;
       }
 
-      .brand-subtitle {
+      .brand-subtitle,
+      .footer-subtitle {
         font-size: 0.76rem;
         white-space: normal;
       }
@@ -1833,7 +1846,7 @@
     <div class="frame-shell footer-grid">
       <div class="footer-brand">
         <h4>Virtual Research Institute</h4>
-        <p>
+        <p class="footer-subtitle">
           Mentored Research in Mathematics and Computational Sciences
         </p>
       </div>
