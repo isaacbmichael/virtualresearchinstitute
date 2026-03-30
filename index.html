@@ -206,13 +206,14 @@
       flex-direction: column;
       gap: 8px;
       width: fit-content;
+      position: relative;
     }
 
     .footer-brand-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 700;
-      font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+      font-size: clamp(1.6rem, 2.4vw, 2.35rem);
       line-height: 0.95;
       letter-spacing: 0.01em;
       color: var(--teal-950);
@@ -221,11 +222,13 @@
     }
 
     .footer-brand-bar {
-      width: min(440px, 100%);
-      height: 4px;
+      width: min(430px, 100%);
+      height: 5px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
-      box-shadow: 0 6px 18px rgba(184, 140, 12, 0.24);
+      box-shadow: 0 7px 21px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
     }
 
     .footer-subtitle {
@@ -462,7 +465,7 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 34px;
+      margin-bottom: 18px;
     }
 
     .menu-panel-head {
@@ -470,7 +473,7 @@
     }
 
     .menu-panel-kicker {
-      margin: 0 0 8px;
+      margin: 0 0 18px;
       color: var(--teal-700);
       font-size: 0.78rem;
       font-weight: 800;
@@ -1397,8 +1400,8 @@
         font-size: 1.7rem;
       }
 
-      .footer-brand h4 {
-        font-size: 1.6rem;
+      .footer-brand-title {
+        font-size: clamp(1.4rem, 6vw, 1.9rem);
       }
     }
   </style>
@@ -1419,8 +1422,8 @@
       <nav class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#programs">Research Pathways</a></li>
-          <li><a href="#areas">Research Areas</a></li>
+          <li><a href="#programs">Pathways</a></li>
+          <li><a href="#areas">Areas</a></li>
           <li><a href="#projects">Projects</a></li>
         </ul>
       </nav>
@@ -1449,16 +1452,16 @@
     <div class="menu-panel-top">
       <div class="menu-panel-head">
         <h2 class="menu-panel-title">Virtual Research Institute</h2>
-        <p class="menu-panel-kicker">Explore the full site</p>
       </div>
       <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
     </div>
 
     <div class="menu-section">
+      <p class="menu-panel-kicker">Explore the full site</p>
       <nav class="mobile-nav">
         <a href="upcoming-projects.html">Upcoming Projects</a>
         <a href="past-sessions.html">Past Sessions</a>
-        <a href="research-areas.html">Research Areas Page</a>
+        <a href="research-areas.html">Research Areas</a>
         <a href="faq.html">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
         <a href="paid-mentorship.html">Paid Mentorship</a>
