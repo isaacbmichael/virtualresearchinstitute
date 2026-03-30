@@ -201,6 +201,33 @@
       white-space: nowrap;
     }
 
+    .footer-brand {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      width: fit-content;
+    }
+
+    .footer-brand-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: normal;
+      white-space: nowrap;
+    }
+
+    .footer-brand-bar {
+      width: min(440px, 100%);
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 6px 18px rgba(184, 140, 12, 0.24);
+    }
+
     .footer-subtitle {
       margin: 0;
       font-size: 0.78rem;
@@ -1134,15 +1161,6 @@
       align-items: start;
     }
 
-    .footer-brand h4 {
-      margin: 0 0 10px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.9rem;
-      line-height: 1;
-      color: var(--teal-950);
-    }
-
-    .footer-brand p,
     .footer-col p,
     .footer-col a {
       margin: 0;
@@ -1292,6 +1310,10 @@
         white-space: normal;
       }
 
+      .footer-brand-title {
+        white-space: normal;
+      }
+
       .hero {
         padding-top: 34px;
       }
@@ -1397,8 +1419,8 @@
       <nav class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#programs">Research Pathways</a></li>
           <li><a href="#areas">Research Areas</a></li>
-          <li><a href="#programs">Programs</a></li>
           <li><a href="#projects">Projects</a></li>
         </ul>
       </nav>
@@ -1427,14 +1449,16 @@
     <div class="menu-panel-top">
       <div class="menu-panel-head">
         <h2 class="menu-panel-title">Virtual Research Institute</h2>
+        <p class="menu-panel-kicker">Explore the full site</p>
       </div>
       <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
     </div>
 
     <div class="menu-section">
       <nav class="mobile-nav">
-        <a href="research-areas.html">Research Areas Page</a>
+        <a href="upcoming-projects.html">Upcoming Projects</a>
         <a href="past-sessions.html">Past Sessions</a>
+        <a href="research-areas.html">Research Areas Page</a>
         <a href="faq.html">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
         <a href="paid-mentorship.html">Paid Mentorship</a>
@@ -1459,14 +1483,14 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#programs">Explore Programs</a>
+            <a class="btn btn-primary" href="#programs">Explore Research Pathways</a>
             <a class="btn btn-gold" href="#about">About the Institute</a>
           </div>
 
           <div class="hero-metrics">
             <div class="metric" data-tilt>
               <strong>3</strong>
-              <span>Program pathways: Circles, Groups, and Labs</span>
+              <span>Research pathways: Circles, Groups, and Labs</span>
             </div>
             <div class="metric" data-tilt>
               <strong>3</strong>
@@ -1595,56 +1619,11 @@
       </div>
     </section>
 
-    <section class="section" id="areas">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Research Areas</p>
-            <h3>Three primary academic divisions.</h3>
-          </div>
-          <p class="section-intro">
-            VRI’s first public-facing academic areas are intentionally strong and
-            expansive. They establish a serious intellectual identity without
-            limiting future growth.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline I</div>
-            <h4>Mathematics</h4>
-            <p>
-              A home for proof, theory, structure, mathematical experimentation, and
-              original reasoning across pure and applied directions.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline II</div>
-            <h4>Statistics &amp; Data Science</h4>
-            <p>
-              A research area for inference, modeling, computation, analytics, and
-              the disciplined interpretation of complex real-world data.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Discipline III</div>
-            <h4>Computer Science</h4>
-            <p>
-              A broad and future-facing domain encompassing algorithms,
-              computational thinking, systems, and adjacent computational sciences.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="programs">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Programs</p>
+            <p class="section-label">Research Pathways</p>
             <h3>Three pathways for different levels of intensity and scale.</h3>
           </div>
           <p class="section-intro">
@@ -1712,7 +1691,52 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
+    
+
+    <section class="section" id="areas">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Research Areas</p>
+            <h3>Three primary academic divisions.</h3>
+          </div>
+          <p class="section-intro">
+            VRI’s first public-facing academic areas are intentionally strong and
+            expansive. They establish a serious intellectual identity without
+            limiting future growth.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline I</div>
+            <h4>Mathematics</h4>
+            <p>
+              A home for proof, theory, structure, mathematical experimentation, and
+              original reasoning across pure and applied directions.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline II</div>
+            <h4>Statistics &amp; Data Science</h4>
+            <p>
+              A research area for inference, modeling, computation, analytics, and
+              the disciplined interpretation of complex real-world data.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Discipline III</div>
+            <h4>Computer Science</h4>
+            <p>
+              A broad and future-facing domain encompassing algorithms,
+              computational thinking, systems, and adjacent computational sciences.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section><section class="section" id="projects">
       <div class="shell">
         <div class="section-head reveal">
           <div>
@@ -1757,7 +1781,7 @@
             </p>
             <div class="card-actions">
               <a class="quick-chip" href="summer-2026-projects.html">Summer 2026 Preview</a>
-              <a class="quick-chip" href="#programs">Explore Programs</a>
+              <a class="quick-chip" href="#programs">Explore Research Pathways</a>
             </div>
           </article>
         </div>
@@ -1845,7 +1869,8 @@
   <footer class="site-footer">
     <div class="frame-shell footer-grid">
       <div class="footer-brand">
-        <h4>Virtual Research Institute</h4>
+        <h4 class="footer-brand-title">Virtual Research Institute</h4>
+        <span class="footer-brand-bar" aria-hidden="true"></span>
         <p class="footer-subtitle">
           Mentored Research in Mathematics and Computational Sciences
         </p>
@@ -1855,8 +1880,8 @@
         <h5>Institute</h5>
         <nav>
           <a href="#about">About</a>
+          <a href="#programs">Research Pathways</a>
           <a href="#areas">Research Areas</a>
-          <a href="#programs">Programs</a>
           <a href="#projects">Projects</a>
         </nav>
       </div>
