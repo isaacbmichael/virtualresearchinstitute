@@ -202,9 +202,10 @@
     }
 
     .footer-brand {
+      --footer-brand-scale: 0.8;
       display: inline-flex;
       flex-direction: column;
-      gap: 8px;
+      gap: calc(8px * var(--footer-brand-scale));
       width: fit-content;
       position: relative;
     }
@@ -213,7 +214,7 @@
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 700;
-      font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+      font-size: clamp(calc(2rem * var(--footer-brand-scale)), calc(3.2vw * var(--footer-brand-scale)), calc(3.1rem * var(--footer-brand-scale)));
       line-height: 0.95;
       letter-spacing: 0.01em;
       color: var(--teal-950);
@@ -222,20 +223,20 @@
     }
 
     .footer-brand-bar {
-      width: min(430px, 100%);
-      height: 5px;
+      width: min(calc(540px * var(--footer-brand-scale)), 100%);
+      height: calc(6px * var(--footer-brand-scale));
       border-radius: 999px;
       background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
-      box-shadow: 0 7px 21px rgba(184, 140, 12, 0.28);
+      box-shadow: 0 calc(8px * var(--footer-brand-scale)) calc(24px * var(--footer-brand-scale)) rgba(184, 140, 12, 0.28);
       transform-origin: left center;
       animation: barGlow 7s ease-in-out infinite;
     }
 
     .footer-subtitle {
       margin: 0;
-      font-size: 0.78rem;
+      font-size: calc(0.78rem * var(--footer-brand-scale));
       font-weight: 600;
-      letter-spacing: 0.11em;
+      letter-spacing: calc(0.11em * var(--footer-brand-scale));
       text-transform: uppercase;
       color: rgba(16, 33, 42, 0.76);
       max-width: none;
@@ -1307,13 +1308,18 @@
         white-space: normal;
       }
 
-      .brand-subtitle,
-      .footer-subtitle {
+      .brand-subtitle {
         font-size: 0.76rem;
         white-space: normal;
       }
 
+      .footer-subtitle {
+        font-size: calc(0.76rem * var(--footer-brand-scale));
+        white-space: normal;
+      }
+
       .footer-brand-title {
+        font-size: clamp(calc(1.8rem * var(--footer-brand-scale)), calc(7vw * var(--footer-brand-scale)), calc(2.6rem * var(--footer-brand-scale)));
         white-space: normal;
       }
 
@@ -1400,8 +1406,8 @@
         font-size: 1.7rem;
       }
 
-      .footer-brand-title {
-        font-size: clamp(1.4rem, 6vw, 1.9rem);
+      .footer-brand-bar {
+        height: calc(5px * var(--footer-brand-scale));
       }
     }
   </style>
@@ -1464,7 +1470,6 @@
         <a href="research-areas.html">Research Areas</a>
         <a href="faq.html">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
-        <a href="paid-mentorship.html">Paid Mentorship</a>
       </nav>
     </div>
   </aside>
@@ -1639,7 +1644,7 @@
         <div class="grid-3">
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier I</div>
-            <h4>Research Circles</h4>
+            <h4>Circles</h4>
             <p>
               Structured, guided, and scalable entry-tier experiences designed to
               introduce students to serious research habits in an accessible but
@@ -1649,7 +1654,7 @@
 
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier II</div>
-            <h4>Research Groups</h4>
+            <h4>Groups</h4>
             <p>
               Smaller collaborative cohorts with more intensive mentor interaction,
               greater ownership, and a closer resemblance to premium boutique
@@ -1659,7 +1664,7 @@
 
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier III</div>
-            <h4>Research Labs</h4>
+            <h4>Labs</h4>
             <p>
               The highest-prestige pathway: small, highly mentored, open-ended work
               designed for depth, originality, and stronger intellectual
@@ -1895,7 +1900,7 @@
           <a href="past-sessions.html">Past Sessions</a>
           <a href="faq.html">FAQ</a>
           <a href="policies.html">Policies &amp; Procedures</a>
-          <a href="paid-mentorship.html">Paid Mentorship</a>
+          <a href="paid-mentorship.html">For Mentors</a>
         </nav>
       </div>
 
