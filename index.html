@@ -243,10 +243,12 @@
     }
 
     .menu-toggle {
-      display: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       border: 0;
       background: transparent;
-      padding: 10px;
+      padding: 10px 12px;
       border-radius: 12px;
       cursor: pointer;
       color: var(--teal-900);
@@ -269,6 +271,12 @@
       height: 2px;
       background: currentColor;
       border-radius: 999px;
+    }
+
+    .menu-label {
+      font-size: 0.94rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
     }
 
     .btn {
@@ -332,7 +340,64 @@
     }
 
     .mobile-panel {
-      display: none;
+      display: block;
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(380px, 92vw);
+      background: rgba(251, 249, 244, 0.97);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-left: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
+      padding: 110px 22px 24px;
+      transform: translateX(100%);
+      transition: transform .45s var(--ease);
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    body.menu-open .mobile-panel {
+      transform: translateX(0);
+    }
+
+    .menu-section + .menu-section {
+      margin-top: 18px;
+    }
+
+    .menu-section-label {
+      margin: 0 0 12px;
+      color: var(--teal-700);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .menu-divider {
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(90deg, transparent, rgba(4, 76, 89, 0.18), transparent);
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      color: var(--teal-900);
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus-visible {
+      background: white;
+      outline: none;
     }
 
     main {
@@ -754,6 +819,32 @@
       margin-top: 8px;
     }
 
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .term-meta {
+      margin: 0 0 14px;
+      color: var(--teal-700);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .term-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
     .feature-band {
       position: relative;
       overflow: hidden;
@@ -990,51 +1081,6 @@
         display: none;
       }
 
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .mobile-panel {
-        display: block;
-        position: fixed;
-        inset: 0 0 0 auto;
-        width: min(380px, 92vw);
-        background: rgba(251, 249, 244, 0.97);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border-left: 1px solid rgba(4, 76, 89, 0.12);
-        box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
-        padding: 110px 22px 24px;
-        transform: translateX(100%);
-        transition: transform .45s var(--ease);
-        z-index: 999;
-      }
-
-      body.menu-open .mobile-panel {
-        transform: translateX(0);
-      }
-
-      .mobile-nav {
-        display: grid;
-        gap: 10px;
-      }
-
-      .mobile-nav a {
-        display: block;
-        padding: 14px 16px;
-        border-radius: 16px;
-        font-weight: 700;
-        color: var(--teal-900);
-        background: rgba(255, 255, 255, 0.76);
-        border: 1px solid rgba(4, 76, 89, 0.1);
-      }
-
-      .mobile-nav a:hover,
-      .mobile-nav a:focus-visible {
-        background: white;
-        outline: none;
-      }
-
       .hero-grid,
       .section-head,
       .feature-band-grid,
@@ -1191,8 +1237,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#programs">Programs</a></li>
           <li><a href="#areas">Research Areas</a></li>
-          <li><a href="#mentorship">Paid Mentorship</a></li>
-          <li><a href="#contact">FAQ & Contact</a></li>
+          <li><a href="#recent-projects">Recent Projects</a></li>
+          <li><a href="#upcoming-projects">Upcoming Projects</a></li>
         </ul>
       </nav>
 
@@ -1204,28 +1250,44 @@
           id="menuToggle"
           aria-expanded="false"
           aria-controls="mobilePanel"
-          aria-label="Open menu"
+          aria-label="Open site menu"
         >
           <span class="bars" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
           </span>
+          <span class="menu-label">Menu</span>
         </button>
       </div>
     </div>
   </header>
 
-  <aside class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-    <nav class="mobile-nav">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#areas">Research Areas</a>
-      <a href="#mentorship">Paid Mentorship</a>
-      <a href="#contact">FAQ & Contact</a>
-      <a href="#policies">Policies & Procedures</a>
-    </nav>
+  <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
+    <div class="menu-section">
+      <p class="menu-section-label">On this page</p>
+      <nav class="mobile-nav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#areas">Research Areas</a>
+        <a href="#recent-projects">Recent Projects</a>
+        <a href="#upcoming-projects">Upcoming Projects</a>
+      </nav>
+    </div>
+
+    <div class="menu-divider" aria-hidden="true"></div>
+
+    <div class="menu-section">
+      <p class="menu-section-label">Explore more</p>
+      <nav class="mobile-nav">
+        <a href="research-areas.html">Research Areas Page</a>
+        <a href="past-sessions.html">Past Sessions</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="policies.html">Policies &amp; Procedures</a>
+        <a href="paid-mentorship.html">Paid Mentorship</a>
+      </nav>
+    </div>
   </aside>
 
   <main id="main-content">
@@ -1498,63 +1560,126 @@
       </div>
     </section>
 
-    <section class="section" id="mentorship">
+    <section class="section" id="recent-projects">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Paid Mentorship</p>
-            <h3>Scholarly mentorship as a serious professional role.</h3>
+            <p class="section-label">Most Recent Projects</p>
+            <h3>The latest completed research cycle at a glance.</h3>
           </div>
           <p class="section-intro">
-            VRI will include a dedicated paid mentorship pathway for graduate
-            students, postdocs, faculty, and qualified researchers who can lead
-            intellectually substantial student cohorts with professionalism and care.
+            The homepage highlights the most recent completed term while the fuller
+            archive lives on dedicated past-session pages. Those term pages can
+            preserve titles, abstracts, session details, and links to final
+            presentation materials.
           </p>
         </div>
 
         <div class="grid-2">
           <article class="card reveal" data-tilt>
-            <div class="card-label">For Mentors</div>
-            <h4>Mentor with VRI</h4>
+            <div class="card-label">Most Recent Completed Term</div>
+            <h4>Spring 2026 Projects</h4>
+            <p class="term-meta">Recent VMRC research cycle • Dedicated term page to follow</p>
             <p>
-              Paid mentorship should feel like a meaningful academic opportunity, not
-              a generic jobs page. This section can later expand into eligibility,
-              compensation, proposal expectations, timelines, and mentor FAQs.
+              Use this homepage panel as a polished preview of the latest completed
+              work, with a separate archive page holding the fuller scholarly record
+              for past sessions and term-level details.
             </p>
+            <div class="term-note">
+              Recommended structure: brief overview here on the homepage, then a
+              term page with session dates, titles, abstracts, and a
+              “Slides &amp; Recordings” link for presentation materials.
+            </div>
+            <div class="card-actions">
+              <a class="quick-chip" href="past-sessions.html">View Past Sessions</a>
+              <a class="quick-chip" href="spring-2026-projects.html">Spring 2026 Term Page</a>
+            </div>
           </article>
 
           <article class="card reveal" data-tilt>
-            <div class="card-label">For Access</div>
-            <h4>Future Foundation Support</h4>
+            <div class="card-label">Archive Model</div>
+            <h4>Website archive first, files second</h4>
             <p>
-              A future foundation and scholarship structure can support fee relief,
-              access expansion, and grant-aligned student aid while preserving a
-              clear distinction between institute operations and charitable support.
+              VRI should present past work as a curated academic archive on the
+              website itself, while external storage can remain the repository for
+              videos, slide decks, and downloadable materials.
             </p>
+            <ul>
+              <li>Keep titles, abstracts, and dates on the VRI site.</li>
+              <li>Use a dedicated Past Sessions page for older terms.</li>
+              <li>Link outward to slides and recordings only from term pages.</li>
+            </ul>
+            <div class="card-actions">
+              <a class="quick-chip" href="past-sessions.html">Research Archive</a>
+              <a class="quick-chip" href="research-areas.html">Research Areas Page</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="upcoming-projects">
       <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Upcoming Projects</p>
+            <h3>The next research cycle can live on the homepage too.</h3>
+          </div>
+          <p class="section-intro">
+            Upcoming projects belong on the homepage because they show that the
+            institute is active, current, and moving forward. This keeps the front
+            page useful for families without forcing them into older archives.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Next Term</div>
+            <h4>Summer 2026 Projects</h4>
+            <p class="term-meta">Upcoming cycle • Preview page and enrollment details can live separately</p>
+            <p>
+              This section can preview the next cycle’s themes, structure, and key
+              dates while directing visitors to the relevant term page once full
+              project details are ready.
+            </p>
+            <div class="card-actions">
+              <a class="quick-chip" href="summer-2026-projects.html">Summer 2026 Preview</a>
+              <a class="quick-chip" href="#programs">Explore Programs</a>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Separate Pages</div>
+            <h4>Keep larger content off the homepage</h4>
+            <p>
+              The biggest audience-facing pages can now move into the site menu so
+              the homepage stays elegant: Paid Mentorship, FAQ &amp; Contact,
+              Policies &amp; Procedures, Research Areas, and Past Sessions.
+            </p>
+            <div class="card-actions">
+              <a class="quick-chip" href="faq.html">FAQ &amp; Contact</a>
+              <a class="quick-chip" href="policies.html">Policies &amp; Procedures</a>
+              <a class="quick-chip" href="paid-mentorship.html">Paid Mentorship</a>
+            </div>
+          </article>
+        </div>
+
         <div class="cta-panel reveal">
           <div>
-            <p class="section-label">Next Steps</p>
-            <h3>Build the full institutional site from here.</h3>
+            <p class="section-label">Explore the full site</p>
+            <h3>Use the site menu for the larger standalone pages.</h3>
             <p>
-              This front page is designed as the polished foundation for a fuller VRI
-              website, including About, Programs, Paid Mentorship, FAQ &amp; Contact,
-              Policies &amp; Procedures, and future flagship program pages under the
-              broader institute umbrella.
+              The homepage remains the polished landing page, while the slide-out
+              menu can take visitors to the fuller pages for archives, mentor
+              information, policies, FAQs, and the broader research-area structure.
             </p>
           </div>
 
           <div class="quick-links">
-            <a class="quick-chip" href="#">About</a>
-            <a class="quick-chip" href="#">Programs</a>
-            <a class="quick-chip" href="#">FAQ &amp; Contact</a>
-            <a class="quick-chip" href="#" id="policies">Policies</a>
+            <a class="quick-chip" href="past-sessions.html">Past Sessions</a>
+            <a class="quick-chip" href="faq.html">FAQ &amp; Contact</a>
+            <a class="quick-chip" href="policies.html">Policies</a>
+            <a class="quick-chip" href="paid-mentorship.html">Paid Mentorship</a>
           </div>
         </div>
       </div>
@@ -1579,15 +1704,17 @@
           <a href="#about">About</a>
           <a href="#programs">Programs</a>
           <a href="#areas">Research Areas</a>
+          <a href="#recent-projects">Recent Projects</a>
         </nav>
       </div>
 
       <div class="footer-col">
-        <h5>Opportunities</h5>
+        <h5>Explore</h5>
         <nav>
-          <a href="#mentorship">Paid Mentorship</a>
-          <a href="#">FAQ &amp; Contact</a>
-          <a href="#">Policies &amp; Procedures</a>
+          <a href="past-sessions.html">Past Sessions</a>
+          <a href="faq.html">FAQ &amp; Contact</a>
+          <a href="policies.html">Policies &amp; Procedures</a>
+          <a href="paid-mentorship.html">Paid Mentorship</a>
         </nav>
       </div>
 
