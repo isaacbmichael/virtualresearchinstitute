@@ -248,15 +248,17 @@
       gap: 10px;
       border: 0;
       background: transparent;
-      padding: 10px 12px;
-      border-radius: 12px;
+      padding: 8px 2px;
+      border-radius: 0;
       cursor: pointer;
-      color: var(--teal-900);
+      color: rgba(16, 33, 42, 0.86);
+      transition: color .25s ease;
     }
 
     .menu-toggle:hover,
     .menu-toggle:focus-visible {
-      background: rgba(4, 76, 89, 0.08);
+      background: transparent;
+      color: var(--teal-900);
       outline: none;
     }
 
@@ -274,9 +276,9 @@
     }
 
     .menu-label {
-      font-size: 0.94rem;
-      font-weight: 800;
-      letter-spacing: 0.01em;
+      font-size: 0.96rem;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     .btn {
@@ -1081,6 +1083,7 @@
         display: none;
       }
 
+
       .hero-grid,
       .section-head,
       .feature-band-grid,
@@ -1233,17 +1236,15 @@
 
       <nav class="primary-nav" aria-label="Primary">
         <ul>
-          <li><a href="#" aria-current="page">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#programs">Programs</a></li>
           <li><a href="#areas">Research Areas</a></li>
-          <li><a href="#recent-projects">Recent Projects</a></li>
-          <li><a href="#upcoming-projects">Upcoming Projects</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#archives">Archives</a></li>
         </ul>
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn-secondary" href="#programs">Explore Programs</a>
         <button
           class="menu-toggle"
           type="button"
@@ -1265,21 +1266,7 @@
 
   <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
     <div class="menu-section">
-      <p class="menu-section-label">On this page</p>
-      <nav class="mobile-nav">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#areas">Research Areas</a>
-        <a href="#recent-projects">Recent Projects</a>
-        <a href="#upcoming-projects">Upcoming Projects</a>
-      </nav>
-    </div>
-
-    <div class="menu-divider" aria-hidden="true"></div>
-
-    <div class="menu-section">
-      <p class="menu-section-label">Explore more</p>
+      <p class="menu-section-label">Site pages</p>
       <nav class="mobile-nav">
         <a href="research-areas.html">Research Areas Page</a>
         <a href="past-sessions.html">Past Sessions</a>
@@ -1560,18 +1547,17 @@
       </div>
     </section>
 
-    <section class="section" id="recent-projects">
+    <section class="section" id="projects">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Most Recent Projects</p>
-            <h3>The latest completed research cycle at a glance.</h3>
+            <p class="section-label">Projects</p>
+            <h3>Recent and upcoming research cycles.</h3>
           </div>
           <p class="section-intro">
-            The homepage highlights the most recent completed term while the fuller
-            archive lives on dedicated past-session pages. Those term pages can
-            preserve titles, abstracts, session details, and links to final
-            presentation materials.
+            The homepage can highlight both the latest completed term and the next
+            upcoming cycle, giving families a clear sense of what VRI is doing now
+            and what is coming next.
           </p>
         </div>
 
@@ -1582,8 +1568,8 @@
             <p class="term-meta">Recent VMRC research cycle • Dedicated term page to follow</p>
             <p>
               Use this homepage panel as a polished preview of the latest completed
-              work, with a separate archive page holding the fuller scholarly record
-              for past sessions and term-level details.
+              work while the fuller scholarly record lives on dedicated past-session
+              and term-level pages.
             </p>
             <div class="term-note">
               Recommended structure: brief overview here on the homepage, then a
@@ -1591,8 +1577,58 @@
               “Slides &amp; Recordings” link for presentation materials.
             </div>
             <div class="card-actions">
-              <a class="quick-chip" href="past-sessions.html">View Past Sessions</a>
               <a class="quick-chip" href="spring-2026-projects.html">Spring 2026 Term Page</a>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Next Term</div>
+            <h4>Summer 2026 Projects</h4>
+            <p class="term-meta">Upcoming cycle • Preview page and enrollment details can live separately</p>
+            <p>
+              This section can preview the next cycle’s themes, structure, and key
+              dates while directing visitors to the relevant term page once full
+              project details are ready.
+            </p>
+            <div class="card-actions">
+              <a class="quick-chip" href="summer-2026-projects.html">Summer 2026 Preview</a>
+              <a class="quick-chip" href="#programs">Explore Programs</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="archives">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Past Projects &amp; Archives</p>
+            <h3>Past sessions and archive materials live below the current cycle.</h3>
+          </div>
+          <p class="section-intro">
+            Older research terms can move into a dedicated archive section on the
+            homepage and into fuller standalone archive pages, keeping the front
+            page current while preserving the institute’s scholarly record.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Past Sessions</div>
+            <h4>Curated records of previous cycles</h4>
+            <p>
+              Older terms can live on dedicated past-session pages that preserve
+              session dates, titles, abstracts, and the broader academic record
+              without crowding the homepage.
+            </p>
+            <div class="term-note">
+              Recommended structure: term hub pages for each cycle, with session
+              details and project abstracts on the VRI site and supporting
+              presentation files linked outward from those pages.
+            </div>
+            <div class="card-actions">
+              <a class="quick-chip" href="past-sessions.html">View Past Sessions</a>
             </div>
           </article>
 
@@ -1611,55 +1647,6 @@
             </ul>
             <div class="card-actions">
               <a class="quick-chip" href="past-sessions.html">Research Archive</a>
-              <a class="quick-chip" href="research-areas.html">Research Areas Page</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="upcoming-projects">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Upcoming Projects</p>
-            <h3>The next research cycle can live on the homepage too.</h3>
-          </div>
-          <p class="section-intro">
-            Upcoming projects belong on the homepage because they show that the
-            institute is active, current, and moving forward. This keeps the front
-            page useful for families without forcing them into older archives.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Next Term</div>
-            <h4>Summer 2026 Projects</h4>
-            <p class="term-meta">Upcoming cycle • Preview page and enrollment details can live separately</p>
-            <p>
-              This section can preview the next cycle’s themes, structure, and key
-              dates while directing visitors to the relevant term page once full
-              project details are ready.
-            </p>
-            <div class="card-actions">
-              <a class="quick-chip" href="summer-2026-projects.html">Summer 2026 Preview</a>
-              <a class="quick-chip" href="#programs">Explore Programs</a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Separate Pages</div>
-            <h4>Keep larger content off the homepage</h4>
-            <p>
-              The biggest audience-facing pages can now move into the site menu so
-              the homepage stays elegant: Paid Mentorship, FAQ &amp; Contact,
-              Policies &amp; Procedures, Research Areas, and Past Sessions.
-            </p>
-            <div class="card-actions">
-              <a class="quick-chip" href="faq.html">FAQ &amp; Contact</a>
-              <a class="quick-chip" href="policies.html">Policies &amp; Procedures</a>
-              <a class="quick-chip" href="paid-mentorship.html">Paid Mentorship</a>
             </div>
           </article>
         </div>
@@ -1704,7 +1691,8 @@
           <a href="#about">About</a>
           <a href="#programs">Programs</a>
           <a href="#areas">Research Areas</a>
-          <a href="#recent-projects">Recent Projects</a>
+          <a href="#projects">Projects</a>
+          <a href="#archives">Archives</a>
         </nav>
       </div>
 
