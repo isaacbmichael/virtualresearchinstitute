@@ -48,7 +48,7 @@
       --radius-lg: 22px;
       --radius-md: 16px;
       --max: 1840px;
-      --frame-gutter: 24px;
+      --gutter: clamp(16px, 2.6vw, 32px);
       --nav-h: 110px;
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
@@ -114,14 +114,13 @@
       top: 12px;
     }
 
-    .shell {
-      width: min(var(--max), calc(100% - (2 * var(--frame-gutter))));
+    .frame-shell {
+      width: calc(100% - (2 * var(--gutter)));
       margin-inline: auto;
     }
 
-    .frame-shell {
-      width: calc(100% - (2 * var(--frame-gutter)));
-      max-width: none;
+    .shell {
+      width: min(var(--max), calc(100% - (2 * var(--gutter))));
       margin-inline: auto;
     }
 
@@ -1141,6 +1140,9 @@
         --nav-h: 96px;
       }
 
+      .shell {
+        width: min(var(--max), calc(100% - (2 * var(--gutter))));
+      }
 
       .brand-title {
         font-size: clamp(1.8rem, 7vw, 2.6rem);
