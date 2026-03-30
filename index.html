@@ -504,11 +504,22 @@
       color: var(--teal-900);
       background: rgba(255, 255, 255, 0.76);
       border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      will-change: transform;
     }
 
     .mobile-nav a:hover,
     .mobile-nav a:focus-visible {
       background: white;
+      border-color: rgba(4, 76, 89, 0.14);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
       outline: none;
     }
 
@@ -1086,8 +1097,8 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(140px, 0.45fr));
-      gap: 22px;
+      grid-template-columns: minmax(0, 1fr) minmax(140px, 0.42fr) minmax(140px, 0.42fr) minmax(300px, 0.62fr);
+      gap: 18px;
       align-items: start;
     }
 
@@ -1382,8 +1393,7 @@
   <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
     <div class="menu-panel-top">
       <div class="menu-panel-head">
-        <p class="menu-panel-kicker">Menu</p>
-        <h2 class="menu-panel-title">Virtual Research Institute</h2>
+        <h2 class="menu-panel-title">Virtual<br>Research<br>Institute</h2>
       </div>
       <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
     </div>
