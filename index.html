@@ -251,6 +251,7 @@
     }
 
     .menu-toggle {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -266,11 +267,30 @@
       white-space: nowrap;
     }
 
+    .menu-toggle::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .35s var(--ease);
+    }
+
     .menu-toggle:hover,
     .menu-toggle:focus-visible {
       background: transparent;
       color: var(--teal-900);
       outline: none;
+    }
+
+    .menu-toggle:hover::after,
+    .menu-toggle:focus-visible::after {
+      transform: scaleX(1);
     }
 
     .menu-toggle .bars {
@@ -389,6 +409,67 @@
 
     body.menu-open .mobile-panel {
       transform: translateX(0);
+    }
+
+    .menu-panel-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .menu-panel-head {
+      min-width: 0;
+    }
+
+    .menu-panel-kicker {
+      margin: 0 0 8px;
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .menu-panel-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 0.98;
+      color: var(--teal-950);
+    }
+
+    .menu-close {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(4, 76, 89, 0.14);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-900);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+    }
+
+    .menu-close:hover,
+    .menu-close:focus-visible {
+      background: white;
+      color: var(--teal-900);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      outline: none;
     }
 
     .menu-section + .menu-section {
@@ -1299,8 +1380,16 @@
   </header>
 
   <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
+    <div class="menu-panel-top">
+      <div class="menu-panel-head">
+        <p class="menu-panel-kicker">Menu</p>
+        <h2 class="menu-panel-title">Virtual Research Institute</h2>
+      </div>
+      <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
+    </div>
+
     <div class="menu-section">
-      <p class="menu-section-label">Site pages</p>
+      <p class="menu-section-label">Pages</p>
       <nav class="mobile-nav">
         <a href="research-areas.html">Research Areas Page</a>
         <a href="past-sessions.html">Past Sessions</a>
@@ -1743,7 +1832,7 @@
       <div class="footer-col">
         <h5>Contact</h5>
         <p>info@virtualresearchinstitute.org</p>
-        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute. All rights reserved.</p>
+        <p style="margin-top: 8px;">&copy; <span id="year"></span> Virtual Research Institute LLC. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1761,25 +1850,31 @@
 
       const menuToggle = document.getElementById("menuToggle");
       const mobilePanel = document.getElementById("mobilePanel");
+      const menuClose = document.getElementById("menuClose");
 
       if (menuToggle && mobilePanel) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        };
+
         menuToggle.addEventListener("click", () => {
           const expanded = menuToggle.getAttribute("aria-expanded") === "true";
           menuToggle.setAttribute("aria-expanded", String(!expanded));
           document.body.classList.toggle("menu-open", !expanded);
         });
 
+        if (menuClose) {
+          menuClose.addEventListener("click", closeMenu);
+        }
+
         mobilePanel.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            menuToggle.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
-          });
+          link.addEventListener("click", closeMenu);
         });
 
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape") {
-            menuToggle.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
+            closeMenu();
           }
         });
       }
