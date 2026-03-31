@@ -245,18 +245,21 @@
     }
 
     .vr-r {
-      margin-left: -0.14em;
+      margin-left: -0.1em;
     }
 
-    .vr-top-connector {
+    .vr-v::after {
+      content: "";
       position: absolute;
-      top: 8px;
-      left: 50%;
-      width: 42px;
-      height: 3px;
-      transform: translateX(-50%);
+      top: 0.09em;
+      right: -0.035em;
+      width: 0.16em;
+      height: 0.055em;
+      background: currentColor;
       border-radius: 999px;
-      background: var(--teal-950);
+      transform: rotate(8deg);
+      transform-origin: right center;
+      pointer-events: none;
     }
 
     .vr-bar {
@@ -1415,11 +1418,6 @@
         min-width: 96px;
       }
 
-      .vr-top-connector {
-        top: 7px;
-        width: 34px;
-      }
-
       .vr-bar {
         width: 62px;
         height: 5px;
@@ -1503,12 +1501,6 @@
         min-width: 84px;
       }
 
-      .vr-top-connector {
-        top: 6px;
-        width: 28px;
-        height: 2px;
-      }
-
       .vr-bar {
         width: 56px;
         height: 5px;
@@ -1556,7 +1548,6 @@
     <div class="frame-shell header-inner">
       <a class="brand brand-lockup" href="#" aria-label="Virtual Research Institute home">
         <span class="brand-monogram" aria-hidden="true">
-          <span class="vr-top-connector"></span>
           <span class="vr-letters">
             <span class="vr-v">V</span><span class="vr-r">R</span>
           </span>
