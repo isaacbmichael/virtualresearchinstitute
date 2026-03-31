@@ -161,30 +161,10 @@
 
     .brand {
       display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      width: fit-content;
-      position: relative;
-    }
-
-    .brand-mark {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .brand-mark img {
-      display: block;
-      width: 72px;
-      height: 72px;
-      object-fit: contain;
-    }
-
-    .brand-text {
-      display: inline-flex;
       flex-direction: column;
       gap: 8px;
+      width: fit-content;
+      position: relative;
     }
 
     .brand-title {
@@ -1463,16 +1443,11 @@
   <header class="site-header" id="siteHeader">
     <div class="frame-shell header-inner">
       <a class="brand" href="#" aria-label="Virtual Research Institute home">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="assets/images/logos/vri-logo.svg" alt="" />
-        </span>
-        <span class="brand-text">
-          <h1 class="brand-title">Virtual Research Institute</h1>
-          <span class="brand-bar" aria-hidden="true"></span>
-          <p class="brand-subtitle">
-            Mentored Research in Mathematics and Computational Sciences
-          </p>
-        </span>
+        <h1 class="brand-title">Virtual Research Institute</h1>
+        <span class="brand-bar" aria-hidden="true"></span>
+        <p class="brand-subtitle">
+          Mentored Research in Mathematics and Computational Sciences
+        </p>
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
