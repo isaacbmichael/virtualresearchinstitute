@@ -273,6 +273,49 @@
       animation: barGlow 7s ease-in-out infinite;
     }
 
+    .brand-monogram-vri {
+      width: 132px;
+      min-width: 132px;
+    }
+
+    .vri-letters {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-start;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      white-space: nowrap;
+    }
+
+    .vri-v,
+    .vri-r,
+    .vri-i {
+      display: inline-block;
+      position: relative;
+    }
+
+    .vri-r {
+      margin-left: -0.12em;
+    }
+
+    .vri-i {
+      margin-left: -0.08em;
+    }
+
+    .vri-bar {
+      width: 86px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
     .footer-brand {
       --footer-brand-scale: 0.8;
       display: inline-flex;
@@ -1405,7 +1448,8 @@
         white-space: normal;
       }
 
-      .vr-letters {
+      .vr-letters,
+      .vri-letters {
         font-size: clamp(1.8rem, 7vw, 2.6rem);
       }
 
@@ -1419,8 +1463,18 @@
         min-width: 96px;
       }
 
+      .brand-monogram-vri {
+        width: 108px;
+        min-width: 108px;
+      }
+
       .vr-bar {
         width: 62px;
+        height: 5px;
+      }
+
+      .vri-bar {
+        width: 72px;
         height: 5px;
       }
 
@@ -1502,8 +1556,18 @@
         min-width: 84px;
       }
 
+      .brand-monogram-vri {
+        width: 96px;
+        min-width: 96px;
+      }
+
       .vr-bar {
         width: 56px;
+        height: 5px;
+      }
+
+      .vri-bar {
+        width: 64px;
         height: 5px;
       }
 
@@ -1553,6 +1617,13 @@
             <span class="vr-v">V</span><span class="vr-r">R</span>
           </span>
           <span class="vr-bar"></span>
+        </span>
+
+        <span class="brand-monogram brand-monogram-vri" aria-hidden="true">
+          <span class="vri-letters">
+            <span class="vri-v">V</span><span class="vri-r">R</span><span class="vri-i">I</span>
+          </span>
+          <span class="vri-bar"></span>
         </span>
 
         <div class="brand-wordmark">
