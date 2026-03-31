@@ -316,6 +316,67 @@
       animation: barGlow 7s ease-in-out infinite;
     }
 
+    .brand-anim {
+      display: inline-block;
+    }
+
+    .brand-sequence {
+      position: relative;
+      display: inline-grid;
+      align-items: start;
+      justify-items: start;
+    }
+
+    .brand-stage {
+      grid-area: 1 / 1;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(0);
+      filter: blur(0);
+      transition:
+        opacity .55s var(--ease),
+        transform .7s var(--ease),
+        filter .55s var(--ease);
+      pointer-events: none;
+    }
+
+    .brand-stage-vr {
+      transform: translateX(0);
+    }
+
+    .brand-stage-vri,
+    .brand-stage-full {
+      transform: translateX(-14px);
+      filter: blur(1px);
+    }
+
+    .brand-sequence.is-vr .brand-stage-vr,
+    .brand-sequence.is-vri .brand-stage-vri,
+    .brand-sequence.is-full .brand-stage-full {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+      pointer-events: auto;
+    }
+
+    .brand-sequence.is-vri .brand-stage-vr,
+    .brand-sequence.is-full .brand-stage-vr,
+    .brand-sequence.is-full .brand-stage-vri {
+      opacity: 0;
+      transform: translateX(-10px);
+      filter: blur(1px);
+    }
+
+    .brand-stage-full .brand-wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      width: fit-content;
+    }
+
     .footer-brand {
       --footer-brand-scale: 0.8;
       display: inline-flex;
@@ -1611,24 +1672,32 @@
 
   <header class="site-header" id="siteHeader">
     <div class="frame-shell header-inner">
-      <a class="brand brand-lockup" href="#" aria-label="Virtual Research Institute home">
-        <span class="brand-monogram" aria-hidden="true">
-          <span class="vr-letters">
-            <span class="vr-v">V</span><span class="vr-r">R</span>
-          </span>
-          <span class="vr-bar"></span>
-        </span>
+      <a class="brand brand-lockup brand-anim" href="#" aria-label="Virtual Research Institute home">
+        <div class="brand-sequence is-vr" id="brandSequence">
+          <div class="brand-stage brand-stage-vr" aria-hidden="true">
+            <span class="brand-monogram">
+              <span class="vr-letters">
+                <span class="vr-v">V</span><span class="vr-r">R</span>
+              </span>
+              <span class="vr-bar"></span>
+            </span>
+          </div>
 
-        <span class="brand-monogram brand-monogram-vri" aria-hidden="true">
-          <span class="vri-letters">
-            <span class="vri-v">V</span><span class="vri-r">R</span><span class="vri-i">I</span>
-          </span>
-          <span class="vri-bar"></span>
-        </span>
+          <div class="brand-stage brand-stage-vri" aria-hidden="true">
+            <span class="brand-monogram brand-monogram-vri">
+              <span class="vri-letters">
+                <span class="vri-v">V</span><span class="vri-r">R</span><span class="vri-i">I</span>
+              </span>
+              <span class="vri-bar"></span>
+            </span>
+          </div>
 
-        <div class="brand-wordmark">
-          <h1 class="brand-title">Virtual Research Institute</h1>
-          <span class="brand-bar" aria-hidden="true"></span>
+          <div class="brand-stage brand-stage-full">
+            <div class="brand-wordmark">
+              <h1 class="brand-title">Virtual Research Institute</h1>
+              <span class="brand-bar" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
       </a>
 
@@ -2136,6 +2205,28 @@
       };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
+
+      const brandSequence = document.getElementById("brandSequence");
+
+      if (brandSequence) {
+        if (prefersReducedMotion) {
+          brandSequence.classList.remove("is-vr", "is-vri");
+          brandSequence.classList.add("is-full");
+        } else {
+          brandSequence.classList.remove("is-vri", "is-full");
+          brandSequence.classList.add("is-vr");
+
+          window.setTimeout(() => {
+            brandSequence.classList.remove("is-vr", "is-full");
+            brandSequence.classList.add("is-vri");
+          }, 650);
+
+          window.setTimeout(() => {
+            brandSequence.classList.remove("is-vr", "is-vri");
+            brandSequence.classList.add("is-full");
+          }, 1450);
+        }
+      }
 
       const menuToggle = document.getElementById("menuToggle");
       const mobilePanel = document.getElementById("mobilePanel");
