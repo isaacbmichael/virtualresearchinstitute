@@ -214,6 +214,7 @@
     }
 
     .brand-evolve {
+      --bar-mini: 44px;
       --bar-short: 74px;
       --bar-medium: 86px;
       --pair-overlap: 0.09em;
@@ -281,11 +282,18 @@
       transform: translateX(0);
     }
 
+    .brand-evolve.is-v .be-word-r {
+      transform: translateX(calc(-1 * var(--shift-r-start, 0px)));
+      opacity: 0;
+    }
+
     .brand-evolve.is-vr .be-word-r,
     .brand-evolve.is-vri .be-word-r {
       transform: translateX(calc(-1 * var(--shift-r, 0px)));
+      opacity: 1;
     }
 
+    .brand-evolve.is-v .be-word-i,
     .brand-evolve.is-vr .be-word-i {
       transform: translateX(calc(-1 * var(--shift-i-start, 0px)));
       opacity: 0;
@@ -299,9 +307,6 @@
     .brand-evolve.is-full .be-word-r,
     .brand-evolve.is-full .be-word-i {
       transform: translateX(0);
-    }
-
-    .brand-evolve.is-full .be-word-i {
       opacity: 1;
     }
 
@@ -316,6 +321,10 @@
       animation: barGlow 7s ease-in-out infinite;
       transition: width 1.05s var(--ease);
       will-change: width;
+    }
+
+    .brand-evolve.is-v .be-bar {
+      width: var(--bar-mini);
     }
 
     .brand-evolve.is-vr .be-bar {
@@ -1466,6 +1475,7 @@
       }
 
       .brand-evolve {
+        --bar-mini: 36px;
         --bar-short: 62px;
         --bar-medium: 72px;
       }
@@ -1545,6 +1555,7 @@
       }
 
       .brand-evolve {
+        --bar-mini: 32px;
         --bar-short: 56px;
         --bar-medium: 64px;
       }
@@ -2139,10 +2150,12 @@
         const rAnchorWidth = rAnchor.getBoundingClientRect().width;
 
         const shiftR = vTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftRStart = shiftR + (rAnchorWidth * 0.86);
         const shiftICompact = shiftR + rTail.getBoundingClientRect().width + gapPx + overlapPx;
         const shiftIStart = shiftICompact + (rAnchorWidth * 0.86);
 
         brandEvolve.style.setProperty("--shift-r", `${shiftR}px`);
+        brandEvolve.style.setProperty("--shift-r-start", `${shiftRStart}px`);
         brandEvolve.style.setProperty("--shift-i-compact", `${shiftICompact}px`);
         brandEvolve.style.setProperty("--shift-i-start", `${shiftIStart}px`);
 
@@ -2162,27 +2175,32 @@
         brandEvolve.classList.add("is-ready");
 
         if (prefersReducedMotion) {
-          brandEvolve.classList.remove("is-vr", "is-vri");
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
           brandEvolve.classList.add("is-full");
           [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.add("is-in"));
           return;
         }
 
-        brandEvolve.classList.remove("is-vri", "is-full");
-        brandEvolve.classList.add("is-vr");
+        brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
+        brandEvolve.classList.add("is-v");
 
         window.setTimeout(() => {
-          brandEvolve.classList.remove("is-vr", "is-full");
+          brandEvolve.classList.remove("is-v", "is-vri", "is-full");
+          brandEvolve.classList.add("is-vr");
+        }, 520);
+
+        window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-full");
           brandEvolve.classList.add("is-vri");
-        }, 700);
+        }, 1220);
 
         window.setTimeout(() => {
-          brandEvolve.classList.remove("is-vr", "is-vri");
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
           brandEvolve.classList.add("is-full");
           revealTrain(vChars, 100, 78);
           revealTrain(rChars, 980, 74);
           revealTrain(iChars, 1860, 74);
-        }, 1700);
+        }, 2220);
       }
 
       if (brandEvolve) {
