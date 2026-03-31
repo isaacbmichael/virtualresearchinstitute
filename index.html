@@ -223,6 +223,11 @@
       gap: 8px;
       width: max-content;
       max-width: 100%;
+      opacity: 0;
+    }
+
+    .brand-evolve.is-ready {
+      opacity: 1;
     }
 
     .brand-evolve-line {
@@ -249,6 +254,15 @@
       transform: translateX(0);
     }
 
+    .be-word-r {
+      margin-left: calc(-1 * var(--pair-overlap));
+    }
+
+    .be-word-i {
+      margin-left: calc(-1 * var(--pair-overlap));
+      opacity: 0;
+    }
+
     .be-tail {
       display: inline-flex;
       align-items: flex-start;
@@ -267,25 +281,26 @@
       transform: translateX(0);
     }
 
-    .be-word-i {
-      opacity: 0;
-    }
-
     .brand-evolve.is-vr .be-word-r,
     .brand-evolve.is-vri .be-word-r {
       transform: translateX(calc(-1 * var(--shift-r, 0px)));
     }
 
-    .brand-evolve.is-vr .be-word-i,
-    .brand-evolve.is-vri .be-word-i {
-      transform: translateX(calc(-1 * var(--shift-i, 0px)));
-    }
-
     .brand-evolve.is-vr .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-start, 0px)));
       opacity: 0;
     }
 
-    .brand-evolve.is-vri .be-word-i,
+    .brand-evolve.is-vri .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-compact, 0px)));
+      opacity: 1;
+    }
+
+    .brand-evolve.is-full .be-word-r,
+    .brand-evolve.is-full .be-word-i {
+      transform: translateX(0);
+    }
+
     .brand-evolve.is-full .be-word-i {
       opacity: 1;
     }
@@ -2109,22 +2124,26 @@
         const line = brandEvolve.querySelector(".brand-evolve-line");
         const vTail = brandEvolve.querySelector(".be-tail-v");
         const rTail = brandEvolve.querySelector(".be-tail-r");
+        const rAnchor = brandEvolve.querySelector(".be-word-r .be-anchor");
         const vChars = Array.from(brandEvolve.querySelectorAll(".be-tail-v .be-char"));
         const rChars = Array.from(brandEvolve.querySelectorAll(".be-tail-r .be-char"));
         const iChars = Array.from(brandEvolve.querySelectorAll(".be-tail-i .be-char"));
 
-        if (!line || !vTail || !rTail) return;
+        if (!line || !vTail || !rTail || !rAnchor) return;
 
         const styles = window.getComputedStyle(line);
         const gapPx = parseFloat(styles.columnGap || styles.gap || "0") || 0;
         const fontSizePx = parseFloat(styles.fontSize || "0") || 0;
         const overlapPx = fontSizePx * 0.09;
+        const rAnchorWidth = rAnchor.getBoundingClientRect().width;
 
         const shiftR = vTail.getBoundingClientRect().width + gapPx + overlapPx;
-        const shiftI = shiftR + rTail.getBoundingClientRect().width + gapPx;
+        const shiftICompact = shiftR + rTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftIStart = shiftICompact + (rAnchorWidth * 0.86);
 
         brandEvolve.style.setProperty("--shift-r", `${shiftR}px`);
-        brandEvolve.style.setProperty("--shift-i", `${shiftI}px`);
+        brandEvolve.style.setProperty("--shift-i-compact", `${shiftICompact}px`);
+        brandEvolve.style.setProperty("--shift-i-start", `${shiftIStart}px`);
 
         const clearChars = () => {
           [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.remove("is-in"));
@@ -2139,6 +2158,7 @@
         };
 
         clearChars();
+        brandEvolve.classList.add("is-ready");
 
         if (prefersReducedMotion) {
           brandEvolve.classList.remove("is-vr", "is-vri");
@@ -2158,10 +2178,10 @@
         window.setTimeout(() => {
           brandEvolve.classList.remove("is-vr", "is-vri");
           brandEvolve.classList.add("is-full");
-          revealTrain(vChars, 120, 85);
-          revealTrain(rChars, 1150, 78);
-          revealTrain(iChars, 1260, 78);
-        }, 1650);
+          revealTrain(vChars, 100, 78);
+          revealTrain(rChars, 980, 74);
+          revealTrain(iChars, 1860, 74);
+        }, 1700);
       }
 
       if (brandEvolve) {
