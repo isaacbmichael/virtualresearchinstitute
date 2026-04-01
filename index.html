@@ -1673,6 +1673,22 @@
         align-items: start;
       }
 
+      .header-cta {
+        justify-self: end;
+      }
+
+      .menu-toggle {
+        gap: 0;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        justify-content: center;
+      }
+
+      .menu-label {
+        display: none;
+      }
+
       .menu-panel-title {
         white-space: normal;
       }
@@ -2294,6 +2310,7 @@
 
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
 
       const header = document.getElementById("siteHeader");
       const mainContent = document.getElementById("main-content");
@@ -2306,6 +2323,7 @@
 
       const brandEvolve = document.getElementById("brandEvolve");
       let brandTimeouts = [];
+      let hasAnimatedBrandOnPhone = false;
 
       function clearBrandTimeouts() {
         brandTimeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
@@ -2359,11 +2377,19 @@
         clearChars();
         brandEvolve.classList.add("is-ready");
 
-        if (prefersReducedMotion) {
+        const showFullBrand = () => {
           brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
           brandEvolve.classList.add("is-full");
           [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.add("is-in"));
+        };
+
+        if (prefersReducedMotion || (isPhoneViewport() && hasAnimatedBrandOnPhone)) {
+          showFullBrand();
           return;
+        }
+
+        if (isPhoneViewport()) {
+          hasAnimatedBrandOnPhone = true;
         }
 
         brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
@@ -2397,6 +2423,10 @@
 
         let resizeTimer = null;
         window.addEventListener("resize", () => {
+          if (isPhoneViewport()) {
+            return;
+          }
+
           window.clearTimeout(resizeTimer);
           resizeTimer = window.setTimeout(initBrandEvolve, 120);
         });
