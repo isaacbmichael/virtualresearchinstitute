@@ -63,6 +63,11 @@
       scrollbar-gutter: stable;
     }
 
+    html,
+    body {
+      max-width: 100%;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -1668,9 +1673,41 @@
     }
 
     @media (max-width: 640px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        overscroll-behavior-x: none;
+      }
+
+      .site-header,
+      main,
+      .site-footer,
+      .hero,
+      .section {
+        overflow-x: clip;
+      }
+
+      .frame-shell,
+      .shell {
+        width: 100%;
+        max-width: 100%;
+      }
+
       .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
         gap: 12px;
         align-items: start;
+      }
+
+      .brand,
+      .brand-anim,
+      .brand-evolve,
+      .brand-evolve-line {
+        min-width: 0;
+        max-width: 100%;
       }
 
       .header-cta {
@@ -1741,6 +1778,7 @@
       }
 
       .footer-brand-bar {
+        width: calc(70px * var(--footer-brand-scale));
         height: calc(5px * var(--footer-brand-scale));
       }
     }
