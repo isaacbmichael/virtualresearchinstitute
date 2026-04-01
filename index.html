@@ -80,14 +80,20 @@
       overflow-x: hidden;
     }
 
-    body::after {
-      content: "";
-      display: block;
-      height: 0;
-    }
-
     body.menu-open {
       overflow: hidden;
+    }
+
+    .brand:focus-visible,
+    .primary-nav a:focus-visible,
+    .menu-toggle:focus-visible,
+    .menu-close:focus-visible,
+    .mobile-nav a:focus-visible,
+    .btn:focus-visible,
+    .quick-chip:focus-visible {
+      outline: 3px solid rgba(0, 113, 127, 0.28);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
     }
 
     a {
@@ -434,7 +440,7 @@
 
     .primary-nav a:hover::after,
     .primary-nav a:focus-visible::after,
-    .primary-nav a[aria-current="page"]::after {
+    .primary-nav a[aria-current="location"]::after {
       transform: scaleX(1);
     }
 
@@ -595,8 +601,26 @@
       box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
     }
 
+    .menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 33, 42, 0.22);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s var(--ease);
+      z-index: 1001;
+    }
+
+    body.menu-open .menu-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .mobile-panel {
-      display: block;
+      display: flex;
+      flex-direction: column;
       position: fixed;
       inset: 0 0 0 auto;
       width: min(500px, 96vw);
@@ -605,15 +629,23 @@
       -webkit-backdrop-filter: blur(18px);
       border-left: 1px solid rgba(4, 76, 89, 0.12);
       box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
-      padding: 148px 22px 24px;
+      padding: calc(24px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
       transform: translateX(100%);
-      transition: transform .45s var(--ease);
-      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear .45s;
+      z-index: 1002;
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
 
     body.menu-open .mobile-panel {
       transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear 0s;
     }
 
     .menu-panel-top {
@@ -1408,7 +1440,7 @@
       text-align: left;
     }
 
-    .reveal {
+    body.js-enhanced .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition:
@@ -1416,7 +1448,7 @@
         transform .9s var(--ease);
     }
 
-    .reveal.is-visible {
+    body.js-enhanced .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1466,6 +1498,43 @@
     @keyframes barGlow {
       0%, 100% { transform: scaleX(1); filter: saturate(1); }
       50% { transform: scaleX(1.03); filter: saturate(1.08); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      body.js-enhanced .reveal,
+      body.js-enhanced .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .scene-wrap,
+      [data-tilt],
+      [data-float],
+      .panel-accent,
+      .panel-bottom {
+        transform: none !important;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .btn,
+      .quick-chip,
+      .menu-close,
+      .mobile-nav a,
+      .metric,
+      .card,
+      .scene-wrap,
+      [data-tilt],
+      [data-float] {
+        will-change: auto;
+      }
     }
 
     @media (max-width: 1180px) {
@@ -1604,6 +1673,10 @@
         align-items: start;
       }
 
+      .menu-panel-title {
+        white-space: normal;
+      }
+
       .brand-bar {
         height: 5px;
       }
@@ -1680,7 +1753,12 @@
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
-        <ul></ul>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Research Pathways</a></li>
+          <li><a href="#areas">Research Areas</a></li>
+          <li><a href="#projects">Research Projects</a></li>
+        </ul>
       </nav>
 
       <div class="header-cta">
@@ -1690,6 +1768,7 @@
           id="menuToggle"
           aria-expanded="false"
           aria-controls="mobilePanel"
+          aria-haspopup="dialog"
           aria-label="Open site menu"
         >
           <span class="bars" aria-hidden="true">
@@ -1703,10 +1782,21 @@
     </div>
   </header>
 
-  <aside class="mobile-panel" id="mobilePanel" aria-label="Site menu">
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+
+  <aside
+    class="mobile-panel"
+    id="mobilePanel"
+    aria-label="Site menu"
+    aria-hidden="true"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="mobileMenuTitle"
+    tabindex="-1"
+  >
     <div class="menu-panel-top">
       <div class="menu-panel-head">
-        <h2 class="menu-panel-title">Virtual Research Institute</h2>
+        <h2 class="menu-panel-title" id="mobileMenuTitle">Virtual Research Institute</h2>
       </div>
       <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
     </div>
@@ -2061,11 +2151,11 @@
             </div>
             <div class="term-gallery" aria-label="Selected Spring 2026 project screenshots">
               <figure class="term-shot term-shot-colley">
-                <img src="assets/images/projects/spring-2026/vri-spring-2026-pic1.png" alt="Spring 2026 Formula One rankings project slide showing the predicted finishing grid for the 24th race" />
+                <img src="assets/images/projects/spring-2026/vri-spring-2026-pic1.png" alt="Spring 2026 Formula One rankings project slide showing the predicted finishing grid for the 24th race" loading="lazy" decoding="async" />
                 <figcaption>Colley’s Matrix applied to Formula One rankings.</figcaption>
               </figure>
               <figure class="term-shot">
-                <img src="assets/images/projects/spring-2026/vri-spring-2026-pic2.png" alt="Spring 2026 inflation project slide comparing original inflation data with Markov Chain cross-validation predictions" />
+                <img src="assets/images/projects/spring-2026/vri-spring-2026-pic2.png" alt="Spring 2026 inflation project slide comparing original inflation data with Markov Chain cross-validation predictions" loading="lazy" decoding="async" />
                 <figcaption>Markov modeling of U.S. inflation regimes.</figcaption>
               </figure>
             </div>
@@ -2200,9 +2290,14 @@
 
   <script>
     (function () {
+      document.body.classList.add("js-enhanced");
+
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
       const header = document.getElementById("siteHeader");
+      const mainContent = document.getElementById("main-content");
+      const siteFooter = document.querySelector(".site-footer");
       const onScroll = () => {
         header.classList.toggle("is-scrolled", window.scrollY > 18);
       };
@@ -2210,9 +2305,17 @@
       window.addEventListener("scroll", onScroll, { passive: true });
 
       const brandEvolve = document.getElementById("brandEvolve");
+      let brandTimeouts = [];
+
+      function clearBrandTimeouts() {
+        brandTimeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
+        brandTimeouts = [];
+      }
 
       function initBrandEvolve() {
         if (!brandEvolve) return;
+
+        clearBrandTimeouts();
 
         const line = brandEvolve.querySelector(".brand-evolve-line");
         const vTail = brandEvolve.querySelector(".be-tail-v");
@@ -2246,9 +2349,10 @@
 
         const revealTrain = (chars, delay, step) => {
           chars.forEach((char, index) => {
-            window.setTimeout(() => {
+            const timeoutId = window.setTimeout(() => {
               char.classList.add("is-in");
             }, delay + (index * step));
+            brandTimeouts.push(timeoutId);
           });
         };
 
@@ -2265,23 +2369,23 @@
         brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
         brandEvolve.classList.add("is-v");
 
-        window.setTimeout(() => {
+        brandTimeouts.push(window.setTimeout(() => {
           brandEvolve.classList.remove("is-v", "is-vri", "is-full");
           brandEvolve.classList.add("is-vr");
-        }, 520);
+        }, 520));
 
-        window.setTimeout(() => {
+        brandTimeouts.push(window.setTimeout(() => {
           brandEvolve.classList.remove("is-v", "is-vr", "is-full");
           brandEvolve.classList.add("is-vri");
-        }, 1220);
+        }, 1220));
 
-        window.setTimeout(() => {
+        brandTimeouts.push(window.setTimeout(() => {
           brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
           brandEvolve.classList.add("is-full");
           revealTrain(vChars, 100, 78);
           revealTrain(rChars, 100, 74);
           revealTrain(iChars, 100, 74);
-        }, 2220);
+        }, 2220));
       }
 
       if (brandEvolve) {
@@ -2290,57 +2394,177 @@
         } else {
           initBrandEvolve();
         }
+
+        let resizeTimer = null;
+        window.addEventListener("resize", () => {
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(initBrandEvolve, 120);
+        });
       }
 
       const menuToggle = document.getElementById("menuToggle");
       const mobilePanel = document.getElementById("mobilePanel");
       const menuClose = document.getElementById("menuClose");
+      const menuBackdrop = document.getElementById("menuBackdrop");
+      const inertTargets = [mainContent, siteFooter].filter(Boolean);
+      let lastFocusedElement = null;
 
       if (menuToggle && mobilePanel) {
-        const closeMenu = () => {
-          menuToggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("menu-open");
+        const getFocusableElements = () =>
+          Array.from(
+            mobilePanel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+          ).filter((element) => !element.hasAttribute("disabled"));
+
+        const setMenuState = (isOpen, options = {}) => {
+          const { returnFocus = true } = options;
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          mobilePanel.setAttribute("aria-hidden", String(!isOpen));
+          if (menuBackdrop) {
+            menuBackdrop.hidden = !isOpen;
+          }
+          document.body.classList.toggle("menu-open", isOpen);
+
+          inertTargets.forEach((target) => {
+            if (isOpen) {
+              target.setAttribute("inert", "");
+            } else {
+              target.removeAttribute("inert");
+            }
+          });
+
+          if (isOpen) {
+            lastFocusedElement = document.activeElement;
+            window.requestAnimationFrame(() => {
+              const [firstFocusable] = getFocusableElements();
+              (firstFocusable || mobilePanel).focus();
+            });
+          } else if (returnFocus) {
+            (lastFocusedElement || menuToggle).focus();
+          }
         };
+
+        const openMenu = () => setMenuState(true);
+        const closeMenu = (options) => setMenuState(false, options);
 
         menuToggle.addEventListener("click", () => {
           const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-          menuToggle.setAttribute("aria-expanded", String(!expanded));
-          document.body.classList.toggle("menu-open", !expanded);
+          if (expanded) {
+            closeMenu({ returnFocus: false });
+          } else {
+            openMenu();
+          }
         });
 
         if (menuClose) {
-          menuClose.addEventListener("click", closeMenu);
+          menuClose.addEventListener("click", () => closeMenu());
+        }
+
+        if (menuBackdrop) {
+          menuBackdrop.addEventListener("click", () => closeMenu());
         }
 
         mobilePanel.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", closeMenu);
+          link.addEventListener("click", () => closeMenu({ returnFocus: false }));
         });
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
+        document.addEventListener("keydown", (event) => {
+          const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+          if (!isOpen) return;
+
+          if (event.key === "Escape") {
+            event.preventDefault();
             closeMenu();
+            return;
+          }
+
+          if (event.key === "Tab") {
+            const focusableElements = getFocusableElements();
+            if (!focusableElements.length) {
+              event.preventDefault();
+              mobilePanel.focus();
+              return;
+            }
+
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+              event.preventDefault();
+              lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+              event.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1180 && menuToggle.getAttribute("aria-expanded") === "true") {
+            closeMenu({ returnFocus: false });
           }
         });
       }
 
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const sectionNavLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
+      if (sectionNavLinks.length && "IntersectionObserver" in window) {
+        const sectionTargets = sectionNavLinks
+          .map((link) => document.querySelector(link.getAttribute("href")))
+          .filter(Boolean);
 
-      const revealEls = document.querySelectorAll(".reveal");
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
+        const setActiveSectionLink = (id) => {
+          sectionNavLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${id}`) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
             }
           });
-        },
-        { threshold: 0.12 }
-      );
+        };
 
-      revealEls.forEach((el) => io.observe(el));
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            const visibleEntries = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-      if (!prefersReducedMotion) {
+            if (visibleEntries.length) {
+              setActiveSectionLink(visibleEntries[0].target.id);
+            }
+          },
+          {
+            rootMargin: "-22% 0px -52% 0px",
+            threshold: [0.2, 0.4, 0.6]
+          }
+        );
+
+        sectionTargets.forEach((section) => sectionObserver.observe(section));
+      }
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      if (!prefersReducedMotion && supportsFinePointer) {
         const tiltItems = document.querySelectorAll("[data-tilt]");
         tiltItems.forEach((item) => {
           let rafId = null;
