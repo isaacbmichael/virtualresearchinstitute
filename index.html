@@ -400,6 +400,7 @@
     }
 
     .primary-nav {
+      display: none;
       justify-self: end;
     }
 
@@ -472,30 +473,11 @@
       white-space: nowrap;
     }
 
-    .menu-toggle::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
-      transform: scaleX(0);
-      transform-origin: left center;
-      transition: transform .35s var(--ease);
-    }
-
     .menu-toggle:hover,
     .menu-toggle:focus-visible {
       background: transparent;
       color: var(--teal-900);
       outline: none;
-    }
-
-    .menu-toggle:hover::after,
-    .menu-toggle:focus-visible::after {
-      transform: scaleX(1);
     }
 
     .menu-toggle .bars {
@@ -1815,12 +1797,7 @@
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">Research Pathways</a></li>
-          <li><a href="#areas">Research Areas</a></li>
-          <li><a href="#projects">Research Projects</a></li>
-        </ul>
+        <ul></ul>
       </nav>
 
       <div class="header-cta">
