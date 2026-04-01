@@ -199,10 +199,53 @@
     .header-inner {
       min-height: var(--nav-h);
       display: grid;
-      grid-template-columns: minmax(320px, 1fr) auto;
+      grid-template-columns: minmax(280px, 1fr) auto auto;
       align-items: center;
       gap: 24px;
       padding: 16px 0;
+    }
+
+    .top-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      justify-self: center;
+    }
+
+    .top-nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      color: var(--teal-900);
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .35s var(--ease);
+    }
+
+    .top-nav a:hover::after,
+    .top-nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .top-nav a:focus-visible {
+      outline: none;
+      color: var(--teal-950);
     }
 
     .brand {
@@ -1530,6 +1573,10 @@
         grid-template-columns: 1fr auto;
       }
 
+      .top-nav {
+        display: none;
+      }
+
 
       .hero-grid,
       .section-head,
@@ -1793,6 +1840,13 @@
         </span>
       </a>
 
+      <nav class="top-nav" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="upcoming-projects.html">Upcoming Projects</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
       <div class="header-cta">
         <button
           class="menu-toggle"
@@ -1818,10 +1872,9 @@
     <div class="frame-shell noscript-nav">
       <nav aria-label="Primary">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">Research Pathways</a></li>
-          <li><a href="#areas">Research Areas</a></li>
-          <li><a href="#projects">Research Projects</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About VRI</a></li>
+          <li><a href="programs.html">Programs</a></li>
           <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
           <li><a href="past-sessions.html">Past Sessions</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -1853,6 +1906,9 @@
     <div class="menu-section">
       <p class="menu-panel-kicker">Explore the full site</p>
       <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About VRI</a>
+        <a href="programs.html">Programs</a>
         <a href="upcoming-projects.html">Upcoming Projects</a>
         <a href="past-sessions.html">Past Sessions</a>
         <a href="faq.html">FAQ</a>
@@ -2310,7 +2366,7 @@
         </div>
 
         <div class="footer-col">
-          <h5>Institute</h5>
+          <h5>On This Page</h5>
           <nav>
             <a href="#about">About</a>
             <a href="#programs">Research Pathways</a>
@@ -2322,6 +2378,9 @@
         <div class="footer-col">
           <h5>Explore</h5>
           <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About VRI</a>
+            <a href="programs.html">Programs</a>
             <a href="upcoming-projects.html">Upcoming Projects</a>
             <a href="past-sessions.html">Past Sessions</a>
             <a href="faq.html">FAQ</a>
