@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs &amp; Pricing | Virtual Research Institute</title>
+  <title>Virtual Research Institute</title>
   <meta
     name="description"
-    content="Programs &amp; Pricing at the Virtual Research Institute — fully online mentored research pathways in mathematics and computational sciences."
+    content="Virtual Research Institute — Mentored Research in Mathematics and Computational Sciences."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -134,18 +134,6 @@
       outline: 3px solid rgba(0, 113, 127, 0.28);
       outline-offset: 3px;
       box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
-    }
-
-    .noscript-nav a[aria-current="page"],
-    .mobile-nav a[aria-current="page"] {
-      background: white;
-      border-color: rgba(4, 76, 89, 0.18);
-      color: var(--teal-950);
-      box-shadow: var(--shadow-md);
-    }
-
-    .footer-col nav a[aria-current="page"] {
-      color: var(--teal-900);
     }
 
     a {
@@ -479,6 +467,7 @@
     .menu-toggle:focus-visible {
       background: transparent;
       color: var(--teal-900);
+      outline: none;
     }
 
     .menu-toggle .bars {
@@ -543,6 +532,7 @@
     .btn:hover,
     .btn:focus-visible {
       transform: translateY(-2px);
+      outline: none;
     }
 
     .btn-primary {
@@ -694,6 +684,7 @@
       color: var(--teal-900);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+      outline: none;
     }
 
     .menu-section + .menu-section {
@@ -744,6 +735,7 @@
       border-color: rgba(4, 76, 89, 0.14);
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
+      outline: none;
     }
 
     main {
@@ -774,7 +766,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
       align-items: center;
       gap: clamp(28px, 4vw, 54px);
     }
@@ -1102,28 +1094,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    #areas .card {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    #areas .area-visual {
-      margin: -4px 0 18px;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(4, 76, 89, 0.1);
-      box-shadow: var(--shadow-sm);
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    #areas .area-visual img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
-    }
-
     .card {
       position: relative;
       overflow: hidden;
@@ -1165,6 +1135,27 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+    }
+
+    #archive .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #archive .card .card-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    #archive .grid-2 > .card:nth-child(2) .card-actions {
+      justify-content: flex-end;
+    }
+
+    #archive .card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(4, 76, 89, 0.1);
     }
 
     #projects .card-actions {
@@ -1396,6 +1387,7 @@
     .quick-chip:focus-visible {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+      outline: none;
     }
 
     .site-footer {
@@ -1444,16 +1436,16 @@
       gap: 8px;
     }
 
+    .footer-col nav a[aria-current="page"] {
+      color: var(--teal-900);
+    }
+
     .footer-col a:hover,
     .footer-col a:focus-visible,
     .footer-meta a:hover,
     .footer-meta a:focus-visible {
       color: var(--teal-900);
       outline: none;
-    }
-
-    .footer-col nav a[aria-current="page"] {
-      color: var(--teal-900);
     }
 
     .footer-meta {
@@ -1857,7 +1849,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
-          <li><a href="programs.html" aria-current="page">Programs &amp; Pricing</a></li>
+          <li><a href="programs.html">Programs &amp; Pricing</a></li>
           <li><a href="about.html">About VRI</a></li>
           <li><a href="research-archive.html">Research Archive</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -1891,7 +1883,7 @@
       <nav class="mobile-nav">
         <a href="index.html">Home</a>
         <a href="upcoming-projects.html">Upcoming Projects</a>
-        <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+        <a href="programs.html">Programs &amp; Pricing</a>
         <a href="about.html">About VRI</a>
         <a href="research-archive.html">Research Archive</a>
         <a href="faq.html">FAQ</a>
@@ -1906,37 +1898,86 @@
 
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">Programs &amp; Pricing</div>
-          <h1>A clear pathway into serious online research.</h1>
+          <div class="eyebrow">A Premier Online Research Institute</div>
+          <h1>Rigorous mentored research for ambitious young scholars.</h1>
           <p>
-            VRI offers three mentored research pathways—Circles, Groups, and
-            Labs—designed for different levels of intensity, selectivity, and
-            individualized attention. Each pathway is fully online and built for
-            students seeking rigorous, polished, mentor-guided work in
-            mathematics and the computational sciences.
+            The Virtual Research Institute provides a more serious, polished, and
+            intellectually ambitious home for high-school students pursuing research
+            in mathematics, statistics, data science, and computational fields.
+            Built around close mentorship and clear academic standards, VRI is
+            designed to feel less like a course and more like an institute.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#programs">Explore Research Pathways</a>
+            <a class="btn btn-primary" href="programs.html">Explore Programs &amp; Pricing</a>
             <a class="btn btn-gold" href="summer-2026-projects.html">Register for Summer 2026</a>
-          </div>
-
-          <div class="hero-metrics">
-            <div class="metric" data-tilt>
-              <strong>3</strong>
-              <span>Research pathways tailored to different levels of scale, mentorship, and independence</span>
-            </div>
-            <div class="metric" data-tilt>
-              <strong>4–8</strong>
-              <span>Typical program length in weeks, depending on pathway and level of intensity</span>
-            </div>
-            <div class="metric" data-tilt>
-              <strong>Online</strong>
-              <span>Live virtual meetings combined with guided independent work between sessions</span>
-            </div>
           </div>
         </div>
 
+        <div class="hero-scene reveal" id="heroScene">
+          <div class="scene-wrap" id="sceneWrap">
+            <article class="panel panel-accent" data-float>
+              <div class="panel-kicker">Institute Model</div>
+              <h3>Circles. Groups. Labs.</h3>
+              <p>
+                A clear, prestigious progression from structured entry points to
+                smaller, more intensive, open-ended mentored work.
+              </p>
+            </article>
+
+            <article class="panel panel-main" data-float>
+              <div class="panel-kicker">Fields of Study</div>
+              <h3>Research Areas</h3>
+              <p>
+                VRI is organized around serious quantitative disciplines with room
+                for growth, depth, and future interdisciplinary expansion.
+              </p>
+
+              <div class="gold-line" aria-hidden="true"></div>
+
+              <div class="stack">
+                <div class="stack-item">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>Mathematics</strong>
+                    <span>Proof, abstraction, conjecture, structure, and elegant reasoning.</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>Statistics &amp; Data Science</strong>
+                    <span>Inference, modeling, data analysis, computation, and applied decision-making.</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>Computer Science</strong>
+                    <span>Algorithms, computation, systems, and the broader computational sciences.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel panel-bottom" data-float>
+              <div class="panel-kicker">Current Flagship</div>
+              <h3>VMRC</h3>
+              <p>
+                The Virtual Math Research Circle is VRI’s flagship mathematics
+                program and a strong entry point into serious mentored research.
+              </p>
+
+              <div class="pill-row" aria-label="Flagship attributes">
+                <span class="pill">Research-first</span>
+                <span class="pill">Mentored</span>
+                <span class="pill">Online</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1944,47 +1985,29 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Overview</p>
-            <h2>A polished framework for students who want more than enrichment.</h2>
+            <p class="section-label">About</p>
+            <h2>A polished online home for serious student research.</h2>
           </div>
           <p class="section-intro">
-            VRI programs are designed for students who are ready for a more
-            serious academic atmosphere: clear structure, thoughtful mentorship,
-            and a stronger culture of inquiry than typical enrichment options.
+            VRI brings together rigorous mentorship, high academic standards, and a
+            more elevated scholarly environment for students in mathematics and the
+            computational sciences.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Program Design</div>
-            <h3>Three formats, one serious academic culture</h3>
+        <div class="cta-panel reveal">
+          <div>
+            <h3>What makes VRI distinctive</h3>
             <p>
-              Every pathway is designed to feel purposeful, scholarly, and
-              mentor-guided, with increasing levels of selectivity and
-              individualized attention as students move from Circles to Groups
-              to Labs.
+              VRI is designed for students who are ready for more than enrichment:
+              close mentorship, serious intellectual work, and a clear pathway into
+              authentic research culture.
             </p>
-            <ul>
-              <li>Structured entry points for motivated students</li>
-              <li>Smaller and more boutique formats at higher tiers</li>
-              <li>Consistent emphasis on rigor, polish, and research habits</li>
-            </ul>
-          </article>
+          </div>
 
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Fit</div>
-            <h3>Mentorship, structure, and scale vary by pathway</h3>
-            <p>
-              Pathways differ not only in cohort size, but also in pace,
-              duration, expected independence, and the level of sustained mentor
-              attention that students receive.
-            </p>
-            <ul>
-              <li>All pathways are fully online</li>
-              <li>Programs vary by cohort size, duration, and level of intensity</li>
-              <li>Limited financial assistance may be available in some cases</li>
-            </ul>
-          </article>
+          <div class="quick-links">
+            <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1994,12 +2017,12 @@
         <div class="section-head reveal">
           <div>
             <p class="section-label">Research Pathways</p>
-            <h2>Three pathways for different levels of intensity and scale.</h2>
+            <h2>Three pathways, one serious academic culture.</h2>
           </div>
           <p class="section-intro">
-            Students can enter VRI through Circles, Groups, or Labs, depending
-            on the level of intensity, selectivity, and independence that best
-            fits their goals.
+            Circles, Groups, and Labs provide different levels of intensity and
+            scale while preserving the institute’s emphasis on rigor, mentorship,
+            and thoughtful research development.
           </p>
         </div>
 
@@ -2008,15 +2031,10 @@
             <div class="card-label">Tier I</div>
             <h3>Circles</h3>
             <p>
-              Structured, guided, and scalable entry-tier experiences designed to
-              introduce students to serious research habits in an accessible but
-              still rigorous environment.
+              Structured and scalable entry-tier experiences that introduce
+              students to serious research habits in an accessible but rigorous
+              environment.
             </p>
-            <div class="term-note">
-              Cohort size: 10–12 students<br />
-              Cost per student: Contact for current pricing<br />
-              Typical duration: 4 weeks
-            </div>
           </article>
 
           <article class="card reveal" data-tilt>
@@ -2024,50 +2042,60 @@
             <h3>Groups</h3>
             <p>
               Smaller collaborative cohorts with more intensive mentor interaction,
-              greater ownership, and a closer resemblance to premium boutique
-              research experiences.
+              stronger ownership, and a more boutique research experience.
             </p>
-            <div class="term-note">
-              Cohort size: 5–7 students<br />
-              Cost per student: Contact for current pricing<br />
-              Typical duration: 6 weeks
-            </div>
           </article>
 
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier III</div>
             <h3>Labs</h3>
             <p>
-              The highest-prestige pathway: small, highly mentored, open-ended
-              work designed for depth, originality, and stronger intellectual
-              differentiation.
+              Highly mentored, open-ended work designed for depth, originality,
+              and stronger intellectual differentiation.
             </p>
-            <div class="term-note">
-              Cohort size: 1–2 students<br />
-              Cost per student: Contact for current pricing<br />
-              Typical duration: 8 weeks
-            </div>
           </article>
         </div>
 
-        <div class="feature-band reveal" style="margin-top: 24px;">
+        <div class="cta-panel reveal">
+          <div>
+            <h3>Explore the full pathway structure</h3>
+            <p>
+              Visit the dedicated page for detailed descriptions, program format,
+              and pricing information.
+            </p>
+          </div>
+
+          <div class="quick-links">
+            <a class="btn btn-primary" href="programs.html">Explore Programs &amp; Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="current">
+      <div class="shell">
+        <div class="feature-band reveal">
           <div class="feature-band-grid">
             <div>
-              <p class="section-label">Custom Mentorship</p>
-              <h3>Need a more individualized research match?</h3>
+              <p class="section-label">Current Opportunity</p>
+              <h3>Summer 2026 at VRI</h3>
               <p>
-                For students seeking highly specialized or longer-term work, VRI
-                may occasionally consider limited custom mentorship placements by
-                inquiry.
+                Explore the current round of mentored projects and learn more about
+                this summer’s research opportunities, including the flagship
+                Virtual Math Research Circle.
               </p>
+
+              <div class="card-actions">
+                <a class="quick-chip" href="upcoming-projects.html">View Upcoming Projects</a>
+              </div>
             </div>
 
             <div class="feature-quote">
-              <strong>By inquiry only</strong>
+              <strong>Flagship Program</strong>
               <p>
-                Availability depends on subject area, mentor fit, and researcher
-                availability. Custom mentorship placements are limited and not
-                guaranteed.
+                VMRC remains VRI’s flagship mathematics program and a strong entry
+                point for students seeking serious mentored research in an online
+                institute setting.
               </p>
             </div>
           </div>
@@ -2075,199 +2103,126 @@
       </div>
     </section>
 
-    <section class="section" id="areas">
+    <section class="section" id="archive">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Research Areas</p>
-            <h2>Three primary academic divisions.</h2>
+            <p class="section-label">Research Archive</p>
+            <h2>Explore past work and the broader institute.</h2>
           </div>
           <p class="section-intro">
-            VRI’s academic areas give students clear entry points into serious
-            quantitative study while leaving room for deeper specialization and
-            future interdisciplinary growth.
+            Review past sessions, presentations, and archival project materials, or
+            visit the permanent pages that explain the institute in greater depth.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-mathematics-v2.png" alt="Abstract mathematical illustration representing theoretical mathematics and geometric structure" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Discipline I</div>
-            <h3>Mathematics</h3>
+        <div class="grid-2">
+          <article class="card reveal">
+            <div class="card-label">Archive</div>
+            <h3>Research Archive</h3>
             <p>
-              A home for proof, theory, structure, mathematical experimentation,
-              abstraction, and original reasoning across pure and applied
-              directions. Representative topics include graph theory,
-              combinatorics, number theory, fractal geometry, discrete geometry,
-              and differential geometry.
+              Browse past projects and completed sessions as the institute builds a
+              fuller long-term research record.
             </p>
+            <div class="card-actions">
+              <a class="quick-chip quick-chip-teal" href="research-archive.html">Explore Research Archive</a>
+            </div>
           </article>
 
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-statistics-data-science.png" alt="Abstract data visualization representing statistics and data science" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Discipline II</div>
-            <h3>Statistics &amp; Data Science</h3>
+          <article class="card reveal">
+            <div class="card-label">Institute Pages</div>
+            <h3>Learn more about VRI</h3>
             <p>
-              A research area for inference, modeling, computation, analytics,
-              and the disciplined interpretation of complex real-world data.
-              Representative topics include Bayesian statistics, stochastic
-              probability theory, biostatistics, data science, mathematical
-              modeling, and data-driven decision rules.
+              Visit the permanent pages for institutional background, detailed
+              pathway information, policies, and other core information for
+              families and students.
             </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-computer-science-v9.png" alt="Abstract code-based illustration representing computer science and computational systems" loading="lazy" decoding="async" />
+            <div class="card-actions">
+              <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
+              <a class="quick-chip quick-chip-teal" href="faq.html">FAQ</a>
+              <a class="quick-chip quick-chip-teal" href="policies.html">Policies</a>
             </div>
-            <div class="card-label">Discipline III</div>
-            <h3>Computer Science</h3>
-            <p>
-              A broad and future-facing domain encompassing algorithms,
-              computational thinking, systems, and adjacent computational
-              sciences. Representative topics may include machine learning,
-              computational mathematics, multi-agent optimization, and related
-              algorithmic approaches.
-            </p>
           </article>
         </div>
       </div>
     </section>
+    <!--
+      ARCHIVE SECTION PRESERVED FOR FUTURE REUSE
 
-    <section class="section" id="format">
+
+    <section class="section" id="archives">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Program Format</p>
-            <h2>Fully online, live, and built around serious independent work.</h2>
+            <p class="section-label">Past Projects &amp; Archives</p>
+            <h3>Past sessions and archive materials live below the current cycle.</h3>
           </div>
           <p class="section-intro">
-            All VRI programs are conducted online. Students meet live with
-            mentors and peers, then continue with meaningful independent work
-            between sessions as projects develop.
+            Older research terms can move into a dedicated archive section on the
+            homepage and into fuller standalone archive pages, keeping the front
+            page current while preserving the institute’s scholarly record.
           </p>
         </div>
 
         <div class="grid-2">
           <article class="card reveal" data-tilt>
-            <div class="card-label">Online Format</div>
-            <h3>How VRI is delivered</h3>
+            <div class="card-label">Past Sessions</div>
+            <h4>Curated records of previous cycles</h4>
             <p>
-              VRI is designed to be rigorous and polished in an online setting,
-              with a format that balances live interaction, research guidance,
-              and independent scholarly work.
+              Older terms can live on dedicated past-session pages that preserve
+              session dates, titles, abstracts, and the broader academic record
+              without crowding the homepage.
             </p>
-            <ul>
-              <li>Live virtual meetings with mentors and, where applicable, peers</li>
-              <li>Independent work between sessions</li>
-              <li>Scheduling based on pathway structure and mentor availability</li>
-            </ul>
+            <div class="term-note">
+              Recommended structure: term hub pages for each cycle, with session
+              details and project abstracts on the VRI site and supporting
+              presentation files linked outward from those pages.
+            </div>
+            <div class="card-actions">
+              <a class="quick-chip" href="research-archive.html">View Past Sessions</a>
+            </div>
           </article>
 
           <article class="card reveal" data-tilt>
-            <div class="card-label">Student Setup</div>
-            <h3>What students should have</h3>
+            <div class="card-label">Archive Model</div>
+            <h4>Website archive first, files second</h4>
             <p>
-              Students do not need an elaborate technical setup, but they should
-              be prepared to participate consistently and professionally in a
-              serious online research environment.
+              VRI should present past work as a curated academic archive on the
+              website itself, while external storage can remain the repository for
+              videos, slide decks, and downloadable materials.
             </p>
             <ul>
-              <li>Reliable internet access and a working email account</li>
-              <li>A computer or tablet with camera and microphone</li>
-              <li>A quiet workspace; headphones are recommended</li>
-              <li>A writing tablet with stylus is strongly recommended for math-heavy work</li>
+              <li>Keep titles, abstracts, and dates on the VRI site.</li>
+              <li>Use a dedicated Past Sessions page for older terms.</li>
+              <li>Link outward to slides and recordings only from term pages.</li>
             </ul>
+            <div class="card-actions">
+              <a class="quick-chip" href="research-archive.html">Research Archive</a>
+            </div>
           </article>
         </div>
 
         <div class="cta-panel reveal">
           <div>
-            <h3>Tools may vary by mentor and project.</h3>
+            <p class="section-label">Explore the full site</p>
+            <h3>Use the site menu for the larger standalone pages.</h3>
             <p>
-              Meetings may use Zoom, Microsoft Teams, Google Meet, or a
-              comparable platform. Some projects may also involve shared
-              documents, slides, code notebooks, datasets, or other
-              discipline-specific tools.
+              The homepage remains the polished landing page, while the slide-out
+              menu can take visitors to the fuller pages for archives, mentor
+              information, policies, FAQs, and the broader research-area structure.
             </p>
           </div>
 
           <div class="quick-links">
-            <a class="quick-chip quick-chip-teal" href="faq.html">FAQ</a>
-            <a class="quick-chip quick-chip-teal" href="policies.html">Policies</a>
+            <a class="quick-chip" href="research-archive.html">Past Sessions</a>
+            <a class="quick-chip" href="faq.html">FAQ</a>
+            <a class="quick-chip" href="policies.html">Policies</a>
+            <a class="quick-chip" href="paid-mentorship.html">Paid Mentorship</a>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="section" id="pricing">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Pricing &amp; Notes</p>
-            <h2>Clear expectations for cost, commitment, and outcomes.</h2>
-          </div>
-          <p class="section-intro">
-            VRI programs are designed to be serious, high-touch academic
-            experiences. Fit, commitment, and the level of mentor attention all
-            matter when determining the right pathway.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Pricing Notes</div>
-            <h3>What cost typically reflects</h3>
-            <p>
-              Pricing varies by pathway because the programs differ in cohort
-              size, duration, and level of individualized mentor attention.
-            </p>
-            <ul>
-              <li>Smaller cohorts typically involve more direct mentor attention</li>
-              <li>Duration and project intensity vary across pathways</li>
-              <li>Exact pricing is shared directly with interested families</li>
-              <li>Limited financial assistance may be available in some cases</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Expectations</div>
-            <h3>What these programs are designed to support</h3>
-            <p>
-              VRI programs are designed to strengthen research habits, academic
-              communication, and the ability to sustain serious inquiry over time.
-            </p>
-            <ul>
-              <li>Live sessions plus meaningful independent work between meetings</li>
-              <li>A final paper, presentation, or comparable project deliverable depending on the program</li>
-              <li>Consistent attendance and sustained effort matter</li>
-              <li>Publication is not guaranteed</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="cta-panel reveal">
-          <div>
-            <h3>Explore current opportunities or reach out about fit.</h3>
-            <p>
-              Families can review the current round of mentored projects, learn
-              more about the institute, or inquire about which pathway may be the
-              strongest fit for a student’s goals.
-            </p>
-          </div>
-
-          <div class="quick-links">
-            <a class="btn btn-gold" href="summer-2026-projects.html">Register for Summer 2026</a>
-            <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
-            <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    -->
   </main>
 
   <footer class="site-footer">
@@ -2277,6 +2232,7 @@
           <div class="footer-brand">
             <h4 class="footer-brand-title"><span class="footer-v">V</span><span class="footer-r">R</span><span class="footer-i">I</span></h4>
             <span class="footer-brand-bar" aria-hidden="true"></span>
+            <p class="footer-subtitle"></p>
           </div>
 
           <div class="footer-meta">
@@ -2287,11 +2243,10 @@
         <div class="footer-col">
           <h5>On This Page</h5>
           <nav>
-            <a href="#about">Overview</a>
+            <a href="#about">About</a>
             <a href="#programs">Research Pathways</a>
-            <a href="#areas">Research Areas</a>
-            <a href="#format">Program Format</a>
-            <a href="#pricing">Pricing &amp; Notes</a>
+            <a href="#current">Current Opportunity</a>
+            <a href="#archive">Research Archive</a>
           </nav>
         </div>
 
@@ -2300,7 +2255,7 @@
           <nav>
             <a href="index.html" aria-current="page">Home</a>
             <a href="upcoming-projects.html">Upcoming Projects</a>
-            <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+            <a href="programs.html">Programs &amp; Pricing</a>
             <a href="about.html">About VRI</a>
             <a href="research-archive.html">Research Archive</a>
             <a href="faq.html">FAQ</a>
@@ -2435,14 +2390,10 @@
       }
 
       if (brandEvolve) {
-        initBrandEvolve();
-
         if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(() => {
-            if (!isPhoneViewport()) {
-              initBrandEvolve();
-            }
-          });
+          document.fonts.ready.then(initBrandEvolve);
+        } else {
+          initBrandEvolve();
         }
 
         let resizeTimer = null;
