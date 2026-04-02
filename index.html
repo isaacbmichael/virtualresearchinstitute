@@ -1137,6 +1137,21 @@
       height: 100%;
     }
 
+    #archive .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #archive .card .card-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    #archive .grid-2 > .card:nth-child(2) .card-actions {
+      justify-content: flex-end;
+    }
+
     #archive .card:hover {
       transform: none;
       box-shadow: var(--shadow-lg);
@@ -1341,7 +1356,7 @@
 
     .cta-panel p {
       margin: 0;
-      max-width: 62ch;
+      max-width: none;
       color: var(--muted);
       line-height: 1.8;
     }
