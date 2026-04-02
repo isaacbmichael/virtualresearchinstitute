@@ -1094,6 +1094,28 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    #areas .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #areas .area-visual {
+      margin: -4px 0 18px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    #areas .area-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
     .card {
       position: relative;
       overflow: hidden;
@@ -2123,6 +2145,9 @@
 
         <div class="grid-3">
           <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-mathematics.png" alt="Abstract mathematical illustration representing theoretical mathematics and geometric structure" loading="lazy" decoding="async" />
+            </div>
             <div class="card-label">Discipline I</div>
             <h3>Mathematics</h3>
             <p>
@@ -2135,6 +2160,9 @@
           </article>
 
           <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-statistics-data-science.png" alt="Abstract data visualization representing statistics and data science" loading="lazy" decoding="async" />
+            </div>
             <div class="card-label">Discipline II</div>
             <h3>Statistics &amp; Data Science</h3>
             <p>
@@ -2147,6 +2175,9 @@
           </article>
 
           <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-computer-science.png" alt="Abstract code-based illustration representing computer science and computational systems" loading="lazy" decoding="async" />
+            </div>
             <div class="card-label">Discipline III</div>
             <h3>Computer Science</h3>
             <p>
