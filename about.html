@@ -774,8 +774,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      align-items: center;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: start;
       gap: clamp(28px, 4vw, 54px);
     }
 
@@ -931,6 +931,61 @@
       padding: 22px 24px;
       transform: rotate(3deg) translateZ(44px);
       animation: floatB 12s ease-in-out infinite;
+    }
+
+    .hero-scene-metrics {
+      min-height: 440px;
+      align-self: start;
+      padding-top: 8px;
+    }
+
+    .scene-wrap-metrics {
+      width: min(500px, 100%);
+      height: 420px;
+    }
+
+    .metric-panel {
+      width: min(280px, 78%);
+      min-height: 152px;
+      padding: 22px 22px 20px;
+    }
+
+    .metric-panel h3 {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.25rem;
+      line-height: 0.92;
+      color: var(--teal-950);
+    }
+
+    .metric-panel p {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: var(--muted);
+    }
+
+    .metric-panel-a {
+      left: 10px;
+      top: 4px;
+      transform: rotate(-7deg) translateZ(56px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .metric-panel-b {
+      right: -8px;
+      top: 104px;
+      width: min(296px, 80%);
+      transform: rotate(5deg) translateZ(48px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .metric-panel-c {
+      left: 58px;
+      bottom: 12px;
+      width: min(314px, 82%);
+      transform: rotate(-3deg) translateZ(52px);
+      animation: floatA 11s ease-in-out infinite;
     }
 
     .panel-kicker {
@@ -1627,6 +1682,14 @@
       .panel-main {
         width: min(420px, calc(100% - 24px));
       }
+
+      .hero-scene-metrics {
+        min-height: 420px;
+      }
+
+      .scene-wrap-metrics {
+        margin-inline: auto;
+      }
     }
 
     @media (max-width: 920px) {
@@ -1708,6 +1771,46 @@
         width: min(290px, 78%);
         left: 16px;
         bottom: 6px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 380px;
+      }
+
+      .scene-wrap-metrics {
+        width: min(440px, 100%);
+        height: 360px;
+      }
+
+      .metric-panel {
+        width: min(250px, 84%);
+        min-height: 140px;
+        padding: 20px 20px 18px;
+      }
+
+      .metric-panel h3 {
+        font-size: 2rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.9rem;
+      }
+
+      .metric-panel-a {
+        left: 4px;
+        top: 0;
+      }
+
+      .metric-panel-b {
+        right: -6px;
+        top: 96px;
+        width: min(266px, 86%);
+      }
+
+      .metric-panel-c {
+        left: 34px;
+        bottom: 4px;
+        width: min(286px, 88%);
       }
 
       .section,
@@ -1822,6 +1925,44 @@
       .cta-panel,
       .card {
         padding: 24px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 340px;
+      }
+
+      .scene-wrap-metrics {
+        height: 330px;
+      }
+
+      .metric-panel {
+        width: min(235px, 88%);
+        min-height: 128px;
+        padding: 18px 18px 16px;
+        border-radius: 24px;
+      }
+
+      .metric-panel h3 {
+        font-size: 1.85rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .metric-panel-a {
+        left: 2px;
+      }
+
+      .metric-panel-b {
+        right: -4px;
+        top: 92px;
+      }
+
+      .metric-panel-c {
+        left: 22px;
+        bottom: -2px;
       }
 
       .panel h3,
@@ -1939,24 +2080,23 @@
           <p>
             The Virtual Research Institute is an online home for ambitious high-school students who are ready for more than enrichment. Built around close mentorship, small-team collaboration, and a polished scholarly culture, VRI is designed to help students engage deeply with advanced ideas, contribute meaningfully to group research, and communicate their work with clarity and confidence.
           </p>
+        </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="programs.html">Explore Programs &amp; Pricing</a>
-            <a class="btn btn-gold" href="upcoming-projects.html">View Upcoming Projects</a>
-          </div>
+        <div class="hero-scene hero-scene-metrics reveal" id="heroScene" aria-hidden="true">
+          <div class="scene-wrap scene-wrap-metrics" id="sceneWrap">
+            <div class="panel metric-panel metric-panel-a">
+              <h3>Research-first</h3>
+              <p>Students read, explore, test ideas, and present real work rather than simply complete enrichment exercises.</p>
+            </div>
 
-          <div class="hero-metrics">
-            <div class="metric" data-tilt>
-              <strong>Research-first</strong>
-              <span>Students read, explore, test ideas, and present real work rather than simply complete enrichment exercises.</span>
+            <div class="panel metric-panel metric-panel-b">
+              <h3>Mentor-guided</h3>
+              <p>Projects are led by qualified researchers who help students build mathematical, statistical, and computational maturity.</p>
             </div>
-            <div class="metric" data-tilt>
-              <strong>Mentor-guided</strong>
-              <span>Projects are led by qualified researchers who help students build mathematical, statistical, and computational maturity.</span>
-            </div>
-            <div class="metric" data-tilt>
-              <strong>Built to grow</strong>
-              <span>VRI begins with strong quantitative foundations and is being shaped into a broader global research platform over time.</span>
+
+            <div class="panel metric-panel metric-panel-c">
+              <h3>Built to grow</h3>
+              <p>VRI begins with strong quantitative foundations and is being shaped into a broader global research platform over time.</p>
             </div>
           </div>
         </div>
