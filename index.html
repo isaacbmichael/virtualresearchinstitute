@@ -16,6 +16,34 @@
     rel="stylesheet"
   />
 
+  <script>
+    /*
+      Gold CTA control:
+      Change only the value of window.GOLD_CTA_STATE below.
+
+      Allowed values:
+      - "register"  -> Register Now
+      - "interest"  -> Join the Interest List
+      - "waitlist"  -> Join the Waitlist
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
+
   <noscript>
     <style>
       .menu-toggle,
@@ -123,6 +151,14 @@
 
     body.menu-open {
       overflow: hidden;
+    }
+
+    .noscript-nav a[aria-current="page"],
+    .mobile-nav a[aria-current="page"] {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.18);
+      color: var(--teal-950);
+      box-shadow: var(--shadow-md);
     }
 
     .brand:focus-visible,
@@ -1847,7 +1883,7 @@
     <div class="frame-shell noscript-nav">
       <nav aria-label="Primary">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
           <li><a href="programs.html">Programs &amp; Pricing</a></li>
           <li><a href="about.html">About VRI</a></li>
@@ -1881,7 +1917,7 @@
     <div class="menu-section">
       <p class="menu-panel-kicker">Explore the full site</p>
       <nav class="mobile-nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="upcoming-projects.html">Upcoming Projects</a>
         <a href="programs.html">Programs &amp; Pricing</a>
         <a href="about.html">About VRI</a>
@@ -1898,10 +1934,10 @@
 
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">A Premier Online Research Institute</div>
-          <h1>Rigorous mentored research for ambitious young scholars.</h1>
+          <div class="eyebrow">Mentored Research in Mathematics and Computational Sciences</div>
+          <h1>Mentored research for ambitious young scholars.</h1>
           <p>
-            The Virtual Research Institute provides a more serious, polished, and
+            The Virtual Research Institute provides a structured and
             intellectually ambitious home for high-school students pursuing research
             in mathematics, statistics, data science, and computational fields.
             Built around close mentorship and clear academic standards, VRI is
@@ -1910,7 +1946,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="programs.html">Explore Programs &amp; Pricing</a>
-            <a class="btn btn-gold" href="summer-2026-projects.html">Register for Summer 2026</a>
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
           </div>
         </div>
 
@@ -1918,19 +1954,19 @@
           <div class="scene-wrap" id="sceneWrap">
             <article class="panel panel-accent" data-float>
               <div class="panel-kicker">Institute Model</div>
-              <h3>Circles. Groups. Labs.</h3>
+              <h3>Research Circles. Research Groups.</h3>
               <p>
-                A clear, prestigious progression from structured entry points to
-                smaller, more intensive, open-ended mentored work.
+                Two main public pathways, with limited Private Mentorship
+                available by inquiry.
               </p>
             </article>
 
             <article class="panel panel-main" data-float>
               <div class="panel-kicker">Fields of Study</div>
-              <h3>Research Areas</h3>
+              <h3>Current Research Areas</h3>
               <p>
-                VRI is organized around serious quantitative disciplines with room
-                for growth, depth, and future interdisciplinary expansion.
+                VRI is organized around durable quantitative and computational
+                fields with room for growth, depth, and future expansion.
               </p>
 
               <div class="gold-line" aria-hidden="true"></div>
@@ -1947,7 +1983,7 @@
                 <div class="stack-item">
                   <div class="num">2</div>
                   <div>
-                    <strong>Statistics &amp; Data Science</strong>
+                    <strong>Statistics, Data Science &amp; AI</strong>
                     <span>Inference, modeling, data analysis, computation, and applied decision-making.</span>
                   </div>
                 </div>
@@ -1967,7 +2003,7 @@
               <h3>VMRC</h3>
               <p>
                 The Virtual Math Research Circle is VRI’s flagship mathematics
-                program and a strong entry point into serious mentored research.
+                program and a strong entry point into mentor-guided research.
               </p>
 
               <div class="pill-row" aria-label="Flagship attributes">
@@ -1986,11 +2022,11 @@
         <div class="section-head reveal">
           <div>
             <p class="section-label">About</p>
-            <h2>A polished online home for serious student research.</h2>
+            <h2>An online home for thoughtful student research.</h2>
           </div>
           <p class="section-intro">
-            VRI brings together rigorous mentorship, high academic standards, and a
-            more elevated scholarly environment for students in mathematics and the
+            VRI brings together close mentorship, high academic standards, and a
+            thoughtful scholarly environment for students in mathematics and the
             computational sciences.
           </p>
         </div>
@@ -2000,7 +2036,7 @@
             <h3>What makes VRI distinctive</h3>
             <p>
               VRI is designed for students who are ready for more than enrichment:
-              close mentorship, serious intellectual work, and a clear pathway into
+              close mentorship, sustained intellectual work, and a clear pathway into
               authentic research culture.
             </p>
           </div>
@@ -2017,29 +2053,29 @@
         <div class="section-head reveal">
           <div>
             <p class="section-label">Research Pathways</p>
-            <h2>Three pathways, one serious academic culture.</h2>
+            <h2>Two public pathways, plus limited private mentorship.</h2>
           </div>
           <p class="section-intro">
-            Circles, Groups, and Labs provide different levels of intensity and
-            scale while preserving the institute’s emphasis on rigor, mentorship,
-            and thoughtful research development.
+            Research Circles and Research Groups provide different levels of
+            scale and mentor access, with limited Private Mentorship available by
+            inquiry for select matches and longer-term work.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier I</div>
-            <h3>Circles</h3>
+            <h3>Research Circles</h3>
             <p>
               Structured and scalable entry-tier experiences that introduce
-              students to serious research habits in an accessible but rigorous
+              students to research habits in an accessible but still rigorous
               environment.
             </p>
           </article>
 
           <article class="card reveal" data-tilt>
             <div class="card-label">Tier II</div>
-            <h3>Groups</h3>
+            <h3>Research Groups</h3>
             <p>
               Smaller collaborative cohorts with more intensive mentor interaction,
               stronger ownership, and a more boutique research experience.
@@ -2047,11 +2083,11 @@
           </article>
 
           <article class="card reveal" data-tilt>
-            <div class="card-label">Tier III</div>
-            <h3>Labs</h3>
+            <div class="card-label">By Inquiry</div>
+            <h3>Private Mentorship</h3>
             <p>
-              Highly mentored, open-ended work designed for depth, originality,
-              and stronger intellectual differentiation.
+              Limited individualized placements for select matches, specialized
+              topics, and longer-term mentor-guided work.
             </p>
           </article>
         </div>
@@ -2078,10 +2114,10 @@
           <div class="feature-band-grid">
             <div>
               <p class="section-label">Current Opportunity</p>
-              <h3>Summer 2026 at VRI</h3>
+              <h3>Current opportunities at VRI</h3>
               <p>
                 Explore the current round of mentored projects and learn more about
-                this summer’s research opportunities, including the flagship
+                upcoming research opportunities, including the flagship
                 Virtual Math Research Circle.
               </p>
 
@@ -2094,7 +2130,7 @@
               <strong>Flagship Program</strong>
               <p>
                 VMRC remains VRI’s flagship mathematics program and a strong entry
-                point for students seeking serious mentored research in an online
+                point for students seeking mentor-guided research in an online
                 institute setting.
               </p>
             </div>
@@ -2286,6 +2322,17 @@
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
+
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const activeGoldCta = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (activeGoldCta) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = activeGoldCta.label;
+          link.href = activeGoldCta.href;
+        });
+      }
 
       const header = document.getElementById("siteHeader");
       const mainContent = document.getElementById("main-content");
