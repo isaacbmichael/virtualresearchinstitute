@@ -1944,6 +1944,40 @@
       }
     }
   </style>
+
+
+  <script>
+    /*
+      GOLD CTA CONTROL
+      ------------------------------------------------------------
+      Update ONLY the value of GOLD_CTA_STATE below when you want
+      to change all gold buttons on this page at once.
+
+      Allowed values:
+      - "register" = Register Now
+      - "interest" = Join the Interest List
+      - "waitlist" = Join the Waitlist
+
+      Example:
+      window.GOLD_CTA_STATE = "interest";
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -2411,7 +2445,7 @@
           </div>
 
           <div class="quick-links">
-            <a class="btn btn-gold" href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
             <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
             <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
           </div>
@@ -2477,6 +2511,17 @@
   <script>
     (function () {
       document.body.classList.add("js-enhanced");
+
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaConfig = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (goldCtaConfig) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = goldCtaConfig.label;
+          link.href = goldCtaConfig.href;
+        });
+      }
 
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
