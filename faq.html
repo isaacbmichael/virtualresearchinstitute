@@ -752,7 +752,7 @@
 
     .hero {
       position: relative;
-      padding: 52px 0 42px;
+      padding: 52px 0 24px;
       isolation: isolate;
     }
 
@@ -1092,6 +1092,10 @@
 
     .section {
       padding: 44px 0;
+    }
+
+    #faq-library.section {
+      padding-top: 10px;
     }
 
     section[id] {
@@ -1947,7 +1951,7 @@
     /* ===================== FAQ-specific UI ===================== */
     .faq-toolbar {
       position: sticky;
-      top: calc(var(--nav-h) - 18px);
+      top: calc(var(--nav-h) - 8px);
       z-index: 8;
       display: flex;
       flex-wrap: wrap;
@@ -2222,7 +2226,7 @@
 
     @media (max-width: 920px) {
       .faq-toolbar {
-        top: calc(var(--nav-h) - 10px);
+        top: calc(var(--nav-h) + 2px);
       }
     }
 
@@ -2403,22 +2407,10 @@
 
     <section class="section" id="faq-library">
       <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">FAQ Library</p>
-            <h2>Search, filter, and open the questions that matter most.</h2>
-          </div>
-          <p class="section-intro">
-            The questions below cover institutional fit, eligibility by tier,
-            mentor time zones, technology expectations, research standards,
-            payments, refunds, privacy, safety, and mentor-facing policies.
-          </p>
-        </div>
-
         <div class="faq-toolbar reveal" aria-label="FAQ tools">
           <div class="faq-search" role="search">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2"/></svg>
-            <input id="faqFilter" type="search" placeholder="Search questions (e.g., time zone, refund, tablet, eligibility) — press / to focus" aria-label="Search frequently asked questions" />
+            <input id="faqFilter" type="search" placeholder="Search questions (e.g., price, time zone, online format, refund, tablet, eligibility) — press / to focus" aria-label="Search frequently asked questions" />
           </div>
           <div class="faq-actions">
             <button class="btn btn-primary" id="toggleAll" type="button" aria-controls="faqGrid" aria-pressed="false">Open all</button>
@@ -2427,17 +2419,17 @@
         </div>
 
         <ul class="faq-chips reveal" aria-label="Quick filters">
-          <li><button class="faq-chip" data-filter="fit eligibility circles groups private mentorship admissions">Fit &amp; Eligibility</button></li>
-          <li><button class="faq-chip" data-filter="schedule time zone timezone attendance meetings">Scheduling &amp; Time Zones</button></li>
-          <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools">Technology</button></li>
-          <li><button class="faq-chip" data-filter="research deliverables authorship ai publication">Research &amp; Deliverables</button></li>
-          <li><button class="faq-chip" data-filter="payments deposit refund tuition aid">Payments &amp; Refunds</button></li>
-          <li><button class="faq-chip" data-filter="mentors vetting contractor communication boundaries">Mentors</button></li>
-          <li><button class="faq-chip" data-filter="privacy recording conduct safety policy">Safety &amp; Privacy</button></li>
+          <li><button class="faq-chip" data-filter="fit eligibility circles groups private mentorship admissions tier tier i tier ii readiness selective pathway pathways">Fit &amp; Eligibility</button></li>
+          <li><button class="faq-chip" data-filter="schedule time zone timezone timezones attendance meetings spring summer fall term terms session sessions calendar">Scheduling &amp; Time Zones</button></li>
+          <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools online virtual format platform platforms software screen share live meetings">Technology</button></li>
+          <li><button class="faq-chip" data-filter="research deliverables authorship ai publication publications poster paper recommendation recommendations outcomes">Research &amp; Deliverables</button></li>
+          <li><button class="faq-chip" data-filter="payments deposit refund tuition aid price prices cost costs how much fee fees billing balance remaining balance">Payments &amp; Refunds</button></li>
+          <li><button class="faq-chip" data-filter="mentors mentor vetting contractor contractors communication boundaries standards screening">Mentors</button></li>
+          <li><button class="faq-chip" data-filter="privacy recording recordings conduct safety policy policies archives publicity media channels">Safety &amp; Privacy</button></li>
         </ul>
 
         <section class="faq-grid reveal" id="faqGrid">
-          <details class="faq-card" data-tags="overview structure institute programs circles groups private mentorship online terms">
+          <details class="faq-card" data-tags="overview structure institute programs circles groups private mentorship online virtual format terms spring summer fall live meetings independent work public pathways">
             <summary>What is VRI, and how is the institute structured?</summary>
             <div class="faq-answer">
               <p>VRI is an online institute for mentored research in mathematics and computational sciences. Its current public model centers on <strong>Circles</strong> and <strong>Groups</strong>, with limited <strong>Private Mentorship</strong> available by inquiry when fit, mentor availability, and research scope align.</p>
@@ -2451,6 +2443,18 @@
               <p><strong>Circles</strong> are the broadest public entry point and are designed for motivated students who want a serious but more scalable mentored research experience.</p>
               <p><strong>Groups</strong> are smaller, more intensive, and better suited to students who are ready for greater ownership, a higher level of sustained preparation, and closer mentor interaction.</p>
               <p><strong>Private Mentorship</strong> is the most selective pathway. It is intended for students whose academic readiness, project goals, and logistical fit support a more individualized research arrangement.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="pricing prices price cost costs how much tuition fee fees billing balance circles groups private mentorship 1395 3495 9000 spring summer fall term terms session sessions online format virtual live meetings independent work">
+            <summary>What are the current public prices, terms, and overall format?</summary>
+            <div class="faq-answer">
+              <p>VRI’s current public pathways are fully <strong>online</strong> and organized around <strong>Spring, Summer, and Fall</strong> terms, with live mentor-led sessions plus meaningful independent work between meetings.</p>
+              <ul>
+                <li><strong>Circles:</strong> $1,395 per student, typically about 6 weeks.</li>
+                <li><strong>Groups:</strong> $3,495 per student, typically about 10 weeks.</li>
+                <li><strong>Private Mentorship:</strong> starting at $9,000 by inquiry, with scope and duration depending on the match.</li>
+              </ul>
             </div>
           </details>
 
@@ -2497,7 +2501,7 @@
             </div>
           </details>
 
-          <details class="faq-card" data-tags="technology required laptop desktop tablet internet email camera microphone">
+          <details class="faq-card" data-tags="technology required laptop desktop tablet internet email camera microphone online virtual format tools platforms software">
             <summary>What technology is required for VRI?</summary>
             <div class="faq-answer">
               <p>Students should have a <strong>reliable internet connection</strong>, a <strong>working email account</strong>, and a device that supports live meetings, screen sharing, camera, and microphone use.</p>
@@ -2584,7 +2588,7 @@
             </div>
           </details>
 
-          <details class="faq-card" data-tags="payments tuition deposit remaining balance deadlines pricing current tuition">
+          <details class="faq-card" data-tags="payments tuition deposit remaining balance deadlines pricing current tuition prices price cost costs how much billing balance fee fees">
             <summary>How do deposits and remaining tuition payments work?</summary>
             <div class="faq-answer">
               <p>VRI uses a <strong>deposit-plus-balance</strong> structure. A non-refundable deposit is generally required to reserve a seat unless VRI expressly states otherwise in writing. Remaining tuition balances are due by published deadlines.</p>
@@ -2685,7 +2689,7 @@
         </section>
 
         <div class="faq-empty-note" id="faqEmptyNote">
-          No questions match that search yet. Try terms such as <strong>eligibility</strong>, <strong>time zone</strong>, <strong>refund</strong>, <strong>tablet</strong>, <strong>mentors</strong>, or <strong>publication</strong>.
+          No questions match that search yet. Try terms such as <strong>price</strong>, <strong>cost</strong>, <strong>time zone</strong>, <strong>online</strong>, <strong>refund</strong>, <strong>tablet</strong>, or <strong>publication</strong>.
         </div>
 
         <div class="faq-policy-note reveal">
@@ -3223,22 +3227,35 @@
         .trim();
 
       const SYNONYMS = {
-        fit: ['eligibility', 'best pathway', 'readiness', 'placement'],
-        eligibility: ['fit', 'readiness', 'selective', 'admissions', 'tier', 'circles', 'groups', 'private mentorship'],
-        schedule: ['scheduling', 'meetings', 'attendance', 'availability', 'time zone', 'timezone'],
-        timezone: ['time zone', 'schedule', 'availability', 'international'],
-        technology: ['tech', 'tablet', 'stylus', 'zoom', 'teams', 'meet', 'laptop', 'internet'],
-        tablet: ['stylus', 'math writing', 'screen share'],
-        publication: ['authorship', 'conference', 'poster', 'paper', 'recommendation'],
-        payments: ['tuition', 'deposit', 'refund', 'aid'],
-        refund: ['withdrawal', 'deposit', 'credit', 'chargeback'],
-        mentors: ['mentor', 'vetting', 'contractor', 'boundaries'],
-        privacy: ['recording', 'archives', 'media', 'conduct', 'safety']
+        fit: ['eligibility', 'best pathway', 'readiness', 'placement', 'circles', 'groups', 'private mentorship'],
+        eligibility: ['fit', 'readiness', 'selective', 'admissions', 'tier', 'tier i', 'tier ii', 'circles', 'groups', 'private mentorship'],
+        circles: ['tier i', 'pathway', 'public pathway', 'group size'],
+        groups: ['tier ii', 'pathway', 'public pathway', 'small group'],
+        private: ['private mentorship', 'individualized', 'selective'],
+        price: ['prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much', 'balance', 'remaining balance', 'payment'],
+        pricing: ['price', 'prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much'],
+        cost: ['price', 'prices', 'tuition', 'fee', 'fees', 'how much', 'billing'],
+        tuition: ['price', 'prices', 'cost', 'costs', 'fee', 'fees', 'billing', 'deposit', 'balance'],
+        payments: ['tuition', 'deposit', 'refund', 'aid', 'price', 'cost', 'billing', 'balance'],
+        refund: ['withdrawal', 'deposit', 'credit', 'chargeback', 'cancellation'],
+        schedule: ['scheduling', 'meetings', 'attendance', 'availability', 'time zone', 'timezone', 'calendar', 'session', 'term'],
+        timezone: ['time zone', 'time-zone', 'schedule', 'availability', 'international', 'mentor location'],
+        term: ['terms', 'session', 'sessions', 'calendar', 'spring', 'summer', 'fall'],
+        format: ['online', 'virtual', 'live meetings', 'independent work', 'platform', 'software', 'tools'],
+        online: ['virtual', 'format', 'live meetings', 'independent work', 'zoom', 'teams', 'meet'],
+        technology: ['tech', 'tablet', 'stylus', 'zoom', 'teams', 'meet', 'laptop', 'internet', 'software', 'platform'],
+        tablet: ['stylus', 'math writing', 'screen share', 'pen'],
+        publication: ['authorship', 'conference', 'poster', 'paper', 'recommendation', 'outcomes'],
+        deliverables: ['deliverable', 'paper', 'poster', 'slides', 'code', 'formatting'],
+        attendance: ['absences', 'absence', 'late', 'lateness', 'missed meetings'],
+        aid: ['financial assistance', 'scholarship', 'need-based'],
+        mentors: ['mentor', 'vetting', 'contractor', 'boundaries', 'screening', 'standards'],
+        privacy: ['recording', 'recordings', 'archives', 'media', 'conduct', 'safety', 'publicity']
       };
 
       function tokenize(query) {
         return normalize(query)
-          .split(/[\s,]+/)
+          .split(/[\s,\/\-]+/)
           .filter(Boolean)
           .map(token => token.replace(/s\b/, ''));
       }
