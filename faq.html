@@ -1,1 +1,2864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs &amp; Pricing | Virtual Research Institute</title>
+  <meta
+    name="description"
+    content="Programs &amp; Pricing at the Virtual Research Institute — fully online mentored research pathways in mathematics and computational sciences."
+  />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <noscript>
+    <style>
+      .menu-toggle,
+      .menu-backdrop,
+      .mobile-panel {
+        display: none !important;
+      }
+
+      .noscript-nav {
+        padding: 12px 0 0;
+      }
+
+      .noscript-nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0;
+        padding: 0 0 18px;
+      }
+
+      .noscript-nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(4, 76, 89, 0.12);
+        box-shadow: var(--shadow-sm);
+        color: var(--teal-900);
+        font-weight: 700;
+      }
+    </style>
+  </noscript>
+
+  <style>
+    :root {
+      --bg: #f6f3eb;
+      --bg-soft: #fbfaf6;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: #ffffff;
+      --ink: #10212a;
+      --muted: #58656d;
+
+      --teal-950: #033843;
+      --teal-900: #044c59;
+      --teal-850: #04555f;
+      --teal-800: #05575c;
+      --teal-700: #0c6170;
+      --teal-600: #00717f;
+
+      --gold-800: #9d6f0c;
+      --gold-700: #b88c0c;
+      --gold-650: #cf9d0e;
+      --gold-600: #d9a302;
+      --gold-500: #e5b53b;
+      --gold-300: #f2e0a9;
+
+      --line: rgba(4, 76, 89, 0.14);
+      --line-strong: rgba(4, 76, 89, 0.24);
+      --shadow-lg: 0 30px 70px rgba(8, 28, 38, 0.14);
+      --shadow-md: 0 16px 36px rgba(8, 28, 38, 0.1);
+      --shadow-sm: 0 10px 22px rgba(8, 28, 38, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1840px;
+      --gutter: clamp(16px, 2.6vw, 32px);
+      --frame-gutter: clamp(40px, 3.2vw, 56px);
+      --nav-h: 110px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(229, 181, 59, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 14%, rgba(4, 76, 89, 0.16), transparent 24%),
+        linear-gradient(180deg, #f8f5ee 0%, #f5f1e8 42%, #f8f6f0 100%);
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    .brand:focus-visible,
+    .menu-toggle:focus-visible,
+    .menu-close:focus-visible,
+    .mobile-nav a:focus-visible,
+    .btn:focus-visible,
+    .quick-chip:focus-visible {
+      outline: 3px solid rgba(0, 113, 127, 0.28);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
+    }
+
+    .noscript-nav a[aria-current="page"],
+    .mobile-nav a[aria-current="page"] {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.18);
+      color: var(--teal-950);
+      box-shadow: var(--shadow-md);
+    }
+
+    .footer-col nav a[aria-current="page"] {
+      color: var(--teal-900);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--teal-900);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 2000;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .frame-shell {
+      width: calc(100% - (2 * var(--frame-gutter)));
+      margin-inline: auto;
+    }
+
+    .shell {
+      width: min(calc(var(--max) + (2 * var(--frame-gutter))), 100%);
+      padding-inline: var(--frame-gutter);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(248, 245, 238, 0.72);
+      border-bottom: 1px solid rgba(4, 76, 89, 0.08);
+      transition: background .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(250, 248, 243, 0.9);
+      border-bottom-color: rgba(4, 76, 89, 0.14);
+      box-shadow: 0 10px 30px rgba(16, 33, 42, 0.05);
+    }
+
+    .header-inner {
+      min-height: var(--nav-h);
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      width: fit-content;
+      position: relative;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: normal;
+      white-space: nowrap;
+    }
+
+    .brand-bar {
+      width: min(540px, 100%);
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(16, 33, 42, 0.76);
+      max-width: none;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .brand-lockup {
+      flex-direction: row;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-anim {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .brand-evolve {
+      --bar-mini: 44px;
+      --bar-short: 74px;
+      --bar-medium: 86px;
+      --pair-overlap: 0.09em;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      width: max-content;
+      max-width: 100%;
+      opacity: 1;
+    }
+
+    body.js-enhanced .brand-evolve {
+      opacity: 0;
+    }
+
+    body.js-enhanced .brand-evolve.is-ready {
+      opacity: 1;
+    }
+
+    .brand-evolve-line {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.22em;
+      width: max-content;
+      white-space: nowrap;
+    }
+
+    .be-word {
+      display: inline-flex;
+      align-items: flex-start;
+      transition: transform 1.1s var(--ease), opacity .35s var(--ease);
+      will-change: transform, opacity;
+    }
+
+    .be-word-v {
+      transform: translateX(0);
+    }
+
+    .be-word-r,
+    .be-word-i {
+      transform: translateX(0);
+    }
+
+    .be-word-r {
+      margin-left: calc(-1 * var(--pair-overlap));
+    }
+
+    .be-word-i {
+      margin-left: calc(-1 * var(--pair-overlap));
+      opacity: 0;
+    }
+
+    .be-tail {
+      display: inline-flex;
+      align-items: flex-start;
+    }
+
+    .be-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-0.26em);
+      transition: transform .62s var(--ease), opacity .34s var(--ease);
+      will-change: transform, opacity;
+    }
+
+    .be-char.is-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .brand-evolve.is-v .be-word-r {
+      transform: translateX(calc(-1 * var(--shift-r-start, 0px)));
+      opacity: 0;
+    }
+
+    .brand-evolve.is-vr .be-word-r,
+    .brand-evolve.is-vri .be-word-r {
+      transform: translateX(calc(-1 * var(--shift-r, 0px)));
+      opacity: 1;
+    }
+
+    .brand-evolve.is-v .be-word-i,
+    .brand-evolve.is-vr .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-start, 0px)));
+      opacity: 0;
+    }
+
+    .brand-evolve.is-vri .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-compact, 0px)));
+      opacity: 1;
+    }
+
+    .brand-evolve.is-full .be-word-r,
+    .brand-evolve.is-full .be-word-i {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .be-bar {
+      width: var(--bar-short);
+      max-width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+      transition: width 1.05s var(--ease);
+      will-change: width;
+    }
+
+    .brand-evolve.is-v .be-bar {
+      width: var(--bar-mini);
+    }
+
+    .brand-evolve.is-vr .be-bar {
+      width: var(--bar-short);
+    }
+
+    .brand-evolve.is-vri .be-bar {
+      width: var(--bar-medium);
+    }
+
+    .brand-evolve.is-full .be-bar {
+      width: 100%;
+    }
+
+    .footer-brand {
+      --footer-brand-scale: 0.8;
+      display: inline-flex;
+      flex-direction: column;
+      gap: calc(8px * var(--footer-brand-scale));
+      width: fit-content;
+      position: relative;
+    }
+
+    .footer-brand-title {
+      margin: 0;
+      display: inline-flex;
+      align-items: flex-start;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(calc(2rem * var(--footer-brand-scale)), calc(3.2vw * var(--footer-brand-scale)), calc(3.1rem * var(--footer-brand-scale)));
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: normal;
+      white-space: nowrap;
+    }
+
+    .footer-brand-title .footer-v,
+    .footer-brand-title .footer-r,
+    .footer-brand-title .footer-i {
+      display: inline-block;
+      position: relative;
+    }
+
+    .footer-brand-title .footer-r,
+    .footer-brand-title .footer-i {
+      margin-left: calc(-1 * 0.09em);
+    }
+
+    .footer-brand-bar {
+      width: calc(86px * var(--footer-brand-scale));
+      height: calc(6px * var(--footer-brand-scale));
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 calc(8px * var(--footer-brand-scale)) calc(24px * var(--footer-brand-scale)) rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
+    .footer-subtitle {
+      display: none;
+    }
+
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      justify-self: end;
+    }
+
+    .menu-toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 0;
+      background: transparent;
+      padding: 12px 8px;
+      border-radius: 0;
+      cursor: pointer;
+      color: rgba(16, 33, 42, 0.86);
+      font-size: 1.04rem;
+      font-weight: 600;
+      transition: color .25s ease;
+      white-space: nowrap;
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+      background: transparent;
+      color: var(--teal-900);
+    }
+
+    .menu-toggle .bars {
+      position: relative;
+      width: 26px;
+      height: 18px;
+      flex: 0 0 26px;
+    }
+
+    .menu-toggle .bars span {
+      position: absolute;
+      left: 0;
+      width: 26px;
+      height: 2px;
+      min-width: 0;
+      background: currentColor;
+      border-radius: 0;
+      display: block;
+    }
+
+    .menu-toggle .bars span:nth-child(1) {
+      top: 1px;
+    }
+
+    .menu-toggle .bars span:nth-child(2) {
+      top: 8px;
+    }
+
+    .menu-toggle .bars span:nth-child(3) {
+      top: 15px;
+    }
+
+    .menu-label {
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      box-shadow: var(--shadow-sm);
+      will-change: transform;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(4, 76, 89, 0.16);
+      color: var(--teal-900);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: white;
+      box-shadow: 0 14px 28px rgba(16, 33, 42, 0.12);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      color: #1e1806;
+    }
+
+    .btn-gold:hover,
+    .btn-gold:focus-visible {
+      box-shadow: 0 18px 34px rgba(184, 140, 12, 0.24);
+    }
+
+    .quick-chip.quick-chip-teal {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      border-color: transparent;
+      color: white;
+    }
+
+    .quick-chip.quick-chip-teal:hover,
+    .quick-chip.quick-chip-teal:focus-visible {
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 33, 42, 0.22);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s var(--ease);
+      z-index: 1001;
+    }
+
+    body.menu-open .menu-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-panel {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(500px, 96vw);
+      background: rgba(251, 249, 244, 0.97);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-left: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
+      padding: calc(24px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear .45s;
+      z-index: 1002;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    body.menu-open .mobile-panel {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear 0s;
+    }
+
+    .menu-panel-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .menu-panel-head {
+      min-width: 0;
+    }
+
+    .menu-panel-kicker {
+      margin: 0 0 18px;
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .menu-panel-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.85rem;
+      line-height: 1;
+      color: var(--teal-950);
+      white-space: nowrap;
+    }
+
+    .menu-close {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(4, 76, 89, 0.14);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-900);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+    }
+
+    .menu-close:hover,
+    .menu-close:focus-visible {
+      background: white;
+      color: var(--teal-900);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .menu-section + .menu-section {
+      margin-top: 18px;
+    }
+
+    .menu-section-label {
+      margin: 0 0 12px;
+      color: var(--teal-700);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .menu-divider {
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(90deg, transparent, rgba(4, 76, 89, 0.18), transparent);
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      color: var(--teal-900);
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      will-change: transform;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus-visible {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.14);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    main {
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      padding: 52px 0 42px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 50%;
+      width: min(900px, 92vw);
+      height: 620px;
+      transform: translateX(-35%);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(229, 181, 59, 0.18), transparent 22%),
+        radial-gradient(circle at 74% 36%, rgba(4, 76, 89, 0.18), transparent 20%),
+        radial-gradient(circle at 52% 76%, rgba(4, 76, 89, 0.1), transparent 26%);
+      z-index: -1;
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: start;
+      gap: clamp(28px, 4vw, 54px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--teal-800);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      box-shadow: 0 0 18px rgba(184, 140, 12, 0.3);
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+      color: var(--teal-950);
+      max-width: 22ch;
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 96ch;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      position: relative;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .metric:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: var(--teal-950);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .hero-scene {
+      perspective: 1600px;
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
+
+    .scene-wrap {
+      position: relative;
+      width: min(560px, 100%);
+      height: 600px;
+      transform-style: preserve-3d;
+      transition: transform .25s ease;
+      will-change: transform;
+    }
+
+    .panel {
+      position: absolute;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,0.64), transparent 34%),
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .panel-main {
+      inset: 72px 24px 0 auto;
+      width: 420px;
+      height: 470px;
+      padding: 28px 28px 26px;
+      transform: translateZ(32px);
+    }
+
+    .panel-accent {
+      left: 0;
+      top: 22px;
+      width: 240px;
+      height: 160px;
+      padding: 22px;
+      transform: rotate(-7deg) translateZ(58px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .panel-bottom {
+      left: 34px;
+      bottom: 14px;
+      width: 320px;
+      height: 170px;
+      padding: 22px 24px;
+      transform: rotate(3deg) translateZ(44px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .hero-scene-metrics {
+      min-height: 440px;
+      align-self: start;
+      padding-top: 8px;
+    }
+
+    .scene-wrap-metrics {
+      width: min(500px, 100%);
+      height: 420px;
+    }
+
+    .metric-panel {
+      width: min(280px, 78%);
+      min-height: 152px;
+      padding: 22px 22px 20px;
+    }
+
+    .metric-panel h3 {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.4rem;
+      line-height: 0.92;
+      color: var(--teal-950);
+    }
+
+    .metric-panel p {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: var(--muted);
+    }
+
+    .metric-panel-a {
+      left: 10px;
+      top: 4px;
+      transform: rotate(-7deg) translateZ(56px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .metric-panel-b {
+      right: -8px;
+      top: 104px;
+      width: min(296px, 80%);
+      transform: rotate(5deg) translateZ(48px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .metric-panel-c {
+      left: 58px;
+      bottom: 12px;
+      width: min(314px, 82%);
+      transform: rotate(-3deg) translateZ(52px);
+      animation: floatA 11s ease-in-out infinite;
+    }
+
+    .panel-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 12px;
+    }
+
+    .panel h3 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .panel p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184, 140, 12, 0.65),
+        transparent
+      );
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stack-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px 14px;
+      align-items: start;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.8);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      transform: translateZ(28px);
+    }
+
+    .stack-item .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      box-shadow: 0 8px 20px rgba(4, 76, 89, 0.22);
+    }
+
+    .stack-item strong {
+      display: block;
+      color: var(--teal-950);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .stack-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(184, 140, 12, 0.12);
+      color: var(--gold-800);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(184, 140, 12, 0.18);
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    section[id] {
+      scroll-margin-top: calc(var(--nav-h) + 28px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: var(--teal-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      box-shadow: 0 0 18px rgba(184, 140, 12, 0.3);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--teal-950);
+    }
+
+    .section-intro {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #areas .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #areas .area-visual {
+      margin: -4px 0 18px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    #areas .area-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.94));
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .55s var(--ease),
+        box-shadow .55s var(--ease),
+        border-color .55s var(--ease);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,0.44), transparent 30%);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(4, 76, 89, 0.16);
+    }
+
+    #projects .card:hover {
+      transform: none;
+    }
+
+    #projects .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #projects .card-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 16px;
+    }
+
+    .card-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .card ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .card ul li + li {
+      margin-top: 8px;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .term-meta {
+      margin: 0 0 14px;
+      color: var(--teal-700);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .term-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .term-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .term-shot {
+      margin: 0;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .term-shot img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      background: #fff;
+    }
+
+    .term-shot-colley img {
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .term-shot figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .feature-band {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(4, 76, 89, 0.96), rgba(7, 87, 97, 0.92));
+      color: white;
+      box-shadow: 0 28px 64px rgba(4, 76, 89, 0.22);
+      margin-top: 14px;
+    }
+
+    .feature-band::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -40% auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 181, 59, 0.24), transparent 60%);
+      pointer-events: none;
+    }
+
+    .feature-band-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .feature-band .section-label,
+    .feature-band p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .feature-band h3 {
+      color: white;
+    }
+
+    .feature-quote {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .feature-quote strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--gold-300);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .feature-quote p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.8;
+    }
+
+    .cta-panel {
+      margin-top: 24px;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-panel h3 {
+      margin-bottom: 12px;
+    }
+
+    .cta-panel p {
+      margin: 0;
+      max-width: none;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .quick-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      color: var(--teal-900);
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+
+    .quick-chip:hover,
+    .quick-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      border-top: 1px solid rgba(4, 76, 89, 0.12);
+      padding-top: 30px;
+    }
+
+    .footer-row {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) repeat(4, minmax(0, 1fr));
+      gap: 48px;
+      align-items: start;
+      padding: 26px 0 48px;
+    }
+
+    .footer-brand-stack {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .footer-col p,
+    .footer-col a,
+    .footer-meta p,
+    .footer-meta a {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .footer-col h5 {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--teal-700);
+    }
+
+    .footer-col nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible,
+    .footer-meta a:hover,
+    .footer-meta a:focus-visible {
+      color: var(--teal-900);
+      outline: none;
+    }
+
+    .footer-meta {
+      justify-self: start;
+      text-align: left;
+    }
+
+    .footer-meta p {
+      white-space: nowrap;
+    }
+
+    body.js-enhanced .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+    }
+
+    body.js-enhanced .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-tilt],
+    [data-float] {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 780px;
+      height: 780px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(4, 76, 89, 0.06);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 140, 12, 0.08);
+    }
+
+    .hero-orbit::after {
+      inset: 24%;
+      border-color: rgba(4, 76, 89, 0.08);
+    }
+
+    @keyframes floatA {
+      0%, 100% { transform: rotate(-7deg) translateZ(58px) translateY(0); }
+      50% { transform: rotate(-5deg) translateZ(58px) translateY(-12px); }
+    }
+
+    @keyframes floatB {
+      0%, 100% { transform: rotate(3deg) translateZ(44px) translateY(0); }
+      50% { transform: rotate(1deg) translateZ(44px) translateY(-10px); }
+    }
+
+    @keyframes barGlow {
+      0%, 100% { transform: scaleX(1); filter: saturate(1); }
+      50% { transform: scaleX(1.03); filter: saturate(1.08); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      body.js-enhanced .reveal,
+      body.js-enhanced .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .scene-wrap,
+      [data-tilt],
+      [data-float],
+      .panel-accent,
+      .panel-bottom {
+        transform: none !important;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .btn,
+      .quick-chip,
+      .menu-close,
+      .mobile-nav a,
+      .metric,
+      .card,
+      .scene-wrap,
+      [data-tilt],
+      [data-float] {
+        will-change: auto;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .header-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+
+      .hero-grid,
+      .section-head,
+      .feature-band-grid,
+      .cta-panel,
+      .footer-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-links {
+        justify-content: flex-start;
+      }
+
+      .footer-meta {
+        text-align: left;
+      }
+
+      .hero-copy h1 {
+        max-width: 12ch;
+      }
+
+      .hero-scene {
+        min-height: 560px;
+      }
+
+      .scene-wrap {
+        height: 540px;
+      }
+
+      .panel-main {
+        width: min(420px, calc(100% - 24px));
+      }
+
+      .hero-scene-metrics {
+        min-height: 420px;
+      }
+
+      .scene-wrap-metrics {
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 920px) {
+      :root {
+        --nav-h: 96px;
+        --frame-gutter: clamp(28px, 5vw, 40px);
+      }
+
+      .shell {
+        width: min(calc(var(--max) + (2 * var(--frame-gutter))), 100%);
+        padding-inline: var(--frame-gutter);
+      }
+
+      .brand-title {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+        white-space: normal;
+      }
+
+      .brand-evolve {
+        --bar-mini: 36px;
+        --bar-short: 62px;
+        --bar-medium: 72px;
+      }
+
+      .brand-lockup {
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .brand-subtitle {
+        font-size: 0.76rem;
+        white-space: normal;
+      }
+
+      .footer-subtitle {
+        font-size: calc(0.76rem * var(--footer-brand-scale));
+        white-space: normal;
+      }
+
+      .footer-brand-title {
+        font-size: clamp(calc(1.8rem * var(--footer-brand-scale)), calc(7vw * var(--footer-brand-scale)), calc(2.6rem * var(--footer-brand-scale)));
+        white-space: normal;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-metrics,
+      .grid-3,
+      .grid-2,
+      .term-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-scene {
+        min-height: 500px;
+      }
+
+      .scene-wrap {
+        width: 100%;
+        height: 500px;
+      }
+
+      .panel-main {
+        inset: 62px 0 0 auto;
+        width: min(100%, 400px);
+        height: 420px;
+        padding: 24px;
+      }
+
+      .panel-accent {
+        width: 210px;
+        height: 150px;
+        top: 6px;
+      }
+
+      .panel-bottom {
+        width: min(290px, 78%);
+        left: 16px;
+        bottom: 6px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 380px;
+      }
+
+      .scene-wrap-metrics {
+        width: min(440px, 100%);
+        height: 360px;
+      }
+
+      .metric-panel {
+        width: min(250px, 84%);
+        min-height: 140px;
+        padding: 20px 20px 18px;
+      }
+
+      .metric-panel h3 {
+        font-size: 2.15rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.9rem;
+      }
+
+      .metric-panel-a {
+        left: 4px;
+        top: 0;
+      }
+
+      .metric-panel-b {
+        right: -6px;
+        top: 96px;
+        width: min(266px, 86%);
+      }
+
+      .metric-panel-c {
+        left: 34px;
+        bottom: 4px;
+        width: min(286px, 88%);
+      }
+
+      .section,
+      .site-footer {
+        padding-top: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        overscroll-behavior-x: none;
+      }
+
+      .site-header,
+      main,
+      .site-footer,
+      .hero,
+      .section {
+        overflow-x: clip;
+      }
+
+      .frame-shell,
+      .shell {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .frame-shell {
+        padding-inline: var(--frame-gutter);
+      }
+
+      .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .brand,
+      .brand-anim,
+      .brand-evolve,
+      .brand-evolve-line {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .header-cta {
+        justify-self: end;
+      }
+
+      .menu-toggle {
+        gap: 0;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        justify-content: center;
+      }
+
+      .menu-label {
+        display: none;
+      }
+
+      .menu-panel-title {
+        white-space: normal;
+      }
+
+      .brand-title {
+        font-size: clamp(1.55rem, 6.6vw, 2.2rem);
+      }
+
+      .brand-bar {
+        height: 5px;
+      }
+
+      .brand-evolve {
+        --bar-mini: 32px;
+        --bar-short: 56px;
+        --bar-medium: 64px;
+      }
+
+      .brand-lockup {
+        gap: 12px;
+      }
+
+      .be-bar {
+        height: 5px;
+      }
+
+      .header-cta .btn {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        max-width: 10ch;
+      }
+
+      .hero-copy p {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .feature-band,
+      .cta-panel,
+      .card {
+        padding: 24px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 340px;
+      }
+
+      .scene-wrap-metrics {
+        height: 330px;
+      }
+
+      .metric-panel {
+        width: min(235px, 88%);
+        min-height: 128px;
+        padding: 18px 18px 16px;
+        border-radius: 24px;
+      }
+
+      .metric-panel h3 {
+        font-size: 2rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .metric-panel-a {
+        left: 2px;
+      }
+
+      .metric-panel-b {
+        right: -4px;
+        top: 92px;
+      }
+
+      .metric-panel-c {
+        left: 22px;
+        bottom: -2px;
+      }
+
+      .panel h3,
+      .card h3 {
+        font-size: 1.7rem;
+      }
+
+      .footer-brand-bar {
+        width: calc(52px * var(--footer-brand-scale));
+        height: calc(5px * var(--footer-brand-scale));
+      }
+    }
+  </style>
+
+
+  <script>
+    /*
+      GOLD CTA CONTROL
+      ------------------------------------------------------------
+      Update ONLY the value of GOLD_CTA_STATE below when you want
+      to change all gold buttons on this page at once.
+
+      Allowed values:
+      - "register" = Register Now
+      - "interest" = Join the Interest List
+      - "waitlist" = Join the Waitlist
+
+      Example:
+      window.GOLD_CTA_STATE = "interest";
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="frame-shell header-inner">
+      <a class="brand brand-lockup brand-anim" href="index.html" aria-label="Virtual Research Institute home">
+        <span class="brand-evolve is-vr" id="brandEvolve">
+          <span class="brand-title brand-evolve-line" aria-hidden="true">
+            <span class="be-word be-word-v">
+              <span class="be-anchor">V</span><span class="be-tail be-tail-v"><span class="be-char">i</span><span class="be-char">r</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">a</span><span class="be-char">l</span></span>
+            </span>
+            <span class="be-word be-word-r">
+              <span class="be-anchor">R</span><span class="be-tail be-tail-r"><span class="be-char">e</span><span class="be-char">s</span><span class="be-char">e</span><span class="be-char">a</span><span class="be-char">r</span><span class="be-char">c</span><span class="be-char">h</span></span>
+            </span>
+            <span class="be-word be-word-i">
+              <span class="be-anchor">I</span><span class="be-tail be-tail-i"><span class="be-char">n</span><span class="be-char">s</span><span class="be-char">t</span><span class="be-char">i</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">t</span><span class="be-char">e</span></span>
+            </span>
+          </span>
+          <span class="be-bar" aria-hidden="true"></span>
+        </span>
+      </a>
+
+      <div class="header-cta">
+        <button
+          class="menu-toggle"
+          type="button"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobilePanel"
+          aria-haspopup="dialog"
+          aria-label="Open site menu"
+        >
+          <span class="bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <noscript>
+    <div class="frame-shell noscript-nav">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
+          <li><a href="programs.html" aria-current="page">Programs &amp; Pricing</a></li>
+          <li><a href="about.html">About VRI</a></li>
+          <li><a href="research-archive.html">Research Archive</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="policies.html">Policies &amp; Procedures</a></li>
+        </ul>
+      </nav>
+    </div>
+  </noscript>
+
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+
+  <aside
+    class="mobile-panel"
+    id="mobilePanel"
+    aria-label="Site menu"
+    aria-hidden="true"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="mobileMenuTitle"
+    tabindex="-1"
+  >
+    <div class="menu-panel-top">
+      <div class="menu-panel-head">
+        <h2 class="menu-panel-title" id="mobileMenuTitle">Virtual Research Institute</h2>
+      </div>
+      <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
+    </div>
+
+    <div class="menu-section">
+      <p class="menu-panel-kicker">Explore the full site</p>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="upcoming-projects.html">Upcoming Projects</a>
+        <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+        <a href="about.html">About VRI</a>
+        <a href="research-archive.html">Research Archive</a>
+        <a href="faq.html">FAQ</a>
+        <a href="policies.html">Policies &amp; Procedures</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-orbit" aria-hidden="true"></div>
+
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Programs &amp; Pricing</div>
+          <h1>A clear pathway into mentored online research.</h1>
+          <p>
+            VRI offers two main public pathways—Circles and
+            Groups—along with limited Private Mentorship by inquiry. Programs
+            are fully online, organized around Spring, Summer, and Fall terms,
+            and designed for students seeking rigorous, mentor-guided work in
+            mathematics and adjacent computational fields.
+          </p>
+
+        </div>
+
+        <div class="hero-scene hero-scene-metrics reveal" id="heroScene" aria-hidden="true">
+          <div class="scene-wrap scene-wrap-metrics" id="sceneWrap">
+            <div class="panel metric-panel metric-panel-a">
+              <div class="panel-kicker">Public Pathways</div>
+              <h3>2</h3>
+              <p>Two main public pathways designed for scalable and premium small-group research</p>
+            </div>
+
+            <div class="panel metric-panel metric-panel-b">
+              <div class="panel-kicker">Public Terms</div>
+              <h3>3</h3>
+              <p>Spring, Summer, and Fall public terms with end-of-term presentation or symposium-style sharing</p>
+            </div>
+
+            <div class="panel metric-panel metric-panel-c">
+              <div class="panel-kicker">Program Format</div>
+              <h3>Online</h3>
+              <p>Live virtual meetings combined with guided independent work between sessions</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Overview</p>
+            <h2>A structured pathway for students ready for more than enrichment.</h2>
+          </div>
+          <p class="section-intro">
+            VRI programs are designed for students who are ready for a more
+            focused academic environment: clear structure, thoughtful mentorship,
+            and a stronger culture of inquiry than typical enrichment options.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Program Design</div>
+            <h3>Two public pathways, one clear academic framework</h3>
+            <p>
+              VRI is built around a scalable Circle pathway, a premium small-group
+              Group pathway, and limited Private Mentorship by inquiry when fit
+              and mentor availability align.
+            </p>
+            <ul>
+              <li>Structured entry points for motivated students</li>
+              <li>Premium small-group research for deeper mentorship</li>
+              <li>Limited private placements in select cases</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Fit</div>
+            <h3>Mentorship, scale, and pacing vary by pathway</h3>
+            <p>
+              Pathways differ in cohort size, duration, level of mentor access,
+              expected independence, and the rhythm of work across each public term.
+            </p>
+            <ul>
+              <li>All pathways are fully online</li>
+              <li>Public offerings run in Spring, Summer, and Fall</li>
+              <li>End-of-term presentations or symposium-style sharing may be included</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Research Pathways</p>
+            <h2>Two main public pathways, plus limited private mentorship.</h2>
+          </div>
+          <p class="section-intro">
+            Students can enter VRI through Circles or Groups,
+            with limited Private Mentorship available by inquiry for select
+            matches and longer-term work.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Tier I</div>
+            <h3>Circles</h3>
+            <p>
+              Structured, guided, and scalable mentored research experiences designed
+              to introduce students to serious research habits in an accessible but
+              still rigorous environment.
+            </p>
+            <div class="term-note">
+              Typical cohort size: 10–12 students<br />
+              Cost per student: $1,395<br />
+              Typical duration: 6 weeks<br />
+              Public terms: Spring, Summer, Fall
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Tier II</div>
+            <h3>Groups</h3>
+            <p>
+              Smaller collaborative cohorts with more intensive mentor interaction,
+              greater ownership, and a closer resemblance to premium boutique
+              research experiences.
+            </p>
+            <div class="term-note">
+              Typical cohort size: 5-6 students<br />
+              Cost per student: $3,495<br />
+              Typical duration: 10 weeks<br />
+              Public terms: Spring, Summer, Fall
+            </div>
+          </article>
+        </div>
+
+        <div class="feature-band reveal" style="margin-top: 24px;">
+          <div class="feature-band-grid">
+            <div>
+              <p class="section-label">Private Mentorship</p>
+              <h3>Need a more individualized research match?</h3>
+              <p>
+                For students seeking more individualized or longer-term work, VRI
+                may occasionally consider limited Private Mentorship placements by
+                inquiry.
+              </p>
+            </div>
+
+            <div class="feature-quote">
+              <strong>By inquiry only</strong>
+              <p>
+                Starting tuition: $9,000. Availability depends on subject area,
+                mentor fit, and researcher availability. Private Mentorship
+                placements are limited and not guaranteed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="areas">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Current Research Areas</p>
+            <h2>Current research areas, with room to grow.</h2>
+          </div>
+          <p class="section-intro">
+            VRI’s current research areas reflect subjects that are intellectually
+            durable, well suited to serious online work, and flexible enough to
+            expand over time.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-mathematics-v2.png" alt="Abstract mathematical illustration representing theoretical mathematics and geometric structure" loading="lazy" decoding="async" />
+            </div>
+            <div class="card-label">Area I</div>
+            <h3>Mathematics</h3>
+            <p>
+              A home for proof, theory, structure, mathematical experimentation,
+              abstraction, and original reasoning across pure and applied
+              directions. Representative topics may include graph theory,
+              combinatorics, number theory, discrete geometry, dynamical systems,
+              and other areas of serious mathematical inquiry.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-statistics-data-science.png" alt="Abstract data visualization representing statistics, data science, and artificial intelligence" loading="lazy" decoding="async" />
+            </div>
+            <div class="card-label">Area II</div>
+            <h3>Statistics &amp; Data Science</h3>
+            <p>
+              A research area centered on statistical reasoning, modeling,
+              computation, and the careful analysis of real-world data.
+              Representative topics may include Bayesian statistics, causal
+              inference, forecasting, data visualization, experimental design,
+              and quantitative decision-making.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-computer-science-v11.png" alt="Abstract code-based illustration representing computer science and computational systems" loading="lazy" decoding="async" />
+            </div>
+            <div class="card-label">Area III</div>
+            <h3>Computer Science &amp; AI</h3>
+            <p>
+              A broad and future-facing domain centered on algorithms,
+              intelligent systems, software, and computational problem-solving.
+              Representative topics may include algorithm design, artificial
+              intelligence, machine learning, multi-agent systems, computer
+              vision, natural language processing, and related computational approaches.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-quantitative-economics-finance-decision-science.png" alt="Abstract quantitative finance and decision science illustration with charts, analytical overlays, and a refined economic research aesthetic" loading="lazy" decoding="async" />
+            </div>
+            <div class="card-label">Area IV</div>
+            <h3>Quantitative Economics, Finance &amp; Decision Science</h3>
+            <p>
+              A research area connecting mathematical reasoning, data analysis,
+              forecasting, optimization, and decision-making in economic and
+              financial contexts. Representative topics may include risk,
+              forecasting, quantitative finance, game theory, operations research,
+              and data-informed decision models.
+            </p>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="area-visual">
+              <img src="assets/images/research-areas/vri-pic-public-health-biostatistics-epidemiology.png" alt="Abstract public health, biostatistics, and epidemiology illustration with global map, data points, and analytic trend curves" loading="lazy" decoding="async" />
+            </div>
+            <div class="card-label">Area V</div>
+            <h3>Public Health, Biostatistics &amp; Epidemiology</h3>
+            <p>
+              A research area centered on health data, population-level patterns,
+              biostatistical reasoning, and the study of disease, risk, and
+              intervention in real-world settings. Representative topics may
+              include infectious disease modeling, biostatistics, health
+              disparities, environmental health, forecasting, and data-informed
+              public health decision-making.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="format">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Program Format</p>
+            <h2>Fully online, live, and built around meaningful independent work.</h2>
+          </div>
+          <p class="section-intro">
+            All VRI programs are conducted online. Students meet live with
+            mentors and peers, then continue with meaningful independent work
+            between sessions as projects develop.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Online Format</div>
+            <h3>How VRI is delivered</h3>
+            <p>
+              VRI is designed to support thoughtful, well-supported work in an online setting,
+              with a format that balances live interaction, research guidance,
+              and independent scholarly work.
+            </p>
+            <ul>
+              <li>Live virtual meetings with mentors and, where applicable, peers</li>
+              <li>Independent work between sessions</li>
+              <li>Scheduling based on pathway structure and mentor availability</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Student Setup</div>
+            <h3>What students should have</h3>
+            <p>
+              Students do not need an elaborate technical setup, but they should
+              be prepared to participate consistently and professionally in a
+              focused online research environment.
+            </p>
+            <ul>
+              <li>Reliable internet access and a working email account</li>
+              <li>A computer or tablet with camera and microphone</li>
+              <li>A quiet workspace; headphones are recommended</li>
+              <li>A writing tablet with stylus is strongly recommended for math-heavy work</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-panel reveal">
+          <div>
+            <h3>Tools may vary by mentor and project.</h3>
+            <p>
+              Meetings may use Zoom, Microsoft Teams, Google Meet, or a
+              comparable platform. Some projects may also involve shared
+              documents, slides, code notebooks, datasets, or other
+              discipline-specific tools.
+            </p>
+          </div>
+
+          <div class="quick-links">
+            <a class="quick-chip quick-chip-teal" href="faq.html">FAQ</a>
+            <a class="quick-chip quick-chip-teal" href="policies.html">Policies</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Pricing &amp; Notes</p>
+            <h2>Clear expectations for cost, timing, and outcomes.</h2>
+          </div>
+          <p class="section-intro">
+            VRI programs are designed as focused, mentor-guided academic
+            experiences. Cohort size, duration, and mentor access all matter when
+            determining the right pathway.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Current Tuition</div>
+            <h3>Current public pricing</h3>
+            <p>
+              VRI pricing reflects cohort size, duration, and the level of mentor
+              access built into each pathway.
+            </p>
+            <ul>
+              <li>Circles: $1,395 per student</li>
+              <li>Groups: $3,495 per student</li>
+              <li>Private Mentorship: starting at $9,000 by inquiry</li>
+              <li>Limited financial assistance may be available in select cases</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Terms &amp; Expectations</div>
+            <h3>Spring, Summer, and Fall structure</h3>
+            <p>
+              Public offerings run on three main annual terms. Students work toward
+              a final paper, presentation, or comparable project deliverable, with
+              end-of-term presentation or symposium-style sharing where appropriate.
+            </p>
+            <ul>
+              <li>Three main public terms each year: Spring, Summer, Fall</li>
+              <li>Live sessions plus meaningful independent work between meetings</li>
+              <li>Consistent attendance and sustained effort matter</li>
+              <li>Publication is not guaranteed</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-panel reveal">
+          <div>
+            <h3>Explore current opportunities or reach out about fit.</h3>
+            <p>
+              Families can review the current round of mentored projects, learn
+              more about the institute, or inquire about whether Circles,
+              Groups, or Private Mentorship is the strongest fit for a
+              student’s goals.
+            </p>
+          </div>
+
+          <div class="quick-links">
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
+            <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="frame-shell">
+      <div class="footer-row">
+        <div class="footer-brand-stack">
+          <div class="footer-brand">
+            <h4 class="footer-brand-title"><span class="footer-v">V</span><span class="footer-r">R</span><span class="footer-i">I</span></h4>
+            <span class="footer-brand-bar" aria-hidden="true"></span>
+          </div>
+
+          <div class="footer-meta">
+            <p>&copy; <span id="year"></span> Virtual Research Institute LLC.<br />All rights reserved.</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>On This Page</h5>
+          <nav>
+            <a href="#about">Overview</a>
+            <a href="#programs">Research Pathways</a>
+            <a href="#areas">Research Areas</a>
+            <a href="#format">Program Format</a>
+            <a href="#pricing">Pricing &amp; Notes</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="upcoming-projects.html">Upcoming Projects</a>
+            <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+            <a href="about.html">About VRI</a>
+            <a href="research-archive.html">Research Archive</a>
+            <a href="faq.html">FAQ</a>
+            <a href="policies.html">Policies &amp; Procedures</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Institutional</h5>
+          <nav>
+            <a href="virtual-research-foundation.html">Virtual Research Foundation</a>
+            <a href="paid-mentorship.html">For Mentors</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="mailto:info@virtualresearchinstitute.org">info@virtualresearchinstitute.org</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.body.classList.add("js-enhanced");
+
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaConfig = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (goldCtaConfig) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = goldCtaConfig.label;
+          link.href = goldCtaConfig.href;
+        });
+      }
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
+
+      const header = document.getElementById("siteHeader");
+      const mainContent = document.getElementById("main-content");
+      const siteFooter = document.querySelector(".site-footer");
+      const onScroll = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 18);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const brandEvolve = document.getElementById("brandEvolve");
+      let brandTimeouts = [];
+      let hasAnimatedBrandOnPhone = false;
+
+      function clearBrandTimeouts() {
+        brandTimeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
+        brandTimeouts = [];
+      }
+
+      function initBrandEvolve() {
+        if (!brandEvolve) return;
+
+        clearBrandTimeouts();
+
+        const line = brandEvolve.querySelector(".brand-evolve-line");
+        const vTail = brandEvolve.querySelector(".be-tail-v");
+        const rTail = brandEvolve.querySelector(".be-tail-r");
+        const rAnchor = brandEvolve.querySelector(".be-word-r .be-anchor");
+        const vChars = Array.from(brandEvolve.querySelectorAll(".be-tail-v .be-char"));
+        const rChars = Array.from(brandEvolve.querySelectorAll(".be-tail-r .be-char"));
+        const iChars = Array.from(brandEvolve.querySelectorAll(".be-tail-i .be-char"));
+
+        if (!line || !vTail || !rTail || !rAnchor) return;
+
+        const styles = window.getComputedStyle(line);
+        const gapPx = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+        const fontSizePx = parseFloat(styles.fontSize || "0") || 0;
+        const overlapPx = fontSizePx * 0.09;
+        const rAnchorWidth = rAnchor.getBoundingClientRect().width;
+
+        const shiftR = vTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftRStart = shiftR + (rAnchorWidth * 0.86);
+        const shiftICompact = shiftR + rTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftIStart = shiftICompact + (rAnchorWidth * 0.86);
+
+        brandEvolve.style.setProperty("--shift-r", `${shiftR}px`);
+        brandEvolve.style.setProperty("--shift-r-start", `${shiftRStart}px`);
+        brandEvolve.style.setProperty("--shift-i-compact", `${shiftICompact}px`);
+        brandEvolve.style.setProperty("--shift-i-start", `${shiftIStart}px`);
+
+        const clearChars = () => {
+          [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.remove("is-in"));
+        };
+
+        const revealTrain = (chars, delay, step) => {
+          chars.forEach((char, index) => {
+            const timeoutId = window.setTimeout(() => {
+              char.classList.add("is-in");
+            }, delay + (index * step));
+            brandTimeouts.push(timeoutId);
+          });
+        };
+
+        clearChars();
+        brandEvolve.classList.add("is-ready");
+
+        const showFullBrand = () => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
+          brandEvolve.classList.add("is-full");
+          [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.add("is-in"));
+        };
+
+        if (prefersReducedMotion || (isPhoneViewport() && hasAnimatedBrandOnPhone)) {
+          showFullBrand();
+          return;
+        }
+
+        if (isPhoneViewport()) {
+          hasAnimatedBrandOnPhone = true;
+        }
+
+        brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
+        brandEvolve.classList.add("is-v");
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vri", "is-full");
+          brandEvolve.classList.add("is-vr");
+        }, 520));
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-full");
+          brandEvolve.classList.add("is-vri");
+        }, 1220));
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
+          brandEvolve.classList.add("is-full");
+          revealTrain(vChars, 100, 78);
+          revealTrain(rChars, 100, 74);
+          revealTrain(iChars, 100, 74);
+        }, 2220));
+      }
+
+      if (brandEvolve) {
+        initBrandEvolve();
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            if (!isPhoneViewport()) {
+              initBrandEvolve();
+            }
+          });
+        }
+
+        let resizeTimer = null;
+        window.addEventListener("resize", () => {
+          if (isPhoneViewport()) {
+            return;
+          }
+
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(initBrandEvolve, 120);
+        });
+      }
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobilePanel = document.getElementById("mobilePanel");
+      const menuClose = document.getElementById("menuClose");
+      const menuBackdrop = document.getElementById("menuBackdrop");
+      const inertTargets = [mainContent, siteFooter].filter(Boolean);
+      let lastFocusedElement = null;
+      let backdropHideTimer = null;
+
+      if (menuToggle && mobilePanel) {
+        const getFocusableElements = () =>
+          Array.from(
+            mobilePanel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+          ).filter((element) => !element.hasAttribute("disabled"));
+
+        const setMenuState = (isOpen, options = {}) => {
+          const { returnFocus = true } = options;
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          mobilePanel.setAttribute("aria-hidden", String(!isOpen));
+
+          if (menuBackdrop) {
+            window.clearTimeout(backdropHideTimer);
+            if (isOpen) {
+              menuBackdrop.hidden = false;
+            }
+          }
+
+          document.body.classList.toggle("menu-open", isOpen);
+
+          inertTargets.forEach((target) => {
+            if (isOpen) {
+              target.setAttribute("inert", "");
+            } else {
+              target.removeAttribute("inert");
+            }
+          });
+
+          if (isOpen) {
+            lastFocusedElement = document.activeElement;
+            window.requestAnimationFrame(() => {
+              const [firstFocusable] = getFocusableElements();
+              (firstFocusable || mobilePanel).focus();
+            });
+          } else {
+            if (menuBackdrop) {
+              backdropHideTimer = window.setTimeout(() => {
+                if (menuToggle.getAttribute("aria-expanded") !== "true") {
+                  menuBackdrop.hidden = true;
+                }
+              }, 350);
+            }
+
+            if (returnFocus) {
+              (lastFocusedElement || menuToggle).focus();
+            }
+          }
+        };
+
+        const openMenu = () => setMenuState(true);
+        const closeMenu = (options) => setMenuState(false, options);
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu({ returnFocus: false });
+          } else {
+            openMenu();
+          }
+        });
+
+        if (menuClose) {
+          menuClose.addEventListener("click", () => closeMenu());
+        }
+
+        if (menuBackdrop) {
+          menuBackdrop.addEventListener("click", () => closeMenu());
+        }
+
+        mobilePanel.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => closeMenu({ returnFocus: false }));
+        });
+
+        document.addEventListener("keydown", (event) => {
+          const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+          if (!isOpen) return;
+
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeMenu();
+            return;
+          }
+
+          if (event.key === "Tab") {
+            const focusableElements = getFocusableElements();
+            if (!focusableElements.length) {
+              event.preventDefault();
+              mobilePanel.focus();
+              return;
+            }
+
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+              event.preventDefault();
+              lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+              event.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1180 && menuToggle.getAttribute("aria-expanded") === "true") {
+            closeMenu({ returnFocus: false });
+          }
+        });
+      }
+
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      if (!prefersReducedMotion && supportsFinePointer) {
+        const tiltItems = document.querySelectorAll("[data-tilt]");
+        tiltItems.forEach((item) => {
+          let rafId = null;
+
+          const reset = () => {
+            cancelAnimationFrame(rafId);
+            item.style.transform = "";
+          };
+
+          item.addEventListener("mousemove", (e) => {
+            const rect = item.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 10;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              item.style.transform =
+                "perspective(1200px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-8px)";
+            });
+          });
+
+          item.addEventListener("mouseleave", reset);
+          item.addEventListener("blur", reset, true);
+        });
+
+        const sceneWrap = document.getElementById("sceneWrap");
+        const heroScene = document.getElementById("heroScene");
+
+        if (sceneWrap && heroScene) {
+          let rafId = null;
+
+          heroScene.addEventListener("mousemove", (e) => {
+            const rect = heroScene.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 12;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              sceneWrap.style.transform =
+                "rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+            });
+          });
+
+          heroScene.addEventListener("mouseleave", () => {
+            sceneWrap.style.transform = "rotateX(0deg) rotateY(0deg)";
+          });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
