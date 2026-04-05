@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs &amp; Pricing | Virtual Research Institute</title>
+  <title>FAQ | Virtual Research Institute</title>
   <meta
     name="description"
-    content="Programs &amp; Pricing at the Virtual Research Institute — fully online mentored research pathways in mathematics and computational sciences."
+    content="Frequently asked questions for the Virtual Research Institute — clear answers for families, students, and mentors about fit, technology, scheduling, policies, and mentored research."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1943,6 +1943,314 @@
         height: calc(5px * var(--footer-brand-scale));
       }
     }
+
+    /* ===================== FAQ-specific UI ===================== */
+    .faq-toolbar {
+      position: sticky;
+      top: calc(var(--nav-h) - 18px);
+      z-index: 8;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 18px;
+      padding: 12px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .faq-search {
+      flex: 1 1 340px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .faq-search svg {
+      flex: 0 0 auto;
+      color: var(--teal-700);
+    }
+
+    .faq-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .faq-search input::placeholder {
+      color: #8a949b;
+    }
+
+    .faq-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .faq-count {
+      color: var(--teal-700);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .faq-chip {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid rgba(4, 76, 89, 0.16);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--teal-900);
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease);
+    }
+
+    .faq-chip:hover,
+    .faq-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(4, 76, 89, 0.22);
+      outline: none;
+    }
+
+    .faq-chip[aria-pressed="true"] {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.18);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    details.faq-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
+      box-shadow: var(--shadow-sm);
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+    }
+
+    details.faq-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(229, 181, 59, 0.1), transparent 26%), linear-gradient(145deg, rgba(255,255,255,0.42), transparent 30%);
+      pointer-events: none;
+    }
+
+    details.faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(4, 76, 89, 0.16);
+    }
+
+    .faq-card summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--teal-950);
+      font-weight: 800;
+      line-height: 1.45;
+      font-size: 1.03rem;
+    }
+
+    .faq-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-card summary::before {
+      content: "+";
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(4, 76, 89, 0.08);
+      color: var(--teal-900);
+      font-size: 1.15rem;
+      line-height: 1;
+      margin-top: 2px;
+      transition: transform .25s ease, background .25s ease, color .25s ease;
+    }
+
+    .faq-card[open] summary {
+      border-bottom: 1px solid rgba(4, 76, 89, 0.1);
+    }
+
+    .faq-card[open] summary::before {
+      content: "–";
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+    }
+
+    .faq-card summary:focus-visible,
+    .faq-copylink button:focus-visible,
+    .faq-chip:focus-visible,
+    .faq-search input:focus-visible {
+      outline: 3px solid rgba(0, 113, 127, 0.28);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
+    }
+
+    .faq-answer {
+      position: relative;
+      padding: 0 24px 24px 66px;
+      color: var(--muted);
+    }
+
+    .faq-answer p,
+    .faq-answer li {
+      line-height: 1.82;
+      font-size: 0.98rem;
+    }
+
+    .faq-answer p {
+      margin: 0 0 12px;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+    }
+
+    .faq-answer li + li {
+      margin-top: 8px;
+    }
+
+    .faq-answer strong {
+      color: var(--teal-950);
+    }
+
+    .faq-copylink {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .faq-copylink button {
+      border: 0;
+      background: transparent;
+      color: var(--teal-900);
+      font-weight: 800;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    mark.faq-hit {
+      background: rgba(229, 181, 59, 0.34);
+      color: inherit;
+      padding: 0 .14em;
+      border-radius: 4px;
+    }
+
+    .faq-policy-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    .faq-empty-note {
+      display: none;
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq-empty-note.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 1180px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .faq-toolbar {
+        top: calc(var(--nav-h) - 10px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .faq-toolbar {
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .faq-search,
+      .faq-actions {
+        width: 100%;
+      }
+
+      .faq-actions {
+        justify-content: space-between;
+      }
+
+      .faq-card summary {
+        padding: 20px 20px;
+        gap: 12px;
+      }
+
+      .faq-answer {
+        padding: 0 20px 20px 60px;
+      }
+    }
+
   </style>
 
 
@@ -2028,10 +2336,10 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
-          <li><a href="programs.html" aria-current="page">Programs &amp; Pricing</a></li>
+          <li><a href="programs.html">Programs &amp; Pricing</a></li>
           <li><a href="about.html">About VRI</a></li>
           <li><a href="research-archive.html">Research Archive</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="faq.html" aria-current="page">FAQ</a></li>
           <li><a href="policies.html">Policies &amp; Procedures</a></li>
         </ul>
       </nav>
@@ -2062,14 +2370,15 @@
       <nav class="mobile-nav">
         <a href="index.html">Home</a>
         <a href="upcoming-projects.html">Upcoming Projects</a>
-        <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+        <a href="programs.html">Programs &amp; Pricing</a>
         <a href="about.html">About VRI</a>
         <a href="research-archive.html">Research Archive</a>
-        <a href="faq.html">FAQ</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
       </nav>
     </div>
   </aside>
+
 
   <main id="main-content">
     <section class="hero">
@@ -2077,390 +2386,500 @@
 
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">Programs &amp; Pricing</div>
-          <h1>A clear pathway into mentored online research.</h1>
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h1>Clear answers for families, students, and mentors.</h1>
           <p>
-            VRI offers two main public pathways—Circles and
-            Groups—along with limited Private Mentorship by inquiry. Programs
-            are fully online, organized around Spring, Summer, and Fall terms,
-            and designed for students seeking rigorous, mentor-guided work in
-            mathematics and adjacent computational fields.
+            This page gathers practical and policy-grounded answers about VRI’s
+            structure, eligibility, scheduling, time zones, technology,
+            payments, publications, mentor standards, and online participation.
+            It is written to help families evaluate fit carefully and to help
+            mentors understand the institute’s operating expectations.
           </p>
 
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="programs.html">Explore Programs &amp; Pricing</a>
+            <a class="btn btn-secondary" href="policies.html">Read Policies &amp; Procedures</a>
+          </div>
         </div>
 
         <div class="hero-scene hero-scene-metrics reveal" id="heroScene" aria-hidden="true">
           <div class="scene-wrap scene-wrap-metrics" id="sceneWrap">
             <div class="panel metric-panel metric-panel-a">
-              <div class="panel-kicker">Public Pathways</div>
-              <h3>2</h3>
-              <p>Two main public pathways designed for scalable and premium small-group research</p>
+              <div class="panel-kicker">Who This Helps</div>
+              <h3>Families</h3>
+              <p>Guidance for parents and students who want a serious online research environment with clear expectations.</p>
             </div>
 
             <div class="panel metric-panel metric-panel-b">
-              <div class="panel-kicker">Public Terms</div>
-              <h3>3</h3>
-              <p>Spring, Summer, and Fall public terms with end-of-term presentation or symposium-style sharing</p>
+              <div class="panel-kicker">Institute Reality</div>
+              <h3>Online</h3>
+              <p>Mentorship happens live across time zones, with meaningful independent work and real logistical constraints.</p>
             </div>
 
             <div class="panel metric-panel metric-panel-c">
-              <div class="panel-kicker">Program Format</div>
-              <h3>Online</h3>
-              <p>Live virtual meetings combined with guided independent work between sessions</p>
+              <div class="panel-kicker">Institutional Tone</div>
+              <h3>Rigorous</h3>
+              <p>Answers align with the broader VRI pathway pages and the institute’s policies, conduct, and payment framework.</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section" id="overview">
       <div class="shell">
         <div class="section-head reveal">
           <div>
             <p class="section-label">Overview</p>
-            <h2>A structured pathway for students ready for more than enrichment.</h2>
+            <h2>An institute-level FAQ, not a casual afterthought.</h2>
           </div>
           <p class="section-intro">
-            VRI programs are designed for students who are ready for a more
-            focused academic environment: clear structure, thoughtful mentorship,
-            and a stronger culture of inquiry than typical enrichment options.
+            VRI is designed for students seeking more than enrichment: serious
+            scholarly work, mentor-guided research, and a professional online
+            environment. This FAQ is meant to answer the most common practical
+            questions before enrollment and during program planning.
           </p>
         </div>
 
         <div class="grid-2">
           <article class="card reveal" data-tilt>
-            <div class="card-label">Program Design</div>
-            <h3>Two public pathways, one clear academic framework</h3>
+            <div class="card-label">Who This Page Serves</div>
+            <h3>Parents, students, and mentors all need different kinds of clarity.</h3>
             <p>
-              VRI is built around a scalable Circle pathway, a premium small-group
-              Group pathway, and limited Private Mentorship by inquiry when fit
-              and mentor availability align.
+              Families usually want straightforward answers about fit,
+              scheduling, technology, payment timing, and the seriousness of the
+              work. Students often want to know how demanding the experience is,
+              what deliverables to expect, and whether outcomes such as
+              publication are guaranteed. Mentors want to understand standards,
+              boundaries, approved channels, and institutional expectations.
             </p>
-            <ul>
-              <li>Structured entry points for motivated students</li>
-              <li>Premium small-group research for deeper mentorship</li>
-              <li>Limited private placements in select cases</li>
-            </ul>
           </article>
 
           <article class="card reveal" data-tilt>
-            <div class="card-label">Fit</div>
-            <h3>Mentorship, scale, and pacing vary by pathway</h3>
+            <div class="card-label">How To Read This Page</div>
+            <h3>Use the FAQ first, then confirm details on the pathway and policy pages.</h3>
             <p>
-              Pathways differ in cohort size, duration, level of mentor access,
-              expected independence, and the rhythm of work across each public term.
+              This FAQ summarizes the most important institute-level questions in
+              plain language. For pathway-specific pricing, scope, and public
+              program structure, consult the Programs &amp; Pricing page. For the
+              larger institutional framework around conduct, privacy, payments,
+              recordings, and documentation, consult the Policies &amp; Procedures page.
             </p>
             <ul>
-              <li>All pathways are fully online</li>
-              <li>Public offerings run in Spring, Summer, and Fall</li>
-              <li>End-of-term presentations or symposium-style sharing may be included</li>
+              <li>Programs &amp; Pricing explains Circles, Groups, and Private Mentorship.</li>
+              <li>Policies &amp; Procedures explains the wider operating framework.</li>
+              <li>Specific program pages and signed agreements may add more detailed terms.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="programs">
+    <section class="section" id="faq-library">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <p class="section-label">Research Pathways</p>
-            <h2>Two main public pathways, plus limited private mentorship.</h2>
+            <p class="section-label">FAQ Library</p>
+            <h2>Search, filter, and open the questions that matter most.</h2>
           </div>
           <p class="section-intro">
-            Students can enter VRI through Circles or Groups,
-            with limited Private Mentorship available by inquiry for select
-            matches and longer-term work.
+            The questions below cover institutional fit, eligibility by tier,
+            mentor time zones, technology expectations, research standards,
+            payments, refunds, privacy, safety, and mentor-facing policies.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Tier I</div>
-            <h3>Circles</h3>
-            <p>
-              Structured, guided, and scalable mentored research experiences designed
-              to introduce students to serious research habits in an accessible but
-              still rigorous environment.
-            </p>
-            <div class="term-note">
-              Typical cohort size: 10–12 students<br />
-              Cost per student: $1,395<br />
-              Typical duration: 6 weeks<br />
-              Public terms: Spring, Summer, Fall
-            </div>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Tier II</div>
-            <h3>Groups</h3>
-            <p>
-              Smaller collaborative cohorts with more intensive mentor interaction,
-              greater ownership, and a closer resemblance to premium boutique
-              research experiences.
-            </p>
-            <div class="term-note">
-              Typical cohort size: 5-6 students<br />
-              Cost per student: $3,495<br />
-              Typical duration: 10 weeks<br />
-              Public terms: Spring, Summer, Fall
-            </div>
-          </article>
+        <div class="faq-toolbar reveal" aria-label="FAQ tools">
+          <div class="faq-search" role="search">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            <input id="faqFilter" type="search" placeholder="Search questions (e.g., time zone, refund, tablet, eligibility) — press / to focus" aria-label="Search frequently asked questions" />
+          </div>
+          <div class="faq-actions">
+            <button class="btn btn-primary" id="toggleAll" type="button" aria-controls="faqGrid" aria-pressed="false">Open all</button>
+            <div class="faq-count" aria-live="polite" id="faqCount"></div>
+          </div>
         </div>
 
-        <div class="feature-band reveal" style="margin-top: 24px;">
+        <ul class="faq-chips reveal" aria-label="Quick filters">
+          <li><button class="faq-chip" data-filter="fit eligibility circles groups private mentorship admissions">Fit &amp; Eligibility</button></li>
+          <li><button class="faq-chip" data-filter="schedule time zone timezone attendance meetings">Scheduling &amp; Time Zones</button></li>
+          <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools">Technology</button></li>
+          <li><button class="faq-chip" data-filter="research deliverables authorship ai publication">Research &amp; Deliverables</button></li>
+          <li><button class="faq-chip" data-filter="payments deposit refund tuition aid">Payments &amp; Refunds</button></li>
+          <li><button class="faq-chip" data-filter="mentors vetting contractor communication boundaries">Mentors</button></li>
+          <li><button class="faq-chip" data-filter="privacy recording conduct safety policy">Safety &amp; Privacy</button></li>
+        </ul>
+
+        <section class="faq-grid reveal" id="faqGrid">
+          <details class="faq-card" data-tags="overview structure institute programs circles groups private mentorship online terms">
+            <summary>What is VRI, and how is the institute structured?</summary>
+            <div class="faq-answer">
+              <p>VRI is an online institute for mentored research in mathematics and computational sciences. Its current public model centers on <strong>Circles</strong> and <strong>Groups</strong>, with limited <strong>Private Mentorship</strong> available by inquiry when fit, mentor availability, and research scope align.</p>
+              <p>Public offerings are organized around <strong>Spring, Summer, and Fall</strong> terms and combine live mentor-led sessions with meaningful independent work between meetings.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="fit best pathway circles groups private mentorship tier 1 tier 2">
+            <summary>How should families think about Circles, Groups, and Private Mentorship?</summary>
+            <div class="faq-answer">
+              <p><strong>Circles</strong> are the broadest public entry point and are designed for motivated students who want a serious but more scalable mentored research experience.</p>
+              <p><strong>Groups</strong> are smaller, more intensive, and better suited to students who are ready for greater ownership, a higher level of sustained preparation, and closer mentor interaction.</p>
+              <p><strong>Private Mentorship</strong> is the most selective pathway. It is intended for students whose academic readiness, project goals, and logistical fit support a more individualized research arrangement.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="eligibility vetting circles groups private mentorship selective readiness interview review">
+            <summary>How does eligibility differ across Tier I, Tier II, and Private Mentorship?</summary>
+            <div class="faq-answer">
+              <p>VRI does <strong>not</strong> treat all pathways the same.</p>
+              <ul>
+                <li><strong>Tier I / Circles:</strong> this is the broadest public pathway. VRI is generally open to motivated students who appear ready to engage seriously, even if they do not yet have prior research experience.</li>
+                <li><strong>Tier II / Groups:</strong> VRI is moving toward more active readiness review and fit assessment here. Students should expect closer scrutiny of preparation, maturity, and the likelihood of thriving in a smaller and more demanding environment.</li>
+                <li><strong>Private Mentorship:</strong> this is the most selective option and should be understood as a strong-fit placement rather than a default service. Academic readiness, independence, communication, and logistical feasibility matter a great deal.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="research experience prerequisites prior experience fit math background computational background">
+            <summary>Does a student need prior research experience to participate?</summary>
+            <div class="faq-answer">
+              <p>Not necessarily. Prior research experience can help, but it is <strong>not</strong> required for every pathway. What matters more is seriousness, intellectual curiosity, follow-through, and readiness for work that is more demanding than a casual enrichment class.</p>
+              <p>Some topics or mentors may expect stronger mathematical, statistical, or computational preparation than others, so families should read proposal pages carefully.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor time zone timezone proposals scheduling location international">
+            <summary>Do families need to pay attention to mentor time zones?</summary>
+            <div class="faq-answer">
+              <p><strong>Yes.</strong> This matters. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling.</p>
+              <p>VRI is beginning to post <strong>mentor time zones directly on research proposal pages</strong> so that families can evaluate feasibility earlier and more responsibly.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="schedule time zones published schedules feasibility constraints conflicts">
+            <summary>How flexible is scheduling once a student is placed?</summary>
+            <div class="faq-answer">
+              <p>VRI tries to schedule responsibly, but schedules are shaped by mentor availability, cohort feasibility, and the realities of running live online research groups across time zones.</p>
+              <p>A family’s preference for a different time does <strong>not</strong> automatically obligate VRI to reconfigure a group after placement. This is one reason families should review schedule realities carefully before enrolling.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="attendance lateness absences participation disengagement response">
+            <summary>What happens if a student misses meetings or struggles with attendance?</summary>
+            <div class="faq-answer">
+              <p>Because VRI is collaborative and research-focused, attendance and responsiveness matter. Repeated unexcused absences, chronic lateness, persistent disengagement, or failure to respond to scheduling communications may lead to warnings, loss of good standing, reduced eligibility for certificates or recommendations, removal from a team, or dismissal where appropriate.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="technology required laptop desktop tablet internet email camera microphone">
+            <summary>What technology is required for VRI?</summary>
+            <div class="faq-answer">
+              <p>Students should have a <strong>reliable internet connection</strong>, a <strong>working email account</strong>, and a device that supports live meetings, screen sharing, camera, and microphone use.</p>
+              <p>For most students, a computer is the safest and most reliable default. Some projects may also use shared documents, slides, code notebooks, datasets, or other subject-specific tools depending on the mentor and topic.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="tablet stylus math writing screen share recommendation not required">
+            <summary>Is a tablet with a stylus required for math-heavy topics?</summary>
+            <div class="faq-answer">
+              <p><strong>No.</strong> It is not required. But for math-heavy research, a writing tablet or comparable device with a stylus that can share screen is <strong>strongly recommended</strong>.</p>
+              <p>When students need to write definitions, derivations, proofs, diagrams, or intermediate reasoning live, this kind of setup often makes participation much smoother and more professional.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="platforms zoom microsoft teams google meet approved tools">
+            <summary>Which meeting platforms or tools might VRI use?</summary>
+            <div class="faq-answer">
+              <p>Depending on the mentor and project, meetings may use <strong>Zoom</strong>, <strong>Microsoft Teams</strong>, <strong>Google Meet</strong>, or a comparable approved platform. Some projects may also use shared documents, slides, code environments, datasets, LaTeX tools, or discipline-specific software.</p>
+              <p>Families should not assume that every project uses the same software stack.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="communication approved channels social media texting personal phone numbers">
+            <summary>May students, families, and mentors communicate through personal channels?</summary>
+            <div class="faq-answer">
+              <p>As a general rule, <strong>no</strong>. VRI expects routine communications to occur through <strong>approved channels</strong>.</p>
+              <p>Direct contact through personal social-media accounts, personal texting, personal phone numbers, or other unapproved channels should not be treated as normal practice unless VRI has explicitly authorized a documented exception.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="parents guardians observe coach prompt interfere support role">
+            <summary>May parents sit in sessions or intervene during meetings?</summary>
+            <div class="faq-answer">
+              <p>Parents and guardians remain important partners, especially for minors, but they should not coach, prompt, or materially interfere with live student sessions unless the program expressly allows a support role.</p>
+              <p>VRI works best when students are allowed to think, speak, and struggle productively in a serious scholarly environment.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="workload independent work readings assignments deliverables between meetings">
+            <summary>How much independent work should students expect between meetings?</summary>
+            <div class="faq-answer">
+              <p>Students should expect <strong>meaningful work between live meetings</strong>. Depending on the pathway and project, that may include reading, problem solving, coding, data work, drafting slides, revising written exposition, or preparing for collaborative discussion.</p>
+              <p>VRI is not intended to feel like a passive webinar series. The institute assumes real follow-through outside the live session itself.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="publication authorship recommendations conference presentation guarantee outcomes">
+            <summary>Are publication, authorship, conference presentations, or recommendation letters guaranteed?</summary>
+            <div class="faq-answer">
+              <p><strong>No.</strong> Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or any comparable outcome.</p>
+              <p>VRI may determine, with mentors where relevant, whether a project is ready for internal showcase, external submission, archival posting, recommendation support, or no public dissemination at all.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="authorship acknowledgments credit contribution research ethics">
+            <summary>How are authorship and acknowledgments handled?</summary>
+            <div class="faq-answer">
+              <p>Authorship and acknowledgments should be discussed early and revisited if the scope of contributions changes. Intellectual seriousness and honest attribution matter a great deal in VRI’s culture.</p>
+              <p>Students and mentors should not assume that mere enrollment or attendance automatically entitles a participant to formal authorship.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="ai tools academic integrity originality citation plagiarism ghostwriting fabrication">
+            <summary>Are AI tools allowed in VRI work?</summary>
+            <div class="faq-answer">
+              <p>AI tools may be relevant in some projects, but they may <strong>not</strong> be used to disguise copied, fabricated, ghostwritten, or improperly borrowed work as original scholarship.</p>
+              <p>Students are expected to do their own work, acknowledge collaborators and tools where relevant, and follow mentor guidance about citation, attribution, and responsible use.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="deliverables writing slides posters code formatting deadlines quality revision">
+            <summary>What standards apply to papers, posters, slides, code, or final deliverables?</summary>
+            <div class="faq-answer">
+              <p>Deliverables should be professionally prepared, submitted by stated deadlines, and revised when needed. VRI may require changes or withhold publication or public posting until quality, compliance, and scholarly standards are met.</p>
+              <p>In short: this is not a “submit anything and it counts” environment.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor request topic request preferences placement matching rankings">
+            <summary>Can a student request a specific topic or mentor?</summary>
+            <div class="faq-answer">
+              <p>Students may often share topic preferences, and VRI may consider them carefully, but placement is not guaranteed. VRI may also change, merge, postpone, reformat, or cancel offerings based on enrollment, mentor availability, safety, quality control, or broader business considerations.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="payments tuition deposit remaining balance deadlines pricing current tuition">
+            <summary>How do deposits and remaining tuition payments work?</summary>
+            <div class="faq-answer">
+              <p>VRI uses a <strong>deposit-plus-balance</strong> structure. A non-refundable deposit is generally required to reserve a seat unless VRI expressly states otherwise in writing. Remaining tuition balances are due by published deadlines.</p>
+              <p>Current public pricing is presented on the Programs &amp; Pricing page, where Circles, Groups, and Private Mentorship are described in more detail.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="refund refund policy withdrawal more than 21 days 20 to 8 days 7 days">
+            <summary>What is the default refund framework before a program begins?</summary>
+            <div class="faq-answer">
+              <p>As summarized from VRI’s current policy framework:</p>
+              <ul>
+                <li><strong>More than 21 calendar days</strong> before the first scheduled live session: tuition paid may be refundable <strong>less</strong> the non-refundable deposit and any nonrecoverable fees.</li>
+                <li><strong>20 to 8 calendar days</strong> before the first scheduled live session: up to <strong>50%</strong> of tuition paid may be refundable, less the non-refundable deposit and nonrecoverable fees.</li>
+                <li><strong>7 calendar days or fewer</strong> before the first scheduled live session: no refund absent extraordinary documented circumstances and a written determination by VRI.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="refund after start mentor matching onboarding no refund time zone incompatibility disclosed late">
+            <summary>Are refunds available after the program begins or after mentor matching starts?</summary>
+            <div class="faq-answer">
+              <p>The default position is generally <strong>no refund</strong> once the first live session has begun or once mentor matching or onboarding work has materially started. In rare cases VRI may choose to offer a limited credit rather than a refund, but that should not be assumed.</p>
+              <p>Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, extracurricular conflicts, local device failures, or local internet problems generally do <strong>not</strong> create refund rights unless a signed agreement or published written policy expressly says otherwise.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="financial assistance scholarship aid need based limited">
+            <summary>Is financial assistance available?</summary>
+            <div class="faq-answer">
+              <p>Possibly. Limited financial assistance may be available in select cases, depending on funding and the program cycle. Families should not assume that aid is guaranteed simply because they ask.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentors vetted screening identity references publications background checks sanctions">
+            <summary>How are mentors vetted?</summary>
+            <div class="faq-answer">
+              <p>Mentors are central to VRI’s credibility and risk profile, so VRI may require identity verification, reference checks, publication verification, sanctions screening, and background checks where legally permissible and operationally appropriate.</p>
+              <p>Approval of a mentor is discretionary and may be revoked if VRI concludes that quality, safety, legal, or reputational concerns justify that step.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor standards boundaries authority refunds admissions outcomes contractor status">
+            <summary>What institutional standards apply to mentors once they are active?</summary>
+            <div class="faq-answer">
+              <p>Mentors must prepare appropriately, remain professionally communicative, work through approved channels, and continue in good faith through the engagement unless VRI authorizes a transition.</p>
+              <p>Mentors may <strong>not</strong> bind VRI, promise refunds, guarantee admissions outcomes, or make unauthorized public statements on behalf of the institute.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor employees contractors compensation independent contractor taxes benefits">
+            <summary>Are VRI mentors employees?</summary>
+            <div class="faq-answer">
+              <p>Unless a separate written agreement expressly states otherwise, mentors are generally engaged as <strong>independent contractors</strong>, not employees, partners, or fiduciaries of VRI.</p>
+              <p>Mentor compensation, invoices, documentation, taxes, and related records are governed by contractor agreements and the institute’s administrative policies.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="recording recordings screenshots privacy archives publicity media release">
+            <summary>Can VRI record sessions, and can participants make their own recordings?</summary>
+            <div class="faq-answer">
+              <p>VRI may record sessions, presentations, or review meetings for quality control, training, dispute review, documentation, archival purposes, or safeguarding, subject to releases and applicable law.</p>
+              <p>Participants should <strong>not</strong> assume they may create their own recordings, screenshots, or redistributions. Unauthorized participant recording or sharing is not acceptable absent explicit permission.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="privacy data handling archives publicity likeness image name voice release">
+            <summary>How does VRI handle privacy, archival materials, and publicity use?</summary>
+            <div class="faq-answer">
+              <p>VRI may maintain recordings, chat logs, attendance records, project drafts, reports, posters, and related archival materials for legitimate program administration and business purposes.</p>
+              <p>If VRI intends to use a participant’s name, likeness, voice, image, or approved project excerpts in publicity, marketing, or fundraising, those uses should be governed by a separate release or comparable consent mechanism.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="conduct harassment bullying grooming discrimination retaliation boundaries safety">
+            <summary>What conduct issues are taken especially seriously?</summary>
+            <div class="faq-answer">
+              <p>VRI takes harassment, bullying, discrimination, retaliation, grooming behavior, sexual misconduct, coercive boundary violations, threats, privacy violations, false information, and unsafe off-platform behavior very seriously.</p>
+              <p>Mentors should never request secrecy from students, and participants should not treat personal-channel communication as acceptable by default.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="serious concern report incident review safety complaint appeal">
+            <summary>What should families, students, or mentors do if a serious concern arises?</summary>
+            <div class="faq-answer">
+              <p>Concerns should be reported <strong>promptly and in writing</strong>. Serious issues involving possible abuse, exploitation, grooming, credible threats, severe harassment, or comparable safety concerns should be escalated immediately under VRI’s review and safeguarding procedures.</p>
+              <p>VRI may implement interim measures such as reassignment, separation, restricted access, or temporary suspension while a matter is reviewed.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="copy business model non circumvention private arrangements branding intellectual property">
+            <summary>May mentors or families use VRI relationships to move work outside the institute?</summary>
+            <div class="faq-answer">
+              <p>Not by default. VRI may prohibit direct solicitation, circumvention, and unauthorized private redirection of institute relationships, materials, or workflows during an active engagement and, where applicable, for a defined post-program period in signed agreements.</p>
+              <p>Similarly, access to VRI’s internal structure or templates should not be treated as permission to copy or commercialize the model.</p>
+            </div>
+          </details>
+        </section>
+
+        <div class="faq-empty-note" id="faqEmptyNote">
+          No questions match that search yet. Try terms such as <strong>eligibility</strong>, <strong>time zone</strong>, <strong>refund</strong>, <strong>tablet</strong>, <strong>mentors</strong>, or <strong>publication</strong>.
+        </div>
+
+        <div class="faq-policy-note reveal">
+          <strong style="color: var(--teal-950);">Important note.</strong> This FAQ is intended to be clear and practical, but it does not replace the full institutional framework. Where a signed agreement, a pathway-specific page, or a more specific published instruction applies, that more specific document may govern.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="policies-note">
+      <div class="shell">
+        <div class="feature-band reveal">
           <div class="feature-band-grid">
             <div>
-              <p class="section-label">Private Mentorship</p>
-              <h3>Need a more individualized research match?</h3>
+              <p class="section-label">Institutional Note</p>
+              <h3>Need the larger framework behind these answers?</h3>
               <p>
-                For students seeking more individualized or longer-term work, VRI
-                may occasionally consider limited Private Mentorship placements by
-                inquiry.
+                The FAQ is written in plain language, but VRI’s broader operating
+                framework also includes formal positions on conduct, privacy,
+                youth safety, documentation, recordings, payments, withdrawals,
+                mentor standards, and the institute’s no-guarantee disclosures.
               </p>
             </div>
 
             <div class="feature-quote">
-              <strong>By inquiry only</strong>
+              <strong>Best next step</strong>
               <p>
-                Starting tuition: $9,000. Availability depends on subject area,
-                mentor fit, and researcher availability. Private Mentorship
-                placements are limited and not guaranteed.
+                Review the full Policies &amp; Procedures page for the larger framework,
+                and consult the Programs &amp; Pricing page for pathway structure,
+                tuition, and current public positioning.
               </p>
+              <div class="card-actions" style="margin-top: 18px;">
+                <a class="btn btn-primary" href="policies.html">Policies &amp; Procedures</a>
+                <a class="btn btn-gold" href="programs.html">Programs &amp; Pricing</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="areas">
+    <section class="section" id="contact">
       <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Current Research Areas</p>
-            <h2>Current research areas, with room to grow.</h2>
-          </div>
-          <p class="section-intro">
-            VRI’s current research areas reflect subjects that are intellectually
-            durable, well suited to serious online work, and flexible enough to
-            expand over time.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-mathematics-v2.png" alt="Abstract mathematical illustration representing theoretical mathematics and geometric structure" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Area I</div>
-            <h3>Mathematics</h3>
-            <p>
-              A home for proof, theory, structure, mathematical experimentation,
-              abstraction, and original reasoning across pure and applied
-              directions. Representative topics may include graph theory,
-              combinatorics, number theory, discrete geometry, dynamical systems,
-              and other areas of serious mathematical inquiry.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-statistics-data-science.png" alt="Abstract data visualization representing statistics, data science, and artificial intelligence" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Area II</div>
-            <h3>Statistics &amp; Data Science</h3>
-            <p>
-              A research area centered on statistical reasoning, modeling,
-              computation, and the careful analysis of real-world data.
-              Representative topics may include Bayesian statistics, causal
-              inference, forecasting, data visualization, experimental design,
-              and quantitative decision-making.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-computer-science-v11.png" alt="Abstract code-based illustration representing computer science and computational systems" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Area III</div>
-            <h3>Computer Science &amp; AI</h3>
-            <p>
-              A broad and future-facing domain centered on algorithms,
-              intelligent systems, software, and computational problem-solving.
-              Representative topics may include algorithm design, artificial
-              intelligence, machine learning, multi-agent systems, computer
-              vision, natural language processing, and related computational approaches.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-quantitative-economics-finance-decision-science.png" alt="Abstract quantitative finance and decision science illustration with charts, analytical overlays, and a refined economic research aesthetic" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Area IV</div>
-            <h3>Quantitative Economics, Finance &amp; Decision Science</h3>
-            <p>
-              A research area connecting mathematical reasoning, data analysis,
-              forecasting, optimization, and decision-making in economic and
-              financial contexts. Representative topics may include risk,
-              forecasting, quantitative finance, game theory, operations research,
-              and data-informed decision models.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="area-visual">
-              <img src="assets/images/research-areas/vri-pic-public-health-biostatistics-epidemiology.png" alt="Abstract public health, biostatistics, and epidemiology illustration with global map, data points, and analytic trend curves" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-label">Area V</div>
-            <h3>Public Health, Biostatistics &amp; Epidemiology</h3>
-            <p>
-              A research area centered on health data, population-level patterns,
-              biostatistical reasoning, and the study of disease, risk, and
-              intervention in real-world settings. Representative topics may
-              include infectious disease modeling, biostatistics, health
-              disparities, environmental health, forecasting, and data-informed
-              public health decision-making.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="format">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Program Format</p>
-            <h2>Fully online, live, and built around meaningful independent work.</h2>
-          </div>
-          <p class="section-intro">
-            All VRI programs are conducted online. Students meet live with
-            mentors and peers, then continue with meaningful independent work
-            between sessions as projects develop.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Online Format</div>
-            <h3>How VRI is delivered</h3>
-            <p>
-              VRI is designed to support thoughtful, well-supported work in an online setting,
-              with a format that balances live interaction, research guidance,
-              and independent scholarly work.
-            </p>
-            <ul>
-              <li>Live virtual meetings with mentors and, where applicable, peers</li>
-              <li>Independent work between sessions</li>
-              <li>Scheduling based on pathway structure and mentor availability</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Student Setup</div>
-            <h3>What students should have</h3>
-            <p>
-              Students do not need an elaborate technical setup, but they should
-              be prepared to participate consistently and professionally in a
-              focused online research environment.
-            </p>
-            <ul>
-              <li>Reliable internet access and a working email account</li>
-              <li>A computer or tablet with camera and microphone</li>
-              <li>A quiet workspace; headphones are recommended</li>
-              <li>A writing tablet with stylus is strongly recommended for math-heavy work</li>
-            </ul>
-          </article>
-        </div>
-
         <div class="cta-panel reveal">
           <div>
-            <h3>Tools may vary by mentor and project.</h3>
+            <p class="section-label">Contact</p>
+            <h3>Still have a question about fit, logistics, or the right pathway?</h3>
             <p>
-              Meetings may use Zoom, Microsoft Teams, Google Meet, or a
-              comparable platform. Some projects may also involve shared
-              documents, slides, code notebooks, datasets, or other
-              discipline-specific tools.
+              Reach out if you want help thinking through Circles, Groups,
+              Private Mentorship, scheduling feasibility, or whether a specific
+              research proposal is a strong fit for a student.
             </p>
           </div>
 
           <div class="quick-links">
-            <a class="quick-chip quick-chip-teal" href="faq.html">FAQ</a>
-            <a class="quick-chip quick-chip-teal" href="policies.html">Policies</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Pricing &amp; Notes</p>
-            <h2>Clear expectations for cost, timing, and outcomes.</h2>
-          </div>
-          <p class="section-intro">
-            VRI programs are designed as focused, mentor-guided academic
-            experiences. Cohort size, duration, and mentor access all matter when
-            determining the right pathway.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Current Tuition</div>
-            <h3>Current public pricing</h3>
-            <p>
-              VRI pricing reflects cohort size, duration, and the level of mentor
-              access built into each pathway.
-            </p>
-            <ul>
-              <li>Circles: $1,395 per student</li>
-              <li>Groups: $3,495 per student</li>
-              <li>Private Mentorship: starting at $9,000 by inquiry</li>
-              <li>Limited financial assistance may be available in select cases</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Terms &amp; Expectations</div>
-            <h3>Spring, Summer, and Fall structure</h3>
-            <p>
-              Public offerings run on three main annual terms. Students work toward
-              a final paper, presentation, or comparable project deliverable, with
-              end-of-term presentation or symposium-style sharing where appropriate.
-            </p>
-            <ul>
-              <li>Three main public terms each year: Spring, Summer, Fall</li>
-              <li>Live sessions plus meaningful independent work between meetings</li>
-              <li>Consistent attendance and sustained effort matter</li>
-              <li>Publication is not guaranteed</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="cta-panel reveal">
-          <div>
-            <h3>Explore current opportunities or reach out about fit.</h3>
-            <p>
-              Families can review the current round of mentored projects, learn
-              more about the institute, or inquire about whether Circles,
-              Groups, or Private Mentorship is the strongest fit for a
-              student’s goals.
-            </p>
-          </div>
-
-          <div class="quick-links">
-            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="btn btn-primary" href="mailto:info@virtualresearchinstitute.org">Email VRI</a>
             <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
             <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
           </div>
         </div>
       </div>
     </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does eligibility differ across Tier I, Tier II, and Private Mentorship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Circles are the broadest public entry point and are generally open to motivated students who appear ready to engage seriously. Groups involve more active readiness review and fit assessment. Private Mentorship is the most selective option and depends on strong academic, logistical, and mentor fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do families need to pay attention to mentor time zones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling. VRI is beginning to post mentor time zones directly on research proposal pages when available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a tablet with a stylus required for math-heavy topics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is not required, but for math-heavy research a writing tablet or comparable device with a stylus that can share screen is strongly recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are publication, authorship, conference presentations, or recommendation letters guaranteed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or comparable outcomes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the default refund framework before a program begins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "More than 21 calendar days before the first scheduled live session, tuition paid may be refundable less the non-refundable deposit and any nonrecoverable fees. From 20 to 8 calendar days before, up to 50 percent of tuition paid may be refundable less the deposit and nonrecoverable fees. Seven calendar days or fewer before the first scheduled live session, no refund is expected absent extraordinary documented circumstances and a written determination by VRI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are refunds available after the program begins or after mentor matching starts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The default position is generally no refund once the first live session has begun or once mentor matching or onboarding work has materially started. Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, local device failures, or local internet problems generally do not create refund rights unless a signed agreement or published written policy expressly says otherwise."
+          }
+        }
+      ]
+    }
+    </script>
   </main>
+
 
   <footer class="site-footer">
     <div class="frame-shell">
@@ -2479,11 +2898,10 @@
         <div class="footer-col">
           <h5>On This Page</h5>
           <nav>
-            <a href="#about">Overview</a>
-            <a href="#programs">Research Pathways</a>
-            <a href="#areas">Research Areas</a>
-            <a href="#format">Program Format</a>
-            <a href="#pricing">Pricing &amp; Notes</a>
+            <a href="#overview">Overview</a>
+            <a href="#faq-library">FAQ Library</a>
+            <a href="#policies-note">Institutional Notes</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
 
@@ -2492,10 +2910,10 @@
           <nav>
             <a href="index.html">Home</a>
             <a href="upcoming-projects.html">Upcoming Projects</a>
-            <a href="programs.html" aria-current="page">Programs &amp; Pricing</a>
+            <a href="programs.html">Programs &amp; Pricing</a>
             <a href="about.html">About VRI</a>
             <a href="research-archive.html">Research Archive</a>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.html" aria-current="page">FAQ</a>
             <a href="policies.html">Policies &amp; Procedures</a>
           </nav>
         </div>
@@ -2860,5 +3278,213 @@
       }
     })();
   </script>
+
+  <script>
+    (function () {
+      const input = document.getElementById('faqFilter');
+      const grid = document.getElementById('faqGrid');
+      const toggleAllBtn = document.getElementById('toggleAll');
+      const count = document.getElementById('faqCount');
+      const emptyNote = document.getElementById('faqEmptyNote');
+      const chips = Array.from(document.querySelectorAll('.faq-chip'));
+      if (!input || !grid || !toggleAllBtn || !count) return;
+
+      const cards = Array.from(grid.querySelectorAll('details.faq-card'));
+      const normalize = (value) => (value || '')
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[“”‘’]/g, '"')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      const SYNONYMS = {
+        fit: ['eligibility', 'best pathway', 'readiness', 'placement'],
+        eligibility: ['fit', 'readiness', 'selective', 'admissions', 'tier', 'circles', 'groups', 'private mentorship'],
+        schedule: ['scheduling', 'meetings', 'attendance', 'availability', 'time zone', 'timezone'],
+        timezone: ['time zone', 'schedule', 'availability', 'international'],
+        technology: ['tech', 'tablet', 'stylus', 'zoom', 'teams', 'meet', 'laptop', 'internet'],
+        tablet: ['stylus', 'math writing', 'screen share'],
+        publication: ['authorship', 'conference', 'poster', 'paper', 'recommendation'],
+        payments: ['tuition', 'deposit', 'refund', 'aid'],
+        refund: ['withdrawal', 'deposit', 'credit', 'chargeback'],
+        mentors: ['mentor', 'vetting', 'contractor', 'boundaries'],
+        privacy: ['recording', 'archives', 'media', 'conduct', 'safety']
+      };
+
+      function tokenize(query) {
+        return normalize(query)
+          .split(/[\s,]+/)
+          .filter(Boolean)
+          .map(token => token.replace(/s\b/, ''));
+      }
+
+      function expandQuery(query) {
+        const tokens = tokenize(query);
+        const expanded = new Set(tokens);
+        tokens.forEach((token) => {
+          const matches = SYNONYMS[token] || SYNONYMS[token.replace(/s$/, '')] || [];
+          matches.forEach((phrase) => tokenize(phrase).forEach((item) => expanded.add(item)));
+        });
+        return Array.from(expanded);
+      }
+
+      function safeRegExp(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
+      const index = cards.map((el, i) => {
+        const summaryEl = el.querySelector('summary');
+        const answerEl = el.querySelector('.faq-answer');
+        const id = el.id || `faq-${i + 1}`;
+        el.id = id;
+        if (answerEl && !answerEl.querySelector('.faq-copylink')) {
+          const copy = document.createElement('p');
+          copy.className = 'faq-copylink';
+          copy.innerHTML = 'Need to share this? <button type="button">Copy link</button>';
+          const button = copy.querySelector('button');
+          button.addEventListener('click', async () => {
+            const url = `${window.location.origin}${window.location.pathname}#${id}`;
+            try {
+              await navigator.clipboard.writeText(url);
+              button.textContent = 'Copied';
+              window.setTimeout(() => {
+                button.textContent = 'Copy link';
+              }, 1400);
+            } catch (error) {
+              window.prompt('Copy this link:', url);
+            }
+          });
+          answerEl.appendChild(copy);
+        }
+        return {
+          el,
+          id,
+          summaryEl,
+          searchBlob: normalize(`${el.textContent} ${(el.getAttribute('data-tags') || '')}`)
+        };
+      });
+
+      function highlight(summaryEl, tokens) {
+        const original = summaryEl.getAttribute('data-original') || summaryEl.textContent;
+        if (!summaryEl.getAttribute('data-original')) {
+          summaryEl.setAttribute('data-original', original);
+        }
+        if (!tokens.length) {
+          summaryEl.textContent = original;
+          return;
+        }
+        const escaped = tokens.filter(token => token.length > 1).map(safeRegExp);
+        if (!escaped.length) {
+          summaryEl.textContent = original;
+          return;
+        }
+        const regex = new RegExp(`(^|[^A-Za-z0-9_])(${escaped.join('|')})(?=$|[^A-Za-z0-9_])`, 'gi');
+        summaryEl.innerHTML = original.replace(regex, (match, pre, hit) => `${pre}<mark class="faq-hit">${hit}</mark>`);
+      }
+
+      function visibleItems() {
+        return index.filter(item => item.el.style.display !== 'none');
+      }
+
+      function updateToggleLabel() {
+        const vis = visibleItems();
+        const allOpen = vis.length > 0 && vis.every(item => item.el.open);
+        toggleAllBtn.disabled = vis.length === 0;
+        toggleAllBtn.textContent = allOpen ? 'Close all' : 'Open all';
+        toggleAllBtn.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
+      }
+
+      function applyFilter(query) {
+        const matchTokens = expandQuery(query);
+        const highlightTokens = tokenize(query);
+        let visible = 0;
+        index.forEach((item) => {
+          const show = !matchTokens.length || matchTokens.some(token => item.searchBlob.includes(token));
+          item.el.style.display = show ? '' : 'none';
+          if (!show && item.el.open) {
+            item.el.open = false;
+          }
+          if (show) visible += 1;
+          highlight(item.summaryEl, highlightTokens);
+        });
+
+        count.textContent = `${visible} question${visible === 1 ? '' : 's'}`;
+        if (emptyNote) {
+          emptyNote.classList.toggle('is-visible', visible === 0);
+        }
+
+        const vis = visibleItems();
+        if (vis.length === 1) {
+          vis[0].el.open = true;
+        }
+
+        const url = new URL(window.location.href);
+        if (query.trim()) url.searchParams.set('q', query.trim());
+        else url.searchParams.delete('q');
+        history.replaceState(null, '', url.toString());
+        updateToggleLabel();
+      }
+
+      input.addEventListener('input', (event) => {
+        chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
+        applyFilter(event.target.value);
+      });
+
+      chips.forEach((chip) => {
+        chip.setAttribute('aria-pressed', 'false');
+        chip.addEventListener('click', () => {
+          const active = chip.getAttribute('aria-pressed') === 'true';
+          chips.forEach((entry) => entry.setAttribute('aria-pressed', 'false'));
+          if (!active) {
+            chip.setAttribute('aria-pressed', 'true');
+            input.value = chip.dataset.filter || '';
+            applyFilter(input.value);
+          } else {
+            input.value = '';
+            applyFilter('');
+          }
+          input.focus();
+        });
+      });
+
+      toggleAllBtn.addEventListener('click', () => {
+        const vis = visibleItems();
+        const allOpen = vis.length > 0 && vis.every((item) => item.el.open);
+        vis.forEach((item) => {
+          item.el.open = !allOpen;
+        });
+        updateToggleLabel();
+      });
+
+      cards.forEach((card) => card.addEventListener('toggle', updateToggleLabel));
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === '/' && document.activeElement !== input) {
+          event.preventDefault();
+          input.focus();
+        }
+        if (event.key === 'Escape' && document.activeElement === input) {
+          input.value = '';
+          chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
+          applyFilter('');
+        }
+      });
+
+      const initialQuery = new URL(window.location.href).searchParams.get('q') || '';
+      if (initialQuery) {
+        input.value = initialQuery;
+      }
+      applyFilter(initialQuery);
+
+      if (window.location.hash.startsWith('#faq-')) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target) {
+          target.open = true;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    })();
+  </script>
+
 </body>
 </html>
