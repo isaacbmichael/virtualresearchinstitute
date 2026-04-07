@@ -1,1 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Virtual Research Institute</title>
+  <meta
+    name="description"
+    content="Frequently asked questions for the Virtual Research Institute — clear answers for families and students about fit, technology, scheduling, payments, safety, and mentored research."
+  />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <noscript>
+    <style>
+      .menu-toggle,
+      .menu-backdrop,
+      .mobile-panel {
+        display: none !important;
+      }
+
+      .noscript-nav {
+        padding: 12px 0 0;
+      }
+
+      .noscript-nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0;
+        padding: 0 0 18px;
+      }
+
+      .noscript-nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(4, 76, 89, 0.12);
+        box-shadow: var(--shadow-sm);
+        color: var(--teal-900);
+        font-weight: 700;
+      }
+    </style>
+  </noscript>
+
+  <style>
+    :root {
+      --bg: #f6f3eb;
+      --bg-soft: #fbfaf6;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: #ffffff;
+      --ink: #10212a;
+      --muted: #58656d;
+
+      --teal-950: #033843;
+      --teal-900: #044c59;
+      --teal-850: #04555f;
+      --teal-800: #05575c;
+      --teal-700: #0c6170;
+      --teal-600: #00717f;
+
+      --gold-800: #9d6f0c;
+      --gold-700: #b88c0c;
+      --gold-650: #cf9d0e;
+      --gold-600: #d9a302;
+      --gold-500: #e5b53b;
+      --gold-300: #f2e0a9;
+
+      --line: rgba(4, 76, 89, 0.14);
+      --line-strong: rgba(4, 76, 89, 0.24);
+      --shadow-lg: 0 30px 70px rgba(8, 28, 38, 0.14);
+      --shadow-md: 0 16px 36px rgba(8, 28, 38, 0.1);
+      --shadow-sm: 0 10px 22px rgba(8, 28, 38, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1840px;
+      --gutter: clamp(16px, 2.6vw, 32px);
+      --frame-gutter: clamp(40px, 3.2vw, 56px);
+      --nav-h: 110px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(229, 181, 59, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 14%, rgba(4, 76, 89, 0.16), transparent 24%),
+        linear-gradient(180deg, #f8f5ee 0%, #f5f1e8 42%, #f8f6f0 100%);
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    .brand:focus-visible,
+    .menu-toggle:focus-visible,
+    .menu-close:focus-visible,
+    .mobile-nav a:focus-visible,
+    .btn:focus-visible,
+    .quick-chip:focus-visible {
+      outline: 3px solid rgba(0, 113, 127, 0.28);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
+    }
+
+    .noscript-nav a[aria-current="page"],
+    .mobile-nav a[aria-current="page"] {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.18);
+      color: var(--teal-950);
+      box-shadow: var(--shadow-md);
+    }
+
+    .footer-col nav a[aria-current="page"] {
+      color: var(--teal-900);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--teal-900);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 2000;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .frame-shell {
+      width: calc(100% - (2 * var(--frame-gutter)));
+      margin-inline: auto;
+    }
+
+    .shell {
+      width: min(calc(var(--max) + (2 * var(--frame-gutter))), 100%);
+      padding-inline: var(--frame-gutter);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(248, 245, 238, 0.72);
+      border-bottom: 1px solid rgba(4, 76, 89, 0.08);
+      transition: background .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(250, 248, 243, 0.9);
+      border-bottom-color: rgba(4, 76, 89, 0.14);
+      box-shadow: 0 10px 30px rgba(16, 33, 42, 0.05);
+    }
+
+    .header-inner {
+      min-height: var(--nav-h);
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      width: fit-content;
+      position: relative;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: normal;
+      white-space: nowrap;
+    }
+
+    .brand-bar {
+      width: min(540px, 100%);
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(16, 33, 42, 0.76);
+      max-width: none;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .brand-lockup {
+      flex-direction: row;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-anim {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .brand-evolve {
+      --bar-mini: 44px;
+      --bar-short: 74px;
+      --bar-medium: 86px;
+      --pair-overlap: 0.09em;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      width: max-content;
+      max-width: 100%;
+      opacity: 1;
+    }
+
+    body.js-enhanced .brand-evolve {
+      opacity: 0;
+    }
+
+    body.js-enhanced .brand-evolve.is-ready {
+      opacity: 1;
+    }
+
+    .brand-evolve-line {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.22em;
+      width: max-content;
+      white-space: nowrap;
+    }
+
+    .be-word {
+      display: inline-flex;
+      align-items: flex-start;
+      transition: transform 1.1s var(--ease), opacity .35s var(--ease);
+      will-change: transform, opacity;
+    }
+
+    .be-word-v {
+      transform: translateX(0);
+    }
+
+    .be-word-r,
+    .be-word-i {
+      transform: translateX(0);
+    }
+
+    .be-word-r {
+      margin-left: calc(-1 * var(--pair-overlap));
+    }
+
+    .be-word-i {
+      margin-left: calc(-1 * var(--pair-overlap));
+      opacity: 0;
+    }
+
+    .be-tail {
+      display: inline-flex;
+      align-items: flex-start;
+    }
+
+    .be-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-0.26em);
+      transition: transform .62s var(--ease), opacity .34s var(--ease);
+      will-change: transform, opacity;
+    }
+
+    .be-char.is-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .brand-evolve.is-v .be-word-r {
+      transform: translateX(calc(-1 * var(--shift-r-start, 0px)));
+      opacity: 0;
+    }
+
+    .brand-evolve.is-vr .be-word-r,
+    .brand-evolve.is-vri .be-word-r {
+      transform: translateX(calc(-1 * var(--shift-r, 0px)));
+      opacity: 1;
+    }
+
+    .brand-evolve.is-v .be-word-i,
+    .brand-evolve.is-vr .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-start, 0px)));
+      opacity: 0;
+    }
+
+    .brand-evolve.is-vri .be-word-i {
+      transform: translateX(calc(-1 * var(--shift-i-compact, 0px)));
+      opacity: 1;
+    }
+
+    .brand-evolve.is-full .be-word-r,
+    .brand-evolve.is-full .be-word-i {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .be-bar {
+      width: var(--bar-short);
+      max-width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 8px 24px rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+      transition: width 1.05s var(--ease);
+      will-change: width;
+    }
+
+    .brand-evolve.is-v .be-bar {
+      width: var(--bar-mini);
+    }
+
+    .brand-evolve.is-vr .be-bar {
+      width: var(--bar-short);
+    }
+
+    .brand-evolve.is-vri .be-bar {
+      width: var(--bar-medium);
+    }
+
+    .brand-evolve.is-full .be-bar {
+      width: 100%;
+    }
+
+    .footer-brand {
+      --footer-brand-scale: 0.8;
+      display: inline-flex;
+      flex-direction: column;
+      gap: calc(8px * var(--footer-brand-scale));
+      width: fit-content;
+      position: relative;
+    }
+
+    .footer-brand-title {
+      margin: 0;
+      display: inline-flex;
+      align-items: flex-start;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(calc(2rem * var(--footer-brand-scale)), calc(3.2vw * var(--footer-brand-scale)), calc(3.1rem * var(--footer-brand-scale)));
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--teal-950);
+      text-wrap: normal;
+      white-space: nowrap;
+    }
+
+    .footer-brand-title .footer-v,
+    .footer-brand-title .footer-r,
+    .footer-brand-title .footer-i {
+      display: inline-block;
+      position: relative;
+    }
+
+    .footer-brand-title .footer-r,
+    .footer-brand-title .footer-i {
+      margin-left: calc(-1 * 0.09em);
+    }
+
+    .footer-brand-bar {
+      width: calc(86px * var(--footer-brand-scale));
+      height: calc(6px * var(--footer-brand-scale));
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-800), var(--gold-500) 60%, var(--gold-300));
+      box-shadow: 0 calc(8px * var(--footer-brand-scale)) calc(24px * var(--footer-brand-scale)) rgba(184, 140, 12, 0.28);
+      transform-origin: left center;
+      animation: barGlow 7s ease-in-out infinite;
+    }
+
+    .footer-subtitle {
+      display: none;
+    }
+
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      justify-self: end;
+    }
+
+    .menu-toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 0;
+      background: transparent;
+      padding: 12px 8px;
+      border-radius: 0;
+      cursor: pointer;
+      color: rgba(16, 33, 42, 0.86);
+      font-size: 1.04rem;
+      font-weight: 600;
+      transition: color .25s ease;
+      white-space: nowrap;
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+      background: transparent;
+      color: var(--teal-900);
+    }
+
+    .menu-toggle .bars {
+      position: relative;
+      width: 26px;
+      height: 18px;
+      flex: 0 0 26px;
+    }
+
+    .menu-toggle .bars span {
+      position: absolute;
+      left: 0;
+      width: 26px;
+      height: 2px;
+      min-width: 0;
+      background: currentColor;
+      border-radius: 0;
+      display: block;
+    }
+
+    .menu-toggle .bars span:nth-child(1) {
+      top: 1px;
+    }
+
+    .menu-toggle .bars span:nth-child(2) {
+      top: 8px;
+    }
+
+    .menu-toggle .bars span:nth-child(3) {
+      top: 15px;
+    }
+
+    .menu-label {
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      box-shadow: var(--shadow-sm);
+      will-change: transform;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(4, 76, 89, 0.16);
+      color: var(--teal-900);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: white;
+      box-shadow: 0 14px 28px rgba(16, 33, 42, 0.12);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      color: #1e1806;
+    }
+
+    .btn-gold:hover,
+    .btn-gold:focus-visible {
+      box-shadow: 0 18px 34px rgba(184, 140, 12, 0.24);
+    }
+
+    .quick-chip.quick-chip-teal {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      border-color: transparent;
+      color: white;
+    }
+
+    .quick-chip.quick-chip-teal:hover,
+    .quick-chip.quick-chip-teal:focus-visible {
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.22);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 33, 42, 0.22);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s var(--ease);
+      z-index: 1001;
+    }
+
+    body.menu-open .menu-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-panel {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(500px, 96vw);
+      background: rgba(251, 249, 244, 0.97);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-left: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: -24px 0 60px rgba(16, 33, 42, 0.12);
+      padding: calc(24px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear .45s;
+      z-index: 1002;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    body.menu-open .mobile-panel {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: transform .45s var(--ease), opacity .35s var(--ease), visibility 0s linear 0s;
+    }
+
+    .menu-panel-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .menu-panel-head {
+      min-width: 0;
+    }
+
+    .menu-panel-kicker {
+      margin: 0 0 18px;
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .menu-panel-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.85rem;
+      line-height: 1;
+      color: var(--teal-950);
+      white-space: nowrap;
+    }
+
+    .menu-close {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(4, 76, 89, 0.14);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-900);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        color .35s var(--ease),
+        box-shadow .35s var(--ease);
+    }
+
+    .menu-close:hover,
+    .menu-close:focus-visible {
+      background: white;
+      color: var(--teal-900);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .menu-section + .menu-section {
+      margin-top: 18px;
+    }
+
+    .menu-section-label {
+      margin: 0 0 12px;
+      color: var(--teal-700);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .menu-divider {
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(90deg, transparent, rgba(4, 76, 89, 0.18), transparent);
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      color: var(--teal-900);
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .35s var(--ease),
+        background .35s var(--ease),
+        border-color .35s var(--ease),
+        box-shadow .35s var(--ease);
+      transform: translateY(0);
+      will-change: transform;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus-visible {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.14);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    main {
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      padding: 52px 0 24px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 50%;
+      width: min(900px, 92vw);
+      height: 620px;
+      transform: translateX(-35%);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(229, 181, 59, 0.18), transparent 22%),
+        radial-gradient(circle at 74% 36%, rgba(4, 76, 89, 0.18), transparent 20%),
+        radial-gradient(circle at 52% 76%, rgba(4, 76, 89, 0.1), transparent 26%);
+      z-index: -1;
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: clamp(28px, 4vw, 54px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--teal-800);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      box-shadow: 0 0 18px rgba(184, 140, 12, 0.3);
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+      color: var(--teal-950);
+      max-width: 22ch;
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 96ch;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      position: relative;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .metric:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: var(--teal-950);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .hero-scene {
+      perspective: 1600px;
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
+
+    .scene-wrap {
+      position: relative;
+      width: min(560px, 100%);
+      height: 600px;
+      transform-style: preserve-3d;
+      transition: transform .25s ease;
+      will-change: transform;
+    }
+
+    .panel {
+      position: absolute;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,0.64), transparent 34%),
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .panel-main {
+      inset: 72px 24px 0 auto;
+      width: 420px;
+      height: 470px;
+      padding: 28px 28px 26px;
+      transform: translateZ(32px);
+    }
+
+    .panel-accent {
+      left: 0;
+      top: 22px;
+      width: 240px;
+      height: 160px;
+      padding: 22px;
+      transform: rotate(-7deg) translateZ(58px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .panel-bottom {
+      left: 34px;
+      bottom: 14px;
+      width: 320px;
+      height: 170px;
+      padding: 22px 24px;
+      transform: rotate(3deg) translateZ(44px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .hero-scene-metrics {
+      min-height: 440px;
+      align-self: start;
+      padding-top: 8px;
+    }
+
+    .scene-wrap-metrics {
+      width: min(500px, 100%);
+      height: 420px;
+    }
+
+    .metric-panel {
+      width: min(280px, 78%);
+      min-height: 152px;
+      padding: 22px 22px 20px;
+    }
+
+    .metric-panel h3 {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.4rem;
+      line-height: 0.92;
+      color: var(--teal-950);
+    }
+
+    .metric-panel p {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: var(--muted);
+    }
+
+    .metric-panel-a {
+      left: 10px;
+      top: 4px;
+      transform: rotate(-7deg) translateZ(56px);
+      animation: floatA 10s ease-in-out infinite;
+    }
+
+    .metric-panel-b {
+      right: -8px;
+      top: 104px;
+      width: min(296px, 80%);
+      transform: rotate(5deg) translateZ(48px);
+      animation: floatB 12s ease-in-out infinite;
+    }
+
+    .metric-panel-c {
+      left: 58px;
+      bottom: 12px;
+      width: min(314px, 82%);
+      transform: rotate(-3deg) translateZ(52px);
+      animation: floatA 11s ease-in-out infinite;
+    }
+
+    .panel-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 12px;
+    }
+
+    .panel h3 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .panel p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184, 140, 12, 0.65),
+        transparent
+      );
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stack-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px 14px;
+      align-items: start;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.8);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      transform: translateZ(28px);
+    }
+
+    .stack-item .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      box-shadow: 0 8px 20px rgba(4, 76, 89, 0.22);
+    }
+
+    .stack-item strong {
+      display: block;
+      color: var(--teal-950);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .stack-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(184, 140, 12, 0.12);
+      color: var(--gold-800);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(184, 140, 12, 0.18);
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    #faq-library.section {
+      padding-top: 10px;
+    }
+
+    section[id] {
+      scroll-margin-top: calc(var(--nav-h) + 28px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: var(--teal-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      box-shadow: 0 0 18px rgba(184, 140, 12, 0.3);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--teal-950);
+    }
+
+    .section-intro {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #areas .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #areas .area-visual {
+      margin: -4px 0 18px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    #areas .area-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.94));
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform .55s var(--ease),
+        box-shadow .55s var(--ease),
+        border-color .55s var(--ease);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(229, 181, 59, 0.12), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,0.44), transparent 30%);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(4, 76, 89, 0.16);
+    }
+
+    #projects .card:hover {
+      transform: none;
+    }
+
+    #projects .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #projects .card-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 16px;
+    }
+
+    .card-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal-950);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .card ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .card ul li + li {
+      margin-top: 8px;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .term-meta {
+      margin: 0 0 14px;
+      color: var(--teal-700);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .term-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .term-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .term-shot {
+      margin: 0;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .term-shot img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      background: #fff;
+    }
+
+    .term-shot-colley img {
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .term-shot figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .feature-band {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(4, 76, 89, 0.96), rgba(7, 87, 97, 0.92));
+      color: white;
+      box-shadow: 0 28px 64px rgba(4, 76, 89, 0.22);
+      margin-top: 14px;
+    }
+
+    .feature-band::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -40% auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 181, 59, 0.24), transparent 60%);
+      pointer-events: none;
+    }
+
+    .feature-band-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .feature-band .section-label,
+    .feature-band p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .feature-band h3 {
+      color: white;
+    }
+
+    .feature-quote {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .feature-quote strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--gold-300);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .feature-quote p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.8;
+    }
+
+    .cta-panel {
+      margin-top: 24px;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-panel h3 {
+      margin-bottom: 12px;
+    }
+
+    .cta-panel p {
+      margin: 0;
+      max-width: none;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .quick-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      color: var(--teal-900);
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+
+    .quick-chip:hover,
+    .quick-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      border-top: 1px solid rgba(4, 76, 89, 0.12);
+      padding-top: 30px;
+    }
+
+    .footer-row {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) repeat(4, minmax(0, 1fr));
+      gap: 48px;
+      align-items: start;
+      padding: 26px 0 48px;
+    }
+
+    .footer-brand-stack {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .footer-col p,
+    .footer-col a,
+    .footer-meta p,
+    .footer-meta a {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .footer-col h5 {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--teal-700);
+    }
+
+    .footer-col nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible,
+    .footer-meta a:hover,
+    .footer-meta a:focus-visible {
+      color: var(--teal-900);
+      outline: none;
+    }
+
+    .footer-meta {
+      justify-self: start;
+      text-align: left;
+    }
+
+    .footer-meta p {
+      white-space: nowrap;
+    }
+
+    body.js-enhanced .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+    }
+
+    body.js-enhanced .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-tilt],
+    [data-float] {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 780px;
+      height: 780px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(4, 76, 89, 0.06);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 140, 12, 0.08);
+    }
+
+    .hero-orbit::after {
+      inset: 24%;
+      border-color: rgba(4, 76, 89, 0.08);
+    }
+
+    @keyframes floatA {
+      0%, 100% { transform: rotate(-7deg) translateZ(58px) translateY(0); }
+      50% { transform: rotate(-5deg) translateZ(58px) translateY(-12px); }
+    }
+
+    @keyframes floatB {
+      0%, 100% { transform: rotate(3deg) translateZ(44px) translateY(0); }
+      50% { transform: rotate(1deg) translateZ(44px) translateY(-10px); }
+    }
+
+    @keyframes barGlow {
+      0%, 100% { transform: scaleX(1); filter: saturate(1); }
+      50% { transform: scaleX(1.03); filter: saturate(1.08); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      body.js-enhanced .reveal,
+      body.js-enhanced .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .scene-wrap,
+      [data-tilt],
+      [data-float],
+      .panel-accent,
+      .panel-bottom {
+        transform: none !important;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .btn,
+      .quick-chip,
+      .menu-close,
+      .mobile-nav a,
+      .metric,
+      .card,
+      .scene-wrap,
+      [data-tilt],
+      [data-float] {
+        will-change: auto;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .header-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+
+      .hero-grid,
+      .section-head,
+      .feature-band-grid,
+      .cta-panel,
+      .footer-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-links {
+        justify-content: flex-start;
+      }
+
+      .footer-meta {
+        text-align: left;
+      }
+
+      .hero-copy h1 {
+        max-width: 12ch;
+      }
+
+      .hero-scene {
+        min-height: 560px;
+      }
+
+      .scene-wrap {
+        height: 540px;
+      }
+
+      .panel-main {
+        width: min(420px, calc(100% - 24px));
+      }
+
+      .hero-scene-metrics {
+        min-height: 420px;
+      }
+
+      .scene-wrap-metrics {
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 920px) {
+      :root {
+        --nav-h: 96px;
+        --frame-gutter: clamp(28px, 5vw, 40px);
+      }
+
+      .shell {
+        width: min(calc(var(--max) + (2 * var(--frame-gutter))), 100%);
+        padding-inline: var(--frame-gutter);
+      }
+
+      .brand-title {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+        white-space: normal;
+      }
+
+      .brand-evolve {
+        --bar-mini: 36px;
+        --bar-short: 62px;
+        --bar-medium: 72px;
+      }
+
+      .brand-lockup {
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .brand-subtitle {
+        font-size: 0.76rem;
+        white-space: normal;
+      }
+
+      .footer-subtitle {
+        font-size: calc(0.76rem * var(--footer-brand-scale));
+        white-space: normal;
+      }
+
+      .footer-brand-title {
+        font-size: clamp(calc(1.8rem * var(--footer-brand-scale)), calc(7vw * var(--footer-brand-scale)), calc(2.6rem * var(--footer-brand-scale)));
+        white-space: normal;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-metrics,
+      .grid-3,
+      .grid-2,
+      .term-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-scene {
+        min-height: 500px;
+      }
+
+      .scene-wrap {
+        width: 100%;
+        height: 500px;
+      }
+
+      .panel-main {
+        inset: 62px 0 0 auto;
+        width: min(100%, 400px);
+        height: 420px;
+        padding: 24px;
+      }
+
+      .panel-accent {
+        width: 210px;
+        height: 150px;
+        top: 6px;
+      }
+
+      .panel-bottom {
+        width: min(290px, 78%);
+        left: 16px;
+        bottom: 6px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 380px;
+      }
+
+      .scene-wrap-metrics {
+        width: min(440px, 100%);
+        height: 360px;
+      }
+
+      .metric-panel {
+        width: min(250px, 84%);
+        min-height: 140px;
+        padding: 20px 20px 18px;
+      }
+
+      .metric-panel h3 {
+        font-size: 2.15rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.9rem;
+      }
+
+      .metric-panel-a {
+        left: 4px;
+        top: 0;
+      }
+
+      .metric-panel-b {
+        right: -6px;
+        top: 96px;
+        width: min(266px, 86%);
+      }
+
+      .metric-panel-c {
+        left: 34px;
+        bottom: 4px;
+        width: min(286px, 88%);
+      }
+
+      .section,
+      .site-footer {
+        padding-top: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        overscroll-behavior-x: none;
+      }
+
+      .site-header,
+      main,
+      .site-footer,
+      .hero,
+      .section {
+        overflow-x: clip;
+      }
+
+      .frame-shell,
+      .shell {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .frame-shell {
+        padding-inline: var(--frame-gutter);
+      }
+
+      .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .brand,
+      .brand-anim,
+      .brand-evolve,
+      .brand-evolve-line {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .header-cta {
+        justify-self: end;
+      }
+
+      .menu-toggle {
+        gap: 0;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        justify-content: center;
+      }
+
+      .menu-label {
+        display: none;
+      }
+
+      .menu-panel-title {
+        white-space: normal;
+      }
+
+      .brand-title {
+        font-size: clamp(1.55rem, 6.6vw, 2.2rem);
+      }
+
+      .brand-bar {
+        height: 5px;
+      }
+
+      .brand-evolve {
+        --bar-mini: 32px;
+        --bar-short: 56px;
+        --bar-medium: 64px;
+      }
+
+      .brand-lockup {
+        gap: 12px;
+      }
+
+      .be-bar {
+        height: 5px;
+      }
+
+      .header-cta .btn {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        max-width: 10ch;
+      }
+
+      .hero-copy p {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .feature-band,
+      .cta-panel,
+      .card {
+        padding: 24px;
+      }
+
+      .hero-scene-metrics {
+        min-height: 340px;
+      }
+
+      .scene-wrap-metrics {
+        height: 330px;
+      }
+
+      .metric-panel {
+        width: min(235px, 88%);
+        min-height: 128px;
+        padding: 18px 18px 16px;
+        border-radius: 24px;
+      }
+
+      .metric-panel h3 {
+        font-size: 2rem;
+      }
+
+      .metric-panel p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .metric-panel-a {
+        left: 2px;
+      }
+
+      .metric-panel-b {
+        right: -4px;
+        top: 92px;
+      }
+
+      .metric-panel-c {
+        left: 22px;
+        bottom: -2px;
+      }
+
+      .panel h3,
+      .card h3 {
+        font-size: 1.7rem;
+      }
+
+      .footer-brand-bar {
+        width: calc(52px * var(--footer-brand-scale));
+        height: calc(5px * var(--footer-brand-scale));
+      }
+    }
+
+    /* ===================== FAQ-specific UI ===================== */
+    .faq-toolbar {
+      position: sticky;
+      top: calc(var(--nav-h) + 8px);
+      z-index: 8;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 18px;
+      padding: 12px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .faq-search {
+      flex: 1 1 340px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .faq-search svg {
+      flex: 0 0 auto;
+      color: var(--teal-700);
+    }
+
+    .faq-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .faq-search input::placeholder {
+      color: #8a949b;
+    }
+
+    .faq-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .faq-count {
+      color: var(--teal-700);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .faq-chip {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid rgba(4, 76, 89, 0.16);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--teal-900);
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease);
+    }
+
+    .faq-chip:hover,
+    .faq-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(4, 76, 89, 0.22);
+      outline: none;
+    }
+
+    .faq-chip[aria-pressed="true"] {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.18);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    details.faq-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
+      box-shadow: var(--shadow-sm);
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+    }
+
+    details.faq-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(229, 181, 59, 0.1), transparent 26%), linear-gradient(145deg, rgba(255,255,255,0.42), transparent 30%);
+      pointer-events: none;
+    }
+
+    details.faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(4, 76, 89, 0.16);
+    }
+
+    .faq-card summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--teal-950);
+      font-weight: 800;
+      line-height: 1.45;
+      font-size: 1.03rem;
+    }
+
+    .faq-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-card summary::before {
+      content: "+";
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(4, 76, 89, 0.08);
+      color: var(--teal-900);
+      font-size: 1.15rem;
+      line-height: 1;
+      margin-top: 2px;
+      transition: transform .25s ease, background .25s ease, color .25s ease;
+    }
+
+    .faq-card[open] summary {
+      border-bottom: 1px solid rgba(4, 76, 89, 0.1);
+    }
+
+    .faq-card[open] summary::before {
+      content: "–";
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+    }
+
+    .faq-card summary:focus-visible,
+    .faq-copylink button:focus-visible,
+    .faq-chip:focus-visible,
+    .faq-search input:focus-visible {
+      outline: 3px solid rgba(0, 113, 127, 0.28);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
+    }
+
+    .faq-answer {
+      position: relative;
+      padding: 0 24px 24px 66px;
+      color: var(--muted);
+    }
+
+    .faq-answer p,
+    .faq-answer li {
+      line-height: 1.82;
+      font-size: 0.98rem;
+    }
+
+    .faq-answer p {
+      margin: 0 0 12px;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+    }
+
+    .faq-answer li + li {
+      margin-top: 8px;
+    }
+
+    .faq-answer strong {
+      color: var(--teal-950);
+    }
+
+    .faq-copylink {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .faq-copylink button {
+      border: 0;
+      background: transparent;
+      color: var(--teal-900);
+      font-weight: 800;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    mark.faq-hit {
+      background: rgba(229, 181, 59, 0.34);
+      color: inherit;
+      padding: 0 .14em;
+      border-radius: 4px;
+    }
+
+    .faq-policy-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    .faq-empty-note {
+      display: none;
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      box-shadow: var(--shadow-sm);
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq-empty-note.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 1180px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .faq-toolbar {
+        top: calc(var(--nav-h) + 8px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .faq-toolbar {
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .faq-search,
+      .faq-actions {
+        width: 100%;
+      }
+
+      .faq-actions {
+        justify-content: space-between;
+      }
+
+      .faq-card summary {
+        padding: 20px 20px;
+        gap: 12px;
+      }
+
+      .faq-answer {
+        padding: 0 20px 20px 60px;
+      }
+    }
+
+  </style>
+
+
+  <script>
+    /*
+      GOLD CTA CONTROL
+      ------------------------------------------------------------
+      Update ONLY the value of GOLD_CTA_STATE below when you want
+      to change all gold buttons on this page at once.
+
+      Allowed values:
+      - "register" = Register Now
+      - "interest" = Join the Interest List
+      - "waitlist" = Join the Waitlist
+
+      Example:
+      window.GOLD_CTA_STATE = "interest";
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="frame-shell header-inner">
+      <a class="brand brand-lockup brand-anim" href="index.html" aria-label="Virtual Research Institute home">
+        <span class="brand-evolve is-vr" id="brandEvolve">
+          <span class="brand-title brand-evolve-line" aria-hidden="true">
+            <span class="be-word be-word-v">
+              <span class="be-anchor">V</span><span class="be-tail be-tail-v"><span class="be-char">i</span><span class="be-char">r</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">a</span><span class="be-char">l</span></span>
+            </span>
+            <span class="be-word be-word-r">
+              <span class="be-anchor">R</span><span class="be-tail be-tail-r"><span class="be-char">e</span><span class="be-char">s</span><span class="be-char">e</span><span class="be-char">a</span><span class="be-char">r</span><span class="be-char">c</span><span class="be-char">h</span></span>
+            </span>
+            <span class="be-word be-word-i">
+              <span class="be-anchor">I</span><span class="be-tail be-tail-i"><span class="be-char">n</span><span class="be-char">s</span><span class="be-char">t</span><span class="be-char">i</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">t</span><span class="be-char">e</span></span>
+            </span>
+          </span>
+          <span class="be-bar" aria-hidden="true"></span>
+        </span>
+      </a>
+
+      <div class="header-cta">
+        <button
+          class="menu-toggle"
+          type="button"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobilePanel"
+          aria-haspopup="dialog"
+          aria-label="Open site menu"
+        >
+          <span class="bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <noscript>
+    <div class="frame-shell noscript-nav">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
+          <li><a href="programs.html">Programs &amp; Pricing</a></li>
+          <li><a href="about.html">About VRI</a></li>
+          <li><a href="research-archive.html">Research Archive</a></li>
+          <li><a href="faq.html" aria-current="page">FAQ</a></li>
+          <li><a href="policies.html">Policies &amp; Procedures</a></li>
+        </ul>
+      </nav>
+    </div>
+  </noscript>
+
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+
+  <aside
+    class="mobile-panel"
+    id="mobilePanel"
+    aria-label="Site menu"
+    aria-hidden="true"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="mobileMenuTitle"
+    tabindex="-1"
+  >
+    <div class="menu-panel-top">
+      <div class="menu-panel-head">
+        <h2 class="menu-panel-title" id="mobileMenuTitle">Virtual Research Institute</h2>
+      </div>
+      <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
+    </div>
+
+    <div class="menu-section">
+      <p class="menu-panel-kicker">Explore the full site</p>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="upcoming-projects.html">Upcoming Projects</a>
+        <a href="programs.html">Programs &amp; Pricing</a>
+        <a href="about.html">About VRI</a>
+        <a href="research-archive.html">Research Archive</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="policies.html">Policies &amp; Procedures</a>
+      </nav>
+    </div>
+  </aside>
+
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-orbit" aria-hidden="true"></div>
+
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h1>Clear answers for families and students.</h1>
+          <p>
+            This page gathers practical and policy-grounded answers about VRI’s
+            structure, eligibility, scheduling, time zones, technology,
+            payments, research expectations, safety, and online participation.
+            It is written to help families and students evaluate fit carefully
+            before enrollment and understand how VRI operates.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="faq-library">
+      <div class="shell">
+        <div class="faq-toolbar reveal" aria-label="FAQ tools">
+          <div class="faq-search" role="search">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            <input id="faqFilter" type="search" placeholder="Search questions (e.g., price, time zone, online format, refund, tablet, eligibility) — press / to focus" aria-label="Search frequently asked questions" />
+          </div>
+          <div class="faq-actions">
+            <button class="btn btn-primary" id="toggleAll" type="button" aria-controls="faqGrid" aria-pressed="false">Open all</button>
+            <div class="faq-count" aria-live="polite" id="faqCount"></div>
+          </div>
+        </div>
+
+        <ul class="faq-chips reveal" aria-label="Quick filters">
+          <li><button class="faq-chip" data-filter="fit eligibility circles groups private mentorship admissions tier tier i tier ii readiness selective pathway pathways">Fit &amp; Eligibility</button></li>
+          <li><button class="faq-chip" data-filter="schedule time zone timezone timezones attendance meetings spring summer fall term terms session sessions calendar">Scheduling &amp; Time Zones</button></li>
+          <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools online virtual format platform platforms software screen share live meetings">Technology</button></li>
+          <li><button class="faq-chip" data-filter="research deliverables authorship ai publication publications poster paper recommendation recommendations outcomes">Research &amp; Deliverables</button></li>
+          <li><button class="faq-chip" data-filter="payments deposit refund tuition aid price prices cost costs how much fee fees billing balance remaining balance">Payments &amp; Refunds</button></li>
+          <li><button class="faq-chip" data-filter="mentors mentor vetting screening background checks references identity verification">Mentors</button></li>
+          <li><button class="faq-chip" data-filter="privacy recording recordings conduct safety policy policies archives publicity media channels">Safety &amp; Privacy</button></li>
+        </ul>
+
+        <section class="faq-grid reveal" id="faqGrid">
+          <details class="faq-card" data-tags="overview structure institute programs circles groups private mentorship online virtual format terms spring summer fall live meetings independent work public pathways">
+            <summary>What is VRI, and how is the institute structured?</summary>
+            <div class="faq-answer">
+              <p>VRI is an online institute for mentored research in mathematics and computational sciences. Its current public model centers on <strong>Circles</strong> and <strong>Groups</strong>, with limited <strong>Private Mentorship</strong> available by inquiry when fit, mentor availability, and research scope align.</p>
+              <p>Public offerings are organized around <strong>Spring, Summer, and Fall</strong> terms and combine live mentor-led sessions with meaningful independent work between meetings.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="fit best pathway circles groups private mentorship tier 1 tier 2">
+            <summary>How should families think about Circles, Groups, and Private Mentorship?</summary>
+            <div class="faq-answer">
+              <p><strong>Circles</strong> are the broadest public entry point and are designed for motivated students who want a serious but more scalable mentored research experience.</p>
+              <p><strong>Groups</strong> are smaller, more intensive, and better suited to students who are ready for greater ownership, a higher level of sustained preparation, and closer mentor interaction.</p>
+              <p><strong>Private Mentorship</strong> is the most selective pathway. It is intended for students whose academic readiness, project goals, and logistical fit support a more individualized research arrangement.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="pricing prices price cost costs how much tuition fee fees billing balance circles groups private mentorship 1395 3495 9000 spring summer fall term terms session sessions online format virtual live meetings independent work">
+            <summary>What are the current public prices, terms, and overall format?</summary>
+            <div class="faq-answer">
+              <p>VRI’s current public pathways are fully <strong>online</strong> and organized around <strong>Spring, Summer, and Fall</strong> terms, with live mentor-led sessions plus meaningful independent work between meetings.</p>
+              <ul>
+                <li><strong>Circles:</strong> $1,395 per student, typically about 6 weeks.</li>
+                <li><strong>Groups:</strong> $3,495 per student, typically about 10 weeks.</li>
+                <li><strong>Private Mentorship:</strong> starting at $16,000 by inquiry, with scope and duration depending on the match.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="eligibility vetting circles groups private mentorship selective readiness interview review">
+            <summary>How does eligibility differ across Tier I, Tier II, and Private Mentorship?</summary>
+            <div class="faq-answer">
+              <p>VRI does <strong>not</strong> treat all pathways the same.</p>
+              <ul>
+                <li><strong>Tier I / Circles:</strong> this is the broadest public pathway. VRI is generally open to motivated students who appear ready to engage seriously, even if they do not yet have prior research experience.</li>
+                <li><strong>Tier II / Groups:</strong> VRI is moving toward more active readiness review and fit assessment here. Students should expect closer scrutiny of preparation, maturity, and the likelihood of thriving in a smaller and more demanding environment.</li>
+                <li><strong>Private Mentorship:</strong> this is the most selective option and should be understood as a strong-fit placement rather than a default service. Academic readiness, independence, communication, and logistical feasibility matter a great deal.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="research experience prerequisites prior experience fit math background computational background">
+            <summary>Does a student need prior research experience to participate?</summary>
+            <div class="faq-answer">
+              <p>Not necessarily. Prior research experience can help, but it is <strong>not</strong> required for every pathway. What matters more is seriousness, intellectual curiosity, follow-through, and readiness for work that is more demanding than a casual enrichment class.</p>
+              <p>Some topics or mentors may expect stronger mathematical, statistical, or computational preparation than others, so families should read proposal pages carefully.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="waitlist conditional acceptance declined removed enrollment decisions fit eligibility">
+            <summary>Can a student be waitlisted, conditionally accepted, declined, or removed?</summary>
+            <div class="faq-answer">
+              <p><strong>Yes.</strong> Enrollment decisions remain within VRI’s discretion. Depending on the situation, VRI may accept, waitlist, conditionally accept, decline, or remove a student.</p>
+              <p>Reasons may include academic fit, behavior, logistics, safety, scheduling, operational constraints, or other concerns relevant to the program. Acceptance into one offering does <strong>not</strong> guarantee future acceptance into another.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="enrollment information forms identity age school status location emergency contacts schedule constraints accessibility needs">
+            <summary>What information should families be prepared to provide during enrollment?</summary>
+            <div class="faq-answer">
+              <p>Families should be prepared to provide complete and current information that VRI reasonably needs for enrollment and program administration.</p>
+              <p>This may include identity and contact details, age or school status, location, emergency contacts, scheduling constraints, accessibility needs, and other information relevant to placement, safety, and communication.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor time zone timezone proposals scheduling location international">
+            <summary>Do families need to pay attention to mentor time zones?</summary>
+            <div class="faq-answer">
+              <p><strong>Yes.</strong> This matters. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling.</p>
+              <p>VRI is beginning to post <strong>mentor time zones directly on research proposal pages</strong> so that families can evaluate feasibility earlier and more responsibly.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="schedule time zones published schedules feasibility constraints conflicts">
+            <summary>How flexible is scheduling once a student is placed?</summary>
+            <div class="faq-answer">
+              <p>VRI tries to schedule responsibly, but schedules are shaped by mentor availability, cohort feasibility, and the realities of running live online research groups across time zones.</p>
+              <p>A family’s preference for a different time does <strong>not</strong> automatically obligate VRI to reconfigure a group after placement. This is one reason families should review schedule realities carefully before enrolling.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="attendance lateness absences participation disengagement response">
+            <summary>What happens if a student misses meetings or struggles with attendance?</summary>
+            <div class="faq-answer">
+              <p>Because VRI is collaborative and research-focused, attendance and responsiveness matter. Repeated unexcused absences, chronic lateness, persistent disengagement, or failure to respond to scheduling communications may lead to warnings, loss of good standing, reduced eligibility for certificates or recommendations, removal from a team, or dismissal where appropriate.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="technology required laptop desktop tablet internet email camera microphone online virtual format tools platforms software">
+            <summary>What technology is required for VRI?</summary>
+            <div class="faq-answer">
+              <p>Students should have a <strong>reliable internet connection</strong>, a <strong>working email account</strong>, and a device that supports live meetings, screen sharing, camera, and microphone use.</p>
+              <p>For most students, a computer is the safest and most reliable default. Some projects may also use shared documents, slides, code notebooks, datasets, or other subject-specific tools depending on the mentor and topic.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="tablet stylus math writing screen share recommendation not required">
+            <summary>Is a tablet with a stylus required for math-heavy topics?</summary>
+            <div class="faq-answer">
+              <p><strong>No.</strong> It is not required. But for math-heavy research, a writing tablet or comparable device with a stylus that can share screen is <strong>strongly recommended</strong>.</p>
+              <p>When students need to write definitions, derivations, proofs, diagrams, or intermediate reasoning live, this kind of setup often makes participation much smoother and more professional.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="platforms zoom microsoft teams google meet approved tools">
+            <summary>Which meeting platforms or tools might VRI use?</summary>
+            <div class="faq-answer">
+              <p>Depending on the mentor and project, meetings may use <strong>Zoom</strong>, <strong>Microsoft Teams</strong>, <strong>Google Meet</strong>, or a comparable approved platform. Some projects may also use shared documents, slides, code environments, datasets, LaTeX tools, or discipline-specific software.</p>
+              <p>Families should not assume that every project uses the same software stack.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="communication approved channels social media texting personal phone numbers">
+            <summary>May students, families, and mentors communicate through personal channels?</summary>
+            <div class="faq-answer">
+              <p>As a general rule, <strong>no</strong>. VRI expects routine communications to occur through <strong>approved channels</strong>.</p>
+              <p>Direct contact through personal social-media accounts, personal texting, personal phone numbers, or other unapproved channels should not be treated as normal practice unless VRI has explicitly authorized a documented exception.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="parents guardians observe coach prompt interfere support role">
+            <summary>May parents sit in sessions or intervene during meetings?</summary>
+            <div class="faq-answer">
+              <p>Parents and guardians remain important partners, especially for minors, but they should not coach, prompt, or materially interfere with live student sessions unless the program expressly allows a support role.</p>
+              <p>VRI works best when students are allowed to think, speak, and struggle productively in a serious scholarly environment.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="parent guardian family responsibilities supervision communication scheduling technology conduct">
+            <summary>What role should parents or guardians expect to play?</summary>
+            <div class="faq-answer">
+              <p>For minor participants, parents or guardians should expect to play a supportive but professional role. That includes helping the student meet technology, scheduling, communication, and conduct expectations.</p>
+              <p>Families should review time zones, hardware, internet requirements, and program expectations before enrollment, and they should communicate respectfully with VRI staff and mentors through approved channels.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="workload independent work readings assignments deliverables between meetings">
+            <summary>How much independent work should students expect between meetings?</summary>
+            <div class="faq-answer">
+              <p>Students should expect <strong>meaningful work between live meetings</strong>. Depending on the pathway and project, that may include reading, problem solving, coding, data work, drafting slides, revising written exposition, or preparing for collaborative discussion.</p>
+              <p>VRI is not intended to feel like a passive webinar series. The institute assumes real follow-through outside the live session itself.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="publication authorship recommendations conference presentation guarantee outcomes">
+            <summary>Are publication, authorship, conference presentations, or recommendation letters guaranteed?</summary>
+            <div class="faq-answer">
+              <p><strong>No.</strong> Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or any comparable outcome.</p>
+              <p>VRI may determine, with mentors where relevant, whether a project is ready for internal showcase, external submission, archival posting, recommendation support, or no public dissemination at all.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="academic credit school credit college credit transcript guarantee">
+            <summary>Does participation provide school or college credit?</summary>
+            <div class="faq-answer">
+              <p><strong>No automatic academic credit is guaranteed.</strong> Participation in VRI does not by itself create an entitlement to school credit, college credit, or transcript credit.</p>
+              <p>If a family hopes a school may recognize the work in some way, that should be treated as a separate matter outside standard VRI enrollment unless VRI expressly states otherwise in writing.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="authorship acknowledgments credit contribution research ethics">
+            <summary>How are authorship and acknowledgments handled?</summary>
+            <div class="faq-answer">
+              <p>Authorship and acknowledgments should be discussed early and revisited if the scope of contributions changes. Intellectual seriousness and honest attribution matter a great deal in VRI’s culture.</p>
+              <p>Students and mentors should not assume that mere enrollment or attendance automatically entitles a participant to formal authorship.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="ai tools academic integrity originality citation plagiarism ghostwriting fabrication">
+            <summary>Are AI tools allowed in VRI work?</summary>
+            <div class="faq-answer">
+              <p>AI tools may be relevant in some projects, but they may <strong>not</strong> be used to disguise copied, fabricated, ghostwritten, or improperly borrowed work as original scholarship.</p>
+              <p>Students are expected to do their own work, acknowledge collaborators and tools where relevant, and follow mentor guidance about citation, attribution, and responsible use.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="deliverables writing slides posters code formatting deadlines quality revision">
+            <summary>What standards apply to papers, posters, slides, code, or final deliverables?</summary>
+            <div class="faq-answer">
+              <p>Deliverables should be professionally prepared, submitted by stated deadlines, and revised when needed. VRI may require changes or withhold publication or public posting until quality, compliance, and scholarly standards are met.</p>
+              <p>In short: this is not a “submit anything and it counts” environment.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentor request topic request preferences placement matching rankings">
+            <summary>Can a student request a specific topic or mentor?</summary>
+            <div class="faq-answer">
+              <p>Students may often share topic preferences, and VRI may consider them carefully, but placement is not guaranteed. VRI may also change, merge, postpone, reformat, or cancel offerings based on enrollment, mentor availability, safety, quality control, or broader business considerations.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="payments tuition deposit remaining balance deadlines pricing current tuition prices price cost costs how much billing balance fee fees">
+            <summary>How do deposits and remaining tuition payments work?</summary>
+            <div class="faq-answer">
+              <p>VRI uses a <strong>deposit-plus-balance</strong> structure. A non-refundable deposit is generally required to reserve a seat unless VRI expressly states otherwise in writing. Remaining tuition balances are due by published deadlines.</p>
+              <p>Current public pricing is presented on the Programs &amp; Pricing page, where Circles, Groups, and Private Mentorship are described in more detail.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="refund refund policy withdrawal more than 21 days 20 to 8 days 7 days">
+            <summary>What is the default refund framework before a program begins?</summary>
+            <div class="faq-answer">
+              <p>As summarized from VRI’s current policy framework:</p>
+              <ul>
+                <li><strong>More than 21 calendar days</strong> before the first scheduled live session: tuition paid may be refundable <strong>less</strong> the non-refundable deposit and any nonrecoverable fees.</li>
+                <li><strong>20 to 8 calendar days</strong> before the first scheduled live session: up to <strong>50%</strong> of tuition paid may be refundable, less the non-refundable deposit and nonrecoverable fees.</li>
+                <li><strong>7 calendar days or fewer</strong> before the first scheduled live session: no refund absent extraordinary documented circumstances and a written determination by VRI.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="refund after start mentor matching onboarding no refund time zone incompatibility disclosed late">
+            <summary>Are refunds available after the program begins or after mentor matching starts?</summary>
+            <div class="faq-answer">
+              <p>The default position is generally <strong>no refund</strong> once the first live session has begun or once mentor matching or onboarding work has materially started. In rare cases VRI may choose to offer a limited credit rather than a refund, but that should not be assumed.</p>
+              <p>Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, extracurricular conflicts, local device failures, or local internet problems generally do <strong>not</strong> create refund rights unless a signed agreement or published written policy expressly says otherwise.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="financial assistance scholarship aid need based limited">
+            <summary>Is financial assistance available?</summary>
+            <div class="faq-answer">
+              <p>Possibly. Limited financial assistance may be available in select cases, depending on funding and the program cycle. Families should not assume that aid is guaranteed simply because they ask.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="mentors vetted screening identity references publications background checks sanctions">
+            <summary>How are mentors vetted?</summary>
+            <div class="faq-answer">
+              <p>Mentors are central to VRI’s credibility and risk profile, so VRI may require identity verification, reference checks, publication verification, sanctions screening, and background checks where legally permissible and operationally appropriate.</p>
+              <p>Approval of a mentor is discretionary and may be revoked if VRI concludes that quality, safety, legal, or reputational concerns justify that step.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="recording recordings screenshots privacy archives publicity media release">
+            <summary>Can VRI record sessions, and can participants make their own recordings?</summary>
+            <div class="faq-answer">
+              <p>VRI may record sessions, presentations, or review meetings for quality control, training, dispute review, documentation, archival purposes, or safeguarding, subject to releases and applicable law.</p>
+              <p>Participants should <strong>not</strong> assume they may create their own recordings, screenshots, or redistributions. Unauthorized participant recording or sharing is not acceptable absent explicit permission.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="privacy data handling archives publicity likeness image name voice release">
+            <summary>How does VRI handle privacy, archival materials, and publicity use?</summary>
+            <div class="faq-answer">
+              <p>VRI may maintain recordings, chat logs, attendance records, project drafts, reports, posters, and related archival materials for legitimate program administration and business purposes.</p>
+              <p>If VRI intends to use a participant’s name, likeness, voice, image, or approved project excerpts in publicity, marketing, or fundraising, those uses should be governed by a separate release or comparable consent mechanism.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="conduct harassment bullying grooming discrimination retaliation boundaries safety">
+            <summary>What conduct issues are taken especially seriously?</summary>
+            <div class="faq-answer">
+              <p>VRI takes harassment, bullying, discrimination, retaliation, grooming behavior, sexual misconduct, coercive boundary violations, threats, privacy violations, false information, and unsafe off-platform behavior very seriously.</p>
+              <p>Mentors should never request secrecy from students, and participants should not treat personal-channel communication as acceptable by default.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="serious concern report incident review safety complaint appeal">
+            <summary>What should families, students, or mentors do if a serious concern arises?</summary>
+            <div class="faq-answer">
+              <p>Concerns should be reported <strong>promptly and in writing</strong>. Serious issues involving possible abuse, exploitation, grooming, credible threats, severe harassment, or comparable safety concerns should be escalated immediately under VRI’s review and safeguarding procedures.</p>
+              <p>VRI may implement interim measures such as reassignment, separation, restricted access, or temporary suspension while a matter is reviewed.</p>
+            </div>
+          </details>
+        </section>
+
+        <div class="faq-empty-note" id="faqEmptyNote">
+          No questions match that search yet. Try terms such as <strong>price</strong>, <strong>cost</strong>, <strong>time zone</strong>, <strong>online</strong>, <strong>refund</strong>, <strong>tablet</strong>, or <strong>publication</strong>.
+        </div>
+
+        <div class="faq-policy-note reveal">
+          <strong style="color: var(--teal-950);">Important note.</strong> This FAQ is intended to be clear and practical, but it does not replace the full institutional framework. Where a signed agreement, a pathway-specific page, or a more specific published instruction applies, that more specific document may govern.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="policies-note">
+      <div class="shell">
+        <div class="feature-band reveal">
+          <div class="feature-band-grid">
+            <div>
+              <p class="section-label">Institutional Note</p>
+              <h3>Need the larger framework behind these answers?</h3>
+              <p>
+                The FAQ is written in plain language, but VRI’s broader operating
+                framework also includes formal positions on conduct, privacy,
+                youth safety, documentation, recordings, payments, withdrawals,
+                and the institute’s no-guarantee disclosures.
+              </p>
+            </div>
+
+            <div class="feature-quote">
+              <strong>Best next step</strong>
+              <p>
+                Review the full Policies &amp; Procedures page for the larger framework,
+                and consult the Programs &amp; Pricing page for pathway structure,
+                tuition, and current public positioning.
+              </p>
+              <div class="card-actions" style="margin-top: 18px;">
+                <a class="btn btn-secondary" href="policies.html">Policies &amp; Procedures</a>
+                <a class="btn btn-secondary" href="programs.html">Programs &amp; Pricing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="section-label">Contact</p>
+            <h3>Still have a question about fit, logistics, or the right pathway?</h3>
+            <p>
+              Reach out if you want help thinking through Circles, Groups,
+              Private Mentorship, scheduling feasibility, or whether a specific
+              research proposal is a strong fit for a student.
+            </p>
+          </div>
+
+          <div class="quick-links">
+            <a class="btn btn-primary" href="mailto:info@virtualresearchinstitute.org">Email VRI</a>
+            <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
+            <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does eligibility differ across Tier I, Tier II, and Private Mentorship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Circles are the broadest public entry point and are generally open to motivated students who appear ready to engage seriously. Groups involve more active readiness review and fit assessment. Private Mentorship is the most selective option and depends on strong academic, logistical, and mentor fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do families need to pay attention to mentor time zones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling. VRI is beginning to post mentor time zones directly on research proposal pages when available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a tablet with a stylus required for math-heavy topics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is not required, but for math-heavy research a writing tablet or comparable device with a stylus that can share screen is strongly recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are publication, authorship, conference presentations, or recommendation letters guaranteed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or comparable outcomes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the default refund framework before a program begins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "More than 21 calendar days before the first scheduled live session, tuition paid may be refundable less the non-refundable deposit and any nonrecoverable fees. From 20 to 8 calendar days before, up to 50 percent of tuition paid may be refundable less the deposit and nonrecoverable fees. Seven calendar days or fewer before the first scheduled live session, no refund is expected absent extraordinary documented circumstances and a written determination by VRI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are refunds available after the program begins or after mentor matching starts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The default position is generally no refund once the first live session has begun or once mentor matching or onboarding work has materially started. Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, local device failures, or local internet problems generally do not create refund rights unless a signed agreement or published written policy expressly says otherwise."
+          }
+        }
+      ]
+    }
+    </script>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="frame-shell">
+      <div class="footer-row">
+        <div class="footer-brand-stack">
+          <div class="footer-brand">
+            <h4 class="footer-brand-title"><span class="footer-v">V</span><span class="footer-r">R</span><span class="footer-i">I</span></h4>
+            <span class="footer-brand-bar" aria-hidden="true"></span>
+          </div>
+
+          <div class="footer-meta">
+            <p>&copy; <span id="year"></span> Virtual Research Institute LLC.<br />All rights reserved.</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>On This Page</h5>
+          <nav>
+            <a href="#faq-library">FAQ Library</a>
+            <a href="#policies-note">Institutional Notes</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="upcoming-projects.html">Upcoming Projects</a>
+            <a href="programs.html">Programs &amp; Pricing</a>
+            <a href="about.html">About VRI</a>
+            <a href="research-archive.html">Research Archive</a>
+            <a href="faq.html" aria-current="page">FAQ</a>
+            <a href="policies.html">Policies &amp; Procedures</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Institutional</h5>
+          <nav>
+            <a href="virtual-research-foundation.html">Virtual Research Foundation</a>
+            <a href="paid-mentorship.html">For Mentors</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="mailto:info@virtualresearchinstitute.org">info@virtualresearchinstitute.org</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.body.classList.add("js-enhanced");
+
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaConfig = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (goldCtaConfig) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = goldCtaConfig.label;
+          link.href = goldCtaConfig.href;
+        });
+      }
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
+
+      const header = document.getElementById("siteHeader");
+      const mainContent = document.getElementById("main-content");
+      const siteFooter = document.querySelector(".site-footer");
+      const onScroll = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 18);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const brandEvolve = document.getElementById("brandEvolve");
+      let brandTimeouts = [];
+      let hasAnimatedBrandOnPhone = false;
+
+      function clearBrandTimeouts() {
+        brandTimeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
+        brandTimeouts = [];
+      }
+
+      function initBrandEvolve() {
+        if (!brandEvolve) return;
+
+        clearBrandTimeouts();
+
+        const line = brandEvolve.querySelector(".brand-evolve-line");
+        const vTail = brandEvolve.querySelector(".be-tail-v");
+        const rTail = brandEvolve.querySelector(".be-tail-r");
+        const rAnchor = brandEvolve.querySelector(".be-word-r .be-anchor");
+        const vChars = Array.from(brandEvolve.querySelectorAll(".be-tail-v .be-char"));
+        const rChars = Array.from(brandEvolve.querySelectorAll(".be-tail-r .be-char"));
+        const iChars = Array.from(brandEvolve.querySelectorAll(".be-tail-i .be-char"));
+
+        if (!line || !vTail || !rTail || !rAnchor) return;
+
+        const styles = window.getComputedStyle(line);
+        const gapPx = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+        const fontSizePx = parseFloat(styles.fontSize || "0") || 0;
+        const overlapPx = fontSizePx * 0.09;
+        const rAnchorWidth = rAnchor.getBoundingClientRect().width;
+
+        const shiftR = vTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftRStart = shiftR + (rAnchorWidth * 0.86);
+        const shiftICompact = shiftR + rTail.getBoundingClientRect().width + gapPx + overlapPx;
+        const shiftIStart = shiftICompact + (rAnchorWidth * 0.86);
+
+        brandEvolve.style.setProperty("--shift-r", `${shiftR}px`);
+        brandEvolve.style.setProperty("--shift-r-start", `${shiftRStart}px`);
+        brandEvolve.style.setProperty("--shift-i-compact", `${shiftICompact}px`);
+        brandEvolve.style.setProperty("--shift-i-start", `${shiftIStart}px`);
+
+        const clearChars = () => {
+          [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.remove("is-in"));
+        };
+
+        const revealTrain = (chars, delay, step) => {
+          chars.forEach((char, index) => {
+            const timeoutId = window.setTimeout(() => {
+              char.classList.add("is-in");
+            }, delay + (index * step));
+            brandTimeouts.push(timeoutId);
+          });
+        };
+
+        clearChars();
+        brandEvolve.classList.add("is-ready");
+
+        const showFullBrand = () => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
+          brandEvolve.classList.add("is-full");
+          [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.add("is-in"));
+        };
+
+        if (prefersReducedMotion || (isPhoneViewport() && hasAnimatedBrandOnPhone)) {
+          showFullBrand();
+          return;
+        }
+
+        if (isPhoneViewport()) {
+          hasAnimatedBrandOnPhone = true;
+        }
+
+        brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
+        brandEvolve.classList.add("is-v");
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vri", "is-full");
+          brandEvolve.classList.add("is-vr");
+        }, 520));
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-full");
+          brandEvolve.classList.add("is-vri");
+        }, 1220));
+
+        brandTimeouts.push(window.setTimeout(() => {
+          brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
+          brandEvolve.classList.add("is-full");
+          revealTrain(vChars, 100, 78);
+          revealTrain(rChars, 100, 74);
+          revealTrain(iChars, 100, 74);
+        }, 2220));
+      }
+
+      if (brandEvolve) {
+        initBrandEvolve();
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            if (!isPhoneViewport()) {
+              initBrandEvolve();
+            }
+          });
+        }
+
+        let resizeTimer = null;
+        window.addEventListener("resize", () => {
+          if (isPhoneViewport()) {
+            return;
+          }
+
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(initBrandEvolve, 120);
+        });
+      }
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobilePanel = document.getElementById("mobilePanel");
+      const menuClose = document.getElementById("menuClose");
+      const menuBackdrop = document.getElementById("menuBackdrop");
+      const inertTargets = [mainContent, siteFooter].filter(Boolean);
+      let lastFocusedElement = null;
+      let backdropHideTimer = null;
+
+      if (menuToggle && mobilePanel) {
+        const getFocusableElements = () =>
+          Array.from(
+            mobilePanel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+          ).filter((element) => !element.hasAttribute("disabled"));
+
+        const setMenuState = (isOpen, options = {}) => {
+          const { returnFocus = true } = options;
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          mobilePanel.setAttribute("aria-hidden", String(!isOpen));
+
+          if (menuBackdrop) {
+            window.clearTimeout(backdropHideTimer);
+            if (isOpen) {
+              menuBackdrop.hidden = false;
+            }
+          }
+
+          document.body.classList.toggle("menu-open", isOpen);
+
+          inertTargets.forEach((target) => {
+            if (isOpen) {
+              target.setAttribute("inert", "");
+            } else {
+              target.removeAttribute("inert");
+            }
+          });
+
+          if (isOpen) {
+            lastFocusedElement = document.activeElement;
+            window.requestAnimationFrame(() => {
+              const [firstFocusable] = getFocusableElements();
+              (firstFocusable || mobilePanel).focus();
+            });
+          } else {
+            if (menuBackdrop) {
+              backdropHideTimer = window.setTimeout(() => {
+                if (menuToggle.getAttribute("aria-expanded") !== "true") {
+                  menuBackdrop.hidden = true;
+                }
+              }, 350);
+            }
+
+            if (returnFocus) {
+              (lastFocusedElement || menuToggle).focus();
+            }
+          }
+        };
+
+        const openMenu = () => setMenuState(true);
+        const closeMenu = (options) => setMenuState(false, options);
+
+        menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          if (expanded) {
+            closeMenu({ returnFocus: false });
+          } else {
+            openMenu();
+          }
+        });
+
+        if (menuClose) {
+          menuClose.addEventListener("click", () => closeMenu());
+        }
+
+        if (menuBackdrop) {
+          menuBackdrop.addEventListener("click", () => closeMenu());
+        }
+
+        mobilePanel.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => closeMenu({ returnFocus: false }));
+        });
+
+        document.addEventListener("keydown", (event) => {
+          const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+          if (!isOpen) return;
+
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeMenu();
+            return;
+          }
+
+          if (event.key === "Tab") {
+            const focusableElements = getFocusableElements();
+            if (!focusableElements.length) {
+              event.preventDefault();
+              mobilePanel.focus();
+              return;
+            }
+
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+              event.preventDefault();
+              lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+              event.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1180 && menuToggle.getAttribute("aria-expanded") === "true") {
+            closeMenu({ returnFocus: false });
+          }
+        });
+      }
+
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      if (!prefersReducedMotion && supportsFinePointer) {
+        const tiltItems = document.querySelectorAll("[data-tilt]");
+        tiltItems.forEach((item) => {
+          let rafId = null;
+
+          const reset = () => {
+            cancelAnimationFrame(rafId);
+            item.style.transform = "";
+          };
+
+          item.addEventListener("mousemove", (e) => {
+            const rect = item.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 10;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              item.style.transform =
+                "perspective(1200px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-8px)";
+            });
+          });
+
+          item.addEventListener("mouseleave", reset);
+          item.addEventListener("blur", reset, true);
+        });
+
+        const sceneWrap = document.getElementById("sceneWrap");
+        const heroScene = document.getElementById("heroScene");
+
+        if (sceneWrap && heroScene) {
+          let rafId = null;
+
+          heroScene.addEventListener("mousemove", (e) => {
+            const rect = heroScene.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+
+            const rotateY = (px - 0.5) * 12;
+            const rotateX = (0.5 - py) * 10;
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              sceneWrap.style.transform =
+                "rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+            });
+          });
+
+          heroScene.addEventListener("mouseleave", () => {
+            sceneWrap.style.transform = "rotateX(0deg) rotateY(0deg)";
+          });
+        }
+      }
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const input = document.getElementById('faqFilter');
+      const grid = document.getElementById('faqGrid');
+      const toggleAllBtn = document.getElementById('toggleAll');
+      const count = document.getElementById('faqCount');
+      const emptyNote = document.getElementById('faqEmptyNote');
+      const chips = Array.from(document.querySelectorAll('.faq-chip'));
+      if (!input || !grid || !toggleAllBtn || !count) return;
+
+      const cards = Array.from(grid.querySelectorAll('details.faq-card'));
+      const normalize = (value) => (value || '')
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[“”‘’]/g, '"')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      const SYNONYMS = {
+        fit: ['eligibility', 'best pathway', 'readiness', 'placement', 'circles', 'groups', 'private mentorship'],
+        eligibility: ['fit', 'readiness', 'selective', 'admissions', 'tier', 'tier i', 'tier ii', 'circles', 'groups', 'private mentorship'],
+        circles: ['tier i', 'pathway', 'public pathway', 'group size'],
+        groups: ['tier ii', 'pathway', 'public pathway', 'small group'],
+        private: ['private mentorship', 'individualized', 'selective'],
+        price: ['prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much', 'balance', 'remaining balance', 'payment'],
+        pricing: ['price', 'prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much'],
+        cost: ['price', 'prices', 'tuition', 'fee', 'fees', 'how much', 'billing'],
+        tuition: ['price', 'prices', 'cost', 'costs', 'fee', 'fees', 'billing', 'deposit', 'balance'],
+        payments: ['tuition', 'deposit', 'refund', 'aid', 'price', 'cost', 'billing', 'balance'],
+        refund: ['withdrawal', 'deposit', 'credit', 'chargeback', 'cancellation'],
+        schedule: ['scheduling', 'meetings', 'attendance', 'availability', 'time zone', 'timezone', 'calendar', 'session', 'term'],
+        timezone: ['time zone', 'time-zone', 'schedule', 'availability', 'international', 'mentor location'],
+        term: ['terms', 'session', 'sessions', 'calendar', 'spring', 'summer', 'fall'],
+        format: ['online', 'virtual', 'live meetings', 'independent work', 'platform', 'software', 'tools'],
+        online: ['virtual', 'format', 'live meetings', 'independent work', 'zoom', 'teams', 'meet'],
+        technology: ['tech', 'tablet', 'stylus', 'zoom', 'teams', 'meet', 'laptop', 'internet', 'software', 'platform'],
+        tablet: ['stylus', 'math writing', 'screen share', 'pen'],
+        publication: ['authorship', 'conference', 'poster', 'paper', 'recommendation', 'outcomes'],
+        deliverables: ['deliverable', 'paper', 'poster', 'slides', 'code', 'formatting'],
+        attendance: ['absences', 'absence', 'late', 'lateness', 'missed meetings'],
+        aid: ['financial assistance', 'scholarship', 'need-based'],
+        credit: ['academic credit', 'school credit', 'college credit', 'transcript'],
+        waitlist: ['conditionally accepted', 'conditional acceptance', 'declined', 'removed', 'enrollment'],
+        enrollment: ['application', 'waitlist', 'conditionally accepted', 'declined', 'removed', 'forms', 'family information'],
+        parent: ['guardian', 'family responsibilities', 'supervision'],
+        mentors: ['mentor', 'vetting', 'screening', 'background checks', 'references'],
+        privacy: ['recording', 'recordings', 'archives', 'media', 'conduct', 'safety', 'publicity']
+      };
+
+      function tokenize(query) {
+        return normalize(query)
+          .split(/[\s,\/\-]+/)
+          .filter(Boolean)
+          .map(token => token.replace(/s\b/, ''));
+      }
+
+      function expandQuery(query) {
+        const tokens = tokenize(query);
+        const expanded = new Set(tokens);
+        tokens.forEach((token) => {
+          const matches = SYNONYMS[token] || SYNONYMS[token.replace(/s$/, '')] || [];
+          matches.forEach((phrase) => tokenize(phrase).forEach((item) => expanded.add(item)));
+        });
+        return Array.from(expanded);
+      }
+
+      function safeRegExp(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
+      const index = cards.map((el, i) => {
+        const summaryEl = el.querySelector('summary');
+        const answerEl = el.querySelector('.faq-answer');
+        const id = el.id || `faq-${i + 1}`;
+        el.id = id;
+        if (answerEl && !answerEl.querySelector('.faq-copylink')) {
+          const copy = document.createElement('p');
+          copy.className = 'faq-copylink';
+          copy.innerHTML = 'Need to share this? <button type="button">Copy link</button>';
+          const button = copy.querySelector('button');
+          button.addEventListener('click', async () => {
+            const url = `${window.location.origin}${window.location.pathname}#${id}`;
+            try {
+              await navigator.clipboard.writeText(url);
+              button.textContent = 'Copied';
+              window.setTimeout(() => {
+                button.textContent = 'Copy link';
+              }, 1400);
+            } catch (error) {
+              window.prompt('Copy this link:', url);
+            }
+          });
+          answerEl.appendChild(copy);
+        }
+        return {
+          el,
+          id,
+          summaryEl,
+          searchBlob: normalize(`${el.textContent} ${(el.getAttribute('data-tags') || '')}`)
+        };
+      });
+
+      function highlight(summaryEl, tokens) {
+        const original = summaryEl.getAttribute('data-original') || summaryEl.textContent;
+        if (!summaryEl.getAttribute('data-original')) {
+          summaryEl.setAttribute('data-original', original);
+        }
+        if (!tokens.length) {
+          summaryEl.textContent = original;
+          return;
+        }
+        const escaped = tokens.filter(token => token.length > 1).map(safeRegExp);
+        if (!escaped.length) {
+          summaryEl.textContent = original;
+          return;
+        }
+        const regex = new RegExp(`(^|[^A-Za-z0-9_])(${escaped.join('|')})(?=$|[^A-Za-z0-9_])`, 'gi');
+        summaryEl.innerHTML = original.replace(regex, (match, pre, hit) => `${pre}<mark class="faq-hit">${hit}</mark>`);
+      }
+
+      function visibleItems() {
+        return index.filter(item => item.el.style.display !== 'none');
+      }
+
+      function updateToggleLabel() {
+        const vis = visibleItems();
+        const allOpen = vis.length > 0 && vis.every(item => item.el.open);
+        toggleAllBtn.disabled = vis.length === 0;
+        toggleAllBtn.textContent = allOpen ? 'Close all' : 'Open all';
+        toggleAllBtn.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
+      }
+
+      function applyFilter(query) {
+        const matchTokens = expandQuery(query);
+        const highlightTokens = tokenize(query);
+        let visible = 0;
+        index.forEach((item) => {
+          const show = !matchTokens.length || matchTokens.some(token => item.searchBlob.includes(token));
+          item.el.style.display = show ? '' : 'none';
+          if (!show && item.el.open) {
+            item.el.open = false;
+          }
+          if (show) visible += 1;
+          highlight(item.summaryEl, highlightTokens);
+        });
+
+        count.textContent = `${visible} question${visible === 1 ? '' : 's'}`;
+        if (emptyNote) {
+          emptyNote.classList.toggle('is-visible', visible === 0);
+        }
+
+        const vis = visibleItems();
+        if (vis.length === 1) {
+          vis[0].el.open = true;
+        }
+
+        const url = new URL(window.location.href);
+        if (query.trim()) url.searchParams.set('q', query.trim());
+        else url.searchParams.delete('q');
+        history.replaceState(null, '', url.toString());
+        updateToggleLabel();
+      }
+
+      input.addEventListener('input', (event) => {
+        chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
+        applyFilter(event.target.value);
+      });
+
+      chips.forEach((chip) => {
+        chip.setAttribute('aria-pressed', 'false');
+        chip.addEventListener('click', () => {
+          const active = chip.getAttribute('aria-pressed') === 'true';
+          chips.forEach((entry) => entry.setAttribute('aria-pressed', 'false'));
+          if (!active) {
+            chip.setAttribute('aria-pressed', 'true');
+            input.value = chip.dataset.filter || '';
+            applyFilter(input.value);
+          } else {
+            input.value = '';
+            applyFilter('');
+          }
+          input.focus();
+        });
+      });
+
+      toggleAllBtn.addEventListener('click', () => {
+        const vis = visibleItems();
+        const allOpen = vis.length > 0 && vis.every((item) => item.el.open);
+        vis.forEach((item) => {
+          item.el.open = !allOpen;
+        });
+        updateToggleLabel();
+      });
+
+      cards.forEach((card) => card.addEventListener('toggle', updateToggleLabel));
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === '/' && document.activeElement !== input) {
+          event.preventDefault();
+          input.focus();
+        }
+        if (event.key === 'Escape' && document.activeElement === input) {
+          input.value = '';
+          chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
+          applyFilter('');
+        }
+      });
+
+      const initialQuery = new URL(window.location.href).searchParams.get('q') || '';
+      if (initialQuery) {
+        input.value = initialQuery;
+      }
+      applyFilter(initialQuery);
+
+      if (window.location.hash.startsWith('#faq-')) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target) {
+          target.open = true;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    })();
+  </script>
+
+</body>
+</html>
