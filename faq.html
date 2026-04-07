@@ -6,7 +6,7 @@
   <title>FAQ | Virtual Research Institute</title>
   <meta
     name="description"
-    content="Frequently asked questions for the Virtual Research Institute — clear answers for families, students, and mentors about fit, technology, scheduling, policies, and mentored research."
+    content="Frequently asked questions for the Virtual Research Institute — clear answers for families and students about fit, technology, scheduling, payments, safety, and mentored research."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -529,6 +529,7 @@
       border: 1px solid transparent;
       font-weight: 700;
       font-size: 0.96rem;
+      cursor: pointer;
       transition:
         transform .35s var(--ease),
         background .35s var(--ease),
@@ -1951,7 +1952,7 @@
     /* ===================== FAQ-specific UI ===================== */
     .faq-toolbar {
       position: sticky;
-      top: calc(var(--nav-h) - 8px);
+      top: calc(var(--nav-h) + 8px);
       z-index: 8;
       display: flex;
       flex-wrap: wrap;
@@ -2226,7 +2227,7 @@
 
     @media (max-width: 920px) {
       .faq-toolbar {
-        top: calc(var(--nav-h) + 2px);
+        top: calc(var(--nav-h) + 8px);
       }
     }
 
@@ -2391,13 +2392,13 @@
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Frequently Asked Questions</div>
-          <h1>Clear answers for families, students, and mentors.</h1>
+          <h1>Clear answers for families and students.</h1>
           <p>
             This page gathers practical and policy-grounded answers about VRI’s
             structure, eligibility, scheduling, time zones, technology,
-            payments, publications, mentor standards, and online participation.
-            It is written to help families evaluate fit carefully and to help
-            mentors understand the institute’s operating expectations.
+            payments, research expectations, safety, and online participation.
+            It is written to help families and students evaluate fit carefully
+            before enrollment and understand how VRI operates.
           </p>
 
         </div>
@@ -2424,7 +2425,7 @@
           <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools online virtual format platform platforms software screen share live meetings">Technology</button></li>
           <li><button class="faq-chip" data-filter="research deliverables authorship ai publication publications poster paper recommendation recommendations outcomes">Research &amp; Deliverables</button></li>
           <li><button class="faq-chip" data-filter="payments deposit refund tuition aid price prices cost costs how much fee fees billing balance remaining balance">Payments &amp; Refunds</button></li>
-          <li><button class="faq-chip" data-filter="mentors mentor vetting contractor contractors communication boundaries standards screening">Mentors</button></li>
+          <li><button class="faq-chip" data-filter="mentors mentor vetting screening background checks references identity verification">Mentors</button></li>
           <li><button class="faq-chip" data-filter="privacy recording recordings conduct safety policy policies archives publicity media channels">Safety &amp; Privacy</button></li>
         </ul>
 
@@ -2475,6 +2476,22 @@
             <div class="faq-answer">
               <p>Not necessarily. Prior research experience can help, but it is <strong>not</strong> required for every pathway. What matters more is seriousness, intellectual curiosity, follow-through, and readiness for work that is more demanding than a casual enrichment class.</p>
               <p>Some topics or mentors may expect stronger mathematical, statistical, or computational preparation than others, so families should read proposal pages carefully.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="waitlist conditional acceptance declined removed enrollment decisions fit eligibility">
+            <summary>Can a student be waitlisted, conditionally accepted, declined, or removed?</summary>
+            <div class="faq-answer">
+              <p><strong>Yes.</strong> Enrollment decisions remain within VRI’s discretion. Depending on the situation, VRI may accept, waitlist, conditionally accept, decline, or remove a student.</p>
+              <p>Reasons may include academic fit, behavior, logistics, safety, scheduling, operational constraints, or other concerns relevant to the program. Acceptance into one offering does <strong>not</strong> guarantee future acceptance into another.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="enrollment information forms identity age school status location emergency contacts schedule constraints accessibility needs">
+            <summary>What information should families be prepared to provide during enrollment?</summary>
+            <div class="faq-answer">
+              <p>Families should be prepared to provide complete and current information that VRI reasonably needs for enrollment and program administration.</p>
+              <p>This may include identity and contact details, age or school status, location, emergency contacts, scheduling constraints, accessibility needs, and other information relevant to placement, safety, and communication.</p>
             </div>
           </details>
 
@@ -2541,6 +2558,14 @@
             </div>
           </details>
 
+          <details class="faq-card" data-tags="parent guardian family responsibilities supervision communication scheduling technology conduct">
+            <summary>What role should parents or guardians expect to play?</summary>
+            <div class="faq-answer">
+              <p>For minor participants, parents or guardians should expect to play a supportive but professional role. That includes helping the student meet technology, scheduling, communication, and conduct expectations.</p>
+              <p>Families should review time zones, hardware, internet requirements, and program expectations before enrollment, and they should communicate respectfully with VRI staff and mentors through approved channels.</p>
+            </div>
+          </details>
+
           <details class="faq-card" data-tags="workload independent work readings assignments deliverables between meetings">
             <summary>How much independent work should students expect between meetings?</summary>
             <div class="faq-answer">
@@ -2554,6 +2579,14 @@
             <div class="faq-answer">
               <p><strong>No.</strong> Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or any comparable outcome.</p>
               <p>VRI may determine, with mentors where relevant, whether a project is ready for internal showcase, external submission, archival posting, recommendation support, or no public dissemination at all.</p>
+            </div>
+          </details>
+
+          <details class="faq-card" data-tags="academic credit school credit college credit transcript guarantee">
+            <summary>Does participation provide school or college credit?</summary>
+            <div class="faq-answer">
+              <p><strong>No automatic academic credit is guaranteed.</strong> Participation in VRI does not by itself create an entitlement to school credit, college credit, or transcript credit.</p>
+              <p>If a family hopes a school may recognize the work in some way, that should be treated as a separate matter outside standard VRI enrollment unless VRI expressly states otherwise in writing.</p>
             </div>
           </details>
 
@@ -2631,22 +2664,6 @@
             </div>
           </details>
 
-          <details class="faq-card" data-tags="mentor standards boundaries authority refunds admissions outcomes contractor status">
-            <summary>What institutional standards apply to mentors once they are active?</summary>
-            <div class="faq-answer">
-              <p>Mentors must prepare appropriately, remain professionally communicative, work through approved channels, and continue in good faith through the engagement unless VRI authorizes a transition.</p>
-              <p>Mentors may <strong>not</strong> bind VRI, promise refunds, guarantee admissions outcomes, or make unauthorized public statements on behalf of the institute.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="mentor employees contractors compensation independent contractor taxes benefits">
-            <summary>Are VRI mentors employees?</summary>
-            <div class="faq-answer">
-              <p>Unless a separate written agreement expressly states otherwise, mentors are generally engaged as <strong>independent contractors</strong>, not employees, partners, or fiduciaries of VRI.</p>
-              <p>Mentor compensation, invoices, documentation, taxes, and related records are governed by contractor agreements and the institute’s administrative policies.</p>
-            </div>
-          </details>
-
           <details class="faq-card" data-tags="recording recordings screenshots privacy archives publicity media release">
             <summary>Can VRI record sessions, and can participants make their own recordings?</summary>
             <div class="faq-answer">
@@ -2678,14 +2695,6 @@
               <p>VRI may implement interim measures such as reassignment, separation, restricted access, or temporary suspension while a matter is reviewed.</p>
             </div>
           </details>
-
-          <details class="faq-card" data-tags="copy business model non circumvention private arrangements branding intellectual property">
-            <summary>May mentors or families use VRI relationships to move work outside the institute?</summary>
-            <div class="faq-answer">
-              <p>Not by default. VRI may prohibit direct solicitation, circumvention, and unauthorized private redirection of institute relationships, materials, or workflows during an active engagement and, where applicable, for a defined post-program period in signed agreements.</p>
-              <p>Similarly, access to VRI’s internal structure or templates should not be treated as permission to copy or commercialize the model.</p>
-            </div>
-          </details>
         </section>
 
         <div class="faq-empty-note" id="faqEmptyNote">
@@ -2709,7 +2718,7 @@
                 The FAQ is written in plain language, but VRI’s broader operating
                 framework also includes formal positions on conduct, privacy,
                 youth safety, documentation, recordings, payments, withdrawals,
-                mentor standards, and the institute’s no-guarantee disclosures.
+                and the institute’s no-guarantee disclosures.
               </p>
             </div>
 
@@ -3249,7 +3258,11 @@
         deliverables: ['deliverable', 'paper', 'poster', 'slides', 'code', 'formatting'],
         attendance: ['absences', 'absence', 'late', 'lateness', 'missed meetings'],
         aid: ['financial assistance', 'scholarship', 'need-based'],
-        mentors: ['mentor', 'vetting', 'contractor', 'boundaries', 'screening', 'standards'],
+        credit: ['academic credit', 'school credit', 'college credit', 'transcript'],
+        waitlist: ['conditionally accepted', 'conditional acceptance', 'declined', 'removed', 'enrollment'],
+        enrollment: ['application', 'waitlist', 'conditionally accepted', 'declined', 'removed', 'forms', 'family information'],
+        parent: ['guardian', 'family responsibilities', 'supervision'],
+        mentors: ['mentor', 'vetting', 'screening', 'background checks', 'references'],
         privacy: ['recording', 'recordings', 'archives', 'media', 'conduct', 'safety', 'publicity']
       };
 
