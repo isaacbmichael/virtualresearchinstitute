@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ | Virtual Research Institute</title>
+  <title>Upcoming Projects | Virtual Research Institute</title>
   <meta
     name="description"
-    content="Frequently asked questions for the Virtual Research Institute — clear answers for families and students about fit, technology, scheduling, payments, safety, and mentored research."
+    content="Upcoming Projects at the Virtual Research Institute — Fall 2026 research offerings organized by pathway, session, pricing, and registration details."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,6 +15,34 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+
+  <script>
+    /*
+      Gold CTA control:
+      Change only the value of window.GOLD_CTA_STATE below.
+
+      Allowed values:
+      - "register"  -> Register Now
+      - "interest"  -> Join the Interest List
+      - "waitlist"  -> Join the Waitlist
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
 
   <noscript>
     <style>
@@ -125,6 +153,14 @@
       overflow: hidden;
     }
 
+    .noscript-nav a[aria-current="page"],
+    .mobile-nav a[aria-current="page"] {
+      background: white;
+      border-color: rgba(4, 76, 89, 0.18);
+      color: var(--teal-950);
+      box-shadow: var(--shadow-md);
+    }
+
     .brand:focus-visible,
     .menu-toggle:focus-visible,
     .menu-close:focus-visible,
@@ -134,18 +170,6 @@
       outline: 3px solid rgba(0, 113, 127, 0.28);
       outline-offset: 3px;
       box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
-    }
-
-    .noscript-nav a[aria-current="page"],
-    .mobile-nav a[aria-current="page"] {
-      background: white;
-      border-color: rgba(4, 76, 89, 0.18);
-      color: var(--teal-950);
-      box-shadow: var(--shadow-md);
-    }
-
-    .footer-col nav a[aria-current="page"] {
-      color: var(--teal-900);
     }
 
     a {
@@ -479,6 +503,7 @@
     .menu-toggle:focus-visible {
       background: transparent;
       color: var(--teal-900);
+      outline: none;
     }
 
     .menu-toggle .bars {
@@ -529,7 +554,6 @@
       border: 1px solid transparent;
       font-weight: 700;
       font-size: 0.96rem;
-      cursor: pointer;
       transition:
         transform .35s var(--ease),
         background .35s var(--ease),
@@ -544,6 +568,7 @@
     .btn:hover,
     .btn:focus-visible {
       transform: translateY(-2px);
+      outline: none;
     }
 
     .btn-primary {
@@ -695,6 +720,7 @@
       color: var(--teal-900);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+      outline: none;
     }
 
     .menu-section + .menu-section {
@@ -745,6 +771,7 @@
       border-color: rgba(4, 76, 89, 0.14);
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
+      outline: none;
     }
 
     main {
@@ -753,7 +780,7 @@
 
     .hero {
       position: relative;
-      padding: 52px 0 24px;
+      padding: 52px 0 42px;
       isolation: isolate;
     }
 
@@ -775,8 +802,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+      align-items: center;
       gap: clamp(28px, 4vw, 54px);
     }
 
@@ -809,7 +836,7 @@
       letter-spacing: -0.025em;
       line-height: 0.92;
       color: var(--teal-950);
-      max-width: 22ch;
+      max-width: 18ch;
       text-wrap: balance;
     }
 
@@ -934,61 +961,6 @@
       animation: floatB 12s ease-in-out infinite;
     }
 
-    .hero-scene-metrics {
-      min-height: 440px;
-      align-self: start;
-      padding-top: 8px;
-    }
-
-    .scene-wrap-metrics {
-      width: min(500px, 100%);
-      height: 420px;
-    }
-
-    .metric-panel {
-      width: min(280px, 78%);
-      min-height: 152px;
-      padding: 22px 22px 20px;
-    }
-
-    .metric-panel h3 {
-      margin: 0 0 10px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 2.4rem;
-      line-height: 0.92;
-      color: var(--teal-950);
-    }
-
-    .metric-panel p {
-      margin: 0;
-      font-size: 0.94rem;
-      line-height: 1.68;
-      color: var(--muted);
-    }
-
-    .metric-panel-a {
-      left: 10px;
-      top: 4px;
-      transform: rotate(-7deg) translateZ(56px);
-      animation: floatA 10s ease-in-out infinite;
-    }
-
-    .metric-panel-b {
-      right: -8px;
-      top: 104px;
-      width: min(296px, 80%);
-      transform: rotate(5deg) translateZ(48px);
-      animation: floatB 12s ease-in-out infinite;
-    }
-
-    .metric-panel-c {
-      left: 58px;
-      bottom: 12px;
-      width: min(314px, 82%);
-      transform: rotate(-3deg) translateZ(52px);
-      animation: floatA 11s ease-in-out infinite;
-    }
-
     .panel-kicker {
       font-size: 0.78rem;
       font-weight: 800;
@@ -1095,10 +1067,6 @@
       padding: 44px 0;
     }
 
-    #faq-library.section {
-      padding-top: 10px;
-    }
-
     section[id] {
       scroll-margin-top: calc(var(--nav-h) + 28px);
     }
@@ -1162,28 +1130,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    #areas .card {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    #areas .area-visual {
-      margin: -4px 0 18px;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(4, 76, 89, 0.1);
-      box-shadow: var(--shadow-sm);
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    #areas .area-visual img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
-    }
-
     .card {
       position: relative;
       overflow: hidden;
@@ -1225,6 +1171,27 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+    }
+
+    #archive .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #archive .card .card-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    #archive .grid-2 > .card:nth-child(2) .card-actions {
+      justify-content: flex-end;
+    }
+
+    #archive .card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(4, 76, 89, 0.1);
     }
 
     #projects .card-actions {
@@ -1456,6 +1423,7 @@
     .quick-chip:focus-visible {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+      outline: none;
     }
 
     .site-footer {
@@ -1502,6 +1470,10 @@
     .footer-col nav {
       display: grid;
       gap: 8px;
+    }
+
+    .footer-col nav a[aria-current="page"] {
+      color: var(--teal-900);
     }
 
     .footer-col a:hover,
@@ -1655,14 +1627,6 @@
       .panel-main {
         width: min(420px, calc(100% - 24px));
       }
-
-      .hero-scene-metrics {
-        min-height: 420px;
-      }
-
-      .scene-wrap-metrics {
-        margin-inline: auto;
-      }
     }
 
     @media (max-width: 920px) {
@@ -1744,46 +1708,6 @@
         width: min(290px, 78%);
         left: 16px;
         bottom: 6px;
-      }
-
-      .hero-scene-metrics {
-        min-height: 380px;
-      }
-
-      .scene-wrap-metrics {
-        width: min(440px, 100%);
-        height: 360px;
-      }
-
-      .metric-panel {
-        width: min(250px, 84%);
-        min-height: 140px;
-        padding: 20px 20px 18px;
-      }
-
-      .metric-panel h3 {
-        font-size: 2.15rem;
-      }
-
-      .metric-panel p {
-        font-size: 0.9rem;
-      }
-
-      .metric-panel-a {
-        left: 4px;
-        top: 0;
-      }
-
-      .metric-panel-b {
-        right: -6px;
-        top: 96px;
-        width: min(266px, 86%);
-      }
-
-      .metric-panel-c {
-        left: 34px;
-        bottom: 4px;
-        width: min(286px, 88%);
       }
 
       .section,
@@ -1900,44 +1824,6 @@
         padding: 24px;
       }
 
-      .hero-scene-metrics {
-        min-height: 340px;
-      }
-
-      .scene-wrap-metrics {
-        height: 330px;
-      }
-
-      .metric-panel {
-        width: min(235px, 88%);
-        min-height: 128px;
-        padding: 18px 18px 16px;
-        border-radius: 24px;
-      }
-
-      .metric-panel h3 {
-        font-size: 2rem;
-      }
-
-      .metric-panel p {
-        font-size: 0.88rem;
-        line-height: 1.55;
-      }
-
-      .metric-panel-a {
-        left: 2px;
-      }
-
-      .metric-panel-b {
-        right: -4px;
-        top: 92px;
-      }
-
-      .metric-panel-c {
-        left: 22px;
-        bottom: -2px;
-      }
-
       .panel h3,
       .card h3 {
         font-size: 1.7rem;
@@ -1949,348 +1835,554 @@
       }
     }
 
-    /* ===================== FAQ-specific UI ===================== */
-    .faq-toolbar {
-      position: sticky;
-      top: calc(var(--nav-h) + 8px);
-      z-index: 8;
+
+    /* ===================== Upcoming Projects Page ===================== */
+    .projects-hero {
+      padding-bottom: 28px;
+    }
+
+    .projects-hero .hero-grid {
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: start;
+    }
+
+    .projects-hero .hero-copy h1 {
+      max-width: 11ch;
+    }
+
+    .anchor-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 0 18px;
-      padding: 12px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(4, 76, 89, 0.12);
-      box-shadow: var(--shadow-md);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      margin-top: 22px;
     }
 
-    .faq-search {
-      flex: 1 1 340px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(4, 76, 89, 0.12);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    .hero-utility {
+      align-self: stretch;
     }
 
-    .faq-search svg {
-      flex: 0 0 auto;
-      color: var(--teal-700);
-    }
-
-    .faq-search input {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: var(--ink);
-      font-size: 1rem;
-    }
-
-    .faq-search input::placeholder {
-      color: #8a949b;
-    }
-
-    .faq-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .faq-count {
-      color: var(--teal-700);
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 0.01em;
-    }
-
-    .faq-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 0 0 20px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .faq-chip {
-      appearance: none;
-      -webkit-appearance: none;
-      border: 1px solid rgba(4, 76, 89, 0.16);
-      background: rgba(255, 255, 255, 0.76);
-      color: var(--teal-900);
-      min-height: 40px;
-      padding: 0 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease);
-    }
-
-    .faq-chip:hover,
-    .faq-chip:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(4, 76, 89, 0.22);
-      outline: none;
-    }
-
-    .faq-chip[aria-pressed="true"] {
-      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 18px 34px rgba(4, 76, 89, 0.18);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    details.faq-card {
+    .hero-utility-card {
       position: relative;
       overflow: hidden;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(4, 76, 89, 0.1);
-      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
-      box-shadow: var(--shadow-sm);
-      transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+      padding: 30px;
+      min-height: 100%;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.7));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
     }
 
-    details.faq-card::before {
+    .hero-utility-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(229, 181, 59, 0.1), transparent 26%), linear-gradient(145deg, rgba(255,255,255,0.42), transparent 30%);
+      background:
+        linear-gradient(140deg, rgba(255,255,255,0.56), transparent 34%),
+        radial-gradient(circle at top right, rgba(229,181,59,0.14), transparent 30%);
       pointer-events: none;
     }
 
-    details.faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(4, 76, 89, 0.16);
-    }
-
-    .faq-card summary {
-      position: relative;
-      list-style: none;
-      cursor: pointer;
-      padding: 22px 24px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
+    .hero-utility-card h3 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 0.96;
       color: var(--teal-950);
-      font-weight: 800;
-      line-height: 1.45;
-      font-size: 1.03rem;
     }
 
-    .faq-card summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-card summary::before {
-      content: "+";
-      flex: 0 0 auto;
-      width: 28px;
-      height: 28px;
+    .hero-utility-grid {
       display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(4, 76, 89, 0.08);
-      color: var(--teal-900);
-      font-size: 1.15rem;
-      line-height: 1;
-      margin-top: 2px;
-      transition: transform .25s ease, background .25s ease, color .25s ease;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    .faq-card[open] summary {
-      border-bottom: 1px solid rgba(4, 76, 89, 0.1);
-    }
-
-    .faq-card[open] summary::before {
-      content: "–";
-      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
-      color: white;
-    }
-
-    .faq-card summary:focus-visible,
-    .faq-copylink button:focus-visible,
-    .faq-chip:focus-visible,
-    .faq-search input:focus-visible {
-      outline: 3px solid rgba(0, 113, 127, 0.28);
-      outline-offset: 3px;
-      box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
-    }
-
-    .faq-answer {
-      position: relative;
-      padding: 0 24px 24px 66px;
-      color: var(--muted);
-    }
-
-    .faq-answer p,
-    .faq-answer li {
-      line-height: 1.82;
-      font-size: 0.98rem;
-    }
-
-    .faq-answer p {
-      margin: 0 0 12px;
-    }
-
-    .faq-answer p:last-child {
-      margin-bottom: 0;
-    }
-
-    .faq-answer ul {
-      margin: 0 0 12px 18px;
-      padding: 0;
-    }
-
-    .faq-answer li + li {
-      margin-top: 8px;
-    }
-
-    .faq-answer strong {
-      color: var(--teal-950);
-    }
-
-    .faq-copylink {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .faq-copylink button {
-      border: 0;
-      background: transparent;
-      color: var(--teal-900);
-      font-weight: 800;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    mark.faq-hit {
-      background: rgba(229, 181, 59, 0.34);
-      color: inherit;
-      padding: 0 .14em;
-      border-radius: 4px;
-    }
-
-    .faq-policy-note {
-      margin-top: 20px;
-      padding: 16px 18px;
+    .hero-utility-grid > div {
+      padding: 16px 16px 14px;
       border-radius: 18px;
-      background: rgba(248, 250, 250, 0.78);
+      background: rgba(248, 250, 250, 0.82);
       border: 1px solid rgba(4, 76, 89, 0.08);
-      color: var(--muted);
-      line-height: 1.75;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-utility-grid strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--teal-950);
       font-size: 0.96rem;
     }
 
-    .faq-empty-note {
-      display: none;
-      margin-top: 18px;
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.94));
-      border: 1px solid rgba(4, 76, 89, 0.1);
-      box-shadow: var(--shadow-sm);
+    .hero-utility-grid span {
+      display: block;
       color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .pricing-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(248, 250, 250, 0.82);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+    }
+
+    .pricing-row strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal-950);
+      font-size: 1rem;
+    }
+
+    .pricing-row span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    .price-tag {
+      flex: 0 0 auto;
+      min-width: 88px;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(184, 140, 12, 0.12);
+      border: 1px solid rgba(184, 140, 12, 0.2);
+      color: var(--gold-800);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .clean-list,
+    .step-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .clean-list li + li,
+    .step-list li + li {
+      margin-top: 10px;
+    }
+
+    .pathway-banner {
+      margin-top: 6px;
+      margin-bottom: 22px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-sm);
+      color: var(--teal-950);
+      font-size: 1rem;
       line-height: 1.75;
     }
 
-    .faq-empty-note.is-visible {
+    .session-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .session-card {
+      padding: 28px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72));
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .session-headline {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .session-kicker {
+      margin: 0 0 8px;
+      color: var(--teal-700);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .session-headline h3 {
+      margin: 0 0 12px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 0.96;
+      color: var(--teal-950);
+    }
+
+    .session-intro {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 75ch;
+    }
+
+    .session-side {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .session-side span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-sm);
+      color: var(--teal-900);
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .session-note {
+      margin-top: 16px;
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(248,250,250,0.78);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-item {
+      border-radius: 20px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .project-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .project-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-item summary::before {
+      content: "▸";
+      flex: 0 0 auto;
+      color: var(--gold-800);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 6px;
+      transition: transform .25s ease;
+    }
+
+    .project-item[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .project-item[open] {
+      border-color: rgba(4, 76, 89, 0.18);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-summary-text {
       display: block;
+      min-width: 0;
+    }
+
+    .project-summary-title {
+      display: block;
+      color: var(--teal-950);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .project-summary-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .project-summary-sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(248, 250, 250, 0.88);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-body {
+      padding: 0 22px 22px;
+    }
+
+    .proposal-shell {
+      position: relative;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(248,250,250,0.84), rgba(255,255,255,0.98));
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      overflow: hidden;
+    }
+
+    .proposal-topline {
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal-900), var(--gold-500));
+    }
+
+    .proposal-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      padding: 22px 22px 0;
+      align-items: start;
+    }
+
+    .proposal-kicker {
+      margin: 0 0 8px;
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .proposal-heading h4 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+      line-height: 1.02;
+      color: var(--teal-950);
+    }
+
+    .proposal-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .proposal-badges span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(4, 76, 89, 0.1);
+      color: var(--teal-700);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .proposal-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 20px 22px 0;
+    }
+
+    .fact-card {
+      padding: 16px 16px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--teal-700);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .fact-body {
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .proposal-copy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 20px 22px 22px;
+    }
+
+    .proposal-copy-block {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(4, 76, 89, 0.08);
+      min-width: 0;
+    }
+
+    .proposal-copy-block h5 {
+      margin: 0 0 12px;
+      color: var(--teal-950);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .copy-body {
+      color: var(--muted);
+      line-height: 1.82;
+      font-size: 0.97rem;
+    }
+
+    .copy-body b,
+    .copy-body strong {
+      color: var(--ink);
+    }
+
+    .copy-body ol,
+    .copy-body ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .copy-body li + li {
+      margin-top: 8px;
+    }
+
+    .project-references {
+      margin: 0;
+      padding-left: 1.2rem;
+      list-style: decimal;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .project-references li + li {
+      margin-top: 8px;
     }
 
     @media (max-width: 1180px) {
-      .faq-grid {
+      .projects-hero .hero-grid,
+      .proposal-heading,
+      .overview-grid {
         grid-template-columns: 1fr;
+      }
+
+      .proposal-badges {
+        justify-content: flex-start;
       }
     }
 
     @media (max-width: 920px) {
-      .faq-toolbar {
-        top: calc(var(--nav-h) + 8px);
+      .hero-utility-grid,
+      .proposal-facts,
+      .proposal-copy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .session-headline {
+        grid-template-columns: 1fr;
+      }
+
+      .session-side {
+        grid-auto-flow: row;
+        justify-content: start;
       }
     }
 
     @media (max-width: 640px) {
-      .faq-toolbar {
-        padding: 10px;
-        border-radius: 18px;
+      .projects-hero .hero-copy h1 {
+        max-width: 9ch;
       }
 
-      .faq-search,
-      .faq-actions {
-        width: 100%;
+      .anchor-row {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .faq-actions {
-        justify-content: space-between;
+      .hero-utility-card,
+      .session-card,
+      .proposal-heading,
+      .project-body,
+      .proposal-facts,
+      .proposal-copy-grid,
+      .feature-band,
+      .cta-panel,
+      .card {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      .faq-card summary {
-        padding: 20px 20px;
-        gap: 12px;
+      .project-item summary {
+        padding: 16px 18px;
       }
 
-      .faq-answer {
-        padding: 0 20px 20px 60px;
+      .pricing-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .price-tag {
+        min-width: 0;
       }
     }
 
   </style>
-
-
-  <script>
-    /*
-      GOLD CTA CONTROL
-      ------------------------------------------------------------
-      Update ONLY the value of GOLD_CTA_STATE below when you want
-      to change all gold buttons on this page at once.
-
-      Allowed values:
-      - "register" = Register Now
-      - "interest" = Join the Interest List
-      - "waitlist" = Join the Waitlist
-
-      Example:
-      window.GOLD_CTA_STATE = "interest";
-    */
-    window.GOLD_CTA_STATE = "register";
-
-    window.GOLD_CTA_OPTIONS = {
-      register: {
-        label: "Register Now",
-        href: "https://lsu.formstack.com/forms/vri_student_registration"
-      },
-      interest: {
-        label: "Join the Interest List",
-        href: "https://lsu.formstack.com/forms/vri_interest_list"
-      },
-      waitlist: {
-        label: "Join the Waitlist",
-        href: "https://lsu.formstack.com/forms/vri_waitlist"
-      }
-    };
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -2340,11 +2432,11 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="upcoming-projects.html">Upcoming Projects</a></li>
+          <li><a href="upcoming-projects.html" aria-current="page">Upcoming Projects</a></li>
           <li><a href="programs.html">Programs &amp; Pricing</a></li>
           <li><a href="about.html">About VRI</a></li>
           <li><a href="research-archive.html">Research Archive</a></li>
-          <li><a href="faq.html" aria-current="page">FAQ</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="policies.html">Policies &amp; Procedures</a></li>
         </ul>
       </nav>
@@ -2374,11 +2466,11 @@
       <p class="menu-panel-kicker">Explore the full site</p>
       <nav class="mobile-nav">
         <a href="index.html">Home</a>
-        <a href="upcoming-projects.html">Upcoming Projects</a>
+        <a href="upcoming-projects.html" aria-current="page">Upcoming Projects</a>
         <a href="programs.html">Programs &amp; Pricing</a>
         <a href="about.html">About VRI</a>
         <a href="research-archive.html">Research Archive</a>
-        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="faq.html">FAQ</a>
         <a href="policies.html">Policies &amp; Procedures</a>
       </nav>
     </div>
@@ -2386,437 +2478,1481 @@
 
 
   <main id="main-content">
-    <section class="hero">
-      <div class="hero-orbit" aria-hidden="true"></div>
-
+    <section class="hero projects-hero">
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">Frequently Asked Questions</div>
-          <h1>Clear answers for families and students.</h1>
+          <div class="eyebrow">Fall 2026 Registration</div>
+          <h1>Upcoming projects for Fall 2026.</h1>
           <p>
-            This page gathers practical and policy-grounded answers about VRI’s
-            structure, eligibility, scheduling, time zones, technology,
-            payments, research expectations, safety, and online participation.
-            It is written to help families and students evaluate fit carefully
-            before enrollment and understand how VRI operates.
+            This page is designed to make it easy for families to review the current VRI offerings, understand the difference between
+            Circles and Groups, compare project directions, and register with confidence.
           </p>
 
+          <div class="hero-actions">
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="btn btn-secondary" href="programs.html">Programs &amp; Pricing</a>
+            <a class="btn btn-secondary" href="faq.html">FAQ</a>
+          </div>
+
+          <div class="anchor-row" aria-label="Jump links">
+            <a class="quick-chip" href="#overview">Overview</a>
+            <a class="quick-chip" href="#circles">Circles</a>
+            <a class="quick-chip" href="#groups">Groups</a>
+            <a class="quick-chip" href="#private-mentorship">Private Mentorship</a>
+            <a class="quick-chip" href="#questions">Questions</a>
+          </div>
         </div>
 
+        <aside class="hero-utility reveal" aria-label="Fall 2026 at a glance">
+          <div class="hero-utility-card">
+            <p class="panel-kicker">Fall 2026 at a glance</p>
+            <h3>Clear pathways. Clear pricing. Clear proposals.</h3>
+            <div class="hero-utility-grid">
+              <div>
+                <strong>Format</strong>
+                <span>Fully online, with live mentor-led sessions and meaningful independent work.</span>
+              </div>
+              <div>
+                <strong>Current pathways</strong>
+                <span>Circles and Groups, with limited Private Mentorship by inquiry.</span>
+              </div>
+              <div>
+                <strong>Session 1</strong>
+                <span>Begins September 14, 2026</span>
+              </div>
+              <div>
+                <strong>Session 2</strong>
+                <span>Begins November 2, 2026</span>
+              </div>
+            </div>
+            <div class="term-note hero-note">
+              Families should review pathway fit first, then compare proposals within that pathway. Final placements depend on readiness,
+              fit, capacity, and scheduling.
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="section" id="faq-library">
+    <section class="section" id="overview">
       <div class="shell">
-        <div class="faq-toolbar reveal" aria-label="FAQ tools">
-          <div class="faq-search" role="search">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2"/></svg>
-            <input id="faqFilter" type="search" placeholder="Search questions (e.g., price, time zone, online format, refund, tablet, eligibility) — press / to focus" aria-label="Search frequently asked questions" />
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Overview</p>
+            <h2>A parent-friendly way to review the current term.</h2>
           </div>
-          <div class="faq-actions">
-            <button class="btn btn-primary" id="toggleAll" type="button" aria-controls="faqGrid" aria-pressed="false">Open all</button>
-            <div class="faq-count" aria-live="polite" id="faqCount"></div>
-          </div>
+          <p class="section-intro">
+            Begin with the pathway that best fits your student. Circles are the broader public entry point. Groups are smaller,
+            more intensive, and better suited to students ready for greater ownership and closer mentor interaction.
+          </p>
         </div>
 
-        <ul class="faq-chips reveal" aria-label="Quick filters">
-          <li><button class="faq-chip" data-filter="fit eligibility circles groups private mentorship admissions tier tier i tier ii readiness selective pathway pathways">Fit &amp; Eligibility</button></li>
-          <li><button class="faq-chip" data-filter="schedule time zone timezone timezones attendance meetings spring summer fall term terms session sessions calendar">Scheduling &amp; Time Zones</button></li>
-          <li><button class="faq-chip" data-filter="technology tablet stylus zoom teams meet tools online virtual format platform platforms software screen share live meetings">Technology</button></li>
-          <li><button class="faq-chip" data-filter="research deliverables authorship ai publication publications poster paper recommendation recommendations outcomes">Research &amp; Deliverables</button></li>
-          <li><button class="faq-chip" data-filter="payments deposit refund tuition aid price prices cost costs how much fee fees billing balance remaining balance">Payments &amp; Refunds</button></li>
-          <li><button class="faq-chip" data-filter="mentors mentor vetting screening background checks references identity verification">Mentors</button></li>
-          <li><button class="faq-chip" data-filter="privacy recording recordings conduct safety policy policies archives publicity media channels">Safety &amp; Privacy</button></li>
-        </ul>
-
-        <section class="faq-grid reveal" id="faqGrid">
-          <details class="faq-card" data-tags="overview structure institute programs circles groups private mentorship online virtual format terms spring summer fall live meetings independent work public pathways">
-            <summary>What is VRI, and how is the institute structured?</summary>
-            <div class="faq-answer">
-              <p>VRI is an online institute for mentored research in mathematics and computational sciences. Its current public model centers on <strong>Circles</strong> and <strong>Groups</strong>, with limited <strong>Private Mentorship</strong> available by inquiry when fit, mentor availability, and research scope align.</p>
-              <p>Public offerings are organized around <strong>Spring, Summer, and Fall</strong> terms and combine live mentor-led sessions with meaningful independent work between meetings.</p>
+        <div class="overview-grid">
+          <article class="card reveal" data-tilt>
+            <div class="card-label">Pathways &amp; Prices</div>
+            <h3>Fall 2026 public pricing</h3>
+            <div class="pricing-stack">
+              <div class="pricing-row">
+                <div>
+                  <strong>Circles</strong>
+                  <span>Tier I · broader public entry point</span>
+                </div>
+                <div class="price-tag">$1,395</div>
+              </div>
+              <div class="pricing-row">
+                <div>
+                  <strong>Groups</strong>
+                  <span>Tier II · smaller and more intensive</span>
+                </div>
+                <div class="price-tag">$3,495</div>
+              </div>
             </div>
-          </details>
+            <div class="term-note">Circles typically run about 6 weeks. Groups typically run about 10 weeks. All current public offerings are fully online.</div>
+          </article>
 
-          <details class="faq-card" data-tags="fit best pathway circles groups private mentorship tier 1 tier 2">
-            <summary>How should families think about Circles, Groups, and Private Mentorship?</summary>
-            <div class="faq-answer">
-              <p><strong>Circles</strong> are the broadest public entry point and are designed for motivated students who want a serious but more scalable mentored research experience.</p>
-              <p><strong>Groups</strong> are smaller, more intensive, and better suited to students who are ready for greater ownership, a higher level of sustained preparation, and closer mentor interaction.</p>
-              <p><strong>Private Mentorship</strong> is the most selective pathway. It is intended for students whose academic readiness, project goals, and logistical fit support a more individualized research arrangement.</p>
-            </div>
-          </details>
+          <article class="card reveal" data-tilt>
+            <div class="card-label">What families should know</div>
+            <h3>Registration, aid, and completion</h3>
+            <ul class="clean-list">
+              <li>Students may indicate pathway and proposal preferences during registration.</li>
+              <li>Limited financial assistance may be available in select cases, depending on funding and the program cycle.</li>
+              <li>Students work toward an end-of-term presentation or symposium-style sharing of results.</li>
+              <li>Completion certificates may be issued to students who complete the term in good standing.</li>
+            </ul>
+          </article>
 
-          <details class="faq-card" data-tags="pricing prices price cost costs how much tuition fee fees billing balance circles groups private mentorship 1395 3495 9000 spring summer fall term terms session sessions online format virtual live meetings independent work">
-            <summary>What are the current public prices, terms, and overall format?</summary>
-            <div class="faq-answer">
-              <p>VRI’s current public pathways are fully <strong>online</strong> and organized around <strong>Spring, Summer, and Fall</strong> terms, with live mentor-led sessions plus meaningful independent work between meetings.</p>
-              <ul>
-                <li><strong>Circles:</strong> $1,395 per student, typically about 6 weeks.</li>
-                <li><strong>Groups:</strong> $3,495 per student, typically about 10 weeks.</li>
-                <li><strong>Private Mentorship:</strong> starting at $16,000 by inquiry, with scope and duration depending on the match.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="eligibility vetting circles groups private mentorship selective readiness interview review">
-            <summary>How does eligibility differ across Tier I, Tier II, and Private Mentorship?</summary>
-            <div class="faq-answer">
-              <p>VRI does <strong>not</strong> treat all pathways the same.</p>
-              <ul>
-                <li><strong>Tier I / Circles:</strong> this is the broadest public pathway. VRI is generally open to motivated students who appear ready to engage seriously, even if they do not yet have prior research experience.</li>
-                <li><strong>Tier II / Groups:</strong> VRI is moving toward more active readiness review and fit assessment here. Students should expect closer scrutiny of preparation, maturity, and the likelihood of thriving in a smaller and more demanding environment.</li>
-                <li><strong>Private Mentorship:</strong> this is the most selective option and should be understood as a strong-fit placement rather than a default service. Academic readiness, independence, communication, and logistical feasibility matter a great deal.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="research experience prerequisites prior experience fit math background computational background">
-            <summary>Does a student need prior research experience to participate?</summary>
-            <div class="faq-answer">
-              <p>Not necessarily. Prior research experience can help, but it is <strong>not</strong> required for every pathway. What matters more is seriousness, intellectual curiosity, follow-through, and readiness for work that is more demanding than a casual enrichment class.</p>
-              <p>Some topics or mentors may expect stronger mathematical, statistical, or computational preparation than others, so families should read proposal pages carefully.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="waitlist conditional acceptance declined removed enrollment decisions fit eligibility">
-            <summary>Can a student be waitlisted, conditionally accepted, declined, or removed?</summary>
-            <div class="faq-answer">
-              <p><strong>Yes.</strong> Enrollment decisions remain within VRI’s discretion. Depending on the situation, VRI may accept, waitlist, conditionally accept, decline, or remove a student.</p>
-              <p>Reasons may include academic fit, behavior, logistics, safety, scheduling, operational constraints, or other concerns relevant to the program. Acceptance into one offering does <strong>not</strong> guarantee future acceptance into another.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="enrollment information forms identity age school status location emergency contacts schedule constraints accessibility needs">
-            <summary>What information should families be prepared to provide during enrollment?</summary>
-            <div class="faq-answer">
-              <p>Families should be prepared to provide complete and current information that VRI reasonably needs for enrollment and program administration.</p>
-              <p>This may include identity and contact details, age or school status, location, emergency contacts, scheduling constraints, accessibility needs, and other information relevant to placement, safety, and communication.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="mentor time zone timezone proposals scheduling location international">
-            <summary>Do families need to pay attention to mentor time zones?</summary>
-            <div class="faq-answer">
-              <p><strong>Yes.</strong> This matters. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling.</p>
-              <p>VRI is beginning to post <strong>mentor time zones directly on research proposal pages</strong> so that families can evaluate feasibility earlier and more responsibly.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="schedule time zones published schedules feasibility constraints conflicts">
-            <summary>How flexible is scheduling once a student is placed?</summary>
-            <div class="faq-answer">
-              <p>VRI tries to schedule responsibly, but schedules are shaped by mentor availability, cohort feasibility, and the realities of running live online research groups across time zones.</p>
-              <p>A family’s preference for a different time does <strong>not</strong> automatically obligate VRI to reconfigure a group after placement. This is one reason families should review schedule realities carefully before enrolling.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="attendance lateness absences participation disengagement response">
-            <summary>What happens if a student misses meetings or struggles with attendance?</summary>
-            <div class="faq-answer">
-              <p>Because VRI is collaborative and research-focused, attendance and responsiveness matter. Repeated unexcused absences, chronic lateness, persistent disengagement, or failure to respond to scheduling communications may lead to warnings, loss of good standing, reduced eligibility for certificates or recommendations, removal from a team, or dismissal where appropriate.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="technology required laptop desktop tablet internet email camera microphone online virtual format tools platforms software">
-            <summary>What technology is required for VRI?</summary>
-            <div class="faq-answer">
-              <p>Students should have a <strong>reliable internet connection</strong>, a <strong>working email account</strong>, and a device that supports live meetings, screen sharing, camera, and microphone use.</p>
-              <p>For most students, a computer is the safest and most reliable default. Some projects may also use shared documents, slides, code notebooks, datasets, or other subject-specific tools depending on the mentor and topic.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="tablet stylus math writing screen share recommendation not required">
-            <summary>Is a tablet with a stylus required for math-heavy topics?</summary>
-            <div class="faq-answer">
-              <p><strong>No.</strong> It is not required. But for math-heavy research, a writing tablet or comparable device with a stylus that can share screen is <strong>strongly recommended</strong>.</p>
-              <p>When students need to write definitions, derivations, proofs, diagrams, or intermediate reasoning live, this kind of setup often makes participation much smoother and more professional.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="platforms zoom microsoft teams google meet approved tools">
-            <summary>Which meeting platforms or tools might VRI use?</summary>
-            <div class="faq-answer">
-              <p>Depending on the mentor and project, meetings may use <strong>Zoom</strong>, <strong>Microsoft Teams</strong>, <strong>Google Meet</strong>, or a comparable approved platform. Some projects may also use shared documents, slides, code environments, datasets, LaTeX tools, or discipline-specific software.</p>
-              <p>Families should not assume that every project uses the same software stack.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="communication approved channels social media texting personal phone numbers">
-            <summary>May students, families, and mentors communicate through personal channels?</summary>
-            <div class="faq-answer">
-              <p>As a general rule, <strong>no</strong>. VRI expects routine communications to occur through <strong>approved channels</strong>.</p>
-              <p>Direct contact through personal social-media accounts, personal texting, personal phone numbers, or other unapproved channels should not be treated as normal practice unless VRI has explicitly authorized a documented exception.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="parents guardians observe coach prompt interfere support role">
-            <summary>May parents sit in sessions or intervene during meetings?</summary>
-            <div class="faq-answer">
-              <p>Parents and guardians remain important partners, especially for minors, but they should not coach, prompt, or materially interfere with live student sessions unless the program expressly allows a support role.</p>
-              <p>VRI works best when students are allowed to think, speak, and struggle productively in a serious scholarly environment.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="parent guardian family responsibilities supervision communication scheduling technology conduct">
-            <summary>What role should parents or guardians expect to play?</summary>
-            <div class="faq-answer">
-              <p>For minor participants, parents or guardians should expect to play a supportive but professional role. That includes helping the student meet technology, scheduling, communication, and conduct expectations.</p>
-              <p>Families should review time zones, hardware, internet requirements, and program expectations before enrollment, and they should communicate respectfully with VRI staff and mentors through approved channels.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="workload independent work readings assignments deliverables between meetings">
-            <summary>How much independent work should students expect between meetings?</summary>
-            <div class="faq-answer">
-              <p>Students should expect <strong>meaningful work between live meetings</strong>. Depending on the pathway and project, that may include reading, problem solving, coding, data work, drafting slides, revising written exposition, or preparing for collaborative discussion.</p>
-              <p>VRI is not intended to feel like a passive webinar series. The institute assumes real follow-through outside the live session itself.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="publication authorship recommendations conference presentation guarantee outcomes">
-            <summary>Are publication, authorship, conference presentations, or recommendation letters guaranteed?</summary>
-            <div class="faq-answer">
-              <p><strong>No.</strong> Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or any comparable outcome.</p>
-              <p>VRI may determine, with mentors where relevant, whether a project is ready for internal showcase, external submission, archival posting, recommendation support, or no public dissemination at all.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="academic credit school credit college credit transcript guarantee">
-            <summary>Does participation provide school or college credit?</summary>
-            <div class="faq-answer">
-              <p><strong>No automatic academic credit is guaranteed.</strong> Participation in VRI does not by itself create an entitlement to school credit, college credit, or transcript credit.</p>
-              <p>If a family hopes a school may recognize the work in some way, that should be treated as a separate matter outside standard VRI enrollment unless VRI expressly states otherwise in writing.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="authorship acknowledgments credit contribution research ethics">
-            <summary>How are authorship and acknowledgments handled?</summary>
-            <div class="faq-answer">
-              <p>Authorship and acknowledgments should be discussed early and revisited if the scope of contributions changes. Intellectual seriousness and honest attribution matter a great deal in VRI’s culture.</p>
-              <p>Students and mentors should not assume that mere enrollment or attendance automatically entitles a participant to formal authorship.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="ai tools academic integrity originality citation plagiarism ghostwriting fabrication">
-            <summary>Are AI tools allowed in VRI work?</summary>
-            <div class="faq-answer">
-              <p>AI tools may be relevant in some projects, but they may <strong>not</strong> be used to disguise copied, fabricated, ghostwritten, or improperly borrowed work as original scholarship.</p>
-              <p>Students are expected to do their own work, acknowledge collaborators and tools where relevant, and follow mentor guidance about citation, attribution, and responsible use.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="deliverables writing slides posters code formatting deadlines quality revision">
-            <summary>What standards apply to papers, posters, slides, code, or final deliverables?</summary>
-            <div class="faq-answer">
-              <p>Deliverables should be professionally prepared, submitted by stated deadlines, and revised when needed. VRI may require changes or withhold publication or public posting until quality, compliance, and scholarly standards are met.</p>
-              <p>In short: this is not a “submit anything and it counts” environment.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="mentor request topic request preferences placement matching rankings">
-            <summary>Can a student request a specific topic or mentor?</summary>
-            <div class="faq-answer">
-              <p>Students may often share topic preferences, and VRI may consider them carefully, but placement is not guaranteed. VRI may also change, merge, postpone, reformat, or cancel offerings based on enrollment, mentor availability, safety, quality control, or broader business considerations.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="payments tuition deposit remaining balance deadlines pricing current tuition prices price cost costs how much billing balance fee fees">
-            <summary>How do deposits and remaining tuition payments work?</summary>
-            <div class="faq-answer">
-              <p>VRI uses a <strong>deposit-plus-balance</strong> structure. A non-refundable deposit is generally required to reserve a seat unless VRI expressly states otherwise in writing. Remaining tuition balances are due by published deadlines.</p>
-              <p>Current public pricing is presented on the Programs &amp; Pricing page, where Circles, Groups, and Private Mentorship are described in more detail.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="refund refund policy withdrawal more than 21 days 20 to 8 days 7 days">
-            <summary>What is the default refund framework before a program begins?</summary>
-            <div class="faq-answer">
-              <p>As summarized from VRI’s current policy framework:</p>
-              <ul>
-                <li><strong>More than 21 calendar days</strong> before the first scheduled live session: tuition paid may be refundable <strong>less</strong> the non-refundable deposit and any nonrecoverable fees.</li>
-                <li><strong>20 to 8 calendar days</strong> before the first scheduled live session: up to <strong>50%</strong> of tuition paid may be refundable, less the non-refundable deposit and nonrecoverable fees.</li>
-                <li><strong>7 calendar days or fewer</strong> before the first scheduled live session: no refund absent extraordinary documented circumstances and a written determination by VRI.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="refund after start mentor matching onboarding no refund time zone incompatibility disclosed late">
-            <summary>Are refunds available after the program begins or after mentor matching starts?</summary>
-            <div class="faq-answer">
-              <p>The default position is generally <strong>no refund</strong> once the first live session has begun or once mentor matching or onboarding work has materially started. In rare cases VRI may choose to offer a limited credit rather than a refund, but that should not be assumed.</p>
-              <p>Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, extracurricular conflicts, local device failures, or local internet problems generally do <strong>not</strong> create refund rights unless a signed agreement or published written policy expressly says otherwise.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="financial assistance scholarship aid need based limited">
-            <summary>Is financial assistance available?</summary>
-            <div class="faq-answer">
-              <p>Possibly. Limited financial assistance may be available in select cases, depending on funding and the program cycle. Families should not assume that aid is guaranteed simply because they ask.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="mentors vetted screening identity references publications background checks sanctions">
-            <summary>How are mentors vetted?</summary>
-            <div class="faq-answer">
-              <p>Mentors are central to VRI’s credibility and risk profile, so VRI may require identity verification, reference checks, publication verification, sanctions screening, and background checks where legally permissible and operationally appropriate.</p>
-              <p>Approval of a mentor is discretionary and may be revoked if VRI concludes that quality, safety, legal, or reputational concerns justify that step.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="recording recordings screenshots privacy archives publicity media release">
-            <summary>Can VRI record sessions, and can participants make their own recordings?</summary>
-            <div class="faq-answer">
-              <p>VRI may record sessions, presentations, or review meetings for quality control, training, dispute review, documentation, archival purposes, or safeguarding, subject to releases and applicable law.</p>
-              <p>Participants should <strong>not</strong> assume they may create their own recordings, screenshots, or redistributions. Unauthorized participant recording or sharing is not acceptable absent explicit permission.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="privacy data handling archives publicity likeness image name voice release">
-            <summary>How does VRI handle privacy, archival materials, and publicity use?</summary>
-            <div class="faq-answer">
-              <p>VRI may maintain recordings, chat logs, attendance records, project drafts, reports, posters, and related archival materials for legitimate program administration and business purposes.</p>
-              <p>If VRI intends to use a participant’s name, likeness, voice, image, or approved project excerpts in publicity, marketing, or fundraising, those uses should be governed by a separate release or comparable consent mechanism.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="conduct harassment bullying grooming discrimination retaliation boundaries safety">
-            <summary>What conduct issues are taken especially seriously?</summary>
-            <div class="faq-answer">
-              <p>VRI takes harassment, bullying, discrimination, retaliation, grooming behavior, sexual misconduct, coercive boundary violations, threats, privacy violations, false information, and unsafe off-platform behavior very seriously.</p>
-              <p>Mentors should never request secrecy from students, and participants should not treat personal-channel communication as acceptable by default.</p>
-            </div>
-          </details>
-
-          <details class="faq-card" data-tags="serious concern report incident review safety complaint appeal">
-            <summary>What should families, students, or mentors do if a serious concern arises?</summary>
-            <div class="faq-answer">
-              <p>Concerns should be reported <strong>promptly and in writing</strong>. Serious issues involving possible abuse, exploitation, grooming, credible threats, severe harassment, or comparable safety concerns should be escalated immediately under VRI’s review and safeguarding procedures.</p>
-              <p>VRI may implement interim measures such as reassignment, separation, restricted access, or temporary suspension while a matter is reviewed.</p>
-            </div>
-          </details>
-        </section>
-
-        <div class="faq-empty-note" id="faqEmptyNote">
-          No questions match that search yet. Try terms such as <strong>price</strong>, <strong>cost</strong>, <strong>time zone</strong>, <strong>online</strong>, <strong>refund</strong>, <strong>tablet</strong>, or <strong>publication</strong>.
-        </div>
-
-        <div class="faq-policy-note reveal">
-          <strong style="color: var(--teal-950);">Important note.</strong> This FAQ is intended to be clear and practical, but it does not replace the full institutional framework. Where a signed agreement, a pathway-specific page, or a more specific published instruction applies, that more specific document may govern.
+          <article class="card reveal" data-tilt>
+            <div class="card-label">How to use this page</div>
+            <h3>Start with fit, then compare proposals.</h3>
+            <ol class="step-list">
+              <li><strong>Choose a pathway.</strong> Begin with Circles or Groups based on readiness, scale, and pace.</li>
+              <li><strong>Review the session offerings.</strong> Projects are organized by pathway and then by session start.</li>
+              <li><strong>Register.</strong> Use the gold button when you are ready to move into the current cycle.</li>
+            </ol>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="policies-note">
+    <section class="section" id="circles">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Tier I</p>
+            <h2>Circles</h2>
+          </div>
+          <p class="section-intro">
+            Circles are structured, guided, and scalable mentored research experiences designed to introduce students to serious research habits
+            in an accessible but still rigorous environment.
+          </p>
+        </div>
+
+        <div class="pathway-banner reveal">
+          <div>
+            <strong>Typical cohort size:</strong> 10–12 students &nbsp; &middot; &nbsp; <strong>Typical duration:</strong> about 6 weeks &nbsp; &middot; &nbsp; <strong>Cost:</strong> $1,395 per student
+          </div>
+        </div>
+
+        <div class="session-stack">
+          
+          <article class="session-card reveal" id="circles-session-1">
+            <div class="session-headline">
+              <div>
+                <p class="session-kicker">Circles · Session 1</p>
+                <h3>Begins September 14, 2026</h3>
+                <p class="session-intro">Guided public entry-point offerings for Fall 2026. Each placement is designed for serious online work, clear academic structure, and thoughtful mentor guidance.</p>
+              </div>
+              <div class="session-side">
+                <span>4 offerings</span>
+                <span>about 6 weeks</span>
+              </div>
+            </div>
+            <div class="session-note">Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
+            <div class="project-list">
+              
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Learning from Evidence: The Mathematics of Updating Beliefs</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Dr. Mario Stipčić</span>
+                </div>
+                <p class="project-summary-sub">Probability Theory / Bayesian Statistics</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Learning from Evidence: The Mathematics of Updating Beliefs</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Dr. Mario Stipčić<br />Preceptor in Mathematics<br />Department of Mathematics<br />Harvard University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Probability Theory / Bayesian Statistics</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">Basic probability knowledge is recommended for better understanding of the topic.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">Basic probability knowledge is recommended for better understanding of the topic. Still, we will provide a brief overview of probability in both discrete and geometric settings, along with an introduction to rigorous mathematical notation.<br/><br/>
+        For this project, we will use RStudio to write code in R. Before the first meeting, students should install this program or another environment for working with R. However, no prior coding experience is required; students will work with prewritten code and learn how to modify it for their own purposes.<br/><br/>
+        Apart from this, no particular background knowledge is required.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Suppose that you want to determine whether you have a certain rare disease. You take a test with very high accuracy, which rarely misclassifies individuals as carriers or non-carriers. If your test result is positive, how likely is it that you actually have the disease?<br/><br/>
+
+        Surprisingly, the answer is often much smaller than one might expect; in fact, the probability may be so small that you most likely do not carry the disease at all. This scenario illustrates the importance of Bayes’ Theorem, one of the most fundamental results in probability theory.<br/><br/>
+
+        In this project, students will develop a strong understanding of Bayes’ rule in both theoretical and practical settings. They will build probabilistic intuition and mathematical modeling skills by studying both the motivation behind the theorem and its formal mathematical statement. We will then transition to more complex scenarios involving medical diagnosis, machine learning classification, and statistical inference.<br/><br/>
+
+        Students will also gain hands-on experience using R to analyze data, visualize distributions, and draw conclusions based on numerical computation and statistical summaries.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">Students may compare Bayesian methods with other standard approaches in statistics and data science. Possible directions include studying Bayesian inference alongside maximum likelihood estimation and confidence interval methods, or exploring classification problems through Bayesian classifiers and logistic regression.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Blitzstein, J., and Hwang, J. <i>Introduction to Probability</i>, CRC Press, 2019.
+          </li>
+<li>
+            Rice, J. <i>Mathematical Statistics and Data Analysis</i>, 3rd ed., Cengage Learning, 2006.
+          </li>
+<li>
+            James, G., Witten, D., Hastie, T., and Tibshirani, R. <i>An Introduction to Statistical Learning: with Applications in R</i>, Springer, 2021.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Learning from Uncertainty: A Bayesian View of Probability and Data</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Mohammad Rafiqul Islam</span>
+                </div>
+                <p class="project-summary-sub">Probability, Bayesian Statistics, and Uncertainty Quantification</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Learning from Uncertainty: A Bayesian View of Probability and Data</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Mohammad Rafiqul Islam<br />Ph.D. Candidate in Mathematics<br />Department of Mathematics<br />Florida State University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Probability, Bayesian Statistics, and Uncertainty Quantification</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project assumes familiarity with basic algebra, graphs, and averages.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project assumes familiarity with basic algebra, graphs, and averages. No prior knowledge of probability or statistics is required. All probabilistic ideas will be introduced from first principles using concrete examples and visual intuition. Calculus is not required.<br/><br/>
+        Students will engage with hands-on experiments and simulations using simple computational tools such as Excel or Python (no prior programming experience assumed). Emphasis will be placed on conceptual understanding, interpretation, and communication rather than technical formalism.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">In many real-world situations, we must make decisions based on limited or noisy information. Bayesian probability provides a mathematical framework for describing uncertainty, updating beliefs, and learning from data.<br/><br/>
+        In this project, students will explore the Bayesian view of probability, where probability represents a degree of belief rather than a fixed long-run frequency. We will begin with intuitive examples such as coin flips, guessing unknown quantities, and predicting outcomes with incomplete information. Students will learn how initial beliefs (called <i>priors</i>) can be updated using observed data to form improved beliefs (called <i>posteriors</i>).<br/><br/>
+        Through simulations and experiments, students will investigate how uncertainty changes as more data is collected, how prior assumptions influence conclusions, and how Bayesian reasoning differs from traditional deterministic thinking. Visual tools such as probability distributions, histograms, and simulation plots will be used throughout.<br/><br/>
+        The project emphasizes intuition, experimentation, and explanation. By the end of the program, students will understand how Bayesian ideas help quantify uncertainty and support rational decision-making in science, data analysis, and everyday life.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">Interested students may explore how different prior beliefs lead to different posterior conclusions, even when observing the same data. Additional extensions include comparing Bayesian predictions with simple averages, investigating how uncertainty shrinks as sample size increases, or exploring basic Bayesian decision-making under uncertainty.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Martin O. <i>Bayesian Analysis with Python</i>. Birmingham, UK: Packt Publishing; 2016 Nov 25.
+          </li>
+<li>
+            Gelman, A., et al. <i>Bayesian Data Analysis</i>, 3rd ed., CRC Press, 2013.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">When Can We Trust Simple Decisions?: Binary Classification with Imbalanced Data</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Hyelim Jung</span>
+                </div>
+                <p class="project-summary-sub">Applied Mathematics; Mathematical Modeling; Data-Driven Decision Rules</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>When Can We Trust Simple Decisions?: Binary Classification with Imbalanced Data</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Hyelim Jung<br />Ph.D. Candidate<br />Department of Mathematics and Statistics<br />Auburn University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Applied Mathematics; Mathematical Modeling; Data-Driven Decision Rules</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project assumes only a standard high-school background in algebra.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project assumes only a standard high-school background in algebra. Students are expected to be comfortable with basic inequalities, simple functions, proportions, and percentages, as well as reading tables and graphs. No prior coursework in statistics, probability, or calculus is assumed.<br/><br/>
+        All necessary concepts—such as decision rules, evaluation metrics, and experimental comparison—will be introduced within the context of the research questions. Computational experiments will be conducted using Excel, R, or Python, with code templates provided as needed.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Many real-world problems require binary decisions, such as determining whether an email is spam or deciding whether an alert should be issued. A common way to evaluate such decisions is accuracy—the proportion of correct outcomes. But is accuracy always a reliable measure of performance?<br/><br/>
+        In this project, students investigate simple decision rules for binary classification and explore how these rules behave when data are highly imbalanced, meaning that one outcome is much rarer than the other. Through hands-on experiments, students discover that a rule with very high accuracy can nevertheless perform poorly in practice by systematically missing rare but important cases.<br/><br/>
+        Rather than introducing complex models, students focus on understanding why accuracy can be misleading and how evaluation criteria shape our conclusions. Using tables, graphs, and basic arithmetic, students compare different decision rules under varying levels of imbalance.<br/><br/>
+        In the final stage of the project, students propose a simple remedy by redefining what it means for a rule to perform well. By examining multiple error rates and incorporating basic cost considerations, students develop a more nuanced framework for evaluating decisions. The project emphasizes the process of mathematical research—posing questions, designing experiments, interpreting results, and communicating findings—using tools accessible to high-school students.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">Students who continue in the VMRC Research Extension may explore how different levels of data imbalance affect conclusions, or how varying the relative cost of different types of errors changes which decision rules are preferred. Additional extensions may include introducing label noise or examining real-world scenarios such as medical screening or fraud detection. These extensions emphasize deeper interpretation and more refined experimental design rather than additional technical machinery.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            He, H. and Garcia, E. A. <i>Learning from Imbalanced Data</i>. IEEE Transactions on Knowledge and Data Engineering, 21(9), 2009.
+          </li>
+<li>
+            Saito, T. and Rehmsmeier, M. <i>The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets</i>. PLoS ONE, 10(3), 2015.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Extensions of Colley’s Matrix and Ranking Methods</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Jonathan Engle</span>
+                </div>
+                <p class="project-summary-sub">Applied Linear Algebra</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Extensions of Colley’s Matrix and Ranking Methods</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Jonathan Engle<br />PhD Candidate (ABD)<br />Department of Mathematics<br />Florida State University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Applied Linear Algebra</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project requires little background knowledge beyond basic algebra and arithmetic.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project requires little background knowledge beyond basic algebra and arithmetic. High school calculus is not a prerequisite. All required linear algebra concepts needed to approach the problem will be introduced during the project.<br/><br/>
+        This project serves as a strong introduction to ideas from linear algebra, introductory computer science, statistics, and mathematical modeling. During the experimental stage, students will implement the mathematical theory computationally using tools such as Excel, Matlab, and/or Julia. During the final week, when results are compiled and presented, students may use tools such as PowerPoint or Beamer.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Colley’s matrix method for ranking college football teams is an exciting application of linear algebra. While many traditional ranking methods are based primarily on a team’s record, margin of victory, or subjective committee decisions, such approaches can still fall short in producing accurate rankings. Colley addressed this issue by developing an objective ranking method that adjusts a team’s rating according to strength of schedule, without taking conference affiliation or margin of victory into account.<br/><br/>
+        In this project, students will work toward replicating Colley’s Matrix for a small “toy” example using college football teams from the previous season. They will analyze these replications and investigate whether Colley’s method was able to identify potential major upsets that the College Football Committee did not anticipate. This implementation will require solving a linear system of the form:<br/><br/>
+<div style="text-align:center;">
+<i>C</i><span style="text-decoration:overline;">r</span> = <span style="text-decoration:overline;">b</span>,  
+          <i>C</i> ∈ ℝ<sup>n×n</sup>,  
+          <span style="text-decoration:overline;">b</span>, <span style="text-decoration:overline;">r</span> ∈ ℝ<sup>n</sup>
+</div>
+<br/>
+        where <span style="text-decoration:overline;">r</span> is the ranking vector, <span style="text-decoration:overline;">b</span> is one plus the average win rate for a team, and <i>C</i> is Colley’s matrix. This framework leads naturally to the central research question of the project: how can Colley’s Matrix be improved when additional information about the system is available?<br/><br/>
+        The project emphasizes mathematical structure, computational experimentation, and interpretation. By the end of the program, students will understand how a linear algebra model can be used to construct rankings and how modifying that model may lead to more informative decision-making tools in sports and beyond.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">Once students explore the sports-ranking example, they will be encouraged to extend the same ideas to settings beyond athletics. Possible directions include, but are not limited to, resource distribution, natural disaster response, stock rankings, and other systems in which competing entities must be ranked using incomplete or structured information.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Boginski, V., Butenko, S., and Pardalos, P. M. <i>Matrix-based methods for college football rankings</i>. <i>Economics, Management and Optimization in Sports</i>, 2004, pp. 1–13.
+          </li>
+<li>
+            Colley, Wesley N. <i>Colley’s bias free college football ranking method: The Colley matrix explained</i>, 2002.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </article>
+    
+          
+          <article class="session-card reveal" id="circles-session-2">
+            <div class="session-headline">
+              <div>
+                <p class="session-kicker">Circles · Session 2</p>
+                <h3>Begins November 2, 2026</h3>
+                <p class="session-intro">A second late-fall circle intake for students who prefer a later start. Each placement is designed for serious online work, clear academic structure, and thoughtful mentor guidance.</p>
+              </div>
+              <div class="session-side">
+                <span>4 offerings</span>
+                <span>about 6 weeks</span>
+              </div>
+            </div>
+            <div class="session-note">Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
+            <div class="project-list">
+              
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Simulating Flow in a Channel with Obstacles</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Irene Erazo</span>
+                </div>
+                <p class="project-summary-sub">Applied Mathematics</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Simulating Flow in a Channel with Obstacles</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Irene Erazo<br />Ph.D. Student in Mathematics<br />Department of Mathematics<br />Tulane University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Applied Mathematics</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project is self-contained and does not require prior exposure to high school calculus.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project is self-contained and does not require prior exposure to high school calculus. Basic concepts from precalculus, linear algebra, and ordinary differential equations will be introduced throughout the program.<br/><br/>
+        Students will also be introduced to basic coding as needed. This project provides an accessible introduction to the use of ordinary differential equations and computational methods to model fluid flow in a channel with obstacles.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Simulating real-world phenomena is essential across many disciplines, particularly in fluid dynamics, where understanding flow behavior plays a key role in physical applications. This project focuses on situations in which the relevant length scales are very small or the fluid has high viscosity. Such conditions frequently arise in biological systems, making the study of fluid flow important in areas such as microbiology and biomedical engineering.<br/><br/>
+
+        In this project, students will explore how fluids move through a channel containing obstacles using mathematical models and computer simulations. First, we will develop a numerical method to compute fluid flow when forces are prescribed. Once this method is established, we will simulate different scenarios—such as fluid moving around obstacles—to observe how these barriers affect the speed and direction of the flow.<br/><br/>
+
+        By visualizing these effects, students will gain insight into real-world applications, including the design of efficient waterways and the prediction of how flows behave in constrained environments.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">In the base model, obstacles are represented as isolated points within a channel. A natural extension is to consider flow around fixed line obstacles. Students may also explore how different solid obstacle shapes influence flow patterns and system behavior.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Cortez, R. <i>The method of regularized Stokeslets</i>, <i>SIAM Journal on Scientific Computing</i>, 23(4), 1204–1225, 2001.
+          </li>
+<li>
+            Cortez, R., Fauci, L., and Medovikov, A. <i>The method of regularized Stokeslets in three dimensions: analysis, validation, and application to helical swimming</i>, <i>Physics of Fluids</i>, 17(3), 2005.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Comparative Analysis of SIR Models for Epidemic Spread and Containment Strategies</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Jacob Kapita</span>
+                </div>
+                <p class="project-summary-sub">Biostatistics, Probability Theory, Data Science</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Comparative Analysis of SIR Models for Epidemic Spread and Containment Strategies</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Jacob Kapita<br />Ph.D. Student<br />Department of Mathematics<br />Louisiana State University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Biostatistics, Probability Theory, Data Science</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">Basic arithmetic and algebra skills are sufficient for this project.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">Basic arithmetic and algebra skills are sufficient for this project. Differential calculus and coding are not required, though they may be helpful. Necessary skills will be introduced as the project progresses.<br/><br/>
+        This project provides an introduction to probability theory, biostatistics, and data analysis. Python in Google Colab will be used to generate results, and LaTeX Beamer in Overleaf will be used to prepare the final presentation.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Mathematical models play a crucial role in understanding the dynamics of infectious disease transmission and in guiding public health interventions. Among these models, the Susceptible–Infected–Recovered (SIR) model is one of the most widely used frameworks for studying epidemic spread.<br/><br/>
+        The classical SIR model divides the population into three compartments—susceptible, infected, and recovered—and describes the transitions between these groups using systems of differential equations. However, real-world epidemics often involve additional complexities such as vaccination, quarantine measures, behavioral changes, and time-varying transmission rates.<br/><br/>
+        In this project, students will conduct a comparative analysis of different SIR-based models to evaluate their effectiveness in describing epidemic spread and assessing the impact of containment strategies. Through mathematical analysis and numerical simulations, students will investigate how different model structures influence epidemic dynamics and the predicted outcomes of intervention strategies.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">The project may be extended to investigate stochastic SIR models, allowing for random variations in infection and recovery processes that occur in real epidemic scenarios.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Kermack, W. O., and McKendrick, A. G. <i>A Contribution to the Mathematical Theory of Epidemics</i>. <i>Proceedings of the Royal Society A</i>, Vol. 115, 1927.
+          </li>
+<li>
+            Hethcote, H. W. <i>The Mathematics of Infectious Diseases</i>. <i>SIAM Review</i>, 42(4), 2000.
+          </li>
+<li>
+            Keeling, M. J., and Rohani, P. <i>Modeling Infectious Diseases in Humans and Animals</i>. Princeton University Press, 2008.
+          </li>
+<li>
+            Bird, A. <i>A Simple Introduction to Epidemiological Modelling</i>. King’s College London, 2020.
+          </li>
+<li>
+            Misra, S. <i>Mathematical Modeling of Infectious Disease Spread Using the SIR Model</i>. <i>Biomedical Journal of Scientific &amp; Technical Research</i>, 2024.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Coupling Times of Random Walks on Graphs: A Computational Study</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Sixian Liu</span>
+                </div>
+                <p class="project-summary-sub">Probability Theory, Markov Chains, Graph Theory</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Coupling Times of Random Walks on Graphs: A Computational Study</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Sixian Liu<br />Graduate Research, Ph.D. Student<br />Department of Applied Mathematics and Statistics<br />Stony Brook University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Probability Theory, Markov Chains, Graph Theory</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project assumes only basic familiarity with algebra and arithmetic.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project assumes only basic familiarity with algebra and arithmetic. All additional concepts and tools required to study the problem will be introduced during the program. The project provides an accessible introduction to probability theory, graph theory, and Markov chains. During the experimental stage, students will implement simulations using computational tools such as Python. In preparing the final presentation, students may use tools such as PowerPoint, Jupyter Notebook, and/or Overleaf.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">We study random walks on graphs, which provide a simple example of a Markov chain. A graph consists of nodes connected by edges. A random walk describes a process in which a walker moves from its current node to one of its neighboring nodes at random.<br/><br/>
+
+        This process forms a Markov chain, meaning that the next position of the walker depends only on its current location and not on the past path it has taken. At each step, the walker selects its next move by choosing uniformly among the neighboring nodes. In other words, if a node has <i>d</i> neighbors, each neighbor is chosen with probability 1/<i>d</i>. The randomness can be generated by drawing a number from the uniform distribution
+        <div style="text-align:center;">
+<i>U</i> ∼ Uniform(0, 1).
+        </div>
+<br/>
+        An interesting phenomenon occurs when two walkers move on the same graph using the same sequence of random numbers: although they may start at different nodes, they may eventually meet and then follow the same path thereafter.<br/><br/>
+
+        A central question is how the structure of the graph influences the behavior of the random walk over time. In this project we will compare random walks on several types of graphs, such as line graphs, cycle graphs, and complete graphs. Students will simulate these random walks using computational tools such as Python and observe how the structure of the graph influences the time until the walkers meet.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">First, we may consider variations of the random walk, such as a lazy random walk, in which the walker stays at its current node with some probability before moving to a neighboring node. Second, we may simulate multiple walkers moving simultaneously on the graph and study their interaction over time. Finally, we may explore how the meeting time changes as the size of the graph increases.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            West, D. B. <i>Introduction to Graph Theory</i>, 2nd ed., Pearson Education, Inc., 2001.
+          </li>
+<li>
+            Williamson, D. P. <i>ORIE 6334 Spectral Graph Theory: Lecture 11 – Random Walks on Graphs</i>, Cornell University, 2016.
+          </li>
+<li>
+            Klappenecker, A. <i>Coupling of Markov Chains</i>, Texas A&amp;M University, Lecture Notes, 2018.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Exploring Balanced Incomplete Block Designs: Properties, Symmetry, and Applications</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Circle pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Lázaro Aguiar</span>
+                </div>
+                <p class="project-summary-sub">Combinatorics</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Exploring Balanced Incomplete Block Designs: Properties, Symmetry, and Applications</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Circle pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Lázaro Aguiar<br />Math PhD Student<br />Tulane University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Combinatorics</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project is designed to be self-contained; all necessary material will be introduced as we progress.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project is designed to be self-contained; all necessary material will be introduced as we progress. High school mathematics is more than enough.<br/><br/>
+        Coding experience in <i>Python</i> is helpful but not required; basic coding concepts will be introduced if needed.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Combinatorial design theory focuses on organizing elements of a finite set into smaller groups that satisfy specific conditions. A particular case is <i>balanced incomplete block designs</i> (BIBDs), whose existence has been studied since the 18th century. A well-known example is <i>Kirkman’s Schoolgirl Problem</i>, which asks how to arrange a group of students into rows each day so that no two students walk together more than once in a week. This problem is, in fact, a specific instance of BIBDs, structures with applications in various fields.<br/><br/>
+
+        The formal study of design theory emerged in the 20th century, driven by its use in statistical experimental design, particularly by Ronald Fisher. Today, combinatorial designs have applications in cryptography, tournament scheduling, network design, mathematical biology, and more. This project is structured into three weeks: the first introduces fundamental concepts of BIBDs, the second explores a special class known as <i>symmetric designs</i>, and the third examines structural relationships between designs, including <i>isomorphisms</i> and connections to other mathematical structures.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">Students may explore applications of this topic in <i>coding theory</i>, where combinatorial designs, including BIBDs, play a crucial role in constructing <i>error-correcting codes</i>. These codes are essential for ensuring reliable data transmission in communication systems by detecting and correcting errors. Additionally, combinatorial designs are useful in <i>cryptography</i>, particularly in the construction of secure encryption schemes. Further exploration could involve studying connections between BIBDs and <i>graph theory</i>, leading to advancements in network reliability and data security.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Stinson, D. R. <i>Combinatorial Designs: Constructions and Analysis</i>. Springer, 2004.
+          </li>
+<li>
+            Wan, Z. X. <i>Design Theory</i>. Higher Education Press and World Scientific, 2009.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="groups">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Tier II</p>
+            <h2>Groups</h2>
+          </div>
+          <p class="section-intro">
+            Groups are smaller collaborative cohorts with more intensive mentor interaction, greater ownership, and a closer resemblance to a
+            premium boutique research experience.
+          </p>
+        </div>
+
+        <div class="pathway-banner reveal">
+          <div>
+            <strong>Typical cohort size:</strong> 5–6 students &nbsp; &middot; &nbsp; <strong>Typical duration:</strong> about 10 weeks &nbsp; &middot; &nbsp; <strong>Cost:</strong> $3,495 per student
+          </div>
+        </div>
+
+        <div class="session-stack">
+          
+          <article class="session-card reveal" id="groups-session-1">
+            <div class="session-headline">
+              <div>
+                <p class="session-kicker">Groups · Session 1</p>
+                <h3>Begins September 14, 2026</h3>
+                <p class="session-intro">Smaller, more intensive collaborative placements for students ready for deeper ownership. Each placement is designed for serious online work, clear academic structure, and thoughtful mentor guidance.</p>
+              </div>
+              <div class="session-side">
+                <span>3 offerings</span>
+                <span>about 10 weeks</span>
+              </div>
+            </div>
+            <div class="session-note">Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
+            <div class="project-list">
+              
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Information Diffusion on Networks: How Fast Do Opinions Reach Consensus?</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Sixian Liu</span>
+                </div>
+                <p class="project-summary-sub">Graph Theory, Dynamical Systems, Multi-agent Optimization</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Information Diffusion on Networks: How Fast Do Opinions Reach Consensus?</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Sixian Liu<br />Graduate Research, Ph.D. Student<br />Department of Applied Mathematics and Statistics<br />Stony Brook University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Graph Theory, Dynamical Systems, Multi-agent Optimization</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project assumes only basic familiarity with algebra and arithmetic.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project assumes only basic familiarity with algebra and arithmetic. All additional concepts and tools required to study the problem will be introduced during the program. This project serves as an excellent introduction to graph theory, optimization, differential equations, dynamical systems, and mathematical programming. During the experimental stage, we will implement computational tools such as Python and/or Matlab. During the development of the final presentation, we will use tools such as PowerPoint, Jupyter Notebook, and/or Overleaf.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Social networks describe how people are connected and how information spreads among them. In mathematics, a social network can be represented using a graph, where each person is a node and each connection between two people is an edge. This representation allows us to study how local interactions between individuals influence the behavior of the whole group.<br/><br/>
+
+        In this project, we study a simple model for how opinions or information spread across a network. Each node holds a number representing the opinion or information value of that individual. At each step, people update their values by interacting with their neighbors. Over time, these updates can cause the values in the network to become similar.<br/><br/>
+
+        A common mathematical model for this process is the diffusion equation on a graph,
+        <div style="text-align:center;">
+<i>dc</i>/<i>dt</i> = −<i>Lc</i>,
+        </div>
+<br/>
+        where <i>c</i> represents the values at each node and <i>L</i> is the graph Laplacian that describes the structure of the network. This system models the idea that each person adjusts their value toward the values of their neighbors. Intuitively, each node repeatedly averages its value with its neighbors, which gradually smooths differences across the network.<br/><br/>
+
+        Using this model, we will study how the structure of the network affects how quickly agreement is reached. In particular, we will explore whether different network shapes lead to faster or slower spreading of information. Students will simulate these dynamics using simple computational tools such as Python <i>networkx</i> and observe how values evolve over time.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">First, instead of assigning a single number to each node, we may allow each node to store a vector representing multiple opinions or pieces of information. Second, we may investigate how the diffusion process changes when the network contains weighted edges, meaning that some connections between individuals are stronger than others. Finally, we may explore ideas from sheaf theory. This framework allows information to be stored not only at nodes but also along the connections of the network, with compatibility conditions between neighboring nodes. In this setting, diffusion can be described using a generalized operator called the sheaf Laplacian.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            West, D. B. <i>Introduction to Graph Theory</i>, 2nd ed., Pearson Education, Inc., 2001.
+          </li>
+<li>
+            Sayama, H. <i>Diffusion on Networks</i>, in <i>Introduction to the Modeling and Analysis of Complex Systems</i>, LibreTexts.
+          </li>
+<li>
+            Hansen, J. and Ghrist, R. <i>Opinion Dynamics on Discourse Sheaves</i>, <i>SIAM Journal on Applied Mathematics</i>, 81(5), pp. 2033–2060, 2021.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">The Life Cycle of Products: How People Adopt and Abandon Them</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Dr. Lingju Kong</span>
+                </div>
+                <p class="project-summary-sub">Mathematical Modeling</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>The Life Cycle of Products: How People Adopt and Abandon Them</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Dr. Lingju Kong<br />Professor of Mathematics<br />University of Tennessee at Chattanooga</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Mathematical Modeling</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">Familiarity with high school calculus and differential equations will enhance comprehension of the research.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">Familiarity with high school calculus and differential equations will enhance comprehension of the research. Key concepts will be introduced and reviewed during the first week of the project.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Understanding how people start using new products and stop using them is an important question in marketing. In this study, we create a simple model to study how users choose between two competing products. We identify key points that determine whether a product becomes popular or fades away. We also look at different possible outcomes: no one uses either product, one product becomes dominant, or both products are used by some people. Finally, we run computer simulations to show that our predictions match what the model suggests.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">There are several ways this project could be taken further:<br/><br/>
+        (1) Exploring a similar control problem — looking at ways to influence or guide the system in a related situation.<br/>
+        (2) Testing how sensitive the model is to changes — checking how small changes in the model's parameters affect the results.<br/>
+        (3) Studying real-world data — using historical data on daily active users of Facebook and LinkedIn to see how well the model matches reality. This involves adjusting the model's parameters to make predictions about future user trends on both platforms.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Bass, F. M. <i>A new product growth model for consumer durables</i>, Management Science, 15 (1969), 215–227.
+          </li>
+<li>
+            Kong, L. and Wang, M. <i>Optimal control for an ordinary differential equation online social network model</i>, Differential Equations and Applications, 14 (2022), 205–214.
+          </li>
+<li>
+            Chen, R., Kong, L., and Wang, M. <i>Modeling the dynamics of adoption and abandonment of multiple products</i>, Mathematics and Computers in Simulation, 241 (2026), 868–889.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">The Brachistochrone Problem and the Calculus of Variations</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 1</span>
+                  <span class="meta-chip">Philip Olapade</span>
+                </div>
+                <p class="project-summary-sub">Calculus of Variations</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>The Brachistochrone Problem and the Calculus of Variations</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 1</span>
+                      <span>Begins September 14, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Philip Olapade<br />PhD Student, Mathematics<br />Georgia Institute of Technology</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Calculus of Variations</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This research project is designed for motivated students with a background in algebra and single-variable calculus.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This research project is designed for motivated students with a background in algebra and single-variable calculus. No prior exposure to multivariable calculus, physics, or the calculus of variations is assumed. All mathematical and physical concepts required for the project will be introduced during the program.<br/><br/>
+        The project serves as an accessible introduction to advanced mathematical ideas through a classical and historically significant problem. Students will be introduced to multivariable calculus concepts, variational thinking, and physical intuition through guided instruction, interactive experimentation, and mathematical reasoning. Computational tools such as interactive simulations and basic numerical experiments will be used to support intuition and exploration. During the development of the final presentation, students will use PowerPoint.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body"><b>The Brachistochrone Problem</b><br/><br/>
+
+        Given two points <i>A</i> and <i>B</i> in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at <i>A</i> and reaches <i>B</i> in the shortest time?<br/><br/>
+
+        This was the challenge problem that Johann Bernoulli set to the thinkers of his time in 1696. Calculus had only just been invented, yet the solution to this problem uses a fairly advanced technique called the calculus of variations. The problem was solved independently by several mathematicians, including Isaac Newton, who approached the problem using physical reasoning and geometric arguments.<br/><br/>
+
+        Students may already be familiar with using calculus to compute quantities such as the area under a curve. Using the calculus of variations, however, one instead seeks to optimize an entire function. In the case of the brachistochrone problem, the unknown is the curve itself rather than a single numerical quantity like area or time. This leads naturally to the study of infinitesimal variations of a function, in analogy with the infinitesimal changes studied in single-variable calculus.<br/><br/>
+
+        In this project, we approach the brachistochrone problem primarily from Newton’s perspective, emphasizing first principles, physical intuition, and geometric reasoning. Through experimentation and mathematical analysis, we show why the curve of fastest descent is a cycloid.<br/><br/>
+
+        The name <i>brachistochrone</i> comes from the Greek words <i>brachistos</i>, meaning shortest, and <i>chronos</i>, meaning time.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body"><b>Fermat’s Principle</b><br/><br/>
+
+        As a possible extension, we will explore Fermat’s principle, which states that the path taken by a beam of light between two points is the one that requires the least time. This principle leads to Snell’s law of refraction in geometrical optics.<br/><br/>
+
+        In 1697, Johann Bernoulli used Fermat’s principle to derive the brachistochrone curve by considering the trajectory of a beam of light traveling through a medium in which the speed of light increases with depth. In this analogy, the varying speed of light plays a role analogous to the constant vertical acceleration due to gravity. This extension highlights deep connections between mechanics, optics, and variational principles.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+<i>Brachistochrone Curve</i>. Wikipedia.
+          </li>
+<li>
+<i>Brachistochrone Problem — Interactive Simulation</i>. myPhysicsLab.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </article>
+    
+          
+          <article class="session-card reveal" id="groups-session-2">
+            <div class="session-headline">
+              <div>
+                <p class="session-kicker">Groups · Session 2</p>
+                <h3>Begins November 2, 2026</h3>
+                <p class="session-intro">A later-start group intake for students whose fall schedules align better with November placement. Each placement is designed for serious online work, clear academic structure, and thoughtful mentor guidance.</p>
+              </div>
+              <div class="session-side">
+                <span>3 offerings</span>
+                <span>about 10 weeks</span>
+              </div>
+            </div>
+            <div class="session-note">Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
+            <div class="project-list">
+              
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">From Interacting Particle Systems on Graphs to Disease Spreading</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Dr. Yangrui Xiang</span>
+                </div>
+                <p class="project-summary-sub">Probability Theory, Graph Theory, Stochastic Processes, Mathematical Biology</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>From Interacting Particle Systems on Graphs to Disease Spreading</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Dr. Yangrui Xiang<br />Postdoctoral Researcher<br />Department of Mathematics<br />Louisiana State University</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Probability Theory, Graph Theory, Stochastic Processes, Mathematical Biology</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">Familiarity with basic algebra, functions, and mathematical notation (sets, summations, and proof structure) is helpful.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">Familiarity with basic algebra, functions, and mathematical notation (sets, summations, and proof structure) is helpful. Prior exposure to probability, combinatorics, and graph theory is encouraged but not required; all necessary concepts will be introduced during the project.<br/><br/>
+        During the development of the final presentation, we will use tools such as PowerPoint, Beamer, and Overleaf.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">How fast does a disease spread through a population, and does it eventually die out? How do specific types of genes within a species evolve? And how long does it take before a stochastic system “forgets” its initial condition?<br/><br/>
+
+        These questions can be studied using interacting particle systems (IPS), mathematical models in which many individuals evolve randomly while interacting through a network. IPS play a central role in probability theory and are widely used to model disease spread, population dynamics, and genetic evolution.<br/><br/>
+
+        In this project, students will investigate simple multi-particle stochastic models motivated by epidemiology. We will focus on infection–recovery dynamics on graphs and study how local update rules lead to global behavior. A central theme will be the time it takes for the system to approach equilibrium. Through theory and investigation, students will observe the striking cutoff phenomenon, where convergence happens abruptly rather than gradually.<br/><br/>
+
+        By the end of the project, students will understand how randomness and network structure interact, and they will communicate their findings in a research-style presentation.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">As follow-on directions, students may investigate how infection rates that depend on the total number of infected individuals influence the time it takes for a disease to spread. In this setting, the infection rate increases as the number of infected individuals in the population grows, so the disease spreads faster when more people are already infected.<br/><br/>
+
+        A second direction is to study how infection rates that depend on the structure of the underlying graph influence the speed at which a disease spreads and stabilizes. For example, students can compare identical infection–recovery rules on cycles, grids, and <i>d</i>-regular expander graphs and observe differences in convergence behavior.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Stewart, James, and Day, Troy. <i>Biocalculus: Calculus for Life Sciences</i>, 2nd ed., Cengage Learning, 2015.
+          </li>
+<li>
+            Levin, David A., and Peres, Yuval. <i>Markov Chains and Mixing Times</i>, 2nd ed., American Mathematical Society, 2017.
+          </li>
+<li>
+            Norris, J. R. <i>Markov Chains</i>, Cambridge University Press, 1997.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Dynamics of a Single Species Metapopulation Model with Dispersal</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Sajan Bhandari</span>
+                </div>
+                <p class="project-summary-sub">Discrete Dynamical Systems and Mathematical Biology</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Dynamics of a Single Species Metapopulation Model with Dispersal</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Sajan Bhandari<br />PhD Candidate (ABD)<br />Department of Mathematics<br />University of Louisiana at Lafayette</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Discrete Dynamical Systems and Mathematical Biology</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This research project requires a background knowledge of basic calculus and linear algebra, mainly the calculation of eigenvalues of matrices.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This research project requires a background knowledge of basic calculus and linear algebra, mainly the calculation of eigenvalues of matrices. All other necessary knowledge related to discrete dynamical systems and model formulation and analysis will be taught by the instructor. The project will introduce students to fundamental techniques used in biological research. <i>MATLAB</i> or <i>Python</i> will be used for numerical simulations. For the final writing, we will use tools such as <i>Overleaf/LaTeX</i>, and the presentation will be developed using <i>Beamer</i>.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Let <i>x(t)</i> denote the population size of a species at time <i>t</i>. If we want to predict the population size at time <i>t + 1</i>, we need to create a model that takes in the knowledge of the population size <i>x(t)</i> at time <i>t</i> and predicts how that population will grow from time <i>t</i> to time <i>t + 1</i>. A general population model is given by the equation:<br/><br/>
+<i>x(t + 1) = f(x(t))</i><br/><br/>
+
+        where <i>f</i> is the function that provides <i>x(t + 1)</i> if <i>x(t)</i> is known. While formulating a discrete model, modelers need to find this function <i>f</i> by observing the mechanisms of the phenomena they are trying to model. In other words, they need to know the order of events taking place between time <i>t</i> and time <i>t + 1</i>.<br/><br/>
+
+        We will develop a simple two-dimensional model describing the dynamics of a single species distributed across two habitat patches. To this end, students will first explore and investigate different dispersal mechanisms by studying biological and ecological examples from nature. Based on these mechanisms, discrete-time models will be formulated. The resulting models are then thoroughly analyzed by determining their equilibria and stability. This will help answer questions such as: under what conditions will this species go extinct? How does dispersal stabilize or destabilize the system? What will be the long-term fate of the species? Finally, numerical simulations will be performed to verify theoretical results.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">The model presented above can be extended in several ways. First, we can change the order of events, such as dispersal first and then reproduction, which can generate completely different dynamics. Further, we can add more species in the patches, capturing more complex dynamics.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Allen, Linda J. S. <i>An Introduction to Mathematical Biology</i>. Pearson Prentice Hall, 2007.
+          </li>
+<li>
+            Elaydi, Saber N., and Jim M. Cushing. <i>Discrete Mathematical Models in Population Biology: Ecological, Epidemic, and Evolutionary Dynamics</i>. Springer Nature, 2025.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="project-item reveal">
+              <summary>
+                <span class="project-summary-text">
+                  <span class="project-summary-title">Digit Representations of Fractals and Self-Affine Carpets</span>
+                  
+                <div class="project-summary-meta">
+                  <span class="meta-chip">Group pathway</span>
+                  <span class="meta-chip">Session 2</span>
+                  <span class="meta-chip">Manisha Garg</span>
+                </div>
+                <p class="project-summary-sub">Fractal Geometry, Number Theory, Discrete Geometry</p>
+    
+                </span>
+              </summary>
+              <div class="project-body">
+                <div class="proposal-shell">
+                  <div class="proposal-topline"></div>
+                  <div class="proposal-heading">
+                    <div>
+                      <p class="proposal-kicker">Research Proposal</p>
+                      <h4>Digit Representations of Fractals and Self-Affine Carpets</h4>
+                    </div>
+                    <div class="proposal-badges" aria-label="Proposal quick facts">
+                      <span>Group pathway</span>
+                      <span>Session 2</span>
+                      <span>Begins November 2, 2026</span>
+                    </div>
+                  </div>
+
+                  <div class="proposal-facts">
+                    <div class="fact-card">
+                      <span class="fact-label">Mentor</span>
+                      <div class="fact-body">Manisha Garg<br />6th Year Graduate Student<br />Department of Mathematics<br />University of Illinois, Urbana-Champaign</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Topic area</span>
+                      <div class="fact-body">Fractal Geometry, Number Theory, Discrete Geometry</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Preparation</span>
+                      <div class="fact-body">This project assumes familiarity with algebra, basic geometry, and mathematical reasoning.</div>
+                    </div>
+                    <div class="fact-card">
+                      <span class="fact-label">Format note</span>
+                      <div class="fact-body">Live mentor-led sessions with meaningful independent work between meetings.</div>
+                    </div>
+                  </div>
+
+                  <div class="proposal-copy-grid">
+                    <section class="proposal-copy-block">
+                      <h5>Background</h5>
+                      <div class="copy-body">This project assumes familiarity with algebra, basic geometry, and mathematical reasoning. Knowledge of sequences and basic exponents is helpful but not required. All necessary background on iterative constructions, geometric series, and proof techniques will be introduced during the program.<br/><br/>
+        Optional computational components will use <i>Python</i>; no prior programming experience is required.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Project overview</h5>
+                      <div class="copy-body">Many geometric objects in nature—coastlines, snowflakes, and branching trees—appear too irregular to be described using traditional notions of length and area. Fractals provide a mathematical framework for understanding such shapes. Even more surprisingly, many fractals can be described using simple rules about digits in number systems.<br/><br/>
+
+        For instance, the classical Cantor set consists precisely of those real numbers whose base-3 expansion avoids the digit 1. The Sierpiński carpet can be described using restrictions on pairs of base-3 digits. In this project, we will uncover how seemingly intricate geometric objects arise from surprisingly simple arithmetic rules.<br/><br/>
+
+        We will begin by constructing the Cantor set, Sierpiński carpet, and Menger sponge through iterative processes, and then translate these constructions into precise digit-based characterizations. Students will derive and prove criteria determining exactly which points belong to these sets, and compute how length, area, or volume evolves at each stage of iteration. Through computational experiments, we will develop algorithms that measure the decay rate of area up to a given iteration <i>n</i>, leading students to formulate and test conjectures.<br/><br/>
+
+        Finally, we will extend these ideas to a broader class of self-affine carpets. Depending on interest and time, we may explore how combinatorial digit restrictions influence geometric and topological properties such as area, local connectedness, and fractal dimension.<br/><br/>
+
+        The project combines proof-writing, number theory, geometry, and computational experimentation, culminating in a colloquium-style presentation (and possibly, a short paper).</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Possible extension</h5>
+                      <div class="copy-body">After deriving the decay rates of classical and self-affine carpets, students can explore additional geometric and metric properties. Possible directions include estimating box-counting or Hausdorff dimension, studying connectivity and symmetry properties, analyzing intersections of fractals with lines, or comparing different carpets using computational invariants.<br/><br/>
+
+        Students will combine theoretical reasoning with computational experiments to formulate and justify new conjectures. They may choose either to focus on a single class of carpets and investigate multiple properties, or to fix a particular property and compare how it behaves across different families of carpets.</div>
+                    </section>
+                    <section class="proposal-copy-block">
+                      <h5>Selected references</h5>
+                      <div class="copy-body"><ol class="project-references">
+<li>
+            Falconer, Kenneth. <i>Fractal Geometry: Mathematical Foundations and Applications</i>, 2nd ed., Wiley, 2003.
+          </li>
+<li>
+            Barnsley, Michael. <i>Fractals Everywhere</i>, 2nd ed., Academic Press, 1993.
+          </li>
+</ol></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="private-mentorship">
       <div class="shell">
         <div class="feature-band reveal">
           <div class="feature-band-grid">
             <div>
-              <p class="section-label">Institutional Note</p>
-              <h3>Need the larger framework behind these answers?</h3>
+              <p class="section-label">Private Mentorship</p>
+              <h3>Need a more individualized research match?</h3>
               <p>
-                The FAQ is written in plain language, but VRI’s broader operating
-                framework also includes formal positions on conduct, privacy,
-                youth safety, documentation, recordings, payments, withdrawals,
-                and the institute’s no-guarantee disclosures.
+                For students seeking more individualized or longer-term work, VRI may occasionally consider limited Private Mentorship placements by inquiry.
+                This option is best understood as a strong-fit placement rather than a default service.
               </p>
-            </div>
-
-            <div class="feature-quote">
-              <strong>Best next step</strong>
-              <p>
-                Review the full Policies &amp; Procedures page for the larger framework,
-                and consult the Programs &amp; Pricing page for pathway structure,
-                tuition, and current public positioning.
-              </p>
-              <div class="card-actions" style="margin-top: 18px;">
-                <a class="btn btn-secondary" href="policies.html">Policies &amp; Procedures</a>
-                <a class="btn btn-secondary" href="programs.html">Programs &amp; Pricing</a>
+              <div class="card-actions">
+                <a class="btn btn-secondary" href="programs.html">Review Private Mentorship</a>
+                <a class="btn btn-secondary" href="faq.html">Read FAQ</a>
               </div>
+            </div>
+            <div class="feature-quote">
+              <strong>By inquiry only</strong>
+              <p>
+                Starting tuition is currently $16,000. Availability depends on subject area, mentor fit, and researcher availability.
+                Private Mentorship placements are limited and not guaranteed.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="questions">
       <div class="shell">
         <div class="cta-panel reveal">
           <div>
-            <p class="section-label">Contact</p>
-            <h3>Still have a question about fit, logistics, or the right pathway?</h3>
+            <p class="section-label">Questions</p>
+            <h3>Need help deciding before you register?</h3>
             <p>
-              Reach out if you want help thinking through Circles, Groups,
-              Private Mentorship, scheduling feasibility, or whether a specific
-              research proposal is a strong fit for a student.
+              Families can review the FAQ and Policies pages for pathway fit, scheduling, technology, payments, and other important details.
+              When you are ready, use the gold button to move into the current registration flow.
             </p>
           </div>
-
           <div class="quick-links">
-            <a class="btn btn-primary" href="mailto:info@virtualresearchinstitute.org">Email VRI</a>
-            <a class="quick-chip quick-chip-teal" href="upcoming-projects.html">Upcoming Projects</a>
-            <a class="quick-chip quick-chip-teal" href="about.html">About VRI</a>
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="quick-chip quick-chip-teal" href="faq.html">FAQ</a>
+            <a class="quick-chip quick-chip-teal" href="policies.html">Policies</a>
           </div>
         </div>
       </div>
     </section>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does eligibility differ across Tier I, Tier II, and Private Mentorship?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Circles are the broadest public entry point and are generally open to motivated students who appear ready to engage seriously. Groups involve more active readiness review and fit assessment. Private Mentorship is the most selective option and depends on strong academic, logistical, and mentor fit."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do families need to pay attention to mentor time zones?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. VRI works across multiple time zones, and families should review mentor time zones and scheduling expectations before enrolling. VRI is beginning to post mentor time zones directly on research proposal pages when available."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a tablet with a stylus required for math-heavy topics?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. It is not required, but for math-heavy research a writing tablet or comparable device with a stylus that can share screen is strongly recommended."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are publication, authorship, conference presentations, or recommendation letters guaranteed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Enrollment does not guarantee publication, formal authorship, public posting, conference acceptance, recommendation letters, awards, internships, or comparable outcomes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the default refund framework before a program begins?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "More than 21 calendar days before the first scheduled live session, tuition paid may be refundable less the non-refundable deposit and any nonrecoverable fees. From 20 to 8 calendar days before, up to 50 percent of tuition paid may be refundable less the deposit and nonrecoverable fees. Seven calendar days or fewer before the first scheduled live session, no refund is expected absent extraordinary documented circumstances and a written determination by VRI."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are refunds available after the program begins or after mentor matching starts?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The default position is generally no refund once the first live session has begun or once mentor matching or onboarding work has materially started. Late-disclosed schedule or time-zone incompatibility, travel conflicts, school conflicts, local device failures, or local internet problems generally do not create refund rights unless a signed agreement or published written policy expressly says otherwise."
-          }
-        }
-      ]
-    }
-    </script>
   </main>
 
 
@@ -2827,6 +3963,7 @@
           <div class="footer-brand">
             <h4 class="footer-brand-title"><span class="footer-v">V</span><span class="footer-r">R</span><span class="footer-i">I</span></h4>
             <span class="footer-brand-bar" aria-hidden="true"></span>
+            <p class="footer-subtitle"></p>
           </div>
 
           <div class="footer-meta">
@@ -2837,9 +3974,11 @@
         <div class="footer-col">
           <h5>On This Page</h5>
           <nav>
-            <a href="#faq-library">FAQ Library</a>
-            <a href="#policies-note">Institutional Notes</a>
-            <a href="#contact">Contact</a>
+            <a href="#overview">Overview</a>
+            <a href="#circles">Circles</a>
+            <a href="#groups">Groups</a>
+            <a href="#private-mentorship">Private Mentorship</a>
+            <a href="#questions">Questions</a>
           </nav>
         </div>
 
@@ -2847,11 +3986,11 @@
           <h5>Explore</h5>
           <nav>
             <a href="index.html">Home</a>
-            <a href="upcoming-projects.html">Upcoming Projects</a>
+            <a href="upcoming-projects.html" aria-current="page">Upcoming Projects</a>
             <a href="programs.html">Programs &amp; Pricing</a>
             <a href="about.html">About VRI</a>
             <a href="research-archive.html">Research Archive</a>
-            <a href="faq.html" aria-current="page">FAQ</a>
+            <a href="faq.html">FAQ</a>
             <a href="policies.html">Policies &amp; Procedures</a>
           </nav>
         </div>
@@ -2876,20 +4015,20 @@
     (function () {
       document.body.classList.add("js-enhanced");
 
-      const goldCtaState = window.GOLD_CTA_STATE || "register";
-      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
-      const goldCtaConfig = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
-
-      if (goldCtaConfig) {
-        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
-          link.textContent = goldCtaConfig.label;
-          link.href = goldCtaConfig.href;
-        });
-      }
-
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
+
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const activeGoldCta = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (activeGoldCta) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = activeGoldCta.label;
+          link.href = activeGoldCta.href;
+        });
+      }
 
       const header = document.getElementById("siteHeader");
       const mainContent = document.getElementById("main-content");
@@ -2994,14 +4133,10 @@
       }
 
       if (brandEvolve) {
-        initBrandEvolve();
-
         if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(() => {
-            if (!isPhoneViewport()) {
-              initBrandEvolve();
-            }
-          });
+          document.fonts.ready.then(initBrandEvolve);
+        } else {
+          initBrandEvolve();
         }
 
         let resizeTimer = null;
@@ -3216,230 +4351,5 @@
       }
     })();
   </script>
-
-  <script>
-    (function () {
-      const input = document.getElementById('faqFilter');
-      const grid = document.getElementById('faqGrid');
-      const toggleAllBtn = document.getElementById('toggleAll');
-      const count = document.getElementById('faqCount');
-      const emptyNote = document.getElementById('faqEmptyNote');
-      const chips = Array.from(document.querySelectorAll('.faq-chip'));
-      if (!input || !grid || !toggleAllBtn || !count) return;
-
-      const cards = Array.from(grid.querySelectorAll('details.faq-card'));
-      const normalize = (value) => (value || '')
-        .toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/[“”‘’]/g, '"')
-        .replace(/\s+/g, ' ')
-        .trim();
-
-      const SYNONYMS = {
-        fit: ['eligibility', 'best pathway', 'readiness', 'placement', 'circles', 'groups', 'private mentorship'],
-        eligibility: ['fit', 'readiness', 'selective', 'admissions', 'tier', 'tier i', 'tier ii', 'circles', 'groups', 'private mentorship'],
-        circles: ['tier i', 'pathway', 'public pathway', 'group size'],
-        groups: ['tier ii', 'pathway', 'public pathway', 'small group'],
-        private: ['private mentorship', 'individualized', 'selective'],
-        price: ['prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much', 'balance', 'remaining balance', 'payment'],
-        pricing: ['price', 'prices', 'cost', 'costs', 'tuition', 'fee', 'fees', 'billing', 'how much'],
-        cost: ['price', 'prices', 'tuition', 'fee', 'fees', 'how much', 'billing'],
-        tuition: ['price', 'prices', 'cost', 'costs', 'fee', 'fees', 'billing', 'deposit', 'balance'],
-        payments: ['tuition', 'deposit', 'refund', 'aid', 'price', 'cost', 'billing', 'balance'],
-        refund: ['withdrawal', 'deposit', 'credit', 'chargeback', 'cancellation'],
-        schedule: ['scheduling', 'meetings', 'attendance', 'availability', 'time zone', 'timezone', 'calendar', 'session', 'term'],
-        timezone: ['time zone', 'time-zone', 'schedule', 'availability', 'international', 'mentor location'],
-        term: ['terms', 'session', 'sessions', 'calendar', 'spring', 'summer', 'fall'],
-        format: ['online', 'virtual', 'live meetings', 'independent work', 'platform', 'software', 'tools'],
-        online: ['virtual', 'format', 'live meetings', 'independent work', 'zoom', 'teams', 'meet'],
-        technology: ['tech', 'tablet', 'stylus', 'zoom', 'teams', 'meet', 'laptop', 'internet', 'software', 'platform'],
-        tablet: ['stylus', 'math writing', 'screen share', 'pen'],
-        publication: ['authorship', 'conference', 'poster', 'paper', 'recommendation', 'outcomes'],
-        deliverables: ['deliverable', 'paper', 'poster', 'slides', 'code', 'formatting'],
-        attendance: ['absences', 'absence', 'late', 'lateness', 'missed meetings'],
-        aid: ['financial assistance', 'scholarship', 'need-based'],
-        credit: ['academic credit', 'school credit', 'college credit', 'transcript'],
-        waitlist: ['conditionally accepted', 'conditional acceptance', 'declined', 'removed', 'enrollment'],
-        enrollment: ['application', 'waitlist', 'conditionally accepted', 'declined', 'removed', 'forms', 'family information'],
-        parent: ['guardian', 'family responsibilities', 'supervision'],
-        mentors: ['mentor', 'vetting', 'screening', 'background checks', 'references'],
-        privacy: ['recording', 'recordings', 'archives', 'media', 'conduct', 'safety', 'publicity']
-      };
-
-      function tokenize(query) {
-        return normalize(query)
-          .split(/[\s,\/\-]+/)
-          .filter(Boolean)
-          .map(token => token.replace(/s\b/, ''));
-      }
-
-      function expandQuery(query) {
-        const tokens = tokenize(query);
-        const expanded = new Set(tokens);
-        tokens.forEach((token) => {
-          const matches = SYNONYMS[token] || SYNONYMS[token.replace(/s$/, '')] || [];
-          matches.forEach((phrase) => tokenize(phrase).forEach((item) => expanded.add(item)));
-        });
-        return Array.from(expanded);
-      }
-
-      function safeRegExp(text) {
-        return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      }
-
-      const index = cards.map((el, i) => {
-        const summaryEl = el.querySelector('summary');
-        const answerEl = el.querySelector('.faq-answer');
-        const id = el.id || `faq-${i + 1}`;
-        el.id = id;
-        if (answerEl && !answerEl.querySelector('.faq-copylink')) {
-          const copy = document.createElement('p');
-          copy.className = 'faq-copylink';
-          copy.innerHTML = 'Need to share this? <button type="button">Copy link</button>';
-          const button = copy.querySelector('button');
-          button.addEventListener('click', async () => {
-            const url = `${window.location.origin}${window.location.pathname}#${id}`;
-            try {
-              await navigator.clipboard.writeText(url);
-              button.textContent = 'Copied';
-              window.setTimeout(() => {
-                button.textContent = 'Copy link';
-              }, 1400);
-            } catch (error) {
-              window.prompt('Copy this link:', url);
-            }
-          });
-          answerEl.appendChild(copy);
-        }
-        return {
-          el,
-          id,
-          summaryEl,
-          searchBlob: normalize(`${el.textContent} ${(el.getAttribute('data-tags') || '')}`)
-        };
-      });
-
-      function highlight(summaryEl, tokens) {
-        const original = summaryEl.getAttribute('data-original') || summaryEl.textContent;
-        if (!summaryEl.getAttribute('data-original')) {
-          summaryEl.setAttribute('data-original', original);
-        }
-        if (!tokens.length) {
-          summaryEl.textContent = original;
-          return;
-        }
-        const escaped = tokens.filter(token => token.length > 1).map(safeRegExp);
-        if (!escaped.length) {
-          summaryEl.textContent = original;
-          return;
-        }
-        const regex = new RegExp(`(^|[^A-Za-z0-9_])(${escaped.join('|')})(?=$|[^A-Za-z0-9_])`, 'gi');
-        summaryEl.innerHTML = original.replace(regex, (match, pre, hit) => `${pre}<mark class="faq-hit">${hit}</mark>`);
-      }
-
-      function visibleItems() {
-        return index.filter(item => item.el.style.display !== 'none');
-      }
-
-      function updateToggleLabel() {
-        const vis = visibleItems();
-        const allOpen = vis.length > 0 && vis.every(item => item.el.open);
-        toggleAllBtn.disabled = vis.length === 0;
-        toggleAllBtn.textContent = allOpen ? 'Close all' : 'Open all';
-        toggleAllBtn.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
-      }
-
-      function applyFilter(query) {
-        const matchTokens = expandQuery(query);
-        const highlightTokens = tokenize(query);
-        let visible = 0;
-        index.forEach((item) => {
-          const show = !matchTokens.length || matchTokens.some(token => item.searchBlob.includes(token));
-          item.el.style.display = show ? '' : 'none';
-          if (!show && item.el.open) {
-            item.el.open = false;
-          }
-          if (show) visible += 1;
-          highlight(item.summaryEl, highlightTokens);
-        });
-
-        count.textContent = `${visible} question${visible === 1 ? '' : 's'}`;
-        if (emptyNote) {
-          emptyNote.classList.toggle('is-visible', visible === 0);
-        }
-
-        const vis = visibleItems();
-        if (vis.length === 1) {
-          vis[0].el.open = true;
-        }
-
-        const url = new URL(window.location.href);
-        if (query.trim()) url.searchParams.set('q', query.trim());
-        else url.searchParams.delete('q');
-        history.replaceState(null, '', url.toString());
-        updateToggleLabel();
-      }
-
-      input.addEventListener('input', (event) => {
-        chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
-        applyFilter(event.target.value);
-      });
-
-      chips.forEach((chip) => {
-        chip.setAttribute('aria-pressed', 'false');
-        chip.addEventListener('click', () => {
-          const active = chip.getAttribute('aria-pressed') === 'true';
-          chips.forEach((entry) => entry.setAttribute('aria-pressed', 'false'));
-          if (!active) {
-            chip.setAttribute('aria-pressed', 'true');
-            input.value = chip.dataset.filter || '';
-            applyFilter(input.value);
-          } else {
-            input.value = '';
-            applyFilter('');
-          }
-          input.focus();
-        });
-      });
-
-      toggleAllBtn.addEventListener('click', () => {
-        const vis = visibleItems();
-        const allOpen = vis.length > 0 && vis.every((item) => item.el.open);
-        vis.forEach((item) => {
-          item.el.open = !allOpen;
-        });
-        updateToggleLabel();
-      });
-
-      cards.forEach((card) => card.addEventListener('toggle', updateToggleLabel));
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === '/' && document.activeElement !== input) {
-          event.preventDefault();
-          input.focus();
-        }
-        if (event.key === 'Escape' && document.activeElement === input) {
-          input.value = '';
-          chips.forEach((chip) => chip.setAttribute('aria-pressed', 'false'));
-          applyFilter('');
-        }
-      });
-
-      const initialQuery = new URL(window.location.href).searchParams.get('q') || '';
-      if (initialQuery) {
-        input.value = initialQuery;
-      }
-      applyFilter(initialQuery);
-
-      if (window.location.hash.startsWith('#faq-')) {
-        const target = document.getElementById(window.location.hash.slice(1));
-        if (target) {
-          target.open = true;
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    })();
-  </script>
-
 </body>
 </html>
