@@ -22,23 +22,20 @@
     <nav class="mobile-nav" aria-label="Primary">
       <a href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
 
-      <details
-        class="mobile-nav-group"
-        {% if page.explore_key == "upcoming-projects" or page.url == "/upcoming-projects/circles/" or page.url == "/upcoming-projects/groups/" %}
-        open
-        {% endif %}
-      >
-        <summary class="mobile-nav-parent">
+      <div class="mobile-nav-group">
+        <a
+          class="mobile-nav-parent"
+          href="/upcoming-projects/"
+          {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}
+        >
           <span class="mobile-nav-parent-label">Upcoming Projects</span>
-          <span class="mobile-nav-caret" aria-hidden="true"></span>
-        </summary>
+        </a>
 
         <div class="mobile-subnav" role="group" aria-label="Upcoming Projects pages">
-          <a href="/upcoming-projects/" {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}>Overview</a>
           <a href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
           <a href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
         </div>
-      </details>
+      </div>
 
       <a href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
       <a href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
