@@ -159,7 +159,7 @@
       if (menuToggle && mobilePanel) {
         const getFocusableElements = () =>
           Array.from(
-            mobilePanel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+            mobilePanel.querySelectorAll('a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')
           ).filter((element) => !element.hasAttribute("disabled"));
 
         const setMenuState = (isOpen, options = {}) => {
