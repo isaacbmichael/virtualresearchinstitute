@@ -12,15 +12,13 @@
         </div>
       </div>
 
-      {% if page.explore_key == "about" %}
+      {% if page.on_this_page %}
       <div class="footer-col">
         <h5>On This Page</h5>
         <nav>
-          <a href="#about">Overview</a>
-          <a href="#model">Institute Model</a>
-          <a href="#culture">Research Culture</a>
-          <a href="#network">Mentor Network</a>
-          <a href="#future">Looking Ahead</a>
+          {% for item in page.on_this_page %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+          {% endfor %}
         </nav>
       </div>
       {% endif %}
