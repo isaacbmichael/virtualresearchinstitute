@@ -5,6 +5,25 @@
       const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
 
+      const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
+      const goldCtaState = window.GOLD_CTA_STATE || "register";
+      const activeGoldCta = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
+
+      if (activeGoldCta) {
+        document.querySelectorAll("[data-gold-cta]").forEach((link) => {
+          link.textContent = activeGoldCta.label;
+          link.href = activeGoldCta.href;
+
+          if (goldCtaState === "register") {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+          } else {
+            link.removeAttribute("target");
+            link.removeAttribute("rel");
+           }
+         });
+      }
+  
       const header = document.getElementById("siteHeader");
       const mainContent = document.getElementById("main-content");
       const siteFooter = document.querySelector(".site-footer");
