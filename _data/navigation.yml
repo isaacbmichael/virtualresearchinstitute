@@ -1,0 +1,22 @@
+explore:
+  - key: home
+    label: Home
+    href: /
+  - key: upcoming-projects
+    label: Upcoming Projects
+    href: /upcoming-projects/
+  - key: programs
+    label: Programs & Pricing
+    href: /programs/
+  - key: about
+    label: About VRI
+    href: /about/
+  - key: research-archive
+    label: Research Archive
+    href: /research-archive/
+  - key: faq
+    label: FAQ
+    href: /faq/
+  - key: policies
+    label: Policies & Procedures
+    href: /policies/
