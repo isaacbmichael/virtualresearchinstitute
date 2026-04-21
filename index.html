@@ -1946,7 +1946,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="/programs/">Explore Programs &amp; Pricing</a>
-            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -2122,7 +2122,7 @@
               </p>
 
               <div class="card-actions">
-                <a class="quick-chip" href="/upcoming-projects/">View Upcoming Projects</a>
+                <a class="btn btn-band-light" href="/upcoming-projects/">View Upcoming Projects</a>
               </div>
             </div>
 
@@ -2331,6 +2331,14 @@
         document.querySelectorAll("[data-gold-cta]").forEach((link) => {
           link.textContent = activeGoldCta.label;
           link.href = activeGoldCta.href;
+
+          if (goldCtaState === "register") {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+          } else {
+            link.removeAttribute("target");
+            link.removeAttribute("rel");
+          }
         });
       }
 
