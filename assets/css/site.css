@@ -1177,6 +1177,12 @@
       border-color: rgba(4, 76, 89, 0.16);
     }
 
+    body.home-page #archive .card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(4, 76, 89, 0.1);
+    }
+
     #projects .card:hover {
       transform: none;
     }
