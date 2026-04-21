@@ -1,0 +1,11 @@
+register:
+  label: Register Now
+  href: https://lsu.formstack.com/forms/vri_student_registration
+
+interest:
+  label: Join the Interest List
+  href: https://lsu.formstack.com/forms/vri_interest_list
+
+waitlist:
+  label: Join the Waitlist
+  href: https://lsu.formstack.com/forms/vri_waitlist
