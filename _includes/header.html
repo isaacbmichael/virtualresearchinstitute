@@ -1,10 +1,55 @@
-<header class="site-header">
-  <div class="shell">
-    <div class="header-inner">
-      {% include brand-lockup.html %}
-      <button class="menu-toggle" type="button" aria-label="Open menu">
-        Menu
+<header class="site-header" id="siteHeader">
+  <div class="frame-shell header-inner">
+    <a class="brand brand-lockup brand-anim" href="/" aria-label="Virtual Research Institute home">
+      <span class="brand-evolve is-vr" id="brandEvolve">
+        <span class="brand-title brand-evolve-line" aria-hidden="true">
+          <span class="be-word be-word-v">
+            <span class="be-anchor">V</span><span class="be-tail be-tail-v"><span class="be-char">i</span><span class="be-char">r</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">a</span><span class="be-char">l</span></span>
+          </span>
+          <span class="be-word be-word-r">
+            <span class="be-anchor">R</span><span class="be-tail be-tail-r"><span class="be-char">e</span><span class="be-char">s</span><span class="be-char">e</span><span class="be-char">a</span><span class="be-char">r</span><span class="be-char">c</span><span class="be-char">h</span></span>
+          </span>
+          <span class="be-word be-word-i">
+            <span class="be-anchor">I</span><span class="be-tail be-tail-i"><span class="be-char">n</span><span class="be-char">s</span><span class="be-char">t</span><span class="be-char">i</span><span class="be-char">t</span><span class="be-char">u</span><span class="be-char">t</span><span class="be-char">e</span></span>
+          </span>
+        </span>
+        <span class="be-bar" aria-hidden="true"></span>
+      </span>
+    </a>
+
+    <div class="header-cta">
+      <button
+        class="menu-toggle"
+        type="button"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="mobilePanel"
+        aria-haspopup="dialog"
+        aria-label="Open site menu"
+      >
+        <span class="bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="menu-label">Menu</span>
       </button>
     </div>
   </div>
 </header>
+
+<noscript>
+  <div class="frame-shell noscript-nav">
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/upcoming-projects/">Upcoming Projects</a></li>
+        <li><a href="/programs/">Programs &amp; Pricing</a></li>
+        <li><a href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a></li>
+        <li><a href="/research-archive/" {% if page.explore_key == "research-archive" %}aria-current="page"{% endif %}>Research Archive</a></li>
+        <li><a href="/faq/" {% if page.explore_key == "faq" %}aria-current="page"{% endif %}>FAQ</a></li>
+        <li><a href="/policies/" {% if page.explore_key == "policies" %}aria-current="page"{% endif %}>Policies &amp; Procedures</a></li>
+      </ul>
+    </nav>
+  </div>
+</noscript>
