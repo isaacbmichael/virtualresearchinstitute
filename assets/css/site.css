@@ -2670,6 +2670,10 @@ body.groups-page .overview-grid {
   justify-content: flex-end;
 }
 
+.faq-actions button {
+  cursor: pointer;
+}
+
 .faq-count {
   color: var(--teal-700);
   font-weight: 800;
