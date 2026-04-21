@@ -1,0 +1,1 @@
+// Shared site JS placeholder
