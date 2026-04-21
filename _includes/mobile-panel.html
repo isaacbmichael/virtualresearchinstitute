@@ -19,9 +19,27 @@
 
   <div class="menu-section">
     <p class="menu-panel-kicker">Explore the full site</p>
-    <nav class="mobile-nav">
+    <nav class="mobile-nav" aria-label="Primary">
       <a href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
-      <a href="/upcoming-projects/" {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}>Upcoming Projects</a>
+
+      <details
+        class="mobile-nav-group"
+        {% if page.explore_key == "upcoming-projects" or page.url == "/upcoming-projects/circles/" or page.url == "/upcoming-projects/groups/" %}
+        open
+        {% endif %}
+      >
+        <summary class="mobile-nav-parent">
+          <span class="mobile-nav-parent-label">Upcoming Projects</span>
+          <span class="mobile-nav-caret" aria-hidden="true"></span>
+        </summary>
+
+        <div class="mobile-subnav" role="group" aria-label="Upcoming Projects pages">
+          <a href="/upcoming-projects/" {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}>Overview</a>
+          <a href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
+          <a href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
+        </div>
+      </details>
+
       <a href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
       <a href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
       <a href="/research-archive/" {% if page.explore_key == "research-archive" %}aria-current="page"{% endif %}>Research Archive</a>
