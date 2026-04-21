@@ -2584,3 +2584,24 @@ body.circles-page .overview-grid {
     max-width: 9ch;
   }
 }
+
+/* ===================== Groups Page ===================== */
+body.groups-page .projects-hero .hero-copy h1 {
+  max-width: 18ch;
+}
+
+body.groups-page .overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1180px) {
+  body.groups-page .overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body.groups-page .projects-hero .hero-copy h1 {
+    max-width: 9ch;
+  }
+}
