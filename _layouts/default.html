@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="{{ page.body_class | default: '' }}">
+    {% include header.html %}
+    {% include mobile-panel.html %}
+
+    <main id="main-content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/gold-cta.js' | relative_url }}"></script>
+  </body>
+</html>
