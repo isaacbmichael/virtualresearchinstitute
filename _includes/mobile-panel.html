@@ -1,7 +1,32 @@
-<div class="menu-backdrop" hidden></div>
+<div class="menu-backdrop" id="menuBackdrop" hidden></div>
 
-<aside class="mobile-panel" hidden>
-  <div class="shell">
-    <p>Mobile panel placeholder</p>
+<aside
+  class="mobile-panel"
+  id="mobilePanel"
+  aria-label="Site menu"
+  aria-hidden="true"
+  aria-modal="true"
+  role="dialog"
+  aria-labelledby="mobileMenuTitle"
+  tabindex="-1"
+>
+  <div class="menu-panel-top">
+    <div class="menu-panel-head">
+      <h2 class="menu-panel-title" id="mobileMenuTitle">Virtual Research Institute</h2>
+    </div>
+    <button class="menu-close" type="button" id="menuClose" aria-label="Close site menu">Close</button>
+  </div>
+
+  <div class="menu-section">
+    <p class="menu-panel-kicker">Explore the full site</p>
+    <nav class="mobile-nav">
+      <a href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
+      <a href="/upcoming-projects/" {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}>Upcoming Projects</a>
+      <a href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
+      <a href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
+      <a href="/research-archive/" {% if page.explore_key == "research-archive" %}aria-current="page"{% endif %}>Research Archive</a>
+      <a href="/faq/" {% if page.explore_key == "faq" %}aria-current="page"{% endif %}>FAQ</a>
+      <a href="/policies/" {% if page.explore_key == "policies" %}aria-current="page"{% endif %}>Policies &amp; Procedures</a>
+    </nav>
   </div>
 </aside>
