@@ -616,6 +616,11 @@
       letter-spacing: 0.16em;
     }
 
+    .menu-panel-kicker-spacer {
+      height: calc(0.78rem * 1.2);
+      margin: 0 0 18px;
+    }
+
     .menu-panel-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
