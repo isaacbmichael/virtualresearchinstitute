@@ -13,4 +13,40 @@
   rel="stylesheet"
 />
 
+<noscript>
+  <style>
+    .menu-toggle,
+    .menu-backdrop,
+    .mobile-panel {
+      display: none !important;
+    }
+
+    .noscript-nav {
+      padding: 12px 0 0;
+    }
+
+    .noscript-nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0;
+      padding: 0 0 18px;
+    }
+
+    .noscript-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(4, 76, 89, 0.12);
+      box-shadow: var(--shadow-sm);
+      color: var(--teal-900);
+      font-weight: 700;
+    }
+  </style>
+</noscript>
+
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
