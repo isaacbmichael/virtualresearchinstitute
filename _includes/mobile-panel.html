@@ -20,28 +20,46 @@
   <div class="menu-section">
     <p class="menu-panel-kicker">Explore the full site</p>
     <nav class="mobile-nav" aria-label="Primary">
-      <a href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
+      <a class="mobile-nav-link" href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
 
       <div class="mobile-nav-group">
-        <a
-          class="mobile-nav-parent"
-          href="/upcoming-projects/"
-          {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}
-        >
-          <span class="mobile-nav-parent-label">Upcoming Projects</span>
-        </a>
+        <div class="mobile-nav-parent-row">
+          <a
+            class="mobile-nav-link mobile-nav-parent-link"
+            href="/upcoming-projects/"
+            {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}
+          >
+            Upcoming Projects
+          </a>
 
-        <div class="mobile-subnav" role="group" aria-label="Upcoming Projects pages">
-          <a href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
-          <a href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
+          <button
+            class="mobile-subnav-toggle"
+            type="button"
+            aria-expanded="{% if page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}true{% else %}false{% endif %}"
+            aria-controls="mobileSubnavUpcoming"
+            aria-label="Toggle Upcoming Projects submenu"
+          >
+            <span aria-hidden="true">+</span>
+          </button>
+        </div>
+
+        <div
+          class="mobile-subnav"
+          id="mobileSubnavUpcoming"
+          role="group"
+          aria-label="Upcoming Projects pages"
+          {% unless page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}hidden{% endunless %}
+        >
+          <a class="mobile-subnav-link" href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
+          <a class="mobile-subnav-link" href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
         </div>
       </div>
 
-      <a href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
-      <a href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
-      <a href="/research-archive/" {% if page.explore_key == "research-archive" %}aria-current="page"{% endif %}>Research Archive</a>
-      <a href="/faq/" {% if page.explore_key == "faq" %}aria-current="page"{% endif %}>FAQ</a>
-      <a href="/policies/" {% if page.explore_key == "policies" %}aria-current="page"{% endif %}>Policies &amp; Procedures</a>
+      <a class="mobile-nav-link" href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
+      <a class="mobile-nav-link" href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
+      <a class="mobile-nav-link" href="/research-archive/" {% if page.explore_key == "research-archive" %}aria-current="page"{% endif %}>Research Archive</a>
+      <a class="mobile-nav-link" href="/faq/" {% if page.explore_key == "faq" %}aria-current="page"{% endif %}>FAQ</a>
+      <a class="mobile-nav-link" href="/policies/" {% if page.explore_key == "policies" %}aria-current="page"{% endif %}>Policies &amp; Procedures</a>
     </nav>
   </div>
 </aside>
