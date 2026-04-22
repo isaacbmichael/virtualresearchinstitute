@@ -1042,11 +1042,11 @@
     }
 
     body.home-page .hero-figure-formulas .integral-limit-upper {
-      top: -0.01em;
+      top: -0.10em;
     }
 
     body.home-page .hero-figure-formulas .integral-limit-lower {
-      bottom: 0.05em;
+      bottom: 0.10em;
     }
 
     @keyframes heroFloatNetwork {
