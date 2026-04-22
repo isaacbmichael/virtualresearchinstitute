@@ -176,35 +176,23 @@
 
   if (menuToggle && mobilePanel) {
     const mobileSubnavToggle = mobilePanel.querySelector(".mobile-subnav-toggle");
-    const mobileSubnav = mobilePanel.querySelector("#mobileSubnavUpcoming");
-    const mobileSubnavParentLink = mobilePanel.querySelector(".mobile-nav-parent-link");
+const mobileSubnav = mobilePanel.querySelector("#mobileSubnavUpcoming");
 
-    const setMobileSubnavState = (isExpanded) => {
-      if (!mobileSubnavToggle || !mobileSubnav) return;
-      mobileSubnavToggle.setAttribute("aria-expanded", String(isExpanded));
-      mobileSubnav.hidden = !isExpanded;
-    };
+const setMobileSubnavState = (isExpanded) => {
+  if (!mobileSubnavToggle || !mobileSubnav) return;
+  mobileSubnavToggle.setAttribute("aria-expanded", String(isExpanded));
+  mobileSubnav.hidden = !isExpanded;
+};
 
-    if (mobileSubnavToggle && mobileSubnav) {
-      setMobileSubnavState(mobileSubnavToggle.getAttribute("aria-expanded") === "true");
+if (mobileSubnavToggle && mobileSubnav) {
+  setMobileSubnavState(mobileSubnavToggle.getAttribute("aria-expanded") === "true");
 
-      mobileSubnavToggle.addEventListener("click", (event) => {
-        event.preventDefault();
-        const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
-        setMobileSubnavState(!isExpanded);
-      });
-
-      if (mobileSubnavParentLink) {
-        mobileSubnavParentLink.addEventListener("click", (event) => {
-          const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
-
-          if (!isExpanded) {
-            event.preventDefault();
-            setMobileSubnavState(true);
-          }
-        });
-      }
-    }
+  mobileSubnavToggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
+    setMobileSubnavState(!isExpanded);
+  });
+}
 
     const getFocusableElements = () =>
       Array.from(
