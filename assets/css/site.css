@@ -1055,6 +1055,25 @@
       border: 1px solid rgba(184, 140, 12, 0.18);
     }
 
+    .institution-rotator {
+      margin-top: 18px;
+    }
+
+    .institution-rotator-viewport {
+      width: 100%;
+    }
+
+    .institution-rotator-track {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 12px 12px;
+    }
+
+.institution-pill {
+  margin: 0;
+}
+
     .section {
       padding: 44px 0;
     }
