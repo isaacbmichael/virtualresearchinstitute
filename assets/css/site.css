@@ -1060,19 +1060,46 @@
     }
 
     .institution-rotator-viewport {
+      position: relative;
       width: 100%;
+      min-height: 220px;
     }
 
     .institution-rotator-track {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 12px 12px;
+      position: relative;
+      width: 100%;
+      min-height: 220px;
     }
 
-.institution-pill {
-  margin: 0;
-}
+    .institution-rotator-page {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 14px 12px;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+    }
+
+    .institution-rotator-page.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .institution-pill {
+      margin: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .institution-rotator-page {
+        transition: none;
+        transform: none;
+      }
+    }
 
     .section {
       padding: 44px 0;
