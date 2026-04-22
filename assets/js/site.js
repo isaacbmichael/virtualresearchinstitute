@@ -159,6 +159,7 @@
   if (menuToggle && mobilePanel) {
     const mobileSubnavToggle = mobilePanel.querySelector(".mobile-subnav-toggle");
     const mobileSubnav = mobilePanel.querySelector("#mobileSubnavUpcoming");
+    const mobileSubnavParentLink = mobilePanel.querySelector(".mobile-nav-parent-link");
 
     const setMobileSubnavState = (isExpanded) => {
       if (!mobileSubnavToggle || !mobileSubnav) return;
@@ -169,10 +170,22 @@
     if (mobileSubnavToggle && mobileSubnav) {
       setMobileSubnavState(mobileSubnavToggle.getAttribute("aria-expanded") === "true");
 
-      mobileSubnavToggle.addEventListener("click", () => {
+      mobileSubnavToggle.addEventListener("click", (event) => {
+        event.preventDefault();
         const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
         setMobileSubnavState(!isExpanded);
       });
+
+      if (mobileSubnavParentLink) {
+        mobileSubnavParentLink.addEventListener("click", (event) => {
+          const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
+
+          if (!isExpanded) {
+            event.preventDefault();
+            setMobileSubnavState(true);
+          }
+        });
+      }
     }
 
     const getFocusableElements = () =>
@@ -244,7 +257,10 @@
     }
 
     mobilePanel.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => closeMenu({ returnFocus: false }));
+      link.addEventListener("click", (event) => {
+        if (event.defaultPrevented) return;
+        closeMenu({ returnFocus: false });
+      });
     });
 
     document.addEventListener("keydown", (event) => {
