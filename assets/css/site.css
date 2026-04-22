@@ -1038,7 +1038,7 @@
       font-size: 0.42em;
       line-height: 1;
       font-weight: 700;
-      left: 0.78em;
+      left: 0.84em;
     }
 
     body.home-page .hero-figure-formulas .integral-limit-upper {
@@ -1046,7 +1046,7 @@
     }
 
     body.home-page .hero-figure-formulas .integral-limit-lower {
-      bottom: 0.50em;
+      bottom: -0.10em;
     }
 
     @keyframes heroFloatNetwork {
