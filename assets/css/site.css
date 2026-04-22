@@ -737,6 +737,45 @@
       pointer-events: none;
     }
 
+    /* ===================== Home hero background image ===================== */
+    body.home-page .hero {
+      overflow: hidden;
+    }
+
+    body.home-page .hero .hero-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    body.home-page .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(248, 245, 238, 0.98) 0%,
+          rgba(248, 245, 238, 0.94) 22%,
+          rgba(248, 245, 238, 0.74) 42%,
+          rgba(248, 245, 238, 0.36) 60%,
+          rgba(248, 245, 238, 0.12) 78%,
+          rgba(248, 245, 238, 0.06) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(248, 245, 238, 0.10) 0%,
+          rgba(248, 245, 238, 0.18) 100%
+        ),
+        url("/assets/images/home/vri-hero-abstract-research.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.98;
+      filter: saturate(0.96) contrast(1.02);
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.24fr) minmax(300px, 0.76fr);
