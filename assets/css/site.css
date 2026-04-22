@@ -1675,6 +1675,48 @@
       box-shadow: none;
     }
 
+    /* About page: Looking Ahead section with globe image in the background */
+.about-page #future .feature-band-future {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(4, 76, 89, 0.90) 0%, rgba(4, 76, 89, 0.84) 42%, rgba(4, 76, 89, 0.74) 100%),
+    linear-gradient(135deg, rgba(4, 76, 89, 0.80), rgba(7, 87, 97, 0.68)),
+    url("/assets/images/about/vri-global-network-v1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.about-page #future .feature-band-future::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(2, 16, 24, 0.08), rgba(2, 16, 24, 0.24));
+  pointer-events: none;
+}
+
+.about-page #future .feature-band-future > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page #future .feature-band-future .feature-band-grid {
+  grid-template-columns: 1fr;
+}
+
+.about-page #future .feature-band-future .feature-band-grid > div:first-child {
+  max-width: 980px;
+}
+
+.about-page #future .feature-band-future .feature-quote {
+  max-width: 980px;
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
     .cta-panel {
       margin-top: 24px;
       padding: 34px;
