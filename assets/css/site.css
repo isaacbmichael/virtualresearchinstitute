@@ -1001,45 +1001,53 @@
     }
 
     body.home-page .hero-figure-formulas .formula-line {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 0.12em;
-  white-space: nowrap;
-}
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 0.12em;
+      white-space: nowrap;
+    }
 
-body.home-page .hero-figure-formulas .integral-wrap {
-  position: relative;
-  display: inline-block;
-  width: 1.02em;
-  height: 1.28em;
-  margin-right: 0.04em;
-  flex: 0 0 auto;
-  vertical-align: middle;
-}
+    body.home-page .hero-figure-formulas .formula-line-integral {
+      margin-left: -0.16em;
+    }
 
-body.home-page .hero-figure-formulas .integral-symbol {
-  position: absolute;
-  left: -0.10em;
-  top: 0.01em;
-  font-size: 1.46em;
-  line-height: 1;
-}
+    body.home-page .hero-figure-formulas .formula-line-integral > span:last-child {
+      margin-left: 0.10em;
+    }
 
-body.home-page .hero-figure-formulas .integral-limit {
-  position: absolute;
-  font-size: 0.44em;
-  line-height: 1;
-  font-weight: 700;
-  left: 0.68em;
-}
+    body.home-page .hero-figure-formulas .integral-wrap {
+      position: relative;
+      display: inline-block;
+      width: 1.12em;
+      height: 1.30em;
+      margin-right: 0.02em;
+      flex: 0 0 auto;
+      vertical-align: middle;
+    }
 
-body.home-page .hero-figure-formulas .integral-limit-upper {
-  top: -0.02em;
-}
+    body.home-page .hero-figure-formulas .integral-symbol {
+      position: absolute;
+      left: -0.16em;
+      top: 0.01em;
+      font-size: 1.46em;
+      line-height: 1;
+    }
 
-body.home-page .hero-figure-formulas .integral-limit-lower {
-  bottom: 0.04em;
-}
+    body.home-page .hero-figure-formulas .integral-limit {
+      position: absolute;
+      font-size: 0.42em;
+      line-height: 1;
+      font-weight: 700;
+      left: 0.78em;
+    }
+
+    body.home-page .hero-figure-formulas .integral-limit-upper {
+      top: -0.01em;
+    }
+
+    body.home-page .hero-figure-formulas .integral-limit-lower {
+      bottom: 0.05em;
+    }
 
     @keyframes heroFloatNetwork {
       0%, 100% { transform: translateY(0) rotate(-5deg) translateZ(42px); }
