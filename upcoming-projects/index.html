@@ -12,10 +12,6 @@ on_this_page:
     href: "#circles"
   - label: Groups
     href: "#groups"
-  - label: Private Mentorship
-    href: "#private-mentorship"
-  - label: Questions
-    href: "#questions"
 ---
 
 <script>
@@ -47,160 +43,96 @@ on_this_page:
   </script>
 
 <section class="hero projects-hero">
-    <div class="shell hero-grid">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">Upcoming Projects</div>
-        <h1>Choose the right pathway first.</h1>
+  <div class="hero-orbit" aria-hidden="true"></div>
+
+  <div class="shell hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Upcoming Projects</div>
+      <h1>Choose the right pathway first.</h1>
+      <p>
+        Start here with the two main public pathways. Circles are the broader public entry point.
+        Groups are smaller, more intensive, and better suited to students ready for deeper sustained work.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+        <a class="btn btn-secondary" href="/programs/">Programs &amp; Pricing</a>
+        <a class="btn btn-secondary" href="/faq/">FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Overview</p>
+        <h2>Two public pathways.</h2>
+      </div>
+      <p class="section-intro">
+        Choose the structure that best fits the student’s readiness, preferred pace, and level of mentor interaction.
+      </p>
+    </div>
+
+    <div class="overview-grid">
+      <a class="card reveal pathway-card" id="circles" href="/upcoming-projects/circles/" aria-label="View Circles">
+        <div class="card-label">Tier I</div>
+        <h3>Circles</h3>
         <p>
-          Upcoming Projects now begins with a simpler hub page so families can start with the pathway that best fits the student.
-          From here, you can move into dedicated pages for Circles, Groups, and Private Mentorship.
+          Structured and scalable mentored research experiences designed to introduce students to serious research habits
+          in an accessible but still rigorous environment.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
-          <a class="btn btn-secondary" href="/programs/">Programs &amp; Pricing</a>
-          <a class="btn btn-secondary" href="/faq/">FAQ</a>
+        <div class="pill-row" aria-label="Circles quick facts">
+          <span class="pill">{{ site.data.pathways.circles.cohort_size }}</span>
+          <span class="pill">{{ site.data.pathways.circles.duration }}</span>
+          <span class="pill">{{ site.data.pathways.circles.price }}</span>
         </div>
-      </div>
 
-      <aside class="hero-utility reveal" aria-label="Upcoming Projects at a glance">
-        <div class="hero-utility-card">
-          <p class="panel-kicker">Upcoming Projects at a glance</p>
-          <h3>Two main public pathways, plus limited private mentorship.</h3>
-          <div class="hero-utility-grid">
-            <div>
-              <strong>Format</strong>
-              <span>Fully online, with live mentor-led sessions and meaningful independent work.</span>
-            </div>
-            <div>
-              <strong>Public pathways</strong>
-              <span>Circles and Groups, with limited Private Mentorship by inquiry.</span>
-            </div>
-            <div>
-              <strong>Circles</strong>
-              <span>Two public entry points with a shorter structured format.</span>
-            </div>
-            <div>
-              <strong>Groups</strong>
-              <span>One public cohort with a longer small-group timeline.</span>
-            </div>
-          </div>
-          <div class="term-note hero-note">
-            Private Mentorship is arranged individually by mentor fit, student readiness, and scheduling feasibility rather than by fixed public session dates.
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
+        <ul class="clean-list">
+          <li>Broader public entry point</li>
+          <li>Two public sessions</li>
+          <li>Strong option for students building research readiness</li>
+        </ul>
 
-  <section class="section" id="overview">
-    <div class="shell">
-      <div class="section-head reveal">
-        <div>
-          <p class="section-label">Overview</p>
-          <h2>A simpler way to review current offerings.</h2>
+        <div class="term-note">
+          Circles include two public entry points so families can choose the timing that best fits the student.
         </div>
-        <p class="section-intro">
-          Start with the pathway, not the full proposal list. Circles are the broader public entry point. Groups are smaller and more intensive.
-          Private Mentorship is limited, individualized, and arranged by inquiry.
+
+        <div class="card-actions">
+          <span class="pathway-link-label">Explore Circles</span>
+        </div>
+      </a>
+
+      <a class="card reveal pathway-card" id="groups" href="/upcoming-projects/groups/" aria-label="View Groups">
+        <div class="card-label">Tier II</div>
+        <h3>Groups</h3>
+        <p>
+          Smaller collaborative cohorts with more intensive mentor interaction, greater ownership,
+          and a closer resemblance to a premium boutique research experience.
         </p>
-      </div>
 
-      <div class="overview-grid">
-        <article class="card reveal" id="circles">
-          <div class="card-label">Tier I</div>
-          <h3>Circles</h3>
-          <p>
-            Structured and scalable mentored research experiences designed to introduce students to serious research habits
-            in an accessible but still rigorous environment.
-          </p>
-          <div class="pill-row" aria-label="Circles quick facts">
-            <span class="pill">{{ site.data.pathways.circles.cohort_size }}</span>
-            <span class="pill">{{ site.data.pathways.circles.duration }}</span>
-            <span class="pill">{{ site.data.pathways.circles.price }}</span>
-          </div>
-          <ul class="clean-list">
-            <li>Broader public entry point</li>
-            <li>Two public sessions</li>
-            <li>Strong option for students building research readiness</li>
-          </ul>
-          <div class="term-note">
-            Circles include two public entry points so families can choose the timing that best fits the student.
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="/upcoming-projects/circles/">View Circles</a>
-          </div>
-        </article>
-
-        <article class="card reveal" id="groups">
-          <div class="card-label">Tier II</div>
-          <h3>Groups</h3>
-          <p>
-            Smaller collaborative cohorts with more intensive mentor interaction, greater ownership,
-            and a closer resemblance to a premium boutique research experience.
-          </p>
-          <div class="pill-row" aria-label="Groups quick facts">
-            <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
-            <span class="pill">{{ site.data.pathways.groups.duration }}</span>
-            <span class="pill">{{ site.data.pathways.groups.price }}</span>
-          </div>
-          <ul class="clean-list">
-            <li>Smaller and more intensive than Circles</li>
-            <li>One public cohort</li>
-            <li>Better suited to students ready for deeper sustained work</li>
-          </ul>
-          <div class="term-note">
-            Group placement may involve additional readiness and fit review for the pathway and topic.
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="/upcoming-projects/groups/">View Groups</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="feature-band reveal" id="private-mentorship" style="margin-top: 24px;">
-        <div class="feature-band-grid">
-          <div>
-            <p class="section-label">Private Mentorship</p>
-            <h3>Need a more individualized research match?</h3>
-            <p>
-              For students seeking more individualized or longer-term work, VRI may occasionally consider limited
-              Private Mentorship placements by inquiry.
-            </p>
-          </div>
-
-          <div class="feature-quote">
-            <strong>By inquiry only</strong>
-            <p>
-              Starting tuition: {{ site.data.pathways.private_mentorship.starting_tuition }}. Availability depends on subject area, mentor fit, student readiness,
-              and researcher availability. Scheduling, pacing, and meeting schedules may differ by mentor and project.
-            </p>
-          </div>
+        <div class="pill-row" aria-label="Groups quick facts">
+          <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
+          <span class="pill">{{ site.data.pathways.groups.duration }}</span>
+          <span class="pill">{{ site.data.pathways.groups.price }}</span>
         </div>
 
-        <div class="card-actions" style="margin-top: 22px;">
-          <a class="btn btn-secondary" href="/upcoming-projects/private-mentorship/">View Private Mentorship</a>
+        <ul class="clean-list">
+          <li>Smaller and more intensive than Circles</li>
+          <li>One public cohort</li>
+          <li>Better suited to students ready for deeper sustained work</li>
+        </ul>
+
+        <div class="term-note">
+          Group placement may involve additional readiness and fit review for the pathway and topic.
         </div>
-      </div>
+
+        <div class="card-actions">
+          <span class="pathway-link-label">Explore Groups</span>
+        </div>
+      </a>
     </div>
-  </section>
-
-  <section class="section" id="questions">
-    <div class="shell">
-      <div class="cta-panel reveal">
-        <div>
-          <p class="section-label">Questions</p>
-          <h3>Need help deciding before you register?</h3>
-          <p>
-            Families can review the FAQ and Programs pages for pathway fit, time zones, pricing, scheduling, and other important details.
-            When you are ready, use the gold button to move into the current registration flow.
-          </p>
-        </div>
-        <div class="quick-links">
-          <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
-          <a class="quick-chip quick-chip-teal" href="/faq/">FAQ</a>
-          <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
