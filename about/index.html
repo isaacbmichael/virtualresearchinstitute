@@ -214,10 +214,14 @@ on_this_page:
 
         <div class="institution-rotator" aria-label="Selected mentor institutions">
           <div class="institution-rotator-viewport">
-            <div class="institution-rotator-track" id="institutionRotatorTrack">
-              {% for institution in site.data.institutions.mentor_institutions %}
-                <span class="pill institution-pill">{{ institution }}</span>
-              {% endfor %}
+            <div
+              class="institution-rotator-track"
+              id="institutionRotatorTrack"
+              data-institutions='[
+                {% for institution in site.data.institutions.mentor_institutions %}
+                  "{{ institution | escape }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              ]'>
             </div>
           </div>
         </div>
