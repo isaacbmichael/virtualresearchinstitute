@@ -995,7 +995,7 @@
       animation: heroFloatFormula 12s ease-in-out infinite;
     }
 
-    body.home-page .hero-figure-formulas span {
+    body.home-page .hero-figure-formulas > span {
       display: block;
       white-space: nowrap;
     }
