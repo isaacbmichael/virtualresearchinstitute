@@ -15,6 +15,8 @@ groups:
   current_cohort:
     label: "Current cohort"
     start_date: "September 14, 2026"
+    registration_deadline: "August 31, 2026"
+    offerings_count: "6 offerings"
 
 private_mentorship:
   current:
