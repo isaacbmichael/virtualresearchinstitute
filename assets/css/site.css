@@ -4084,3 +4084,97 @@ body.faq-page #faq-library.section {
   }
 }
 
+.mobile-nav-link,
+.mobile-nav-parent-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: var(--teal-900);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-group {
+  display: grid;
+  gap: 8px;
+}
+
+.mobile-nav-parent-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.mobile-subnav-trigger {
+  flex: 1 1 auto;
+}
+
+.mobile-subnav-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: var(--teal-900);
+  font-size: 1.1rem;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.mobile-subnav-toggle[aria-expanded="true"] {
+  transform: rotate(45deg);
+}
+
+.mobile-subnav {
+  display: grid;
+  gap: 8px;
+  padding: 0 0 0 14px;
+  margin-top: 2px;
+  border-left: 1px solid rgba(4, 76, 89, 0.14);
+}
+
+.mobile-subnav-link {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: rgba(4, 76, 89, 0.82);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-parent-link:hover,
+.mobile-subnav-link:hover,
+.mobile-subnav-toggle:hover,
+.mobile-nav-link[aria-current="page"],
+.mobile-nav-parent-link[aria-current="page"],
+.mobile-subnav-link[aria-current="page"] {
+  color: var(--gold-700);
+}
+
+.mobile-nav-link:focus-visible,
+.mobile-nav-parent-link:focus-visible,
+.mobile-subnav-link:focus-visible,
+.mobile-subnav-toggle:focus-visible {
+  outline: 3px solid rgba(0, 113, 127, 0.28);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(229, 181, 59, 0.16);
+  border-radius: 6px;
+}
+
+.mobile-subnav[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-subnav-toggle {
+    transition: none;
+  }
+}
