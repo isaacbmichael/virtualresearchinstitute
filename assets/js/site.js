@@ -191,87 +191,66 @@ const syncMobileSubnavTriggers = (isExpanded) => {
   });
 };
 
-const openMobileSubnav = () => {
+const finishMobileSubnav = (isExpanded) => {
   if (!mobileSubnav) return;
-
-  mobileSubnav.hidden = false;
-  mobileSubnav.classList.add("is-open");
-  syncMobileSubnavTriggers(true);
-
-  if (prefersReducedMotion) {
-    mobileSubnav.style.maxHeight = "none";
-    return;
-  }
-
-  mobileSubnav.style.maxHeight = "0px";
-
-  requestAnimationFrame(() => {
-    mobileSubnav.style.maxHeight = `${mobileSubnav.scrollHeight}px`;
-  });
-};
-
-const closeMobileSubnav = () => {
-  if (!mobileSubnav) return;
-
-  if (prefersReducedMotion) {
-    mobileSubnav.classList.remove("is-open");
-    mobileSubnav.style.maxHeight = "0px";
-    mobileSubnav.hidden = true;
-    syncMobileSubnavTriggers(false);
-    return;
-  }
-
-  mobileSubnav.style.maxHeight = `${mobileSubnav.scrollHeight}px`;
-
-  requestAnimationFrame(() => {
-    mobileSubnav.classList.remove("is-open");
-    mobileSubnav.style.maxHeight = "0px";
-  });
-
-  syncMobileSubnavTriggers(false);
-};
-
-const setMobileSubnavState = (isExpanded, { immediate = false } = {}) => {
-  if (!mobileSubnav || !mobileSubnavTriggers.length) return;
-
-  if (immediate) {
-    syncMobileSubnavTriggers(isExpanded);
-    mobileSubnav.hidden = !isExpanded;
-    mobileSubnav.classList.toggle("is-open", isExpanded);
-    mobileSubnav.style.maxHeight = isExpanded ? "none" : "0px";
-    return;
-  }
 
   if (isExpanded) {
-    openMobileSubnav();
+    mobileSubnav.hidden = false;
+    mobileSubnav.classList.add("is-open");
+    mobileSubnav.style.height = "auto";
   } else {
-    closeMobileSubnav();
+    mobileSubnav.classList.remove("is-open");
+    mobileSubnav.style.height = "0px";
+    mobileSubnav.hidden = true;
+  }
+};
+
+const animateMobileSubnav = (expand) => {
+  if (!mobileSubnav || !mobileSubnavTriggers.length) return;
+
+  syncMobileSubnavTriggers(expand);
+
+  if (prefersReducedMotion) {
+    finishMobileSubnav(expand);
+    return;
+  }
+
+  mobileSubnav.hidden = false;
+
+  const currentHeight = mobileSubnav.getBoundingClientRect().height;
+  mobileSubnav.style.height = `${currentHeight}px`;
+
+  // force reflow so the browser locks the current height before animating
+  mobileSubnav.offsetHeight;
+
+  if (expand) {
+    mobileSubnav.classList.add("is-open");
+    const targetHeight = mobileSubnav.scrollHeight;
+    mobileSubnav.style.height = `${targetHeight}px`;
+  } else {
+    mobileSubnav.classList.remove("is-open");
+    mobileSubnav.style.height = "0px";
   }
 };
 
 if (mobileSubnav && mobileSubnavTriggers.length) {
-  setMobileSubnavState(getMobileSubnavExpanded(), { immediate: true });
+  finishMobileSubnav(getMobileSubnavExpanded());
 
   mobileSubnavTriggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      setMobileSubnavState(!getMobileSubnavExpanded());
+      animateMobileSubnav(!getMobileSubnavExpanded());
     });
   });
 
   mobileSubnav.addEventListener("transitionend", (event) => {
-    if (event.propertyName !== "max-height") return;
-
-    if (getMobileSubnavExpanded()) {
-      mobileSubnav.style.maxHeight = "none";
-    } else {
-      mobileSubnav.hidden = true;
-    }
+    if (event.propertyName !== "height") return;
+    finishMobileSubnav(getMobileSubnavExpanded());
   });
 
   window.addEventListener("resize", () => {
     if (getMobileSubnavExpanded() && !mobileSubnav.hidden) {
-      mobileSubnav.style.maxHeight = "none";
+      mobileSubnav.style.height = "auto";
     }
   });
 }
