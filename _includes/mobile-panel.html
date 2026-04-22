@@ -46,15 +46,17 @@
   </div>
 
   <div
-    class="mobile-subnav"
-    id="mobileSubnavUpcoming"
-    role="group"
-    aria-label="Upcoming Projects pages"
-    {% unless page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}hidden{% endunless %}
-  >
+  class="mobile-subnav"
+  id="mobileSubnavUpcoming"
+  role="group"
+  aria-label="Upcoming Projects pages"
+  {% unless page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}hidden{% endunless %}
+>
+  <div class="mobile-subnav-inner">
     <a class="mobile-subnav-link" href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
     <a class="mobile-subnav-link" href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
   </div>
+</div>
 </div>
 
       <a class="mobile-nav-link" href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
