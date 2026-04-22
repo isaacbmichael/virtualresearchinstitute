@@ -14,7 +14,8 @@ groups:
 
 private_mentorship:
   label: "Private Mentorship"
-  cohort_size: "1–2 students"
+  cohort_size: "1-2 students"
   duration: "Custom"
+  starting_tuition: "$16,000"
   price: "By inquiry"
   availability: "Limited"
