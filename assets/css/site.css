@@ -1044,10 +1044,12 @@
 
     body.home-page .hero-figure-formulas .integral-limit-upper {
       top: -0.16em;
+      left: 0.94em;
     }
 
     body.home-page .hero-figure-formulas .integral-limit-lower {
-      bottom: -0.24em;
+      bottom: -0.5em;
+      left: 0.48em;
     }
 
     @keyframes heroFloatNetwork {
