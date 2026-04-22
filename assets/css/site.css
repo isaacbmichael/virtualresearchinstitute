@@ -1008,11 +1008,11 @@
     }
 
     body.home-page .hero-figure-formulas .formula-line-integral {
-      margin-left: -0.16em;
+      margin-left: -0.28em;
     }
 
     body.home-page .hero-figure-formulas .formula-line-integral > span:last-child {
-      margin-left: 0.10em;
+      margin-left: 0.14em;
     }
 
     body.home-page .hero-figure-formulas .integral-wrap {
@@ -1027,7 +1027,7 @@
 
     body.home-page .hero-figure-formulas .integral-symbol {
       position: absolute;
-      left: -0.16em;
+      left: -0.24em;
       top: 0.01em;
       font-size: 1.46em;
       line-height: 1;
