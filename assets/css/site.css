@@ -1754,6 +1754,12 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.72));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  align-items: stretch;
+}
+
+.about-page #future.section-future-background .quick-links {
+  align-self: end;
+  justify-content: flex-end;
 }
 
 @media (max-width: 1180px) {
