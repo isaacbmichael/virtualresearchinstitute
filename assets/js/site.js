@@ -191,66 +191,43 @@ const syncMobileSubnavTriggers = (isExpanded) => {
   });
 };
 
-const finishMobileSubnav = (isExpanded) => {
-  if (!mobileSubnav) return;
-
-  if (isExpanded) {
-    mobileSubnav.hidden = false;
-    mobileSubnav.classList.add("is-open");
-    mobileSubnav.style.height = "auto";
-  } else {
-    mobileSubnav.classList.remove("is-open");
-    mobileSubnav.style.height = "0px";
-    mobileSubnav.hidden = true;
-  }
-};
-
-const animateMobileSubnav = (expand) => {
+const applyMobileSubnavState = (isExpanded, { immediate = false } = {}) => {
   if (!mobileSubnav || !mobileSubnavTriggers.length) return;
 
-  syncMobileSubnavTriggers(expand);
+  syncMobileSubnavTriggers(isExpanded);
 
-  if (prefersReducedMotion) {
-    finishMobileSubnav(expand);
+  if (prefersReducedMotion || immediate) {
+    mobileSubnav.hidden = !isExpanded;
+    mobileSubnav.classList.toggle("is-open", isExpanded);
     return;
   }
 
-  mobileSubnav.hidden = false;
-
-  const currentHeight = mobileSubnav.getBoundingClientRect().height;
-  mobileSubnav.style.height = `${currentHeight}px`;
-
-  // force reflow so the browser locks the current height before animating
-  mobileSubnav.offsetHeight;
-
-  if (expand) {
-    mobileSubnav.classList.add("is-open");
-    const targetHeight = mobileSubnav.scrollHeight;
-    mobileSubnav.style.height = `${targetHeight}px`;
+  if (isExpanded) {
+    mobileSubnav.hidden = false;
+    requestAnimationFrame(() => {
+      mobileSubnav.classList.add("is-open");
+    });
   } else {
     mobileSubnav.classList.remove("is-open");
-    mobileSubnav.style.height = "0px";
   }
 };
 
 if (mobileSubnav && mobileSubnavTriggers.length) {
-  finishMobileSubnav(getMobileSubnavExpanded());
+  applyMobileSubnavState(getMobileSubnavExpanded(), { immediate: true });
 
   mobileSubnavTriggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      animateMobileSubnav(!getMobileSubnavExpanded());
+      applyMobileSubnavState(!getMobileSubnavExpanded());
     });
   });
 
   mobileSubnav.addEventListener("transitionend", (event) => {
-    if (event.propertyName !== "height") return;
-    finishMobileSubnav(getMobileSubnavExpanded());
-  });
+    if (event.target !== mobileSubnav) return;
+    if (event.propertyName !== "grid-template-rows") return;
 
-  window.addEventListener("resize", () => {
-    if (getMobileSubnavExpanded() && !mobileSubnav.hidden) {
-      mobileSubnav.style.height = "auto";
+    if (!getMobileSubnavExpanded()) {
+      mobileSubnav.hidden = true;
     }
   });
 }
