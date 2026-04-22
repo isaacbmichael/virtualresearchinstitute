@@ -1038,15 +1038,15 @@
       font-size: 0.42em;
       line-height: 1;
       font-weight: 700;
-      left: 0.84em;
+      left: 0.9em;
     }
 
     body.home-page .hero-figure-formulas .integral-limit-upper {
-      top: -0.10em;
+      top: -0.16em;
     }
 
     body.home-page .hero-figure-formulas .integral-limit-lower {
-      bottom: -0.10em;
+      bottom: -0.24em;
     }
 
     @keyframes heroFloatNetwork {
