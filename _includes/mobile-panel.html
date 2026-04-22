@@ -23,29 +23,39 @@
       <a class="mobile-nav-link" href="/" {% if page.explore_key == "home" %}aria-current="page"{% endif %}>Home</a>
 
       <div class="mobile-nav-group">
-        <div class="mobile-nav-parent-row">
-          <button
-            class="mobile-nav-link mobile-nav-parent-link mobile-subnav-toggle"
-            type="button"
-            aria-expanded="{% if page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}true{% else %}false{% endif %}"
-            aria-controls="mobileSubnavUpcoming"
-            aria-label="Toggle Upcoming Projects submenu"
-          >
-            Upcoming Projects
-          </button>
-        </div>
+  <div class="mobile-nav-parent-row">
+    <button
+      class="mobile-nav-link mobile-nav-parent-link mobile-subnav-trigger"
+      type="button"
+      aria-expanded="{% if page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}true{% else %}false{% endif %}"
+      aria-controls="mobileSubnavUpcoming"
+      aria-label="Toggle Upcoming Projects submenu"
+    >
+      Upcoming Projects
+    </button>
 
-        <div
-          class="mobile-subnav"
-          id="mobileSubnavUpcoming"
-          role="group"
-          aria-label="Upcoming Projects pages"
-          {% unless page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}hidden{% endunless %}
-        >
-          <a class="mobile-subnav-link" href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
-          <a class="mobile-subnav-link" href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
-        </div>
-      </div>
+    <button
+      class="mobile-subnav-toggle"
+      type="button"
+      aria-expanded="{% if page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}true{% else %}false{% endif %}"
+      aria-controls="mobileSubnavUpcoming"
+      aria-label="Toggle Upcoming Projects submenu"
+    >
+      <span aria-hidden="true">+</span>
+    </button>
+  </div>
+
+  <div
+    class="mobile-subnav"
+    id="mobileSubnavUpcoming"
+    role="group"
+    aria-label="Upcoming Projects pages"
+    {% unless page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}hidden{% endunless %}
+  >
+    <a class="mobile-subnav-link" href="/upcoming-projects/circles/" {% if page.url == "/upcoming-projects/circles/" %}aria-current="page"{% endif %}>Circles</a>
+    <a class="mobile-subnav-link" href="/upcoming-projects/groups/" {% if page.url == "/upcoming-projects/groups/" %}aria-current="page"{% endif %}>Groups</a>
+  </div>
+</div>
 
       <a class="mobile-nav-link" href="/programs/" {% if page.explore_key == "programs" %}aria-current="page"{% endif %}>Programs &amp; Pricing</a>
       <a class="mobile-nav-link" href="/about/" {% if page.explore_key == "about" %}aria-current="page"{% endif %}>About VRI</a>
