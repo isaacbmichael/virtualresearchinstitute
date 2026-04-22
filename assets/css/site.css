@@ -1000,6 +1000,45 @@
       white-space: nowrap;
     }
 
+    body.home-page .hero-figure-formulas .formula-line {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+  white-space: nowrap;
+}
+
+body.home-page .hero-figure-formulas .integral-wrap {
+  position: relative;
+  display: inline-block;
+  width: 0.9em;
+  height: 1.15em;
+  margin-right: 0.08em;
+  flex: 0 0 auto;
+}
+
+body.home-page .hero-figure-formulas .integral-symbol {
+  position: absolute;
+  inset: 0;
+  font-size: 1.42em;
+  line-height: 1;
+}
+
+body.home-page .hero-figure-formulas .integral-limit {
+  position: absolute;
+  font-size: 0.52em;
+  line-height: 1;
+  font-weight: 700;
+  left: 0.62em;
+}
+
+body.home-page .hero-figure-formulas .integral-limit-upper {
+  top: -0.10em;
+}
+
+body.home-page .hero-figure-formulas .integral-limit-lower {
+  bottom: -0.06em;
+}
+
     @keyframes heroFloatNetwork {
       0%, 100% { transform: translateY(0) rotate(-5deg) translateZ(42px); }
       50% { transform: translateY(-10px) rotate(-3deg) translateZ(42px); }
