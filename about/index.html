@@ -211,19 +211,15 @@ on_this_page:
       <article class="card reveal" data-tilt>
         <div class="card-label">Selected Institutions</div>
         <h3>Mentors and collaborators have included researchers from institutions such as</h3>
-        <div class="pill-row" aria-label="Selected mentor institutions">
-          <span class="pill">Louisiana State University</span>
-          <span class="pill">Florida State University</span>
-          <span class="pill">Rice University</span>
-          <span class="pill">University of North Carolina at Chapel Hill</span>
-          <span class="pill">Georgia Institute of Technology</span>
-          <span class="pill">Southern Methodist University</span>
-          <span class="pill">University of Kentucky</span>
-          <span class="pill">Tulane University</span>
-          <span class="pill">Oklahoma State University</span>
-          <span class="pill">Augusta University</span>
-          <span class="pill">Tougaloo College</span>
-          <span class="pill">University of Texas at Arlington</span>
+
+        <div class="institution-rotator" aria-label="Selected mentor institutions">
+          <div class="institution-rotator-viewport">
+            <div class="institution-rotator-track" id="institutionRotatorTrack">
+              {% for institution in site.data.institutions.mentor_institutions %}
+                <span class="pill institution-pill">{{ institution }}</span>
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </article>
 
