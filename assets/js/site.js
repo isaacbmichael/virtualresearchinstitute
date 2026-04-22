@@ -365,3 +365,94 @@
     }
   }
 })();
+
+(function () {
+  const track = document.getElementById('institutionRotatorTrack');
+  if (!track) return;
+
+  let institutions = [];
+  try {
+    institutions = JSON.parse(track.dataset.institutions || '[]');
+  } catch (error) {
+    return;
+  }
+
+  if (!institutions.length) return;
+
+  const VISIBLE_COUNT = 12;
+  const STEP_SIZE = 6;
+  const INTERVAL = 7000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function getWindow(items, start, count) {
+    const result = [];
+    for (let i = 0; i < count; i += 1) {
+      result.push(items[(start + i) % items.length]);
+    }
+    return result;
+  }
+
+  const pages = [];
+  let startIndex = 0;
+  const seen = new Set();
+
+  while (!seen.has(startIndex)) {
+    seen.add(startIndex);
+    pages.push(getWindow(institutions, startIndex, Math.min(VISIBLE_COUNT, institutions.length)));
+    startIndex = (startIndex + STEP_SIZE) % institutions.length;
+  }
+
+  if (!pages.length) return;
+
+  pages.forEach((pageItems, index) => {
+    const page = document.createElement('div');
+    page.className = 'institution-rotator-page';
+    if (index === 0) page.classList.add('is-active');
+
+    pageItems.forEach((name) => {
+      const pill = document.createElement('span');
+      pill.className = 'pill institution-pill';
+      pill.textContent = name;
+      page.appendChild(pill);
+    });
+
+    track.appendChild(page);
+  });
+
+  const pageEls = Array.from(track.querySelectorAll('.institution-rotator-page'));
+  if (pageEls.length <= 1 || reduceMotion) {
+    if (pageEls[0]) pageEls[0].classList.add('is-active');
+    return;
+  }
+
+  let current = 0;
+  let timer = null;
+
+  function showPage(nextIndex) {
+    pageEls[current].classList.remove('is-active');
+    pageEls[nextIndex].classList.add('is-active');
+    current = nextIndex;
+  }
+
+  function startRotation() {
+    stopRotation();
+    timer = window.setInterval(() => {
+      const next = (current + 1) % pageEls.length;
+      showPage(next);
+    }, INTERVAL);
+  }
+
+  function stopRotation() {
+    if (timer) {
+      window.clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  track.addEventListener('mouseenter', stopRotation);
+  track.addEventListener('mouseleave', startRotation);
+  track.addEventListener('focusin', stopRotation);
+  track.addEventListener('focusout', startRotation);
+
+  startRotation();
+})();
