@@ -4,6 +4,7 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const isPhoneViewport = () => window.matchMedia("(max-width: 640px)").matches;
+  const isHomePage = document.body.classList.contains("home-page");
 
   const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
   const goldCtaState = window.GOLD_CTA_STATE || "register";
@@ -42,6 +43,19 @@
     brandTimeouts = [];
   }
 
+  function showFullBrandStatic() {
+    if (!brandEvolve) return;
+
+    clearBrandTimeouts();
+    brandEvolve.classList.add("is-ready");
+    brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
+    brandEvolve.classList.add("is-full");
+
+    brandEvolve.querySelectorAll(".be-char").forEach((char) => {
+      char.classList.add("is-in");
+    });
+  }
+  
   function initBrandEvolve() {
     if (!brandEvolve) return;
 
@@ -127,25 +141,29 @@
   }
 
   if (brandEvolve) {
-    initBrandEvolve();
+    if (isHomePage) {
+      initBrandEvolve();
 
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(() => {
-        if (!isPhoneViewport()) {
-          initBrandEvolve();
-        }
-      });
-    }
-
-    let resizeTimer = null;
-    window.addEventListener("resize", () => {
-      if (isPhoneViewport()) {
-        return;
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          if (!isPhoneViewport()) {
+            initBrandEvolve();
+          }
+        });
       }
 
-      window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(initBrandEvolve, 120);
-    });
+      let resizeTimer = null;
+      window.addEventListener("resize", () => {
+        if (isPhoneViewport()) {
+          return;
+        }
+
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(initBrandEvolve, 120);
+      });
+    } else {
+      showFullBrandStatic();
+    }
   }
 
   const menuToggle = document.getElementById("menuToggle");
