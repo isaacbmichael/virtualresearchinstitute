@@ -24,22 +24,14 @@
 
       <div class="mobile-nav-group">
         <div class="mobile-nav-parent-row">
-          <a
-            class="mobile-nav-link mobile-nav-parent-link"
-            href="/upcoming-projects/"
-            {% if page.explore_key == "upcoming-projects" %}aria-current="page"{% endif %}
-          >
-            Upcoming Projects
-          </a>
-
           <button
-            class="mobile-subnav-toggle"
+            class="mobile-nav-link mobile-nav-parent-link mobile-subnav-toggle"
             type="button"
             aria-expanded="{% if page.explore_key == 'upcoming-projects' or page.url == '/upcoming-projects/circles/' or page.url == '/upcoming-projects/groups/' %}true{% else %}false{% endif %}"
             aria-controls="mobileSubnavUpcoming"
             aria-label="Toggle Upcoming Projects submenu"
           >
-            <span aria-hidden="true">+</span>
+            Upcoming Projects
           </button>
         </div>
 
