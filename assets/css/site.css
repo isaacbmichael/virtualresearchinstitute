@@ -1019,7 +1019,7 @@ body.home-page .hero-figure-formulas .integral-wrap {
 
 body.home-page .hero-figure-formulas .integral-symbol {
   position: absolute;
-  left: 0;
+  left: -0.10em;
   top: 0.01em;
   font-size: 1.46em;
   line-height: 1;
