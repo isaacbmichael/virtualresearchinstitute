@@ -381,7 +381,7 @@
 
   const VISIBLE_COUNT = 10;
   const STEP_SIZE = 5;
-  const INTERVAL = 9000;
+  const INTERVAL = 8000;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function getWindow(items, start, count) {
