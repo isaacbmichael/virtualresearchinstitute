@@ -1,0 +1,20 @@
+circles:
+  label: "Circles"
+  cohort_size: "10–12 students"
+  duration: "6 weeks"
+  price: "$1,395"
+  public_terms: "Spring, Summer, Fall"
+
+groups:
+  label: "Groups"
+  cohort_size: "5–6 students"
+  duration: "10 weeks"
+  price: "$3,495"
+  public_terms: "Spring, Summer, Fall"
+
+private_mentorship:
+  label: "Private Mentorship"
+  cohort_size: "1–2 students"
+  duration: "Custom"
+  price: "By inquiry"
+  availability: "Limited"
