@@ -1010,9 +1010,9 @@
 body.home-page .hero-figure-formulas .integral-wrap {
   position: relative;
   display: inline-block;
-  width: 0.82em;
-  height: 1.22em;
-  margin-right: 0.02em;
+  width: 1.02em;
+  height: 1.28em;
+  margin-right: 0.04em;
   flex: 0 0 auto;
   vertical-align: middle;
 }
@@ -1020,25 +1020,25 @@ body.home-page .hero-figure-formulas .integral-wrap {
 body.home-page .hero-figure-formulas .integral-symbol {
   position: absolute;
   left: 0;
-  top: 0.02em;
+  top: 0.01em;
   font-size: 1.46em;
   line-height: 1;
 }
 
 body.home-page .hero-figure-formulas .integral-limit {
   position: absolute;
-  font-size: 0.50em;
+  font-size: 0.44em;
   line-height: 1;
   font-weight: 700;
-  left: 0.48em;
+  left: 0.68em;
 }
 
 body.home-page .hero-figure-formulas .integral-limit-upper {
-  top: -0.08em;
+  top: -0.02em;
 }
 
 body.home-page .hero-figure-formulas .integral-limit-lower {
-  bottom: -0.02em;
+  bottom: 0.04em;
 }
 
     @keyframes heroFloatNetwork {
