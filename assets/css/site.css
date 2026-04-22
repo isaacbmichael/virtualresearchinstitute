@@ -979,30 +979,25 @@
     }
 
     body.home-page .hero-figure-formulas {
-      left: 12px;
-      bottom: 112px;
+      left: 28px;
+      bottom: 120px;
       display: grid;
-      gap: 10px;
-      max-width: 260px;
-      opacity: 0.78;
-      color: rgba(248, 244, 234, 0.84);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.45rem;
-      line-height: 1.1;
+      gap: 8px;
+      max-width: none;
+      opacity: 0.82;
+      color: rgba(248, 244, 234, 0.88);
+      font-family: "Inter", "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
       text-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
       animation: heroFloatFormula 12s ease-in-out infinite;
     }
 
-    body.home-page .hero-figure-formulas span:nth-child(2) {
-      padding-left: 20px;
-    }
-
-    body.home-page .hero-figure-formulas span:nth-child(3) {
-      padding-left: 42px;
-    }
-
-    body.home-page .hero-figure-formulas span:nth-child(4) {
-      padding-left: 12px;
+    body.home-page .hero-figure-formulas span {
+      display: block;
+      white-space: nowrap;
     }
 
     @keyframes heroFloatNetwork {
