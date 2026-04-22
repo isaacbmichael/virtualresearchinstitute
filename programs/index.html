@@ -164,10 +164,10 @@ on_this_page:
               still rigorous environment.
             </p>
             <div class="term-note">
-              Typical cohort size: 10–12 students<br />
-              Cost per student: $1,395<br />
-              Typical duration: 6 weeks<br />
-              Public terms: Spring, Summer, Fall
+              Typical cohort size: {{ site.data.pathways.circles.cohort_size }}<br />
+              Cost per student: {{ site.data.pathways.circles.price }}<br />
+              Typical duration: {{ site.data.pathways.circles.duration }}<br />
+              Public terms: {{ site.data.pathways.circles.public_terms }}
             </div>
           </article>
 
@@ -180,10 +180,10 @@ on_this_page:
               research experiences.
             </p>
             <div class="term-note">
-              Typical cohort size: 5-6 students<br />
-              Cost per student: $3,495<br />
-              Typical duration: 10 weeks<br />
-              Public terms: Spring, Summer, Fall
+              Typical cohort size: {{ site.data.pathways.groups.cohort_size }}<br />
+              Cost per student: {{ site.data.pathways.groups.price }}<br />
+              Typical duration: {{ site.data.pathways.groups.duration }}<br />
+              Public terms: {{ site.data.pathways.groups.public_terms }}
             </div>
           </article>
         </div>
@@ -201,11 +201,11 @@ on_this_page:
             </div>
 
             <div class="feature-quote">
-              <strong>By inquiry only</strong>
+              <strong>{{ site.data.pathways.private_mentorship.price }} only</strong>
               <p>
-                Starting tuition: $16,000. Availability depends on subject area,
+                Starting tuition: {{ site.data.pathways.private_mentorship.starting_tuition }}. Availability depends on subject area,
                 mentor fit, and researcher availability. Private Mentorship
-                placements are limited and not guaranteed.
+                placements are {{ site.data.pathways.private_mentorship.availability | downcase }} and not guaranteed.
               </p>
             </div>
           </div>
@@ -396,9 +396,9 @@ on_this_page:
               access built into each pathway.
             </p>
             <ul>
-              <li>Circles: $1,395 per student</li>
-              <li>Groups: $3,495 per student</li>
-              <li>Private Mentorship: starting at $16,000 by inquiry</li>
+              <li>Circles: {{ site.data.pathways.circles.price }} per student</li>
+              <li>Groups: {{ site.data.pathways.groups.price }} per student</li>
+              <li>Private Mentorship: starting at {{ site.data.pathways.private_mentorship.starting_tuition }} {{ site.data.pathways.private_mentorship.price | downcase }}</li>
               <li>Limited financial assistance may be available in select cases</li>
             </ul>
           </article>
