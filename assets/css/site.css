@@ -2013,6 +2013,25 @@
       .site-footer {
         padding-top: 30px;
       }
+          
+      body.home-page .hero-figure-network {
+        width: min(360px, 94%);
+        right: -4px;
+        top: 24px;
+      }
+
+      body.home-page .hero-figure-chart {
+        width: min(270px, 76%);
+        right: 10px;
+        bottom: 24px;
+     }
+
+    body.home-page .hero-figure-formulas {
+      max-width: 210px;
+      font-size: 1.15rem;
+      left: 8px;
+      bottom: 94px;
+     }
     }
 
     @media (max-width: 640px) {
@@ -2169,6 +2188,33 @@
       .footer-brand-bar {
         width: calc(52px * var(--footer-brand-scale));
         height: calc(5px * var(--footer-brand-scale));
+      }
+      
+      body.home-page .hero-copy h1 {
+        color: #f8f4ea;
+      }
+
+      body.home-page .hero-copy p {
+        color: rgba(248, 244, 234, 0.84);
+      }
+
+      body.home-page .hero-figure-network {
+        width: min(300px, 92%);
+        right: -8px;
+        top: 20px;
+      }
+
+      body.home-page .hero-figure-chart {
+        width: min(220px, 74%);
+        right: 2px;
+        bottom: 18px;
+      }
+
+      body.home-page .hero-figure-formulas {
+        max-width: 170px;
+        font-size: 0.98rem;
+        left: 6px;
+        bottom: 82px;
       }
     }
 
