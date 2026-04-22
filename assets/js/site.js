@@ -180,26 +180,99 @@ const mobileSubnavTriggers = mobilePanel.querySelectorAll(
   '[aria-controls="mobileSubnavUpcoming"]'
 );
 
-const setMobileSubnavState = (isExpanded) => {
-  if (!mobileSubnav || !mobileSubnavTriggers.length) return;
+const getMobileSubnavExpanded = () => {
+  if (!mobileSubnavTriggers.length) return false;
+  return mobileSubnavTriggers[0].getAttribute("aria-expanded") === "true";
+};
+
+const syncMobileSubnavTriggers = (isExpanded) => {
   mobileSubnavTriggers.forEach((trigger) => {
     trigger.setAttribute("aria-expanded", String(isExpanded));
   });
-  mobileSubnav.hidden = !isExpanded;
+};
+
+const openMobileSubnav = () => {
+  if (!mobileSubnav) return;
+
+  mobileSubnav.hidden = false;
+  mobileSubnav.classList.add("is-open");
+  syncMobileSubnavTriggers(true);
+
+  if (prefersReducedMotion) {
+    mobileSubnav.style.maxHeight = "none";
+    return;
+  }
+
+  mobileSubnav.style.maxHeight = "0px";
+
+  requestAnimationFrame(() => {
+    mobileSubnav.style.maxHeight = `${mobileSubnav.scrollHeight}px`;
+  });
+};
+
+const closeMobileSubnav = () => {
+  if (!mobileSubnav) return;
+
+  if (prefersReducedMotion) {
+    mobileSubnav.classList.remove("is-open");
+    mobileSubnav.style.maxHeight = "0px";
+    mobileSubnav.hidden = true;
+    syncMobileSubnavTriggers(false);
+    return;
+  }
+
+  mobileSubnav.style.maxHeight = `${mobileSubnav.scrollHeight}px`;
+
+  requestAnimationFrame(() => {
+    mobileSubnav.classList.remove("is-open");
+    mobileSubnav.style.maxHeight = "0px";
+  });
+
+  syncMobileSubnavTriggers(false);
+};
+
+const setMobileSubnavState = (isExpanded, { immediate = false } = {}) => {
+  if (!mobileSubnav || !mobileSubnavTriggers.length) return;
+
+  if (immediate) {
+    syncMobileSubnavTriggers(isExpanded);
+    mobileSubnav.hidden = !isExpanded;
+    mobileSubnav.classList.toggle("is-open", isExpanded);
+    mobileSubnav.style.maxHeight = isExpanded ? "none" : "0px";
+    return;
+  }
+
+  if (isExpanded) {
+    openMobileSubnav();
+  } else {
+    closeMobileSubnav();
+  }
 };
 
 if (mobileSubnav && mobileSubnavTriggers.length) {
-  const initiallyExpanded =
-    mobileSubnavTriggers[0].getAttribute("aria-expanded") === "true";
-
-  setMobileSubnavState(initiallyExpanded);
+  setMobileSubnavState(getMobileSubnavExpanded(), { immediate: true });
 
   mobileSubnavTriggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
-      setMobileSubnavState(!isExpanded);
+      setMobileSubnavState(!getMobileSubnavExpanded());
     });
+  });
+
+  mobileSubnav.addEventListener("transitionend", (event) => {
+    if (event.propertyName !== "max-height") return;
+
+    if (getMobileSubnavExpanded()) {
+      mobileSubnav.style.maxHeight = "none";
+    } else {
+      mobileSubnav.hidden = true;
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (getMobileSubnavExpanded() && !mobileSubnav.hidden) {
+      mobileSubnav.style.maxHeight = "none";
+    }
   });
 }
 
