@@ -175,22 +175,31 @@
   let backdropHideTimer = null;
 
   if (menuToggle && mobilePanel) {
-    const mobileSubnavToggle = mobilePanel.querySelector(".mobile-subnav-toggle");
-const mobileSubnav = mobilePanel.querySelector("#mobileSubnavUpcoming");
+    const mobileSubnav = mobilePanel.querySelector("#mobileSubnavUpcoming");
+const mobileSubnavTriggers = mobilePanel.querySelectorAll(
+  '[aria-controls="mobileSubnavUpcoming"]'
+);
 
 const setMobileSubnavState = (isExpanded) => {
-  if (!mobileSubnavToggle || !mobileSubnav) return;
-  mobileSubnavToggle.setAttribute("aria-expanded", String(isExpanded));
+  if (!mobileSubnav || !mobileSubnavTriggers.length) return;
+  mobileSubnavTriggers.forEach((trigger) => {
+    trigger.setAttribute("aria-expanded", String(isExpanded));
+  });
   mobileSubnav.hidden = !isExpanded;
 };
 
-if (mobileSubnavToggle && mobileSubnav) {
-  setMobileSubnavState(mobileSubnavToggle.getAttribute("aria-expanded") === "true");
+if (mobileSubnav && mobileSubnavTriggers.length) {
+  const initiallyExpanded =
+    mobileSubnavTriggers[0].getAttribute("aria-expanded") === "true";
 
-  mobileSubnavToggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    const isExpanded = mobileSubnavToggle.getAttribute("aria-expanded") === "true";
-    setMobileSubnavState(!isExpanded);
+  setMobileSubnavState(initiallyExpanded);
+
+  mobileSubnavTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+      setMobileSubnavState(!isExpanded);
+    });
   });
 }
 
