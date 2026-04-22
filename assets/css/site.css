@@ -3526,6 +3526,36 @@ body.policies-page .policy-mini-card p {
   }
 }
 
+/* ===================== FAQ Page ===================== */
+body.faq-page .hero {
+  padding-top: 28px;
+  padding-bottom: 18px;
+}
+
+body.faq-page .hero-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body.faq-page .hero-copy h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  max-width: 12ch;
+}
+
+body.faq-page .hero-copy p {
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+body.faq-page .hero-orbit {
+  opacity: 0.55;
+}
+
+body.faq-page #faq-library.section {
+  padding-top: 18px;
+}
 
 /* =========================================
    Mobile panel navigation refinement
