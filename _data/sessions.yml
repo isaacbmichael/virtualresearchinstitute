@@ -1,0 +1,18 @@
+circles:
+  session_1:
+    label: "Session 1"
+    start_date: "September 14, 2026"
+
+  session_2:
+    label: "Session 2"
+    start_date: "November 2, 2026"
+
+groups:
+  current_cohort:
+    label: "Current cohort"
+    start_date: "September 14, 2026"
+
+private_mentorship:
+  current:
+    label: "Private Mentorship"
+    start_date: "By inquiry"
