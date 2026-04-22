@@ -77,19 +77,19 @@ on_this_page:
               </div>
               <div>
                 <strong>Cohort size</strong>
-                <span>Typically 5–6 students per Group.</span>
+                <span>Typically {{ site.data.pathways.groups.cohort_size }} per Group.</span>
               </div>
               <div>
                 <strong>Duration</strong>
-                <span>10 weeks per Group term.</span>
+                <span>{{ site.data.pathways.groups.duration }} per Group term.</span>
               </div>
               <div>
                 <strong>Current cohort begins</strong>
-                <span>September 14, 2026</span>
+                <span>{{ site.data.sessions.groups.current_cohort.start_date }}</span>
               </div>
               <div>
                 <strong>Registration deadline</strong>
-                <span>August 31, 2026</span>
+                <span>{{ site.data.sessions.groups.current_cohort.registration_deadline }}</span>
               </div>
               <div>
                 <strong>Placement note</strong>
@@ -122,9 +122,9 @@ on_this_page:
             <div class="card-label">Format &amp; Cost</div>
             <h3>What a Group includes</h3>
             <div class="pill-row" aria-label="Groups quick facts">
-              <span class="pill">5–6 students</span>
-              <span class="pill">10 weeks</span>
-              <span class="pill">$3,495</span>
+              <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
+              <span class="pill">{{ site.data.pathways.groups.duration }}</span>
+              <span class="pill">{{ site.data.pathways.groups.price }}</span>
             </div>
             <ul class="clean-list">
               <li>Fully online live mentor-led sessions</li>
@@ -132,8 +132,8 @@ on_this_page:
               <li>One public cohort in the current cycle</li>
             </ul>
             <div class="term-note">
-              The current Group offerings are organized below within one public cohort beginning September 14, 2026.
-              Registration closes on August 31, 2026.
+              The current Group offerings are organized below within one public cohort beginning {{ site.data.sessions.groups.current_cohort.start_date }}.
+              Registration closes on {{ site.data.sessions.groups.current_cohort.registration_deadline }}.
             </div>
           </article>
 
@@ -174,7 +174,7 @@ on_this_page:
 
         <div class="pathway-banner reveal">
           <div>
-            <strong>Typical cohort size:</strong> 5–6 students &nbsp; &middot; &nbsp; <strong>Typical duration:</strong> 10 weeks &nbsp; &middot; &nbsp; <strong>Cost:</strong> $3,495 per student
+            <strong>Typical cohort size:</strong> {{ site.data.pathways.groups.cohort_size }} &nbsp; &middot; &nbsp; <strong>Typical duration:</strong> {{ site.data.pathways.groups.duration }} &nbsp; &middot; &nbsp; <strong>Cost:</strong> {{ site.data.pathways.groups.price }} per student
           </div>
         </div>
 
@@ -184,15 +184,15 @@ on_this_page:
             <div class="session-headline">
               <div>
                 <p class="session-kicker">Groups · Session 1</p>
-                <h3>Begins September 14, 2026</h3>
+                <h3>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</h3>
                 <p class="session-intro">Smaller, more intensive collaborative placements for students ready for deeper ownership. Each placement is designed for serious online work, clear academic structure, and thoughtful mentor guidance.</p>
               </div>
               <div class="session-side">
-                <span>6 offerings</span>
-                <span>10 weeks</span>
+                <span>{{ site.data.sessions.groups.current_cohort.offerings_count }}</span>
+                <span>{{ site.data.pathways.groups.duration }}</span>
               </div>
             </div>
-            <div class="session-note"><strong>Registration deadline:</strong> August 31, 2026. Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
+            <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.groups.current_cohort.registration_deadline }}. Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
             <div class="project-list">
               
             <details class="project-item reveal">
@@ -220,7 +220,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
@@ -310,7 +310,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
@@ -392,7 +392,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
@@ -484,7 +484,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
@@ -572,7 +572,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
@@ -653,7 +653,7 @@ on_this_page:
                     <div class="proposal-badges" aria-label="Proposal quick facts">
                       <span>Group pathway</span>
                       <span>Session 1</span>
-                      <span>Begins September 14, 2026</span>
+                      <span>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</span>
                     </div>
                   </div>
 
