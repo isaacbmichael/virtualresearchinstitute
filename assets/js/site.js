@@ -379,9 +379,9 @@
 
   if (!institutions.length) return;
 
-  const VISIBLE_COUNT = 12;
-  const STEP_SIZE = 6;
-  const INTERVAL = 7000;
+  const VISIBLE_COUNT = 10;
+  const STEP_SIZE = 5;
+  const INTERVAL = 9000;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function getWindow(items, start, count) {
