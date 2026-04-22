@@ -115,9 +115,9 @@ on_this_page:
             in an accessible but still rigorous environment.
           </p>
           <div class="pill-row" aria-label="Circles quick facts">
-            <span class="pill">10–12 students</span>
-            <span class="pill">6 weeks</span>
-            <span class="pill">$1,395</span>
+            <span class="pill">{{ site.data.pathways.circles.cohort_size }}</span>
+            <span class="pill">{{ site.data.pathways.circles.duration }}</span>
+            <span class="pill">{{ site.data.pathways.circles.price }}</span>
           </div>
           <ul class="clean-list">
             <li>Broader public entry point</li>
@@ -140,9 +140,9 @@ on_this_page:
             and a closer resemblance to a premium boutique research experience.
           </p>
           <div class="pill-row" aria-label="Groups quick facts">
-            <span class="pill">5–6 students</span>
-            <span class="pill">10 weeks</span>
-            <span class="pill">$3,495</span>
+            <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
+            <span class="pill">{{ site.data.pathways.groups.duration }}</span>
+            <span class="pill">{{ site.data.pathways.groups.price }}</span>
           </div>
           <ul class="clean-list">
             <li>Smaller and more intensive than Circles</li>
@@ -172,7 +172,7 @@ on_this_page:
           <div class="feature-quote">
             <strong>By inquiry only</strong>
             <p>
-              Starting tuition: $16,000. Availability depends on subject area, mentor fit, student readiness,
+              Starting tuition: {{ site.data.pathways.private_mentorship.starting_tuition }}. Availability depends on subject area, mentor fit, student readiness,
               and researcher availability. Scheduling, pacing, and meeting schedules may differ by mentor and project.
             </p>
           </div>
