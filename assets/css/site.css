@@ -1675,46 +1675,75 @@
       box-shadow: none;
     }
 
-    /* About page: Looking Ahead section with globe image in the background */
-.about-page #future .feature-band-future {
+    /* About page: Looking Ahead section uses the globe image as the full section background */
+.about-page #future.section-future-background {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.about-page #future.section-future-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(4, 76, 89, 0.90) 0%, rgba(4, 76, 89, 0.84) 42%, rgba(4, 76, 89, 0.74) 100%),
-    linear-gradient(135deg, rgba(4, 76, 89, 0.80), rgba(7, 87, 97, 0.68)),
+    linear-gradient(180deg, rgba(7, 20, 28, 0.52) 0%, rgba(7, 20, 28, 0.62) 100%),
+    radial-gradient(circle at 24% 28%, rgba(4, 76, 89, 0.24), transparent 26%),
+    radial-gradient(circle at 78% 26%, rgba(229, 181, 59, 0.12), transparent 20%),
     url("/assets/images/about/vri-global-network-v1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  filter: saturate(0.96) contrast(1.02) brightness(0.68);
 }
 
-.about-page #future .feature-band-future::before {
+.about-page #future.section-future-background::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(2, 16, 24, 0.08), rgba(2, 16, 24, 0.24));
+  z-index: -1;
   pointer-events: none;
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.08), transparent 20%),
+    radial-gradient(circle at 82% 68%, rgba(0, 113, 127, 0.14), transparent 24%);
 }
 
-.about-page #future .feature-band-future > * {
+.about-page #future.section-future-background .shell {
   position: relative;
   z-index: 1;
 }
 
-.about-page #future .feature-band-future .feature-band-grid {
+.about-page #future.section-future-background .feature-band {
+  background: linear-gradient(135deg, rgba(4, 76, 89, 0.72), rgba(7, 87, 97, 0.58));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.about-page #future.section-future-background .feature-band-grid {
   grid-template-columns: 1fr;
 }
 
-.about-page #future .feature-band-future .feature-band-grid > div:first-child {
-  max-width: 980px;
+.about-page #future.section-future-background .feature-band p,
+.about-page #future.section-future-background .feature-band .section-label {
+  color: rgba(255, 255, 255, 0.86);
 }
 
-.about-page #future .feature-band-future .feature-quote {
-  max-width: 980px;
+.about-page #future.section-future-background .feature-band h3 {
+  color: #ffffff;
+}
+
+.about-page #future.section-future-background .feature-quote {
   background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.about-page #future.section-future-background .cta-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.76));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
     .cta-panel {
