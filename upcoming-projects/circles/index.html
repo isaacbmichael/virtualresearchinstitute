@@ -163,19 +163,19 @@ on_this_page:
 </div>
 
                     <div class="proposal-copy-grid">
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Project overview</h5>
                         <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Background</h5>
                         <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Possible extension</h5>
                         <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Selected references</h5>
                         <div class="copy-body"><ol class="project-references">
 {% for ref in proposal.references %}
@@ -267,19 +267,19 @@ on_this_page:
 </div>
 
                     <div class="proposal-copy-grid">
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Project overview</h5>
                         <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Background</h5>
                         <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Possible extension</h5>
                         <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
                       </section>
-                      <section class="proposal-copy-block">
+                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
                         <h5>Selected references</h5>
                         <div class="copy-body"><ol class="project-references">
 {% for ref in proposal.references %}
