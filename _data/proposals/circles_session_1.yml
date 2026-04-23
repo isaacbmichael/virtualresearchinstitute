@@ -44,3 +44,141 @@
     - "Blitzstein, J., and Hwang, J. Introduction to Probability, CRC Press, 2019."
     - "Rice, J. Mathematical Statistics and Data Analysis, 3rd ed., Cengage Learning, 2006."
     - "James, G., Witten, D., Hastie, T., and Tibshirani, R. An Introduction to Statistical Learning: with Applications in R, Springer, 2021."
+
+- id: topic_02
+  sort_order: 2
+  title: "Learning from Uncertainty: A Bayesian View of Probability and Data"
+  session_label: "Session 1"
+
+  mentor:
+    name: "Mohammad Rafiqul Islam"
+    lines:
+      - "Ph.D. Candidate in Mathematics"
+      - "Department of Mathematics"
+      - "Florida State University"
+
+  topic_area: "Probability, Bayesian Statistics, Uncertainty Quantification"
+
+  schedule:
+    timezone: "Eastern Time (ET)"
+    details: "Tentative Mon/Wed 7:00-8:30 PM ET; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Google Meet"
+    code_used: "Python or spreadsheet-based simulation"
+    needed: "Google Colab or Excel, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    In many real-world situations, we must make decisions based on limited or noisy information. Bayesian probability provides a mathematical framework for describing uncertainty, updating beliefs, and learning from data.
+
+    In this project, students will explore the Bayesian view of probability, where probability represents a degree of belief rather than a fixed long-run frequency. We will begin with intuitive examples such as coin flips, guessing unknown quantities, and predicting outcomes with incomplete information. Students will learn how initial beliefs (called <i>priors</i>) can be updated using observed data to form improved beliefs (called <i>posteriors</i>).
+
+    Through simulations and experiments, students will investigate how uncertainty changes as more data is collected, how prior assumptions influence conclusions, and how Bayesian reasoning differs from traditional deterministic thinking. Visual tools such as probability distributions, histograms, and simulation plots will be used throughout.
+
+    The project emphasizes intuition, experimentation, and explanation. By the end of the program, students will understand how Bayesian ideas help quantify uncertainty and support rational decision-making in science, data analysis, and everyday life.
+
+  background: |
+    This project assumes familiarity with basic algebra, graphs, and averages. No prior knowledge of probability or statistics is required. All probabilistic ideas will be introduced from first principles using concrete examples and visual intuition. Calculus is not required.
+
+    Students will engage with hands-on experiments and simulations using simple computational tools such as Excel or Python (no prior programming experience assumed). Emphasis will be placed on conceptual understanding, interpretation, and communication rather than technical formalism.
+
+  possible_extension: |
+    Interested students may explore how different prior beliefs lead to different posterior conclusions, even when observing the same data. Additional extensions include comparing Bayesian predictions with simple averages, investigating how uncertainty shrinks as sample size increases, or exploring basic Bayesian decision-making under uncertainty.
+
+  references:
+    - "Martin O. <i>Bayesian Analysis with Python</i>. Birmingham, UK: Packt Publishing; 2016 Nov 25."
+    - "Gelman, A., et al. <i>Bayesian Data Analysis</i>, 3rd ed., CRC Press, 2013."
+
+- id: topic_03
+  sort_order: 3
+  title: "When Can We Trust Simple Decisions?: Binary Classification with Imbalanced Data"
+  session_label: "Session 1"
+
+  mentor:
+    name: "Hyelim Jung"
+    lines:
+      - "Ph.D. Candidate"
+      - "Department of Mathematics and Statistics"
+      - "Auburn University"
+
+  topic_area: "Applied Mathematics, Mathematical Modeling, Data-Driven Decision Rules"
+
+  schedule:
+    timezone: "Central Time (CT)"
+    details: "Tentative Tue/Thu 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Microsoft Teams"
+    code_used: "Python or spreadsheet-based modeling"
+    needed: "Google Colab or Excel, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    Many real-world problems require binary decisions, such as determining whether an email is spam or deciding whether an alert should be issued. A common way to evaluate such decisions is accuracy—the proportion of correct outcomes. But is accuracy always a reliable measure of performance?
+
+    In this project, students investigate simple decision rules for binary classification and explore how these rules behave when data are highly imbalanced, meaning that one outcome is much rarer than the other. Through hands-on experiments, students discover that a rule with very high accuracy can nevertheless perform poorly in practice by systematically missing rare but important cases.
+
+    Rather than introducing complex models, students focus on understanding why accuracy can be misleading and how evaluation criteria shape our conclusions. Using tables, graphs, and basic arithmetic, students compare different decision rules under varying levels of imbalance.
+
+    In the final stage of the project, students propose a simple remedy by redefining what it means for a rule to perform well. By examining multiple error rates and incorporating basic cost considerations, students develop a more nuanced framework for evaluating decisions. The project emphasizes the process of mathematical research—posing questions, designing experiments, interpreting results, and communicating findings—using tools accessible to high-school students.
+
+  background: |
+    This project assumes only a standard high-school background in algebra. Students are expected to be comfortable with basic inequalities, simple functions, proportions, and percentages, as well as reading tables and graphs. No prior coursework in statistics, probability, or calculus is assumed.
+
+    All necessary concepts—such as decision rules, evaluation metrics, and experimental comparison—will be introduced within the context of the research questions. Computational experiments will be conducted using Excel, R, or Python, with code templates provided as needed.
+
+  possible_extension: |
+    Students who continue in the VMRC Research Extension may explore how different levels of data imbalance affect conclusions, or how varying the relative cost of different types of errors changes which decision rules are preferred. Additional extensions may include introducing label noise or examining real-world scenarios such as medical screening or fraud detection. These extensions emphasize deeper interpretation and more refined experimental design rather than additional technical machinery.
+
+  references:
+    - "He, H. and Garcia, E. A. <i>Learning from Imbalanced Data</i>. IEEE Transactions on Knowledge and Data Engineering, 21(9), 2009."
+    - "Saito, T. and Rehmsmeier, M. <i>The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets</i>. PLoS ONE, 10(3), 2015."
+
+- id: topic_04
+  sort_order: 4
+  title: "Extensions of Colley’s Matrix and Ranking Methods"
+  session_label: "Session 1"
+
+  mentor:
+    name: "Jonathan Engle"
+    lines:
+      - "PhD Candidate (ABD)"
+      - "Department of Mathematics"
+      - "Florida State University"
+
+  topic_area: "Applied Linear Algebra"
+
+  schedule:
+    timezone: "Eastern Time (ET)"
+    details: "Tentative Mon/Wed 6:30-8:00 PM ET; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Zoom"
+    code_used: "MATLAB or Julia"
+    needed: "MATLAB Online or Julia, Excel for simple computations, and presentation software such as PowerPoint or Beamer"
+
+  project_overview: |
+    Colley’s matrix method for ranking college football teams is an exciting application of linear algebra. While many traditional ranking methods are based primarily on a team’s record, margin of victory, or subjective committee decisions, such approaches can still fall short in producing accurate rankings. Colley addressed this issue by developing an objective ranking method that adjusts a team’s rating according to strength of schedule, without taking conference affiliation or margin of victory into account.
+
+    In this project, students will work toward replicating Colley’s Matrix for a small “toy” example using college football teams from the previous season. They will analyze these replications and investigate whether Colley’s method was able to identify potential major upsets that the College Football Committee did not anticipate. This implementation will require solving a linear system of the form:
+
+    <div style="text-align:center;">
+    <i>C</i><span style="text-decoration:overline;">r</span> = <span style="text-decoration:overline;">b</span>,
+    <i>C</i> ∈ ℝ<sup>n×n</sup>,
+    <span style="text-decoration:overline;">b</span>, <span style="text-decoration:overline;">r</span> ∈ ℝ<sup>n</sup>
+    </div>
+
+    where <span style="text-decoration:overline;">r</span> is the ranking vector, <span style="text-decoration:overline;">b</span> is one plus the average win rate for a team, and <i>C</i> is Colley’s matrix. This framework leads naturally to the central research question of the project: how can Colley’s Matrix be improved when additional information about the system is available?
+
+    The project emphasizes mathematical structure, computational experimentation, and interpretation. By the end of the program, students will understand how a linear algebra model can be used to construct rankings and how modifying that model may lead to more informative decision-making tools in sports and beyond.
+
+  background: |
+    This project requires little background knowledge beyond basic algebra and arithmetic. High school calculus is not a prerequisite. All required linear algebra concepts needed to approach the problem will be introduced during the project.
+
+    This project serves as a strong introduction to ideas from linear algebra, introductory computer science, statistics, and mathematical modeling. During the experimental stage, students will implement the mathematical theory computationally using tools such as Excel, Matlab, and/or Julia. During the final week, when results are compiled and presented, students may use tools such as PowerPoint or Beamer.
+
+  possible_extension: |
+    Once students explore the sports-ranking example, they will be encouraged to extend the same ideas to settings beyond athletics. Possible directions include, but are not limited to, resource distribution, natural disaster response, stock rankings, and other systems in which competing entities must be ranked using incomplete or structured information.
+
+  references:
+    - "Boginski, V., Butenko, S., and Pardalos, P. M. <i>Matrix-based methods for college football rankings</i>. <i>Economics, Management and Optimization in Sports</i>, 2004, pp. 1–13."
+    - "Colley, Wesley N. <i>Colley’s bias free college football ranking method: The Colley matrix explained</i>, 2002."
