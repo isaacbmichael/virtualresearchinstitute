@@ -45,7 +45,7 @@ on_this_page:
   body.policies-page .policy-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 20px;
+    gap: 10px 28px;
     margin-top: 26px;
     padding-top: 6px;
     align-items: center;
@@ -59,7 +59,7 @@ on_this_page:
     border-radius: 0;
     background: none;
     box-shadow: none;
-    color: rgba(248, 244, 234, 0.94);
+    color: rgba(248, 244, 234, 0.84);
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -67,20 +67,6 @@ on_this_page:
     text-decoration: none;
     position: relative;
     transition: color .25s var(--ease), opacity .25s var(--ease);
-  }
-
-  body.policies-page .policy-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.42;
-    transform: scaleX(0.78);
-    transform-origin: left center;
-    transition: transform .25s var(--ease), opacity .25s var(--ease);
   }
 
   body.policies-page .policy-nav a:hover,
@@ -91,15 +77,9 @@ on_this_page:
     color: #ffffff;
   }
 
-  body.policies-page .policy-nav a:hover::after,
-  body.policies-page .policy-nav a:focus-visible::after {
-    opacity: 0.9;
-    transform: scaleX(1);
-  }
-
   @media (max-width: 640px) {
     body.policies-page .policy-nav {
-      gap: 10px 16px;
+      gap: 10px 18px;
     }
 
     body.policies-page .policy-nav a {
