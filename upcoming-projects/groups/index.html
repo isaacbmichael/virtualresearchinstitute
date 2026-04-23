@@ -3,7 +3,7 @@ layout: default
 title: Groups | Upcoming Projects | Virtual Research Institute
 description: Groups | Upcoming Projects at the Virtual Research Institute — current Group offerings organized by cohort, pricing, proposal details, and registration deadlines.
 permalink: /upcoming-projects/groups/
-body_class: groups-page circles-page
+body_class: groups-page
 explore_key: upcoming-projects
 on_this_page:
   - label: Current Cohort
@@ -80,7 +80,7 @@ on_this_page:
     <h2>Review the current cohort, then compare proposals.</h2>
   </div>
   <p class="section-intro">
-    Open any proposal below to review the mentor, background, schedule, technology, and student setup.
+    Open any proposal below to review the mentor, background, schedule, technology, and selected references.
   </p>
 </div>
 
@@ -114,7 +114,7 @@ on_this_page:
               {% for proposal in group_proposals %}
               <details class="project-item reveal">
                 <summary>
-                  <span class="project-summary-text">
+                  <div class="project-summary-text">
                     <span class="project-summary-title">{{ proposal.title }}</span>
 
                   <div class="project-summary-meta">
@@ -123,7 +123,7 @@ on_this_page:
                   </div>
                   <p class="project-summary-sub">{{ proposal.topic_area }}</p>
 
-                  </span>
+                  </div>
                 </summary>
                 <div class="project-body">
                   <div class="proposal-shell">
