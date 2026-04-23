@@ -4261,7 +4261,7 @@ body.faq-page #faq-library.section {
   flex: 0 0 auto;
   transition:
     color .25s ease,
-    transform 460ms cubic-bezier(.22, 1, .36, 1);
+    transform 560ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .mobile-subnav-toggle[aria-expanded="true"] {
@@ -4272,22 +4272,19 @@ body.faq-page #faq-library.section {
   display: grid;
   grid-template-rows: 0fr;
   padding: 0 0 0 14px;
-  margin-top: 0;
   border-left: 1px solid rgba(4, 76, 89, 0.14);
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   pointer-events: none;
   transition:
-    grid-template-rows 460ms cubic-bezier(.22, 1, .36, 1),
-    margin-top 460ms cubic-bezier(.22, 1, .36, 1),
-    opacity 180ms ease,
-    transform 460ms cubic-bezier(.22, 1, .36, 1);
+    grid-template-rows 560ms cubic-bezier(.22, 1, .36, 1),
+    opacity 260ms ease,
+    transform 560ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .mobile-subnav.is-open {
   grid-template-rows: 1fr;
-  margin-top: 8px;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -4298,6 +4295,7 @@ body.faq-page #faq-library.section {
   overflow: hidden;
   display: grid;
   gap: 8px;
+  padding-top: 8px;
 }
 
 .mobile-subnav-link {
@@ -4333,7 +4331,6 @@ body.faq-page #faq-library.section {
 .mobile-subnav[hidden] {
   display: grid;
   grid-template-rows: 0fr;
-  margin-top: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
