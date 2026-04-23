@@ -108,8 +108,8 @@ on_this_page:
                     <span class="project-summary-title">{{ proposal.title }}</span>
 
                   <div class="project-summary-meta">
-                    <span class="meta-chip">{{ proposal.session_label }}</span>
                     <span class="meta-chip">{{ proposal.mentor.name }}</span>
+                    <span class="meta-chip">{{ proposal.mentor.lines | last }}</span>
                   </div>
                   <p class="project-summary-sub">{{ proposal.topic_area }}</p>
 
@@ -212,8 +212,8 @@ on_this_page:
                     <span class="project-summary-title">{{ proposal.title }}</span>
 
                   <div class="project-summary-meta">
-                    <span class="meta-chip">{{ proposal.session_label }}</span>
                     <span class="meta-chip">{{ proposal.mentor.name }}</span>
+                    <span class="meta-chip">{{ proposal.mentor.lines | last }}</span>
                   </div>
                   <p class="project-summary-sub">{{ proposal.topic_area }}</p>
 
