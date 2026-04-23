@@ -10,7 +10,7 @@ on_this_page:
     href: "#groups-current-cohort"
   - label: Questions
     href: "#questions"
---- 
+---
 
 <script>
     /*
@@ -40,6 +40,18 @@ on_this_page:
     };
   </script>
 
+<style>
+  body.groups-page .hero .hero-copy h1 {
+    max-width: 75%;
+  }
+
+  @media (max-width: 1180px) {
+    body.groups-page .hero .hero-copy h1 {
+      max-width: 100%;
+    }
+  }
+</style>
+
 <section class="hero projects-hero">
   <div class="hero-orbit" aria-hidden="true"></div>
       <div class="shell hero-grid">
@@ -68,7 +80,7 @@ on_this_page:
     <h2>Review the current cohort, then compare proposals.</h2>
   </div>
   <p class="section-intro">
-    Open any proposal below to review the mentor, background, preparation, and student setup.
+    Open any proposal below to review the mentor, background, schedule, technology, and student setup.
   </p>
 </div>
 
@@ -106,7 +118,7 @@ on_this_page:
                     <span class="project-summary-title">{{ proposal.title }}</span>
 
                   <div class="project-summary-meta">
-                    <span class="meta-chip">{{ proposal.cohort_label }}</span>
+                    <span class="meta-chip">{{ proposal.session_label }}</span>
                     <span class="meta-chip">{{ proposal.mentor.name }}</span>
                   </div>
                   <p class="project-summary-sub">{{ proposal.topic_area }}</p>
@@ -122,14 +134,14 @@ on_this_page:
                         <h4>{{ proposal.title }}</h4>
                       </div>
                       <div class="proposal-badges" aria-label="Proposal quick facts">
-                        <span>{{ proposal.cohort_label }}</span>
+                        <span>{{ proposal.session_label }}</span>
                       </div>
                     </div>
 
                     <div class="proposal-facts">
                       <div class="fact-card">
                         <span class="fact-label">Mentor</span>
-                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}<br />{% endfor %}<strong>Time Zone:</strong> {{ proposal.mentor.timezone }}</div>
+                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</div>
                       </div>
                       <div class="fact-card">
                         <span class="fact-label">Topic area</span>
@@ -137,13 +149,13 @@ on_this_page:
                       </div>
 
                       <div class="fact-card">
-                        <span class="fact-label">Preparation</span>
-                        <div class="fact-body">{{ proposal.preparation }}</div>
+                        <span class="fact-label">Schedule</span>
+                        <div class="fact-body">{{ proposal.schedule.timezone }}<br />{{ proposal.schedule.details }}</div>
                       </div>
 
                       <div class="fact-card">
-                        <span class="fact-label">Format note</span>
-                        <div class="fact-body">{{ proposal.format_note }}</div>
+                        <span class="fact-label">Technology</span>
+                        <div class="fact-body">Video platform: {{ proposal.technology.platform }}<br />Code used: {{ proposal.technology.code_used }}<br />Technology needed: {{ proposal.technology.needed }}</div>
                       </div>
 </div>
 
