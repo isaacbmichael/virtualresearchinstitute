@@ -1,0 +1,173 @@
+- id: topic_01
+  sort_order: 1
+  title: "Simulating Flow in a Channel with Obstacles"
+  session_label: "Session 2"
+
+  mentor:
+    name: "Irene Erazo"
+    lines:
+      - "Ph.D. Student in Mathematics"
+      - "Department of Mathematics"
+      - "Tulane University"
+
+  topic_area: "Applied Mathematics"
+
+  schedule:
+    timezone: "Central Time (CT)"
+    details: "Tentative Tue/Thu 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Zoom"
+    code_used: "Python"
+    needed: "Google Colab or Anaconda/Jupyter, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    Simulating real-world phenomena is essential across many disciplines, particularly in fluid dynamics, where understanding flow behavior plays a key role in physical applications. This project focuses on situations in which the relevant length scales are very small or the fluid has high viscosity. Such conditions frequently arise in biological systems, making the study of fluid flow important in areas such as microbiology and biomedical engineering.
+
+    In this project, students will explore how fluids move through a channel containing obstacles using mathematical models and computer simulations. First, we will develop a numerical method to compute fluid flow when forces are prescribed. Once this method is established, we will simulate different scenarios—such as fluid moving around obstacles—to observe how these barriers affect the speed and direction of the flow.
+
+    By visualizing these effects, students will gain insight into real-world applications, including the design of efficient waterways and the prediction of how flows behave in constrained environments.
+
+  background: |
+    This project is self-contained and does not require prior exposure to high school calculus. Basic concepts from precalculus, linear algebra, and ordinary differential equations will be introduced throughout the program.
+
+    Students will also be introduced to basic coding as needed. This project provides an accessible introduction to the use of ordinary differential equations and computational methods to model fluid flow in a channel with obstacles.
+
+  possible_extension: |
+    In the base model, obstacles are represented as isolated points within a channel. A natural extension is to consider flow around fixed line obstacles. Students may also explore how different solid obstacle shapes influence flow patterns and system behavior.
+
+  references:
+    - "Cortez, R. <i>The method of regularized Stokeslets</i>, <i>SIAM Journal on Scientific Computing</i>, 23(4), 1204–1225, 2001."
+    - "Cortez, R., Fauci, L., and Medovikov, A. <i>The method of regularized Stokeslets in three dimensions: analysis, validation, and application to helical swimming</i>, <i>Physics of Fluids</i>, 17(3), 2005."
+
+- id: topic_02
+  sort_order: 2
+  title: "Comparative Analysis of SIR Models for Epidemic Spread and Containment Strategies"
+  session_label: "Session 2"
+
+  mentor:
+    name: "Jacob Kapita"
+    lines:
+      - "Ph.D. Student"
+      - "Department of Mathematics"
+      - "Louisiana State University"
+
+  topic_area: "Biostatistics, Probability Theory, Data Science"
+
+  schedule:
+    timezone: "Central Time (CT)"
+    details: "Tentative Mon/Wed 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Microsoft Teams"
+    code_used: "Python"
+    needed: "Google Colab, Overleaf for presentations, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    Mathematical models play a crucial role in understanding the dynamics of infectious disease transmission and in guiding public health interventions. Among these models, the Susceptible–Infected–Recovered (SIR) model is one of the most widely used frameworks for studying epidemic spread.
+
+    The classical SIR model divides the population into three compartments—susceptible, infected, and recovered—and describes the transitions between these groups using systems of differential equations. However, real-world epidemics often involve additional complexities such as vaccination, quarantine measures, behavioral changes, and time-varying transmission rates.
+
+    In this project, students will conduct a comparative analysis of different SIR-based models to evaluate their effectiveness in describing epidemic spread and assessing the impact of containment strategies. Through mathematical analysis and numerical simulations, students will investigate how different model structures influence epidemic dynamics and the predicted outcomes of intervention strategies.
+
+  background: |
+    Basic arithmetic and algebra skills are sufficient for this project. Differential calculus and coding are not required, though they may be helpful. Necessary skills will be introduced as the project progresses.
+
+    This project provides an introduction to probability theory, biostatistics, and data analysis. Python in Google Colab will be used to generate results, and LaTeX Beamer in Overleaf will be used to prepare the final presentation.
+
+  possible_extension: |
+    The project may be extended to investigate stochastic SIR models, allowing for random variations in infection and recovery processes that occur in real epidemic scenarios.
+
+  references:
+    - "Kermack, W. O., and McKendrick, A. G. <i>A Contribution to the Mathematical Theory of Epidemics</i>. <i>Proceedings of the Royal Society A</i>, Vol. 115, 1927."
+    - "Hethcote, H. W. <i>The Mathematics of Infectious Diseases</i>. <i>SIAM Review</i>, 42(4), 2000."
+    - "Keeling, M. J., and Rohani, P. <i>Modeling Infectious Diseases in Humans and Animals</i>. Princeton University Press, 2008."
+    - "Bird, A. <i>A Simple Introduction to Epidemiological Modelling</i>. King’s College London, 2020."
+    - "Misra, S. <i>Mathematical Modeling of Infectious Disease Spread Using the SIR Model</i>. <i>Biomedical Journal of Scientific &amp; Technical Research</i>, 2024."
+
+- id: topic_03
+  sort_order: 3
+  title: "Coupling Times of Random Walks on Graphs: A Computational Study"
+  session_label: "Session 2"
+
+  mentor:
+    name: "Sixian Liu"
+    lines:
+      - "Graduate Research, Ph.D. Student"
+      - "Department of Applied Mathematics and Statistics"
+      - "Stony Brook University"
+
+  topic_area: "Probability Theory, Markov Chains, Graph Theory"
+
+  schedule:
+    timezone: "Eastern Time (ET)"
+    details: "Tentative Tue/Thu 7:00-8:30 PM ET; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Google Meet"
+    code_used: "Python"
+    needed: "Jupyter Notebook or Google Colab, Overleaf optional, and a computer with internet access"
+
+  project_overview: |
+    We study random walks on graphs, which provide a simple example of a Markov chain. A graph consists of nodes connected by edges. A random walk describes a process in which a walker moves from its current node to one of its neighboring nodes at random.
+
+    This process forms a Markov chain, meaning that the next position of the walker depends only on its current location and not on the past path it has taken. At each step, the walker selects its next move by choosing uniformly among the neighboring nodes. In other words, if a node has <i>d</i> neighbors, each neighbor is chosen with probability 1/<i>d</i>. The randomness can be generated by drawing a number from the uniform distribution
+
+    <div style="text-align:center;">
+    <i>U</i> ∼ Uniform(0, 1).
+    </div>
+
+    An interesting phenomenon occurs when two walkers move on the same graph using the same sequence of random numbers: although they may start at different nodes, they may eventually meet and then follow the same path thereafter.
+
+    A central question is how the structure of the graph influences the behavior of the random walk over time. In this project we will compare random walks on several types of graphs, such as line graphs, cycle graphs, and complete graphs. Students will simulate these random walks using computational tools such as Python and observe how the structure of the graph influences the time until the walkers meet.
+
+  background: |
+    This project assumes only basic familiarity with algebra and arithmetic. All additional concepts and tools required to study the problem will be introduced during the program. The project provides an accessible introduction to probability theory, graph theory, and Markov chains. During the experimental stage, students will implement simulations using computational tools such as Python. In preparing the final presentation, students may use tools such as PowerPoint, Jupyter Notebook, and/or Overleaf.
+
+  possible_extension: |
+    First, we may consider variations of the random walk, such as a lazy random walk, in which the walker stays at its current node with some probability before moving to a neighboring node. Second, we may simulate multiple walkers moving simultaneously on the graph and study their interaction over time. Finally, we may explore how the meeting time changes as the size of the graph increases.
+
+  references:
+    - "West, D. B. <i>Introduction to Graph Theory</i>, 2nd ed., Pearson Education, Inc., 2001."
+    - "Williamson, D. P. <i>ORIE 6334 Spectral Graph Theory: Lecture 11 – Random Walks on Graphs</i>, Cornell University, 2016."
+    - "Klappenecker, A. <i>Coupling of Markov Chains</i>, Texas A&amp;M University, Lecture Notes, 2018."
+
+- id: topic_04
+  sort_order: 4
+  title: "Exploring Balanced Incomplete Block Designs: Properties, Symmetry, and Applications"
+  session_label: "Session 2"
+
+  mentor:
+    name: "Lázaro Aguiar"
+    lines:
+      - "Math PhD Student"
+      - "Tulane University"
+
+  topic_area: "Combinatorics"
+
+  schedule:
+    timezone: "Central Time (CT)"
+    details: "Tentative Wed 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Zoom"
+    code_used: "Python (optional)"
+    needed: "A browser-based Python environment if needed, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    Combinatorial design theory focuses on organizing elements of a finite set into smaller groups that satisfy specific conditions. A particular case is <i>balanced incomplete block designs</i> (BIBDs), whose existence has been studied since the 18th century. A well-known example is <i>Kirkman’s Schoolgirl Problem</i>, which asks how to arrange a group of students into rows each day so that no two students walk together more than once in a week. This problem is, in fact, a specific instance of BIBDs, structures with applications in various fields.
+
+    The formal study of design theory emerged in the 20th century, driven by its use in statistical experimental design, particularly by Ronald Fisher. Today, combinatorial designs have applications in cryptography, tournament scheduling, network design, mathematical biology, and more. This project is structured into three weeks: the first introduces fundamental concepts of BIBDs, the second explores a special class known as <i>symmetric designs</i>, and the third examines structural relationships between designs, including <i>isomorphisms</i> and connections to other mathematical structures.
+
+  background: |
+    This project is designed to be self-contained; all necessary material will be introduced as we progress. High school mathematics is more than enough.
+
+    Coding experience in <i>Python</i> is helpful but not required; basic coding concepts will be introduced if needed.
+
+  possible_extension: |
+    Students may explore applications of this topic in <i>coding theory</i>, where combinatorial designs, including BIBDs, play a crucial role in constructing <i>error-correcting codes</i>. These codes are essential for ensuring reliable data transmission in communication systems by detecting and correcting errors. Additionally, combinatorial designs are useful in <i>cryptography</i>, particularly in the construction of secure encryption schemes. Further exploration could involve studying connections between BIBDs and <i>graph theory</i>, leading to advancements in network reliability and data security.
+
+  references:
+    - "Stinson, D. R. <i>Combinatorial Designs: Constructions and Analysis</i>. Springer, 2004."
+    - "Wan, Z. X. <i>Design Theory</i>. Higher Education Press and World Scientific, 2009."
+
