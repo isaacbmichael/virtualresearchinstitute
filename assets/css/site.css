@@ -3490,24 +3490,102 @@ body.circles-page .hero .hero-copy p {
 }
 
 /* ===================== Groups Page ===================== */
-body.groups-page .projects-hero .hero-copy h1 {
-  max-width: 18ch;
+body.groups-page .hero {
+  overflow: hidden;
+  padding-top: 58px;
+  padding-bottom: 54px;
 }
 
-body.groups-page .overview-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+body.groups-page .hero .hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body.groups-page .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(4, 60, 69, 0.92) 0%, rgba(3, 47, 56, 0.96) 100%),
+    radial-gradient(circle at 24% 28%, rgba(229, 181, 59, 0.10) 0%, transparent 22%),
+    radial-gradient(circle at 76% 24%, rgba(255, 255, 255, 0.07) 0%, transparent 26%),
+    radial-gradient(circle at 74% 72%, rgba(0, 113, 127, 0.12) 0%, transparent 24%),
+    linear-gradient(135deg, #0a5560 0%, #084a55 44%, #033843 100%);
+}
+
+body.groups-page .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 66% 30%, rgba(229, 181, 59, 0.10), transparent 18%),
+    radial-gradient(circle at 82% 68%, rgba(0, 113, 127, 0.12), transparent 24%);
+  filter: blur(10px);
+}
+
+body.groups-page .hero .hero-orbit {
+  border-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.44;
+}
+
+body.groups-page .hero .hero-orbit::before {
+  border-color: rgba(229, 181, 59, 0.14);
+}
+
+body.groups-page .hero .hero-orbit::after {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.groups-page .hero .eyebrow {
+  color: rgba(242, 224, 169, 0.96);
+}
+
+body.groups-page .hero .eyebrow::before {
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+  box-shadow: 0 0 18px rgba(229, 181, 59, 0.24);
+}
+
+body.groups-page .hero .hero-copy {
+  max-width: min(84%, 1480px);
+}
+
+body.groups-page .hero .hero-copy h1 {
+  color: #f8f4ea;
+  max-width: 100%;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.groups-page .hero .hero-copy p {
+  color: rgba(248, 244, 234, 0.84);
+  max-width: 100%;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
 @media (max-width: 1180px) {
+  body.groups-page .hero .hero-copy {
+    max-width: 100%;
+  }
+
   body.groups-page .overview-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  body.groups-page .projects-hero .hero-copy h1 {
-    max-width: 9ch;
+  body.groups-page .hero .hero-copy h1 {
+    max-width: 100%;
   }
+}
+
+body.groups-page .overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 /* ===================== FAQ-specific UI ===================== */
