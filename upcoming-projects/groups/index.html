@@ -1,0 +1,203 @@
+---
+layout: default
+title: Groups | Upcoming Projects | Virtual Research Institute
+description: Groups | Upcoming Projects at the Virtual Research Institute — current Group offerings organized by cohort, pricing, proposal details, and registration deadlines.
+permalink: /upcoming-projects/groups/
+body_class: groups-page circles-page
+explore_key: upcoming-projects
+on_this_page:
+  - label: Current Cohort
+    href: "#groups-current-cohort"
+  - label: Questions
+    href: "#questions"
+---
+
+<script>
+    /*
+      Gold CTA control:
+      Change only the value of window.GOLD_CTA_STATE below.
+
+      Allowed values:
+      - "register"  -> Register Now
+      - "interest"  -> Join the Interest List
+      - "waitlist"  -> Join the Waitlist
+    */
+    window.GOLD_CTA_STATE = "register";
+
+    window.GOLD_CTA_OPTIONS = {
+      register: {
+        label: "Register Now",
+        href: "https://lsu.formstack.com/forms/vri_student_registration"
+      },
+      interest: {
+        label: "Join the Interest List",
+        href: "https://lsu.formstack.com/forms/vri_interest_list"
+      },
+      waitlist: {
+        label: "Join the Waitlist",
+        href: "https://lsu.formstack.com/forms/vri_waitlist"
+      }
+    };
+  </script>
+
+<section class="hero projects-hero">
+  <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Tier II · Groups</div>
+          <h1>Current Group offerings.</h1>
+          <p>
+            Groups are VRI’s smaller, more intensive public research offerings. Review the current
+            cohort, compare proposals, and register before the listed deadline.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+            <a class="btn btn-secondary" href="/programs/">Programs &amp; Pricing</a>
+            <a class="btn btn-secondary" href="/faq/">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="groups">
+      <div class="shell">
+        <div class="section-head reveal">
+  <div>
+    <p class="section-label">Current Public Cohort</p>
+    <h2>Review the current cohort, then compare proposals.</h2>
+  </div>
+  <p class="section-intro">
+    Open any proposal below to review the mentor, background, preparation, and student setup.
+  </p>
+</div>
+
+<div class="pathway-banner reveal">
+  <div>
+    <strong>Format:</strong> Fully online &nbsp;·&nbsp;
+    <strong>Cohort size:</strong> {{ site.data.pathways.groups.cohort_size }} &nbsp;·&nbsp;
+    <strong>Duration:</strong> {{ site.data.pathways.groups.duration }} &nbsp;·&nbsp;
+    <strong>Tuition:</strong> {{ site.data.pathways.groups.price }}
+  </div>
+  <div style="margin-top: 10px;">
+    Group placement may involve additional readiness and fit review depending on the topic and mentor.
+    Students should expect live mentor-led sessions plus meaningful independent work between meetings.
+    Final weekly meeting times are confirmed after placement, so exact days and times may vary by cohort and mentor.
+  </div>
+</div>
+
+        <div class="session-stack">
+
+          <article class="session-card reveal" id="groups-current-cohort">
+  <div class="session-headline">
+    <div>
+      <p class="session-kicker">Groups · Current Cohort</p>
+      <h3>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</h3>
+      <p class="session-intro">Browse current Group proposals.</p>
+    </div>
+  </div>
+  <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.groups.current_cohort.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
+            <div class="project-list">
+              {% assign group_proposals = site.data.proposals.groups | sort: "sort_order" %}
+              {% for proposal in group_proposals %}
+              <details class="project-item reveal">
+                <summary>
+                  <span class="project-summary-text">
+                    <span class="project-summary-title">{{ proposal.title }}</span>
+
+                  <div class="project-summary-meta">
+                    <span class="meta-chip">{{ proposal.cohort_label }}</span>
+                    <span class="meta-chip">{{ proposal.mentor.name }}</span>
+                  </div>
+                  <p class="project-summary-sub">{{ proposal.topic_area }}</p>
+
+                  </span>
+                </summary>
+                <div class="project-body">
+                  <div class="proposal-shell">
+                    <div class="proposal-topline"></div>
+                    <div class="proposal-heading">
+                      <div>
+                        <p class="proposal-kicker">Research Proposal</p>
+                        <h4>{{ proposal.title }}</h4>
+                      </div>
+                      <div class="proposal-badges" aria-label="Proposal quick facts">
+                        <span>{{ proposal.cohort_label }}</span>
+                      </div>
+                    </div>
+
+                    <div class="proposal-facts">
+                      <div class="fact-card">
+                        <span class="fact-label">Mentor</span>
+                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}<br />{% endfor %}<strong>Time Zone:</strong> {{ proposal.mentor.timezone }}</div>
+                      </div>
+                      <div class="fact-card">
+                        <span class="fact-label">Topic area</span>
+                        <div class="fact-body">{{ proposal.topic_area }}</div>
+                      </div>
+
+                      <div class="fact-card">
+                        <span class="fact-label">Preparation</span>
+                        <div class="fact-body">{{ proposal.preparation }}</div>
+                      </div>
+
+                      <div class="fact-card">
+                        <span class="fact-label">Format note</span>
+                        <div class="fact-body">{{ proposal.format_note }}</div>
+                      </div>
+</div>
+
+                    <div class="proposal-copy-grid">
+                      <section class="proposal-copy-block">
+                        <h5>Project overview</h5>
+                        <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Background</h5>
+                        <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Possible extension</h5>
+                        <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Selected references</h5>
+                        <div class="copy-body"><ol class="project-references">
+{% for ref in proposal.references %}
+<li>
+            {{ ref }}
+          </li>
+{% endfor %}
+</ol></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </details>
+              {% endfor %}
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="questions">
+  <div class="shell">
+    <div class="cta-panel reveal">
+      <div>
+        <p class="section-label">Questions</p>
+        <h3>Need help before you register?</h3>
+        <p>
+          Review the FAQ or Programs page if you need more information.
+          When you’re ready, begin registration below.
+        </p>
+      </div>
+      <div class="quick-links">
+        <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register Now</a>
+        <a class="quick-chip quick-chip-teal" href="/faq/">FAQ</a>
+        <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
