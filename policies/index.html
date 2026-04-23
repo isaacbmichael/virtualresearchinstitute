@@ -41,6 +41,73 @@ on_this_page:
     };
   </script>
 
+<style>
+  body.policies-page .policy-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 26px;
+    padding-top: 6px;
+    align-items: center;
+  }
+
+  body.policies-page .policy-nav a {
+    display: inline-block;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    color: rgba(248, 244, 234, 0.94);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    text-decoration: none;
+    position: relative;
+    transition: color .25s var(--ease), opacity .25s var(--ease);
+  }
+
+  body.policies-page .policy-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.42;
+    transform: scaleX(0.78);
+    transform-origin: left center;
+    transition: transform .25s var(--ease), opacity .25s var(--ease);
+  }
+
+  body.policies-page .policy-nav a:hover,
+  body.policies-page .policy-nav a:focus-visible {
+    transform: none;
+    box-shadow: none;
+    background: none;
+    color: #ffffff;
+  }
+
+  body.policies-page .policy-nav a:hover::after,
+  body.policies-page .policy-nav a:focus-visible::after {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+
+  @media (max-width: 640px) {
+    body.policies-page .policy-nav {
+      gap: 10px 16px;
+    }
+
+    body.policies-page .policy-nav a {
+      font-size: 0.92rem;
+    }
+  }
+</style>
+
 <section class="hero">
   <div class="hero-orbit" aria-hidden="true"></div>
 
@@ -49,10 +116,9 @@ on_this_page:
       <div class="eyebrow">Policies &amp; Procedures</div>
       <h1>A rigorous governance framework for online mentored research.</h1>
       <p>
-        This page summarizes the governing standards, operating expectations,
-        and protective procedures that shape participation in Virtual Research Institute LLC.
-        It is designed to give students, families, mentors, and partners a clear public view of
-        VRI’s expectations while preserving the full detail of the formal manual and companion agreements.
+        This page provides a public overview of the policies, standards, and procedures that guide participation in
+        Virtual Research Institute LLC. It is intended to help students, families, mentors, and partners understand
+        how VRI approaches enrollment, conduct, safety, privacy, documentation, and review.
       </p>
 
       <nav class="policy-nav" aria-label="Policy sections">
@@ -68,548 +134,546 @@ on_this_page:
   </div>
 </section>
 
-    <section class="section" id="overview">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Framework Overview</p>
-            <h2>A public summary of a larger operating and legal structure.</h2>
-          </div>
-          <p class="section-intro">
-            The VRI Policies &amp; Procedures Manual functions as a master governance document.
-            It is designed to work alongside enrollment forms, mentor agreements, media releases,
-            payment terms, and internal operating procedures. This page highlights the main standards
-            that prospective and current participants are most likely to consult.
+<section class="section" id="overview">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Framework Overview</p>
+        <h2>A public guide to the policies that shape participation at VRI.</h2>
+      </div>
+      <p class="section-intro">
+        This page highlights the main standards most relevant to students, families, mentors, and partners.
+        The full manual and any signed agreements remain the more complete sources where detailed language
+        or program-specific terms are needed.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Purpose</div>
+        <h3>Clear expectations, a professional environment, and a reliable process</h3>
+        <p>
+          VRI’s policy framework is designed to explain expectations clearly, support a serious academic environment,
+          and provide a fair and documented process for how important concerns are handled.
+        </p>
+        <ul>
+          <li>Clear expectations for students, families, mentors, and staff</li>
+          <li>Defined processes for reporting, review, documentation, and response</li>
+          <li>Public-facing guidance aligned with a fuller downloadable manual</li>
+        </ul>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Important Note</div>
+        <h3>This page is a summary; fuller documents may also apply.</h3>
+        <p>
+          This webpage is designed to be readable and practical, not exhaustive. Participation in VRI may also be
+          governed by session-specific forms, signed agreements, acknowledgments, and program communications
+          that apply to a particular student, family, mentor, or partner.
+        </p>
+        <ul>
+          <li>Policies may be updated from time to time</li>
+          <li>Continued participation depends on compliance with applicable terms</li>
+          <li>VRI may interpret and apply its policies in good faith</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="feature-band reveal" style="margin-top: 24px;">
+      <div class="feature-band-grid">
+        <div>
+          <p class="section-label">Use of This Page</p>
+          <h3>Start here for clarity. Use the PDF for the fuller policy framework.</h3>
+          <p>
+            The manual provides more detailed language on governance, conduct, documentation, payment structure,
+            privacy, youth protection, intellectual property, and review procedures. Readers who need the fuller
+            version should consult the PDF directly.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Purpose</div>
-            <h3>Clarity, consistency, and protection</h3>
-            <p>
-              VRI’s policy framework is designed to clarify expectations, maintain a professional academic environment,
-              support fair and consistent decision-making, and strengthen operational protection for the institute,
-              its mentors, and its participants.
-            </p>
-            <ul>
-              <li>Clear expectations for students, families, mentors, and staff</li>
-              <li>Defined procedures for reporting, review, documentation, and response</li>
-              <li>Public-facing guidance that aligns with a fuller downloadable manual</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Important Note</div>
-            <h3>This page summarizes; the full manual and signed agreements govern.</h3>
-            <p>
-              This webpage is intended to be readable and navigable, not exhaustive. Participation in VRI may also be governed by
-              specific agreements, acknowledgments, forms, and program communications that apply to a student, family, mentor, or partner.
-            </p>
-            <ul>
-              <li>Policies may be updated from time to time</li>
-              <li>Continued participation is conditioned on compliance</li>
-              <li>VRI reserves authority to interpret and apply its policies in good faith</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="feature-band reveal" style="margin-top: 24px;">
-          <div class="feature-band-grid">
-            <div>
-              <p class="section-label">Use of This Page</p>
-              <h3>Read online for clarity. Download the manual for the full framework.</h3>
-              <p>
-                The manual contains deeper detail on governance, conduct, documentation,
-                payment structure, privacy, youth protection, intellectual property, and review procedures.
-                Families, mentors, and partners who need the fullest version should consult the PDF directly.
-              </p>
-            </div>
-
-            <div class="feature-quote">
-              <strong>Downloadable source</strong>
-              <p>
-                <a href="/legal/policies/VRI_Policies_and_Procedures_Manual.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">VRI Policies &amp; Procedures Manual (PDF)</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="enrollment">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Enrollment &amp; Payments</p>
-            <h2>Clear standards for deposits, tuition, refunds, scheduling, and participation readiness.</h2>
-          </div>
-          <p class="section-intro">
-            VRI treats registration, placement, group formation, and payment planning as substantial operational commitments.
-            Students and families should review timelines, communication expectations, and financial terms carefully before enrolling.
+        <div class="feature-quote">
+          <strong>Downloadable source</strong>
+          <p>
+            <a href="/legal/policies/VRI_Policies_and_Procedures_Manual.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">VRI Policies &amp; Procedures Manual (PDF)</a>
           </p>
         </div>
-
-        <div class="policy-list reveal">
-          <details class="policy-detail" open>
-            <summary>Enrollment, eligibility, and seat reservation</summary>
-            <div class="policy-detail-body">
-              <p>
-                A student is not considered fully enrolled until all required registration steps, acknowledgments,
-                and payments have been completed by the applicable deadline. VRI may deny, defer, or withdraw placement where needed to maintain academic fit,
-                safety, operational feasibility, or compliance with institute requirements.
-              </p>
-              <ul>
-                <li>Applications and registration materials must be accurate and complete.</li>
-                <li>Placement may depend on project feasibility, mentor availability, cohort viability, and scheduling compatibility.</li>
-                <li>VRI may merge, reassign, postpone, or cancel under-enrolled or operationally infeasible sections.</li>
-                <li>Participation is a privilege, not a guaranteed entitlement.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Deposits, tuition, withdrawals, and refund review</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI may require a non-refundable registration deposit to reserve a place and support mentor and cohort planning.
-                Remaining tuition deadlines, any partial-refund windows, and session-specific deadlines are communicated in program materials and governing forms.
-              </p>
-              <ul>
-                <li>Deposits are generally non-refundable except where VRI cancels a session or cannot place a student.</li>
-                <li>Refund requests must be made in writing and are not automatically granted.</li>
-                <li>Refunds requested after substantial services have already been delivered may be denied.</li>
-                <li>Students dismissed for misconduct, repeated non-participation, or material policy violations are generally not eligible for refunds.</li>
-                <li>Requests submitted late in a session may be reviewed, but review does not create an entitlement to a refund.</li>
-              </ul>
-              <div class="term-note">
-                Families should rely on the specific payment and withdrawal terms provided for the relevant session. The downloadable manual and signed forms govern in the event of conflict.
-              </div>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Scheduling, time zones, attendance readiness, and program fit</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI programs are live, online, and collaborative. Families are responsible for reviewing published expectations, mentor time zones when disclosed,
-                and the likely scheduling demands of the program before enrollment. A student’s ability to participate is part of program fit.
-              </p>
-              <ul>
-                <li>Students and families are responsible for making sure they can participate in the meeting times reasonably required for the cohort.</li>
-                <li>Sessions may be scheduled around mentor availability and majority-group feasibility rather than a single family’s preference.</li>
-                <li>Repeated missed sessions, chronic lateness, or persistent non-participation may affect continued enrollment and refund eligibility.</li>
-                <li>VRI is not responsible for local technology failures, travel conflicts, extracurricular conflicts, or late-disclosed schedule constraints not caused by VRI.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section" id="students">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Students &amp; Families</p>
-            <h2>Professional expectations for participation, communication, and conduct.</h2>
-          </div>
-          <p class="section-intro">
-            VRI is designed as a high-standard academic environment. Students are expected to engage with maturity, consistency, and professionalism,
-            and parents or guardians play an important supporting role in communication, compliance, and responsible participation.
+<section class="section" id="enrollment">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Enrollment &amp; Payments</p>
+        <h2>Standards for registration, payment, scheduling, and readiness.</h2>
+      </div>
+      <p class="section-intro">
+        Registration, placement, group formation, and payment deadlines matter. Students and families should review
+        program timing, communication expectations, and financial terms carefully before enrolling.
+      </p>
+    </div>
+
+    <div class="policy-list reveal">
+      <details class="policy-detail" open>
+        <summary>Enrollment, eligibility, and seat reservation</summary>
+        <div class="policy-detail-body">
+          <p>
+            A student is not considered fully enrolled until all required registration steps, acknowledgments,
+            and payments have been completed by the applicable deadline. VRI may deny, defer, or adjust placement when needed to support
+            academic fit, safety, scheduling, program capacity, or compliance with institute requirements.
           </p>
+          <ul>
+            <li>Applications and registration materials must be accurate and complete.</li>
+            <li>Placement may depend on project feasibility, mentor availability, cohort viability, and scheduling compatibility.</li>
+            <li>VRI may merge, reassign, postpone, or cancel under-enrolled or otherwise unworkable sections.</li>
+            <li>Participation is a privilege, not a guaranteed entitlement.</li>
+          </ul>
         </div>
+      </details>
 
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Student Standards</div>
-            <h3>Preparation, integrity, and professional conduct</h3>
-            <p>
-              Students are expected to attend meetings on time, prepare thoughtfully, respond professionally,
-              meet deadlines in good faith, support teammates, and uphold academic integrity across all research work,
-              communications, and program-related activity.
-            </p>
-            <ul>
-              <li>Respect peers, mentors, staff, and guests in speech, writing, chat, and on camera</li>
-              <li>Use only approved communication channels for program business</li>
-              <li>Disclose and use outside tools, sources, and AI ethically and transparently when required</li>
-              <li>Follow mentor and staff instructions that support program integrity, safety, and group function</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Parent / Guardian Role</div>
-            <h3>Review, consent, and shared responsibility</h3>
-            <p>
-              For minor participants, parents or guardians are expected to review applicable policies with the student,
-              support compliance with schedules and communication expectations, and help ensure that the student participates in an appropriate learning environment.
-            </p>
-            <ul>
-              <li>Registration information must be accurate to the best of the family’s knowledge</li>
-              <li>Parents/guardians should review conduct, safety, communication, and payment terms with the student</li>
-              <li>Good-faith concerns should be communicated promptly rather than held until the end of a session</li>
-              <li>Parents/guardians may be contacted regarding attendance, conduct, safety, and review matters</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="policy-list reveal" style="margin-top: 24px;">
-          <details class="policy-detail" open>
-            <summary>Academic integrity, research ethics, and no guaranteed outcomes</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI is a research-first environment. Students must present honest work, appropriately acknowledge sources and collaborators,
-                and avoid plagiarism, fabrication, misrepresentation, or unauthorized assistance. Participation does not guarantee publication,
-                authorship, recommendation letters, awards, admission advantages, or any other specific external outcome.
-              </p>
-              <ul>
-                <li>Students should discuss authorship and project credit openly with mentors when appropriate.</li>
-                <li>Use of AI or computational tools may be restricted, disclosed, or prohibited depending on the project or assignment.</li>
-                <li>VRI may remove a student from a project, withhold a certificate, or restrict participation if research integrity is compromised.</li>
-                <li>Output quality and publication viability depend on many factors and are not guaranteed by tuition or participation alone.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Behavior, bullying, harassment, retaliation, and mixed-community appropriateness</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI maintains a zero-tolerance position toward bullying, discriminatory harassment, retaliation, threats, stalking,
-                doxxing, humiliation, coercion, sexually explicit or sexually suggestive conduct, or other behavior that undermines safety,
-                dignity, or scholarly participation.
-              </p>
-              <ul>
-                <li>Speech and conduct should be suitable for a professional academic environment and, where relevant, a mixed-age learning community.</li>
-                <li>Students may not share sexually explicit content, engage in romantic or sexual behavior in any VRI context, or retaliate against reporters or witnesses.</li>
-                <li>Private harassment through text, chat, social media, or direct messaging related to the program may be treated as a VRI conduct matter.</li>
-                <li>Significant or repeated violations may lead to immediate interim restrictions or removal while review is ongoing.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="mentors">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Mentor Standards</p>
-            <h2>Professional mentoring, accurate representation, and required documentation.</h2>
-          </div>
-          <p class="section-intro">
-            VRI mentors are expected to combine strong subject-matter expertise with professionalism, reliability, and mature judgment.
-            Mentor obligations are shaped not only by teaching quality, but also by safeguarding, documentation, and faithful performance of agreed work.
+      <details class="policy-detail">
+        <summary>Deposits, tuition, withdrawals, and refund review</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI may require a non-refundable registration deposit to reserve a place and support mentor and cohort planning.
+            Remaining tuition deadlines, any partial-refund windows, and session-specific terms are communicated in the relevant program materials and governing forms.
           </p>
-        </div>
-
-        <div class="policy-list reveal">
-          <details class="policy-detail" open>
-            <summary>Eligibility, truthful representation, and contractor status</summary>
-            <div class="policy-detail-body">
-              <p>
-                Mentors may be asked to provide background information, a current CV or resume, academic or professional affiliations,
-                work authorization information where relevant, and supporting documentation needed for onboarding. Material misrepresentation may be grounds for denial, termination, withholding of assignments, or other action.
-              </p>
-              <ul>
-                <li>Mentors must not misrepresent degrees, publications, affiliations, teaching history, certifications, or work authorization.</li>
-                <li>Mentors engaged through VRI are generally expected to operate as independent contractors unless otherwise agreed in writing.</li>
-                <li>Independent-contractor mentors are not permanent employees and are not entitled to employee benefits unless required by law or expressly stated in a separate written agreement.</li>
-                <li>Mentors may not bind VRI, represent themselves as VRI officers, or use VRI branding except as authorized.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Professional setup, approved communications, and student boundaries</summary>
-            <div class="policy-detail-body">
-              <p>
-                Mentors should maintain a professional, private, quiet, and appropriately presented teaching environment for live sessions.
-                Communications with students must use approved VRI channels unless expressly authorized otherwise.
-              </p>
-              <ul>
-                <li>Mentors should not teach from cars, beds, bathrooms, noisy public settings, or similarly unsuitable spaces.</li>
-                <li>Personal social-media contact, unapproved direct messaging, or personal-phone communications with students are generally prohibited.</li>
-                <li>Unauthorized in-person meetings, private unsupervised arrangements, or off-platform side relationships are not permitted.</li>
-                <li>Mentors must never engage in sexually suggestive, romantic, exploitative, or otherwise inappropriate conduct with students.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Documentation, attendance records, summaries, and deliverables</summary>
-            <div class="policy-detail-body">
-              <p>
-                Documentation is part of professional performance at VRI. Mentors may be required to keep or submit attendance records,
-                meeting notes, progress summaries, incident documentation, and final deliverables as a condition of good standing and payment processing.
-              </p>
-              <div class="policy-mini-grid">
-                <div class="policy-mini-card">
-                  <strong>Session records</strong>
-                  <p>Meeting dates, start/end times, attendance confirmations, major topics covered, assignments, and notable participation issues.</p>
-                </div>
-                <div class="policy-mini-card">
-                  <strong>Progress summaries</strong>
-                  <p>Concise updates that reflect project direction, student engagement, milestones, and any concerns requiring follow-up.</p>
-                </div>
-                <div class="policy-mini-card">
-                  <strong>Incident reporting</strong>
-                  <p>Prompt escalation of conduct, safety, technology, harassment, or integrity issues, with factual documentation.</p>
-                </div>
-                <div class="policy-mini-card">
-                  <strong>Final materials</strong>
-                  <p>Required project outputs, mentor closing notes, archive materials, and other items specified for the program.</p>
-                </div>
-              </div>
-              <div class="term-note">
-                VRI may condition compensation on satisfactory completion of required documentation, deliverables, onboarding, and payment-processing steps.
-              </div>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Compensation timing, taxes, and side-payment restrictions</summary>
-            <div class="policy-detail-body">
-              <p>
-                Mentor compensation structures are governed by the applicable agreement, payment schedule, and onboarding requirements.
-                VRI does not expect to prepay mentors before work begins unless separately agreed in writing.
-              </p>
-              <ul>
-                <li>Payment may be tied to session completion, documentation submission, and final approval of required deliverables.</li>
-                <li>Mentors are responsible for accurate tax and payment information and for their own tax compliance unless required otherwise by law.</li>
-                <li>Mentors may not accept unauthorized direct payments from families for VRI-related services without written institute approval.</li>
-                <li>Where background checks, identity verification, or payment-platform setup are required, VRI may delay assignment or payment until those steps are completed.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="safety">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Safety, Review &amp; Enforcement</p>
-            <h2>Prompt reporting, interim measures, and structured review.</h2>
+          <ul>
+            <li>Deposits are generally non-refundable except where VRI cancels a session or cannot place a student.</li>
+            <li>Refund requests must be made in writing and are not automatically granted.</li>
+            <li>Refunds requested after substantial services have already been delivered may be denied.</li>
+            <li>Students dismissed for misconduct, repeated non-participation, or material policy violations are generally not eligible for refunds.</li>
+            <li>Requests submitted late in a session may be reviewed, but review does not create an entitlement to a refund.</li>
+          </ul>
+          <div class="term-note">
+            Families should rely on the specific payment and withdrawal terms provided for the relevant session. The downloadable manual and signed forms govern in the event of conflict.
           </div>
-          <p class="section-intro">
-            VRI is committed to responding to concerns in a timely, documented, and proportionate manner. Not every issue requires the same response,
-            but significant conduct, safety, or integrity matters may trigger immediate protective action while review is ongoing.
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Scheduling, time zones, attendance readiness, and program fit</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI programs are live, online, and collaborative. Families are responsible for reviewing published expectations, mentor time zones when disclosed,
+            and the likely scheduling demands of the program before enrollment. A student’s ability to participate is part of overall program fit.
           </p>
+          <ul>
+            <li>Students and families are responsible for making sure they can participate in the meeting times reasonably required for the cohort.</li>
+            <li>Sessions may be scheduled around mentor availability and majority-group feasibility rather than a single family’s preference.</li>
+            <li>Repeated missed sessions, chronic lateness, or persistent non-participation may affect continued enrollment and refund eligibility.</li>
+            <li>VRI is not responsible for local technology failures, travel conflicts, extracurricular conflicts, or late-disclosed schedule constraints not caused by VRI.</li>
+          </ul>
         </div>
+      </details>
+    </div>
+  </div>
+</section>
 
-        <div class="grid-3">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Reporting</div>
-            <h3>Raise concerns promptly</h3>
-            <p>
-              Students, families, mentors, and staff are encouraged to report safety concerns, misconduct,
-              harassment, boundary issues, significant technology issues, and academic-integrity concerns as soon as possible.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Interim Measures</div>
-            <h3>Protect the community while matters are reviewed</h3>
-            <p>
-              Interim steps may include temporary communication restrictions, separation from a group,
-              supervision adjustments, suspension from meetings, or other reasonable protective measures.
-            </p>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Outcomes</div>
-            <h3>Responses are scaled to severity and recurrence</h3>
-            <p>
-              Outcomes may range from coaching and warnings to role restrictions, dismissal, future ineligibility,
-              or referral to outside authorities when appropriate.
-            </p>
-          </article>
-        </div>
-
-        <div class="policy-list reveal" style="margin-top: 24px;">
-          <details class="policy-detail" open>
-            <summary>Reporting expectations and safeguarding escalation</summary>
-            <div class="policy-detail-body">
-              <p>
-                Good-faith reports are reviewed promptly. Depending on the nature of the concern, VRI may gather facts,
-                review available records, consult relevant staff or mentors, and determine whether interim measures are appropriate.
-                Concerns involving minors, harassment, exploitation, sexual misconduct, abuse, threats, or urgent safety risks should be escalated immediately.
-              </p>
-              <ul>
-                <li>Participants should report concerns promptly rather than waiting until the end of a term.</li>
-                <li>Mentors and staff may be required to escalate concerns involving abuse, neglect, self-harm risk, or similar safety issues in accordance with applicable law and institute procedure.</li>
-                <li>Unauthorized guests, suspicious access, or platform breaches should be reported quickly.</li>
-                <li>Retaliation against a reporter, witness, or cooperating participant is itself a major policy concern.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Review process, interim measures, and standards of assessment</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI may use a staged internal review process in which an initial assessment determines whether a matter requires no action,
-                educational correction, warning-level response, or more formal review. VRI may act on a good-faith determination that a violation more likely than not occurred,
-                consistent with its policies and available information.
-              </p>
-              <ul>
-                <li>Interim measures are protective, not final findings.</li>
-                <li>VRI may consult prior warnings, patterns of conduct, and operational impact when determining outcomes.</li>
-                <li>Where needed, VRI may restrict participation during review to protect the safety or integrity of the program.</li>
-                <li>VRI reserves authority to remove a participant or mentor when continued participation is inconsistent with institute standards.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Possible outcomes, dismissal, and appeal review</summary>
-            <div class="policy-detail-body">
-              <p>
-                Depending on severity, recurrence, and risk, VRI responses may include coaching, written warnings,
-                parent/guardian notification, reassignments, restricted privileges, temporary suspension, removal from a project,
-                dismissal from the program, termination of mentor engagement, future ineligibility, or referral to outside authorities when appropriate.
-              </p>
-              <ul>
-                <li>Dismissal may occur without a lengthy formal process when VRI determines that safety, compliance, or program integrity requires prompt action.</li>
-                <li>Dismissal or withdrawal following notice of significant policy concerns may affect refund eligibility.</li>
-                <li>Where VRI permits an appeal or review request, the process may be limited in scope and time.</li>
-                <li>VRI may determine that some decisions are final after internal review.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
+<section class="section" id="students">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Students &amp; Families</p>
+        <h2>Professional expectations for participation, communication, and conduct.</h2>
       </div>
-    </section>
+      <p class="section-intro">
+        VRI is designed as a serious academic environment. Students are expected to engage with maturity, consistency, and professionalism,
+        and parents or guardians play an important supporting role in communication, compliance, and responsible participation.
+      </p>
+    </div>
 
-    <section class="section" id="privacy">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Privacy, Recordings &amp; Media</p>
-            <h2>Professional use of data, recordings, images, and program materials.</h2>
-          </div>
-          <p class="section-intro">
-            VRI uses online tools, shared documents, and in some cases recordings or media assets to support program delivery,
-            quality control, documentation, archiving, and institute communications. Use of these materials is governed by policy,
-            consent language, and applicable agreements.
+    <div class="grid-2">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Student Standards</div>
+        <h3>Preparation, integrity, and professional conduct</h3>
+        <p>
+          Students are expected to attend meetings on time, prepare thoughtfully, respond professionally,
+          meet deadlines in good faith, support teammates, and uphold academic integrity across research work,
+          communications, and program-related activity.
+        </p>
+        <ul>
+          <li>Respect peers, mentors, staff, and guests in speech, writing, chat, and on camera</li>
+          <li>Use only approved communication channels for program business</li>
+          <li>Disclose and use outside tools, sources, and AI ethically and transparently when required</li>
+          <li>Follow mentor and staff instructions that support program integrity, safety, and group function</li>
+        </ul>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Parent / Guardian Role</div>
+        <h3>Review, consent, and shared responsibility</h3>
+        <p>
+          For minor participants, parents or guardians are expected to review applicable policies with the student,
+          support compliance with schedules and communication expectations, and help ensure that the student participates in an appropriate learning environment.
+        </p>
+        <ul>
+          <li>Registration information must be accurate to the best of the family’s knowledge</li>
+          <li>Parents/guardians should review conduct, safety, communication, and payment terms with the student</li>
+          <li>Good-faith concerns should be communicated promptly rather than held until the end of a session</li>
+          <li>Parents/guardians may be contacted regarding attendance, conduct, safety, and review matters</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="policy-list reveal" style="margin-top: 24px;">
+      <details class="policy-detail" open>
+        <summary>Academic integrity, research ethics, and no guaranteed outcomes</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI is a research-first environment. Students must present honest work, appropriately acknowledge sources and collaborators,
+            and avoid plagiarism, fabrication, misrepresentation, or unauthorized assistance. Participation does not guarantee publication,
+            authorship, recommendation letters, awards, admission advantages, or any other specific external outcome.
           </p>
+          <ul>
+            <li>Students should discuss authorship and project credit openly with mentors when appropriate.</li>
+            <li>Use of AI or computational tools may be restricted, disclosed, or prohibited depending on the project or assignment.</li>
+            <li>VRI may remove a student from a project, withhold a certificate, or restrict participation if research integrity is compromised.</li>
+            <li>Output quality and publication viability depend on many factors and are not guaranteed by tuition or participation alone.</li>
+          </ul>
         </div>
+      </details>
 
-        <div class="policy-list reveal">
-          <details class="policy-detail" open>
-            <summary>Approved systems, privacy expectations, and unauthorized recording</summary>
-            <div class="policy-detail-body">
-              <p>
-                Participants should use approved devices, platforms, and communication tools for VRI work.
-                Meeting links, credentials, and private group materials should not be shared outside the program.
-                Unauthorized recording, screenshotting, reposting, or redistribution may be treated as a significant privacy or conduct violation.
-              </p>
-              <ul>
-                <li>Students and mentors should not store sensitive VRI materials in unapproved personal systems where policy prohibits it.</li>
-                <li>Access credentials should be protected and not shared with outside parties.</li>
-                <li>Third-party tools may be restricted or require disclosure, especially when minors or external accounts are involved.</li>
-                <li>Privacy expectations apply to chat, audio, video, screenshots, personal information, and project materials.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Recordings, archive use, and promotional media</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI may record certain research sessions, presentations, or events, and may use selected video, audio, still images,
-                or project materials for internal documentation, educational review, archival preservation, or promotional purposes,
-                subject to applicable releases and permissions.
-              </p>
-              <ul>
-                <li>Students and families may be asked to review and consent to media and recording terms during registration.</li>
-                <li>Mentors may also be asked to consent to use of name, affiliation, likeness, and project-related public materials.</li>
-                <li>Archive or promotional use does not imply guarantee of publication, endorsement, or compensation unless separately agreed.</li>
-                <li>VRI aims to use such materials responsibly and in a manner consistent with its educational and institutional mission.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="policy-detail">
-            <summary>Data use, security limits, and responsible disclosure</summary>
-            <div class="policy-detail-body">
-              <p>
-                VRI seeks to handle personal, academic, payment, and administrative information responsibly and through appropriate systems.
-                At the same time, no online system can guarantee absolute security. Participants should use reasonable caution and promptly report known concerns.
-              </p>
-              <ul>
-                <li>Information may be shared internally or with relevant service providers, partners, or institutions where needed for program administration and permitted by policy or agreement.</li>
-                <li>Participants should not assume that informal channels provide the same privacy protection as approved program systems.</li>
-                <li>VRI may preserve records as needed for administration, review, compliance, and archive purposes.</li>
-                <li>Questions about privacy, media use, or specific concerns should be directed to VRI promptly.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="brand">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Brand, IP &amp; Confidentiality</p>
-            <h2>Protecting VRI’s name, materials, structure, and business model.</h2>
-          </div>
-          <p class="section-intro">
-            VRI’s brand identity, logos, design materials, curriculum structures, internal documents, templates,
-            and operating framework are part of the institute’s business value. This section summarizes the institute’s position on brand use,
-            confidentiality, and improper appropriation of its materials or model.
+      <details class="policy-detail">
+        <summary>Behavior, bullying, harassment, retaliation, and community standards</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI does not allow bullying, discriminatory harassment, retaliation, threats, stalking,
+            doxxing, humiliation, coercion, sexually explicit or sexually suggestive conduct, or other behavior that undermines safety,
+            dignity, or scholarly participation.
           </p>
+          <ul>
+            <li>Speech and conduct should be suitable for a professional academic environment and, where relevant, a mixed-age learning community.</li>
+            <li>Students may not share sexually explicit content, engage in romantic or sexual behavior in any VRI context, or retaliate against reporters or witnesses.</li>
+            <li>Private harassment through text, chat, social media, or direct messaging related to the program may be treated as a VRI conduct matter.</li>
+            <li>Significant or repeated violations may lead to immediate interim restrictions or removal while review is ongoing.</li>
+          </ul>
         </div>
+      </details>
+    </div>
+  </div>
+</section>
 
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Brand &amp; Trademarks</div>
-            <h3>Do not use VRI’s name or visual identity without authorization.</h3>
-            <p>
-              VRI’s name, logos, marks, public branding, and associated visual identity should not be copied,
-              republished, or used in a way that implies sponsorship, affiliation, endorsement, or official authorization unless VRI has given prior written permission.
-            </p>
-            <ul>
-              <li>No unauthorized use of logos, names, or branded assets</li>
-              <li>No misleading affiliation claims</li>
-              <li>No unauthorized promotional or commercial use of VRI’s identity</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Confidentiality &amp; Non-Circumvention</div>
-            <h3>Program access does not grant permission to copy the business model.</h3>
-            <p>
-              Access to VRI’s internal materials, program architecture, mentor systems, templates, or operational processes does not grant a right to reproduce,
-              commercialize, or repurpose them for competing services or unauthorized outside use.
-            </p>
-            <ul>
-              <li>Confidential materials should not be redistributed without authorization</li>
-              <li>Participants and mentors should not use VRI relationships to bypass institute processes improperly</li>
-              <li>Specific contractual restrictions may apply through companion agreements</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="cta-panel reveal">
-          <div>
-            <h3>Need the complete institutional framework?</h3>
-            <p>
-              The full manual includes broader language on governance, documentation, payment structure,
-              conduct review, media usage, confidentiality, and institute protections. It remains the best single reference point for the larger framework.
-            </p>
-          </div>
-
-          <div class="quick-links">
-            <a class="btn btn-primary" href="/legal/policies/VRI_Policies_and_Procedures_Manual.pdf" target="_blank" rel="noopener">Download Full Manual</a>
-            <a class="quick-chip quick-chip-teal" href="/faq/">FAQ</a>
-            <a class="quick-chip quick-chip-teal" href="/about/">About VRI</a>
-          </div>
-        </div>
+<section class="section" id="mentors">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Mentor Standards</p>
+        <h2>Professional mentoring, accurate representation, and required documentation.</h2>
       </div>
-    </section>
+      <p class="section-intro">
+        VRI mentors are expected to bring strong subject-matter expertise, professionalism, reliability, and mature judgment.
+        Their responsibilities include not only strong mentoring, but also appropriate boundaries, documentation, and faithful completion of agreed work.
+      </p>
+    </div>
+
+    <div class="policy-list reveal">
+      <details class="policy-detail" open>
+        <summary>Eligibility, truthful representation, and contractor status</summary>
+        <div class="policy-detail-body">
+          <p>
+            Mentors may be asked to provide background information, a current CV or resume, academic or professional affiliations,
+            work authorization information where relevant, and supporting documentation needed for onboarding. Material misrepresentation may be grounds for denial, termination, withholding of assignments, or other action.
+          </p>
+          <ul>
+            <li>Mentors must not misrepresent degrees, publications, affiliations, teaching history, certifications, or work authorization.</li>
+            <li>Mentors engaged through VRI are generally expected to operate as independent contractors unless otherwise agreed in writing.</li>
+            <li>Independent-contractor mentors are not permanent employees and are not entitled to employee benefits unless required by law or expressly stated in a separate written agreement.</li>
+            <li>Mentors may not bind VRI, represent themselves as VRI officers, or use VRI branding except as authorized.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Professional setup, approved communications, and student boundaries</summary>
+        <div class="policy-detail-body">
+          <p>
+            Mentors should maintain a professional, private, quiet, and appropriately presented environment for live sessions.
+            Communications with students must use approved VRI channels unless expressly authorized otherwise.
+          </p>
+          <ul>
+            <li>Mentors should not teach from cars, beds, bathrooms, noisy public settings, or similarly unsuitable spaces.</li>
+            <li>Personal social-media contact, unapproved direct messaging, or personal-phone communications with students are generally prohibited.</li>
+            <li>Unauthorized in-person meetings, private unsupervised arrangements, or off-platform side relationships are not permitted.</li>
+            <li>Mentors must never engage in sexually suggestive, romantic, exploitative, or otherwise inappropriate conduct with students.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Documentation, attendance records, summaries, and deliverables</summary>
+        <div class="policy-detail-body">
+          <p>
+            Documentation is part of professional practice at VRI. Mentors may be required to keep or submit attendance records,
+            meeting notes, progress summaries, incident documentation, and final deliverables as a condition of good standing and payment processing.
+          </p>
+          <div class="policy-mini-grid">
+            <div class="policy-mini-card">
+              <strong>Session records</strong>
+              <p>Meeting dates, start/end times, attendance confirmations, major topics covered, assignments, and notable participation issues.</p>
+            </div>
+            <div class="policy-mini-card">
+              <strong>Progress summaries</strong>
+              <p>Concise updates reflecting project direction, student engagement, milestones, and any concerns requiring follow-up.</p>
+            </div>
+            <div class="policy-mini-card">
+              <strong>Incident reporting</strong>
+              <p>Prompt escalation of conduct, safety, technology, harassment, or integrity issues, with factual documentation.</p>
+            </div>
+            <div class="policy-mini-card">
+              <strong>Final materials</strong>
+              <p>Required project outputs, mentor closing notes, archive materials, and other items specified for the program.</p>
+            </div>
+          </div>
+          <div class="term-note">
+            Required documentation and deliverables may be part of good standing and payment processing.
+          </div>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Compensation timing, taxes, and side-payment restrictions</summary>
+        <div class="policy-detail-body">
+          <p>
+            Mentor compensation structures are governed by the applicable agreement, payment schedule, and onboarding requirements.
+            Unless separately agreed in writing, VRI does not generally prepay mentors before work begins.
+          </p>
+          <ul>
+            <li>Payment may be tied to session completion, documentation submission, and final approval of required deliverables.</li>
+            <li>Mentors are responsible for accurate tax and payment information and for their own tax compliance unless required otherwise by law.</li>
+            <li>Mentors may not accept unauthorized direct payments from families for VRI-related services without written institute approval.</li>
+            <li>Where background checks, identity verification, or payment-platform setup are required, VRI may delay assignment or payment until those steps are completed.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="safety">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Safety, Review &amp; Enforcement</p>
+        <h2>Prompt reporting, interim measures, and structured review.</h2>
+      </div>
+      <p class="section-intro">
+        VRI is committed to responding to concerns in a timely, documented, and proportionate manner. Not every issue requires the same response,
+        but significant conduct, safety, or integrity matters may call for immediate protective action while review is ongoing.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Reporting</div>
+        <h3>Raise concerns promptly</h3>
+        <p>
+          Students, families, mentors, and staff are encouraged to report safety concerns, misconduct,
+          harassment, boundary issues, significant technology issues, and academic-integrity concerns as soon as possible.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Interim Measures</div>
+        <h3>Protect the community while matters are reviewed</h3>
+        <p>
+          Interim steps may include temporary communication restrictions, separation from a group,
+          supervision adjustments, suspension from meetings, or other reasonable protective measures.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Outcomes</div>
+        <h3>Responses are scaled to severity and recurrence</h3>
+        <p>
+          Outcomes may range from coaching and warnings to role restrictions, dismissal, future ineligibility,
+          or referral to outside authorities when appropriate.
+        </p>
+      </article>
+    </div>
+
+    <div class="policy-list reveal" style="margin-top: 24px;">
+      <details class="policy-detail" open>
+        <summary>Reporting expectations and safeguarding escalation</summary>
+        <div class="policy-detail-body">
+          <p>
+            Good-faith reports are reviewed promptly. Depending on the nature of the concern, VRI may gather facts,
+            review available records, consult relevant staff or mentors, and determine whether interim measures are appropriate.
+            Concerns involving minors, harassment, exploitation, sexual misconduct, abuse, threats, or urgent safety risks should be escalated immediately.
+          </p>
+          <ul>
+            <li>Participants should report concerns promptly rather than waiting until the end of a term.</li>
+            <li>Mentors and staff may be required to escalate concerns involving abuse, neglect, self-harm risk, or similar safety issues in accordance with applicable law and institute procedure.</li>
+            <li>Unauthorized guests, suspicious access, or platform breaches should be reported quickly.</li>
+            <li>Retaliation against a reporter, witness, or cooperating participant is itself a major policy concern.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Review process, interim measures, and standards of assessment</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI may use a staged review process in which an initial assessment determines whether a matter requires no action,
+            educational correction, warning-level response, or more formal review. VRI may act on a good-faith determination that a violation more likely than not occurred,
+            consistent with its policies and available information.
+          </p>
+          <ul>
+            <li>Interim measures are protective, not final findings.</li>
+            <li>VRI may consult prior warnings, patterns of conduct, and program impact when determining outcomes.</li>
+            <li>Where needed, VRI may restrict participation during review to protect the safety or integrity of the program.</li>
+            <li>VRI may remove a participant or mentor when continued participation is inconsistent with institute standards.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Possible outcomes, dismissal, and appeal review</summary>
+        <div class="policy-detail-body">
+          <p>
+            Depending on severity, recurrence, and risk, VRI responses may include coaching, written warnings,
+            parent/guardian notification, reassignments, restricted privileges, temporary suspension, removal from a project,
+            dismissal from the program, termination of mentor engagement, future ineligibility, or referral to outside authorities when appropriate.
+          </p>
+          <ul>
+            <li>Dismissal may occur without a lengthy formal process when VRI determines that safety, compliance, or program integrity requires prompt action.</li>
+            <li>Dismissal or withdrawal following notice of significant policy concerns may affect refund eligibility.</li>
+            <li>Where VRI permits an appeal or review request, the process may be limited in scope and time.</li>
+            <li>VRI may determine that some decisions are final after internal review.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="privacy">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Privacy, Recordings &amp; Media</p>
+        <h2>Professional use of data, recordings, images, and program materials.</h2>
+      </div>
+      <p class="section-intro">
+        Because VRI operates online, privacy, recordings, and responsible use of materials matter. Online tools, shared documents,
+        and in some cases recordings or media assets may be used to support program delivery, documentation, archiving,
+        quality review, and institute communications.
+      </p>
+    </div>
+
+    <div class="policy-list reveal">
+      <details class="policy-detail" open>
+        <summary>Approved systems, privacy expectations, and unauthorized recording</summary>
+        <div class="policy-detail-body">
+          <p>
+            Participants should use approved devices, platforms, and communication tools for VRI work.
+            Meeting links, credentials, and private group materials should not be shared outside the program.
+            Unauthorized recording, screenshotting, reposting, or redistribution may be treated as a significant privacy or conduct violation.
+          </p>
+          <ul>
+            <li>Students and mentors should not store sensitive VRI materials in unapproved personal systems where policy prohibits it.</li>
+            <li>Access credentials should be protected and not shared with outside parties.</li>
+            <li>Third-party tools may be restricted or require disclosure, especially when minors or external accounts are involved.</li>
+            <li>Privacy expectations apply to chat, audio, video, screenshots, personal information, and project materials.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Recordings, archive use, and public-facing media</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI may record certain research sessions, presentations, or events, and may use selected video, audio, still images,
+            or project materials for documentation, educational review, archive preservation, or institute communications,
+            subject to applicable releases and permissions.
+          </p>
+          <ul>
+            <li>Students and families may be asked to review and consent to media and recording terms during registration.</li>
+            <li>Mentors may also be asked to consent to use of name, affiliation, likeness, and project-related public materials.</li>
+            <li>Archive or public-facing use does not imply guaranteed publication, endorsement, or compensation unless separately agreed.</li>
+            <li>VRI aims to use such materials responsibly and in a manner consistent with its educational mission.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="policy-detail">
+        <summary>Data use, security limits, and responsible disclosure</summary>
+        <div class="policy-detail-body">
+          <p>
+            VRI seeks to handle personal, academic, payment, and administrative information responsibly and through appropriate systems.
+            At the same time, no online system can guarantee absolute security. Participants should use reasonable caution and promptly report known concerns.
+          </p>
+          <ul>
+            <li>Information may be shared internally or with relevant service providers, partners, or institutions where needed for program administration and permitted by policy or agreement.</li>
+            <li>Participants should not assume that informal channels provide the same privacy protection as approved program systems.</li>
+            <li>VRI may preserve records as needed for administration, review, compliance, and archive purposes.</li>
+            <li>Questions about privacy, media use, or specific concerns should be directed to VRI promptly.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brand">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Brand, IP &amp; Confidentiality</p>
+        <h2>Use of VRI’s name, materials, and confidential information.</h2>
+      </div>
+      <p class="section-intro">
+        VRI’s name, branding, materials, and program structures should be used respectfully and only as authorized.
+        This section summarizes expectations around brand use, confidentiality, and misuse of institute materials.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Brand &amp; Trademarks</div>
+        <h3>Do not use VRI’s name or visual identity without authorization.</h3>
+        <p>
+          VRI’s name, logos, marks, public branding, and associated visual identity should not be copied,
+          republished, or used in a way that implies sponsorship, affiliation, endorsement, or official authorization unless VRI has given prior written permission.
+        </p>
+        <ul>
+          <li>No unauthorized use of logos, names, or branded assets</li>
+          <li>No misleading affiliation claims</li>
+          <li>No unauthorized promotional or commercial use of VRI’s identity</li>
+        </ul>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Confidentiality &amp; Appropriate Use</div>
+        <h3>Participation does not grant permission to reuse confidential materials or replicate VRI programs.</h3>
+        <p>
+          Access to VRI’s internal materials, program structures, mentor systems, templates, or operating processes does not grant a right to reproduce,
+          commercialize, or repurpose them for competing services or unauthorized outside use.
+        </p>
+        <ul>
+          <li>Confidential materials should not be redistributed without authorization</li>
+          <li>Participants and mentors should not use VRI relationships to bypass institute processes improperly</li>
+          <li>Specific contractual restrictions may apply through companion agreements</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="cta-panel reveal">
+      <div>
+        <h3>Need the complete policy document?</h3>
+        <p>
+          The full manual includes broader language on governance, documentation, payment structure,
+          conduct review, media usage, confidentiality, and institute protections. It remains the most complete single reference point for the broader framework.
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <a class="btn btn-primary" href="/legal/policies/VRI_Policies_and_Procedures_Manual.pdf" target="_blank" rel="noopener">Download Full Manual</a>
+        <a class="quick-chip quick-chip-teal" href="/faq/">FAQ</a>
+        <a class="quick-chip quick-chip-teal" href="/about/">About VRI</a>
+      </div>
+    </div>
+  </div>
+</section>
