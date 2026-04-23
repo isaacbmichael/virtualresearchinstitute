@@ -213,6 +213,7 @@
 const mobileSubnavTriggers = mobilePanel.querySelectorAll(
   '[aria-controls="mobileSubnavUpcoming"]'
 );
+let mobileSubnavHideTimer = null;
 
 const getMobileSubnavExpanded = () => {
   if (!mobileSubnavTriggers.length) return false;
@@ -228,6 +229,7 @@ const syncMobileSubnavTriggers = (isExpanded) => {
 const applyMobileSubnavState = (isExpanded, { immediate = false } = {}) => {
   if (!mobileSubnav || !mobileSubnavTriggers.length) return;
 
+  window.clearTimeout(mobileSubnavHideTimer);
   syncMobileSubnavTriggers(isExpanded);
 
   if (prefersReducedMotion || immediate) {
@@ -243,6 +245,11 @@ const applyMobileSubnavState = (isExpanded, { immediate = false } = {}) => {
     });
   } else {
     mobileSubnav.classList.remove("is-open");
+    mobileSubnavHideTimer = window.setTimeout(() => {
+      if (!getMobileSubnavExpanded()) {
+        mobileSubnav.hidden = true;
+      }
+    }, 620);
   }
 };
 
@@ -258,9 +265,10 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
 
   mobileSubnav.addEventListener("transitionend", (event) => {
     if (event.target !== mobileSubnav) return;
-    if (!["grid-template-rows", "height"].includes(event.propertyName)) return;
+    if (event.propertyName !== "grid-template-rows") return;
 
     if (!getMobileSubnavExpanded()) {
+      window.clearTimeout(mobileSubnavHideTimer);
       mobileSubnav.hidden = true;
     }
   });
