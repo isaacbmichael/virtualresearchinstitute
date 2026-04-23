@@ -1,1 +1,45 @@
+- id: updating-beliefs
+  title: "Learning from Evidence: The Mathematics of Updating Beliefs"
+  session_label: "Session 1"
 
+  mentor:
+    name: "Dr. Mario Stipčić"
+    lines:
+      - "Preceptor in Mathematics"
+      - "Department of Mathematics"
+      - "Harvard University"
+
+  topic_area: "Probability Theory, Bayesian Statistics"
+
+  schedule:
+    timezone: "Eastern Time (ET)"
+    details: "Tentative Tue/Thu 6:30-8:00 PM ET; final meeting times are subject to change based on overall group availability."
+
+  technology:
+    platform: "Zoom"
+    code_used: "R"
+    needed: "RStudio, a computer with internet access, and a working microphone/camera"
+
+  project_overview: |
+    Suppose that you want to determine whether you have a certain rare disease. You take a test with very high accuracy, which rarely misclassifies individuals as carriers or non-carriers. If your test result is positive, how likely is it that you actually have the disease?
+
+    Surprisingly, the answer is often much smaller than one might expect; in fact, the probability may be so small that you most likely do not carry the disease at all. This scenario illustrates the importance of Bayes’ Theorem, one of the most fundamental results in probability theory.
+
+    In this project, students will develop a strong understanding of Bayes’ rule in both theoretical and practical settings. They will build probabilistic intuition and mathematical modeling skills by studying both the motivation behind the theorem and its formal mathematical statement. We will then transition to more complex scenarios involving medical diagnosis, machine learning classification, and statistical inference.
+
+    Students will also gain hands-on experience using R to analyze data, visualize distributions, and draw conclusions based on numerical computation and statistical summaries.
+
+  background: |
+    Basic probability knowledge is recommended for better understanding of the topic. Still, we will provide a brief overview of probability in both discrete and geometric settings, along with an introduction to rigorous mathematical notation.
+
+    For this project, we will use RStudio to write code in R. Before the first meeting, students should install this program or another environment for working with R. However, no prior coding experience is required; students will work with prewritten code and learn how to modify it for their own purposes.
+
+    Apart from this, no particular background knowledge is required.
+
+  possible_extension: |
+    Students may compare Bayesian methods with other standard approaches in statistics and data science. Possible directions include studying Bayesian inference alongside maximum likelihood estimation and confidence interval methods, or exploring classification problems through Bayesian classifiers and logistic regression.
+
+  references:
+    - "Blitzstein, J., and Hwang, J. Introduction to Probability, CRC Press, 2019."
+    - "Rice, J. Mathematical Statistics and Data Analysis, 3rd ed., Cengage Learning, 2006."
+    - "James, G., Witten, D., Hastie, T., and Tibshirani, R. An Introduction to Statistical Learning: with Applications in R, Springer, 2021."
