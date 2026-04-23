@@ -100,106 +100,98 @@ on_this_page:
   </div>
   <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.circles.session_1.registration_deadline }}. Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
             <div class="project-list">
-              <p><strong>TEST:</strong> {{ site.data.proposals.circles_session_1[0].title }}</p>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Learning from Evidence: The Mathematics of Updating Beliefs</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 1</span>
-                  <span class="meta-chip">Dr. Mario Stipčić</span>
-                </div>
-                <p class="project-summary-sub">Probability Theory, Bayesian Statistics</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Learning from Evidence: The Mathematics of Updating Beliefs</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 1</span>
-                    </div>
-                  </div>
+              
+            {% assign proposal = site.data.proposals.circles_session_1 | first %}
+<details class="project-item reveal">
+  <summary>
+    <span class="project-summary-text">
+      <span class="project-summary-title">{{ proposal.title }}</span>
 
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Dr. Mario Stipčić<br />Preceptor in Mathematics<br />Department of Mathematics<br />Harvard University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Probability Theory, Bayesian Statistics</div>
-                    </div>
-                  
-                    <div class="fact-card">
+      <div class="project-summary-meta">
+        <span class="meta-chip">{{ proposal.session_label }}</span>
+        <span class="meta-chip">{{ proposal.mentor.name | upcase }}</span>
+      </div>
+      <p class="project-summary-sub">{{ proposal.topic_area }}</p>
+    </span>
+  </summary>
+  <div class="project-body">
+    <div class="proposal-shell">
+      <div class="proposal-topline"></div>
+      <div class="proposal-heading">
+        <div>
+          <p class="proposal-kicker">Research Proposal</p>
+          <h4>{{ proposal.title }}</h4>
+        </div>
+        <div class="proposal-badges" aria-label="Proposal quick facts">
+          <span>{{ proposal.session_label }}</span>
+        </div>
+      </div>
 
-                  
-                      <span class="fact-label">Schedule</span>
+      <div class="proposal-facts">
+        <div class="fact-card">
+          <span class="fact-label">Mentor</span>
+          <div class="fact-body">
+            {{ proposal.mentor.name }}<br />
+            {% for line in proposal.mentor.lines %}
+              {{ line }}{% unless forloop.last %}<br />{% endunless %}
+            {% endfor %}
+          </div>
+        </div>
 
-                  
-                      <div class="fact-body">Eastern Time (ET)<br />Tentative Tue/Thu 6:30-8:00 PM ET; final meeting times are subject to change based on overall group availability.</div>
+        <div class="fact-card">
+          <span class="fact-label">Topic area</span>
+          <div class="fact-body">{{ proposal.topic_area }}</div>
+        </div>
 
-                  
-                    </div>
+        <div class="fact-card">
+          <span class="fact-label">Schedule</span>
+          <div class="fact-body">
+            {{ proposal.schedule.timezone }}<br />
+            {{ proposal.schedule.details }}
+          </div>
+        </div>
 
-                  
-                    <div class="fact-card">
+        <div class="fact-card">
+          <span class="fact-label">Technology</span>
+          <div class="fact-body">
+            Video platform: {{ proposal.technology.platform }}<br />
+            Code used: {{ proposal.technology.code_used }}<br />
+            Technology needed: {{ proposal.technology.needed }}
+          </div>
+        </div>
+      </div>
 
-                  
-                      <span class="fact-label">Technology</span>
+      <div class="proposal-copy-grid">
+        <section class="proposal-copy-block">
+          <h5>Project overview</h5>
+          <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
+        </section>
 
-                  
-                      <div class="fact-body">Video platform: Zoom<br />Code used: R<br />Technology needed: RStudio, a computer with internet access, and a working microphone/camera</div>
+        <section class="proposal-copy-block">
+          <h5>Background</h5>
+          <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
+        </section>
 
-                  
-                    </div>
-</div>
+        <section class="proposal-copy-block">
+          <h5>Possible extension</h5>
+          <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
+        </section>
 
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Suppose that you want to determine whether you have a certain rare disease. You take a test with very high accuracy, which rarely misclassifies individuals as carriers or non-carriers. If your test result is positive, how likely is it that you actually have the disease?<br/><br/>
-
-        Surprisingly, the answer is often much smaller than one might expect; in fact, the probability may be so small that you most likely do not carry the disease at all. This scenario illustrates the importance of Bayes’ Theorem, one of the most fundamental results in probability theory.<br/><br/>
-
-        In this project, students will develop a strong understanding of Bayes’ rule in both theoretical and practical settings. They will build probabilistic intuition and mathematical modeling skills by studying both the motivation behind the theorem and its formal mathematical statement. We will then transition to more complex scenarios involving medical diagnosis, machine learning classification, and statistical inference.<br/><br/>
-
-        Students will also gain hands-on experience using R to analyze data, visualize distributions, and draw conclusions based on numerical computation and statistical summaries.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">Basic probability knowledge is recommended for better understanding of the topic. Still, we will provide a brief overview of probability in both discrete and geometric settings, along with an introduction to rigorous mathematical notation.<br/><br/>
-        For this project, we will use RStudio to write code in R. Before the first meeting, students should install this program or another environment for working with R. However, no prior coding experience is required; students will work with prewritten code and learn how to modify it for their own purposes.<br/><br/>
-        Apart from this, no particular background knowledge is required.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">Students may compare Bayesian methods with other standard approaches in statistics and data science. Possible directions include studying Bayesian inference alongside maximum likelihood estimation and confidence interval methods, or exploring classification problems through Bayesian classifiers and logistic regression.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            Blitzstein, J., and Hwang, J. <i>Introduction to Probability</i>, CRC Press, 2019.
-          </li>
-<li>
-            Rice, J. <i>Mathematical Statistics and Data Analysis</i>, 3rd ed., Cengage Learning, 2006.
-          </li>
-<li>
-            James, G., Witten, D., Hastie, T., and Tibshirani, R. <i>An Introduction to Statistical Learning: with Applications in R</i>, Springer, 2021.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
+        <section class="proposal-copy-block">
+          <h5>Selected references</h5>
+          <div class="copy-body">
+            <ol class="project-references">
+              {% for ref in proposal.references %}
+                <li>{{ ref }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</details>
+              
             <details class="project-item reveal">
               <summary>
                 <span class="project-summary-text">
