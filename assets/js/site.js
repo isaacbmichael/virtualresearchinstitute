@@ -8,6 +8,9 @@
 
   const goldCtaOptions = window.GOLD_CTA_OPTIONS || {};
   const goldCtaState = window.GOLD_CTA_STATE || "register";
+  if (goldCtaOptions.register) {
+    goldCtaOptions.register.label = "Register";
+  }
   const activeGoldCta = goldCtaOptions[goldCtaState] || goldCtaOptions.register;
 
   if (activeGoldCta) {
@@ -24,6 +27,37 @@
       }
     });
   }
+
+  function normalizeButtonLikeLabels() {
+    const canonicalLabelsByPath = new Map([
+      ["/upcoming-projects/", "Upcoming Projects"],
+      ["/programs/", "Programs & Pricing"],
+      ["/about/", "About VRI"],
+      ["/research-archive/", "Research Archive"],
+      ["/faq/", "FAQ"],
+      ["/policies/", "Policies & Procedures"],
+      ["/legal/policies/VRI_Policies_and_Procedures_Manual.pdf", "Full Manual"]
+    ]);
+
+    document.querySelectorAll('a.btn, a.quick-chip, a[data-gold-cta]').forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      let url;
+      try {
+        url = new URL(href, window.location.origin);
+      } catch (error) {
+        return;
+      }
+
+      const canonicalLabel = canonicalLabelsByPath.get(url.pathname);
+      if (!canonicalLabel) return;
+
+      link.textContent = canonicalLabel;
+    });
+  }
+
+  normalizeButtonLikeLabels();
 
   const header = document.getElementById("siteHeader");
   const mainContent = document.getElementById("main-content");
