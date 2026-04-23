@@ -1,17 +1,10 @@
 ---
 layout: default
 title: Upcoming Projects | Virtual Research Institute
-description: Upcoming Projects at the Virtual Research Institute — current research offerings organized by pathway, pricing, and registration details.
+description: Upcoming Projects at the Virtual Research Institute — choose between current Circles and Groups offerings.
 permalink: /upcoming-projects/
 body_class: upcoming-projects-page
 explore_key: upcoming-projects
-on_this_page:
-  - label: Overview
-    href: "#overview"
-  - label: Circles
-    href: "#circles"
-  - label: Groups
-    href: "#groups"
 ---
 
 <script>
@@ -48,10 +41,10 @@ on_this_page:
   <div class="shell hero-grid">
     <div class="hero-copy reveal">
       <div class="eyebrow">Upcoming Projects</div>
-      <h1>Choose the right pathway first.</h1>
+      <h1>Choose between Circles and Groups.</h1>
       <p>
-        Start here with the two main public pathways. Circles are the broader public entry point.
-        Groups are smaller, more intensive, and better suited to students ready for deeper sustained work.
+        Start here, then go directly to the current public offerings. Circles are the broader public entry point.
+        Groups are smaller and more intensive.
       </p>
 
       <div class="hero-actions">
@@ -67,64 +60,31 @@ on_this_page:
   <div class="shell">
     <div class="section-head reveal">
       <div>
-        <p class="section-label">Overview</p>
-        <h2>Two public pathways.</h2>
+        <p class="section-label">Choose a Path</p>
+        <h2>Select the pathway you want to explore.</h2>
       </div>
       <p class="section-intro">
-        Choose the structure that best fits the student’s readiness, preferred pace, and level of mentor interaction.
+        Choose one route to view the current offerings.
       </p>
     </div>
 
-    <div class="overview-grid">
-      <a class="card reveal pathway-card" id="circles" href="/upcoming-projects/circles/" aria-label="View Circles">
-        <div class="card-label">Tier I</div>
+    <div class="overview-grid overview-grid-hub">
+      <a class="card reveal pathway-card pathway-card-circles" id="circles" href="/upcoming-projects/circles/" aria-label="Go to Circles">
+        <span class="pathway-card-kicker">Tier I</span>
         <h3>Circles</h3>
         <p>
-          Structured and scalable mentored research experiences designed to introduce students to serious research habits
-          in an accessible but still rigorous environment.
+          Broader public entry point for students building research readiness in a guided cohort setting.
         </p>
-
-        <div class="pill-row" aria-label="Circles quick facts">
-          <span class="pill">{{ site.data.pathways.circles.cohort_size }}</span>
-          <span class="pill">{{ site.data.pathways.circles.duration }}</span>
-          <span class="pill">{{ site.data.pathways.circles.price }}</span>
-        </div>
-
-        <ul class="clean-list">
-          <li>Broader public entry point</li>
-          <li>Two public sessions</li>
-          <li>Strong option for students building research readiness</li>
-        </ul>
-
-        <div class="term-note">
-          Circles include two public entry points so families can choose the timing that best fits the student.
-        </div>
-
+        <span class="pathway-card-meta">View current Circles offerings</span>
       </a>
 
-      <a class="card reveal pathway-card" id="groups" href="/upcoming-projects/groups/" aria-label="View Groups">
-        <div class="card-label">Tier II</div>
+      <a class="card reveal pathway-card pathway-card-groups" id="groups" href="/upcoming-projects/groups/" aria-label="Go to Groups">
+        <span class="pathway-card-kicker">Tier II</span>
         <h3>Groups</h3>
         <p>
-          Smaller collaborative cohorts with more intensive mentor interaction, greater ownership,
-          and a closer resemblance to a premium boutique research experience.
+          Smaller and more intensive pathway for students ready for deeper sustained work.
         </p>
-
-        <div class="pill-row" aria-label="Groups quick facts">
-          <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
-          <span class="pill">{{ site.data.pathways.groups.duration }}</span>
-          <span class="pill">{{ site.data.pathways.groups.price }}</span>
-        </div>
-
-        <ul class="clean-list">
-          <li>Smaller and more intensive than Circles</li>
-          <li>One public cohort</li>
-          <li>Better suited to students ready for deeper sustained work</li>
-        </ul>
-
-        <div class="term-note">
-          Group placement may involve additional readiness and fit review for the pathway and topic.
-        </div>
+        <span class="pathway-card-meta">View current Groups offerings</span>
       </a>
     </div>
   </div>
