@@ -204,391 +204,97 @@ on_this_page:
   </div>
   <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.circles.session_2.registration_deadline }}. Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
             <div class="project-list">
-              
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Simulating Flow in a Channel with Obstacles</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 2</span>
-                  <span class="meta-chip">Irene Erazo</span>
-                </div>
-                <p class="project-summary-sub">Applied Mathematics</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Simulating Flow in a Channel with Obstacles</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 2</span>
-                    </div>
+              {% assign session_2_proposals = site.data.proposals.circles_session_2 | sort: "sort_order" %}
+              {% for proposal in session_2_proposals %}
+              <details class="project-item reveal">
+                <summary>
+                  <span class="project-summary-text">
+                    <span class="project-summary-title">{{ proposal.title }}</span>
+
+                  <div class="project-summary-meta">
+                    <span class="meta-chip">{{ proposal.session_label }}</span>
+                    <span class="meta-chip">{{ proposal.mentor.name | upcase }}</span>
                   </div>
+                  <p class="project-summary-sub">{{ proposal.topic_area }}</p>
 
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Irene Erazo<br />Ph.D. Student in Mathematics<br />Department of Mathematics<br />Tulane University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Applied Mathematics</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Central Time (CT)<br />Tentative Tue/Thu 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability.</div>
-
-                  
+                  </span>
+                </summary>
+                <div class="project-body">
+                  <div class="proposal-shell">
+                    <div class="proposal-topline"></div>
+                    <div class="proposal-heading">
+                      <div>
+                        <p class="proposal-kicker">Research Proposal</p>
+                        <h4>{{ proposal.title }}</h4>
+                      </div>
+                      <div class="proposal-badges" aria-label="Proposal quick facts">
+                        <span>{{ proposal.session_label }}</span>
+                      </div>
                     </div>
 
-                  
-                    <div class="fact-card">
+                    <div class="proposal-facts">
+                      <div class="fact-card">
+                        <span class="fact-label">Mentor</span>
+                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</div>
+                      </div>
+                      <div class="fact-card">
+                        <span class="fact-label">Topic area</span>
+                        <div class="fact-body">{{ proposal.topic_area }}</div>
+                      </div>
 
-                  
-                      <span class="fact-label">Technology</span>
+                      <div class="fact-card">
 
-                  
-                      <div class="fact-body">Video platform: Zoom<br />Code used: Python<br />Technology needed: Google Colab or Anaconda/Jupyter, a computer with internet access, and a working microphone/camera</div>
 
-                  
-                    </div>
+                        <span class="fact-label">Schedule</span>
+
+
+                        <div class="fact-body">{{ proposal.schedule.timezone }}<br />{{ proposal.schedule.details }}</div>
+
+
+                      </div>
+
+
+                      <div class="fact-card">
+
+
+                        <span class="fact-label">Technology</span>
+
+
+                        <div class="fact-body">Video platform: {{ proposal.technology.platform }}<br />Code used: {{ proposal.technology.code_used }}<br />Technology needed: {{ proposal.technology.needed }}</div>
+
+
+                      </div>
 </div>
 
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Simulating real-world phenomena is essential across many disciplines, particularly in fluid dynamics, where understanding flow behavior plays a key role in physical applications. This project focuses on situations in which the relevant length scales are very small or the fluid has high viscosity. Such conditions frequently arise in biological systems, making the study of fluid flow important in areas such as microbiology and biomedical engineering.<br/><br/>
-
-        In this project, students will explore how fluids move through a channel containing obstacles using mathematical models and computer simulations. First, we will develop a numerical method to compute fluid flow when forces are prescribed. Once this method is established, we will simulate different scenarios—such as fluid moving around obstacles—to observe how these barriers affect the speed and direction of the flow.<br/><br/>
-
-        By visualizing these effects, students will gain insight into real-world applications, including the design of efficient waterways and the prediction of how flows behave in constrained environments.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project is self-contained and does not require prior exposure to high school calculus. Basic concepts from precalculus, linear algebra, and ordinary differential equations will be introduced throughout the program.<br/><br/>
-        Students will also be introduced to basic coding as needed. This project provides an accessible introduction to the use of ordinary differential equations and computational methods to model fluid flow in a channel with obstacles.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">In the base model, obstacles are represented as isolated points within a channel. A natural extension is to consider flow around fixed line obstacles. Students may also explore how different solid obstacle shapes influence flow patterns and system behavior.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
+                    <div class="proposal-copy-grid">
+                      <section class="proposal-copy-block">
+                        <h5>Project overview</h5>
+                        <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Background</h5>
+                        <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Possible extension</h5>
+                        <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Selected references</h5>
+                        <div class="copy-body"><ol class="project-references">
+{% for ref in proposal.references %}
 <li>
-            Cortez, R. <i>The method of regularized Stokeslets</i>, <i>SIAM Journal on Scientific Computing</i>, 23(4), 1204–1225, 2001.
+            {{ ref }}
           </li>
-<li>
-            Cortez, R., Fauci, L., and Medovikov, A. <i>The method of regularized Stokeslets in three dimensions: analysis, validation, and application to helical swimming</i>, <i>Physics of Fluids</i>, 17(3), 2005.
-          </li>
+{% endfor %}
 </ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Comparative Analysis of SIR Models for Epidemic Spread and Containment Strategies</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 2</span>
-                  <span class="meta-chip">Jacob Kapita</span>
-                </div>
-                <p class="project-summary-sub">Biostatistics, Probability Theory, Data Science</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Comparative Analysis of SIR Models for Epidemic Spread and Containment Strategies</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 2</span>
+                      </section>
                     </div>
                   </div>
-
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Jacob Kapita<br />Ph.D. Student<br />Department of Mathematics<br />Louisiana State University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Biostatistics, Probability Theory, Data Science</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Central Time (CT)<br />Tentative Mon/Wed 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Microsoft Teams<br />Code used: Python<br />Technology needed: Google Colab, Overleaf for presentations, a computer with internet access, and a working microphone/camera</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Mathematical models play a crucial role in understanding the dynamics of infectious disease transmission and in guiding public health interventions. Among these models, the Susceptible–Infected–Recovered (SIR) model is one of the most widely used frameworks for studying epidemic spread.<br/><br/>
-        The classical SIR model divides the population into three compartments—susceptible, infected, and recovered—and describes the transitions between these groups using systems of differential equations. However, real-world epidemics often involve additional complexities such as vaccination, quarantine measures, behavioral changes, and time-varying transmission rates.<br/><br/>
-        In this project, students will conduct a comparative analysis of different SIR-based models to evaluate their effectiveness in describing epidemic spread and assessing the impact of containment strategies. Through mathematical analysis and numerical simulations, students will investigate how different model structures influence epidemic dynamics and the predicted outcomes of intervention strategies.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">Basic arithmetic and algebra skills are sufficient for this project. Differential calculus and coding are not required, though they may be helpful. Necessary skills will be introduced as the project progresses.<br/><br/>
-        This project provides an introduction to probability theory, biostatistics, and data analysis. Python in Google Colab will be used to generate results, and LaTeX Beamer in Overleaf will be used to prepare the final presentation.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">The project may be extended to investigate stochastic SIR models, allowing for random variations in infection and recovery processes that occur in real epidemic scenarios.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            Kermack, W. O., and McKendrick, A. G. <i>A Contribution to the Mathematical Theory of Epidemics</i>. <i>Proceedings of the Royal Society A</i>, Vol. 115, 1927.
-          </li>
-<li>
-            Hethcote, H. W. <i>The Mathematics of Infectious Diseases</i>. <i>SIAM Review</i>, 42(4), 2000.
-          </li>
-<li>
-            Keeling, M. J., and Rohani, P. <i>Modeling Infectious Diseases in Humans and Animals</i>. Princeton University Press, 2008.
-          </li>
-<li>
-            Bird, A. <i>A Simple Introduction to Epidemiological Modelling</i>. King’s College London, 2020.
-          </li>
-<li>
-            Misra, S. <i>Mathematical Modeling of Infectious Disease Spread Using the SIR Model</i>. <i>Biomedical Journal of Scientific &amp; Technical Research</i>, 2024.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
                 </div>
-              </div>
-            </details>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Coupling Times of Random Walks on Graphs: A Computational Study</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 2</span>
-                  <span class="meta-chip">Sixian Liu</span>
-                </div>
-                <p class="project-summary-sub">Probability Theory, Markov Chains, Graph Theory</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Coupling Times of Random Walks on Graphs: A Computational Study</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 2</span>
-                    </div>
-                  </div>
+              </details>
+              {% endfor %}
 
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Sixian Liu<br />Graduate Research, Ph.D. Student<br />Department of Applied Mathematics and Statistics<br />Stony Brook University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Probability Theory, Markov Chains, Graph Theory</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Eastern Time (ET)<br />Tentative Tue/Thu 7:00-8:30 PM ET; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Google Meet<br />Code used: Python<br />Technology needed: Jupyter Notebook or Google Colab, Overleaf optional, and a computer with internet access</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">We study random walks on graphs, which provide a simple example of a Markov chain. A graph consists of nodes connected by edges. A random walk describes a process in which a walker moves from its current node to one of its neighboring nodes at random.<br/><br/>
-
-        This process forms a Markov chain, meaning that the next position of the walker depends only on its current location and not on the past path it has taken. At each step, the walker selects its next move by choosing uniformly among the neighboring nodes. In other words, if a node has <i>d</i> neighbors, each neighbor is chosen with probability 1/<i>d</i>. The randomness can be generated by drawing a number from the uniform distribution
-        <div style="text-align:center;">
-<i>U</i> ∼ Uniform(0, 1).
-        </div>
-<br/>
-        An interesting phenomenon occurs when two walkers move on the same graph using the same sequence of random numbers: although they may start at different nodes, they may eventually meet and then follow the same path thereafter.<br/><br/>
-
-        A central question is how the structure of the graph influences the behavior of the random walk over time. In this project we will compare random walks on several types of graphs, such as line graphs, cycle graphs, and complete graphs. Students will simulate these random walks using computational tools such as Python and observe how the structure of the graph influences the time until the walkers meet.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project assumes only basic familiarity with algebra and arithmetic. All additional concepts and tools required to study the problem will be introduced during the program. The project provides an accessible introduction to probability theory, graph theory, and Markov chains. During the experimental stage, students will implement simulations using computational tools such as Python. In preparing the final presentation, students may use tools such as PowerPoint, Jupyter Notebook, and/or Overleaf.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">First, we may consider variations of the random walk, such as a lazy random walk, in which the walker stays at its current node with some probability before moving to a neighboring node. Second, we may simulate multiple walkers moving simultaneously on the graph and study their interaction over time. Finally, we may explore how the meeting time changes as the size of the graph increases.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            West, D. B. <i>Introduction to Graph Theory</i>, 2nd ed., Pearson Education, Inc., 2001.
-          </li>
-<li>
-            Williamson, D. P. <i>ORIE 6334 Spectral Graph Theory: Lecture 11 – Random Walks on Graphs</i>, Cornell University, 2016.
-          </li>
-<li>
-            Klappenecker, A. <i>Coupling of Markov Chains</i>, Texas A&amp;M University, Lecture Notes, 2018.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Exploring Balanced Incomplete Block Designs: Properties, Symmetry, and Applications</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 2</span>
-                  <span class="meta-chip">Lázaro Aguiar</span>
-                </div>
-                <p class="project-summary-sub">Combinatorics</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Exploring Balanced Incomplete Block Designs: Properties, Symmetry, and Applications</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 2</span>
-                    </div>
-                  </div>
-
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Lázaro Aguiar<br />Math PhD Student<br />Tulane University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Combinatorics</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Central Time (CT)<br />Tentative Wed 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Zoom<br />Code used: Python (optional)<br />Technology needed: A browser-based Python environment if needed, a computer with internet access, and a working microphone/camera</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Combinatorial design theory focuses on organizing elements of a finite set into smaller groups that satisfy specific conditions. A particular case is <i>balanced incomplete block designs</i> (BIBDs), whose existence has been studied since the 18th century. A well-known example is <i>Kirkman’s Schoolgirl Problem</i>, which asks how to arrange a group of students into rows each day so that no two students walk together more than once in a week. This problem is, in fact, a specific instance of BIBDs, structures with applications in various fields.<br/><br/>
-
-        The formal study of design theory emerged in the 20th century, driven by its use in statistical experimental design, particularly by Ronald Fisher. Today, combinatorial designs have applications in cryptography, tournament scheduling, network design, mathematical biology, and more. This project is structured into three weeks: the first introduces fundamental concepts of BIBDs, the second explores a special class known as <i>symmetric designs</i>, and the third examines structural relationships between designs, including <i>isomorphisms</i> and connections to other mathematical structures.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project is designed to be self-contained; all necessary material will be introduced as we progress. High school mathematics is more than enough.<br/><br/>
-        Coding experience in <i>Python</i> is helpful but not required; basic coding concepts will be introduced if needed.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">Students may explore applications of this topic in <i>coding theory</i>, where combinatorial designs, including BIBDs, play a crucial role in constructing <i>error-correcting codes</i>. These codes are essential for ensuring reliable data transmission in communication systems by detecting and correcting errors. Additionally, combinatorial designs are useful in <i>cryptography</i>, particularly in the construction of secure encryption schemes. Further exploration could involve studying connections between BIBDs and <i>graph theory</i>, leading to advancements in network reliability and data security.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            Stinson, D. R. <i>Combinatorial Designs: Constructions and Analysis</i>. Springer, 2004.
-          </li>
-<li>
-            Wan, Z. X. <i>Design Theory</i>. Higher Education Press and World Scientific, 2009.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
             </div>
           </article>
     
