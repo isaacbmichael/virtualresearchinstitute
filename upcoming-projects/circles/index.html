@@ -100,380 +100,96 @@ on_this_page:
   </div>
   <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.circles.session_1.registration_deadline }}. Final weekly meeting times, exact end dates, and any holiday adjustments are confirmed with enrolled families after placement and mentor calendar review.</div>
             <div class="project-list">
-              
-            {% assign proposal = site.data.proposals.circles_session_1 | first %}
-<details class="project-item reveal">
-  <summary>
-    <span class="project-summary-text">
-      <span class="project-summary-title">{{ proposal.title }}</span>
+              {% assign session_1_proposals = site.data.proposals.circles_session_1 | sort: "sort_order" %}
+              {% for proposal in session_1_proposals %}
+              <details class="project-item reveal">
+                <summary>
+                  <span class="project-summary-text">
+                    <span class="project-summary-title">{{ proposal.title }}</span>
 
-      <div class="project-summary-meta">
-        <span class="meta-chip">{{ proposal.session_label }}</span>
-        <span class="meta-chip">{{ proposal.mentor.name | upcase }}</span>
-      </div>
-      <p class="project-summary-sub">{{ proposal.topic_area }}</p>
-    </span>
-  </summary>
-  <div class="project-body">
-    <div class="proposal-shell">
-      <div class="proposal-topline"></div>
-      <div class="proposal-heading">
-        <div>
-          <p class="proposal-kicker">Research Proposal</p>
-          <h4>{{ proposal.title }}</h4>
-        </div>
-        <div class="proposal-badges" aria-label="Proposal quick facts">
-          <span>{{ proposal.session_label }}</span>
-        </div>
-      </div>
+                  <div class="project-summary-meta">
+                    <span class="meta-chip">{{ proposal.session_label }}</span>
+                    <span class="meta-chip">{{ proposal.mentor.name | upcase }}</span>
+                  </div>
+                  <p class="project-summary-sub">{{ proposal.topic_area }}</p>
 
-      <div class="proposal-facts">
-        <div class="fact-card">
-          <span class="fact-label">Mentor</span>
-          <div class="fact-body">
-            {{ proposal.mentor.name }}<br />
-            {% for line in proposal.mentor.lines %}
-              {{ line }}{% unless forloop.last %}<br />{% endunless %}
-            {% endfor %}
-          </div>
-        </div>
+                  </span>
+                </summary>
+                <div class="project-body">
+                  <div class="proposal-shell">
+                    <div class="proposal-topline"></div>
+                    <div class="proposal-heading">
+                      <div>
+                        <p class="proposal-kicker">Research Proposal</p>
+                        <h4>{{ proposal.title }}</h4>
+                      </div>
+                      <div class="proposal-badges" aria-label="Proposal quick facts">
+                        <span>{{ proposal.session_label }}</span>
+                      </div>
+                    </div>
 
-        <div class="fact-card">
-          <span class="fact-label">Topic area</span>
-          <div class="fact-body">{{ proposal.topic_area }}</div>
-        </div>
+                    <div class="proposal-facts">
+                      <div class="fact-card">
+                        <span class="fact-label">Mentor</span>
+                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</div>
+                      </div>
+                      <div class="fact-card">
+                        <span class="fact-label">Topic area</span>
+                        <div class="fact-body">{{ proposal.topic_area }}</div>
+                      </div>
 
-        <div class="fact-card">
-          <span class="fact-label">Schedule</span>
-          <div class="fact-body">
-            {{ proposal.schedule.timezone }}<br />
-            {{ proposal.schedule.details }}
-          </div>
-        </div>
+                      <div class="fact-card">
 
-        <div class="fact-card">
-          <span class="fact-label">Technology</span>
-          <div class="fact-body">
-            Video platform: {{ proposal.technology.platform }}<br />
-            Code used: {{ proposal.technology.code_used }}<br />
-            Technology needed: {{ proposal.technology.needed }}
-          </div>
-        </div>
-      </div>
 
-      <div class="proposal-copy-grid">
-        <section class="proposal-copy-block">
-          <h5>Project overview</h5>
-          <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
-        </section>
+                        <span class="fact-label">Schedule</span>
 
-        <section class="proposal-copy-block">
-          <h5>Background</h5>
-          <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
-        </section>
 
-        <section class="proposal-copy-block">
-          <h5>Possible extension</h5>
-          <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
-        </section>
+                        <div class="fact-body">{{ proposal.schedule.timezone }}<br />{{ proposal.schedule.details }}</div>
 
-        <section class="proposal-copy-block">
-          <h5>Selected references</h5>
-          <div class="copy-body">
-            <ol class="project-references">
-              {% for ref in proposal.references %}
-                <li>{{ ref }}</li>
+
+                      </div>
+
+
+                      <div class="fact-card">
+
+
+                        <span class="fact-label">Technology</span>
+
+
+                        <div class="fact-body">Video platform: {{ proposal.technology.platform }}<br />Code used: {{ proposal.technology.code_used }}<br />Technology needed: {{ proposal.technology.needed }}</div>
+
+
+                      </div>
+</div>
+
+                    <div class="proposal-copy-grid">
+                      <section class="proposal-copy-block">
+                        <h5>Project overview</h5>
+                        <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Background</h5>
+                        <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Possible extension</h5>
+                        <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
+                      </section>
+                      <section class="proposal-copy-block">
+                        <h5>Selected references</h5>
+                        <div class="copy-body"><ol class="project-references">
+{% for ref in proposal.references %}
+<li>
+            {{ ref }}
+          </li>
+{% endfor %}
+</ol></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </details>
               {% endfor %}
-            </ol>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-</details>
-              
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Learning from Uncertainty: A Bayesian View of Probability and Data</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 1</span>
-                  <span class="meta-chip">Mohammad Rafiqul Islam</span>
-                </div>
-                <p class="project-summary-sub">Probability, Bayesian Statistics, Uncertainty Quantification</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Learning from Uncertainty: A Bayesian View of Probability and Data</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 1</span>
-                    </div>
-                  </div>
-
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Mohammad Rafiqul Islam<br />Ph.D. Candidate in Mathematics<br />Department of Mathematics<br />Florida State University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Probability, Bayesian Statistics, Uncertainty Quantification</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Eastern Time (ET)<br />Tentative Mon/Wed 7:00-8:30 PM ET; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Google Meet<br />Code used: Python or spreadsheet-based simulation<br />Technology needed: Google Colab or Excel, a computer with internet access, and a working microphone/camera</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">In many real-world situations, we must make decisions based on limited or noisy information. Bayesian probability provides a mathematical framework for describing uncertainty, updating beliefs, and learning from data.<br/><br/>
-        In this project, students will explore the Bayesian view of probability, where probability represents a degree of belief rather than a fixed long-run frequency. We will begin with intuitive examples such as coin flips, guessing unknown quantities, and predicting outcomes with incomplete information. Students will learn how initial beliefs (called <i>priors</i>) can be updated using observed data to form improved beliefs (called <i>posteriors</i>).<br/><br/>
-        Through simulations and experiments, students will investigate how uncertainty changes as more data is collected, how prior assumptions influence conclusions, and how Bayesian reasoning differs from traditional deterministic thinking. Visual tools such as probability distributions, histograms, and simulation plots will be used throughout.<br/><br/>
-        The project emphasizes intuition, experimentation, and explanation. By the end of the program, students will understand how Bayesian ideas help quantify uncertainty and support rational decision-making in science, data analysis, and everyday life.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project assumes familiarity with basic algebra, graphs, and averages. No prior knowledge of probability or statistics is required. All probabilistic ideas will be introduced from first principles using concrete examples and visual intuition. Calculus is not required.<br/><br/>
-        Students will engage with hands-on experiments and simulations using simple computational tools such as Excel or Python (no prior programming experience assumed). Emphasis will be placed on conceptual understanding, interpretation, and communication rather than technical formalism.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">Interested students may explore how different prior beliefs lead to different posterior conclusions, even when observing the same data. Additional extensions include comparing Bayesian predictions with simple averages, investigating how uncertainty shrinks as sample size increases, or exploring basic Bayesian decision-making under uncertainty.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            Martin O. <i>Bayesian Analysis with Python</i>. Birmingham, UK: Packt Publishing; 2016 Nov 25.
-          </li>
-<li>
-            Gelman, A., et al. <i>Bayesian Data Analysis</i>, 3rd ed., CRC Press, 2013.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">When Can We Trust Simple Decisions?: Binary Classification with Imbalanced Data</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 1</span>
-                  <span class="meta-chip">Hyelim Jung</span>
-                </div>
-                <p class="project-summary-sub">Applied Mathematics, Mathematical Modeling, Data-Driven Decision Rules</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>When Can We Trust Simple Decisions?: Binary Classification with Imbalanced Data</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 1</span>
-                    </div>
-                  </div>
-
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Hyelim Jung<br />Ph.D. Candidate<br />Department of Mathematics and Statistics<br />Auburn University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Applied Mathematics, Mathematical Modeling, Data-Driven Decision Rules</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Central Time (CT)<br />Tentative Tue/Thu 6:00-7:30 PM CT; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Microsoft Teams<br />Code used: Python or spreadsheet-based modeling<br />Technology needed: Google Colab or Excel, a computer with internet access, and a working microphone/camera</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Many real-world problems require binary decisions, such as determining whether an email is spam or deciding whether an alert should be issued. A common way to evaluate such decisions is accuracy—the proportion of correct outcomes. But is accuracy always a reliable measure of performance?<br/><br/>
-        In this project, students investigate simple decision rules for binary classification and explore how these rules behave when data are highly imbalanced, meaning that one outcome is much rarer than the other. Through hands-on experiments, students discover that a rule with very high accuracy can nevertheless perform poorly in practice by systematically missing rare but important cases.<br/><br/>
-        Rather than introducing complex models, students focus on understanding why accuracy can be misleading and how evaluation criteria shape our conclusions. Using tables, graphs, and basic arithmetic, students compare different decision rules under varying levels of imbalance.<br/><br/>
-        In the final stage of the project, students propose a simple remedy by redefining what it means for a rule to perform well. By examining multiple error rates and incorporating basic cost considerations, students develop a more nuanced framework for evaluating decisions. The project emphasizes the process of mathematical research—posing questions, designing experiments, interpreting results, and communicating findings—using tools accessible to high-school students.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project assumes only a standard high-school background in algebra. Students are expected to be comfortable with basic inequalities, simple functions, proportions, and percentages, as well as reading tables and graphs. No prior coursework in statistics, probability, or calculus is assumed.<br/><br/>
-        All necessary concepts—such as decision rules, evaluation metrics, and experimental comparison—will be introduced within the context of the research questions. Computational experiments will be conducted using Excel, R, or Python, with code templates provided as needed.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">Students who continue in the VMRC Research Extension may explore how different levels of data imbalance affect conclusions, or how varying the relative cost of different types of errors changes which decision rules are preferred. Additional extensions may include introducing label noise or examining real-world scenarios such as medical screening or fraud detection. These extensions emphasize deeper interpretation and more refined experimental design rather than additional technical machinery.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            He, H. and Garcia, E. A. <i>Learning from Imbalanced Data</i>. IEEE Transactions on Knowledge and Data Engineering, 21(9), 2009.
-          </li>
-<li>
-            Saito, T. and Rehmsmeier, M. <i>The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets</i>. PLoS ONE, 10(3), 2015.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
-            <details class="project-item reveal">
-              <summary>
-                <span class="project-summary-text">
-                  <span class="project-summary-title">Extensions of Colley’s Matrix and Ranking Methods</span>
-                  
-                <div class="project-summary-meta">
-                  <span class="meta-chip">Session 1</span>
-                  <span class="meta-chip">Jonathan Engle</span>
-                </div>
-                <p class="project-summary-sub">Applied Linear Algebra</p>
-    
-                </span>
-              </summary>
-              <div class="project-body">
-                <div class="proposal-shell">
-                  <div class="proposal-topline"></div>
-                  <div class="proposal-heading">
-                    <div>
-                      <p class="proposal-kicker">Research Proposal</p>
-                      <h4>Extensions of Colley’s Matrix and Ranking Methods</h4>
-                    </div>
-                    <div class="proposal-badges" aria-label="Proposal quick facts">
-                      <span>Session 1</span>
-                    </div>
-                  </div>
-
-                  <div class="proposal-facts">
-                    <div class="fact-card">
-                      <span class="fact-label">Mentor</span>
-                      <div class="fact-body">Jonathan Engle<br />PhD Candidate (ABD)<br />Department of Mathematics<br />Florida State University</div>
-                    </div>
-                    <div class="fact-card">
-                      <span class="fact-label">Topic area</span>
-                      <div class="fact-body">Applied Linear Algebra</div>
-                    </div>
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Schedule</span>
-
-                  
-                      <div class="fact-body">Eastern Time (ET)<br />Tentative Mon/Wed 6:30-8:00 PM ET; final meeting times are subject to change based on overall group availability.</div>
-
-                  
-                    </div>
-
-                  
-                    <div class="fact-card">
-
-                  
-                      <span class="fact-label">Technology</span>
-
-                  
-                      <div class="fact-body">Video platform: Zoom<br />Code used: MATLAB or Julia<br />Technology needed: MATLAB Online or Julia, Excel for simple computations, and presentation software such as PowerPoint or Beamer</div>
-
-                  
-                    </div>
-</div>
-
-                  <div class="proposal-copy-grid">
-                    <section class="proposal-copy-block">
-                      <h5>Project overview</h5>
-                      <div class="copy-body">Colley’s matrix method for ranking college football teams is an exciting application of linear algebra. While many traditional ranking methods are based primarily on a team’s record, margin of victory, or subjective committee decisions, such approaches can still fall short in producing accurate rankings. Colley addressed this issue by developing an objective ranking method that adjusts a team’s rating according to strength of schedule, without taking conference affiliation or margin of victory into account.<br/><br/>
-        In this project, students will work toward replicating Colley’s Matrix for a small “toy” example using college football teams from the previous season. They will analyze these replications and investigate whether Colley’s method was able to identify potential major upsets that the College Football Committee did not anticipate. This implementation will require solving a linear system of the form:<br/><br/>
-<div style="text-align:center;">
-<i>C</i><span style="text-decoration:overline;">r</span> = <span style="text-decoration:overline;">b</span>,  
-          <i>C</i> ∈ ℝ<sup>n×n</sup>,  
-          <span style="text-decoration:overline;">b</span>, <span style="text-decoration:overline;">r</span> ∈ ℝ<sup>n</sup>
-</div>
-<br/>
-        where <span style="text-decoration:overline;">r</span> is the ranking vector, <span style="text-decoration:overline;">b</span> is one plus the average win rate for a team, and <i>C</i> is Colley’s matrix. This framework leads naturally to the central research question of the project: how can Colley’s Matrix be improved when additional information about the system is available?<br/><br/>
-        The project emphasizes mathematical structure, computational experimentation, and interpretation. By the end of the program, students will understand how a linear algebra model can be used to construct rankings and how modifying that model may lead to more informative decision-making tools in sports and beyond.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Background</h5>
-                      <div class="copy-body">This project requires little background knowledge beyond basic algebra and arithmetic. High school calculus is not a prerequisite. All required linear algebra concepts needed to approach the problem will be introduced during the project.<br/><br/>
-        This project serves as a strong introduction to ideas from linear algebra, introductory computer science, statistics, and mathematical modeling. During the experimental stage, students will implement the mathematical theory computationally using tools such as Excel, Matlab, and/or Julia. During the final week, when results are compiled and presented, students may use tools such as PowerPoint or Beamer.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Possible extension</h5>
-                      <div class="copy-body">Once students explore the sports-ranking example, they will be encouraged to extend the same ideas to settings beyond athletics. Possible directions include, but are not limited to, resource distribution, natural disaster response, stock rankings, and other systems in which competing entities must be ranked using incomplete or structured information.</div>
-                    </section>
-                    <section class="proposal-copy-block">
-                      <h5>Selected references</h5>
-                      <div class="copy-body"><ol class="project-references">
-<li>
-            Boginski, V., Butenko, S., and Pardalos, P. M. <i>Matrix-based methods for college football rankings</i>. <i>Economics, Management and Optimization in Sports</i>, 2004, pp. 1–13.
-          </li>
-<li>
-            Colley, Wesley N. <i>Colley’s bias free college football ranking method: The Colley matrix explained</i>, 2002.
-          </li>
-</ol></div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </details>
             </div>
           </article>
     
