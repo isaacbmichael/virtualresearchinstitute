@@ -2020,6 +2020,91 @@ body.programs-page .hero-visual-presentation img {
       box-shadow: none;
     }
 
+/* ===================== Upcoming Projects hub hero: darker teal version ===================== */
+body.upcoming-projects-page .hero {
+  overflow: hidden;
+  padding-top: 58px;
+  padding-bottom: 54px;
+}
+
+body.upcoming-projects-page .hero .hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body.upcoming-projects-page .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(4, 60, 69, 0.92) 0%, rgba(3, 47, 56, 0.96) 100%),
+    radial-gradient(circle at 24% 28%, rgba(229, 181, 59, 0.10) 0%, transparent 22%),
+    radial-gradient(circle at 76% 24%, rgba(255, 255, 255, 0.07) 0%, transparent 26%),
+    radial-gradient(circle at 74% 72%, rgba(0, 113, 127, 0.12) 0%, transparent 24%),
+    linear-gradient(135deg, #0a5560 0%, #084a55 44%, #033843 100%);
+}
+
+body.upcoming-projects-page .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 66% 30%, rgba(229, 181, 59, 0.10), transparent 18%),
+    radial-gradient(circle at 82% 68%, rgba(0, 113, 127, 0.12), transparent 24%);
+  filter: blur(10px);
+}
+
+body.upcoming-projects-page .hero .hero-orbit {
+  border-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.44;
+}
+
+body.upcoming-projects-page .hero .hero-orbit::before {
+  border-color: rgba(229, 181, 59, 0.14);
+}
+
+body.upcoming-projects-page .hero .hero-orbit::after {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.upcoming-projects-page .hero .eyebrow {
+  color: rgba(242, 224, 169, 0.96);
+}
+
+body.upcoming-projects-page .hero .eyebrow::before {
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+  box-shadow: 0 0 18px rgba(229, 181, 59, 0.24);
+}
+
+body.upcoming-projects-page .hero .hero-copy {
+  max-width: min(72%, 1200px);
+}
+
+body.upcoming-projects-page .hero .hero-copy h1 {
+  color: #f8f4ea;
+  max-width: 100%;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.upcoming-projects-page .hero .hero-copy p {
+  color: rgba(248, 244, 234, 0.84);
+  max-width: 100%;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 1180px) {
+  body.upcoming-projects-page .hero .hero-copy {
+    max-width: 100%;
+  }
+}
+
     /* About page: Looking Ahead section uses the globe image as the full section background */
 .about-page #future.section-future-background {
   position: relative;
@@ -2714,89 +2799,9 @@ body.programs-page .hero-visual-presentation img {
     }
 
 /* ===================== Upcoming Projects Page ===================== */
+
 .projects-hero {
   padding-bottom: 28px;
-}
-
-.projects-hero .hero-grid {
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  align-items: start;
-}
-
-.projects-hero .hero-copy h1 {
-  max-width: 11ch;
-}
-
-.anchor-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.hero-utility {
-  align-self: stretch;
-}
-
-.hero-utility-card {
-  position: relative;
-  overflow: hidden;
-  padding: 30px;
-  min-height: 100%;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.7));
-  border: 1px solid rgba(4, 76, 89, 0.12);
-  box-shadow: var(--shadow-lg);
-}
-
-.hero-utility-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(140deg, rgba(255,255,255,0.56), transparent 34%),
-    radial-gradient(circle at top right, rgba(229,181,59,0.14), transparent 30%);
-  pointer-events: none;
-}
-
-.hero-utility-card h3 {
-  margin: 0 0 18px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  line-height: 0.96;
-  color: var(--teal-950);
-}
-
-.hero-utility-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.hero-utility-grid > div {
-  padding: 16px 16px 14px;
-  border-radius: 18px;
-  background: rgba(248, 250, 250, 0.82);
-  border: 1px solid rgba(4, 76, 89, 0.08);
-  box-shadow: var(--shadow-sm);
-}
-
-.hero-utility-grid strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--teal-950);
-  font-size: 0.96rem;
-}
-
-.hero-utility-grid span {
-  display: block;
-  color: var(--muted);
-  line-height: 1.65;
-  font-size: 0.92rem;
-}
-
-.hero-note {
-  margin-top: 18px;
 }
 
 .overview-grid {
@@ -2816,10 +2821,36 @@ body.programs-page .hero-visual-presentation img {
   padding-top: 20px;
 }
 
-.overview-grid > .card:hover {
-  transform: none;
+body.upcoming-projects-page .overview-grid > .pathway-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+body.upcoming-projects-page .overview-grid > .pathway-card:hover,
+body.upcoming-projects-page .overview-grid > .pathway-card:focus-visible {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(4, 76, 89, 0.16);
+  outline: none;
+}
+
+body.upcoming-projects-page .overview-grid > .pathway-card .card-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.pathway-link-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+  color: white;
+  font-weight: 700;
   box-shadow: var(--shadow-sm);
-  border-color: rgba(4, 76, 89, 0.1);
 }
 
 .pricing-stack {
