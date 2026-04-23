@@ -4099,26 +4099,32 @@ body.faq-page #faq-library.section {
 
 .mobile-subnav {
   display: grid;
-  gap: 8px;
+  grid-template-rows: 0fr;
   padding: 0 0 0 14px;
   margin-top: 6px;
   border-left: 1px solid rgba(4, 76, 89, 0.14);
   overflow: hidden;
-  height: 0;
   opacity: 0;
   transform: translateY(-4px);
   pointer-events: none;
   transition:
-    height 440ms cubic-bezier(.22, 1, .36, 1),
+    grid-template-rows 520ms cubic-bezier(.22, 1, .36, 1),
     opacity 220ms ease,
-    transform 440ms cubic-bezier(.22, 1, .36, 1);
-  will-change: height, opacity, transform;
+    transform 520ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .mobile-subnav.is-open {
+  grid-template-rows: 1fr;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.mobile-subnav-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 8px;
 }
 
 .mobile-subnav-link {
@@ -4153,14 +4159,7 @@ body.faq-page #faq-library.section {
 
 .mobile-subnav[hidden] {
   display: grid;
-  height: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mobile-subnav,
-  .mobile-subnav-toggle {
-    transition: none;
-  }
+  grid-template-rows: 0fr;
 }
 
 @media (prefers-reduced-motion: reduce) {
