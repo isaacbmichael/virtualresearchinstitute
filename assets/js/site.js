@@ -224,7 +224,7 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
 
   mobileSubnav.addEventListener("transitionend", (event) => {
     if (event.target !== mobileSubnav) return;
-    if (event.propertyName !== "grid-template-rows") return;
+    if (!["grid-template-rows", "height"].includes(event.propertyName)) return;
 
     if (!getMobileSubnavExpanded()) {
       mobileSubnav.hidden = true;
