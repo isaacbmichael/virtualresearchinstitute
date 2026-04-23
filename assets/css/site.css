@@ -3333,8 +3333,7 @@ body.upcoming-projects-page .pathway-card-meta {
 }
 
 .mobile-nav-group {
-  display: grid;
-  gap: 10px;
+  display: block;
 }
 
 .mobile-nav-parent {
@@ -3373,6 +3372,12 @@ body.upcoming-projects-page .pathway-card-meta {
   display: grid;
   gap: 10px;
   padding: 0 0 0 18px;
+  margin-top: 10px;
+}
+
+.mobile-subnav[hidden] {
+  display: none !important;
+  margin-top: 0;
 }
 
 .mobile-subnav a {
