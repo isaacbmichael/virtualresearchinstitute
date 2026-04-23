@@ -786,18 +786,20 @@ body.home-page .hero::after {
   filter: saturate(1.02) contrast(1.08) brightness(0.76);
 }
 
-    body.home-page .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 52% 54%, rgba(255, 255, 255, 0.05), transparent 24%),
-        radial-gradient(circle at 70% 30%, rgba(229, 181, 59, 0.12), transparent 18%),
-        radial-gradient(circle at 78% 70%, rgba(0, 113, 127, 0.12), transparent 24%);
-      filter: blur(10px);
-    }
+body.home-page .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 82%, rgba(120, 224, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 24% 76%, rgba(0, 113, 127, 0.16), transparent 22%),
+    radial-gradient(circle at 52% 54%, rgba(255, 255, 255, 0.05), transparent 24%),
+    radial-gradient(circle at 70% 30%, rgba(229, 181, 59, 0.12), transparent 18%),
+    radial-gradient(circle at 78% 70%, rgba(0, 113, 127, 0.12), transparent 24%);
+  filter: blur(12px);
+}
 
     body.home-page .hero .hero-orbit {
       border-color: rgba(255, 255, 255, 0.08);
