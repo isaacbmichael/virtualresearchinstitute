@@ -2092,7 +2092,7 @@ body.upcoming-projects-page .hero .eyebrow::before {
 }
 
 body.upcoming-projects-page .hero .hero-copy {
-  max-width: min(75%, 1240px);
+  max-width: min(84%, 1480px);
 }
 
 body.upcoming-projects-page .hero .hero-copy h1 {
@@ -2111,6 +2111,14 @@ body.upcoming-projects-page .hero .hero-copy p {
   body.upcoming-projects-page .hero .hero-copy {
     max-width: 100%;
   }
+}
+
+body.upcoming-projects-page #overview .section-head {
+  grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
+}
+
+body.upcoming-projects-page #overview .section-head h2 {
+  max-width: 100%;
 }
 
     /* About page: Looking Ahead section uses the globe image as the full section background */
