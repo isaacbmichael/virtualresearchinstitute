@@ -79,78 +79,72 @@ on_this_page:
       </div>
     </section>
 
-    <section class="section" id="programs">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-label">Research Pathways</p>
-            <h2>Two main public pathways, plus limited private mentorship.</h2>
-          </div>
-          <p class="section-intro">
-            Students can enter VRI through Circles or Groups,
-            with limited Private Mentorship available by inquiry for select
-            matches and longer-term work.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Tier I</div>
-            <h3>Circles</h3>
-            <p>
-              Structured, guided, and scalable mentored research experiences designed
-              to introduce students to serious research habits in an accessible but
-              still rigorous environment.
-            </p>
-            <div class="term-note">
-              Typical cohort size: {{ site.data.pathways.circles.cohort_size }}<br />
-              Cost per student: {{ site.data.pathways.circles.price }}<br />
-              Typical duration: {{ site.data.pathways.circles.duration }}<br />
-              Public terms: {{ site.data.pathways.circles.public_terms }}
-            </div>
-          </article>
-
-          <article class="card reveal" data-tilt>
-            <div class="card-label">Tier II</div>
-            <h3>Groups</h3>
-            <p>
-              Smaller collaborative cohorts with more intensive mentor interaction,
-              greater ownership, and a closer resemblance to premium boutique
-              research experiences.
-            </p>
-            <div class="term-note">
-              Typical cohort size: {{ site.data.pathways.groups.cohort_size }}<br />
-              Cost per student: {{ site.data.pathways.groups.price }}<br />
-              Typical duration: {{ site.data.pathways.groups.duration }}<br />
-              Public terms: {{ site.data.pathways.groups.public_terms }}
-            </div>
-          </article>
-        </div>
-
-        <div class="feature-band reveal" style="margin-top: 24px;">
-          <div class="feature-band-grid">
-            <div>
-              <p class="section-label">Private Mentorship</p>
-              <h3>Need a more individualized research match?</h3>
-              <p>
-                For students seeking more individualized or longer-term work, VRI
-                may occasionally consider limited Private Mentorship placements by
-                inquiry.
-              </p>
-            </div>
-
-            <div class="feature-quote">
-              <strong>{{ site.data.pathways.private_mentorship.price }} only</strong>
-              <p>
-                Starting tuition: {{ site.data.pathways.private_mentorship.starting_tuition }}. Availability depends on subject area,
-                mentor fit, and researcher availability. Private Mentorship
-                placements are {{ site.data.pathways.private_mentorship.availability | downcase }} and not guaranteed.
-              </p>
-            </div>
-          </div>
-        </div>
+  <section class="section" id="programs">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Research Pathways</p>
+        <h2>Choose the pathway that fits the student best.</h2>
       </div>
-    </section>
+      <p class="section-intro">
+        All public VRI programs are fully online. Circles are the broader public entry point.
+        Groups are smaller and more intensive, with closer mentor interaction and a longer commitment.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Tier I</div>
+        <h3>Circles</h3>
+        <p>
+          A guided public pathway designed for students building research readiness
+          in a structured cohort setting.
+        </p>
+
+        <div class="pill-row" aria-label="Circles quick facts">
+          <span class="pill">{{ site.data.pathways.circles.cohort_size }}</span>
+          <span class="pill">{{ site.data.pathways.circles.duration }}</span>
+          <span class="pill">{{ site.data.pathways.circles.price }}</span>
+          <span class="pill">{{ site.data.pathways.circles.public_terms }}</span>
+        </div>
+
+        <ul class="clean-list">
+          <li>Fully online live mentor-led sessions</li>
+          <li>Meaningful independent work between meetings</li>
+          <li>Broader public entry point into VRI</li>
+        </ul>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Tier II</div>
+        <h3>Groups</h3>
+        <p>
+          A smaller public pathway for students ready for deeper sustained work,
+          stronger ownership, and more intensive mentor interaction.
+        </p>
+
+        <div class="pill-row" aria-label="Groups quick facts">
+          <span class="pill">{{ site.data.pathways.groups.cohort_size }}</span>
+          <span class="pill">{{ site.data.pathways.groups.duration }}</span>
+          <span class="pill">{{ site.data.pathways.groups.price }}</span>
+          <span class="pill">{{ site.data.pathways.groups.public_terms }}</span>
+        </div>
+
+        <ul class="clean-list">
+          <li>Fully online live mentor-led sessions</li>
+          <li>Meaningful independent work between meetings</li>
+          <li>Smaller and more intensive than Circles</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="term-note reveal" style="margin-top: 24px;">
+      <strong>Private Mentorship:</strong> considered by inquiry for select cases.
+      Starting tuition is currently {{ site.data.pathways.private_mentorship.starting_tuition }}.
+      Availability depends on mentor fit, subject area, and capacity.
+    </div>
+  </div>
+</section>
 
     <section class="section" id="areas">
       <div class="shell">
