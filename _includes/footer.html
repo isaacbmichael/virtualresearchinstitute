@@ -12,16 +12,16 @@
         </div>
       </div>
 
-      {% if page.on_this_page %}
-      <div class="footer-col">
-        <h5>On This Page</h5>
-        <nav>
-          {% for item in page.on_this_page %}
-          <a href="{{ item.href }}">{{ item.label }}</a>
-          {% endfor %}
-        </nav>
-      </div>
-      {% endif %}
+<div class="footer-col footer-col-on-this-page">
+  {% if page.on_this_page %}
+  <h5>On This Page</h5>
+  <nav>
+    {% for item in page.on_this_page %}
+    <a href="{{ item.href }}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+</div>
 
       <div class="footer-col">
         <h5>Explore</h5>
