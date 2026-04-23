@@ -749,36 +749,42 @@
       z-index: 1;
     }
 
-    body.home-page .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(7, 20, 28, 0.52) 0%,
-          rgba(7, 20, 28, 0.60) 100%
-        ),
-        radial-gradient(
-          circle at 22% 34%,
-          rgba(9, 45, 56, 0.26) 0%,
-          rgba(9, 45, 56, 0.10) 22%,
-          transparent 44%
-        ),
-        radial-gradient(
-          circle at 78% 24%,
-          rgba(229, 181, 59, 0.10) 0%,
-          transparent 24%
-        ),
-        url("/assets/images/home/vri-hero-abstract-research.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      opacity: 1;
-      filter: saturate(0.94) contrast(1.04) brightness(0.72);
-    }
+body.home-page .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 20, 28, 0.48) 0%,
+      rgba(7, 20, 28, 0.56) 100%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(78, 196, 224, 0.16) 0%,
+      rgba(78, 196, 224, 0.08) 16%,
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 22% 34%,
+      rgba(9, 45, 56, 0.24) 0%,
+      rgba(9, 45, 56, 0.10) 22%,
+      transparent 44%
+    ),
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(229, 181, 59, 0.10) 0%,
+      transparent 24%
+    ),
+    url("/assets/images/home/vri-hero-abstract-research.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  filter: saturate(1.02) contrast(1.08) brightness(0.76);
+}
 
     body.home-page .hero::before {
       content: "";
