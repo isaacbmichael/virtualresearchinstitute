@@ -41,12 +41,37 @@ on_this_page:
   </script>
 
 <style>
-  body.groups-page .hero .hero-copy h1 {
-    max-width: 75%;
+  body.groups-page .projects-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(255,255,255,.08) 0, rgba(255,255,255,0) 34%),
+      radial-gradient(circle at 82% 18%, rgba(212,175,55,.08) 0, rgba(212,175,55,0) 28%),
+      linear-gradient(135deg, #083846 0%, #0b4f60 52%, #106274 100%);
+  }
+
+  body.groups-page .projects-hero .hero-copy,
+  body.groups-page .projects-hero .hero-copy h1,
+  body.groups-page .projects-hero .hero-copy p {
+    max-width: 100%;
+  }
+
+  body.groups-page .projects-hero .hero-orbit {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .85;
+    background:
+      radial-gradient(circle at 78% 26%, rgba(255,255,255,.12) 0 1px, transparent 1px 100%),
+      radial-gradient(circle at 75% 32%, transparent 0 54px, rgba(255,255,255,.14) 54px 55px, transparent 55px 100%),
+      radial-gradient(circle at 83% 24%, transparent 0 88px, rgba(212,175,55,.16) 88px 89px, transparent 89px 100%),
+      radial-gradient(circle at 72% 38%, transparent 0 128px, rgba(255,255,255,.08) 128px 129px, transparent 129px 100%);
   }
 
   @media (max-width: 1180px) {
-    body.groups-page .hero .hero-copy h1 {
+    body.groups-page .projects-hero .hero-copy,
+    body.groups-page .projects-hero .hero-copy h1,
+    body.groups-page .projects-hero .hero-copy p {
       max-width: 100%;
     }
   }
@@ -118,7 +143,6 @@ on_this_page:
                     <span class="project-summary-title">{{ proposal.title }}</span>
 
                   <div class="project-summary-meta">
-                    <span class="meta-chip">{{ proposal.session_label }}</span>
                     <span class="meta-chip">{{ proposal.mentor.name }}</span>
                   </div>
                   <p class="project-summary-sub">{{ proposal.topic_area }}</p>
@@ -132,9 +156,6 @@ on_this_page:
                       <div>
                         <p class="proposal-kicker">Research Proposal</p>
                         <h4>{{ proposal.title }}</h4>
-                      </div>
-                      <div class="proposal-badges" aria-label="Proposal quick facts">
-                        <span>{{ proposal.session_label }}</span>
                       </div>
                     </div>
 
