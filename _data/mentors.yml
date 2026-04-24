@@ -1,1 +1,56 @@
+mentor_program:
+  page_title: "For Mentors"
+  page_intro: "Information for prospective mentors at the Virtual Research Institute, including institutional fit, standards, responsibilities, and engagement structure."
+  inquiry_email: "info@virtualresearchinstitute.org"
+  mentor_inquiry_label: "Mentor Inquiry"
+  mentor_inquiry_href: "mailto:info@virtualresearchinstitute.org"
 
+engagement_model:
+  status: "Independent contractor"
+  form_1099: true
+  agreement_term: "1 year"
+  renewal: "Subject to institutional need, performance, compliance, and mutual fit"
+  confidentiality_required: true
+  nda_required: true
+  non_circumvention_required: true
+  non_poaching_required: true
+
+compensation:
+  circles:
+    label: "Circles"
+    amount: "$5,000"
+    basis: "per cohort"
+  groups:
+    label: "Groups"
+    amount: "$6,500"
+    basis: "per cohort"
+  private_mentorship:
+    label: "Private Mentorship"
+    amount_1_student: "$3,000"
+    amount_2_students: "$5,500-$6,000"
+    basis: "per case"
+
+mentor_standards:
+  - "Strong subject-matter preparation in the proposed area"
+  - "Ability to mentor students in a serious, professional online setting"
+  - "Clear communication and dependable follow-through"
+  - "Respect for VRI policies, approved communication channels, and safeguarding expectations"
+  - "Willingness to work within VRI’s institutional structure rather than as a fully independent operator"
+
+screening:
+  - "Application or institutional inquiry review"
+  - "Conversation regarding subject fit, mentoring approach, and professionalism"
+  - "Reference and background review where appropriate"
+  - "Approval is discretionary and based on quality, safety, institutional fit, and program need"
+
+responsibilities:
+  - "Lead live online sessions professionally and on time"
+  - "Guide students in meaningful work between meetings"
+  - "Communicate through approved VRI channels"
+  - "Maintain appropriate professional boundaries with students and families"
+  - "Follow VRI standards for documentation, conduct, privacy, and intellectual integrity"
+
+private_mentorship:
+  availability: "Not guaranteed"
+  continuation_only: true
+  summary: "Private Mentorship is generally considered only in select continuation cases when prior student performance is strong, mentor recommendation is favorable, an appropriate next-stage project exists, and VRI capacity allows."
