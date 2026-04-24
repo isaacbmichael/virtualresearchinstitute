@@ -21,3 +21,13 @@ For purposes of these draft terms, “Confidential Information” may include no
 Confidential Information also includes nonpublic information relating to students, families, mentors, applicants, reviewers, contractors, internal communications, and onboarding materials.
 
 Confidential Information does not include information that becomes publicly available through no wrongful act of Mentor, or information Mentor can demonstrate was lawfully known to Mentor without confidentiality restriction before disclosure by VRI.
+
+## 4. Confidentiality Obligations
+
+Mentor shall not, except as authorized in writing by VRI, use, disclose, copy, distribute, summarize, transmit, commercialize, publish, or retain Confidential Information except as reasonably necessary to perform approved services for VRI.
+
+Mentor shall use reasonable care to protect Confidential Information from unauthorized access, disclosure, misuse, loss, or removal.
+
+Mentor shall not use Confidential Information for Mentor’s own competing, commercial, recruiting, consulting, or business-development purposes.
+
+Mentor shall comply with VRI instructions regarding storage, access, return, deletion, and permitted systems for confidential or participant-related information.
