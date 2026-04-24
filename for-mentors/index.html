@@ -241,12 +241,14 @@ on_this_page:
           </p>
         </div>
 
-        <div class="feature-quote">
-          <strong>Review factors may include</strong>
-          <p>
-            Academic or professional preparation, quality of the proposed topic, readiness to work within VRI’s structure, professionalism in communication, suitability for youth-facing or emerging-scholar settings, and successful completion of any required onboarding steps.
-          </p>
-        </div>
+<div class="feature-quote">
+  <strong>Review factors may include</strong>
+  <ul class="clean-list clean-list-light">
+    {% for item in site.data.mentors.screening %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</div>
       </div>
     </div>
 
