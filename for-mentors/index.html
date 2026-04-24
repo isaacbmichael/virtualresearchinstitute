@@ -1,30 +1,26 @@
 ---
 layout: default
 title: For Mentors | Virtual Research Institute
-description: Information for prospective mentors at the Virtual Research Institute, including institutional fit, engagement structure, expectations, compensation, expected commitment, and the review process for approved mentor participation.
+description: Information for prospective VRI research mentors, including compensation, workload, student fit, mentor responsibilities, VRI support, and application review.
 permalink: /for-mentors/
 body_class: mentors-page
 explore_key: for-mentors
 on_this_page:
   - label: Overview
     href: "#overview"
+  - label: Compensation & Commitment
+    href: "#compensation"
   - label: Who We Seek
     href: "#who-we-seek"
-  - label: Why Mentor with VRI
-    href: "#why-mentor"
-  - label: Engagement Model
-    href: "#engagement-model"
-  - label: Responsibilities & Standards
-    href: "#expectations"
-  - label: Screening & Approval
+  - label: What Mentors Do
+    href: "#mentor-role"
+  - label: Program Formats
+    href: "#program-formats"
+  - label: VRI Support
+    href: "#support"
+  - label: Application Review
     href: "#process"
-  - label: Compensation & Expected Commitment
-    href: "#compensation"
-  - label: Assignment Volume & Topic Reuse
-    href: "#assignment-volume"
-  - label: Private Mentorship
-    href: "#private-mentorship"
-  - label: Inquiry & Next Steps
+  - label: Apply
     href: "#next-steps"
 ---
 
@@ -33,342 +29,26 @@ on_this_page:
 
   <div class="shell hero-grid">
     <div class="hero-copy reveal">
-      <div class="eyebrow">{{ site.data.mentors.hero.eyebrow }}</div>
-      <h1>{{ site.data.mentors.hero.title }}</h1>
+      <div class="eyebrow">For Prospective Research Mentors</div>
+      <h1>Mentor serious student research with VRI.</h1>
       <p>
-        {{ site.data.mentors.hero.intro }}
+        Virtual Research Institute partners with faculty, postdoctoral scholars, PhD holders, advanced PhD candidates, and highly qualified specialists to guide motivated students through rigorous online research projects.
       </p>
 
       <div class="hero-actions" aria-label="Mentor actions">
         <a
-          class="btn btn-primary"
+          class="btn btn-gold"
           href="{{ site.data.mentors.hero.primary_cta_href }}"
           target="{{ site.data.mentors.hero.primary_cta_target }}"
           rel="{{ site.data.mentors.hero.primary_cta_rel }}"
         >
-          {{ site.data.mentors.hero.primary_cta_label }}
+          Apply to Mentor with VRI
         </a>
 
-        <a
-          class="btn btn-secondary"
-          href="{{ site.data.mentors.hero.secondary_cta_href }}"
-        >
-          {{ site.data.mentors.hero.secondary_cta_label }}
+        <a class="btn btn-secondary" href="#compensation">
+          View Compensation &amp; Commitment
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="who-we-seek">
-  <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Who We Seek</p>
-        <h2>Who is a strong fit to mentor with VRI?</h2>
-      </div>
-      <p class="section-intro">
-        VRI seeks mentors with serious subject-matter preparation, strong judgment, and the ability to guide students well in a professional online research environment.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <p class="card-label">Academic Strength</p>
-        <h3>Serious preparation in the relevant field</h3>
-        <p>
-          VRI is generally interested in faculty, postdoctoral scholars, PhD holders, and advanced PhD candidates in good standing. In select cases, other highly qualified professionals may also be considered where subject expertise, scholarly maturity, and mentoring fit are clearly strong.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Professional Fit</p>
-        <h3>Professional, dependable, and institutionally aligned</h3>
-        <p>
-          VRI works best with mentors who communicate clearly, follow through reliably, respect institutional structure, and are comfortable operating within a broader academic and operational framework rather than as fully independent operators.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Mentoring Judgment</p>
-        <h3>Capable of guiding young scholars well</h3>
-        <p>
-          Subject expertise matters, but so does judgment. Mentors should be able to set expectations, maintain appropriate boundaries, support serious student work, and cultivate an intellectually rigorous environment suited to motivated young researchers.
-        </p>
-      </article>
-    </div>
-    <div class="feature-band reveal" style="margin-top: 20px;">
-  <div class="feature-band-grid">
-    <div>
-      <h3>Core mentor standards</h3>
-      <p>
-        VRI reviews prospective mentors for both academic preparation and professional fit. Strong candidates should be prepared to meet the following expectations.
-      </p>
-    </div>
-
-    <div class="feature-quote">
-      <strong>Standards may include</strong>
-      <ul class="clean-list clean-list-light">
-        {% for item in site.data.mentors.mentor_standards %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-
-<section class="section" id="why-mentor">
-  <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Why Mentor with VRI</p>
-        <h2>A structured way to guide serious student research.</h2>
-      </div>
-      <p class="section-intro">
-        VRI is designed for mentors who want to do meaningful academic work with motivated students while operating within a clear program structure, with defined expectations, coordinated administration, and professional boundaries.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <p class="card-label">Serious Students</p>
-        <h3>Work with motivated young researchers</h3>
-        <p>
-          VRI students are generally motivated learners seeking substantive mentored research experience rather than casual tutoring. Preparation varies by pathway and project, so prerequisites and expected background are reviewed as part of the project approval process.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Program Structure</p>
-        <h3>Focus on mentoring, not running the whole operation</h3>
-        <p>
-          VRI provides the broader program framework, enrollment structure, communication expectations, scheduling coordination, and operational oversight so mentors can focus on guiding strong academic work within an organized environment.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Academic Substance</p>
-        <h3>Develop projects with real intellectual direction</h3>
-        <p>
-          Strong mentor proposals usually have a clear research question or theme, accessible entry points for students, room for genuine exploration, and a realistic final outcome such as a presentation, research summary, computational notebook, poster, or written report.
-        </p>
-      </article>
-    </div>
-
-    <div class="feature-band reveal" style="margin-top: 20px;">
-      <div class="feature-band-grid">
-        <div>
-          <h3>What VRI helps provide</h3>
-          <p>
-            Mentors are not expected to create a private side program, recruit families independently, or manage the full administrative burden of a research program on their own. VRI is intended to provide the institutional structure around the work while preserving the mentor's academic judgment within approved projects.
-          </p>
-        </div>
-
-        <div class="feature-quote">
-          <strong>Mentor-facing support</strong>
-          <ul class="clean-list clean-list-light">
-            <li>student-facing program structure and pathway placement;</li>
-            <li>coordination around enrollment, expectations, and approved communication channels;</li>
-            <li>review of project fit, scope, prerequisites, and expected outcomes;</li>
-            <li>clear compensation, documentation, and engagement expectations before participant-facing work begins.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="engagement-model">
-  <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Engagement Model</p>
-        <h2>How mentor engagement with VRI is structured.</h2>
-      </div>
-      <p class="section-intro">
-        VRI uses a selective, term-based mentor model designed to support quality, continuity, and clear institutional boundaries.
-      </p>
-    </div>
-
-<div class="feature-band reveal">
-  <div class="feature-band-grid">
-    <div>
-      <h3>{{ site.data.mentors.engagement_model.status }} framework</h3>
-      <p>
-        {{ site.data.mentors.engagement_model.summary }}
-      </p>
-      <p>
-        Current engagement terms are generally structured on a
-        {{ site.data.mentors.engagement_model.agreement_term }} basis, with renewal remaining discretionary and dependent on
-        {{ site.data.mentors.engagement_model.renewal | downcase }}.
-      </p>
-    </div>
-
-    <div class="feature-quote">
-      <strong>Important note</strong>
-      <p>
-        {{ site.data.mentors.engagement_model.important_note }}
-      </p>
-    </div>
-  </div>
-</div>
-
-    <div class="grid-3" style="margin-top: 18px;">
-      <article class="card reveal">
-        <p class="card-label">Term-Based</p>
-        <h3>Structured for continuity</h3>
-        <p>
-          VRI prefers a structured engagement model rather than one-off informal arrangements. This allows mentors who have already been reviewed and onboarded to continue proposing work within a defined institutional framework.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Discretionary</p>
-        <h3>Approval and assignment remain selective</h3>
-        <p>
-          VRI may approve, defer, limit, renew, or decline mentor participation based on quality, safety, fit, compliance, operational needs, and the broader balance of the institute’s offerings.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Institutional</p>
-        <h3>Not a private side-channel arrangement</h3>
-        <p>
-          Mentors work within VRI’s academic and operational structure. Participant relationships, proposal approvals, communication rules, and authorized offerings remain under VRI’s institutional framework rather than private side arrangements.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="expectations">
-  <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Responsibilities &amp; Standards</p>
-        <h2>What VRI expects from approved mentors.</h2>
-      </div>
-      <p class="section-intro">
-        VRI expects mentors to combine strong subject expertise with professionalism, sound judgment, and respect for the institute’s academic, operational, and safeguarding standards.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <p class="card-label">Preparation</p>
-        <h3>Well-scoped, serious project design</h3>
-        <p>
-          Mentors should be able to propose work that is intellectually serious, appropriately scoped, and realistic for the relevant VRI pathway. This includes clear prerequisites, a defensible project structure, and a thoughtful sense of what students can reasonably accomplish.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Professionalism</p>
-        <h3>Dependable communication and follow-through</h3>
-        <p>
-          VRI expects mentors to communicate clearly, arrive prepared, respect schedules, respond in a timely and professional manner, and sustain continuity across the engagement rather than treating the work casually or informally.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Boundaries</p>
-        <h3>Appropriate supervision and approved channels</h3>
-        <p>
-          Mentors are expected to operate through approved VRI channels, maintain appropriate professional boundaries with students and families, and avoid informal side arrangements or communication practices that fall outside VRI’s institutional framework.
-        </p>
-      </article>
-    </div>
-
-    <div class="grid-2" style="margin-top: 20px;">
-      <article class="card reveal">
-        <p class="card-label">Scholarly Standards</p>
-        <h3>Research integrity matters</h3>
-        <p>
-          Mentors should model honest scholarly conduct, including appropriate attribution, responsible use of sources and tools, clarity about authorship and contribution, and serious expectations for the quality of student work and final deliverables.
-        </p>
-      </article>
-
-<article class="card reveal">
-  <p class="card-label">Documentation</p>
-  <h3>Records, summaries, and operational compliance</h3>
-  <p>
-    Approved mentors should be prepared to work within VRI’s expectations for documentation, conduct, privacy, communication, and intellectual integrity.
-  </p>
-
-  <ul class="clean-list" style="margin-top: 16px;">
-    {% for item in site.data.mentors.responsibilities %}
-      <li>{{ item }}</li>
-    {% endfor %}
-  </ul>
-</article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="process">
-  <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Screening &amp; Approval</p>
-        <h2>How mentor review and approval generally work.</h2>
-      </div>
-      <p class="section-intro">
-        Mentor approval at VRI is selective and discretionary. The institute may review qualifications, institutional fit, professionalism, and operational readiness before approving a mentor for participant-facing work.
-      </p>
-    </div>
-
-    <div class="feature-band reveal">
-      <div class="feature-band-grid">
-        <div>
-          <h3>Selective review, not automatic onboarding</h3>
-          <p>
-            Submission of an application, proposal, CV, or inquiry does not by itself create an entitlement to serve as a mentor. VRI may approve, defer, request clarification, or decline mentor participation based on quality, safety, institutional fit, and program need.
-          </p>
-          <p>
-            Depending on the circumstances, VRI may review subject-matter preparation, mentoring approach, communication quality, proposal viability, references, credentials, prior experience, and other information relevant to responsible approval.
-          </p>
-          <p>
-            A typical review path may include an initial inquiry or application, review of credentials and fit, follow-up conversation or proposal review, completion of required onboarding documentation, and final activation for a specific approved term, cohort, project, or case.
-          </p>
-        </div>
-
-<div class="feature-quote">
-  <strong>Review factors may include</strong>
-  <ul class="clean-list clean-list-light">
-    {% for item in site.data.mentors.screening %}
-      <li>{{ item }}</li>
-    {% endfor %}
-  </ul>
-</div>
-      </div>
-    </div>
-
-    <div class="grid-3" style="margin-top: 18px;">
-      <article class="card reveal">
-        <p class="card-label">Application</p>
-        <h3>Initial inquiry, application, and fit review</h3>
-        <p>
-          Prospective mentors may be asked to submit an application, CV, proposal materials, or other supporting information so VRI can evaluate subject fit, mentoring fit, and institutional fit before moving forward.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Screening</p>
-        <h3>Conversation, verification, and proposal review</h3>
-        <p>
-          Where relevant, VRI may conduct a follow-up conversation, identity verification, reference review, publication or credential review, background screening, or proposal-readiness review as part of responsible mentor approval.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <p class="card-label">Activation</p>
-        <h3>Final approval for a defined engagement</h3>
-        <p>
-          Even after positive review, mentors are not considered active for VRI work until required documentation, onboarding, payment setup, and final approval steps have been completed for the relevant term, cohort, project, or case.
-        </p>
-      </article>
     </div>
   </div>
 </section>
@@ -377,11 +57,11 @@ on_this_page:
   <div class="shell">
     <div class="section-head reveal">
       <div>
-        <p class="section-label">{{ site.data.mentors.compensation.section_label }}</p>
-        <h2>{{ site.data.mentors.compensation.section_title }}</h2>
+        <p class="section-label">Compensation &amp; Commitment</p>
+        <h2>Clear expectations before a project begins.</h2>
       </div>
       <p class="section-intro">
-        {{ site.data.mentors.compensation.section_intro }}
+        Mentors should understand the compensation, schedule, student format, and expected commitment before agreeing to lead a VRI project.
       </p>
     </div>
 
@@ -392,17 +72,10 @@ on_this_page:
         <div>
           <strong>{{ engagements.circles.label }}</strong>
           <span>
-            Current working compensation model:
-            {{ engagements.circles.compensation_display }}
-            {{ engagements.circles.compensation_basis }}.
+            Current compensation: {{ engagements.circles.compensation_display }} {{ engagements.circles.compensation_basis }}.
           </span>
           <span>
-            Estimated commitment:
-            {{ engagements.circles.estimated_duration }};
-            {{ engagements.circles.estimated_total_live_meetings }} live meetings;
-            {{ engagements.circles.estimated_meetings_per_week }};
-            {{ engagements.circles.estimated_meeting_length }};
-            {{ engagements.circles.estimated_total_hours }}.
+            Estimated commitment: {{ engagements.circles.estimated_duration }}; {{ engagements.circles.estimated_total_live_meetings }} live meetings; {{ engagements.circles.estimated_meetings_per_week }}; {{ engagements.circles.estimated_meeting_length }}; {{ engagements.circles.estimated_total_hours }}.
           </span>
           <span>
             {{ engagements.circles.workload_note }}
@@ -415,17 +88,10 @@ on_this_page:
         <div>
           <strong>{{ engagements.groups.label }}</strong>
           <span>
-            Current working compensation model:
-            {{ engagements.groups.compensation_display }}
-            {{ engagements.groups.compensation_basis }}.
+            Current compensation: {{ engagements.groups.compensation_display }} {{ engagements.groups.compensation_basis }}.
           </span>
           <span>
-            Estimated commitment:
-            {{ engagements.groups.estimated_duration }};
-            {{ engagements.groups.estimated_total_live_meetings }} live meetings;
-            {{ engagements.groups.estimated_meetings_per_week }};
-            {{ engagements.groups.estimated_meeting_length }};
-            {{ engagements.groups.estimated_total_hours }}.
+            Estimated commitment: {{ engagements.groups.estimated_duration }}; {{ engagements.groups.estimated_total_live_meetings }} live meetings; {{ engagements.groups.estimated_meetings_per_week }}; {{ engagements.groups.estimated_meeting_length }}; {{ engagements.groups.estimated_total_hours }}.
           </span>
           <span>
             {{ engagements.groups.workload_note }}
@@ -438,17 +104,10 @@ on_this_page:
         <div>
           <strong>{{ engagements.private_mentorship.label }}</strong>
           <span>
-            Current working compensation model:
-            {{ engagements.private_mentorship.compensation_display }}.
-            {{ engagements.private_mentorship.compensation_detail }}.
+            Current compensation: {{ engagements.private_mentorship.compensation_display }}. {{ engagements.private_mentorship.compensation_detail }}.
           </span>
           <span>
-            Estimated commitment:
-            {{ engagements.private_mentorship.estimated_duration }};
-            {{ engagements.private_mentorship.estimated_total_live_meetings }} live meetings;
-            {{ engagements.private_mentorship.estimated_meetings_per_week }};
-            {{ engagements.private_mentorship.estimated_meeting_length }};
-            {{ engagements.private_mentorship.estimated_total_hours }}.
+            Estimated commitment: {{ engagements.private_mentorship.estimated_duration }}; {{ engagements.private_mentorship.estimated_total_live_meetings }} live meetings; {{ engagements.private_mentorship.estimated_meetings_per_week }}; {{ engagements.private_mentorship.estimated_meeting_length }}; {{ engagements.private_mentorship.estimated_total_hours }}.
           </span>
           <span>
             {{ engagements.private_mentorship.workload_note }}
@@ -460,69 +119,106 @@ on_this_page:
 
     <div class="grid-3" style="margin-top: 20px;">
       <article class="card reveal">
-        <p class="card-label">Scheduling</p>
-        <h3>Timing is coordinated before launch</h3>
+        <p class="card-label">Students</p>
+        <h3>Motivated young researchers</h3>
         <p>
-          Meeting schedules, term timing, and expected availability are coordinated with VRI and participating students before an approved project begins. Mentors should be prepared to communicate availability clearly and sustain continuity across the engagement window.
+          VRI students seek meaningful research experience, not casual tutoring. Project fit, prerequisites, and expected outcomes are reviewed before launch.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Payment Model</p>
-        <h3>Compensation follows approved work</h3>
+        <p class="card-label">Workload</p>
+        <h3>Live meetings, preparation, and feedback</h3>
         <p>
-          {{ site.data.mentors.compensation.payment_model_note }}
-        </p>
-        <p style="margin-top: 12px;">
-          Payment timing, any installment structure, and any final documentation requirements are confirmed in the approved agreement or engagement addendum before participant-facing work begins.
+          Mentors should expect to prepare for sessions, guide student progress, provide feedback, and support a realistic final outcome.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Documentation</p>
-        <h3>Records may be required before final payment</h3>
+        <p class="card-label">Terms</p>
+        <h3>Confirmed before student work begins</h3>
         <p>
-          {{ site.data.mentors.compensation.documentation_note }}
+          Meeting schedules, payment timing, documentation, and approved communication channels are confirmed before the project begins.
         </p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="assignment-volume">
+<section class="section" id="who-we-seek">
   <div class="shell">
     <div class="section-head reveal">
       <div>
-        <p class="section-label">Assignment Volume &amp; Topic Reuse</p>
-        <h2>How many projects a mentor may lead in a term.</h2>
+        <p class="section-label">Who We Seek</p>
+        <h2>Researchers with expertise, judgment, and clarity.</h2>
       </div>
       <p class="section-intro">
-        VRI may approve more than one mentor-led offering in a term, but assignment volume is always discretionary and depends on quality, demand, staffing, program balance, and mentor capacity.
+        VRI seeks mentors who can make serious ideas accessible, set high standards, and guide students with professionalism.
       </p>
     </div>
 
     <div class="grid-3">
       <article class="card reveal">
-        <p class="card-label">Circles</p>
-        <h3>Usually one Circle topic per session</h3>
+        <p class="card-label">Academic Expertise</p>
+        <h3>Strong preparation in the field</h3>
         <p>
-          The default expectation is one Circle topic per mentor per session. With VRI approval, a mentor may be approved for up to two different Circle topics in a session.
+          Faculty, postdoctoral scholars, PhD holders, advanced PhD candidates, and highly qualified specialists may be considered.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Groups</p>
-        <h3>Usually one Group topic per cycle</h3>
+        <p class="card-label">Mentoring Ability</p>
+        <h3>Guidance for serious student work</h3>
         <p>
-          The default expectation is one Group topic per mentor per cycle. Up to two different Group topics may be considered only with explicit VRI approval.
+          Strong mentors can help students ask better questions, build technical confidence, and move from curiosity toward disciplined inquiry.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Topic Reuse</p>
-        <h3>Reusable, but not mechanically repeated</h3>
+        <p class="card-label">Professional Reliability</p>
+        <h3>Prepared, responsive, and dependable</h3>
         <p>
-          Topics may be reused or revisited across terms where appropriate, but VRI generally expects projects to evolve rather than repeat mechanically across cycles.
+          VRI looks for mentors who communicate clearly, honor schedules, follow through, and sustain a constructive research environment.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mentor-role">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">What Mentors Do</p>
+        <h2>Lead students through a focused research experience.</h2>
+      </div>
+      <p class="section-intro">
+        VRI mentors help students engage with substantial questions, methods, readings, models, computations, writing, or presentation work.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal">
+        <p class="card-label">Project Design</p>
+        <h3>Shape a rigorous, realistic project</h3>
+        <p>
+          Mentors propose or refine a project with appropriate prerequisites, clear direction, and a feasible outcome for the selected pathway.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <p class="card-label">Live Mentoring</p>
+        <h3>Guide scheduled research meetings</h3>
+        <p>
+          Mentors lead live online sessions, help students navigate difficulty, and keep the work intellectually serious and appropriately scoped.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <p class="card-label">Student Outcomes</p>
+        <h3>Support a meaningful final product</h3>
+        <p>
+          Outcomes may include a presentation, research summary, computational notebook, poster, written report, or other approved deliverable.
         </p>
       </article>
     </div>
@@ -530,81 +226,137 @@ on_this_page:
     <div class="feature-band reveal" style="margin-top: 20px;">
       <div class="feature-band-grid">
         <div>
-          <h3>Assignment volume remains discretionary</h3>
+          <h3>Core responsibilities</h3>
           <p>
-            Approval as a mentor does not guarantee any specific number of cohorts, topics, or private mentorship cases in a term.
+            The mentor's role is academic guidance: setting direction, supporting progress, giving feedback, and modeling serious scholarly practice.
           </p>
         </div>
 
         <div class="feature-quote">
-          <strong>Planning note</strong>
-          <p>
-            VRI may limit assignments to preserve quality, responsiveness, mentor capacity, and breadth of offerings. Private Mentorship may also reduce the number of other assignments a mentor is approved to carry.
-          </p>
+          <strong>Mentors are expected to</strong>
+          <ul class="clean-list clean-list-light">
+            <li>prepare for scheduled research meetings;</li>
+            <li>communicate clearly and professionally;</li>
+            <li>guide students through appropriate research tasks;</li>
+            <li>provide feedback on progress and final work;</li>
+            <li>use VRI-approved communication channels.</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="private-mentorship">
+<section class="section" id="program-formats">
   <div class="shell">
     <div class="section-head reveal">
       <div>
-        <p class="section-label">Private Mentorship</p>
-        <h2>How advanced continuation work is generally handled.</h2>
+        <p class="section-label">Program Formats</p>
+        <h2>Several ways to support student research.</h2>
       </div>
       <p class="section-intro">
-        Private Mentorship is not treated as a standard public assignment pathway. It is generally considered only in select continuation cases where a stronger individualized structure is appropriate.
+        Mentor opportunities depend on project fit, student readiness, program demand, and mentor availability.
       </p>
     </div>
 
-<div class="feature-band reveal">
-  <div class="feature-band-grid">
-    <div>
-      <h3>Selective, continuation-based, and capacity-dependent</h3>
-      <p>
-        {{ site.data.mentors.private_mentorship.summary }}
-      </p>
-      <p>
-        Availability: {{ site.data.mentors.private_mentorship.availability }}.
-        {% if site.data.mentors.private_mentorship.continuation_only %}
-        This pathway is generally treated as continuation-based rather than as a standard public assignment pathway.
-        {% endif %}
-      </p>
-    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <p class="card-label">Research Circles</p>
+        <h3>Cohort-based research exploration</h3>
+        <p>
+          Circles are designed for motivated students working through a serious topic with expert guidance and a shared research structure.
+        </p>
+      </article>
 
-    <div class="feature-quote">
-      <strong>Important note</strong>
-      <p>
-        {{ site.data.mentors.private_mentorship.important_note }}
-      </p>
+      <article class="card reveal">
+        <p class="card-label">Research Groups</p>
+        <h3>Smaller, more focused project work</h3>
+        <p>
+          Groups support deeper engagement with a narrower project direction, technical method, or research question.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <p class="card-label">Private Mentorship</p>
+        <h3>Select individualized continuation work</h3>
+        <p>
+          In limited cases, VRI may approve individualized mentorship for students ready for a more sustained research trajectory.
+        </p>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
-    <div class="grid-3" style="margin-top: 18px;">
+<section class="section" id="support">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">VRI Support</p>
+        <h2>Mentors focus on academic guidance.</h2>
+      </div>
+      <p class="section-intro">
+        Mentors are not expected to recruit students or build an independent program. VRI provides the structure around the research experience.
+      </p>
+    </div>
+
+    <div class="feature-band reveal">
+      <div class="feature-band-grid">
+        <div>
+          <h3>What VRI helps coordinate</h3>
+          <p>
+            VRI supports the program environment so mentors can concentrate on research direction, student progress, and intellectual quality.
+          </p>
+        </div>
+
+        <div class="feature-quote">
+          <strong>Support may include</strong>
+          <ul class="clean-list clean-list-light">
+            <li>student enrollment and pathway placement;</li>
+            <li>project review, scope, and prerequisite alignment;</li>
+            <li>scheduling coordination and program expectations;</li>
+            <li>approved communication norms;</li>
+            <li>compensation and onboarding documentation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Application Review</p>
+        <h2>A selective review for academic and mentoring fit.</h2>
+      </div>
+      <p class="section-intro">
+        VRI reviews prospective mentors for expertise, communication, project fit, and readiness to work with students in a structured online research setting.
+      </p>
+    </div>
+
+    <div class="grid-3">
       <article class="card reveal">
-        <p class="card-label">Continuation</p>
-        <h3>Usually built on prior work</h3>
+        <p class="card-label">1</p>
+        <h3>Apply or inquire</h3>
         <p>
-          Private Mentorship is generally strongest when it emerges from prior VRI work, especially where a mentor already understands the student’s preparation, work habits, and project direction.
+          Share your background, field, mentoring interests, and any project ideas you would like VRI to consider.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Scope</p>
-        <h3>Intended for deeper individualized work</h3>
+        <p class="card-label">2</p>
+        <h3>Review background and fit</h3>
         <p>
-          This pathway is typically better suited to work that requires sustained attention, stronger independence, or a more individualized trajectory than a broader cohort structure is designed to support.
+          VRI may review a CV, credentials, references, mentoring experience, communication style, and project readiness.
         </p>
       </article>
 
       <article class="card reveal">
-        <p class="card-label">Discretion</p>
-        <h3>Never automatic</h3>
+        <p class="card-label">3</p>
+        <h3>Confirm approved work</h3>
         <p>
-          Even where a mentor and student are both interested, VRI may decline to approve Private Mentorship if fit, capacity, project quality, or institutional considerations do not support it.
+          Approved mentors complete any required onboarding before leading a specific project, cohort, or mentorship opportunity.
         </p>
       </article>
     </div>
@@ -613,24 +365,12 @@ on_this_page:
 
 <section class="section" id="next-steps">
   <div class="shell">
-    <div class="section-head reveal">
-      <div>
-        <p class="section-label">Inquiry &amp; Next Steps</p>
-        <h2>How to take the next step.</h2>
-      </div>
-      <p class="section-intro">
-        Prospective mentors who appear well aligned with VRI’s standards and model are welcome to apply or reach out with focused questions about fit, proposals, or mentor participation.
-      </p>
-    </div>
-
     <div class="cta-panel reveal">
       <div>
+        <p class="section-label">Apply</p>
         <h3>Interested in mentoring with VRI?</h3>
         <p>
-          VRI reviews mentor participation selectively and may request additional information, proposal materials, or follow-up conversation before approving a mentor for participant-facing work.
-        </p>
-        <p>
-          Submission of an application or inquiry does not by itself guarantee approval, onboarding, or assignment, but it is the appropriate starting point for serious prospective mentors.
+          Apply to be considered for future research programs, cohorts, or approved mentorship opportunities.
         </p>
       </div>
 
