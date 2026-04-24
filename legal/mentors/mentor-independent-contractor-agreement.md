@@ -70,6 +70,28 @@ VRI intends to pay mentors by **direct deposit** using approved payment setup an
 
 Unless a signed written agreement expressly states otherwise:
 
+## 10. Records and Documentation
+
+Mentor shall maintain and submit such records as VRI reasonably requires for payment, compliance, quality control, safeguarding, and program administration.
+
+Required records may include, as applicable:
+
+- session summaries;
+- attendance and session duration records;
+- notable student participation notes;
+- assignments or follow-up items;
+- missed-session notes;
+- incident notes where applicable;
+- final materials, deliverables, or completion confirmations.
+
+VRI may withhold, delay, or reduce payment to the extent permitted by contract and law if required records are materially incomplete, inaccurate, falsified, or not timely submitted.
+
+## 11. Taxes and Benefits
+
+Mentor is solely responsible for Mentor’s own taxes, filings, withholdings, insurance, retirement contributions, and other financial obligations arising from compensation paid under this Agreement.
+
+Unless a separate written employment agreement expressly states otherwise, Mentor is not entitled to employee benefits, including but not limited to health insurance, retirement benefits, paid leave, unemployment benefits, or similar benefits.
+
 - VRI is not required to prepay Mentor before work begins;
 - payment may be made in one or more installments as determined by VRI;
 - final payment may be conditioned on completion of the engagement and receipt of required records, summaries, invoices, attendance logs, and any final materials required by VRI.
