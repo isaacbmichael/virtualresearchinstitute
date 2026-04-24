@@ -1,0 +1,22 @@
+institutional:
+  delivery_model: "Fully online"
+  terms_public: "Spring, Summer, and Fall"
+  academic_tone: "A serious academic environment for mentored research"
+  approved_channels: "Approved VRI communication channels"
+  no_guarantee_outcomes: "Participation does not guarantee publication, authorship, recommendation letters, awards, admission advantages, or other external outcomes."
+
+private_mentorship:
+  short_label: "Private Mentorship"
+  availability_note: "Available only in select cases"
+  continuation_note: "Private Mentorship is generally considered only in select continuation cases when prior student performance is strong, mentor recommendation is favorable, an appropriate next-stage project exists, and VRI capacity allows."
+  not_standard_pathway: "It is not a standard next step for every student and may not be available every term."
+
+mentor_language:
+  contractor_status: "Mentors generally serve as independent contractors unless otherwise agreed in writing."
+  standards_summary: "Mentors are expected to demonstrate strong subject-matter preparation, professionalism, dependable communication, and respect for VRI policies and boundaries."
+  fit_summary: "Approval is discretionary and depends on quality, safety, institutional fit, and program need."
+
+support:
+  qa_label: "Questions & Answers"
+  assistant_label: "Ask VRI"
+  contact_fallback: "If a question is not resolved through the Questions & Answers page or Ask VRI, users may contact VRI directly."
