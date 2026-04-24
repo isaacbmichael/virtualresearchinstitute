@@ -63,29 +63,49 @@ on_this_page:
       </div>
     </section>
 
-    <section class="section" id="ask-vri">
-      <div class="shell">
-        <p class="section-label reveal">Ask VRI</p>
-        <div class="cta-panel reveal">
-          <div>
-            <h3>Need help finding the right answer quickly?</h3>
-            <p>
-              Ask VRI will provide quick guidance based on VRI’s public information, program pages, and published policies.
-              This section is being prepared now and will be added here soon.
-            </p>
-            <p>
-              Until the assistant is live, you can use the Questions Library below to search by topic, pricing, scheduling,
-              technology, safety, and program structure.
-            </p>
-          </div>
+<section class="section" id="ask-vri">
+  <div class="shell">
+    <p class="section-label reveal">Ask VRI</p>
 
-          <div class="quick-links">
-            <a class="btn btn-secondary" href="/programs/">Programs &amp; Pricing</a>
-            <a class="quick-chip quick-chip-teal" href="/policies/">Policies &amp; Procedures</a>
-          </div>
-        </div>
+    <div class="cta-panel reveal ask-vri-panel">
+      <div class="ask-vri-copy">
+        <h3>Need help finding the right answer quickly?</h3>
+        <p>
+          Ask VRI can provide quick guidance based on VRI’s public information,
+          program pages, and published policies. It is designed to help families
+          find the right starting point before contacting VRI directly.
+        </p>
+        <p>
+          Ask VRI provides general guidance only. It does not replace VRI’s
+          published policies, signed agreements, or direct written communication
+          from VRI.
+        </p>
       </div>
-    </section>
+
+      <form class="ask-vri-form" data-ask-vri-form>
+        <label class="sr-only" for="ask-vri-question">Ask VRI a question</label>
+
+        <textarea
+          id="ask-vri-question"
+          class="ask-vri-input"
+          data-ask-vri-input
+          rows="4"
+          maxlength="1200"
+          placeholder="Ask a question about VRI programs, pricing, scheduling, policies, technology, or student fit."
+          required></textarea>
+
+        <div class="ask-vri-actions">
+          <button class="btn btn-gold ask-vri-submit" type="submit" data-ask-vri-submit>
+            Ask VRI
+          </button>
+          <a class="btn btn-secondary" href="#faq-library">Browse Questions Library</a>
+        </div>
+
+        <div class="ask-vri-answer" data-ask-vri-output hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="faq-library">
       <div class="shell">
