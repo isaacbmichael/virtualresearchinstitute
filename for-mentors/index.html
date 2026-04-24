@@ -389,26 +389,29 @@ on_this_page:
       </p>
     </div>
 
-    <div class="feature-band reveal">
-      <div class="feature-band-grid">
-        <div>
-          <h3>Selective, continuation-based, and capacity-dependent</h3>
-          <p>
-            In general, Private Mentorship is considered only when prior student performance has been strong, mentor recommendation is favorable, an appropriate next-stage project exists, and VRI determines that the case is suitable for individualized continuation.
-          </p>
-          <p>
-            It should not be assumed that every mentor, every project, or every term will support this level of continuation work. Availability remains discretionary and depends on academic fit, operational capacity, and institutional judgment.
-          </p>
-        </div>
-
-        <div class="feature-quote">
-          <strong>Important note</strong>
-          <p>
-            Private Mentorship is not a default next step for all students and is not guaranteed as an extension of every Circle or Group. VRI may determine that no such continuation is appropriate in a given case.
-          </p>
-        </div>
-      </div>
+<div class="feature-band reveal">
+  <div class="feature-band-grid">
+    <div>
+      <h3>Selective, continuation-based, and capacity-dependent</h3>
+      <p>
+        {{ site.data.mentors.private_mentorship.summary }}
+      </p>
+      <p>
+        Availability: {{ site.data.mentors.private_mentorship.availability }}.
+        {% if site.data.mentors.private_mentorship.continuation_only %}
+        This pathway is generally treated as continuation-based rather than as a standard public assignment pathway.
+        {% endif %}
+      </p>
     </div>
+
+    <div class="feature-quote">
+      <strong>Important note</strong>
+      <p>
+        {{ site.data.mentors.private_mentorship.important_note }}
+      </p>
+    </div>
+  </div>
+</div>
 
     <div class="grid-3" style="margin-top: 18px;">
       <article class="card reveal">
