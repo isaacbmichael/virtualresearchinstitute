@@ -43,3 +43,26 @@
 ### 7. Public vs. private
 - Public For Mentors page should summarize the framework at a high level
 - Signed agreements and onboarding documents should contain the stronger enforceable details
+
+## 8. Mentor workload and topic-reuse guidance
+
+### Circles
+- Default: 1 Circle topic per mentor per session
+- Maximum: up to 2 different Circle topics per mentor per session with VRI approval
+- Circle topics may be reused across terms
+- Exact repetition across Session 1 and Session 2 of the same cycle should generally be avoided unless demand, staffing, or program need justifies it
+
+### Groups
+- Default: 1 Group topic per mentor per cycle
+- Maximum: up to 2 different Group topics only with explicit VRI approval
+- Group topics may revisit the same broad research theme across terms
+- Exact Group projects should generally evolve rather than repeat mechanically across cycles
+
+### Private Mentorship
+- Private Mentorship is continuation-based and individualized
+- It should be treated as significant mentor load
+- VRI may reduce or limit other mentor assignments when Private Mentorship is active
+
+### General principle
+- Mentor assignment volume is always discretionary
+- VRI may limit assignments to preserve quality, responsiveness, and breadth of offerings
