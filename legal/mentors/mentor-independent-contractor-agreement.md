@@ -97,3 +97,22 @@ Unless a separate written employment agreement expressly states otherwise, Mento
 - final payment may be conditioned on completion of the engagement and receipt of required records, summaries, invoices, attendance logs, and any final materials required by VRI.
 
 Mentor is responsible for providing accurate tax and payment information and for maintaining current payment details with VRI.
+
+## 12. Termination and Non-Renewal
+
+VRI may suspend, restrict, terminate, or decline to renew this Agreement or any specific engagement if VRI determines, in its discretion, that such action is appropriate for reasons including but not limited to:
+
+- quality concerns;
+- safety concerns;
+- policy noncompliance;
+- confidentiality concerns;
+- documentation failures;
+- legal or reputational risk;
+- operational changes;
+- lack of program need;
+- student or family protection concerns;
+- inaccurate or misleading information provided by Mentor.
+
+Mentor may not assume renewal, continued assignment, future cohorts, or continued access to VRI participants merely because Mentor has previously served under this Agreement.
+
+VRI may also remove Mentor from a specific project, cohort, or assignment without necessarily terminating the entire Agreement if VRI determines that reassignment, replacement, or scope reduction is appropriate.
