@@ -26,3 +26,16 @@ The following items should generally be completed before a mentor is activated f
 - verified location and time zone;
 - reviewed VRI communication, professionalism, and safeguarding expectations;
 - reviewed documentation and recordkeeping expectations.
+
+## 4. Screening and Verification
+
+Where applicable or required by VRI, the following items should be completed or documented before mentor activation:
+
+- identity verification;
+- CV / resume review;
+- publication, credential, or affiliation review where relevant;
+- reference review where relevant;
+- background check completion where required or appropriate;
+- confirmation that no material misrepresentation or disqualifying concern has been identified.
+
+Approval remains discretionary even if individual screening items are completed.
