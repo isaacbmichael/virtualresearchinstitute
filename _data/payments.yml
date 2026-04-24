@@ -1,0 +1,38 @@
+deposit_policy:
+  required: true
+  general_summary: "A non-refundable deposit is generally required to reserve a seat unless VRI expressly states otherwise in writing."
+
+deposits:
+  circles: "$300"
+  groups: "$500"
+  private_mentorship: "By case"
+
+balance_policy:
+  summary: "Remaining balances are due by published deadlines communicated by VRI."
+  late_payment_note: "Late or incomplete payment may affect enrollment status unless VRI approves an exception in writing."
+
+refund_policy:
+  more_than_21_days:
+    window_label: "More than 21 calendar days before the first scheduled live session"
+    refund_summary: "Tuition paid may be refundable less the non-refundable deposit and any nonrecoverable fees."
+  days_20_to_8:
+    window_label: "20 to 8 calendar days before the first scheduled live session"
+    refund_summary: "Up to 50% of tuition paid may be refundable, less the non-refundable deposit and any nonrecoverable fees."
+  days_7_or_fewer:
+    window_label: "7 calendar days or fewer before the first scheduled live session"
+    refund_summary: "No refund absent extraordinary documented circumstances and a written determination by VRI."
+
+after_start_policy:
+  summary: "The default position is generally no refund once the first live session has begun or once mentor matching or onboarding work has materially started."
+
+non_refund_examples:
+  - "Late-disclosed schedule conflicts"
+  - "Late-disclosed time-zone incompatibility"
+  - "Travel conflicts"
+  - "School or extracurricular conflicts"
+  - "Local device failures"
+  - "Local internet problems"
+
+financial_assistance:
+  available: true
+  summary: "Limited financial assistance may be available in select cases depending on funding and the program cycle."
