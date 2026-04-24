@@ -3013,6 +3013,14 @@ body.upcoming-projects-page .pathway-card-meta {
   margin-top: 10px;
 }
 
+.clean-list-light {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.clean-list-light li + li {
+  margin-top: 8px;
+}
+
 .pathway-banner {
   margin-top: 6px;
   margin-bottom: 22px;
