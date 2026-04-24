@@ -3789,6 +3789,12 @@ body.mentors-page .cta-panel .quick-links {
   }
 }
 
+body.mentors-page .card:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(4, 76, 89, 0.1);
+}
+
 /* ===================== FAQ-specific UI ===================== */
 .faq-toolbar {
   position: sticky;
