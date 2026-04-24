@@ -34,7 +34,7 @@
       ["/programs/", "Programs & Pricing"],
       ["/about/", "About VRI"],
       ["/research-archive/", "Research Archive"],
-      ["/faq/", "FAQ"],
+      ["/questions-and-answers/", "Questions & Answers"],
       ["/policies/", "Policies & Procedures"],
       ["/legal/policies/VRI_Policies_and_Procedures_Manual.pdf", "Full Manual"]
     ]);
