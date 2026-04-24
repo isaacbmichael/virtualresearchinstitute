@@ -4,6 +4,8 @@ mentor_program:
   inquiry_email: "info@virtualresearchinstitute.org"
   mentor_inquiry_label: "Mentor Inquiry"
   mentor_inquiry_href: "mailto:info@virtualresearchinstitute.org"
+  mentor_application_label: "Apply to Mentor with VRI"
+  mentor_application_href: "https://lsu.formstack.com/forms/vri_mentor_application"
 
 engagement_model:
   status: "Independent contractor"
