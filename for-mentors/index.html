@@ -206,13 +206,19 @@ on_this_page:
         </p>
       </article>
 
-      <article class="card reveal">
-        <p class="card-label">Documentation</p>
-        <h3>Records, summaries, and operational compliance</h3>
-        <p>
-          VRI may require session summaries, attendance documentation, incident notes where applicable, and other records needed for payment, quality control, safeguarding, and program administration. Approved mentors should be prepared to work within those expectations.
-        </p>
-      </article>
+<article class="card reveal">
+  <p class="card-label">Documentation</p>
+  <h3>Records, summaries, and operational compliance</h3>
+  <p>
+    Approved mentors should be prepared to work within VRI’s expectations for documentation, conduct, privacy, communication, and intellectual integrity.
+  </p>
+
+  <ul class="clean-list" style="margin-top: 16px;">
+    {% for item in site.data.mentors.responsibilities %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</article>
     </div>
   </div>
 </section>
