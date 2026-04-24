@@ -49,3 +49,29 @@ Mentor may not, without prior written authorization from VRI:
 - use unapproved agreements, side letters, or external arrangements with VRI participants.
 
 Any action outside the scope authorized by VRI may be treated as a material breach of this Agreement.
+
+## 8. Compensation
+
+Compensation, if any, shall be determined by VRI on a **per-cohort, per-project, or per-case basis** and may vary by pathway, scope, duration, student count, extension work, or other approved factors.
+
+Unless otherwise stated in a signed addendum, current internal draft compensation assumptions are as follows:
+
+- **Circles:** $5,000 per cohort
+- **Groups:** $6,500 per cohort
+- **Private Mentorship:** case-based compensation, currently contemplated at:
+  - **$3,000** for one student
+  - **$5,500–$6,000 total** for two students
+
+Compensation is not earned merely by signing this Agreement. Payment depends on approved work actually being assigned, performed, documented, and accepted by VRI.
+
+## 9. Payment Method and Timing
+
+VRI intends to pay mentors by **direct deposit** using approved payment setup and tax documentation.
+
+Unless a signed written agreement expressly states otherwise:
+
+- VRI is not required to prepay Mentor before work begins;
+- payment may be made in one or more installments as determined by VRI;
+- final payment may be conditioned on completion of the engagement and receipt of required records, summaries, invoices, attendance logs, and any final materials required by VRI.
+
+Mentor is responsible for providing accurate tax and payment information and for maintaining current payment details with VRI.
