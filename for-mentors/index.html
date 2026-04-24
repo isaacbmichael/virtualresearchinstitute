@@ -93,6 +93,25 @@ on_this_page:
         </p>
       </article>
     </div>
+    <div class="feature-band reveal" style="margin-top: 20px;">
+  <div class="feature-band-grid">
+    <div>
+      <h3>Core mentor standards</h3>
+      <p>
+        VRI reviews prospective mentors for both academic preparation and professional fit. Strong candidates should be prepared to meet the following expectations.
+      </p>
+    </div>
+
+    <div class="feature-quote">
+      <strong>Standards may include</strong>
+      <ul class="clean-list clean-list-light">
+        {% for item in site.data.mentors.mentor_standards %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
   </div>
 </section>
 
