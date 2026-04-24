@@ -44,3 +44,13 @@ Without prior written authorization from VRI, Mentor shall not:
 - use VRI relationships, proposal access, or institutional access as a pipeline for off-platform business development.
 
 These restrictions are intended to protect VRI’s legitimate business interests, participant relationships, and institutional structure.
+
+## 6. Non-Solicitation and No-Poaching
+
+During an active engagement with VRI, and for any additional restricted period later defined in a final signed agreement, Mentor shall not, without prior written authorization from VRI:
+
+- solicit or encourage VRI students, families, participants, applicants, or leads to leave VRI for Mentor’s own services or another competing service;
+- solicit VRI mentors, contractors, staff, reviewers, or collaborators to leave VRI for a competing or bypass arrangement arising from Mentor’s access to VRI;
+- assist another person or organization in using VRI relationships, internal information, or participant access to compete unfairly with VRI.
+
+These draft restrictions are intended to protect VRI’s business relationships, recruiting pipeline, and institutional goodwill.
