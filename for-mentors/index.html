@@ -280,37 +280,78 @@ on_this_page:
   <div class="shell">
     <div class="section-head reveal">
       <div>
-        <p class="section-label">Compensation &amp; Documentation</p>
-        <h2>How compensation is generally structured.</h2>
+        <p class="section-label">{{ site.data.mentors.compensation.section_label }}</p>
+        <h2>{{ site.data.mentors.compensation.section_title }}</h2>
       </div>
       <p class="section-intro">
-        VRI compensates mentors on a per-cohort or per-case basis, with final terms governed by approved agreements, onboarding materials, and the scope of the relevant engagement.
+        {{ site.data.mentors.compensation.section_intro }}
       </p>
     </div>
 
     <div class="pricing-stack reveal">
+      {% assign engagements = site.data.mentors.mentor_engagements %}
+
       <div class="pricing-row">
         <div>
-          <strong>Circles</strong>
-          <span>Current working compensation model: $5,000 per cohort.</span>
+          <strong>{{ engagements.circles.label }}</strong>
+          <span>
+            Current working compensation model:
+            {{ engagements.circles.compensation_display }}
+            {{ engagements.circles.compensation_basis }}.
+          </span>
+          <span>
+            Estimated commitment:
+            {{ engagements.circles.estimated_meetings_per_week }};
+            {{ engagements.circles.estimated_meeting_length }};
+            {{ engagements.circles.estimated_total_hours }}.
+          </span>
+          <span>
+            {{ engagements.circles.workload_note }}
+          </span>
         </div>
-        <div class="price-tag">$5,000</div>
+        <div class="price-tag">{{ engagements.circles.compensation_display }}</div>
       </div>
 
       <div class="pricing-row">
         <div>
-          <strong>Groups</strong>
-          <span>Current working compensation model: $6,500 per cohort.</span>
+          <strong>{{ engagements.groups.label }}</strong>
+          <span>
+            Current working compensation model:
+            {{ engagements.groups.compensation_display }}
+            {{ engagements.groups.compensation_basis }}.
+          </span>
+          <span>
+            Estimated commitment:
+            {{ engagements.groups.estimated_meetings_per_week }};
+            {{ engagements.groups.estimated_meeting_length }};
+            {{ engagements.groups.estimated_total_hours }}.
+          </span>
+          <span>
+            {{ engagements.groups.workload_note }}
+          </span>
         </div>
-        <div class="price-tag">$6,500</div>
+        <div class="price-tag">{{ engagements.groups.compensation_display }}</div>
       </div>
 
       <div class="pricing-row">
         <div>
-          <strong>Private Mentorship</strong>
-          <span>Case-based compensation, currently contemplated at $3,000 for one student and $5,500-$6,000 total for two students, where such continuation work is approved.</span>
+          <strong>{{ engagements.private_mentorship.label }}</strong>
+          <span>
+            Current working compensation model:
+            {{ engagements.private_mentorship.compensation_display }}.
+            {{ engagements.private_mentorship.compensation_detail }}.
+          </span>
+          <span>
+            Estimated commitment:
+            {{ engagements.private_mentorship.estimated_meetings_per_week }};
+            {{ engagements.private_mentorship.estimated_meeting_length }};
+            {{ engagements.private_mentorship.estimated_total_hours }}.
+          </span>
+          <span>
+            {{ engagements.private_mentorship.workload_note }}
+          </span>
         </div>
-        <div class="price-tag">By case</div>
+        <div class="price-tag">{{ engagements.private_mentorship.compensation_display }}</div>
       </div>
     </div>
 
@@ -319,7 +360,7 @@ on_this_page:
         <p class="card-label">Payment Model</p>
         <h3>Compensation follows approved work</h3>
         <p>
-          Compensation is tied to approved VRI work actually assigned and completed. Mentor approval does not by itself guarantee a cohort, a launch, or a minimum amount of compensated work in any given term.
+          {{ site.data.mentors.compensation.payment_model_note }}
         </p>
       </article>
 
@@ -327,7 +368,7 @@ on_this_page:
         <p class="card-label">Documentation</p>
         <h3>Records may be required before final payment</h3>
         <p>
-          VRI may require records such as session summaries, attendance logs, incident notes where applicable, and final materials before payment is finalized. Exact payment timing and documentation requirements are governed by signed agreements and approved onboarding materials.
+          {{ site.data.mentors.compensation.documentation_note }}
         </p>
       </article>
     </div>
