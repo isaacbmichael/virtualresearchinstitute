@@ -54,3 +54,11 @@ During an active engagement with VRI, and for any additional restricted period l
 - assist another person or organization in using VRI relationships, internal information, or participant access to compete unfairly with VRI.
 
 These draft restrictions are intended to protect VRI’s business relationships, recruiting pipeline, and institutional goodwill.
+
+## 7. Brand, Materials, and Workflow Protection
+
+Mentor shall not, without prior written authorization from VRI, reproduce, publish, distribute, commercialize, adapt, or repurpose VRI’s nonpublic materials, templates, workflows, onboarding documents, playbooks, proposal structures, internal rubrics, pricing structures, graphics, branded language, or other protected business materials for an outside or competing use.
+
+Mentor shall not use VRI’s name, logos, branding, screenshots, promotional language, or institutional identity in a way that implies endorsement, affiliation, authority, or sponsorship beyond what VRI has expressly approved in writing.
+
+Mentor shall not present VRI’s internal know-how, structures, or operating methods as Mentor’s own independent business system where doing so would appropriate or exploit VRI’s protected business assets.
