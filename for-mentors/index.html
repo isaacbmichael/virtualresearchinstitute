@@ -108,26 +108,28 @@ on_this_page:
       </p>
     </div>
 
-    <div class="feature-band reveal">
-      <div class="feature-band-grid">
-        <div>
-          <h3>Independent-contractor framework</h3>
-          <p>
-            Mentors generally serve as independent contractors unless a separate written agreement expressly states otherwise. Mentor participation is structured through approved agreements, onboarding materials, and VRI’s institutional policies rather than through informal or ad hoc arrangements.
-          </p>
-          <p>
-            Current engagement terms are generally structured on a one-year basis, with renewal remaining discretionary and dependent on program need, performance, compliance, and mutual fit.
-          </p>
-        </div>
-
-        <div class="feature-quote">
-          <strong>Important note</strong>
-          <p>
-            Approval as a mentor does not by itself guarantee a cohort, project, proposal launch, or minimum amount of work. Assignment volume and active engagement remain subject to VRI approval, program need, and institutional judgment.
-          </p>
-        </div>
-      </div>
+<div class="feature-band reveal">
+  <div class="feature-band-grid">
+    <div>
+      <h3>{{ site.data.mentors.engagement_model.status }} framework</h3>
+      <p>
+        {{ site.data.mentors.engagement_model.summary }}
+      </p>
+      <p>
+        Current engagement terms are generally structured on a
+        {{ site.data.mentors.engagement_model.agreement_term }} basis, with renewal remaining discretionary and dependent on
+        {{ site.data.mentors.engagement_model.renewal | downcase }}.
+      </p>
     </div>
+
+    <div class="feature-quote">
+      <strong>Important note</strong>
+      <p>
+        {{ site.data.mentors.engagement_model.important_note }}
+      </p>
+    </div>
+  </div>
+</div>
 
     <div class="grid-3" style="margin-top: 18px;">
       <article class="card reveal">
