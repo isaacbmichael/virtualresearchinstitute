@@ -24,19 +24,34 @@ on_this_page:
     href: "#next-steps"
 ---
 
-<section class="hero" id="overview">
+<section class="hero hero--dark" id="overview">
   <div class="hero-orbit" aria-hidden="true"></div>
 
   <div class="shell hero-grid">
     <div class="hero-copy reveal">
-      <div class="eyebrow">For Mentors</div>
-      <h1>Mentor with VRI.</h1>
+      <div class="eyebrow">{{ site.data.mentors.hero.eyebrow }}</div>
+      <h1>{{ site.data.mentors.hero.title }}</h1>
       <p>
-        The Virtual Research Institute works with mentors who can guide students in a serious, professional,
-        and intellectually rigorous online research environment. This page outlines the general framework for
-        mentoring with VRI, including institutional fit, engagement structure, expectations, and the review
-        process for approved mentor participation.
+        {{ site.data.mentors.hero.intro }}
       </p>
+
+      <div class="hero-actions" aria-label="Mentor actions">
+        <a
+          class="btn btn-primary"
+          href="{{ site.data.mentors.hero.primary_cta_href }}"
+          target="{{ site.data.mentors.hero.primary_cta_target }}"
+          rel="{{ site.data.mentors.hero.primary_cta_rel }}"
+        >
+          {{ site.data.mentors.hero.primary_cta_label }}
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="{{ site.data.mentors.hero.secondary_cta_href }}"
+        >
+          {{ site.data.mentors.hero.secondary_cta_label }}
+        </a>
+      </div>
     </div>
   </div>
 </section>
