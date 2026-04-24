@@ -62,3 +62,11 @@ Mentor shall not, without prior written authorization from VRI, reproduce, publi
 Mentor shall not use VRI’s name, logos, branding, screenshots, promotional language, or institutional identity in a way that implies endorsement, affiliation, authority, or sponsorship beyond what VRI has expressly approved in writing.
 
 Mentor shall not present VRI’s internal know-how, structures, or operating methods as Mentor’s own independent business system where doing so would appropriate or exploit VRI’s protected business assets.
+
+## 8. Public Statements, Misrepresentation, and Professional Communications
+
+Mentor shall not make false, misleading, unauthorized, or materially incomplete statements about VRI, its programs, its participants, its pricing, its policies, or its business operations.
+
+Mentor shall not represent that Mentor is authorized to speak on behalf of VRI unless VRI has expressly granted that authority in writing.
+
+Nothing in these draft terms is intended to prevent truthful statements required by law or good-faith participation in a lawful process. However, Mentor may not disclose Confidential Information, make defamatory statements, or present speculation, rumor, or internal draft matters as official VRI positions.
