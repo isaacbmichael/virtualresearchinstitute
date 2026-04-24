@@ -3732,15 +3732,16 @@ body.mentors-page .hero-actions .btn-primary:focus-visible {
 }
 
 body.mentors-page .hero-actions .btn-secondary {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.34);
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--teal-900);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 body.mentors-page .hero-actions .btn-secondary:hover,
 body.mentors-page .hero-actions .btn-secondary:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--teal-950);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(255, 255, 255, 0.44);
   box-shadow: var(--shadow-md);
 }
 
