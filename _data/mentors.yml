@@ -1,36 +1,94 @@
 mentor_program:
   page_title: "For Mentors"
-  page_intro: "Information for prospective mentors at the Virtual Research Institute, including institutional fit, standards, responsibilities, and engagement structure."
+  page_intro: "Information for prospective mentors at the Virtual Research Institute, including institutional fit, standards, responsibilities, compensation, expected commitment, and engagement structure."
+
   inquiry_email: "info@virtualresearchinstitute.org"
-  mentor_inquiry_label: "Mentor Inquiry"
-  mentor_inquiry_href: "mailto:info@virtualresearchinstitute.org"
+
   mentor_application_label: "Apply to Mentor with VRI"
   mentor_application_href: "https://lsu.formstack.com/forms/vri_mentor_application"
+  mentor_application_target: "_blank"
+  mentor_application_rel: "noopener noreferrer"
+
+  mentor_inquiry_label: "Mentor Inquiry"
+  mentor_inquiry_href: "mailto:info@virtualresearchinstitute.org"
+
+hero:
+  eyebrow: "For Mentors"
+  title: "Mentor with VRI."
+  intro: "The Virtual Research Institute works with mentors who can guide students in a serious, professional, and intellectually rigorous online research environment. This page outlines the general framework for mentoring with VRI, including institutional fit, engagement structure, expectations, compensation, and the review process for approved mentor participation."
+
+  primary_cta_label: "Apply to Mentor with VRI"
+  primary_cta_href: "https://lsu.formstack.com/forms/vri_mentor_application"
+  primary_cta_target: "_blank"
+  primary_cta_rel: "noopener noreferrer"
+
+  secondary_cta_label: "Mentor Inquiry"
+  secondary_cta_href: "mailto:info@virtualresearchinstitute.org"
 
 engagement_model:
   status: "Independent contractor"
   form_1099: true
   agreement_term: "1 year"
   renewal: "Subject to institutional need, performance, compliance, and mutual fit"
+
   confidentiality_required: true
   nda_required: true
   non_circumvention_required: true
   non_poaching_required: true
 
-compensation:
+  summary: "Mentors generally serve as independent contractors unless a separate written agreement expressly states otherwise. Mentor participation is structured through approved agreements, onboarding materials, and VRI’s institutional policies rather than through informal or ad hoc arrangements."
+
+  important_note: "Approval as a mentor does not by itself guarantee a cohort, project, proposal launch, or minimum amount of work. Assignment volume and active engagement remain subject to VRI approval, program need, and institutional judgment."
+
+mentor_engagements:
   circles:
     label: "Circles"
-    amount: "$5,000"
-    basis: "per cohort"
+    compensation_display: "$5,000"
+    compensation_basis: "per cohort"
+
+    estimated_meetings_per_week: "1 live cohort meeting per week"
+    estimated_meeting_length: "90 minutes"
+    estimated_total_live_meetings: "12"
+    estimated_total_hours: "35-45 hours total"
+
+    workload_note: "Includes live sessions, preparation, student feedback, light documentation, and final deliverable review."
+    availability_note: "Assignment is subject to VRI approval, enrollment, program need, and project fit."
+
   groups:
     label: "Groups"
-    amount: "$6,500"
-    basis: "per cohort"
+    compensation_display: "$6,500"
+    compensation_basis: "per cohort"
+
+    estimated_meetings_per_week: "1 live cohort meeting per week"
+    estimated_meeting_length: "90 minutes"
+    estimated_total_live_meetings: "12"
+    estimated_total_hours: "45-60 hours total"
+
+    workload_note: "Groups may require more individualized feedback, project direction, and deliverable support than Circles."
+    availability_note: "Assignment is subject to VRI approval, enrollment, program need, and project fit."
+
   private_mentorship:
     label: "Private Mentorship"
-    amount_1_student: "$3,000"
-    amount_2_students: "$5,500-$6,000"
-    basis: "per case"
+    compensation_display: "By case"
+    compensation_detail: "$3,000 for one student; $5,500-$6,000 total for two students, where approved"
+    compensation_basis: "per approved case"
+
+    estimated_meetings_per_week: "Usually 1 meeting per week"
+    estimated_meeting_length: "60-90 minutes"
+    estimated_total_live_meetings: "By approved scope"
+    estimated_total_hours: "By approved scope"
+
+    workload_note: "Private Mentorship is selective, continuation-based, and depends on the approved individualized plan."
+    availability_note: "Private Mentorship is not a default next step and is not guaranteed as an extension of every Circle or Group."
+
+compensation:
+  section_label: "Compensation & Expected Commitment"
+  section_title: "How compensation and workload are generally structured."
+  section_intro: "VRI compensates mentors on a per-cohort or per-case basis, with final terms governed by approved agreements, onboarding materials, and the scope of the relevant engagement."
+
+  payment_model_note: "Compensation is tied to approved VRI work actually assigned and completed. Mentor approval does not by itself guarantee a cohort, a launch, or a minimum amount of compensated work in any given term."
+
+  documentation_note: "VRI may require records such as session summaries, attendance logs, incident notes where applicable, and final materials before payment is finalized. Exact payment timing and documentation requirements are governed by signed agreements and approved onboarding materials."
 
 mentor_standards:
   - "Strong subject-matter preparation in the proposed area"
@@ -43,6 +101,8 @@ screening:
   - "Application or institutional inquiry review"
   - "Conversation regarding subject fit, mentoring approach, and professionalism"
   - "Reference and background review where appropriate"
+  - "Credential, publication, or professional background review where relevant"
+  - "Completion of required onboarding, documentation, and agreement steps before participant-facing work"
   - "Approval is discretionary and based on quality, safety, institutional fit, and program need"
 
 responsibilities:
@@ -51,8 +111,32 @@ responsibilities:
   - "Communicate through approved VRI channels"
   - "Maintain appropriate professional boundaries with students and families"
   - "Follow VRI standards for documentation, conduct, privacy, and intellectual integrity"
+  - "Provide session summaries, attendance notes, or other documentation when required"
+  - "Support final student deliverables in a manner appropriate to the approved project scope"
 
 private_mentorship:
   availability: "Not guaranteed"
   continuation_only: true
   summary: "Private Mentorship is generally considered only in select continuation cases when prior student performance is strong, mentor recommendation is favorable, an appropriate next-stage project exists, and VRI capacity allows."
+
+  important_note: "Private Mentorship is not a default next step for all students and is not guaranteed as an extension of every Circle or Group. VRI may determine that no such continuation is appropriate in a given case."
+
+  review_factors:
+    - "Prior student performance"
+    - "Mentor recommendation"
+    - "Availability of an appropriate next-stage project"
+    - "Student readiness for individualized work"
+    - "Mentor capacity"
+    - "Operational capacity"
+    - "VRI approval"
+
+mentor_benefits:
+  section_label: "Why Mentor with VRI"
+  section_title: "A structured way to guide serious student research."
+  summary: "VRI gives mentors a professional framework for guiding motivated students through meaningful research work while the institute supports enrollment, program structure, operational coordination, and institutional oversight."
+
+  points:
+    - "Work with motivated students in a serious online research environment"
+    - "Propose and guide intellectually meaningful projects within an approved structure"
+    - "Receive clear expectations around compensation, scheduling, documentation, and communication"
+    - "Operate within an institutional framework rather than managing enrollment and administration independently"
