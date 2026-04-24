@@ -460,8 +460,21 @@ on_this_page:
       </div>
 
       <div class="quick-links">
-        <a class="btn btn-primary" href="{{ site.data.mentors.mentor_program.mentor_application_href }}" target="_blank" rel="noopener noreferrer">{{ site.data.mentors.mentor_program.mentor_application_label }}</a>
-        <a class="quick-chip quick-chip-teal" href="{{ site.data.mentors.mentor_program.mentor_inquiry_href }}">{{ site.data.mentors.mentor_program.mentor_inquiry_label }}</a>
+        <a
+          class="btn btn-primary"
+          href="{{ site.data.mentors.mentor_program.mentor_application_href }}"
+          target="{{ site.data.mentors.mentor_program.mentor_application_target }}"
+          rel="{{ site.data.mentors.mentor_program.mentor_application_rel }}"
+        >
+          {{ site.data.mentors.mentor_program.mentor_application_label }}
+        </a>
+
+        <a
+          class="quick-chip quick-chip-teal"
+          href="{{ site.data.mentors.mentor_program.mentor_inquiry_href }}"
+        >
+          {{ site.data.mentors.mentor_program.mentor_inquiry_label }}
+        </a>
       </div>
     </div>
   </div>
