@@ -1,12 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "vercel dev"
-  },
-  "dependencies": {
-    "openai": "^6.0.0"
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "vercel": "^48.0.0"
+    "wrangler": "^4.0.0"
   }
 }
