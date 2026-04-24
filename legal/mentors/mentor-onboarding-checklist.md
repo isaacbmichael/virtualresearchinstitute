@@ -52,3 +52,16 @@ Before a mentor is activated for a specific VRI engagement, the following items 
 - confirmed understanding of session expectations, continuity expectations, and participant-boundary requirements.
 
 Submission of a proposal does not by itself guarantee approval, assignment, or launch.
+
+## 6. Final Activation
+
+Before a mentor begins live or participant-facing work for VRI, VRI should confirm that:
+
+- onboarding documentation is complete;
+- screening is complete to the extent required;
+- payment setup is complete;
+- the mentor is approved for the relevant engagement;
+- the mentor has been told the current scope of authorized work;
+- the mentor understands that approval for one term, cohort, or proposal does not automatically authorize other work without VRI approval.
+
+Final activation is discretionary and may be delayed, limited, or withheld if VRI determines that additional review, clarification, or documentation is needed.
