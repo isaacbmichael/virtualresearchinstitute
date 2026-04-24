@@ -3037,6 +3037,14 @@ body.mentors-page .feature-band .feature-quote {
   padding: 20px 22px;
 }
 
+body.mentors-page .feature-band-grid {
+  align-items: start;
+}
+
+body.mentors-page .feature-band-grid > div:first-child {
+  padding-top: 4px;
+}
+
 .pathway-banner {
   margin-top: 6px;
   margin-bottom: 22px;
