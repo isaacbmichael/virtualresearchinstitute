@@ -46,12 +46,13 @@ mentor_engagements:
     compensation_display: "$5,000"
     compensation_basis: "per cohort"
 
+    estimated_duration: "6 weeks"
     estimated_meetings_per_week: "1 live cohort meeting per week"
     estimated_meeting_length: "90 minutes"
-    estimated_total_live_meetings: "12"
-    estimated_total_hours: "35-45 hours total"
+    estimated_total_live_meetings: "6"
+    estimated_total_hours: "24-35 hours total"
 
-    workload_note: "Includes live sessions, preparation, student feedback, light documentation, and final deliverable review."
+    workload_note: "Includes live sessions plus time outside meetings for preparation, student feedback, light documentation, asynchronous communication, and final deliverable review."
     availability_note: "Assignment is subject to VRI approval, enrollment, program need, and project fit."
 
   groups:
@@ -59,12 +60,13 @@ mentor_engagements:
     compensation_display: "$6,500"
     compensation_basis: "per cohort"
 
+    estimated_duration: "10 weeks"
     estimated_meetings_per_week: "1 live cohort meeting per week"
     estimated_meeting_length: "90 minutes"
-    estimated_total_live_meetings: "12"
-    estimated_total_hours: "45-60 hours total"
+    estimated_total_live_meetings: "10"
+    estimated_total_hours: "45-65 hours total"
 
-    workload_note: "Groups may require more individualized feedback, project direction, and deliverable support than Circles."
+    workload_note: "Includes live sessions plus time outside meetings for preparation, individualized student feedback, project direction, asynchronous communication, documentation, deliverable support, and final review."
     availability_note: "Assignment is subject to VRI approval, enrollment, program need, and project fit."
 
   private_mentorship:
@@ -73,12 +75,13 @@ mentor_engagements:
     compensation_detail: "$3,000 for one student; $5,500-$6,000 total for two students, where approved"
     compensation_basis: "per approved case"
 
-    estimated_meetings_per_week: "Usually 1 meeting per week"
+    estimated_duration: "12-16 weeks"
+    estimated_meetings_per_week: "Usually 1 live meeting per week"
     estimated_meeting_length: "60-90 minutes"
-    estimated_total_live_meetings: "By approved scope"
-    estimated_total_hours: "By approved scope"
+    estimated_total_live_meetings: "12-16"
+    estimated_total_hours: "35-70 hours total, depending on scope"
 
-    workload_note: "Private Mentorship is selective, continuation-based, and depends on the approved individualized plan."
+    workload_note: "Includes live meetings plus time outside meetings for preparation, individualized feedback, project planning, asynchronous communication, documentation, and final deliverable support."
     availability_note: "Private Mentorship is not a default next step and is not guaranteed as an extension of every Circle or Group."
 
 compensation:
