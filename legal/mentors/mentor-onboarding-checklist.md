@@ -39,3 +39,16 @@ Where applicable or required by VRI, the following items should be completed or 
 - confirmation that no material misrepresentation or disqualifying concern has been identified.
 
 Approval remains discretionary even if individual screening items are completed.
+
+## 5. Proposal and Readiness Review
+
+Before a mentor is activated for a specific VRI engagement, the following items should generally be completed where relevant:
+
+- submitted project proposal or approved project concept;
+- identified pathway relevance (Circles, Groups, or Private Mentorship continuation, if applicable);
+- stated prerequisites, scope, and expected outputs;
+- confirmed availability for the relevant term or engagement window;
+- confirmed ability to operate through approved VRI platforms and channels;
+- confirmed understanding of session expectations, continuity expectations, and participant-boundary requirements.
+
+Submission of a proposal does not by itself guarantee approval, assignment, or launch.
