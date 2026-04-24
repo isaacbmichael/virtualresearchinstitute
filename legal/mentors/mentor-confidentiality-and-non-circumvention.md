@@ -31,3 +31,16 @@ Mentor shall use reasonable care to protect Confidential Information from unauth
 Mentor shall not use Confidential Information for Mentor’s own competing, commercial, recruiting, consulting, or business-development purposes.
 
 Mentor shall comply with VRI instructions regarding storage, access, return, deletion, and permitted systems for confidential or participant-related information.
+
+## 5. Non-Circumvention and No Private Side Deals
+
+Mentor shall not use VRI to identify, access, solicit, recruit, contract with, redirect, or privately serve VRI students, families, participants, applicants, leads, or other protected relationships in a manner that bypasses VRI.
+
+Without prior written authorization from VRI, Mentor shall not:
+
+- offer private services to VRI participants that arise from Mentor’s access to VRI;
+- invite VRI participants or families to move into non-VRI services during an active VRI engagement;
+- redirect a VRI cohort, project, or mentoring relationship into an outside commercial or private arrangement;
+- use VRI relationships, proposal access, or institutional access as a pipeline for off-platform business development.
+
+These restrictions are intended to protect VRI’s legitimate business interests, participant relationships, and institutional structure.
