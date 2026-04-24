@@ -1,12 +1,379 @@
 ---
 layout: default
 title: Research Archive | Virtual Research Institute
-description: Research Archive for the Virtual Research Institute.
+description: Research Archive for the Virtual Research Institute — a searchable record of approved student research projects, abstracts, mentors, topic areas, presentations, and related materials.
 permalink: /research-archive/
-body_class: research-archive-page
+body_class: programs-page research-archive-page
+explore_key: research-archive
+on_this_page:
+  - label: Overview
+    href: "#overview"
+  - label: Archive Search
+    href: "#archive-search"
+  - label: Archive Status
+    href: "#archive-status"
+  - label: Permissions
+    href: "#permissions"
 ---
 
-<section class="shell">
-  <h1>Research Archive</h1>
-  <p>Placeholder page.</p>
+{% assign archive_projects = site.data.archive.projects %}
+
+<section class="hero">
+  <div class="hero-orbit" aria-hidden="true"></div>
+
+  <div class="shell hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Research Archive</div>
+      <h1>A growing record of mentored student research.</h1>
+      <p>
+        The VRI Research Archive is being prepared as a searchable public record of approved
+        student research projects, including titles, abstracts, mentors, topic areas,
+        presentations, slides, and related materials when permissions allow.
+      </p>
+    </div>
+
+    <div class="hero-scene hero-scene-image reveal" id="heroScene" aria-hidden="true">
+      <div class="scene-wrap scene-wrap-image" id="sceneWrap">
+        <figure class="hero-visual hero-visual-presentation">
+          <img
+            src="/assets/images/programs/vri-presentation-v3.png"
+            alt=""
+            loading="eager"
+            decoding="async">
+        </figure>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section" id="overview">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Overview</p>
+        <h2>A professional archive for completed research work.</h2>
+      </div>
+      <p class="section-intro">
+        The archive will help families, students, mentors, and institutional partners understand
+        the kinds of research projects VRI students pursue. Entries will be added carefully as
+        projects are completed and appropriate permissions are confirmed.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Projects</div>
+        <h3>Titles and abstracts</h3>
+        <p>
+          Archive entries may include project titles, short abstracts, research areas,
+          keywords, term information, and mentor names where publication is approved.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Materials</div>
+        <h3>Slides and presentations</h3>
+        <p>
+          When appropriate releases are in place, selected entries may link to approved
+          slides, posters, recordings, papers, code repositories, or presentation materials.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Search</div>
+        <h3>Filter by what matters</h3>
+        <p>
+          The archive is being designed so visitors can search by year, date range, mentor,
+          student display name, project title, abstract, topic area, or keyword.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="archive-search">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Archive Search</p>
+        <h2>Search approved projects as the archive grows.</h2>
+      </div>
+      <p class="section-intro">
+        Use the search tools below to filter archive entries. The archive is currently being
+        prepared, so the list may be limited until approved project records are added.
+      </p>
+    </div>
+
+    <div class="faq-toolbar reveal" aria-label="Research archive search tools">
+      <div class="faq-search" role="search">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2"/></svg>
+        <input id="archiveFilter" type="search" placeholder="Search by title, mentor, student, year, topic, abstract, keyword, or term" aria-label="Search the Research Archive" />
+      </div>
+      <div class="faq-actions">
+        <div class="faq-count" aria-live="polite" id="archiveCount"></div>
+      </div>
+    </div>
+
+    <div class="faq-chips reveal" aria-label="Research archive filters">
+      <label class="pill" for="archiveAreaFilter">Topic area</label>
+      <select class="quick-chip quick-chip-teal" id="archiveAreaFilter" aria-label="Filter by topic area">
+        <option value="">All topic areas</option>
+      </select>
+
+      <label class="pill" for="archiveStartYear">From year</label>
+      <input class="quick-chip quick-chip-teal" id="archiveStartYear" type="number" inputmode="numeric" min="2000" max="2100" placeholder="From" aria-label="Filter from year" />
+
+      <label class="pill" for="archiveEndYear">To year</label>
+      <input class="quick-chip quick-chip-teal" id="archiveEndYear" type="number" inputmode="numeric" min="2000" max="2100" placeholder="To" aria-label="Filter to year" />
+
+      <button class="faq-chip" id="archiveClearFilters" type="button">Clear filters</button>
+    </div>
+
+    {% if archive_projects and archive_projects.size > 0 %}
+    <section class="grid-2 reveal" id="archiveGrid" aria-label="Research archive results">
+      {% for project in archive_projects %}
+      {% assign searchable = project.title | append: ' ' | append: project.year | append: ' ' | append: project.term | append: ' ' | append: project.area | append: ' ' | append: project.mentor_display | append: ' ' | append: project.student_display | append: ' ' | append: project.abstract | append: ' ' | append: project.tags %}
+      <article
+        class="card archive-card"
+        data-archive-card
+        data-title="{{ project.title | default: '' | escape }}"
+        data-year="{{ project.year | default: '' }}"
+        data-area="{{ project.area | default: '' | downcase | escape }}"
+        data-search="{{ searchable | strip_html | downcase | escape }}"
+        data-tilt>
+        <div class="card-label">
+          {% if project.term %}{{ project.term }} {% endif %}{% if project.year %}{{ project.year }}{% else %}Archived Project{% endif %}
+        </div>
+        <h3>{{ project.title }}</h3>
+
+        <div class="pill-row" aria-label="Project quick facts">
+          {% if project.area %}<span class="pill">{{ project.area }}</span>{% endif %}
+          {% if project.mentor_display %}<span class="pill">Mentor: {{ project.mentor_display }}</span>{% endif %}
+          {% if project.student_display %}<span class="pill">{{ project.student_display }}</span>{% endif %}
+        </div>
+
+        {% if project.abstract %}
+        <p>{{ project.abstract }}</p>
+        {% endif %}
+
+        {% if project.tags %}
+        <div class="pill-row" aria-label="Project tags">
+          {% for tag in project.tags %}
+          <span class="pill">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="card-actions" style="margin-top: 18px;">
+          {% if project.url %}<a class="btn btn-secondary" href="{{ project.url | relative_url }}">View Project</a>{% endif %}
+          {% if project.slides_url %}<a class="quick-chip quick-chip-teal" href="{{ project.slides_url }}">Slides</a>{% endif %}
+          {% if project.recording_url %}<a class="quick-chip quick-chip-teal" href="{{ project.recording_url }}">Recording</a>{% endif %}
+          {% if project.poster_url %}<a class="quick-chip quick-chip-teal" href="{{ project.poster_url }}">Poster</a>{% endif %}
+          {% if project.paper_url %}<a class="quick-chip quick-chip-teal" href="{{ project.paper_url }}">Paper</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </section>
+    {% else %}
+    <div class="cta-panel reveal" id="archiveEmptyState">
+      <div>
+        <h3>The archive is being prepared.</h3>
+        <p>
+          VRI is building a public archive for completed and approved student research work.
+          Project records will be added as new VRI projects are completed and as permissions,
+          releases, and institutional approvals allow.
+        </p>
+        <p>
+          If earlier project records become available for public use, they may be added here
+          after appropriate review. If not, the archive will begin with new VRI projects going forward.
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <a class="btn btn-gold" href="/upcoming-projects/">Upcoming Projects</a>
+        <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
+        <a class="quick-chip quick-chip-teal" href="/questions-and-answers/">Questions &amp; Answers</a>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="faq-empty-note" id="archiveNoResults">
+      No archived projects match that search yet. Try a different year, mentor, title, topic area, or keyword.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="archive-status">
+  <div class="shell">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-label">Archive Status</p>
+        <h2>Designed for future growth.</h2>
+      </div>
+      <p class="section-intro">
+        The archive is intentionally being built before every project record is available.
+        This gives VRI a stable structure for publishing approved work as the institute grows.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Step I</div>
+        <h3>Establish the archive</h3>
+        <p>
+          Create a polished public home for completed VRI research projects, even before
+          the full archive dataset is available.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Step II</div>
+        <h3>Confirm permissions</h3>
+        <p>
+          Add names, abstracts, recordings, slides, and other materials only when appropriate
+          permissions, releases, and institutional approvals are in place.
+        </p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="card-label">Step III</div>
+        <h3>Publish responsibly</h3>
+        <p>
+          Build the archive gradually, prioritizing student privacy, academic accuracy,
+          and professional presentation over speed.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="permissions">
+  <div class="shell">
+    <div class="feature-band reveal">
+      <div class="feature-band-grid">
+        <div>
+          <p class="section-label">Permissions</p>
+          <h3>Student work will be published carefully.</h3>
+          <p>
+            Some research materials may involve minors, student names, mentor names, recordings,
+            slides, project drafts, or other information that should not be posted automatically.
+            VRI will treat the archive as a curated public record rather than a raw file dump.
+          </p>
+        </div>
+
+        <div class="feature-quote">
+          <strong>Archive principle</strong>
+          <p>
+            Public entries should be accurate, permissioned, and professionally presented.
+            If a project cannot be published responsibly, it can remain omitted, anonymized,
+            summarized, or held for later review.
+          </p>
+          <div class="card-actions" style="margin-top: 18px;">
+            <a class="btn btn-secondary" href="/policies/">Policies &amp; Procedures</a>
+            <a class="btn btn-secondary" href="/questions-and-answers/#contact">Contact VRI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const input = document.getElementById('archiveFilter');
+    const areaFilter = document.getElementById('archiveAreaFilter');
+    const startYearInput = document.getElementById('archiveStartYear');
+    const endYearInput = document.getElementById('archiveEndYear');
+    const clearButton = document.getElementById('archiveClearFilters');
+    const count = document.getElementById('archiveCount');
+    const noResults = document.getElementById('archiveNoResults');
+    const cards = Array.from(document.querySelectorAll('[data-archive-card]'));
+
+    if (!input || !areaFilter || !startYearInput || !endYearInput || !clearButton || !count) return;
+
+    const normalize = (value) => (value || '')
+      .toString()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    function uniqueSorted(values) {
+      return Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b));
+    }
+
+    function populateAreaFilter() {
+      const areas = uniqueSorted(cards.map(card => card.dataset.area));
+      areas.forEach((area) => {
+        const option = document.createElement('option');
+        option.value = area;
+        option.textContent = area.replace(/\b\w/g, letter => letter.toUpperCase());
+        areaFilter.appendChild(option);
+      });
+    }
+
+    function matchesYearRange(cardYear, startYear, endYear) {
+      if (!cardYear) return !(startYear || endYear);
+      const year = Number(cardYear);
+      if (startYear && year < Number(startYear)) return false;
+      if (endYear && year > Number(endYear)) return false;
+      return true;
+    }
+
+    function applyFilters() {
+      const query = normalize(input.value);
+      const terms = query.split(' ').filter(Boolean);
+      const selectedArea = normalize(areaFilter.value);
+      const startYear = startYearInput.value;
+      const endYear = endYearInput.value;
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const searchBlob = normalize(card.dataset.search);
+        const cardArea = normalize(card.dataset.area);
+        const cardYear = card.dataset.year || '';
+        const queryMatch = !terms.length || terms.every(term => searchBlob.includes(term));
+        const areaMatch = !selectedArea || cardArea === selectedArea;
+        const yearMatch = matchesYearRange(cardYear, startYear, endYear);
+        const show = queryMatch && areaMatch && yearMatch;
+
+        card.style.display = show ? '' : 'none';
+        if (show) visible += 1;
+      });
+
+      count.textContent = `${visible} project${visible === 1 ? '' : 's'}`;
+      if (noResults) {
+        noResults.classList.toggle('is-visible', cards.length > 0 && visible === 0);
+      }
+    }
+
+    function clearFilters() {
+      input.value = '';
+      areaFilter.value = '';
+      startYearInput.value = '';
+      endYearInput.value = '';
+      applyFilters();
+      input.focus();
+    }
+
+    populateAreaFilter();
+    input.addEventListener('input', applyFilters);
+    areaFilter.addEventListener('change', applyFilters);
+    startYearInput.addEventListener('input', applyFilters);
+    endYearInput.addEventListener('input', applyFilters);
+    clearButton.addEventListener('click', clearFilters);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === '/' && document.activeElement !== input) {
+        event.preventDefault();
+        input.focus();
+      }
+      if (event.key === 'Escape' && document.activeElement === input) {
+        clearFilters();
+      }
+    });
+
+    applyFilters();
+  })();
+</script>
