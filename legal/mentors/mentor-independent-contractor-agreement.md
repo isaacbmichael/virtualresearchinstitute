@@ -70,6 +70,12 @@ VRI intends to pay mentors by **direct deposit** using approved payment setup an
 
 Unless a signed written agreement expressly states otherwise:
 
+- VRI is not required to prepay Mentor before work begins;
+- payment may be made in one or more installments as determined by VRI;
+- final payment may be conditioned on completion of the engagement and receipt of required records, summaries, invoices, attendance logs, and any final materials required by VRI.
+
+Mentor is responsible for providing accurate tax and payment information and for maintaining current payment details with VRI.
+
 ## 10. Records and Documentation
 
 Mentor shall maintain and submit such records as VRI reasonably requires for payment, compliance, quality control, safeguarding, and program administration.
