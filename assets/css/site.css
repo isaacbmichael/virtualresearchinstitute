@@ -3789,7 +3789,8 @@ body.mentors-page .cta-panel .quick-links {
   }
 }
 
-body.mentors-page .card:hover {
+body.mentors-page .grid-2 .card:hover,
+body.mentors-page .grid-3 .card:hover {
   transform: none;
   box-shadow: var(--shadow-sm);
   border-color: rgba(4, 76, 89, 0.1);
