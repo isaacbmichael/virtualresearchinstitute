@@ -4465,6 +4465,58 @@ body.faq-page #faq-library.section {
   }
 }
 
+/* Questions & Answers: bottom-right card button alignment
+   ------------------------------------------------------------ */
+
+body.faq-page #policies-note .feature-band-grid {
+  align-items: stretch;
+}
+
+body.faq-page #policies-note .feature-quote {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body.faq-page #policies-note .feature-quote .card-actions {
+  margin-top: auto !important;
+  padding-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+body.faq-page #contact .cta-panel {
+  align-items: stretch;
+}
+
+body.faq-page #contact .quick-links {
+  justify-self: end;
+  align-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media (max-width: 1180px) {
+  body.faq-page #policies-note .feature-quote .card-actions,
+  body.faq-page #contact .quick-links {
+    justify-content: flex-end;
+    justify-self: end;
+    align-self: end;
+  }
+}
+
+@media (max-width: 640px) {
+  body.faq-page #policies-note .feature-quote .card-actions,
+  body.faq-page #contact .quick-links {
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: start;
+  }
+}
+
 /* =========================================
    Mobile panel navigation refinement
    Single-source submenu styling for a
