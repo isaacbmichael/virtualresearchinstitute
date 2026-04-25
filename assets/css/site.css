@@ -5785,7 +5785,11 @@ body.founder-page .hero .hero-grid {
   z-index: 1;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
   gap: clamp(28px, 4vw, 56px);
-  align-items: center;
+  align-items: start;
+}
+
+body.founder-page .hero .hero-copy {
+  padding-top: clamp(10px, 1.4vw, 24px);
 }
 
 body.founder-page .hero::after {
@@ -5853,7 +5857,7 @@ body.founder-page .hero .hero-copy p {
 body.founder-page .founder-portrait-card {
   isolation: isolate;
   position: relative;
-  width: min(430px, 100%);
+  width: min(400px, 100%);
   margin-inline: auto;
   overflow: visible;
   border: 0;
@@ -5917,16 +5921,17 @@ body.founder-page .founder-portrait-caption span {
 }
 
 body.founder-page .hero-scene-image {
-  min-height: 620px;
-  align-self: center;
+  min-height: 560px;
+  align-self: start;
+  padding-top: 0;
 }
 
 body.founder-page .scene-wrap-image {
   width: min(500px, 100%);
   height: auto;
-  min-height: 620px;
+  min-height: 560px;
   display: grid;
-  place-items: center;
+  place-items: start center;
 }
 .founder-statement {
   max-width: 980px;
