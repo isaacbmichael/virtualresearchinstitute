@@ -6166,3 +6166,173 @@ body.founder-page #explore .cta-panel .quick-links {
   }
 }
 
+
+/* ===================== Home Hero Orbital Network ===================== */
+body.home-page .hero-figure.hero-figure-network-orbital {
+  top: -4px;
+  right: -42px;
+  width: min(520px, 98%);
+  opacity: 0.96;
+  filter:
+    drop-shadow(0 28px 58px rgba(0, 0, 0, 0.26))
+    drop-shadow(0 0 34px rgba(229, 181, 59, 0.08));
+  animation: heroOrbitalFloat 18s ease-in-out infinite;
+}
+
+body.home-page .hero-figure-network-orbital svg {
+  overflow: visible;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-network-core {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: orbitalSlowTurn 52s linear infinite;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-ring {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-ring-back {
+  opacity: 0.68;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-ring-mid {
+  opacity: 0.82;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-ring-front {
+  opacity: 0.94;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-layer,
+body.home-page .hero-figure-network-orbital .orbital-nodes {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-layer-back,
+body.home-page .hero-figure-network-orbital .orbital-nodes-back {
+  animation: orbitalLayerBack 38s ease-in-out infinite;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-layer-mid,
+body.home-page .hero-figure-network-orbital .orbital-nodes-mid {
+  animation: orbitalLayerMid 32s ease-in-out infinite;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-layer-front,
+body.home-page .hero-figure-network-orbital .orbital-nodes-front {
+  animation: orbitalLayerFront 28s ease-in-out infinite;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-nodes-front circle,
+body.home-page .hero-figure-network-orbital .orbital-nodes-mid circle {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: orbitalNodePulse 7s ease-in-out infinite;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-nodes-front circle:nth-child(2n),
+body.home-page .hero-figure-network-orbital .orbital-nodes-mid circle:nth-child(2n) {
+  animation-delay: -2.4s;
+}
+
+body.home-page .hero-figure-network-orbital .orbital-nodes-front circle:nth-child(3n),
+body.home-page .hero-figure-network-orbital .orbital-nodes-mid circle:nth-child(3n) {
+  animation-delay: -4.8s;
+}
+
+@keyframes heroOrbitalFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg) translateZ(46px);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(-1deg) translateZ(46px);
+  }
+}
+
+@keyframes orbitalSlowTurn {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.015);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes orbitalLayerBack {
+  0%, 100% {
+    transform: translate(-4px, 2px) scale(0.985);
+  }
+
+  50% {
+    transform: translate(8px, -4px) scale(1.01);
+  }
+}
+
+@keyframes orbitalLayerMid {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-6px, 5px) scale(1.012);
+  }
+}
+
+@keyframes orbitalLayerFront {
+  0%, 100% {
+    transform: translate(5px, -3px) scale(1.012);
+  }
+
+  50% {
+    transform: translate(-4px, 4px) scale(0.998);
+  }
+}
+
+@keyframes orbitalNodePulse {
+  0%, 100% {
+    opacity: 0.86;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 920px) {
+  body.home-page .hero-figure.hero-figure-network-orbital {
+    top: 18px;
+    right: -12px;
+    width: min(420px, 94%);
+  }
+}
+
+@media (max-width: 640px) {
+  body.home-page .hero-figure.hero-figure-network-orbital {
+    top: 20px;
+    right: -16px;
+    width: min(340px, 92%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.home-page .hero-figure-network-orbital,
+  body.home-page .hero-figure-network-orbital *,
+  body.home-page .hero-figure-network-orbital .orbital-network-core,
+  body.home-page .hero-figure-network-orbital .orbital-layer,
+  body.home-page .hero-figure-network-orbital .orbital-nodes,
+  body.home-page .hero-figure-network-orbital circle {
+    animation: none !important;
+  }
+}
