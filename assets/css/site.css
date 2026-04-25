@@ -5468,3 +5468,90 @@ body.faq-page .ask-vri-answer-placeholder {
     transform: none;
   }
 }
+
+/* ==========================================================
+   Mobile header + About institutions polish
+   Paste at the end of assets/css/site.css
+   ========================================================== */
+
+@media (max-width: 640px) {
+  /* Keep the phone header available while scrolling. */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow: visible;
+    background: rgba(250, 248, 243, 0.94);
+    border-bottom-color: rgba(4, 76, 89, 0.13);
+    box-shadow: 0 12px 32px rgba(16, 33, 42, 0.07);
+  }
+
+  .site-header.is-scrolled {
+    background: rgba(250, 248, 243, 0.97);
+    box-shadow: 0 14px 34px rgba(16, 33, 42, 0.09);
+  }
+
+  /* Offset the document because the header is fixed on phones. */
+  main {
+    padding-top: var(--nav-h);
+  }
+
+  /* The large Cormorant V has a left overhang; give the lockup a little
+     breathing room so the word never looks clipped against the phone edge. */
+  .site-header .frame-shell {
+    padding-left: calc(var(--frame-gutter) + env(safe-area-inset-left, 0px) + 4px);
+    padding-right: calc(var(--frame-gutter) + env(safe-area-inset-right, 0px));
+  }
+
+  .site-header .brand {
+    max-width: calc(100vw - 94px);
+    padding-left: 2px;
+    overflow: visible;
+  }
+
+  .site-header .brand-anim,
+  .site-header .brand-evolve,
+  .site-header .brand-evolve-line {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .site-header .brand-title {
+    font-size: clamp(1.48rem, 6.35vw, 1.92rem);
+    letter-spacing: 0;
+  }
+
+  .site-header .be-bar,
+  .site-header .brand-bar {
+    max-width: 100%;
+  }
+
+  .site-header .header-cta {
+    padding-left: 8px;
+  }
+
+  /* The institutions rotator uses absolutely positioned pages; on phones
+     the stacked pills need a taller viewport so the last row is not clipped. */
+  body.about-page .institution-rotator-viewport,
+  body.about-page .institution-rotator-track {
+    min-height: clamp(292px, 78vw, 336px);
+  }
+
+  body.about-page .institution-rotator-page {
+    gap: 12px;
+  }
+
+  body.about-page .institution-pill {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  body.about-page .institution-rotator-viewport,
+  body.about-page .institution-rotator-track {
+    min-height: 332px;
+  }
+}
