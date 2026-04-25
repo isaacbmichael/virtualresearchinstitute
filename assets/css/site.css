@@ -5143,3 +5143,328 @@ body.research-archive-page .archive-slide-card.is-third {
     transform: translateX(-46%) translateY(-30px) scale(0.88) rotate(3deg) translateZ(0);
   }
 }
+
+/* ===================== Device Polish Overrides ===================== */
+/* Mobile-first polish pass for VRI public draft:
+   compact phone header, safer hero stacking, lighter mobile cards,
+   cleaner Ask VRI behavior, horizontally scrollable FAQ chips,
+   and simplified Research Archive slide animation on phones. */
+
+@media (max-width: 1180px) {
+  body.programs-page .hero .hero-grid,
+  body.about-page .hero .hero-grid,
+  body.foundation-page .hero .hero-grid,
+  body.research-archive-page .hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.research-archive-page .hero .hero-copy h1,
+  body.programs-page .hero .hero-copy h1,
+  body.about-page .hero .hero-copy h1,
+  body.foundation-page .hero .hero-copy h1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  body.programs-page .hero .hero-grid,
+  body.about-page .hero .hero-grid,
+  body.foundation-page .hero .hero-grid,
+  body.research-archive-page .hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.research-archive-page .hero-scene-image,
+  body.programs-page .hero-scene-image,
+  body.about-page .hero-scene-image,
+  body.foundation-page .hero-scene-image {
+    min-height: 340px;
+  }
+
+  body.research-archive-page .archive-slide-scene {
+    width: min(520px, 100%);
+    height: 330px;
+    margin-inline: auto;
+  }
+
+  body.research-archive-page .archive-slide-stack {
+    width: min(480px, 100%);
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-h: 78px;
+    --frame-gutter: 22px;
+  }
+
+  .header-inner {
+    min-height: var(--nav-h);
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .brand-title {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    line-height: 0.95;
+  }
+
+  .brand-bar,
+  .be-bar {
+    height: 4px;
+  }
+
+  .hero {
+    padding-top: 30px;
+    padding-bottom: 34px;
+  }
+
+  body.home-page .hero,
+  body.about-page .hero,
+  body.programs-page .hero,
+  body.upcoming-projects-page .hero,
+  body.circles-page .hero,
+  body.groups-page .hero,
+  body.mentors-page .hero,
+  body.policies-page .hero,
+  body.faq-page .hero,
+  body.foundation-page .hero {
+    padding-top: 30px;
+    padding-bottom: 34px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    line-height: 0.98;
+    max-width: 100%;
+  }
+
+  .hero-copy p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+
+  .section-head {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .feature-band,
+  .cta-panel,
+  .card {
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 12px 28px rgba(8, 28, 38, 0.08);
+  }
+
+  .card:hover,
+  details.faq-card:hover,
+  .quick-chip:hover,
+  .btn:hover,
+  .mobile-nav a:hover,
+  .metric:hover {
+    transform: none;
+  }
+
+  .card:hover,
+  details.faq-card:hover {
+    box-shadow: 0 12px 28px rgba(8, 28, 38, 0.08);
+  }
+
+  .quick-links,
+  .card-actions,
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .quick-links .btn,
+  .card-actions .btn,
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Ask VRI: cleaner behavior across desktop, Windows laptops, and phones. */
+body.faq-page .ask-vri-submit {
+  cursor: pointer;
+}
+
+body.faq-page .ask-vri-submit[disabled] {
+  cursor: wait;
+}
+
+body.faq-page .ask-vri-input,
+body.faq-page .ask-vri-answer {
+  overflow-y: auto;
+  scrollbar-gutter: auto;
+}
+
+body.faq-page .ask-vri-answer {
+  text-align: left;
+}
+
+body.faq-page .ask-vri-answer-placeholder {
+  display: block;
+  width: 100%;
+  color: rgba(43, 62, 72, 0.54);
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  body.faq-page .ask-vri-panel {
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  body.faq-page .ask-vri-copy {
+    gap: 12px;
+  }
+
+  body.faq-page .ask-vri-copy p {
+    justify-self: start;
+    max-width: 100%;
+    text-align: left;
+    white-space: normal;
+  }
+
+  body.faq-page .ask-vri-form {
+    gap: 16px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  body.faq-page .ask-vri-input,
+  body.faq-page .ask-vri-answer {
+    height: 145px;
+    min-height: 145px;
+    max-height: 145px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  body.faq-page .ask-vri-actions {
+    align-items: stretch;
+  }
+
+  body.faq-page .ask-vri-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Questions Library: keep filters compact on small phones. */
+@media (max-width: 640px) {
+  .faq-toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .faq-search,
+  .faq-actions {
+    width: 100%;
+  }
+
+  .faq-search input::placeholder {
+    color: transparent;
+  }
+
+  .faq-search input {
+    min-width: 0;
+  }
+
+  .faq-actions {
+    justify-content: space-between;
+  }
+
+  .faq-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .faq-chip,
+  .quick-chip,
+  .pill {
+    white-space: nowrap;
+  }
+
+  .faq-card summary {
+    padding: 18px 18px;
+    gap: 12px;
+  }
+
+  .faq-answer {
+    padding: 0 18px 18px 56px;
+  }
+}
+
+/* Research Archive: keep the slide stack elegant on small screens. */
+@media (max-width: 640px) {
+  body.research-archive-page .hero-scene-image {
+    min-height: 260px;
+    padding-top: 0;
+  }
+
+  body.research-archive-page .scene-wrap-image,
+  body.research-archive-page .archive-slide-scene {
+    width: min(100%, 360px);
+    height: 240px;
+    margin-inline: auto;
+  }
+
+  body.research-archive-page .archive-slide-stack {
+    width: min(100%, 340px);
+    height: 220px;
+  }
+
+  body.research-archive-page .archive-slide-card {
+    top: 0;
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  body.research-archive-page .archive-slide-card.is-active {
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg) translateZ(24px);
+  }
+
+  body.research-archive-page .archive-slide-card.is-next,
+  body.research-archive-page .archive-slide-card.is-third {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg) translateZ(0);
+  }
+}
+
+/* Touch devices: reduce hover-like motion that can feel jumpy on phones/tablets. */
+@media (hover: none), (pointer: coarse) {
+  .btn,
+  .quick-chip,
+  .mobile-nav a,
+  .metric,
+  .card,
+  details.faq-card,
+  body.upcoming-projects-page .overview-grid > .pathway-card {
+    transition-duration: 0.2s;
+  }
+
+  .btn:hover,
+  .quick-chip:hover,
+  .mobile-nav a:hover,
+  .metric:hover,
+  .card:hover,
+  details.faq-card:hover,
+  body.upcoming-projects-page .overview-grid > .pathway-card:hover {
+    transform: none;
+  }
+}
