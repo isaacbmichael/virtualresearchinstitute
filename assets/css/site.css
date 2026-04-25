@@ -4771,19 +4771,19 @@ body.research-archive-page #permissions .feature-quote .card-actions {
 body.faq-page .ask-vri-panel {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: 20px;
   max-width: 100%;
   margin-inline: auto;
-  padding: clamp(28px, 3vw, 40px);
+  padding: clamp(26px, 2.8vw, 38px);
   border-radius: 34px;
   align-items: stretch;
 }
 
 body.faq-page .ask-vri-copy {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.75fr);
+  grid-template-columns: minmax(0, 0.55fr) minmax(760px, 1.45fr);
   align-items: start;
-  gap: clamp(24px, 4vw, 64px);
+  gap: clamp(24px, 4vw, 72px);
 }
 
 body.faq-page .ask-vri-copy h3 {
@@ -4792,9 +4792,10 @@ body.faq-page .ask-vri-copy h3 {
 
 body.faq-page .ask-vri-copy p {
   margin: 0;
-  max-width: 560px;
+  max-width: none;
   color: var(--muted);
   line-height: 1.65;
+  white-space: nowrap;
 }
 
 body.faq-page .ask-vri-disclaimer {
@@ -4803,8 +4804,8 @@ body.faq-page .ask-vri-disclaimer {
 
 body.faq-page .ask-vri-form {
   display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(620px, 1.22fr);
-  gap: 22px;
+  grid-template-columns: minmax(280px, 0.62fr) minmax(720px, 1.38fr);
+  gap: 20px;
   align-items: stretch;
   width: 100%;
   min-width: 0;
@@ -4823,10 +4824,7 @@ body.faq-page .ask-vri-answer-pane {
   min-width: 0;
 }
 
-body.faq-page .ask-vri-question-pane {
-  gap: 12px;
-}
-
+body.faq-page .ask-vri-question-pane,
 body.faq-page .ask-vri-answer-pane {
   gap: 12px;
 }
@@ -4865,9 +4863,9 @@ body.faq-page .ask-vri-form .sr-only {
 body.faq-page .ask-vri-input {
   display: block;
   width: 100%;
-  height: 190px;
-  min-height: 190px;
-  max-height: 190px;
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
   resize: none;
   overflow-y: auto;
   border: 1px solid rgba(7, 74, 84, 0.16);
@@ -4903,15 +4901,20 @@ body.faq-page .ask-vri-actions {
   gap: 12px;
 }
 
+body.faq-page .ask-vri-actions .btn-primary {
+  display: none;
+}
+
 body.faq-page .ask-vri-submit[disabled] {
   cursor: wait;
   opacity: 0.72;
 }
 
 body.faq-page .ask-vri-answer {
-  height: 190px;
-  min-height: 190px;
-  max-height: 190px;
+  display: block;
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
   overflow-y: auto;
   border: 1px solid rgba(7, 74, 84, 0.13);
   border-radius: 22px;
@@ -4921,6 +4924,10 @@ body.faq-page .ask-vri-answer {
   line-height: 1.7;
   white-space: pre-wrap;
   box-shadow: 0 16px 38px rgba(7, 74, 84, 0.07);
+}
+
+body.faq-page .ask-vri-answer-placeholder {
+  color: rgba(43, 62, 72, 0.54);
 }
 
 body.faq-page .ask-vri-answer[hidden] {
@@ -4935,12 +4942,13 @@ body.faq-page .ask-vri-answer[hidden] {
 
   body.faq-page .ask-vri-copy p {
     max-width: 100%;
+    white-space: normal;
   }
 
   body.faq-page .ask-vri-answer {
-    height: 210px;
-    min-height: 210px;
-    max-height: 210px;
+    height: 180px;
+    min-height: 180px;
+    max-height: 180px;
   }
 }
 
@@ -4964,8 +4972,8 @@ body.faq-page .ask-vri-answer[hidden] {
 
   body.faq-page .ask-vri-input,
   body.faq-page .ask-vri-answer {
-    height: 180px;
-    min-height: 180px;
-    max-height: 180px;
+    height: 170px;
+    min-height: 170px;
+    max-height: 170px;
   }
 }
