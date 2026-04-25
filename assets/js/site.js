@@ -558,3 +558,80 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
 
   startRotation();
 })();
+
+(function () {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function markImageReady(img) {
+    img.classList.add("is-image-ready");
+  }
+
+  function prepareImage(img) {
+    if (!img || img.hasAttribute("data-no-fade")) return;
+
+    if (reduceMotion) {
+      markImageReady(img);
+      return;
+    }
+
+    if (img.complete && img.naturalWidth !== 0) {
+      markImageReady(img);
+      return;
+    }
+
+    img.addEventListener("load", () => markImageReady(img), { once: true });
+    img.addEventListener("error", () => markImageReady(img), { once: true });
+  }
+
+  document.querySelectorAll("img:not([data-no-fade])").forEach(prepareImage);
+
+  if ("MutationObserver" in window) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (!(node instanceof Element)) return;
+
+          if (node.matches && node.matches("img:not([data-no-fade])")) {
+            prepareImage(node);
+          }
+
+          node.querySelectorAll?.("img:not([data-no-fade])").forEach(prepareImage);
+        });
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  const backgroundUrls = [
+    "/assets/images/home/vri-hero-abstract-research.png",
+    "/assets/images/about/vri-global-network-v1.png"
+  ];
+
+  function preloadBackground(url) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = url;
+    });
+  }
+
+  if (reduceMotion) {
+    document.body.classList.add("is-bg-ready");
+    return;
+  }
+
+  Promise
+    .all(backgroundUrls.map(preloadBackground))
+    .then(() => {
+      document.body.classList.add("is-bg-ready");
+    });
+
+  window.setTimeout(() => {
+    document.body.classList.add("is-bg-ready");
+  }, 1800);
+})();
