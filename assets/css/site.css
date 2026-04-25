@@ -4770,17 +4770,18 @@ body.research-archive-page #permissions .feature-quote .card-actions {
 
 body.faq-page .ask-vri-panel {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 1180px;
+  grid-template-columns: minmax(0, 0.75fr) minmax(620px, 1.25fr);
+  gap: clamp(32px, 4vw, 64px);
+  max-width: 100%;
   margin-inline: auto;
-  padding: clamp(28px, 3vw, 42px);
+  padding: clamp(32px, 3.2vw, 46px);
   border-radius: 34px;
-  align-items: stretch;
+  align-items: start;
 }
 
 body.faq-page .ask-vri-copy {
-  max-width: 820px;
+  max-width: 720px;
+  padding-top: 8px;
 }
 
 body.faq-page .ask-vri-copy h3 {
@@ -4788,7 +4789,7 @@ body.faq-page .ask-vri-copy h3 {
 }
 
 body.faq-page .ask-vri-copy p {
-  max-width: 760px;
+  max-width: 620px;
 }
 
 body.faq-page .ask-vri-copy p + p {
@@ -4806,7 +4807,8 @@ body.faq-page .ask-vri-form {
   gap: 16px;
   width: 100%;
   min-width: 0;
-  padding: clamp(20px, 2.2vw, 28px);
+  min-height: 430px;
+  padding: clamp(22px, 2.4vw, 30px);
   border: 1px solid rgba(7, 74, 84, 0.12);
   border-radius: 30px;
   background:
@@ -4829,7 +4831,7 @@ body.faq-page .ask-vri-form .sr-only {
 body.faq-page .ask-vri-input {
   display: block;
   width: 100%;
-  min-height: 118px;
+  min-height: 140px;
   resize: vertical;
   border: 1px solid rgba(7, 74, 84, 0.16);
   border-radius: 24px;
@@ -4882,6 +4884,9 @@ body.faq-page .ask-vri-submit[disabled] {
 }
 
 body.faq-page .ask-vri-answer {
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
   border: 1px solid rgba(7, 74, 84, 0.13);
   border-radius: 24px;
   padding: 20px 22px;
@@ -4896,12 +4901,28 @@ body.faq-page .ask-vri-answer[hidden] {
   display: none;
 }
 
+@media (max-width: 1180px) {
+  body.faq-page .ask-vri-panel {
+    grid-template-columns: 1fr;
+  }
+
+  body.faq-page .ask-vri-copy,
+  body.faq-page .ask-vri-copy p {
+    max-width: 100%;
+  }
+
+  body.faq-page .ask-vri-form {
+    min-height: 400px;
+  }
+}
+
 @media (max-width: 760px) {
   body.faq-page .ask-vri-panel {
     padding: 24px;
   }
 
   body.faq-page .ask-vri-form {
+    min-height: 0;
     padding: 18px;
   }
 
@@ -4916,5 +4937,9 @@ body.faq-page .ask-vri-answer[hidden] {
 
   body.faq-page .ask-vri-input {
     min-height: 132px;
+  }
+
+  body.faq-page .ask-vri-answer {
+    max-height: none;
   }
 }
