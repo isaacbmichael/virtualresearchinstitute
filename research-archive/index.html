@@ -31,18 +31,92 @@ on_this_page:
     </div>
 
     <div class="hero-scene hero-scene-image reveal" id="heroScene" aria-hidden="true">
-      <div class="scene-wrap scene-wrap-image" id="sceneWrap">
-        <figure class="hero-visual hero-visual-presentation">
-          <img
-            src="/assets/images/research-archive/vri-hyperbolic_surfaces.png"
-            alt=""
-            loading="eager"
-            decoding="async">
-        </figure>
+      <div class="scene-wrap scene-wrap-image archive-slide-scene" id="sceneWrap">
+        <div class="archive-slide-stack" data-archive-slide-stack>
+          <figure class="archive-slide-card is-active" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-01-hyperbolic-surface-of-revolution.png" alt="" loading="eager" decoding="async">
+          </figure>
+          <figure class="archive-slide-card is-next" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-02-hyperbolic-parametric-surfaces.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card is-third" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-03-markov-chain-digraph.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-04-markov-state-trajectory.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-05-random-walks-hitting-time.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-06-random-walks-de-bruijn-graphs.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-07-portfolio-risk-function.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-08-portfolio-optimal-proportions.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-09-flint-hills-graph-of-sequence.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-10-stacks-and-queues-layouts.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-11-sveir-model-schematic.png" alt="" loading="lazy" decoding="async">
+          </figure>
+          <figure class="archive-slide-card" data-archive-slide>
+            <img src="/assets/images/research-archive/vri-archive-slide-12-complemented-rings-zero-divisor-graphs.png" alt="" loading="lazy" decoding="async">
+          </figure>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const stack = document.querySelector('[data-archive-slide-stack]');
+    if (!stack) return;
+
+    const slides = Array.from(stack.querySelectorAll('[data-archive-slide]'));
+    if (slides.length <= 1) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let currentIndex = 0;
+    let timer = null;
+
+    function renderSlides() {
+      slides.forEach((slide) => {
+        slide.classList.remove('is-active', 'is-next', 'is-third');
+      });
+
+      slides[currentIndex].classList.add('is-active');
+      slides[(currentIndex + 1) % slides.length].classList.add('is-next');
+      slides[(currentIndex + 2) % slides.length].classList.add('is-third');
+    }
+
+    function advanceSlides() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      renderSlides();
+    }
+
+    renderSlides();
+
+    if (!reduceMotion) {
+      timer = window.setInterval(advanceSlides, 5200);
+
+      stack.addEventListener('mouseenter', () => {
+        if (timer) window.clearInterval(timer);
+      });
+
+      stack.addEventListener('mouseleave', () => {
+        timer = window.setInterval(advanceSlides, 5200);
+      });
+    }
+  })();
+</script>
 
 <section class="section" id="overview">
   <div class="shell">
