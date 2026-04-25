@@ -4,3 +4,9 @@ baseurl: ""
 url: ""
 markdown: kramdown
 permalink: pretty
+
+defaults:
+  - scope:
+      path: "assets/images/research-archive"
+    values:
+      research_archive_slide: true
