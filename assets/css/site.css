@@ -5289,6 +5289,48 @@ body.research-archive-page .archive-slide-card.is-third {
   }
 }
 
+/* Home page: keep CTA-card text left, pin buttons bottom-right */
+body.home-page .cta-panel {
+  align-items: stretch;
+}
+
+body.home-page .cta-panel > div:first-child {
+  justify-self: start;
+  align-self: start;
+  text-align: left;
+}
+
+body.home-page .cta-panel .quick-links,
+body.home-page .cta-panel .card-actions {
+  justify-self: end;
+  align-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Preserve bottom-right alignment after the shared tablet breakpoint
+   changes .cta-panel to one column and .quick-links to flex-start. */
+@media (max-width: 1180px) {
+  body.home-page .cta-panel .quick-links,
+  body.home-page .cta-panel .card-actions {
+    justify-self: end;
+    align-self: end;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+/* Optional phone fallback: easier to scan/tap on very small screens. */
+@media (max-width: 640px) {
+  body.home-page .cta-panel .quick-links,
+  body.home-page .cta-panel .card-actions {
+    justify-self: start;
+    align-self: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
 /* Ask VRI: cleaner behavior across desktop, Windows laptops, and phones. */
 body.faq-page .ask-vri-submit {
   cursor: pointer;
