@@ -53,7 +53,35 @@ function extractOutputText(data) {
   return textParts.join("\n").trim();
 }
 
+async function fetchCurrentOfferings(env) {
+  const url =
+    env.CURRENT_OFFERINGS_URL ||
+    "https://virtualresearchinstitute.org/assets/data/ask-vri-current-offerings.json";
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      console.error("Current offerings fetch failed:", response.status, response.statusText);
+      return "Current offerings data could not be loaded. Use the stable public knowledge base only.";
+    }
+
+    const data = await response.json();
+
+    return JSON.stringify(data, null, 2);
+  } catch (error) {
+    console.error("Current offerings fetch error:", error);
+    return "Current offerings data could not be loaded. Use the stable public knowledge base only.";
+  }
+}
+
 async function callOpenAI(message, env) {
+  const currentOfferings = await fetchCurrentOfferings(env);
+
   const response = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
     headers: {
@@ -65,7 +93,7 @@ async function callOpenAI(message, env) {
       instructions: `
 You are Ask VRI, the public-facing informational assistant for Virtual Research Institute.
 
-Use only the VRI public knowledge base provided below. Do not use outside knowledge unless it is basic conversational reasoning.
+Use only the VRI public knowledge base and current VRI offerings data provided below. Do not use outside knowledge unless it is basic conversational reasoning.
 
 Rules:
 - Answer in a calm, professional, institutional tone.
@@ -81,6 +109,11 @@ Rules:
 
 VRI PUBLIC KNOWLEDGE BASE:
 ${knowledgeBase}
+
+CURRENT VRI OFFERINGS DATA:
+The following JSON is generated from VRI's current public Jekyll data files, including pathways, sessions, and public proposal data. Use it for current project offerings, start dates, registration deadlines, program durations, cohort sizes, tuition, mentor names, mentor time zones, schedule notes, and technology requirements.
+
+${currentOfferings}
       `.trim(),
       input: message,
       max_output_tokens: 650
