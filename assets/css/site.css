@@ -5625,3 +5625,58 @@ body.faq-page .ask-vri-answer-placeholder {
     letter-spacing: 0.01em;
   }
 }
+
+/* ==========================================================
+   Global image-load smoothing
+   Keeps image appearances quiet, polished, and non-glitchy.
+   ========================================================== */
+
+body.js-enhanced img:not([data-no-fade]) {
+  opacity: 0;
+  transform: scale(1.012);
+  transition:
+    opacity 0.78s var(--ease),
+    transform 1.05s var(--ease);
+  backface-visibility: hidden;
+}
+
+body.js-enhanced img.is-image-ready:not([data-no-fade]) {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Keep hero/background-image sections visually stable before their
+   image layers finish loading. */
+body.home-page .hero {
+  background: linear-gradient(180deg, #0b3e48 0%, #032f38 100%);
+}
+
+body.about-page #future.section-future-background {
+  background: linear-gradient(180deg, #0b3e48 0%, #032f38 100%);
+}
+
+/* Fade in CSS background-image layers after preload. */
+body.js-enhanced.home-page .hero::after,
+body.js-enhanced.about-page #future.section-future-background::before {
+  opacity: 0;
+  transition: opacity 1.05s var(--ease);
+}
+
+body.js-enhanced.is-bg-ready.home-page .hero::after,
+body.js-enhanced.is-bg-ready.about-page #future.section-future-background::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.js-enhanced img:not([data-no-fade]) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  body.js-enhanced.home-page .hero::after,
+  body.js-enhanced.about-page #future.section-future-background::before {
+    opacity: 1;
+    transition: none;
+  }
+}
