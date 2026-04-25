@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    input.value = "";
+    input.placeholder = "Ask another question...";
+    input.focus();
+
     submit.disabled = true;
     submit.textContent = "Asking...";
     output.hidden = false;
