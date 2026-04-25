@@ -5981,13 +5981,13 @@ body.founder-page .scene-wrap-image {
 
 /* Founder quote rotator: floating text, no card */
 body.founder-page #quotes {
-  padding-bottom: clamp(84px, 8vw, 132px);
+  padding-bottom: clamp(56px, 5vw, 86px);
 }
 
 body.founder-page .quote-rotator {
   position: relative;
   max-width: 1120px;
-  min-height: clamp(390px, 28vw, 470px);
+  min-height: clamp(320px, 22vw, 390px);
   margin: 0 auto;
   display: grid;
   place-items: center;
@@ -6002,13 +6002,18 @@ body.founder-page .quote-rotator {
 body.founder-page .quote-rotator::before {
   content: "";
   position: absolute;
-  inset: 18% 8%;
+  inset: 24% 12%;
   z-index: -1;
   border-radius: 999px;
   background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.28) 42%, transparent 72%);
-  filter: blur(18px);
-  opacity: 0.86;
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.76),
+      rgba(255, 255, 255, 0.24) 42%,
+      transparent 72%
+    );
+  filter: blur(16px);
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -6019,10 +6024,10 @@ body.founder-page .quote-rotator blockquote {
   align-content: center;
   justify-items: center;
   margin: 0;
-  padding: clamp(32px, 5vw, 64px);
+  padding: clamp(24px, 4vw, 48px);
   opacity: 1;
   transform: translateY(0);
-  filter: drop-shadow(0 22px 34px rgba(8, 28, 38, 0.14));
+  filter: drop-shadow(0 22px 34px rgba(8, 28, 38, 0.13));
   transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
 }
 
@@ -6041,8 +6046,9 @@ body.founder-page .quote-rotator p {
   line-height: 1.06;
   letter-spacing: -0.02em;
   text-shadow:
-    0 18px 34px rgba(8, 28, 38, 0.13),
-    0 1px 0 rgba(255, 255, 255, 0.46);
+    0 24px 42px rgba(8, 28, 38, 0.20),
+    0 10px 22px rgba(157, 111, 12, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.64);
 }
 
 body.founder-page .quote-rotator cite {
@@ -6054,6 +6060,9 @@ body.founder-page .quote-rotator cite {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-shadow:
+    0 14px 24px rgba(8, 28, 38, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.52);
 }
 
 body.founder-page #explore {
@@ -6131,7 +6140,7 @@ body.founder-page #explore .cta-panel .quick-links {
   }
 
   body.founder-page .quote-rotator {
-    min-height: 410px;
+    min-height: 360px;
   }
 
   body.founder-page .quote-rotator p {
@@ -6139,7 +6148,7 @@ body.founder-page #explore .cta-panel .quick-links {
   }
 
   body.founder-page #quotes {
-    padding-bottom: 78px;
+    padding-bottom: 58px;
   }
 }
 
