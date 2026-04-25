@@ -5555,3 +5555,73 @@ body.faq-page .ask-vri-answer-placeholder {
     min-height: 332px;
   }
 }
+
+/* ==========================================================
+   About VRI mobile institution rotator refinement
+   - Shows fewer complete institution pills on phones
+   - Prevents long institution names from overflowing pills
+   ========================================================== */
+
+@media (max-width: 640px) {
+  body.about-page .institution-rotator {
+    margin-top: 16px;
+  }
+
+  body.about-page .institution-rotator-viewport,
+  body.about-page .institution-rotator-track {
+    height: clamp(282px, 70vw, 306px);
+    min-height: 0;
+    max-height: clamp(282px, 70vw, 306px);
+    overflow: hidden;
+  }
+
+  body.about-page .institution-rotator-page {
+    gap: 10px 10px;
+    overflow: hidden;
+    align-content: flex-start;
+  }
+
+  body.about-page .institution-pill {
+    max-width: 100%;
+    min-width: 0;
+    width: fit-content;
+    height: auto;
+    min-height: 38px;
+    padding: 8px 14px;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
+    text-align: left;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page .institution-rotator-viewport,
+  body.about-page .institution-rotator-track {
+    height: 292px;
+    max-height: 292px;
+  }
+
+  body.about-page .institution-pill {
+    font-size: 0.8rem;
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  body.about-page .institution-rotator-viewport,
+  body.about-page .institution-rotator-track {
+    height: 282px;
+    max-height: 282px;
+  }
+
+  body.about-page .institution-pill {
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+  }
+}
