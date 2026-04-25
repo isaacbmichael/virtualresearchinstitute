@@ -5849,11 +5849,11 @@ body.founder-page .hero .hero-copy p {
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
-/* Founder portrait: institutional floating treatment */
+/* Founder portrait: formal institutional treatment */
 body.founder-page .founder-portrait-card {
   isolation: isolate;
   position: relative;
-  width: min(500px, 100%);
+  width: min(430px, 100%);
   margin-inline: auto;
   overflow: visible;
   border: 0;
@@ -5866,18 +5866,8 @@ body.founder-page .founder-portrait-card {
 }
 
 body.founder-page .founder-portrait-card::before {
-  content: "";
-  position: absolute;
-  inset: 24px -24px -28px 24px;
-  z-index: -1;
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(229, 181, 59, 0.05)),
-    rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(242, 224, 169, 0.12);
-  box-shadow:
-    0 34px 76px rgba(0, 0, 0, 0.24),
-    0 0 80px rgba(229, 181, 59, 0.08);
+  content: none;
+  display: none;
 }
 
 body.founder-page .founder-portrait-card img {
@@ -5887,47 +5877,56 @@ body.founder-page .founder-portrait-card img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
-  border-radius: 24px;
-  border: 1px solid rgba(242, 224, 169, 0.18);
+  border-radius: 22px;
+  border: 1px solid rgba(242, 224, 169, 0.30);
   box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.26),
+    0 34px 72px rgba(0, 0, 0, 0.32),
     0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 body.founder-page .founder-portrait-caption {
-  position: absolute;
-  z-index: 2;
-  left: clamp(-18px, -1.6vw, -8px);
-  bottom: -54px;
-  padding: 0;
+  position: static;
+  width: min(360px, 92%);
+  margin: 22px auto 0;
+  padding-top: 18px;
   background: transparent;
-  text-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  border-top: 1px solid rgba(229, 181, 59, 0.42);
+  text-align: center;
+  text-shadow: none;
 }
 
 body.founder-page .founder-portrait-caption strong {
   display: block;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   color: var(--gold-300);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-size: clamp(2rem, 2.55vw, 2.7rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 0.98;
   letter-spacing: -0.02em;
 }
 
 body.founder-page .founder-portrait-caption span {
   display: block;
-  color: rgba(248, 244, 234, 0.86);
-  font-size: 0.86rem;
+  color: rgba(248, 244, 234, 0.78);
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1.55;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
   text-transform: uppercase;
 }
 
-body.founder-page .hero-scene-image,
+body.founder-page .hero-scene-image {
+  min-height: 620px;
+  align-self: center;
+}
+
 body.founder-page .scene-wrap-image {
-  min-height: 540px;
+  width: min(500px, 100%);
+  height: auto;
+  min-height: 620px;
+  display: grid;
+  place-items: center;
 }
 .founder-statement {
   max-width: 980px;
@@ -6084,17 +6083,15 @@ body.founder-page #explore .cta-panel .quick-links {
   }
 
   body.founder-page .founder-portrait-card {
-    width: min(420px, 100%);
+    width: min(400px, 100%);
   }
 
-  body.founder-page .founder-portrait-caption {
-    left: 0;
-    bottom: -48px;
+  body.founder-page .hero-scene-image {
+    min-height: 600px;
   }
 
-  body.founder-page .hero-scene-image,
   body.founder-page .scene-wrap-image {
-    min-height: 520px;
+    min-height: 600px;
   }
 }
 
@@ -6103,30 +6100,28 @@ body.founder-page #explore .cta-panel .quick-links {
     max-width: 100%;
   }
 
-  body.founder-page .founder-portrait-card::before {
-    inset: 18px -12px -18px 12px;
-    border-radius: 24px;
+  body.founder-page .founder-portrait-card {
+    width: min(340px, 100%);
   }
 
   body.founder-page .founder-portrait-card img {
-    border-radius: 22px;
+    border-radius: 20px;
   }
 
   body.founder-page .founder-portrait-caption {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    width: min(320px, 92%);
     margin-top: 18px;
-    text-align: left;
+    padding-top: 16px;
+    text-align: center;
   }
 
   body.founder-page .founder-portrait-caption strong {
     color: var(--gold-300);
-    font-size: clamp(2rem, 10vw, 2.8rem);
+    font-size: clamp(2rem, 10vw, 2.65rem);
   }
 
   body.founder-page .founder-portrait-caption span {
-    color: rgba(248, 244, 234, 0.86);
+    color: rgba(248, 244, 234, 0.78);
   }
 
   body.founder-page .hero-scene-image,
