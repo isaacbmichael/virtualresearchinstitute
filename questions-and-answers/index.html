@@ -81,22 +81,24 @@ on_this_page:
       </div>
 
       <form class="ask-vri-form" data-ask-vri-form>
-        <label class="sr-only" for="ask-vri-question">Ask VRI a question</label>
+        <div class="ask-vri-question-pane">
+          <label class="sr-only" for="ask-vri-question">Ask VRI a question</label>
 
-        <textarea
-          id="ask-vri-question"
-          class="ask-vri-input"
-          data-ask-vri-input
-          rows="4"
-          maxlength="1200"
-          placeholder="Ask a question about VRI programs, pricing, scheduling, policies, technology, or student fit."
-          required></textarea>
+          <textarea
+            id="ask-vri-question"
+            class="ask-vri-input"
+            data-ask-vri-input
+            rows="4"
+            maxlength="1200"
+            placeholder="Ask a question about VRI programs, pricing, scheduling, policies, technology, or student fit."
+            required></textarea>
 
-        <div class="ask-vri-actions">
-          <button class="btn btn-gold ask-vri-submit" type="submit" data-ask-vri-submit>
-            Ask VRI
-          </button>
-          <a class="btn btn-primary" href="#faq-library">Browse Questions Library</a>
+          <div class="ask-vri-actions">
+            <button class="btn btn-gold ask-vri-submit" type="submit" data-ask-vri-submit>
+              Ask VRI
+            </button>
+            <a class="btn btn-primary" href="#faq-library">Browse Questions Library</a>
+          </div>
         </div>
 
         <div class="ask-vri-answer" data-ask-vri-output>
