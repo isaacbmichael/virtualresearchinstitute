@@ -5452,6 +5452,39 @@ body.faq-page .ask-vri-answer-placeholder {
   }
 }
 
+/* Foundation + Policies: CTA-card text top-left, buttons bottom-right */
+body.foundation-page #status .cta-panel,
+body.policies-page #brand .cta-panel {
+  align-items: stretch;
+}
+
+body.foundation-page #status .cta-panel > div:first-child,
+body.policies-page #brand .cta-panel > div:first-child {
+  justify-self: start;
+  align-self: start;
+  text-align: left;
+}
+
+body.foundation-page #status .quick-links,
+body.policies-page #brand .quick-links {
+  justify-self: end;
+  align-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Keep the same bottom-right alignment after the global tablet breakpoint
+   changes CTA panels to one column. */
+@media (max-width: 1180px) {
+  body.foundation-page #status .quick-links,
+  body.policies-page #brand .quick-links {
+    justify-self: end;
+    align-self: end;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
 /* Research Archive: keep the slide stack elegant on small screens. */
 @media (max-width: 640px) {
   body.research-archive-page .hero-scene-image {
