@@ -2188,6 +2188,68 @@ body.upcoming-projects-page #overview .section-head h2 {
   }
 }
 
+
+/* About page founder note band */
+body.about-page #about .cta-panel {
+  position: relative;
+  overflow: hidden;
+  align-items: stretch;
+  background: linear-gradient(135deg, rgba(4, 76, 89, 0.96), rgba(7, 87, 97, 0.92));
+  border: 1px solid rgba(229, 181, 59, 0.18);
+  color: #f8f4ea;
+  box-shadow: 0 28px 64px rgba(4, 76, 89, 0.22);
+}
+
+body.about-page #about .cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -48% auto;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 181, 59, 0.24), transparent 60%);
+  pointer-events: none;
+}
+
+body.about-page #about .cta-panel > div {
+  position: relative;
+  z-index: 1;
+}
+
+body.about-page #about .cta-panel > div:first-child {
+  align-self: start;
+}
+
+body.about-page #about .cta-panel h3 {
+  color: #ffffff;
+}
+
+body.about-page #about .cta-panel p {
+  color: rgba(248, 244, 234, 0.84);
+  max-width: 96ch;
+}
+
+body.about-page #about .cta-panel .quick-links {
+  align-self: end;
+  justify-self: end;
+  justify-content: flex-end;
+}
+
+body.about-page #about .cta-panel .quick-chip {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--teal-900);
+  box-shadow: var(--shadow-sm);
+}
+
+body.about-page #about .cta-panel .quick-chip:hover,
+body.about-page #about .cta-panel .quick-chip:focus-visible {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: var(--teal-950);
+  box-shadow: var(--shadow-md);
+}
+
     .cta-panel {
       margin-top: 24px;
       padding: 34px;
@@ -5999,6 +6061,21 @@ body.founder-page #explore {
   padding-top: 0;
 }
 
+body.founder-page #explore .cta-panel {
+  align-items: stretch;
+  min-height: 152px;
+}
+
+body.founder-page #explore .cta-panel > div:first-child {
+  align-self: start;
+}
+
+body.founder-page #explore .cta-panel .quick-links {
+  align-self: end;
+  justify-self: end;
+  justify-content: flex-end;
+}
+
 /* Founder page responsive rules */
 @media (max-width: 1180px) {
   body.founder-page .hero .hero-grid,
@@ -6076,3 +6153,16 @@ body.founder-page #explore {
     transition: none;
   }
 }
+
+
+/* Founder/About CTA alignment refinements */
+@media (max-width: 1180px) {
+  body.founder-page #explore .cta-panel .quick-links,
+  body.about-page #about .cta-panel .quick-links {
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: start;
+    margin-top: 8px;
+  }
+}
+
