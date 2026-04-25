@@ -4781,7 +4781,7 @@ body.faq-page .ask-vri-panel {
 
 body.faq-page .ask-vri-copy {
   display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(760px, 1.45fr);
+  grid-template-columns: minmax(320px, 0.62fr) minmax(760px, 1.38fr);
   align-items: start;
   gap: clamp(24px, 4vw, 72px);
 }
@@ -4791,10 +4791,12 @@ body.faq-page .ask-vri-copy h3 {
 }
 
 body.faq-page .ask-vri-copy p {
+  justify-self: end;
   margin: 0;
-  max-width: none;
+  max-width: 860px;
   color: var(--muted);
   line-height: 1.65;
+  text-align: right;
   white-space: nowrap;
 }
 
@@ -4804,7 +4806,7 @@ body.faq-page .ask-vri-disclaimer {
 
 body.faq-page .ask-vri-form {
   display: grid;
-  grid-template-columns: minmax(280px, 0.62fr) minmax(720px, 1.38fr);
+  grid-template-columns: minmax(360px, 0.82fr) minmax(560px, 1.18fr);
   gap: 20px;
   align-items: stretch;
   width: 100%;
@@ -4826,7 +4828,7 @@ body.faq-page .ask-vri-answer-pane {
 
 body.faq-page .ask-vri-question-pane,
 body.faq-page .ask-vri-answer-pane {
-  gap: 12px;
+  gap: 10px;
 }
 
 body.faq-page .ask-vri-pane-title {
@@ -4899,10 +4901,17 @@ body.faq-page .ask-vri-actions {
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  margin-top: 2px;
 }
 
 body.faq-page .ask-vri-actions .btn-primary {
   display: none;
+}
+
+body.faq-page .ask-vri-submit {
+  min-height: 44px;
+  padding-inline: 20px;
+  box-shadow: 0 12px 26px rgba(184, 140, 12, 0.18);
 }
 
 body.faq-page .ask-vri-submit[disabled] {
@@ -4922,12 +4931,16 @@ body.faq-page .ask-vri-answer {
   background: rgba(255, 255, 255, 0.96);
   color: var(--ink);
   line-height: 1.7;
+  text-align: left;
   white-space: pre-wrap;
   box-shadow: 0 16px 38px rgba(7, 74, 84, 0.07);
 }
 
 body.faq-page .ask-vri-answer-placeholder {
+  display: block;
+  width: 100%;
   color: rgba(43, 62, 72, 0.54);
+  text-align: right;
 }
 
 body.faq-page .ask-vri-answer[hidden] {
@@ -4941,7 +4954,9 @@ body.faq-page .ask-vri-answer[hidden] {
   }
 
   body.faq-page .ask-vri-copy p {
+    justify-self: start;
     max-width: 100%;
+    text-align: left;
     white-space: normal;
   }
 
@@ -5126,4 +5141,3 @@ body.research-archive-page .archive-slide-card.is-third {
     transform: translateX(-46%) translateY(-30px) scale(0.88) rotate(3deg) translateZ(0);
   }
 }
-
