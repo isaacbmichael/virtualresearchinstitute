@@ -4911,6 +4911,7 @@ body.faq-page .ask-vri-actions .btn-primary {
 body.faq-page .ask-vri-submit {
   min-height: 44px;
   padding-inline: 20px;
+  cursor: pointer;
   box-shadow: 0 12px 26px rgba(184, 140, 12, 0.18);
 }
 
@@ -4925,6 +4926,7 @@ body.faq-page .ask-vri-answer {
   min-height: 160px;
   max-height: 160px;
   overflow-y: auto;
+  scrollbar-gutter: auto;
   border: 1px solid rgba(7, 74, 84, 0.13);
   border-radius: 22px;
   padding: 18px 20px;
@@ -4940,7 +4942,7 @@ body.faq-page .ask-vri-answer-placeholder {
   display: block;
   width: 100%;
   color: rgba(43, 62, 72, 0.54);
-  text-align: right;
+  text-align: left;
 }
 
 body.faq-page .ask-vri-answer[hidden] {
