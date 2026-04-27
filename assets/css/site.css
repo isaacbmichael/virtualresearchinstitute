@@ -4922,6 +4922,11 @@ body.faq-page .ask-vri-panel {
   align-items: stretch;
 }
 
+body.faq-page .ask-vri-panel > .ask-vri-copy {
+  justify-self: stretch;
+  width: 100%;
+}
+
 body.faq-page .ask-vri-copy {
   display: grid;
   grid-template-columns: minmax(380px, 0.72fr) minmax(700px, 1.28fr);
