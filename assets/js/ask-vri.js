@@ -27,12 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <path d="M8 8.5A2.5 2.5 0 0 1 10.5 6H18a2.5 2.5 0 0 1 2.5 2.5V16a2.5 2.5 0 0 1-2.5 2.5h-7.5A2.5 2.5 0 0 1 8 16V8.5Z" fill="none" stroke="currentColor" stroke-width="1.8" />
       <path d="M5.5 14H5a2.5 2.5 0 0 1-2.5-2.5V4A2.5 2.5 0 0 1 5 1.5h7.5A2.5 2.5 0 0 1 15 4v.5" fill="none" stroke="currentColor" stroke-width="1.8" />
     </svg>
-    <span>Copy response</span>
   `.trim();
 
   if (answerPane) {
     answerPane.classList.add("ask-vri-answer-pane-has-copy");
-    answerPane.insertBefore(copyButton, output);
+    answerPane.appendChild(copyButton);
   }
 
   function escapeHtml(value) {
@@ -144,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
       copyButton.classList.remove("is-copied", "is-error");
       copyButton.setAttribute("aria-label", "Copy Ask VRI response");
       copyButton.setAttribute("title", "Copy response");
-      copyButton.querySelector("span").textContent = "Copy response";
       return;
     }
 
@@ -154,15 +152,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (copied) {
       copyButton.setAttribute("aria-label", "Ask VRI response copied");
       copyButton.setAttribute("title", "Copied");
-      copyButton.querySelector("span").textContent = "Copied";
     } else if (failed) {
       copyButton.setAttribute("aria-label", "Copy failed");
       copyButton.setAttribute("title", "Copy failed");
-      copyButton.querySelector("span").textContent = "Copy failed";
     } else {
       copyButton.setAttribute("aria-label", "Copy Ask VRI response");
       copyButton.setAttribute("title", "Copy response");
-      copyButton.querySelector("span").textContent = "Copy response";
     }
   }
 
