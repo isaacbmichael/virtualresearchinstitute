@@ -5933,7 +5933,7 @@ body.founder-page .hero .hero-copy p {
 body.founder-page .founder-portrait-card {
   isolation: isolate;
   position: relative;
-  width: min(400px, 100%);
+  width: min(360px, 100%);
   margin-inline: auto;
   overflow: visible;
   border: 0;
@@ -5997,7 +5997,7 @@ body.founder-page .founder-portrait-caption span {
 }
 
 body.founder-page .hero-scene-image {
-  min-height: 560px;
+  min-height: 520px;
   align-self: start;
   padding-top: 0;
 }
@@ -6005,7 +6005,7 @@ body.founder-page .hero-scene-image {
 body.founder-page .scene-wrap-image {
   width: min(500px, 100%);
   height: auto;
-  min-height: 560px;
+  min-height: 520px;
   display: grid;
   place-items: start center;
 }
