@@ -14,9 +14,9 @@ explore:
   - key: research-archive
     label: Research Archive
     href: /research-archive/
-  - key: faq
-    label: FAQ
-    href: /faq/
+  - key: questions-and-answers
+    label: Questions & Answers
+    href: /questions-and-answers/
   - key: policies
     label: Policies & Procedures
     href: /policies/
