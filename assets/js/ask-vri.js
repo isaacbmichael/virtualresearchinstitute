@@ -10,16 +10,121 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
-    event.preventDefault();
-
-    if (!submit.disabled) {
-      form.requestSubmit();
-    }
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
-});
-  
+
+  function formatInlineMarkdown(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*([^*\n]+?)\*/g, "<em>$1</em>");
+  }
+
+  function renderMarkdownAnswer(markdown) {
+    const lines = String(markdown || "")
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n")
+      .split("\n");
+
+    const htmlParts = [];
+    let openList = null;
+    let paragraphLines = [];
+
+    function closeParagraph() {
+      if (!paragraphLines.length) {
+        return;
+      }
+
+      htmlParts.push(`<p>${formatInlineMarkdown(paragraphLines.join(" "))}</p>`);
+      paragraphLines = [];
+    }
+
+    function closeList() {
+      if (!openList) {
+        return;
+      }
+
+      htmlParts.push(`</${openList}>`);
+      openList = null;
+    }
+
+    function openListOfType(type) {
+      if (openList === type) {
+        return;
+      }
+
+      closeParagraph();
+      closeList();
+      htmlParts.push(`<${type}>`);
+      openList = type;
+    }
+
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+
+      if (!line) {
+        closeParagraph();
+        closeList();
+        continue;
+      }
+
+      const headingMatch = line.match(/^(#{2,4})\s+(.+)$/);
+      if (headingMatch) {
+        closeParagraph();
+        closeList();
+
+        const level = headingMatch[1].length === 2 ? "h3" : "h4";
+        htmlParts.push(`<${level}>${formatInlineMarkdown(headingMatch[2])}</${level}>`);
+        continue;
+      }
+
+      const unorderedMatch = line.match(/^[-*]\s+(.+)$/);
+      if (unorderedMatch) {
+        openListOfType("ul");
+        htmlParts.push(`<li>${formatInlineMarkdown(unorderedMatch[1])}</li>`);
+        continue;
+      }
+
+      const orderedMatch = line.match(/^\d+\.\s+(.+)$/);
+      if (orderedMatch) {
+        openListOfType("ol");
+        htmlParts.push(`<li>${formatInlineMarkdown(orderedMatch[1])}</li>`);
+        continue;
+      }
+
+      closeList();
+      paragraphLines.push(line);
+    }
+
+    closeParagraph();
+    closeList();
+
+    return htmlParts.join("");
+  }
+
+  function setPlainOutput(message) {
+    output.textContent = message;
+  }
+
+  function setFormattedOutput(message) {
+    output.innerHTML = renderMarkdownAnswer(message);
+  }
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+
+      if (!submit.disabled) {
+        form.requestSubmit();
+      }
+    }
+  });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -27,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!message) {
       output.hidden = false;
-      output.textContent = "Please enter a question for Ask VRI.";
+      setPlainOutput("Please enter a question for Ask VRI.");
       return;
     }
 
@@ -38,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submit.disabled = true;
     submit.textContent = "Asking...";
     output.hidden = false;
-    output.textContent = "Ask VRI is reviewing the public VRI information...";
+    setPlainOutput("Ask VRI is reviewing the public VRI information...");
 
     try {
       const response = await fetch(ASK_VRI_ENDPOINT, {
@@ -55,10 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(data.error || "Ask VRI could not answer right now.");
       }
 
-      output.textContent = data.answer || "Ask VRI could not generate an answer. Please try again.";
+      const answer = data.answer || "Ask VRI could not generate an answer. Please try again.";
+      setFormattedOutput(answer);
     } catch (error) {
-      output.textContent =
-        "Ask VRI could not answer right now. Please try again later or contact VRI if your question is time-sensitive.";
+      setPlainOutput(
+        "Ask VRI could not answer right now. Please try again later or contact VRI if your question is time-sensitive."
+      );
     } finally {
       submit.disabled = false;
       submit.textContent = "Ask VRI";
