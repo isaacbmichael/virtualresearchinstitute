@@ -117,6 +117,63 @@ document.addEventListener("DOMContentLoaded", () => {
     output.innerHTML = renderMarkdownAnswer(message);
   }
 
+  async function readErrorMessage(response) {
+    const fallback = "Ask VRI could not answer right now.";
+
+    try {
+      const contentType = response.headers.get("Content-Type") || "";
+
+      if (contentType.includes("application/json")) {
+        const data = await response.json();
+        return data.error || fallback;
+      }
+
+      const text = await response.text();
+      return text || fallback;
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  async function readStreamingAnswer(response) {
+    const contentType = response.headers.get("Content-Type") || "";
+
+    if (contentType.includes("application/json")) {
+      const data = await response.json();
+      return data.answer || "Ask VRI could not generate an answer. Please try again.";
+    }
+
+    if (!response.body) {
+      return await response.text();
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let answer = "";
+
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+
+        if (done) {
+          const finalText = decoder.decode();
+          if (finalText) {
+            answer += finalText;
+            setFormattedOutput(answer);
+          }
+          break;
+        }
+
+        answer += decoder.decode(value, { stream: true });
+        setFormattedOutput(answer);
+      }
+    } finally {
+      reader.releaseLock();
+    }
+
+    return answer;
+  }
+
   input.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
       event.preventDefault();
@@ -156,14 +213,15 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ message })
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.error || "Ask VRI could not answer right now.");
+        throw new Error(await readErrorMessage(response));
       }
 
-      const answer = data.answer || "Ask VRI could not generate an answer. Please try again.";
-      setFormattedOutput(answer);
+      const answer = await readStreamingAnswer(response);
+
+      if (!answer.trim()) {
+        setPlainOutput("Ask VRI could not generate an answer. Please try again.");
+      }
     } catch (error) {
       setPlainOutput(
         "Ask VRI could not answer right now. Please try again later or contact VRI if your question is time-sensitive."
