@@ -561,6 +561,21 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
 })();
 
 (function () {
+  const studentImage = document.querySelector("[data-student-rotation]");
+  if (!studentImage) return;
+
+  const studentImages = [
+    "/assets/images/home/vri-pair-student-1.png",
+    "/assets/images/home/vri-pair-student-2.png",
+    "/assets/images/home/vri-pair-student-3.png"
+  ];
+
+  const selectedSrc = studentImages[Math.floor(Math.random() * studentImages.length)];
+
+  studentImage.src = selectedSrc;
+})();
+
+(function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function markImageReady(img) {
