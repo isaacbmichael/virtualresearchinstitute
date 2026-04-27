@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.classList.add("js-preload");
   document.body.classList.add("js-enhanced");
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -606,10 +607,13 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
     });
   }
 
-  const backgroundUrls = [
-    "/assets/images/home/vri-hero-abstract-research.png",
-    "/assets/images/about/vri-global-network-v1.png"
-  ];
+  const backgroundUrls = [];
+  if (document.body.classList.contains("home-page")) {
+    backgroundUrls.push("/assets/images/home/vri-hero-abstract-research.png");
+  }
+  if (document.body.classList.contains("about-page")) {
+    backgroundUrls.push("/assets/images/about/vri-global-network-v1.png");
+  }
 
   function preloadBackground(url) {
     return new Promise((resolve) => {
@@ -620,7 +624,7 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
     });
   }
 
-  if (reduceMotion) {
+  if (reduceMotion || backgroundUrls.length === 0) {
     document.body.classList.add("is-bg-ready");
     return;
   }
@@ -630,8 +634,4 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
     .then(() => {
       document.body.classList.add("is-bg-ready");
     });
-
-  window.setTimeout(() => {
-    document.body.classList.add("is-bg-ready");
-  }, 1800);
 })();
