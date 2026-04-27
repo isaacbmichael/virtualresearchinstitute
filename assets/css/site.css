@@ -1624,6 +1624,14 @@ body.programs-page .hero-visual-presentation img {
       margin: 0;
     }
 
+    /* About page: give the mentor institution cards a little more breathing room */
+    @media (min-width: 921px) {
+      body.about-page #network .institution-rotator-viewport,
+      body.about-page #network .institution-rotator-track {
+        min-height: 250px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .institution-rotator-page {
         transition: none;
