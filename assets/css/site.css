@@ -6520,27 +6520,26 @@ body.programs-page #format .cta-panel .quick-links {
 /* ===================== Ask VRI Copy Response Button ===================== */
 body.faq-page .ask-vri-answer-pane-has-copy {
   position: relative;
+  padding-bottom: 42px;
 }
 
 body.faq-page .ask-vri-copy-response {
   position: absolute;
-  top: -4px;
   right: 0;
+  bottom: 0;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-height: 32px;
-  padding: 0 12px;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
   border: 1px solid rgba(4, 76, 89, 0.14);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--teal-900);
-  font-size: 0.76rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.01em;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition:
@@ -6556,9 +6555,9 @@ body.faq-page .ask-vri-copy-response[hidden] {
 }
 
 body.faq-page .ask-vri-copy-response svg {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
 }
 
 body.faq-page .ask-vri-copy-response:hover,
@@ -6588,16 +6587,20 @@ body.faq-page .ask-vri-copy-response.is-error {
 }
 
 @media (max-width: 640px) {
+  body.faq-page .ask-vri-answer-pane-has-copy {
+    padding-bottom: 40px;
+  }
+
   body.faq-page .ask-vri-copy-response {
-    top: -5px;
-    min-height: 30px;
-    padding: 0 10px;
-    font-size: 0.72rem;
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
   }
 
   body.faq-page .ask-vri-copy-response svg {
-    width: 15px;
-    height: 15px;
-    flex-basis: 15px;
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
   }
 }
