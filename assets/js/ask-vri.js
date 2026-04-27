@@ -14,7 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const answerPane = output.closest(".ask-vri-answer-pane") || output.parentElement;
   let latestAnswerText = "";
+  let latestQuestionText = "";
   let copyResetTimer = null;
+
+  const answerActions = document.createElement("div");
+  answerActions.className = "ask-vri-answer-actions";
+  answerActions.hidden = true;
+
+  const retryButton = document.createElement("button");
+  retryButton.type = "button";
+  retryButton.className = "ask-vri-retry-response";
+  retryButton.hidden = true;
+  retryButton.setAttribute("aria-label", "Retry last Ask VRI question");
+  retryButton.setAttribute("title", "Retry");
+  retryButton.innerHTML = `
+    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+      <path d="M20 6.5v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19.2 11.5A7.2 7.2 0 1 0 17.1 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  `.trim();
 
   const copyButton = document.createElement("button");
   copyButton.type = "button";
@@ -30,8 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
   `.trim();
 
   if (answerPane) {
-    answerPane.classList.add("ask-vri-answer-pane-has-copy");
-    answerPane.appendChild(copyButton);
+    answerPane.classList.add("ask-vri-answer-pane-has-actions");
+    answerActions.appendChild(retryButton);
+    answerActions.appendChild(copyButton);
+    answerPane.appendChild(answerActions);
+  }
+
+  function updateAnswerActionsVisibility() {
+    answerActions.hidden = copyButton.hidden && retryButton.hidden;
   }
 
   function escapeHtml(value) {
@@ -143,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       copyButton.classList.remove("is-copied", "is-error");
       copyButton.setAttribute("aria-label", "Copy Ask VRI response");
       copyButton.setAttribute("title", "Copy response");
+      updateAnswerActionsVisibility();
       return;
     }
 
@@ -159,6 +184,23 @@ document.addEventListener("DOMContentLoaded", () => {
       copyButton.setAttribute("aria-label", "Copy Ask VRI response");
       copyButton.setAttribute("title", "Copy response");
     }
+
+    updateAnswerActionsVisibility();
+  }
+
+  function updateRetryButtonState({ visible = false, loading = false } = {}) {
+    retryButton.hidden = !visible;
+    retryButton.disabled = loading || !latestQuestionText.trim();
+
+    if (loading) {
+      retryButton.setAttribute("aria-label", "Ask VRI is retrying the last question");
+      retryButton.setAttribute("title", "Retrying...");
+    } else {
+      retryButton.setAttribute("aria-label", "Retry last Ask VRI question");
+      retryButton.setAttribute("title", "Retry");
+    }
+
+    updateAnswerActionsVisibility();
   }
 
   function setPlainOutput(message) {
@@ -261,54 +303,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return answer;
   }
 
-  copyButton.addEventListener("click", async () => {
-    const textToCopy = latestAnswerText.trim();
-
-    if (!textToCopy) {
-      return;
-    }
-
-    try {
-      await copyText(textToCopy);
-      updateCopyButtonState({ visible: true, copied: true });
-    } catch (error) {
-      updateCopyButtonState({ visible: true, failed: true });
-    }
-
-    copyResetTimer = window.setTimeout(() => {
-      updateCopyButtonState({ visible: Boolean(latestAnswerText.trim()) });
-    }, 1800);
-  });
-
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
-      event.preventDefault();
-
-      if (!submit.disabled) {
-        form.requestSubmit();
-      }
-    }
-  });
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const message = input.value.trim();
-
-    if (!message) {
-      output.hidden = false;
-      latestAnswerText = "";
-      updateCopyButtonState({ visible: false });
-      setPlainOutput("Please enter a question for Ask VRI.");
-      return;
-    }
-
-    input.value = "";
-    input.placeholder = "Ask another question...";
-    input.focus();
+  async function askQuestion(message) {
+    latestQuestionText = message;
 
     latestAnswerText = "";
     updateCopyButtonState({ visible: false });
+    updateRetryButtonState({ visible: false, loading: true });
 
     submit.disabled = true;
     submit.textContent = "Asking...";
@@ -336,14 +336,82 @@ document.addEventListener("DOMContentLoaded", () => {
         setPlainOutput("Ask VRI could not generate an answer. Please try again.");
       }
     } catch (error) {
-      latestAnswerText = "";
-      updateCopyButtonState({ visible: false });
-      setPlainOutput(
-        "Ask VRI could not answer right now. Please try again later or contact VRI if your question is time-sensitive."
-      );
+      if (latestAnswerText.trim()) {
+        latestAnswerText = `${latestAnswerText.trimEnd()}\n\nAsk VRI could not finish the answer. Please retry if you need the complete response.`;
+        setFormattedOutput(latestAnswerText);
+        updateCopyButtonState({ visible: true });
+      } else {
+        latestAnswerText = "";
+        updateCopyButtonState({ visible: false });
+        setPlainOutput(
+          "Ask VRI could not answer right now. Please try again later or contact VRI if your question is time-sensitive."
+        );
+      }
     } finally {
       submit.disabled = false;
       submit.textContent = "Ask VRI";
+      updateRetryButtonState({ visible: Boolean(latestQuestionText.trim()), loading: false });
     }
+  }
+
+  copyButton.addEventListener("click", async () => {
+    const textToCopy = latestAnswerText.trim();
+
+    if (!textToCopy) {
+      return;
+    }
+
+    try {
+      await copyText(textToCopy);
+      updateCopyButtonState({ visible: true, copied: true });
+    } catch (error) {
+      updateCopyButtonState({ visible: true, failed: true });
+    }
+
+    copyResetTimer = window.setTimeout(() => {
+      updateCopyButtonState({ visible: Boolean(latestAnswerText.trim()) });
+    }, 1800);
+  });
+
+  retryButton.addEventListener("click", () => {
+    const message = latestQuestionText.trim();
+
+    if (!message || submit.disabled) {
+      return;
+    }
+
+    input.focus();
+    askQuestion(message);
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+
+      if (!submit.disabled) {
+        form.requestSubmit();
+      }
+    }
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const message = input.value.trim();
+
+    if (!message) {
+      output.hidden = false;
+      latestAnswerText = "";
+      updateCopyButtonState({ visible: false });
+      updateRetryButtonState({ visible: Boolean(latestQuestionText.trim()), loading: false });
+      setPlainOutput("Please enter a question for Ask VRI.");
+      return;
+    }
+
+    input.value = "";
+    input.placeholder = "Ask another question...";
+    input.focus();
+
+    await askQuestion(message);
   });
 });
