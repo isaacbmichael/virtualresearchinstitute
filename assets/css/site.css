@@ -6516,3 +6516,88 @@ body.programs-page #format .cta-panel .quick-links {
     margin-top: 8px;
   }
 }
+
+/* ===================== Ask VRI Copy Response Button ===================== */
+body.faq-page .ask-vri-answer-pane-has-copy {
+  position: relative;
+}
+
+body.faq-page .ask-vri-copy-response {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(4, 76, 89, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--teal-900);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    transform .28s var(--ease),
+    background .28s var(--ease),
+    border-color .28s var(--ease),
+    color .28s var(--ease),
+    box-shadow .28s var(--ease);
+}
+
+body.faq-page .ask-vri-copy-response[hidden] {
+  display: none;
+}
+
+body.faq-page .ask-vri-copy-response svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+body.faq-page .ask-vri-copy-response:hover,
+body.faq-page .ask-vri-copy-response:focus-visible {
+  transform: translateY(-1px);
+  background: #ffffff;
+  border-color: rgba(4, 76, 89, 0.22);
+  color: var(--teal-950);
+  box-shadow: var(--shadow-md);
+}
+
+body.faq-page .ask-vri-copy-response:focus-visible {
+  outline: 3px solid rgba(0, 113, 127, 0.24);
+  outline-offset: 3px;
+}
+
+body.faq-page .ask-vri-copy-response.is-copied {
+  background: rgba(184, 140, 12, 0.14);
+  border-color: rgba(184, 140, 12, 0.24);
+  color: var(--gold-800);
+}
+
+body.faq-page .ask-vri-copy-response.is-error {
+  background: rgba(157, 111, 12, 0.10);
+  border-color: rgba(157, 111, 12, 0.22);
+  color: var(--gold-800);
+}
+
+@media (max-width: 640px) {
+  body.faq-page .ask-vri-copy-response {
+    top: -5px;
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
+
+  body.faq-page .ask-vri-copy-response svg {
+    width: 15px;
+    height: 15px;
+    flex-basis: 15px;
+  }
+}
