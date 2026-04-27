@@ -5986,14 +5986,16 @@ body.founder-page .founder-portrait-card img {
 }
 
 body.founder-page .founder-portrait-caption {
-  position: static;
+  position: relative;
+  left: 50%;
   width: min(430px, 112%);
-  margin: 22px auto 0;
+  margin: 22px 0 0;
   padding-top: 18px;
   background: transparent;
   border-top: 1px solid rgba(229, 181, 59, 0.42);
   text-align: center;
   text-shadow: none;
+  transform: translateX(-50%);
 }
 
 body.founder-page .founder-portrait-caption strong {
