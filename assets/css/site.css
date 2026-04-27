@@ -3657,10 +3657,17 @@ body.groups-page #questions .cta-panel {
   align-items: stretch;
 }
 
+body.circles-page #questions .cta-panel > div:first-child,
+body.groups-page #questions .cta-panel > div:first-child {
+  justify-self: start;
+  align-self: start;
+  text-align: left;
+}
+
 body.circles-page #questions .cta-panel .quick-links,
 body.groups-page #questions .cta-panel .quick-links {
-  align-self: end;
   justify-self: end;
+  align-self: end;
   justify-content: flex-end;
   align-items: flex-end;
 }
