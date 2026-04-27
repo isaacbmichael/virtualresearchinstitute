@@ -4916,19 +4916,23 @@ body.faq-page .ask-vri-panel {
 
 body.faq-page .ask-vri-copy {
   display: grid;
-  grid-template-columns: minmax(320px, 0.62fr) minmax(760px, 1.38fr);
+  grid-template-columns: minmax(380px, 0.72fr) minmax(700px, 1.28fr);
   align-items: start;
   gap: clamp(24px, 4vw, 72px);
 }
 
 body.faq-page .ask-vri-copy h3 {
+  justify-self: start;
   margin: 0;
+  text-align: left;
+  white-space: nowrap;
 }
 
 body.faq-page .ask-vri-copy p {
   justify-self: end;
+  width: min(100%, 940px);
   margin: 0;
-  max-width: 860px;
+  max-width: none;
   color: var(--muted);
   line-height: 1.65;
   text-align: right;
@@ -5090,8 +5094,13 @@ body.faq-page .ask-vri-answer[hidden] {
     grid-template-columns: 1fr;
   }
 
+  body.faq-page .ask-vri-copy h3 {
+    white-space: normal;
+  }
+
   body.faq-page .ask-vri-copy p {
     justify-self: start;
+    width: 100%;
     max-width: 100%;
     text-align: left;
     white-space: normal;
