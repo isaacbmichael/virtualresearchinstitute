@@ -4916,23 +4916,26 @@ body.faq-page .ask-vri-panel {
 
 body.faq-page .ask-vri-copy {
   display: grid;
-  grid-template-columns: minmax(320px, 0.62fr) minmax(760px, 1.38fr);
+  grid-template-columns: minmax(420px, 0.72fr) minmax(0, 1.28fr);
   align-items: start;
-  gap: clamp(24px, 4vw, 72px);
+  gap: clamp(28px, 3.4vw, 64px);
 }
 
 body.faq-page .ask-vri-copy h3 {
   margin: 0;
+  max-width: 18ch;
+  justify-self: end;
+  text-align: left;
 }
 
 body.faq-page .ask-vri-copy p {
   justify-self: end;
   margin: 0;
-  max-width: 860px;
+  max-width: 980px;
   color: var(--muted);
   line-height: 1.65;
   text-align: right;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 body.faq-page .ask-vri-disclaimer {
