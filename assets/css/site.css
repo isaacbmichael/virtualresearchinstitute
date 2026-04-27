@@ -6517,17 +6517,29 @@ body.programs-page #format .cta-panel .quick-links {
   }
 }
 
-/* ===================== Ask VRI Copy Response Button ===================== */
-body.faq-page .ask-vri-answer-pane-has-copy {
+/* ===================== Ask VRI Answer Action Buttons ===================== */
+body.faq-page .ask-vri-answer-pane-has-actions {
   position: relative;
   padding-bottom: 42px;
 }
 
-body.faq-page .ask-vri-copy-response {
+body.faq-page .ask-vri-answer-actions {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+body.faq-page .ask-vri-answer-actions[hidden] {
+  display: none;
+}
+
+body.faq-page .ask-vri-retry-response,
+body.faq-page .ask-vri-copy-response {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6547,21 +6559,33 @@ body.faq-page .ask-vri-copy-response {
     background .28s var(--ease),
     border-color .28s var(--ease),
     color .28s var(--ease),
-    box-shadow .28s var(--ease);
+    box-shadow .28s var(--ease),
+    opacity .28s var(--ease);
 }
 
+body.faq-page .ask-vri-retry-response[hidden],
 body.faq-page .ask-vri-copy-response[hidden] {
   display: none;
 }
 
+body.faq-page .ask-vri-retry-response:disabled,
+body.faq-page .ask-vri-copy-response:disabled {
+  cursor: not-allowed;
+  opacity: 0.54;
+  transform: none;
+}
+
+body.faq-page .ask-vri-retry-response svg,
 body.faq-page .ask-vri-copy-response svg {
   width: 17px;
   height: 17px;
   flex: 0 0 17px;
 }
 
-body.faq-page .ask-vri-copy-response:hover,
-body.faq-page .ask-vri-copy-response:focus-visible {
+body.faq-page .ask-vri-retry-response:hover:not(:disabled),
+body.faq-page .ask-vri-retry-response:focus-visible:not(:disabled),
+body.faq-page .ask-vri-copy-response:hover:not(:disabled),
+body.faq-page .ask-vri-copy-response:focus-visible:not(:disabled) {
   transform: translateY(-1px);
   background: #ffffff;
   border-color: rgba(4, 76, 89, 0.22);
@@ -6569,6 +6593,7 @@ body.faq-page .ask-vri-copy-response:focus-visible {
   box-shadow: var(--shadow-md);
 }
 
+body.faq-page .ask-vri-retry-response:focus-visible,
 body.faq-page .ask-vri-copy-response:focus-visible {
   outline: 3px solid rgba(0, 113, 127, 0.24);
   outline-offset: 3px;
@@ -6587,10 +6612,15 @@ body.faq-page .ask-vri-copy-response.is-error {
 }
 
 @media (max-width: 640px) {
-  body.faq-page .ask-vri-answer-pane-has-copy {
+  body.faq-page .ask-vri-answer-pane-has-actions {
     padding-bottom: 40px;
   }
 
+  body.faq-page .ask-vri-answer-actions {
+    gap: 7px;
+  }
+
+  body.faq-page .ask-vri-retry-response,
   body.faq-page .ask-vri-copy-response {
     width: 34px;
     min-width: 34px;
@@ -6598,6 +6628,7 @@ body.faq-page .ask-vri-copy-response.is-error {
     min-height: 34px;
   }
 
+  body.faq-page .ask-vri-retry-response svg,
   body.faq-page .ask-vri-copy-response svg {
     width: 16px;
     height: 16px;
