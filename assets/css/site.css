@@ -4916,27 +4916,23 @@ body.faq-page .ask-vri-panel {
 
 body.faq-page .ask-vri-copy {
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: minmax(320px, 0.62fr) minmax(760px, 1.38fr);
   align-items: start;
-  gap: clamp(28px, 3.4vw, 64px);
+  gap: clamp(24px, 4vw, 72px);
 }
 
 body.faq-page .ask-vri-copy h3 {
   margin: 0;
-  max-width: none;
-  justify-self: start;
-  text-align: left;
-  white-space: nowrap;
 }
 
 body.faq-page .ask-vri-copy p {
   justify-self: end;
   margin: 0;
-  max-width: none;
+  max-width: 860px;
   color: var(--muted);
   line-height: 1.65;
   text-align: right;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 body.faq-page .ask-vri-disclaimer {
@@ -5094,7 +5090,6 @@ body.faq-page .ask-vri-answer[hidden] {
     grid-template-columns: 1fr;
   }
 
-  body.faq-page .ask-vri-copy h3,
   body.faq-page .ask-vri-copy p {
     justify-self: start;
     max-width: 100%;
@@ -6497,85 +6492,5 @@ body.programs-page #format .cta-panel .quick-links {
     align-self: start;
     justify-content: flex-start;
     margin-top: 8px;
-  }
-}
-
-/* ==========================================================
-   Institutional typography consistency pass
-   Keeps display headings prestigious and uniform across pages.
-   ========================================================== */
-:root {
-  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-math: "Inter", "Cambria Math", "STIX Two Math", "Times New Roman", serif;
-}
-
-body {
-  font-family: var(--font-body);
-}
-
-.brand-title,
-.footer-brand-title,
-.hero-copy h1,
-.section-head h2,
-.card h3,
-.panel h3,
-.metric-panel h3,
-.cta-panel h3,
-.feature-band h3,
-.pathway-card h3,
-.session-headline h3,
-.proposal-heading h4,
-body.founder-page .founder-statement p,
-body.founder-page .quote-rotator p,
-body.founder-page .founder-portrait-caption strong {
-  font-family: var(--font-display);
-}
-
-body.home-page .hero-figure-formulas {
-  font-family: var(--font-math);
-}
-
-/* ==========================================================
-   Early image-load smoothing support
-   Works with the tiny js-preload class added in _layouts/default.html
-   before the stylesheet loads, preventing first-paint image flicker.
-   ========================================================== */
-html.js-preload img:not([data-no-fade]) {
-  opacity: 0;
-  transform: scale(1.012);
-  transition:
-    opacity 0.78s var(--ease),
-    transform 1.05s var(--ease);
-  backface-visibility: hidden;
-}
-
-html.js-preload img.is-image-ready:not([data-no-fade]) {
-  opacity: 1;
-  transform: scale(1);
-}
-
-html.js-preload body.home-page .hero::after,
-html.js-preload body.about-page #future.section-future-background::before {
-  opacity: 0;
-  transition: opacity 1.05s var(--ease);
-}
-
-html.js-preload body.is-bg-ready.home-page .hero::after,
-html.js-preload body.is-bg-ready.about-page #future.section-future-background::before {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.js-preload img:not([data-no-fade]) {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  html.js-preload body.home-page .hero::after,
-  html.js-preload body.about-page #future.section-future-background::before {
-    opacity: 1;
-    transition: none;
   }
 }
