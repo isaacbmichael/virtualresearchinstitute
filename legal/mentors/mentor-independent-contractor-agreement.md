@@ -1,150 +1,137 @@
-# Mentor Independent Contractor Agreement
+# Mentor Confidentiality and Non-Circumvention Terms
 
 **Document status:** Internal draft for business structuring and counsel review  
 **Prepared for:** Virtual Research Institute LLC  
-**Intended use:** Working draft for mentor contractor onboarding and legal review
+**Intended use:** Working draft for mentor onboarding, confidentiality protection, and legal review
 
 ---
 
-## 1. Parties
+## 1. Purpose
 
-This Mentor Independent Contractor Agreement (“Agreement”) is entered into by and between **Virtual Research Institute LLC (“VRI”)** and the individual mentor identified in the applicable signature block or onboarding materials (“Mentor”).
+This document sets out draft confidentiality, non-circumvention, non-solicitation, brand-protection, proposal-pipeline protection, and related protective terms that VRI may require mentors to accept as a condition of onboarding, continued engagement, renewal, proposal submission, public proposal listing, or access to VRI participants, families, applicants, leads, internal materials, or nonpublic business information.
 
-## 2. Purpose
-
-The purpose of this Agreement is to define the terms under which Mentor may provide approved mentoring, instructional, project-guidance, research-supervision, proposal-development, or related scholarly services for VRI as an independent contractor.
-
-## 3. Status of Document
+## 2. Status of Document
 
 This draft is a working internal document for refinement and counsel review. It is not yet a final legal instrument for execution.
 
-## 4. Independent Contractor Status
+Any final version should be reviewed and approved by qualified legal counsel before use, signature, or reliance as an enforceable agreement.
 
-Mentor will provide services to VRI as an **independent contractor** and not as an employee, partner, agent, joint venturer, or fiduciary of VRI unless a separate written agreement expressly states otherwise.
+## 3. Confidential Information
 
-Nothing in this Agreement shall be interpreted to create an employment relationship, entitlement to employee benefits, guaranteed future work, or authority to bind VRI.
+For purposes of these draft terms, “Confidential Information” may include nonpublic information relating to VRI’s business, operations, pricing, leads, participant identities, family information, mentor information, internal procedures, proposal pipelines, proposal drafts, unpublished proposal ideas, project demand information, enrollment status, waitlists, student or family inquiries, launch decisions, templates, workflows, policies, payment structures, training materials, business plans, archives, documentation systems, and any other nonpublic information that VRI designates as confidential or that should reasonably be understood as confidential.
 
-## 5. Term of Agreement
+Confidential Information also includes nonpublic information relating to students, families, mentors, applicants, reviewers, contractors, internal communications, onboarding materials, student work, student progress, family communications, enrollment information, payment-related information, scholarship or funding considerations, project matching information, mentor assignment decisions, and any participant-related records or notes.
 
-The initial term of this Agreement shall be **one (1) year**, unless earlier terminated in accordance with this Agreement.
+Information does not lose its confidential status merely because a related mentor profile, topic title, public proposal page, project description, or general program listing appears on a VRI website or public-facing VRI communication. Nonpublic details behind the listing, including enrollment interest, family inquiries, demand data, waitlist status, launch status, internal edits, strategic decisions, and VRI’s evaluation of whether a proposal will run, remain Confidential Information unless VRI expressly makes that information public.
 
-VRI may, in its discretion, offer renewal, extension, or a revised agreement based on institutional need, performance, compliance, screening status, and mutual fit.
+Confidential Information does not include information that becomes publicly available through no wrongful act of Mentor, information Mentor can demonstrate was lawfully known to Mentor without confidentiality restriction before disclosure by VRI, or information Mentor lawfully receives from a third party without a duty of confidentiality to VRI or its participants.
 
-Execution of this Agreement does not guarantee that Mentor will be assigned a cohort, proposal, project, student, or minimum amount of work during the term.
+## 4. Confidentiality Obligations
 
-## 6. Services
+Mentor shall not, except as authorized in writing by VRI, use, disclose, copy, distribute, summarize, transmit, commercialize, publish, or retain Confidential Information except as reasonably necessary to perform approved services for VRI.
 
-Mentor may provide approved mentoring, instructional, project-guidance, research-supervision, review, presentation-preparation, proposal-development, or related scholarly services for VRI only as specifically authorized by VRI for a given term, cohort, project, proposal, or engagement.
+Mentor shall use reasonable care to protect Confidential Information from unauthorized access, disclosure, misuse, loss, or removal.
 
-Mentor is not entitled to offer services under the VRI name except in connection with approved VRI programming and within the scope authorized by VRI.
+Mentor shall not use Confidential Information for Mentor’s own competing, commercial, recruiting, consulting, instructional, tutoring, mentoring, proposal-development, or business-development purposes.
 
-Approval as a VRI mentor under this Agreement is separate from approval for any specific project, proposal, cohort, Circle, Group, Private Mentorship engagement, or other participant-facing assignment.
+Mentor shall comply with VRI instructions regarding storage, access, return, deletion, retention, permitted systems, and communication channels for confidential or participant-related information.
 
-## 7. Project Proposals, Public Listings, and Launch Conditions
+Mentor shall promptly notify VRI if Mentor becomes aware of any actual or suspected unauthorized access, disclosure, loss, misuse, or compromise of Confidential Information.
 
-Mentor may submit, develop, revise, or be invited to prepare research proposal concepts for possible VRI programming. VRI may review, edit, approve, reject, publish, list, unpublish, postpone, merge, revise, or retire any mentor proposal at its discretion.
+## 5. Proposal Pipeline, Enrollment Interest, and Launch-Status Protection
 
-Public listing of a mentor proposal, project description, mentor profile, research topic, or possible offering does not guarantee that the proposal will run, that Mentor will be assigned students, that a cohort will launch, or that Mentor will receive compensation.
+Mentor may receive access to VRI proposal concepts, proposal drafts, project pages, public listings, applicant or family inquiries, student interest information, registration status, waitlist information, enrollment trends, scholarship or funding considerations, scheduling discussions, and internal decisions about whether a project may run. Mentor shall treat that information as protected VRI business information except to the extent VRI has expressly made it public.
 
-A proposal becomes an active VRI engagement only when VRI confirms that the project is launching and authorizes Mentor to begin participant-facing work for that specific engagement.
+Submission, approval, editing, or public listing of a mentor proposal does not authorize Mentor to use VRI’s proposal pipeline, public proposal page, applicant interest, family inquiries, enrollment leads, waitlists, or student contacts for Mentor’s own non-VRI services or outside business development.
 
-VRI may consider enrollment level, student fit, mentor availability, scheduling feasibility, operational readiness, program balance, quality control, scholarship or funding considerations, and broader business needs when deciding whether a proposal or project will run.
+Mentor shall not represent, imply, or suggest to students, families, applicants, or the public that a listed proposal, project, Circle, Group, Private Mentorship opportunity, or other VRI offering is guaranteed to run unless VRI has expressly authorized that representation in writing.
 
-If a proposal does not have sufficient enrollment or does not otherwise meet VRI’s launch conditions by the relevant deadline, VRI may, in its discretion:
+Mentor shall not represent, imply, or suggest that a VRI proposal, VRI project page, or VRI student/family inquiry guarantees future private mentorship, continuation services, publication, authorship, admission, recommendation letters, or any other outcome unless VRI has expressly authorized that representation in writing.
 
-- move the proposal to a later session or engagement window;
-- revise the proposal, title, description, prerequisites, scope, format, or pathway;
-- merge the proposal with another offering;
-- keep the proposal listed for future interest;
-- remove or retire the proposal;
-- decline to launch the proposal without further obligation.
+If VRI postpones, revises, merges, retires, or declines to launch a proposal, Mentor shall not use the proposal’s prior listing, VRI-generated interest, student or family inquiries, or VRI relationship access to redirect students or families into non-VRI services without prior written authorization from VRI.
 
-VRI may define sufficient enrollment differently by pathway, project, mentor, scholarship mix, staffing, strategic need, or operational circumstances. Mentor shall not represent to families, students, or the public that a listed proposal is guaranteed to run unless VRI has expressly authorized that representation in writing.
+## 6. Non-Circumvention and No Private Side Deals
 
-Mentor must reconfirm availability before a proposal is moved into a later session, future term, or different engagement window. VRI may limit how many active proposal pages, listed offerings, pending projects, or participant-facing assignments Mentor has at one time.
+Mentor shall not use VRI to identify, access, solicit, recruit, contract with, redirect, or privately serve VRI students, families, participants, applicants, waitlisted students, leads, proposal-page inquiries, or other protected relationships in a manner that bypasses VRI.
 
-Each launched Circle, Group, Private Mentorship engagement, or other participant-facing assignment should be confirmed through a written engagement confirmation, addendum, assignment notice, or comparable written approval identifying the approved scope, pathway, dates, compensation, payment timing, and documentation expectations.
+Without prior written authorization from VRI, Mentor shall not:
 
-## 8. No Authority to Bind VRI
+- offer private services to VRI participants, applicants, waitlisted students, family leads, proposal-page inquiries, or other protected relationships that arise from Mentor’s access to VRI;
+- invite VRI participants, applicants, waitlisted students, families, or leads to move into non-VRI services during an active VRI engagement or while a proposal is pending, listed, postponed, or recently retired;
+- redirect a VRI cohort, project, proposal, public listing, student inquiry, family inquiry, or mentoring relationship into an outside commercial or private arrangement;
+- use VRI relationships, proposal access, participant access, family access, enrollment interest, waitlist information, or institutional access as a pipeline for off-platform business development;
+- use VRI communications, meetings, programs, proposal pages, public listings, or participant-facing work to promote Mentor’s outside services, private tutoring, consulting, mentoring, courses, programs, or business opportunities without VRI’s prior written authorization.
 
-Mentor may not, without prior written authorization from VRI:
+These restrictions are intended to protect VRI’s legitimate business interests, participant relationships, proposal pipeline, enrollment pipeline, institutional structure, goodwill, and program integrity.
 
-- bind VRI to any contract, promise, refund, representation, or obligation;
-- modify VRI policies, payment terms, enrollment terms, launch conditions, or program rules;
-- make public statements on behalf of VRI in an official capacity;
-- offer admissions, placements, guarantees, schedule commitments, project-launch commitments, or financial commitments in VRI’s name;
-- use unapproved agreements, side letters, or external arrangements with VRI participants;
-- represent that a proposal, cohort, project, or Private Mentorship engagement is guaranteed to run unless VRI has expressly authorized that representation in writing.
+## 7. Non-Solicitation and No-Poaching
 
-Any action outside the scope authorized by VRI may be treated as a material breach of this Agreement.
+During Mentor’s active engagement with VRI and for twelve (12) months after the end of Mentor’s most recent VRI engagement, Mentor shall not, without prior written authorization from VRI:
 
-## 9. Compensation
+- solicit or encourage VRI students, families, participants, applicants, waitlisted students, proposal-page inquiries, or leads to leave VRI for Mentor’s own services or another competing service;
+- solicit, recruit, or privately serve VRI students, families, participants, applicants, waitlisted students, proposal-page inquiries, or leads in a manner that arises from Mentor’s access to VRI;
+- solicit VRI mentors, contractors, staff, reviewers, collaborators, or prospective collaborators to leave VRI for a competing or bypass arrangement arising from Mentor’s access to VRI;
+- use VRI enrollment interest, proposal demand information, student/family inquiries, internal launch decisions, or waitlist information to create, market, fill, or support a competing or bypass arrangement;
+- assist another person or organization in using VRI relationships, internal information, participant access, family access, proposal access, lead information, or mentor access to compete unfairly with VRI.
 
-Compensation, if any, shall be determined by VRI on a **per-cohort, per-project, per-student, or per-case basis** and may vary by pathway, scope, duration, student count, extension work, or other approved factors.
+These draft restrictions are intended to protect VRI’s business relationships, recruiting pipeline, participant relationships, proposal pipeline, mentor network, and institutional goodwill. The final duration, scope, and enforceability of these restrictions should be reviewed by counsel for consistency with applicable law.
 
-Unless otherwise stated in a signed addendum, current internal draft compensation assumptions are as follows:
+## 8. Brand, Materials, and Workflow Protection
 
-- **Circles:** $5,000 per cohort
-- **Groups:** $6,500 per cohort
-- **Private Mentorship:** $3,000 per student
+Mentor shall not, without prior written authorization from VRI, reproduce, publish, distribute, commercialize, adapt, or repurpose VRI’s nonpublic materials, templates, workflows, onboarding documents, playbooks, proposal structures, proposal edits, proposal-review processes, internal rubrics, pricing structures, graphics, branded language, training materials, documentation systems, or other protected business materials for an outside or competing use.
 
-Compensation is not earned merely by signing this Agreement, being approved as a mentor, submitting a proposal, having a proposal approved, or having a proposal publicly listed.
+Mentor shall not use VRI’s name, logos, branding, screenshots, promotional language, proposal pages, participant materials, program materials, or institutional identity in a way that implies endorsement, affiliation, authority, partnership, employment, or sponsorship beyond what VRI has expressly approved in writing.
 
-Payment depends on approved work actually being assigned, launched, performed, documented, and accepted by VRI under the applicable agreement, addendum, engagement confirmation, assignment notice, or comparable written approval.
+Mentor shall not present VRI’s internal know-how, structures, documents, proposal models, workflows, public-listing approach, or operating methods as Mentor’s own independent business system where doing so would appropriate or exploit VRI’s protected business assets.
 
-Unless a signed written agreement expressly states otherwise, Mentor is not entitled to compensation for unlaunched proposals, insufficiently enrolled offerings, postponed offerings, retired proposals, or public listings that do not become active participant-facing engagements.
+## 9. Public Statements, Misrepresentation, and Professional Communications
 
-## 10. Payment Method and Timing
+Mentor shall not make false, misleading, unauthorized, or materially incomplete statements about VRI, its programs, its participants, its mentors, its pricing, its policies, its business operations, its proposal pipeline, its enrollment status, its launch decisions, its approval decisions, or its internal processes.
 
-VRI intends to pay mentors by **direct deposit** using approved payment setup and tax documentation.
+Mentor shall not represent that Mentor is authorized to speak on behalf of VRI unless VRI has expressly granted that authority in writing.
 
-Unless a signed written agreement expressly states otherwise:
+Mentor shall not make public statements, social media posts, promotional claims, testimonials, screenshots, case studies, or participant-related references involving VRI students, families, programs, proposals, project pages, projects, internal materials, or nonpublic operations without VRI’s prior written authorization.
 
-- VRI is not required to prepay Mentor before work begins;
-- payment may be made in one or more installments as determined by VRI;
-- final payment may be conditioned on completion of the engagement and receipt of required records, summaries, invoices, attendance logs, and any final materials required by VRI.
+Mentor shall not publicly or privately state that a VRI proposal, cohort, project, Circle, Group, or Private Mentorship opportunity is guaranteed to run, guaranteed to fill, guaranteed to continue, or guaranteed to produce any particular student outcome unless VRI has expressly authorized that statement in writing.
 
-Mentor is responsible for providing accurate tax and payment information and for maintaining current payment details with VRI.
+Nothing in these draft terms is intended to prevent truthful statements required by law or good-faith participation in a lawful process. However, Mentor may not disclose Confidential Information, make defamatory statements, or present speculation, rumor, nonpublic launch discussions, or internal draft matters as official VRI positions.
 
-## 11. Records and Documentation
+If Mentor is required by law, subpoena, court order, governmental request, or other lawful process to disclose Confidential Information, Mentor shall, to the extent legally permitted, promptly notify VRI before disclosure and cooperate with VRI’s reasonable efforts to seek protective treatment, limit disclosure, or preserve confidentiality.
 
-Mentor shall maintain and submit such records as VRI reasonably requires for payment, compliance, quality control, safeguarding, and program administration.
+## 10. Return, Deletion, and Retention of Materials
 
-Required records may include, as applicable:
+Upon request by VRI, or upon the end of Mentor’s engagement with VRI, Mentor shall promptly return, delete, or securely destroy Confidential Information, VRI materials, participant information, applicant information, lead information, proposal drafts, project-page materials, internal documents, records, templates, notes, files, communications, and other nonpublic materials in Mentor’s possession or control, except to the extent retention is required by law or expressly authorized in writing by VRI.
 
-- session summaries;
-- attendance and session duration records;
-- notable student participation notes;
-- assignments or follow-up items;
-- missed-session notes;
-- incident notes where applicable;
-- final materials, deliverables, or completion confirmations.
+Mentor shall not retain copies of Confidential Information, participant-related materials, applicant information, lead information, VRI proposal drafts, VRI-edited project descriptions, proposal-page materials, or nonpublic project pipeline materials for personal, commercial, competitive, instructional, portfolio, research, publication, or business-development use unless VRI has expressly authorized such retention in writing.
 
-VRI may withhold, delay, or reduce payment to the extent permitted by contract and law if required records are materially incomplete, inaccurate, falsified, or not timely submitted.
+If Mentor is required by law to retain specific records, Mentor shall continue to protect those records in accordance with the confidentiality obligations in these terms and any final signed agreement.
 
-## 12. Taxes and Benefits
+## 11. Survival of Obligations
 
-Mentor is solely responsible for Mentor’s own taxes, filings, withholdings, insurance, retirement contributions, and other financial obligations arising from compensation paid under this Agreement.
+Mentor’s confidentiality, non-circumvention, non-solicitation, no-poaching, brand-protection, materials-protection, proposal-pipeline protection, return/deletion, and professional-communications obligations shall survive the end of Mentor’s engagement with VRI to the extent permitted by applicable law and any final signed agreement.
 
-Unless a separate written employment agreement expressly states otherwise, Mentor is not entitled to employee benefits, including but not limited to health insurance, retirement benefits, paid leave, unemployment benefits, or similar benefits.
+The survival period for confidentiality obligations may continue for as long as the relevant information remains nonpublic, confidential, proprietary, participant-related, applicant-related, lead-related, proposal-pipeline-related, or otherwise protected by law or agreement.
 
-## 13. Termination, Removal, and Non-Renewal
+## 12. Relationship to Other Agreements
 
-VRI may suspend, restrict, terminate, or decline to renew this Agreement or any specific engagement if VRI determines, in its discretion, that such action is appropriate for reasons including but not limited to:
+These draft terms are intended to supplement, and not replace, any Mentor Independent Contractor Agreement, onboarding document, program policy, participant-safeguarding policy, data-protection requirement, proposal-listing approval, engagement confirmation, or other written agreement between Mentor and VRI.
 
-- quality concerns;
-- safety concerns;
-- policy noncompliance;
-- confidentiality concerns;
-- documentation failures;
-- legal or reputational risk;
-- operational changes;
-- lack of program need;
-- insufficient enrollment;
-- scheduling infeasibility;
-- student or family protection concerns;
-- inaccurate or misleading information provided by Mentor.
+If a final signed agreement includes more specific confidentiality, non-circumvention, non-solicitation, intellectual-property, communication, participant-protection, proposal-pipeline, or dispute-resolution terms, those final signed terms should control to the extent they conflict with this working draft.
 
-Mentor may not assume renewal, continued assignment, future cohorts, proposal launch, or continued access to VRI participants merely because Mentor has previously served under this Agreement, submitted a proposal, or had a proposal publicly listed.
+## 13. No Waiver
 
-VRI may remove Mentor from a specific project, cohort, proposal, listing, or assignment without necessarily terminating the entire Agreement if VRI determines that reassignment, replacement, scope reduction, postponement, cancellation, or retirement of the proposal is appropriate.
+VRI’s failure to enforce any provision of these draft terms in a particular instance shall not be treated as a waiver of VRI’s right to enforce the same or similar provisions later, subject to applicable law and any final signed agreement.
+
+## 14. Counsel Review
+
+Because restrictions on confidentiality, non-solicitation, non-circumvention, contractor obligations, and post-engagement conduct may be affected by state law, federal law, public policy, and evolving legal standards, this document should be reviewed by qualified counsel before use as a final agreement.
+
+Counsel should review, among other things:
+
+- the appropriate restricted period for non-solicitation and no-poaching obligations;
+- whether any non-circumvention language should be narrowed, expanded, or separately defined;
+- any state-specific limitations on contractor restrictions;
+- participant privacy and data-protection requirements;
+- proposal-pipeline, applicant-lead, and enrollment-interest protections;
+- remedies, venue, governing law, and dispute-resolution provisions;
+- consistency with VRI’s Mentor Independent Contractor Agreement and onboarding materials.
