@@ -2261,7 +2261,20 @@ body.about-page #about .cta-panel .quick-chip:focus-visible {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 24px;
-      align-items: center;
+      align-items: stretch;
+    }
+
+    .cta-panel > div:first-child {
+      justify-self: start;
+      align-self: start;
+      text-align: left;
+    }
+
+    .cta-panel .quick-links {
+      justify-self: end;
+      align-self: end;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
 
     .cta-panel h3 {
@@ -2484,6 +2497,14 @@ body.about-page #about .cta-panel .quick-chip:focus-visible {
 
       .quick-links {
         justify-content: flex-start;
+      }
+
+      .cta-panel .quick-links {
+        justify-self: start;
+        align-self: start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 8px;
       }
 
       .footer-meta {
