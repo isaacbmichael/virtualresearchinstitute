@@ -136,12 +136,12 @@
     };
 
     clearChars();
-    brandEvolve.classList.add("is-ready");
 
     const showFullBrand = () => {
       brandEvolve.classList.remove("is-v", "is-vr", "is-vri");
       brandEvolve.classList.add("is-full");
       [...vChars, ...rChars, ...iChars].forEach((char) => char.classList.add("is-in"));
+      brandEvolve.classList.add("is-ready");
     };
 
     if (prefersReducedMotion || (isPhoneViewport() && hasAnimatedBrandOnPhone)) {
@@ -155,6 +155,7 @@
 
     brandEvolve.classList.remove("is-vr", "is-vri", "is-full");
     brandEvolve.classList.add("is-v");
+    brandEvolve.classList.add("is-ready");
 
     brandTimeouts.push(window.setTimeout(() => {
       brandEvolve.classList.remove("is-v", "is-vri", "is-full");
@@ -177,14 +178,24 @@
 
   if (brandEvolve) {
     if (isHomePage) {
-      initBrandEvolve();
-
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => {
-          if (!isPhoneViewport()) {
-            initBrandEvolve();
-          }
+      const startBrandAnimation = () => {
+        window.requestAnimationFrame(() => {
+          initBrandEvolve();
         });
+      };
+
+      if (isPhoneViewport() && document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(startBrandAnimation, startBrandAnimation);
+      } else {
+        initBrandEvolve();
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            if (!isPhoneViewport()) {
+              initBrandEvolve();
+            }
+          });
+        }
       }
 
       let resizeTimer = null;
