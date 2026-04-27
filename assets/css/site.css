@@ -3662,8 +3662,8 @@ body.mentors-page .hero {
 body.mentors-page .hero .hero-grid {
   position: relative;
   z-index: 1;
-  grid-template-columns: 1fr;
-  gap: 0;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+  gap: clamp(28px, 3.8vw, 48px);
 }
 
 body.mentors-page .hero::after {
@@ -3716,7 +3716,7 @@ body.mentors-page .hero .eyebrow::before {
 }
 
 body.mentors-page .hero .hero-copy {
-  max-width: min(75%, 1320px);
+  max-width: 100%;
 }
 
 body.mentors-page .hero .hero-copy h1 {
@@ -3729,6 +3729,49 @@ body.mentors-page .hero .hero-copy p {
   color: rgba(248, 244, 234, 0.84);
   max-width: 100%;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+body.mentors-page .hero-scene-image {
+  min-height: 440px;
+  align-self: start;
+  padding-top: 8px;
+}
+
+body.mentors-page .scene-wrap-image {
+  width: min(560px, 100%);
+  height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+body.mentors-page .hero-visual-mentorship {
+  position: relative;
+  width: min(520px, 100%);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: rotate(3deg) translateZ(42px);
+}
+
+body.mentors-page .hero-visual-mentorship::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(229, 181, 59, 0.08), transparent 24%);
+  pointer-events: none;
+}
+
+body.mentors-page .hero-visual-mentorship img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
 
 body.mentors-page .hero-actions {
@@ -3765,14 +3808,47 @@ body.mentors-page .hero-actions .btn-secondary:focus-visible {
 }
 
 @media (max-width: 1180px) {
+  body.mentors-page .hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
   body.mentors-page .hero .hero-copy {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  body.mentors-page .hero-scene-image {
+    min-height: 380px;
+  }
+
+  body.mentors-page .scene-wrap-image {
+    width: min(440px, 100%);
+    height: 360px;
+  }
+
+  body.mentors-page .hero-visual-mentorship {
+    width: min(380px, 100%);
+    transform: rotate(2deg) translateZ(32px);
   }
 }
 
 @media (max-width: 640px) {
   body.mentors-page .hero .hero-copy h1 {
     max-width: 100%;
+  }
+
+  body.mentors-page .hero-scene-image {
+    min-height: 320px;
+  }
+
+  body.mentors-page .scene-wrap-image {
+    height: 300px;
+  }
+
+  body.mentors-page .hero-visual-mentorship {
+    width: min(320px, 100%);
+    transform: none;
   }
 }
 
