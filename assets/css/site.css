@@ -6445,3 +6445,31 @@ body.home-page .hero-figure-network-orbital .orbital-nodes-mid circle:nth-child(
     animation: none !important;
   }
 }
+
+/* Programs page: bottom-right action buttons in final registration CTA */
+body.programs-page #format .cta-panel {
+  align-items: stretch;
+}
+
+body.programs-page #format .cta-panel > div:first-child {
+  justify-self: start;
+  align-self: start;
+  text-align: left;
+}
+
+body.programs-page #format .cta-panel .quick-links {
+  justify-self: end;
+  align-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Keep the mobile layout natural/readable */
+@media (max-width: 1180px) {
+  body.programs-page #format .cta-panel .quick-links {
+    justify-self: start;
+    align-self: start;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+}
