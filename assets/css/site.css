@@ -1647,6 +1647,152 @@ body.programs-page .hero-visual-presentation img {
       scroll-margin-top: calc(var(--nav-h) + 28px);
     }
 
+
+
+/* ===================== Home mentorship image pair ===================== */
+body.home-page .mentorship-section {
+  position: relative;
+  isolation: isolate;
+  padding-top: 34px;
+  padding-bottom: 50px;
+}
+
+body.home-page .mentorship-section::before {
+  content: "";
+  position: absolute;
+  inset: 8% auto auto 50%;
+  width: min(980px, 86vw);
+  height: 420px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 22% 34%, rgba(229, 181, 59, 0.16), transparent 28%),
+    radial-gradient(circle at 76% 58%, rgba(4, 76, 89, 0.14), transparent 30%);
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.home-page .mentorship-pair {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(18px, 2.4vw, 30px);
+  align-items: stretch;
+  width: min(100%, 1560px);
+  margin-inline: auto;
+  padding: clamp(18px, 2vw, 26px);
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.58));
+  border: 1px solid rgba(4, 76, 89, 0.12);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+body.home-page .mentorship-pair::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.42), transparent 34%),
+    radial-gradient(circle at 50% 46%, rgba(229, 181, 59, 0.10), transparent 24%);
+  pointer-events: none;
+}
+
+body.home-page .mentorship-photo {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(4, 76, 89, 0.10);
+  box-shadow: var(--shadow-md);
+}
+
+body.home-page .mentorship-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+body.home-page .mentorship-photo figcaption {
+  min-height: 116px;
+  padding: 18px 20px 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(251, 250, 246, 0.92));
+}
+
+body.home-page .mentorship-photo figcaption span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--teal-950);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+body.home-page .mentorship-link-mark {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(30px, 3vw, 44px);
+}
+
+body.home-page .mentorship-link-mark span {
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold-700), var(--gold-500), var(--gold-300));
+  box-shadow: 0 0 18px rgba(184, 140, 12, 0.28);
+}
+
+body.home-page .mentorship-photo-student img,
+body.home-page .mentorship-photo-mentor img {
+  object-position: center center;
+}
+
+@media (max-width: 920px) {
+  body.home-page .mentorship-pair {
+    grid-template-columns: 1fr;
+  }
+
+  body.home-page .mentorship-link-mark {
+    width: 100%;
+    height: 26px;
+  }
+
+  body.home-page .mentorship-link-mark span {
+    width: 2px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.home-page .mentorship-section {
+    padding-top: 26px;
+    padding-bottom: 34px;
+  }
+
+  body.home-page .mentorship-pair {
+    padding: 14px;
+    border-radius: 28px;
+  }
+
+  body.home-page .mentorship-photo {
+    border-radius: 22px;
+  }
+
+  body.home-page .mentorship-photo figcaption {
+    min-height: 0;
+    padding: 16px 18px 18px;
+  }
+}
+
     .section-head {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
