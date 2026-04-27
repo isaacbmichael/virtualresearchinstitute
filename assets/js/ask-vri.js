@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  output.setAttribute("aria-live", "polite");
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
