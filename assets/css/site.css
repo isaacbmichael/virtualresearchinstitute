@@ -3652,6 +3652,20 @@ body.groups-page .overview-grid {
 }
 
 
+body.circles-page #questions .cta-panel,
+body.groups-page #questions .cta-panel {
+  align-items: stretch;
+}
+
+body.circles-page #questions .cta-panel .quick-links,
+body.groups-page #questions .cta-panel .quick-links {
+  align-self: end;
+  justify-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
 /* ===================== For Mentors Page ===================== */
 body.mentors-page .hero {
   overflow: hidden;
@@ -5966,7 +5980,7 @@ body.founder-page .founder-portrait-card img {
 
 body.founder-page .founder-portrait-caption {
   position: static;
-  width: min(360px, 92%);
+  width: min(430px, 112%);
   margin: 22px auto 0;
   padding-top: 18px;
   background: transparent;
@@ -5980,10 +5994,11 @@ body.founder-page .founder-portrait-caption strong {
   margin: 0 0 8px;
   color: var(--gold-300);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2rem, 2.55vw, 2.7rem);
+  font-size: clamp(1.9rem, 2.25vw, 2.45rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 body.founder-page .founder-portrait-caption span {
