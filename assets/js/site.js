@@ -19,15 +19,18 @@
       link.textContent = activeGoldCta.label;
       link.href = activeGoldCta.href;
 
-      if (goldCtaState === "register") {
+      const activeGoldCtaUrl = new URL(activeGoldCta.href, window.location.origin);
+      const isExternalGoldCta = activeGoldCtaUrl.origin !== window.location.origin;
+
+      if (isExternalGoldCta) {
         link.target = "_blank";
         link.rel = "noopener noreferrer";
       } else {
         link.removeAttribute("target");
         link.removeAttribute("rel");
       }
-    });
-  }
+          });
+        }
 
   function normalizeButtonLikeLabels() {
     const canonicalLabelsByPath = new Map([
