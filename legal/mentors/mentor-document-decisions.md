@@ -32,7 +32,7 @@ sitemap: false
 - Compensation structure:
   - **Circles:** {{ site.data.mentors.mentor_engagements.circles.compensation_display }} {{ site.data.mentors.mentor_engagements.circles.compensation_basis }}
   - **Groups:** {{ site.data.mentors.mentor_engagements.groups.compensation_display }} {{ site.data.mentors.mentor_engagements.groups.compensation_basis }}
-  - **Research Extensions:** {{ site.data.mentors.mentor_engagements.private_mentorship.compensation_display }}
+  - **Research Extensions:** {{ site.data.mentors.mentor_engagements.research_extension.compensation_display }}
 - Compensation is not earned merely because a mentor is approved, a proposal is submitted, or a proposal is publicly listed.
 - Compensation is earned only for approved work that is actually assigned, performed, documented, and accepted under the applicable agreement, addendum, or engagement confirmation.
 - Payment timing, documentation requirements, and any required onboarding steps should be confirmed in the applicable agreement, addendum, or engagement confirmation before participant-facing work begins.
@@ -111,7 +111,7 @@ sitemap: false
 - Research Extension should be treated as significant mentor load
 - VRI may reduce or limit other mentor assignments when Research Extension is active
 - Research Extension must remain approved and administered through VRI
-- Research Extension tuition is currently {{ site.data.pathways.research_extension.price }} per student, with mentor compensation currently set at {{ site.data.mentors.mentor_engagements.private_mentorship.compensation_display }}
+- Research Extension tuition is currently {{ site.data.pathways.research_extension.price }} per student, with mentor compensation currently set at {{ site.data.mentors.mentor_engagements.research_extension.compensation_display }}
 
 #### General principle
 - Mentor assignment volume is always discretionary
