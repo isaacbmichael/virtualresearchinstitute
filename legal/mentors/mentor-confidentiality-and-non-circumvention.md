@@ -16,6 +16,18 @@ This draft is a working internal document for refinement and counsel review. It 
 
 Any final version should be reviewed and approved by qualified legal counsel before use, signature, or reliance as an enforceable agreement.
 
+## 2A. Definitions
+
+For purposes of these draft terms:
+
+“VRI” means Virtual Research Institute LLC and any approved affiliated program, successor entity, or authorized operating name.
+
+“Mentor” means any faculty member, postdoctoral scholar, PhD holder, advanced graduate student, specialist, contractor, reviewer, or other person engaged by VRI to provide academic, mentoring, instructional, advising, review, or project-related services.
+
+“Protected Relationships” means students, parents, guardians, families, applicants, leads, mentors, contractors, collaborators, university contacts, institutional partners, reviewers, donors, sponsors, or other relationships first identified to Mentor through VRI or accessed by Mentor through VRI.
+
+“Approved VRI Services” means services authorized in writing by VRI, including approved Circles, Groups, Research Extensions, review work, onboarding, training, or other VRI-authorized work.
+
 ## 3. Confidential Information
 
 For purposes of these draft terms, “Confidential Information” may include nonpublic information relating to VRI’s business, operations, pricing, leads, participant identities, family information, mentor information, internal procedures, proposal pipelines, templates, workflows, policies, payment structures, training materials, business plans, archives, documentation systems, and any other nonpublic information that VRI designates as confidential or that should reasonably be understood as confidential.
@@ -34,11 +46,13 @@ Mentor shall not use Confidential Information for Mentor’s own competing, comm
 
 Mentor shall comply with VRI instructions regarding storage, access, return, deletion, retention, permitted systems, and communication channels for confidential or participant-related information.
 
+Mentor shall treat student and family information with heightened care, particularly where students are minors, and shall follow VRI instructions regarding approved communication channels, storage, sharing, retention, and deletion of participant-related information.
+
 Mentor shall promptly notify VRI if Mentor becomes aware of any actual or suspected unauthorized access, disclosure, loss, misuse, or compromise of Confidential Information.
 
 ## 5. Non-Circumvention and No Private Side Deals
 
-Mentor shall not use VRI to identify, access, solicit, recruit, contract with, redirect, or privately serve VRI students, families, participants, applicants, leads, or other protected relationships in a manner that bypasses VRI.
+During Mentor’s active engagement with VRI and for twelve (12) months after the end of Mentor’s most recent VRI engagement, Mentor shall not use VRI to identify, access, solicit, recruit, contract with, redirect, or privately serve VRI students, families, participants, applicants, leads, or other Protected Relationships in a manner that bypasses VRI.
 
 Without prior written authorization from VRI, Mentor shall not:
 
@@ -50,12 +64,14 @@ Without prior written authorization from VRI, Mentor shall not:
 
 These restrictions are intended to protect VRI’s legitimate business interests, participant relationships, institutional structure, goodwill, and program integrity.
 
+For clarity, these restrictions do not prohibit Mentor from continuing work with VRI students or families through a VRI-approved Research Extension or other VRI-authorized continuation arrangement, provided that the arrangement is approved in writing by VRI and administered through VRI.
+
 ## 6. Non-Solicitation and No-Poaching
 
 During Mentor’s active engagement with VRI and for twelve (12) months after the end of Mentor’s most recent VRI engagement, Mentor shall not, without prior written authorization from VRI:
 
-- solicit or encourage VRI students, families, participants, applicants, or leads to leave VRI for Mentor’s own services or another competing service;
-- solicit, recruit, or privately serve VRI students, families, participants, applicants, or leads in a manner that arises from Mentor’s access to VRI;
+- solicit or encourage VRI students, families, participants, applicants, or other Protected Relationships accessed through VRI to leave VRI for Mentor’s own services or another competing service;
+- solicit, recruit, or privately serve VRI students, families, participants, applicants, or other Protected Relationships accessed through VRI in a manner that arises from Mentor’s access to VRI;
 - solicit VRI mentors, contractors, staff, reviewers, or collaborators to leave VRI for a competing or bypass arrangement arising from Mentor’s access to VRI;
 - assist another person or organization in using VRI relationships, internal information, participant access, family access, or mentor access to compete unfairly with VRI.
 
@@ -68,6 +84,14 @@ Mentor shall not, without prior written authorization from VRI, reproduce, publi
 Mentor shall not use VRI’s name, logos, branding, screenshots, promotional language, participant materials, program materials, or institutional identity in a way that implies endorsement, affiliation, authority, partnership, employment, or sponsorship beyond what VRI has expressly approved in writing.
 
 Mentor shall not present VRI’s internal know-how, structures, documents, proposal models, workflows, or operating methods as Mentor’s own independent business system where doing so would appropriate or exploit VRI’s protected business assets.
+
+## 7A. Student Work, Research Outputs, and Publication Activity
+
+Mentor shall not publish, submit, present, distribute, commercialize, or publicly display student work, student data, student images, student names, student communications, student research outputs, or VRI project materials without VRI’s prior written authorization and any required student/parent/guardian permissions.
+
+Nothing in these draft terms is intended to prevent appropriate academic collaboration, authorship, acknowledgment, or publication activity that has been reviewed and approved through VRI’s applicable policies and consent procedures.
+
+Any proposed publication, preprint, conference submission, poster, public presentation, external repository posting, or public use of student work should be reviewed in advance for authorship, consent, privacy, attribution, and program-approval requirements.
 
 ## 8. Public Statements, Misrepresentation, and Professional Communications
 
@@ -115,5 +139,7 @@ Counsel should review, among other things:
 - whether any non-circumvention language should be narrowed, expanded, or separately defined;
 - any state-specific limitations on contractor restrictions;
 - participant privacy and data-protection requirements;
+- student work, authorship, consent, publication, and public-presentation requirements;
+- whether these terms will be incorporated into a broader independent contractor agreement or used as a standalone agreement;
 - remedies, venue, governing law, and dispute-resolution provisions;
 - consistency with VRI’s Mentor Independent Contractor Agreement and onboarding materials.
