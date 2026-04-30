@@ -20,12 +20,8 @@ groups:
 
 research_extension:
   label: "Research Extension"
-  compensation_display: "$1,000"
-  compensation_basis: "per enrolled student"
-  compensation_detail: "Available only for approved continuation cases after a Circle or Group"
-  estimated_duration: "Typically 10–12 additional weeks"
-  estimated_total_live_meetings: "10–12"
-  estimated_meetings_per_week: "Usually 1 live meeting per week"
-  estimated_meeting_length: "60–90 minutes"
-  estimated_total_hours: "Approximately 18–25 total hours"
-  workload_note: "Includes live meetings, preparation, individualized feedback, project refinement, writing or presentation guidance, communication, and final deliverable support."
+  cohort_size: "By approved continuation group"
+  duration: "By approved extension scope"
+  live_schedule: "Usually 1 live session per week"
+  price: "$1,695"
+  availability: "Invitation-only after completion of a Circle or Group"
