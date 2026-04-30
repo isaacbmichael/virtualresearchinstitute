@@ -38,51 +38,52 @@ engagement_model:
 
   summary: "Mentors generally serve as independent contractors for approved VRI projects unless a separate written agreement states otherwise. Project scope, compensation, communication expectations, and onboarding requirements are confirmed before student work begins."
 
-  important_note: "Approval allows VRI to consider a mentor for suitable projects, cohorts, or mentorship opportunities. It does not guarantee assignment or a minimum amount of work."
+  important_note: "Approval allows VRI to consider a mentor for suitable projects, cohorts, or Research Extension opportunities. It does not guarantee assignment or a minimum amount of work."
 
 mentor_engagements:
   circles:
     label: "Circles"
-    compensation_display: "$5,000"
+    compensation_display: "$4,000"
     compensation_basis: "per cohort"
 
     estimated_duration: "6 weeks"
-    estimated_meetings_per_week: "1 live cohort meeting per week"
-    estimated_meeting_length: "90 minutes"
-    estimated_total_live_meetings: "6"
-    estimated_total_hours: "24-35 hours total"
+    estimated_meetings_per_week: "2 live cohort meetings per week"
+    estimated_meeting_length: "75 minutes"
+    estimated_total_live_meetings: "12"
+    estimated_total_hours: "30-45 hours total"
 
     workload_note: "Includes live sessions, preparation, student feedback, light communication, and final deliverable review."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
   groups:
     label: "Groups"
-    compensation_display: "$6,500"
+    compensation_display: "$4,000"
     compensation_basis: "per cohort"
 
-    estimated_duration: "10 weeks"
-    estimated_meetings_per_week: "1 live cohort meeting per week"
-    estimated_meeting_length: "90 minutes"
-    estimated_total_live_meetings: "10"
-    estimated_total_hours: "45-65 hours total"
+    estimated_duration: "6 weeks"
+    estimated_meetings_per_week: "2 live cohort meetings per week"
+    estimated_meeting_length: "75-90 minutes"
+    estimated_total_live_meetings: "12"
+    estimated_total_hours: "35-50 hours total"
 
     workload_note: "Includes live sessions, preparation, individualized feedback, project direction, communication, and final deliverable support."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
+  # Legacy key name kept temporarily for template compatibility.
   private_mentorship:
-    label: "Private Mentorship"
-    compensation_display: "$3,000 per student"
-    compensation_detail: "Available only for approved individualized mentorship cases"
-    compensation_basis: "per approved student"
+    label: "Research Extension"
+    compensation_display: "$1,000 per enrolled student"
+    compensation_detail: "Available only for approved continuation cases after a Circle or Group"
+    compensation_basis: "per approved enrolled student"
 
-    estimated_duration: "12-16 weeks"
+    estimated_duration: "By approved extension scope"
     estimated_meetings_per_week: "Usually 1 live meeting per week"
     estimated_meeting_length: "60-90 minutes"
-    estimated_total_live_meetings: "12-16"
-    estimated_total_hours: "35-70 hours total, depending on scope"
+    estimated_total_live_meetings: "By approved extension scope"
+    estimated_total_hours: "Varies by continuation plan"
 
-    workload_note: "Includes live meetings, preparation, individualized feedback, project planning, communication, and final deliverable support."
-    availability_note: "Private Mentorship is limited and requires VRI approval."
+    workload_note: "Includes live meetings, preparation, individualized feedback, project refinement, writing or presentation guidance, communication, and final deliverable support."
+    availability_note: "Research Extension is limited, invitation-only, and requires VRI approval."
 
 compensation:
   section_label: "Compensation & Commitment"
@@ -118,16 +119,17 @@ responsibilities:
   - "Maintain appropriate professional boundaries with students and families"
   - "Support a final deliverable suited to the approved project scope"
 
+# Legacy key name kept temporarily for template compatibility.
 private_mentorship:
-  availability: "Limited; by approval"
+  availability: "Limited; by invitation and approval"
   continuation_only: true
-  summary: "Private Mentorship may be considered for students ready for deeper individualized research work, often after strong prior work in a VRI program."
+  summary: "Research Extension may be considered for students ready for deeper continuation work, often after strong prior work in a VRI Circle or Group."
 
-  important_note: "Private Mentorship is not a standard extension of every Circle or Group. It depends on student readiness, mentor capacity, project fit, and VRI approval."
+  important_note: "Research Extension is not a standard extension of every Circle or Group. It depends on student readiness, mentor capacity, project fit, and VRI approval."
 
   review_factors:
     - "Prior student performance"
-    - "Student readiness for individualized work"
+    - "Student readiness for continuation work"
     - "Mentor recommendation"
     - "Appropriate next-stage project fit"
     - "Mentor availability"
