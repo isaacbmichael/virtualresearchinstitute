@@ -61,12 +61,12 @@ mentor_engagements:
     compensation_basis: "per cohort"
 
     estimated_duration: "6 weeks"
-    estimated_meetings_per_week: "2 live cohort meetings per week"
+    estimated_meetings_per_week: "2 core live cohort meetings plus 1 weekly project studio/check-in"
     estimated_meeting_length: "75-90 minutes"
-    estimated_total_live_meetings: "12"
+    estimated_total_hours: "40-60 hours total"
     estimated_total_hours: "35-50 hours total"
 
-    workload_note: "Includes live sessions, preparation, individualized feedback, project direction, communication, and final deliverable support."
+    workload_note: "Includes core live sessions, weekly project studio or feedback check-ins, preparation, individualized feedback, project direction, communication, and final deliverable support."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
   research_extension:
