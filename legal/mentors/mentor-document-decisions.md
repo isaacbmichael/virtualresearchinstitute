@@ -1,6 +1,9 @@
 ---
-# This front matter intentionally enables Jekyll/Liquid processing.
-# Dollar amounts, duration language, and related program values below are pulled from _data/mentors.yml and _data/pathways.yml.
+layout: default
+title: Mentor Document Decisions
+permalink: /legal/mentors/mentor-document-decisions/
+robots: noindex
+sitemap: false
 ---
 
 # Mentor Document Decisions
