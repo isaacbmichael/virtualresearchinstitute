@@ -13,6 +13,9 @@ groups:
   live_schedule: "2 core live sessions plus 1 weekly project studio/check-in"
   price: "$1,395"
   public_terms: "Spring, Summer, Fall"
+  readiness_level: "Readiness-reviewed"
+  prerequisites_summary: "Best suited for students ready for deeper independent work, active participation, and project-specific background expectations."
+  review_model: "Placement is based primarily on registration responses, schedule fit, and project-specific prerequisites. VRI may follow up when additional clarification is needed."
 
 research_extension:
   label: "Research Extension"
