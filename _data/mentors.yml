@@ -69,8 +69,7 @@ mentor_engagements:
     workload_note: "Includes live sessions, preparation, individualized feedback, project direction, communication, and final deliverable support."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
-  # Legacy key name kept temporarily for template compatibility.
-  private_mentorship:
+  research_extension:
     label: "Research Extension"
     compensation_display: "$1,000 per enrolled student"
     compensation_detail: "Available only for approved continuation cases after a Circle or Group"
@@ -119,8 +118,7 @@ responsibilities:
   - "Maintain appropriate professional boundaries with students and families"
   - "Support a final deliverable suited to the approved project scope"
 
-# Legacy key name kept temporarily for template compatibility.
-private_mentorship:
+research_extension:
   availability: "Limited; by invitation and approval"
   continuation_only: true
   summary: "Research Extension may be considered for students ready for deeper continuation work, often after strong prior work in a VRI Circle or Group."
