@@ -5,8 +5,8 @@
 # active: false  -> hide this session from the website
 #
 # mode controls page wording only:
-#   #   one_session  -> use wording such as "current session"
-#   #   two_sessions -> use wording such as "Session 1 / Session 2"
+#   one_session  -> use wording such as "current session"
+#   two_sessions -> use wording such as "Session 1 / Session 2"
 #
 # The website renders only sessions where active: true.
 # ============================================================
@@ -64,8 +64,7 @@ groups:
       duration: "6 weeks"
       proposals_data: "groups_session_2"
 
-# Legacy key kept temporarily for template compatibility.
-private_mentorship:
+research_extension:
   current:
     label: "Research Extension"
     start_date: "By invitation after completion of a Circle or Group"
