@@ -6275,7 +6275,7 @@ body.founder-page .scene-wrap-image {
 
 /* Founder quote rotator: floating text, no card */
 body.founder-page #quotes {
-  padding-bottom: clamp(56px, 5vw, 86px);
+  padding-bottom: clamp(36px, 3vw, 52px);
 }
 
 body.founder-page .quote-rotator {
