@@ -1,18 +1,19 @@
 ---
 layout: default
 title: Circles | Upcoming Projects | Virtual Research Institute
-description: Circles | Upcoming Projects at the Virtual Research Institute — current Circle offerings organized by session, pricing, proposal details, and registration deadlines.
+description: Circles | Upcoming Projects at the Virtual Research Institute — current Circle offerings organized by active session, pricing, proposal details, and registration deadlines.
 permalink: /upcoming-projects/circles/
 body_class: circles-page
 explore_key: upcoming-projects
 on_this_page:
-  - label: Session 1
-    href: "#circles-session-1"
-  - label: Session 2
-    href: "#circles-session-2"
+  - label: Sessions
+    href: "#circles"
   - label: Questions
     href: "#questions"
 ---
+
+{% assign circle_sessions = site.data.sessions.circles.sessions | where: "active", true %}
+{% assign circle_session_count = circle_sessions | size %}
 
 <script>
     /*
@@ -49,8 +50,13 @@ on_this_page:
           <div class="eyebrow">Tier I · Circles</div>
           <h1>Current Circle projects.</h1>
           <p>
-            Circles are VRI’s open-enrollment research offerings. Review Session 1 and Session 2,
+            {% if circle_session_count > 1 %}
+            Circles are VRI’s open-enrollment research offerings. Review the active sessions,
             compare projects, and register before the listed deadlines.
+            {% else %}
+            Circles are VRI’s open-enrollment research offerings. Review the current session,
+            compare projects, and register before the listed deadline.
+            {% endif %}
           </p>
 
           <div class="hero-actions">
@@ -66,8 +72,8 @@ on_this_page:
       <div class="shell">
         <div class="section-head reveal">
   <div>
-    <p class="section-label">Current Public Sessions</p>
-    <h2>Choose a session, then compare proposals.</h2>
+    <p class="section-label">{% if circle_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}</p>
+    <h2>{% if circle_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}</h2>
   </div>
   <p class="section-intro">
     Open any proposal below to review the mentor, background, schedule, and student setup.
@@ -89,19 +95,20 @@ on_this_page:
 </div>
 
         <div class="session-stack">
-          
-          <article class="session-card reveal" id="circles-session-1">
+          {% for session in circle_sessions %}
+          <article class="session-card reveal" id="circles-{{ session.id }}">
   <div class="session-headline">
     <div>
-      <p class="session-kicker">Circles · Session 1</p>
-      <h3>Begins {{ site.data.sessions.circles.session_1.start_date }}</h3>
-      <p class="session-intro">Browse current Session 1 proposals.</p>
+      <p class="session-kicker">Circles · {{ session.label }}</p>
+      <h3>Begins {{ session.start_date }}</h3>
+      <p class="session-intro">{% if circle_session_count > 1 %}Browse current {{ session.label }} proposals.{% else %}Browse current Circle proposals.{% endif %}</p>
     </div>
   </div>
-  <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.circles.session_1.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
+  <div class="session-note"><strong>Registration deadline:</strong> {{ session.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
             <div class="project-list">
-              {% assign session_1_proposals = site.data.proposals.circles_session_1 | sort: "sort_order" %}
-              {% for proposal in session_1_proposals %}
+              {% assign session_proposals = site.data.proposals[session.proposals_data] | sort: "sort_order" %}
+              {% if session_proposals and session_proposals.size > 0 %}
+              {% for proposal in session_proposals %}
               <details class="project-item reveal">
                 <summary>
                   <span class="project-summary-text">
@@ -124,7 +131,7 @@ on_this_page:
                         <h4>{{ proposal.title }}</h4>
                       </div>
                       <div class="proposal-badges" aria-label="Proposal quick facts">
-                        <span>{{ proposal.session_label }}</span>
+                        <span>{{ session.label }}</span>
                       </div>
                     </div>
 
@@ -139,26 +146,13 @@ on_this_page:
                       </div>
 
                       <div class="fact-card">
-
-
                         <span class="fact-label">Schedule</span>
-
-
                         <div class="fact-body">{{ proposal.schedule.timezone }}<br />{{ proposal.schedule.details }}</div>
-
-
                       </div>
 
-
                       <div class="fact-card">
-
-
                         <span class="fact-label">Technology</span>
-
-
                         <div class="fact-body">Video platform: {{ proposal.technology.platform }}<br />Code used: {{ proposal.technology.code_used }}<br />Technology needed: {{ proposal.technology.needed }}</div>
-
-
                       </div>
 </div>
 
@@ -190,114 +184,12 @@ on_this_page:
                 </div>
               </details>
               {% endfor %}
+              {% else %}
+              <p class="session-note">Proposals for this session will be posted soon.</p>
+              {% endif %}
             </div>
           </article>
-    
-          
-          <article class="session-card reveal" id="circles-session-2">
-  <div class="session-headline">
-    <div>
-      <p class="session-kicker">Circles · Session 2</p>
-      <h3>Begins {{ site.data.sessions.circles.session_2.start_date }}</h3>
-      <p class="session-intro">Browse current Session 2 proposals.</p>
-    </div>
-  </div>
-  <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.circles.session_2.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
-            <div class="project-list">
-              {% assign session_2_proposals = site.data.proposals.circles_session_2 | sort: "sort_order" %}
-              {% for proposal in session_2_proposals %}
-              <details class="project-item reveal">
-                <summary>
-                  <span class="project-summary-text">
-                    <span class="project-summary-title">{{ proposal.title }}</span>
-
-                  <div class="project-summary-meta">
-                    <span class="meta-chip">{{ proposal.mentor.name }}</span>
-                    <span class="meta-chip">{{ proposal.mentor.lines | last }}</span>
-                  </div>
-                  <p class="project-summary-sub">{{ proposal.topic_area }}</p>
-
-                  </span>
-                </summary>
-                <div class="project-body">
-                  <div class="proposal-shell">
-                    <div class="proposal-topline"></div>
-                    <div class="proposal-heading">
-                      <div>
-                        <p class="proposal-kicker">Research Proposal</p>
-                        <h4>{{ proposal.title }}</h4>
-                      </div>
-                      <div class="proposal-badges" aria-label="Proposal quick facts">
-                        <span>{{ proposal.session_label }}</span>
-                      </div>
-                    </div>
-
-                    <div class="proposal-facts">
-                      <div class="fact-card">
-                        <span class="fact-label">Mentor</span>
-                        <div class="fact-body">{{ proposal.mentor.name }}<br />{% for line in proposal.mentor.lines %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</div>
-                      </div>
-                      <div class="fact-card">
-                        <span class="fact-label">Topic area</span>
-                        <div class="fact-body">{{ proposal.topic_area }}</div>
-                      </div>
-
-                      <div class="fact-card">
-
-
-                        <span class="fact-label">Schedule</span>
-
-
-                        <div class="fact-body">{{ proposal.schedule.timezone }}<br />{{ proposal.schedule.details }}</div>
-
-
-                      </div>
-
-
-                      <div class="fact-card">
-
-
-                        <span class="fact-label">Technology</span>
-
-
-                        <div class="fact-body">Video platform: {{ proposal.technology.platform }}<br />Code used: {{ proposal.technology.code_used }}<br />Technology needed: {{ proposal.technology.needed }}</div>
-
-
-                      </div>
-</div>
-
-                    <div class="proposal-copy-grid">
-                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
-                        <h5>Project overview</h5>
-                        <div class="copy-body">{{ proposal.project_overview | newline_to_br }}</div>
-                      </section>
-                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
-                        <h5>Background</h5>
-                        <div class="copy-body">{{ proposal.background | newline_to_br }}</div>
-                      </section>
-                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
-                        <h5>Possible extension</h5>
-                        <div class="copy-body">{{ proposal.possible_extension | newline_to_br }}</div>
-                      </section>
-                      <section class="proposal-copy-block" style="grid-column: 1 / -1;">
-                        <h5>Selected references</h5>
-                        <div class="copy-body"><ol class="project-references">
-{% for ref in proposal.references %}
-<li>
-            {{ ref }}
-          </li>
-{% endfor %}
-</ol></div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              {% endfor %}
-
-            </div>
-          </article>
-    
+          {% endfor %}
         </div>
       </div>
     </section>
