@@ -55,7 +55,7 @@ mentor_engagements:
     workload_note: "Includes live sessions, preparation, student feedback, light communication, and final deliverable review."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
-  groups:
+    groups:
     label: "Groups"
     compensation_display: "$4,000"
     compensation_basis: "per cohort"
@@ -63,7 +63,7 @@ mentor_engagements:
     estimated_duration: "6 weeks"
     estimated_meetings_per_week: "2 core live cohort meetings plus 1 weekly project studio/check-in"
     estimated_meeting_length: "75-90 minutes"
-    estimated_total_hours: "40-60 hours total"
+    estimated_total_live_meetings: "18"
     estimated_total_hours: "35-50 hours total"
 
     workload_note: "Includes core live sessions, weekly project studio or feedback check-ins, preparation, individualized feedback, project direction, communication, and final deliverable support."
@@ -75,8 +75,6 @@ mentor_engagements:
     compensation_basis: "per enrolled student"
     compensation_detail: "Available only for approved continuation cases after a Circle or Group"
     estimated_duration: "Typically 10–12 additional weeks"
-
-    estimated_duration: "By approved extension scope"
     estimated_meetings_per_week: "Usually 1 live meeting per week"
     estimated_meeting_length: "60-90 minutes"
     estimated_total_live_meetings: "10–12"
