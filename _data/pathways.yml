@@ -2,19 +2,23 @@ circles:
   label: "Circles"
   cohort_size: "10–12 students"
   duration: "6 weeks"
-  price: "$1,395"
+  live_schedule: "2 live sessions per week"
+  price: "$995"
   public_terms: "Spring, Summer, Fall"
 
 groups:
   label: "Groups"
-  cohort_size: "5–6 students"
-  duration: "10 weeks"
-  price: "$3,495"
+  cohort_size: "5–7 students"
+  duration: "6 weeks"
+  live_schedule: "2 live sessions per week"
+  price: "$1,395"
   public_terms: "Spring, Summer, Fall"
 
+# Legacy key name kept temporarily for template compatibility.
 private_mentorship:
-  label: "Private Mentorship"
-  cohort_size: "1-2 students"
-  duration: "12-16 weeks"
-  price: "$6,495"
-  availability: "Select continuation cases only"
+  label: "Research Extension"
+  cohort_size: "By approved continuation group"
+  duration: "By approved extension scope"
+  live_schedule: "Usually 1 live session per week"
+  price: "$1,695"
+  availability: "Invitation-only after completion of a Circle or Group"
