@@ -17,11 +17,11 @@ calendar_model:
   suggested_annual_rhythm: "Spring: 1 session; Summer: 2 sessions; Fall: 1 session"
 
 circles:
-  mode: "one_session"
+  mode: "two_sessions"
 
   sessions:
     - id: "session-1"
-      active: false
+      active: true
       label: "Session 1"
       start_date: "September 14, 2026"
       end_date: "October 24, 2026"
