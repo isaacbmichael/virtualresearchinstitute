@@ -8,8 +8,7 @@
 #   one_session  -> use wording such as "current session/current cohort"
 #   two_sessions -> use wording such as "Session 1 / Session 2"
 #
-# The website should ultimately render only sessions where active: true.
-# Legacy keys are kept temporarily for current template compatibility.
+# The website renders only sessions where active: true.
 # ============================================================
 
 calendar_model:
@@ -41,38 +40,19 @@ circles:
       duration: "6 weeks"
       proposals_data: "circles_session_2"
 
-  # Legacy keys kept temporarily for existing Circles templates.
-  session_1:
-    label: "Session 1"
-    start_date: "September 14, 2026"
-    end_date: "October 24, 2026"
-    registration_deadline: "August 31, 2026"
-    offerings_count: "4 offerings"
-    duration: "6 weeks"
-    proposals_data: "circles_session_1"
-
-  session_2:
-    label: "Session 2"
-    start_date: "November 2, 2026"
-    end_date: "December 12, 2026"
-    registration_deadline: "October 19, 2026"
-    offerings_count: "4 offerings"
-    duration: "6 weeks"
-    proposals_data: "circles_session_2"
-
 groups:
   mode: "one_session"
 
   sessions:
     - id: "session-1"
       active: true
-      label: "Current Cohort"
+      label: "Session 1"
       start_date: "September 14, 2026"
       end_date: "October 24, 2026"
       registration_deadline: "August 31, 2026"
       offerings_count: "6 offerings"
       duration: "6 weeks"
-      proposals_data: "groups"
+      proposals_data: "groups_session_1"
 
     - id: "session-2"
       active: false
@@ -80,19 +60,9 @@ groups:
       start_date: "November 2, 2026"
       end_date: "December 12, 2026"
       registration_deadline: "October 19, 2026"
-      offerings_count: "To be announced"
+      offerings_count: "6 offerings"
       duration: "6 weeks"
       proposals_data: "groups_session_2"
-
-  # Legacy key kept temporarily for existing Groups templates.
-  current_cohort:
-    label: "Current Cohort"
-    start_date: "September 14, 2026"
-    end_date: "October 24, 2026"
-    registration_deadline: "August 31, 2026"
-    offerings_count: "6 offerings"
-    duration: "6 weeks"
-    proposals_data: "groups"
 
 # Legacy key kept temporarily for template compatibility.
 private_mentorship:
