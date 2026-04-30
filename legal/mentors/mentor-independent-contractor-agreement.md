@@ -60,7 +60,7 @@ Any action outside the scope authorized by VRI may be treated as a material brea
 
 ## 8. Compensation
 
-Compensation, if any, shall be determined by VRI on a **per-cohort, per-project, or per-case basis** and may vary by pathway, scope, duration, student count, extension work, or other approved factors.
+Compensation, if any, shall be determined by VRI on a **per-cohort, per-project, or per-case basis** and may vary by pathway, scope, duration, student count, Research Extension work, or other approved factors.
 
 Unless otherwise stated in a signed addendum, current internal draft compensation assumptions are as follows:
 
