@@ -99,7 +99,7 @@ on_this_page:
           <article class="session-card reveal" id="circles-{{ session.id }}">
   <div class="session-headline">
     <div>
-      <p class="session-kicker">Circles · {{ session.label }}</p>
+      <p class="session-kicker">Circles · {% if circle_session_count > 1 %}{{ session.label }}{% else %}Current Session{% endif %}</p>
       <h3>Begins {{ session.start_date }}</h3>
       <p class="session-intro">{% if circle_session_count > 1 %}Browse current {{ session.label }} proposals.{% else %}Browse current Circle proposals.{% endif %}</p>
     </div>
@@ -131,7 +131,7 @@ on_this_page:
                         <h4>{{ proposal.title }}</h4>
                       </div>
                       <div class="proposal-badges" aria-label="Proposal quick facts">
-                        <span>{{ session.label }}</span>
+                        <span>{% if circle_session_count > 1 %}{{ session.label }}{% else %}Current Session{% endif %}</span>
                       </div>
                     </div>
 
