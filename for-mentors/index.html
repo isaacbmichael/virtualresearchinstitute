@@ -116,7 +116,7 @@ on_this_page:
         <div>
           <strong>{{ engagements.research_extension.label }}</strong>
           <span>
-            Current compensation: {{ engagements.research_extension.compensation_display }}. {{ engagements.research_extension.compensation_detail }}.
+            Current compensation: {{ engagements.research_extension.compensation_display }} {{ engagements.research_extension.compensation_basis }}. {{ engagements.research_extension.compensation_detail }}.
           </span>
           <span>
             Estimated commitment: {{ engagements.research_extension.estimated_duration }}; {{ engagements.research_extension.estimated_total_live_meetings }} live meetings; {{ engagements.research_extension.estimated_meetings_per_week }}; {{ engagements.research_extension.estimated_meeting_length }}; {{ engagements.research_extension.estimated_total_hours }}.
@@ -125,7 +125,7 @@ on_this_page:
             {{ engagements.research_extension.workload_note }}
           </span>
         </div>
-        <div class="price-tag">{{ engagements.research_extension.compensation_display }}</div>
+        <div class="price-tag">{{ engagements.research_extension.compensation_display }} {{ engagements.research_extension.compensation_basis }}</div>
       </div>
     </div>
 
