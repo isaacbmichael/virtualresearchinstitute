@@ -25,11 +25,11 @@ permalink: /assets/data/ask-vri-current-offerings.json
       "price": {{ site.data.pathways.groups.price | jsonify }},
       "public_terms": {{ site.data.pathways.groups.public_terms | jsonify }}
     },
-    "private_mentorship": {
+    "research_extension": {
       "name": "Research Extension",
-      "availability": {{ site.data.pathways.private_mentorship.availability | jsonify }},
-      "duration": {{ site.data.pathways.private_mentorship.duration | jsonify }},
-      "price": {{ site.data.pathways.private_mentorship.price | jsonify }}
+      "availability": {{ site.data.pathways.research_extension.availability | jsonify }},
+      "duration": {{ site.data.pathways.research_extension.duration | jsonify }},
+      "price": {{ site.data.pathways.research_extension.price | jsonify }}
     }
   },
 
