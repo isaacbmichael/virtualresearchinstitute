@@ -6,7 +6,7 @@
 #
 # mode controls page wording only:
 #   #   one_session  -> use wording such as "current session"
-#   two_sessions -> use wording such as "Session 1 / Session 2"
+#   #   two_sessions -> use wording such as "Session 1 / Session 2"
 #
 # The website renders only sessions where active: true.
 # ============================================================
@@ -41,7 +41,7 @@ circles:
       proposals_data: "circles_session_2"
 
 groups:
-  mode: "one_session"
+  mode: "two_sessions"
 
   sessions:
     - id: "session-1"
@@ -55,7 +55,7 @@ groups:
       proposals_data: "groups_session_1"
 
     - id: "session-2"
-      active: false
+      active: true
       label: "Session 2"
       start_date: "November 2, 2026"
       end_date: "December 12, 2026"
