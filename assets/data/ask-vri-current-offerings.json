@@ -3,10 +3,6 @@ layout: null
 permalink: /assets/data/ask-vri-current-offerings.json
 ---
 
-{% assign circles_session_1_proposals = site.data.proposals.circles_session_1 | sort: "sort_order" %}
-{% assign circles_session_2_proposals = site.data.proposals.circles_session_2 | sort: "sort_order" %}
-{% assign group_proposals = site.data.proposals.groups | sort: "sort_order" %}
-
 {
   "generated_at": {{ site.time | date_to_xmlschema | jsonify }},
   "source": "Generated from VRI Jekyll data files.",
@@ -30,7 +26,7 @@ permalink: /assets/data/ask-vri-current-offerings.json
       "public_terms": {{ site.data.pathways.groups.public_terms | jsonify }}
     },
     "private_mentorship": {
-      "name": "Private Mentorship",
+      "name": "Research Extension",
       "availability": {{ site.data.pathways.private_mentorship.availability | jsonify }},
       "duration": {{ site.data.pathways.private_mentorship.duration | jsonify }},
       "price": {{ site.data.pathways.private_mentorship.price | jsonify }}
@@ -38,108 +34,126 @@ permalink: /assets/data/ask-vri-current-offerings.json
   },
 
   "sessions": {
-    "circles": {
-      "session_1": {
-        "label": "Circles Session 1",
-        "start_date": {{ site.data.sessions.circles.session_1.start_date | jsonify }},
-        "registration_deadline": {{ site.data.sessions.circles.session_1.registration_deadline | jsonify }}
-      },
-      "session_2": {
-        "label": "Circles Session 2",
-        "start_date": {{ site.data.sessions.circles.session_2.start_date | jsonify }},
-        "registration_deadline": {{ site.data.sessions.circles.session_2.registration_deadline | jsonify }}
-      }
-    },
-    "groups": {
-      "current_cohort": {
-        "label": "Groups Current Cohort",
-        "start_date": {{ site.data.sessions.groups.current_cohort.start_date | jsonify }},
-        "registration_deadline": {{ site.data.sessions.groups.current_cohort.registration_deadline | jsonify }}
-      }
-    }
-  },
-
-  "current_offerings": {
-    "circles_session_1": [
-      {% for proposal in circles_session_1_proposals %}
+    "circles": [
+      {% assign active_circle_sessions = site.data.sessions.circles.sessions | where: "active", true %}
+      {% for session in active_circle_sessions %}
       {
-        "sort_order": {{ proposal.sort_order | default: forloop.index | jsonify }},
-        "session_label": {{ proposal.session_label | jsonify }},
-        "title": {{ proposal.title | jsonify }},
-        "topic_area": {{ proposal.topic_area | jsonify }},
-        "mentor": {
-          "name": {{ proposal.mentor.name | jsonify }},
-          "lines": {{ proposal.mentor.lines | jsonify }}
-        },
-        "schedule": {
-          "timezone": {{ proposal.schedule.timezone | jsonify }},
-          "details": {{ proposal.schedule.details | jsonify }}
-        },
-        "technology": {
-          "platform": {{ proposal.technology.platform | jsonify }},
-          "code_used": {{ proposal.technology.code_used | jsonify }},
-          "needed": {{ proposal.technology.needed | jsonify }}
-        },
-        "project_overview": {{ proposal.project_overview | jsonify }},
-        "background": {{ proposal.background | jsonify }},
-        "possible_extension": {{ proposal.possible_extension | jsonify }},
-        "references": {{ proposal.references | jsonify }}
+        "id": {{ session.id | jsonify }},
+        "label": {% if active_circle_sessions.size > 1 %}{{ session.label | jsonify }}{% else %}{{ "Current Session" | jsonify }}{% endif %},
+        "data_label": {{ session.label | jsonify }},
+        "start_date": {{ session.start_date | jsonify }},
+        "end_date": {{ session.end_date | jsonify }},
+        "registration_deadline": {{ session.registration_deadline | jsonify }},
+        "duration": {{ session.duration | jsonify }},
+        "offerings_count": {{ session.offerings_count | jsonify }},
+        "proposals_data": {{ session.proposals_data | jsonify }}
       }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ],
-
-    "circles_session_2": [
-      {% for proposal in circles_session_2_proposals %}
+    "groups": [
+      {% assign active_group_sessions = site.data.sessions.groups.sessions | where: "active", true %}
+      {% for session in active_group_sessions %}
       {
-        "sort_order": {{ proposal.sort_order | default: forloop.index | jsonify }},
-        "session_label": {{ proposal.session_label | jsonify }},
-        "title": {{ proposal.title | jsonify }},
-        "topic_area": {{ proposal.topic_area | jsonify }},
-        "mentor": {
-          "name": {{ proposal.mentor.name | jsonify }},
-          "lines": {{ proposal.mentor.lines | jsonify }}
-        },
-        "schedule": {
-          "timezone": {{ proposal.schedule.timezone | jsonify }},
-          "details": {{ proposal.schedule.details | jsonify }}
-        },
-        "technology": {
-          "platform": {{ proposal.technology.platform | jsonify }},
-          "code_used": {{ proposal.technology.code_used | jsonify }},
-          "needed": {{ proposal.technology.needed | jsonify }}
-        },
-        "project_overview": {{ proposal.project_overview | jsonify }},
-        "background": {{ proposal.background | jsonify }},
-        "possible_extension": {{ proposal.possible_extension | jsonify }},
-        "references": {{ proposal.references | jsonify }}
+        "id": {{ session.id | jsonify }},
+        "label": {% if active_group_sessions.size > 1 %}{{ session.label | jsonify }}{% else %}{{ "Current Session" | jsonify }}{% endif %},
+        "data_label": {{ session.label | jsonify }},
+        "start_date": {{ session.start_date | jsonify }},
+        "end_date": {{ session.end_date | jsonify }},
+        "registration_deadline": {{ session.registration_deadline | jsonify }},
+        "duration": {{ session.duration | jsonify }},
+        "offerings_count": {{ session.offerings_count | jsonify }},
+        "proposals_data": {{ session.proposals_data | jsonify }}
       }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  },
+
+  "current_offerings": {
+    "circles": [
+      {% assign circle_output_count = 0 %}
+      {% assign active_circle_sessions = site.data.sessions.circles.sessions | where: "active", true %}
+      {% for session in active_circle_sessions %}
+        {% assign session_proposals_unsorted = site.data.proposals[session.proposals_data] %}
+        {% if session_proposals_unsorted %}
+          {% assign session_proposals = session_proposals_unsorted | sort: "sort_order" %}
+          {% for proposal in session_proposals %}
+          {% if circle_output_count > 0 %},{% endif %}
+          {
+            "pathway": "Circles",
+            "session_id": {{ session.id | jsonify }},
+            "session_label": {% if active_circle_sessions.size > 1 %}{{ session.label | jsonify }}{% else %}{{ "Current Session" | jsonify }}{% endif %},
+            "data_session_label": {{ session.label | jsonify }},
+            "start_date": {{ session.start_date | jsonify }},
+            "registration_deadline": {{ session.registration_deadline | jsonify }},
+            "sort_order": {{ proposal.sort_order | default: forloop.index | jsonify }},
+            "proposal_session_label": {{ proposal.session_label | jsonify }},
+            "title": {{ proposal.title | jsonify }},
+            "topic_area": {{ proposal.topic_area | jsonify }},
+            "mentor": {
+              "name": {{ proposal.mentor.name | jsonify }},
+              "lines": {{ proposal.mentor.lines | jsonify }}
+            },
+            "schedule": {
+              "timezone": {{ proposal.schedule.timezone | jsonify }},
+              "details": {{ proposal.schedule.details | jsonify }}
+            },
+            "technology": {
+              "platform": {{ proposal.technology.platform | jsonify }},
+              "code_used": {{ proposal.technology.code_used | jsonify }},
+              "needed": {{ proposal.technology.needed | jsonify }}
+            },
+            "project_overview": {{ proposal.project_overview | jsonify }},
+            "background": {{ proposal.background | jsonify }},
+            "possible_extension": {{ proposal.possible_extension | jsonify }},
+            "references": {{ proposal.references | jsonify }}
+          }
+          {% assign circle_output_count = circle_output_count | plus: 1 %}
+          {% endfor %}
+        {% endif %}
       {% endfor %}
     ],
 
     "groups": [
-      {% for proposal in group_proposals %}
-      {
-        "sort_order": {{ proposal.sort_order | default: forloop.index | jsonify }},
-        "title": {{ proposal.title | jsonify }},
-        "topic_area": {{ proposal.topic_area | jsonify }},
-        "mentor": {
-          "name": {{ proposal.mentor.name | jsonify }},
-          "lines": {{ proposal.mentor.lines | jsonify }}
-        },
-        "schedule": {
-          "timezone": {{ proposal.schedule.timezone | jsonify }},
-          "details": {{ proposal.schedule.details | jsonify }}
-        },
-        "technology": {
-          "platform": {{ proposal.technology.platform | jsonify }},
-          "code_used": {{ proposal.technology.code_used | jsonify }},
-          "needed": {{ proposal.technology.needed | jsonify }}
-        },
-        "project_overview": {{ proposal.project_overview | jsonify }},
-        "background": {{ proposal.background | jsonify }},
-        "possible_extension": {{ proposal.possible_extension | jsonify }},
-        "references": {{ proposal.references | jsonify }}
-      }{% unless forloop.last %},{% endunless %}
+      {% assign group_output_count = 0 %}
+      {% assign active_group_sessions = site.data.sessions.groups.sessions | where: "active", true %}
+      {% for session in active_group_sessions %}
+        {% assign session_proposals_unsorted = site.data.proposals[session.proposals_data] %}
+        {% if session_proposals_unsorted %}
+          {% assign session_proposals = session_proposals_unsorted | sort: "sort_order" %}
+          {% for proposal in session_proposals %}
+          {% if group_output_count > 0 %},{% endif %}
+          {
+            "pathway": "Groups",
+            "session_id": {{ session.id | jsonify }},
+            "session_label": {% if active_group_sessions.size > 1 %}{{ session.label | jsonify }}{% else %}{{ "Current Session" | jsonify }}{% endif %},
+            "data_session_label": {{ session.label | jsonify }},
+            "start_date": {{ session.start_date | jsonify }},
+            "registration_deadline": {{ session.registration_deadline | jsonify }},
+            "sort_order": {{ proposal.sort_order | default: forloop.index | jsonify }},
+            "proposal_session_label": {{ proposal.session_label | jsonify }},
+            "title": {{ proposal.title | jsonify }},
+            "topic_area": {{ proposal.topic_area | jsonify }},
+            "mentor": {
+              "name": {{ proposal.mentor.name | jsonify }},
+              "lines": {{ proposal.mentor.lines | jsonify }}
+            },
+            "schedule": {
+              "timezone": {{ proposal.schedule.timezone | jsonify }},
+              "details": {{ proposal.schedule.details | jsonify }}
+            },
+            "technology": {
+              "platform": {{ proposal.technology.platform | jsonify }},
+              "code_used": {{ proposal.technology.code_used | jsonify }},
+              "needed": {{ proposal.technology.needed | jsonify }}
+            },
+            "project_overview": {{ proposal.project_overview | jsonify }},
+            "background": {{ proposal.background | jsonify }},
+            "possible_extension": {{ proposal.possible_extension | jsonify }},
+            "references": {{ proposal.references | jsonify }}
+          }
+          {% assign group_output_count = group_output_count | plus: 1 %}
+          {% endfor %}
+        {% endif %}
       {% endfor %}
     ]
   }
