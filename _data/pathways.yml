@@ -14,8 +14,7 @@ groups:
   price: "$1,395"
   public_terms: "Spring, Summer, Fall"
 
-# Legacy key name kept temporarily for template compatibility.
-private_mentorship:
+research_extension:
   label: "Research Extension"
   cohort_size: "By approved continuation group"
   duration: "By approved extension scope"
