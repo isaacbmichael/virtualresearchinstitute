@@ -55,7 +55,7 @@ mentor_engagements:
     workload_note: "Includes live sessions, preparation, student feedback, light communication, and final deliverable review."
     availability_note: "Available when VRI approves the project and sufficient enrollment is reached."
 
-    groups:
+  groups:
     label: "Groups"
     compensation_display: "$4,000"
     compensation_basis: "per cohort"
