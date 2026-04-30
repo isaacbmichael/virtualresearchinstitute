@@ -1,3 +1,8 @@
+---
+# This front matter intentionally enables Jekyll/Liquid processing.
+# Dollar amounts, duration language, and related program values below are pulled from _data/mentors.yml and _data/pathways.yml.
+---
+
 # Mentor Document Decisions
 
 **Document status:** Internal working notes  
@@ -11,24 +16,31 @@
 - Mentors are intended to serve as **independent contractors (1099 model)** unless a separate written agreement states otherwise.
 
 ### 2. Agreement term
-- Current preferred term: **1 year**
+- Current preferred term: **{{ site.data.mentors.engagement_model.agreement_term }}**
 - Renewal: **discretionary**, based on program need, performance, compliance, and mutual fit
-- Approval under a one-year contractor agreement does **not** guarantee assignment, active work, compensation, or launch of any project.
+- Approval under a {{ site.data.mentors.engagement_model.agreement_term }} contractor agreement does **not** guarantee assignment, active work, compensation, or launch of any project.
 
 ### 3. Payment model
 - Payment method: **direct deposit**
+- Current public tuition model:
+  - **Circles:** {{ site.data.pathways.circles.price }} per student
+  - **Groups:** {{ site.data.pathways.groups.price }} per student
+  - **Research Extensions:** {{ site.data.pathways.private_mentorship.price }} per student
 - Compensation structure:
-  - **Circles:** $5,000 per cohort
-  - **Groups:** $6,500 per cohort
-  - **Private Mentorship:** $3,000 per student
+  - **Circles:** {{ site.data.mentors.mentor_engagements.circles.compensation_display }} {{ site.data.mentors.mentor_engagements.circles.compensation_basis }}
+  - **Groups:** {{ site.data.mentors.mentor_engagements.groups.compensation_display }} {{ site.data.mentors.mentor_engagements.groups.compensation_basis }}
+  - **Research Extensions:** {{ site.data.mentors.mentor_engagements.private_mentorship.compensation_display }}
 - Compensation is not earned merely because a mentor is approved, a proposal is submitted, or a proposal is publicly listed.
 - Compensation is earned only for approved work that is actually assigned, performed, documented, and accepted under the applicable agreement, addendum, or engagement confirmation.
+- Payment timing, documentation requirements, and any required onboarding steps should be confirmed in the applicable agreement, addendum, or engagement confirmation before participant-facing work begins.
 
-### 4. Private Mentorship structure
-- Private Mentorship is **not guaranteed**
-- It is generally intended only for **select continuation cases**
-- Mentor must not assume Private Mentorship is available every term
-- Private Mentorship should be treated as significant mentor load, and VRI may reduce or limit other mentor assignments when Private Mentorship is active.
+### 4. Research Extension structure
+- Research Extension is **not guaranteed**
+- It is generally intended only for **select continuation cases** after a student has completed a Circle or Group
+- Research Extension should be invitation-only and based on prior performance, mentor recommendation, project suitability, student/family interest, and VRI capacity
+- Mentor must not assume Research Extension is available every term or after every project
+- Research Extension should be treated as significant mentor load, and VRI may reduce or limit other mentor assignments when Research Extension is active
+- Research Extension should remain administered through VRI and should not become a private side arrangement between mentor and family
 
 ### 5. Screening and activation
 - Mentor approval is **discretionary**
@@ -37,7 +49,7 @@
 - Final activation for one term, cohort, proposal, or engagement does not automatically authorize other work without VRI approval.
 
 ### 6. Proposal launch model
-- Mentor approval under a one-year contractor agreement does not guarantee assignment, active work, compensation, or launch of any project.
+- Mentor approval under a {{ site.data.mentors.engagement_model.agreement_term }} contractor agreement does not guarantee assignment, active work, compensation, or launch of any project.
 - VRI may invite, accept, review, edit, approve, publish, unpublish, postpone, merge, revise, or retire mentor research proposals at its discretion.
 - Public listing of a mentor proposal does not mean the proposal is guaranteed to run.
 - A proposal becomes an active VRI engagement only when VRI confirms that the project is launching and authorizes the mentor to begin participant-facing work.
@@ -46,7 +58,7 @@
 - VRI may define sufficient enrollment differently by pathway, project, mentor, scholarship mix, staffing, strategic need, or operational circumstances.
 - Mentors must reconfirm availability before a proposal is moved into a later session or engagement window.
 - VRI may limit how many active proposal pages, listed offerings, or pending projects a mentor has at one time.
-- Each launched Circle, Group, or Private Mentorship engagement should have a written engagement confirmation or addendum identifying the approved scope, pathway, dates, compensation, payment timing, and documentation expectations.
+- Each launched Circle, Group, or Research Extension engagement should have a written engagement confirmation or addendum identifying the approved scope, pathway, dates, compensation, payment timing, and documentation expectations.
 
 ### 7. Protection priorities
 - Confidentiality / NDA protection
@@ -65,24 +77,38 @@
   - having a project confirmed to launch;
   - being assigned active participant-facing work.
 
-### 9. Mentor workload and topic-reuse guidance
+### 9. Session structure and active offerings
+- VRI may operate one active session or multiple active sessions in a given term, depending on demand, mentor availability, calendar structure, and operational capacity.
+- Circles and Groups may each have their own active-session structure.
+- A term may include one active Circle session and one active Group session, two active Circle sessions and one active Group session, one active Circle session and two active Group sessions, or another configuration approved by VRI.
+- Public website listings should reflect only active sessions and active offerings approved for the current cycle.
+- VRI may add, remove, postpone, merge, or retire sessions or offerings based on enrollment, staffing, mentor availability, operational readiness, or business needs.
+
+### 10. Mentor workload and topic-reuse guidance
 
 #### Circles
-- Default: 1 Circle topic per mentor per session
-- Maximum: up to 2 different Circle topics per mentor per session with VRI approval
+- Default: 1 Circle topic per mentor per active session
+- Maximum: up to 2 different Circle topics per mentor per active session with VRI approval
 - Circle topics may be reused across terms
 - Exact repetition across Session 1 and Session 2 of the same cycle should generally be avoided unless demand, staffing, or program need justifies it
+- Circles are currently intended as {{ site.data.pathways.circles.duration }} programs
+- Circles currently involve {{ site.data.mentors.mentor_engagements.circles.estimated_meetings_per_week }}, with an estimated {{ site.data.mentors.mentor_engagements.circles.estimated_total_live_meetings }} live meetings and {{ site.data.mentors.mentor_engagements.circles.estimated_total_hours }}
 
 #### Groups
-- Default: 1 Group topic per mentor per cycle
+- Default: 1 Group topic per mentor per active session
 - Maximum: up to 2 different Group topics only with explicit VRI approval
 - Group topics may revisit the same broad research theme across terms
 - Exact Group projects should generally evolve rather than repeat mechanically across cycles
+- Groups are currently intended as {{ site.data.pathways.groups.duration }} programs
+- Groups currently involve {{ site.data.mentors.mentor_engagements.groups.estimated_meetings_per_week }}, with an estimated {{ site.data.mentors.mentor_engagements.groups.estimated_total_live_meetings }} live meetings and {{ site.data.mentors.mentor_engagements.groups.estimated_total_hours }}
 
-#### Private Mentorship
-- Private Mentorship is continuation-based and individualized
-- It should be treated as significant mentor load
-- VRI may reduce or limit other mentor assignments when Private Mentorship is active
+#### Research Extensions
+- Research Extension is continuation-based and invitation-only
+- Research Extension may follow a completed Circle or Group when prior performance, mentor recommendation, project suitability, and capacity align
+- Research Extension should be treated as significant mentor load
+- VRI may reduce or limit other mentor assignments when Research Extension is active
+- Research Extension must remain approved and administered through VRI
+- Research Extension tuition is currently {{ site.data.pathways.private_mentorship.price }} per student, with mentor compensation currently set at {{ site.data.mentors.mentor_engagements.private_mentorship.compensation_display }}
 
 #### General principle
 - Mentor assignment volume is always discretionary
