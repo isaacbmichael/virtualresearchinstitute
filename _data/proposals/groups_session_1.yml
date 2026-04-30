@@ -1,0 +1,223 @@
+- id: topic_01
+  sort_order: 1
+  title: 'Information Diffusion on Networks: How Fast Do Opinions Reach Consensus?'
+  session_label: "Session 1"
+  mentor:
+    name: Sixian Liu
+    lines:
+    - Graduate Research, Ph.D. Student
+    - Department of Applied Mathematics and Statistics
+    - Stony Brook University
+  topic_area: Graph Theory, Dynamical Systems, Multi-agent Optimization
+  schedule:
+    timezone: Eastern Time (ET)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: Python and/or Matlab
+    needed: A computer with internet access; Python and/or Matlab may be used for project work, and PowerPoint, Jupyter Notebook, and/or Overleaf may be used for the final presentation.
+  project_overview: |
+    Social networks describe how people are connected and how information spreads among them. In mathematics, a social network can be represented using a graph, where each person is a node and each connection between two people is an edge. This representation allows us to study how local interactions between individuals influence the behavior of the whole group.
+
+    In this project, we study a simple model for how opinions or information spread across a network. Each node holds a number representing the opinion or information value of that individual. At each step, people update their values by interacting with their neighbors. Over time, these updates can cause the values in the network to become similar.
+
+    A common mathematical model for this process is the diffusion equation on a graph,
+
+    <div style="text-align:center;">
+    <i>dc</i>/<i>dt</i> = −<i>Lc</i>,
+    </div>
+
+    where <i>c</i> represents the values at each node and <i>L</i> is the graph Laplacian that describes the structure of the network. This system models the idea that each person adjusts their value toward the values of their neighbors. Intuitively, each node repeatedly averages its value with its neighbors, which gradually smooths differences across the network.
+
+    Using this model, we will study how the structure of the network affects how quickly agreement is reached. In particular, we will explore whether different network shapes lead to faster or slower spreading of information. Students will simulate these dynamics using simple computational tools such as Python <i>networkx</i> and observe how values evolve over time.
+  background: |
+    This project assumes only basic familiarity with algebra and arithmetic. All additional concepts and tools required to study the problem will be introduced during the program. This project serves as an excellent introduction to graph theory, optimization, differential equations, dynamical systems, and mathematical programming. During the experimental stage, we will implement computational tools such as Python and/or Matlab. During the development of the final presentation, we will use tools such as PowerPoint, Jupyter Notebook, and/or Overleaf.
+  possible_extension: |
+    First, instead of assigning a single number to each node, we may allow each node to store a vector representing multiple opinions or pieces of information. Second, we may investigate how the diffusion process changes when the network contains weighted edges, meaning that some connections between individuals are stronger than others. Finally, we may explore ideas from sheaf theory. This framework allows information to be stored not only at nodes but also along the connections of the network, with compatibility conditions between neighboring nodes. In this setting, diffusion can be described using a generalized operator called the sheaf Laplacian.
+  references:
+  - West, D. B. <i>Introduction to Graph Theory</i>, 2nd ed., Pearson Education, Inc., 2001.
+  - Sayama, H. <i>Diffusion on Networks</i>, in <i>Introduction to the Modeling and Analysis of Complex Systems</i>, LibreTexts.
+  - Hansen, J. and Ghrist, R. <i>Opinion Dynamics on Discourse Sheaves</i>, <i>SIAM Journal on Applied Mathematics</i>, 81(5), pp. 2033–2060, 2021.
+- id: topic_02
+  sort_order: 2
+  title: 'The Life Cycle of Products: How People Adopt and Abandon Them'
+  session_label: "Session 1"
+  mentor:
+    name: Dr. Lingju Kong
+    lines:
+    - Professor of Mathematics
+    - University of Tennessee at Chattanooga
+  topic_area: Mathematical Modeling
+  schedule:
+    timezone: Eastern Time (ET)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: Not specified; computer simulations may be used
+    needed: A computer with internet access and standard presentation tools.
+  project_overview: |
+    Understanding how people start using new products and stop using them is an important question in marketing. In this study, we create a simple model to study how users choose between two competing products. We identify key points that determine whether a product becomes popular or fades away. We also look at different possible outcomes: no one uses either product, one product becomes dominant, or both products are used by some people. Finally, we run computer simulations to show that our predictions match what the model suggests.
+  background: |
+    Familiarity with high school calculus and differential equations will enhance comprehension of the research. Key concepts will be introduced and reviewed during the first week of the project.
+  possible_extension: |
+    There are several ways this project could be taken further:
+
+    (1) Exploring a similar control problem — looking at ways to influence or guide the system in a related situation.
+    (2) Testing how sensitive the model is to changes — checking how small changes in the model's parameters affect the results.
+    (3) Studying real-world data — using historical data on daily active users of Facebook and LinkedIn to see how well the model matches reality. This involves adjusting the model's parameters to make predictions about future user trends on both platforms.
+  references:
+  - Bass, F. M. <i>A new product growth model for consumer durables</i>, Management Science, 15 (1969), 215–227.
+  - Kong, L. and Wang, M. <i>Optimal control for an ordinary differential equation online social network model</i>, Differential Equations and Applications, 14 (2022), 205–214.
+  - Chen, R., Kong, L., and Wang, M. <i>Modeling the dynamics of adoption and abandonment of multiple products</i>, Mathematics and Computers in Simulation, 241 (2026), 868–889.
+- id: topic_03
+  sort_order: 3
+  title: The Brachistochrone Problem and the Calculus of Variations
+  session_label: "Session 1"
+  mentor:
+    name: Philip Olapade
+    lines:
+    - PhD Student, Mathematics
+    - Georgia Institute of Technology
+  topic_area: Calculus of Variations
+  schedule:
+    timezone: Eastern Time (ET)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: Interactive simulations / basic numerical experiments
+    needed: A computer with internet access and PowerPoint for the final presentation.
+  project_overview: |
+    <b>The Brachistochrone Problem</b>
+
+    Given two points <i>A</i> and <i>B</i> in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at <i>A</i> and reaches <i>B</i> in the shortest time?
+
+    This was the challenge problem that Johann Bernoulli set to the thinkers of his time in 1696. Calculus had only just been invented, yet the solution to this problem uses a fairly advanced technique called the calculus of variations. The problem was solved independently by several mathematicians, including Isaac Newton, who approached the problem using physical reasoning and geometric arguments.
+
+    Students may already be familiar with using calculus to compute quantities such as the area under a curve. Using the calculus of variations, however, one instead seeks to optimize an entire function. In the case of the brachistochrone problem, the unknown is the curve itself rather than a single numerical quantity like area or time. This leads naturally to the study of infinitesimal variations of a function, in analogy with the infinitesimal changes studied in single-variable calculus.
+
+    In this project, we approach the brachistochrone problem primarily from Newton’s perspective, emphasizing first principles, physical intuition, and geometric reasoning. Through experimentation and mathematical analysis, we show why the curve of fastest descent is a cycloid.
+
+    The name <i>brachistochrone</i> comes from the Greek words <i>brachistos</i>, meaning shortest, and <i>chronos</i>, meaning time.
+  background: |
+    This research project is designed for motivated students with a background in algebra and single-variable calculus. No prior exposure to multivariable calculus, physics, or the calculus of variations is assumed. All mathematical and physical concepts required for the project will be introduced during the program.
+
+    The project serves as an accessible introduction to advanced mathematical ideas through a classical and historically significant problem. Students will be introduced to multivariable calculus concepts, variational thinking, and physical intuition through guided instruction, interactive experimentation, and mathematical reasoning. Computational tools such as interactive simulations and basic numerical experiments will be used to support intuition and exploration. During the development of the final presentation, students will use PowerPoint.
+  possible_extension: |
+    <b>Fermat’s Principle</b>
+
+    As a possible extension, we will explore Fermat’s principle, which states that the path taken by a beam of light between two points is the one that requires the least time. This principle leads to Snell’s law of refraction in geometrical optics.
+
+    In 1697, Johann Bernoulli used Fermat’s principle to derive the brachistochrone curve by considering the trajectory of a beam of light traveling through a medium in which the speed of light increases with depth. In this analogy, the varying speed of light plays a role analogous to the constant vertical acceleration due to gravity. This extension highlights deep connections between mechanics, optics, and variational principles.
+  references:
+  - <i>Brachistochrone Curve</i>. Wikipedia.
+  - <i>Brachistochrone Problem — Interactive Simulation</i>. myPhysicsLab.
+- id: topic_04
+  sort_order: 4
+  title: From Interacting Particle Systems on Graphs to Disease Spreading
+  session_label: "Session 1"
+  mentor:
+    name: Dr. Yangrui Xiang
+    lines:
+    - Postdoctoral Researcher
+    - Department of Mathematics
+    - Louisiana State University
+  topic_area: Probability Theory, Graph Theory, Stochastic Processes, Mathematical Biology
+  schedule:
+    timezone: Central Time (CT)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: Not specified
+    needed: A computer with internet access; PowerPoint, Beamer, and/or Overleaf may be used for the final presentation.
+  project_overview: |
+    How fast does a disease spread through a population, and does it eventually die out? How do specific types of genes within a species evolve? And how long does it take before a stochastic system “forgets” its initial condition?
+
+    These questions can be studied using interacting particle systems (IPS), mathematical models in which many individuals evolve randomly while interacting through a network. IPS play a central role in probability theory and are widely used to model disease spread, population dynamics, and genetic evolution.
+
+    In this project, students will investigate simple multi-particle stochastic models motivated by epidemiology. We will focus on infection–recovery dynamics on graphs and study how local update rules lead to global behavior. A central theme will be the time it takes for the system to approach equilibrium. Through theory and investigation, students will observe the striking cutoff phenomenon, where convergence happens abruptly rather than gradually.
+
+    By the end of the project, students will understand how randomness and network structure interact, and they will communicate their findings in a research-style presentation.
+  background: |
+    Familiarity with basic algebra, functions, and mathematical notation (sets, summations, and proof structure) is helpful. Prior exposure to probability, combinatorics, and graph theory is encouraged but not required; all necessary concepts will be introduced during the project.
+
+    During the development of the final presentation, we will use tools such as PowerPoint, Beamer, and Overleaf.
+  possible_extension: |
+    As follow-on directions, students may investigate how infection rates that depend on the total number of infected individuals influence the time it takes for a disease to spread. In this setting, the infection rate increases as the number of infected individuals in the population grows, so the disease spreads faster when more people are already infected.
+
+    A second direction is to study how infection rates that depend on the structure of the underlying graph influence the speed at which a disease spreads and stabilizes. For example, students can compare identical infection–recovery rules on cycles, grids, and <i>d</i>-regular expander graphs and observe differences in convergence behavior.
+  references:
+  - 'Stewart, James, and Day, Troy. <i>Biocalculus: Calculus for Life Sciences</i>, 2nd ed., Cengage Learning, 2015.'
+  - Levin, David A., and Peres, Yuval. <i>Markov Chains and Mixing Times</i>, 2nd ed., American Mathematical Society, 2017.
+  - Norris, J. R. <i>Markov Chains</i>, Cambridge University Press, 1997.
+- id: topic_05
+  sort_order: 5
+  title: Dynamics of a Single Species Metapopulation Model with Dispersal
+  session_label: "Session 1"
+  mentor:
+    name: Sajan Bhandari
+    lines:
+    - PhD Candidate (ABD)
+    - Department of Mathematics
+    - University of Louisiana at Lafayette
+  topic_area: Discrete Dynamical Systems and Mathematical Biology
+  schedule:
+    timezone: Central Time (CT)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: MATLAB or Python
+    needed: A computer with internet access; MATLAB or Python may be used for simulations, and Overleaf/LaTeX and Beamer may be used for writing and presentation.
+  project_overview: |
+    Let <i>x(t)</i> denote the population size of a species at time <i>t</i>. If we want to predict the population size at time <i>t + 1</i>, we need to create a model that takes in the knowledge of the population size <i>x(t)</i> at time <i>t</i> and predicts how that population will grow from time <i>t</i> to time <i>t + 1</i>. A general population model is given by the equation:
+
+    <i>x(t + 1) = f(x(t))</i>
+
+    where <i>f</i> is the function that provides <i>x(t + 1)</i> if <i>x(t)</i> is known. While formulating a discrete model, modelers need to find this function <i>f</i> by observing the mechanisms of the phenomena they are trying to model. In other words, they need to know the order of events taking place between time <i>t</i> and time <i>t + 1</i>.
+
+    We will develop a simple two-dimensional model describing the dynamics of a single species distributed across two habitat patches. To this end, students will first explore and investigate different dispersal mechanisms by studying biological and ecological examples from nature. Based on these mechanisms, discrete-time models will be formulated. The resulting models are then thoroughly analyzed by determining their equilibria and stability. This will help answer questions such as: under what conditions will this species go extinct? How does dispersal stabilize or destabilize the system? What will be the long-term fate of the species? Finally, numerical simulations will be performed to verify theoretical results.
+  background: |
+    This research project requires a background knowledge of basic calculus and linear algebra, mainly the calculation of eigenvalues of matrices. All other necessary knowledge related to discrete dynamical systems and model formulation and analysis will be taught by the instructor. The project will introduce students to fundamental techniques used in biological research. <i>MATLAB</i> or <i>Python</i> will be used for numerical simulations. For the final writing, we will use tools such as <i>Overleaf/LaTeX</i>, and the presentation will be developed using <i>Beamer</i>.
+  possible_extension: |
+    The model presented above can be extended in several ways. First, we can change the order of events, such as dispersal first and then reproduction, which can generate completely different dynamics. Further, we can add more species in the patches, capturing more complex dynamics.
+  references:
+  - Allen, Linda J. S. <i>An Introduction to Mathematical Biology</i>. Pearson Prentice Hall, 2007.
+  - 'Elaydi, Saber N., and Jim M. Cushing. <i>Discrete Mathematical Models in Population Biology: Ecological, Epidemic, and Evolutionary Dynamics</i>. Springer Nature, 2025.'
+- id: topic_06
+  sort_order: 6
+  title: Digit Representations of Fractals and Self-Affine Carpets
+  session_label: "Session 1"
+  mentor:
+    name: Manisha Garg
+    lines:
+    - 6th Year Graduate Student
+    - Department of Mathematics
+    - University of Illinois, Urbana-Champaign
+  topic_area: Fractal Geometry, Number Theory, Discrete Geometry
+  schedule:
+    timezone: Central Time (CT)
+    details: Final weekly meeting times are confirmed after placement; exact days and times vary by cohort and mentor availability.
+  technology:
+    platform: Zoom, Microsoft Teams, Google Meet, or similar platform
+    code_used: Python (optional)
+    needed: A computer with internet access; optional Python may be used for computational work.
+  project_overview: |
+    Many geometric objects in nature—coastlines, snowflakes, and branching trees—appear too irregular to be described using traditional notions of length and area. Fractals provide a mathematical framework for understanding such shapes. Even more surprisingly, many fractals can be described using simple rules about digits in number systems.
+
+    For instance, the classical Cantor set consists precisely of those real numbers whose base-3 expansion avoids the digit 1. The Sierpiński carpet can be described using restrictions on pairs of base-3 digits. In this project, we will uncover how seemingly intricate geometric objects arise from surprisingly simple arithmetic rules.
+
+    We will begin by constructing the Cantor set, Sierpiński carpet, and Menger sponge through iterative processes, and then translate these constructions into precise digit-based characterizations. Students will derive and prove criteria determining exactly which points belong to these sets, and compute how length, area, or volume evolves at each stage of iteration. Through computational experiments, we will develop algorithms that measure the decay rate of area up to a given iteration <i>n</i>, leading students to formulate and test conjectures.
+
+    Finally, we will extend these ideas to a broader class of self-affine carpets. Depending on interest and time, we may explore how combinatorial digit restrictions influence geometric and topological properties such as area, local connectedness, and fractal dimension.
+
+    The project combines proof-writing, number theory, geometry, and computational experimentation, culminating in a colloquium-style presentation (and possibly, a short paper).
+  background: |
+    This project assumes familiarity with algebra, basic geometry, and mathematical reasoning. Knowledge of sequences and basic exponents is helpful but not required. All necessary background on iterative constructions, geometric series, and proof techniques will be introduced during the program.
+
+    Optional computational components will use <i>Python</i>; no prior programming experience is required.
+  possible_extension: |
+    After deriving the decay rates of classical and self-affine carpets, students can explore additional geometric and metric properties. Possible directions include estimating box-counting or Hausdorff dimension, studying connectivity and symmetry properties, analyzing intersections of fractals with lines, or comparing different carpets using computational invariants.
+
+    Students will combine theoretical reasoning with computational experiments to formulate and justify new conjectures. They may choose either to focus on a single class of carpets and investigate multiple properties, or to fix a particular property and compare how it behaves across different families of carpets.
+  references:
+  - 'Falconer, Kenneth. <i>Fractal Geometry: Mathematical Foundations and Applications</i>, 2nd ed., Wiley, 2003.'
+  - Barnsley, Michael. <i>Fractals Everywhere</i>, 2nd ed., Academic Press, 1993.
