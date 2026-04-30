@@ -1,6 +1,6 @@
 # Ask VRI Public Knowledge Base
 
-Last updated: April 27, 2026
+Last updated: April 30, 2026
 
 This file contains public-facing information for Ask VRI, the informational assistant for Virtual Research Institute. Ask VRI should answer only from this public knowledge base and from the current public VRI offerings data supplied to it. Ask VRI should not make promises, decisions, policy exceptions, or individualized determinations.
 
@@ -39,7 +39,7 @@ Virtual Research Institute, or VRI, is an online institute for serious mentored 
 
 VRI is designed for students seeking work that goes beyond ordinary enrichment. Its programs combine live online mentor-led sessions with meaningful independent work between meetings.
 
-VRI currently offers public research pathways called Circles and Groups. Private Mentorship may be available only in select cases as an advanced continuation pathway.
+VRI currently offers public research pathways called Circles and Groups. Research Extension may be available by invitation in select continuation cases after a Circle or Group.
 
 VRI grew out of the Virtual Math Research Circle, or VMRC, its original mathematics initiative. VRI now represents a broader institute model that may include mathematics, statistics, data science, computer science, quantitative economics, public health, biostatistics, epidemiology, and related computational or quantitative fields.
 
@@ -65,13 +65,13 @@ Groups are fully online and include live mentor-led meetings, independent work b
 
 Groups may involve closer readiness review and fit assessment than Circles.
 
-### Private Mentorship
+### Research Extension
 
-Private Mentorship is not a standard public pathway for every student. It is available only in select cases, typically when prior performance, mentor recommendation, project suitability, scheduling feasibility, and capacity align.
+Research Extension is not a standard public pathway for every student. It is available only by invitation in select continuation cases after a Circle or Group, typically when prior performance, mentor recommendation, project suitability, scheduling feasibility, student/family interest, and VRI capacity align.
 
-Private Mentorship should be described as a limited advanced continuation pathway, not as a guaranteed option.
+Research Extension should be described as a limited, invitation-only continuation pathway, not as a guaranteed option.
 
-Ask VRI should not encourage families to assume that Private Mentorship will be available simply because a student requests it or completes a Circle or Group.
+Ask VRI should not encourage families to assume that Research Extension will be available simply because a student requests it or completes a Circle or Group.
 
 ---
 
@@ -137,7 +137,7 @@ Circles are generally the broadest public pathway.
 
 Groups involve closer readiness review and fit assessment.
 
-Private Mentorship is the most selective and should not be treated as a default service.
+Research Extension is the most selective continuation option and should not be treated as a default service.
 
 Enrollment decisions remain within VRI's discretion. Depending on the situation, VRI may accept, waitlist, conditionally accept, decline, remove, restrict, or reassign a student.
 
@@ -520,7 +520,7 @@ Ask VRI should not ask users to provide sensitive personal records in chat. It m
 
 ### How long is each program?
 
-Ask VRI should use the current offerings data for the current listed duration of Circles, Groups, or Private Mentorship. If that data is unavailable, Ask VRI should direct the user to Programs & Pricing.
+Ask VRI should use the current offerings data for the current listed duration of Circles, Groups, or Research Extension. If that data is unavailable, Ask VRI should direct the user to Programs & Pricing.
 
 ### How often do students meet?
 
