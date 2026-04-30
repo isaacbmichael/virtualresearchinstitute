@@ -56,9 +56,10 @@ Approval remains discretionary even if individual screening items are completed.
 Before a mentor is considered for a specific VRI engagement, the following items should generally be completed where relevant:
 
 - submitted project proposal or approved project concept;
-- identified pathway relevance (Circles, Groups, or Private Mentorship continuation, if applicable);
+- identified pathway relevance (Circles, Groups, or Research Extension continuation, if applicable);
 - stated prerequisites, scope, expected outputs, and student preparation assumptions;
 - identified proposed session length, approximate workload, and expected student deliverables;
+- confirmed whether the engagement is a standard Circle, standard Group, or invitation-only Research Extension;
 - confirmed availability for the relevant term or engagement window;
 - confirmed ability to operate through approved VRI platforms and channels;
 - confirmed understanding of session expectations, continuity expectations, and participant-boundary requirements;
@@ -86,6 +87,7 @@ Before VRI confirms that a specific proposal or project will run, VRI should gen
 - pathway fit;
 - mentor availability;
 - scheduling and time-zone feasibility;
+- active session status and alignment with the current sessions data file;
 - operational readiness;
 - program balance and breadth of offerings;
 - scholarship, funding, or payment considerations where relevant;
@@ -114,6 +116,8 @@ The engagement confirmation should identify, where applicable:
 - required records and documentation;
 - approved platforms and communication channels;
 - authorized scope of work;
+- whether the engagement is a Circle, Group, or Research Extension;
+- if Research Extension, confirmation that the continuation was approved by VRI and remains administered through VRI;
 - any project-specific conditions, limits, or modifications.
 
 A written engagement confirmation helps distinguish general mentor approval from an active, approved, participant-facing assignment.
@@ -130,6 +134,7 @@ Before a mentor begins live or participant-facing work for VRI, VRI should confi
 - any required engagement confirmation, addendum, assignment notice, or comparable written approval has been completed;
 - the mentor has been told the current scope of authorized work;
 - the mentor has reviewed communication, safeguarding, confidentiality, non-circumvention, documentation, and no-private-side-deal expectations;
+- the mentor has reviewed student privacy, parent/guardian communication expectations, and any applicable minor-safeguarding requirements;
 - the mentor understands that approval for one term, cohort, proposal, listing, or engagement does not automatically authorize other work without VRI approval.
 
 Final activation is discretionary and may be delayed, limited, or withheld if VRI determines that additional review, clarification, enrollment, scheduling confirmation, documentation, or operational approval is needed.
