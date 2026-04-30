@@ -66,7 +66,7 @@ Unless otherwise stated in a signed addendum, current internal draft compensatio
 
 - **Circles:** {{ site.data.mentors.mentor_engagements.circles.compensation_display }} {{ site.data.mentors.mentor_engagements.circles.compensation_basis }}
 - **Groups:** {{ site.data.mentors.mentor_engagements.groups.compensation_display }} {{ site.data.mentors.mentor_engagements.groups.compensation_basis }}
-- **Research Extensions:** {{ site.data.mentors.mentor_engagements.private_mentorship.compensation_display }} per enrolled Extension student
+- **Research Extensions:** {{ site.data.mentors.mentor_engagements.research_extension.compensation_display }} per enrolled Extension student
 
 Compensation is not earned merely by signing this Agreement. Payment depends on approved work actually being assigned, performed, documented, and accepted by VRI.
 
