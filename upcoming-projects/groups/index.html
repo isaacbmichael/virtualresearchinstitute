@@ -54,7 +54,7 @@ on_this_page:
             Groups are VRI’s smaller, more intensive public research offerings. Review the active sessions,
             compare proposals, and register before the listed deadlines.
             {% else %}
-            Groups are VRI’s smaller, more intensive public research offerings. Review the current cohort,
+            Groups are VRI’s smaller, more intensive public research offerings. Review the current session,
             compare proposals, and register before the listed deadline.
             {% endif %}
           </p>
@@ -72,8 +72,8 @@ on_this_page:
       <div class="shell">
         <div class="section-head reveal">
   <div>
-    <p class="section-label">{% if group_session_count > 1 %}Current Public Sessions{% else %}Current Public Cohort{% endif %}</p>
-    <h2>{% if group_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current cohort, then compare proposals.{% endif %}</h2>
+    <p class="section-label">{% if group_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}</p>
+    <h2>{% if group_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}</h2>
   </div>
   <p class="section-intro">
     Open any proposal below to review the mentor, background, schedule, technology, and selected references.
@@ -99,7 +99,7 @@ on_this_page:
           <article class="session-card reveal" id="groups-{{ session.id }}">
   <div class="session-headline">
     <div>
-      <p class="session-kicker">Groups · {{ session.label }}</p>
+      <p class="session-kicker">Groups · {% if group_session_count > 1 %}{{ session.label }}{% else %}Current Session{% endif %}</p>
       <h3>Begins {{ session.start_date }}</h3>
       <p class="session-intro">{% if group_session_count > 1 %}Browse current {{ session.label }} proposals.{% else %}Browse current Group proposals.{% endif %}</p>
     </div>
