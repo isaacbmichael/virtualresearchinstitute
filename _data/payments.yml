@@ -5,7 +5,7 @@ deposit_policy:
 deposits:
   circles: "$300"
   groups: "$500"
-  private_mentorship: "By case"
+  private_mentorship: "By approval"
 
 balance_policy:
   summary: "Remaining balances are due by published deadlines communicated by VRI."
