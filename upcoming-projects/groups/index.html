@@ -1,16 +1,19 @@
 ---
 layout: default
 title: Groups | Upcoming Projects | Virtual Research Institute
-description: Groups | Upcoming Projects at the Virtual Research Institute — current Group offerings organized by cohort, pricing, proposal details, and registration deadlines.
+description: Groups | Upcoming Projects at the Virtual Research Institute — current Group offerings organized by active session, pricing, proposal details, and registration deadlines.
 permalink: /upcoming-projects/groups/
 body_class: groups-page
 explore_key: upcoming-projects
 on_this_page:
-  - label: Current Cohort
-    href: "#groups-current-cohort"
+  - label: Sessions
+    href: "#groups"
   - label: Questions
     href: "#questions"
 ---
+
+{% assign group_sessions = site.data.sessions.groups.sessions | where: "active", true %}
+{% assign group_session_count = group_sessions | size %}
 
 <script>
     /*
@@ -47,8 +50,13 @@ on_this_page:
           <div class="eyebrow">Tier II · Groups</div>
           <h1>Current Group offerings.</h1>
           <p>
-            Groups are VRI’s smaller, more intensive public research offerings. Review the current
-            cohort, compare proposals, and register before the listed deadline.
+            {% if group_session_count > 1 %}
+            Groups are VRI’s smaller, more intensive public research offerings. Review the active sessions,
+            compare proposals, and register before the listed deadlines.
+            {% else %}
+            Groups are VRI’s smaller, more intensive public research offerings. Review the current cohort,
+            compare proposals, and register before the listed deadline.
+            {% endif %}
           </p>
 
           <div class="hero-actions">
@@ -64,8 +72,8 @@ on_this_page:
       <div class="shell">
         <div class="section-head reveal">
   <div>
-    <p class="section-label">Current Public Cohort</p>
-    <h2>Review the current cohort, then compare proposals.</h2>
+    <p class="section-label">{% if group_session_count > 1 %}Current Public Sessions{% else %}Current Public Cohort{% endif %}</p>
+    <h2>{% if group_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current cohort, then compare proposals.{% endif %}</h2>
   </div>
   <p class="section-intro">
     Open any proposal below to review the mentor, background, schedule, technology, and selected references.
@@ -87,18 +95,19 @@ on_this_page:
 </div>
 
         <div class="session-stack">
-
-          <article class="session-card reveal" id="groups-current-cohort">
+          {% for session in group_sessions %}
+          <article class="session-card reveal" id="groups-{{ session.id }}">
   <div class="session-headline">
     <div>
-      <p class="session-kicker">Groups · Current Cohort</p>
-      <h3>Begins {{ site.data.sessions.groups.current_cohort.start_date }}</h3>
-      <p class="session-intro">Browse current Group proposals.</p>
+      <p class="session-kicker">Groups · {{ session.label }}</p>
+      <h3>Begins {{ session.start_date }}</h3>
+      <p class="session-intro">{% if group_session_count > 1 %}Browse current {{ session.label }} proposals.{% else %}Browse current Group proposals.{% endif %}</p>
     </div>
   </div>
-  <div class="session-note"><strong>Registration deadline:</strong> {{ site.data.sessions.groups.current_cohort.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
+  <div class="session-note"><strong>Registration deadline:</strong> {{ session.registration_deadline }}. Final weekly meeting times and any calendar adjustments are confirmed after placement.</div>
             <div class="project-list">
-              {% assign group_proposals = site.data.proposals.groups | sort: "sort_order" %}
+              {% assign group_proposals = site.data.proposals[session.proposals_data] | sort: "sort_order" %}
+              {% if group_proposals and group_proposals.size > 0 %}
               {% for proposal in group_proposals %}
               <details class="project-item reveal">
                 <summary>
@@ -172,9 +181,12 @@ on_this_page:
                 </div>
               </details>
               {% endfor %}
+              {% else %}
+              <p class="session-note">Proposals for this session will be posted soon.</p>
+              {% endif %}
             </div>
           </article>
-
+          {% endfor %}
         </div>
       </div>
     </section>
