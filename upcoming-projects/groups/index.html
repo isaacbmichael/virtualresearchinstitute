@@ -65,14 +65,18 @@ on_this_page:
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Tier II · Groups</div>
-          <h1>Current Group offerings.</h1>
+          <h1>{% if group_show_sessions %}Current Group offerings.{% else %}{{ group_status_card.heading }}{% endif %}</h1>
           <p>
-            {% if group_session_count > 1 %}
-            Groups are VRI’s smaller, more intensive public research offerings. Review the active sessions,
-            compare proposals, and register before the listed deadlines.
+            {% if group_show_sessions %}
+              {% if group_session_count > 1 %}
+              Groups are VRI’s smaller, more intensive public research offerings. Review the active sessions,
+              compare proposals, and register before the listed deadlines.
+              {% else %}
+              Groups are VRI’s smaller, more intensive public research offerings. Review the current session,
+              compare proposals, and register before the listed deadline.
+              {% endif %}
             {% else %}
-            Groups are VRI’s smaller, more intensive public research offerings. Review the current session,
-            compare proposals, and register before the listed deadline.
+            {{ group_status_card.message }}
             {% endif %}
           </p>
 
