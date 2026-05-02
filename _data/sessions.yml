@@ -1,8 +1,29 @@
 # ============================================================
 # VRI session controls
 #
-# active: true   -> show this session on the website
+# MAIN PATHWAY STATUS CONTROL
+#
+# Each pathway has its own status:
+#   circles.status controls the Circles page
+#   groups.status  controls the Groups page
+#
+# Recommended status values:
+#   auto       -> safest default. Show active sessions if at least one
+#                 session has active: true. If no sessions are active,
+#                 automatically show the "in preparation" card.
+#   preparing  -> intentionally hide session/project cards and show the
+#                 "in preparation" card.
+#   closed     -> intentionally hide session/project cards and show the
+#                 "not currently accepting registrations" card.
+#
+# SESSION VISIBILITY CONTROL
+#
+# active: true   -> this session is eligible to appear when status: auto
 # active: false  -> hide this session from the website
+#
+# Safe behavior to build into the page templates:
+# If status: auto but every session is active: false, the page should not
+# look empty. It should automatically show the preparing status card.
 #
 # mode controls page wording only:
 #   one_session  -> use wording such as "current session"
@@ -18,6 +39,21 @@ calendar_model:
 
 circles:
   mode: "two_sessions"
+  status: "auto"
+
+  status_cards:
+    preparing:
+      eyebrow: "Circles"
+      heading: "Circle projects are in preparation."
+      message: "We are currently preparing the next Circle session. New projects will be posted once mentors, schedules, and proposal details are finalized."
+      cta_label: "Join the Interest List"
+      cta_href: "https://lsu.formstack.com/forms/vri_interest_list"
+    closed:
+      eyebrow: "Circles"
+      heading: "Circle registration is not currently open."
+      message: "Circle projects are not currently accepting registrations. Please join the interest list to be notified when the next session opens."
+      cta_label: "Join the Interest List"
+      cta_href: "https://lsu.formstack.com/forms/vri_interest_list"
 
   sessions:
     - id: "session-1"
@@ -42,6 +78,21 @@ circles:
 
 groups:
   mode: "two_sessions"
+  status: "auto"
+
+  status_cards:
+    preparing:
+      eyebrow: "Groups"
+      heading: "Group offerings are in preparation."
+      message: "We are currently preparing upcoming Group offerings. New proposals will be posted once mentors, schedules, and project details are finalized."
+      cta_label: "Join the Interest List"
+      cta_href: "https://lsu.formstack.com/forms/vri_interest_list"
+    closed:
+      eyebrow: "Groups"
+      heading: "Group registration is not currently open."
+      message: "Group offerings are not currently accepting registrations. Please join the interest list to be notified when the next session opens."
+      cta_label: "Join the Interest List"
+      cta_href: "https://lsu.formstack.com/forms/vri_interest_list"
 
   sessions:
     - id: "session-1"
