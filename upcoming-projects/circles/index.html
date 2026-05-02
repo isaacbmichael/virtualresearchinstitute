@@ -39,7 +39,7 @@ on_this_page:
 
       Allowed values:
       - "register"  -> Register
-      - "interest"  -> Join the Interest List
+      - "interest"  -> Interest Form
       - "waitlist"  -> Join the Waitlist
     */
     window.GOLD_CTA_STATE = {% if circle_show_sessions %}"register"{% else %}"interest"{% endif %};
@@ -50,8 +50,8 @@ on_this_page:
         href: "https://lsu.formstack.com/forms/vri_student_registration"
       },
       interest: {
-        label: "Join the Interest List",
-        href: "https://lsu.formstack.com/forms/vri_interest_list"
+        label: "Interest Form",
+        href: "https://lsu.formstack.com/forms/vri_interest_form"
       },
       waitlist: {
         label: "Join the Waitlist",
@@ -93,11 +93,11 @@ on_this_page:
       <div class="shell">
         <div class="section-head reveal">
   <div>
-    <p class="section-label">{% if circle_show_sessions %}{% if circle_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}{% else %}{{ circle_status_card.eyebrow }}{% endif %}</p>
-    <h2>{% if circle_show_sessions %}{% if circle_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}{% else %}{{ circle_status_card.heading }}{% endif %}</h2>
+    <p class="section-label">{% if circle_show_sessions %}{% if circle_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}{% else %}Program Format{% endif %}</p>
+    <h2>{% if circle_show_sessions %}{% if circle_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}{% else %}Circle program format.{% endif %}</h2>
   </div>
   <p class="section-intro">
-    {% if circle_show_sessions %}Open any proposal below to review the mentor, background, schedule, and student setup.{% else %}{{ circle_status_card.message }}{% endif %}
+    {% if circle_show_sessions %}Open any proposal below to review the mentor, background, schedule, and student setup.{% else %}The details below summarize the standard Circle format while current projects are not being displayed.{% endif %}
   </p>
 </div>
 
@@ -115,8 +115,8 @@ on_this_page:
   </div>
 </div>
 
+        {% if circle_show_sessions %}
         <div class="session-stack">
-          {% if circle_show_sessions %}
           {% for session in circle_sessions %}
           <article class="session-card reveal" id="circles-{{ session.id }}">
   <div class="session-headline">
@@ -212,23 +212,8 @@ on_this_page:
             </div>
           </article>
           {% endfor %}
-          {% else %}
-          <article class="session-card reveal" id="circles-status">
-  <div class="session-headline">
-    <div>
-      <p class="session-kicker">{{ circle_status_card.eyebrow }} · {% if circle_public_status == "closed" %}Registration Closed{% else %}In Preparation{% endif %}</p>
-      <h3>{{ circle_status_card.heading }}</h3>
-      <p class="session-intro">{{ circle_status_card.message }}</p>
-    </div>
-  </div>
-  <div class="quick-links">
-    <a class="btn btn-gold" href="{{ circle_status_card.cta_href }}" target="_blank" rel="noopener noreferrer">{{ circle_status_card.cta_label }}</a>
-    <a class="quick-chip quick-chip-teal" href="/questions-and-answers/">Questions &amp; Answers</a>
-    <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
-  </div>
-          </article>
-          {% endif %}
         </div>
+        {% endif %}
       </div>
     </section>
 
@@ -239,12 +224,13 @@ on_this_page:
         <p class="section-label">Questions</p>
         <h3>Need help before you register?</h3>
         <p>
-          Review the Questions &amp; Answers or Programs page if you need more information.
-          {% if circle_show_sessions %}When you’re ready, begin registration below.{% else %}Join the interest list below to be notified when Circle projects are available.{% endif %}
+          {% if circle_show_sessions %}Review the Questions &amp; Answers or Programs page if you need more information. When you’re ready, begin registration below.{% else %}Review the Questions &amp; Answers or Programs page while the next Circle session is being prepared.{% endif %}
         </p>
       </div>
       <div class="quick-links">
+        {% if circle_show_sessions %}
         <a class="btn btn-gold" data-gold-cta href="https://lsu.formstack.com/forms/vri_student_registration">Register</a>
+        {% endif %}
         <a class="quick-chip quick-chip-teal" href="/questions-and-answers/">Questions &amp; Answers</a>
         <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
       </div>
