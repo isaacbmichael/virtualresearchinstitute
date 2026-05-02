@@ -43,7 +43,7 @@ engagement_model:
 mentor_engagements:
   circles:
     label: "Circles"
-    compensation_display: "$4,000"
+    compensation_display: "$3,000"
     compensation_basis: "per cohort"
 
     estimated_duration: "6 weeks"
@@ -57,7 +57,7 @@ mentor_engagements:
 
   groups:
     label: "Groups"
-    compensation_display: "$4,000"
+    compensation_display: "$3,500"
     compensation_basis: "per cohort"
 
     estimated_duration: "6 weeks"
