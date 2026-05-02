@@ -496,7 +496,8 @@ if (mobileSubnav && mobileSubnavTriggers.length) {
 
   if (!institutions.length) return;
 
-  const VISIBLE_COUNT = 10;
+  const isInstitutionPhoneViewport = window.matchMedia('(max-width: 640px)').matches;
+  const VISIBLE_COUNT = isInstitutionPhoneViewport ? 5 : 10;
   const STEP_SIZE = 5;
   const INTERVAL = 7000;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
