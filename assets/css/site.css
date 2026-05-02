@@ -1632,6 +1632,36 @@ body.programs-page .hero-visual-presentation img {
       }
     }
 
+    /* About page: keep the Selected Institutions rotator from clipping longer pills on phones */
+    @media (max-width: 640px) {
+      body.about-page #network .institution-rotator {
+        margin-top: 16px;
+      }
+
+      body.about-page #network .institution-rotator-viewport,
+      body.about-page #network .institution-rotator-track {
+        height: clamp(285px, 76vw, 330px);
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      body.about-page #network .institution-rotator-page {
+        gap: 12px;
+        align-content: flex-start;
+      }
+
+      body.about-page #network .institution-pill {
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 38px;
+        padding: 8px 14px;
+        white-space: normal;
+        line-height: 1.25;
+        text-align: left;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .institution-rotator-page {
         transition: none;
