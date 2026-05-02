@@ -78,7 +78,7 @@ circles:
 
 groups:
   mode: "two_sessions"
-  status: "closed"
+  status: "preparing"
 
   status_cards:
     preparing:
