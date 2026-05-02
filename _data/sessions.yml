@@ -39,7 +39,7 @@ calendar_model:
 
 circles:
   mode: "two_sessions"
-  status: "auto"
+  status: "preparing"
 
   status_cards:
     preparing:
