@@ -12,8 +12,25 @@ on_this_page:
     href: "#questions"
 ---
 
+{% assign group_status = site.data.sessions.groups.status | default: "auto" | downcase %}
 {% assign group_sessions = site.data.sessions.groups.sessions | where: "active", true %}
 {% assign group_session_count = group_sessions | size %}
+
+{% assign group_show_sessions = false %}
+{% assign group_public_status = group_status %}
+{% if group_status == "auto" or group_status == "open" %}
+  {% if group_session_count > 0 %}
+    {% assign group_show_sessions = true %}
+    {% assign group_public_status = "open" %}
+  {% else %}
+    {% assign group_public_status = "preparing" %}
+  {% endif %}
+{% endif %}
+
+{% assign group_status_card = site.data.sessions.groups.status_cards.preparing %}
+{% if group_public_status == "closed" %}
+  {% assign group_status_card = site.data.sessions.groups.status_cards.closed %}
+{% endif %}
 
 <script>
     /*
@@ -25,7 +42,7 @@ on_this_page:
       - "interest"  -> Join the Interest List
       - "waitlist"  -> Join the Waitlist
     */
-    window.GOLD_CTA_STATE = "register";
+    window.GOLD_CTA_STATE = {% if group_show_sessions %}"register"{% else %}"interest"{% endif %};
 
     window.GOLD_CTA_OPTIONS = {
       register: {
@@ -72,11 +89,11 @@ on_this_page:
       <div class="shell">
         <div class="section-head reveal">
   <div>
-    <p class="section-label">{% if group_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}</p>
-    <h2>{% if group_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}</h2>
+    <p class="section-label">{% if group_show_sessions %}{% if group_session_count > 1 %}Current Public Sessions{% else %}Current Public Session{% endif %}{% else %}{{ group_status_card.eyebrow }}{% endif %}</p>
+    <h2>{% if group_show_sessions %}{% if group_session_count > 1 %}Choose a session, then compare proposals.{% else %}Review the current session, then compare proposals.{% endif %}{% else %}{{ group_status_card.heading }}{% endif %}</h2>
   </div>
   <p class="section-intro">
-    Open any proposal below to review the mentor, background, schedule, technology, and selected references.
+    {% if group_show_sessions %}Open any proposal below to review the mentor, background, schedule, technology, and selected references.{% else %}{{ group_status_card.message }}{% endif %}
   </p>
 </div>
 
@@ -97,6 +114,7 @@ on_this_page:
 </div>
 
         <div class="session-stack">
+          {% if group_show_sessions %}
           {% for session in group_sessions %}
           <article class="session-card reveal" id="groups-{{ session.id }}">
   <div class="session-headline">
@@ -189,6 +207,22 @@ on_this_page:
             </div>
           </article>
           {% endfor %}
+          {% else %}
+          <article class="session-card reveal" id="groups-status">
+  <div class="session-headline">
+    <div>
+      <p class="session-kicker">{{ group_status_card.eyebrow }} · {% if group_public_status == "closed" %}Registration Closed{% else %}In Preparation{% endif %}</p>
+      <h3>{{ group_status_card.heading }}</h3>
+      <p class="session-intro">{{ group_status_card.message }}</p>
+    </div>
+  </div>
+  <div class="quick-links">
+    <a class="btn btn-gold" href="{{ group_status_card.cta_href }}" target="_blank" rel="noopener noreferrer">{{ group_status_card.cta_label }}</a>
+    <a class="quick-chip quick-chip-teal" href="/questions-and-answers/">Questions &amp; Answers</a>
+    <a class="quick-chip quick-chip-teal" href="/programs/">Programs &amp; Pricing</a>
+  </div>
+          </article>
+          {% endif %}
         </div>
       </div>
     </section>
@@ -201,7 +235,7 @@ on_this_page:
         <h3>Need help before you register?</h3>
         <p>
           Review the Questions &amp; Answers or Programs page if you need more information.
-          When you’re ready, begin registration below.
+          {% if group_show_sessions %}When you’re ready, begin registration below.{% else %}Join the interest list below to be notified when Group offerings are available.{% endif %}
         </p>
       </div>
       <div class="quick-links">
