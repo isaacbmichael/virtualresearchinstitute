@@ -64,6 +64,12 @@ Please do not report security issues through public GitHub issues.
 
 See [`SECURITY.md`](SECURITY.md).
 
+## Contributions
+
+This repository is not open source and is not currently accepting public contributions.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ## License
 
 This repository is proprietary. See [`LICENSE.md`](LICENSE.md).
