@@ -1,6 +1,6 @@
 # Notice
 
-Copyright © 2026 Virtual Research Institute, LLC. All rights reserved.
+Copyright © 2026 Virtual Research Institute LLC. All rights reserved.
 
 This repository contains proprietary source code, website content, visual design,
 program materials, policy materials, research-project materials, prompts, data files,
