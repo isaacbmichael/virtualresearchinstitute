@@ -13,7 +13,7 @@ infrastructure for the Virtual Research Institute website.
 
 ## Ownership
 
-Copyright © 2026 Virtual Research Institute, LLC. All rights reserved.
+Copyright © 2026 Virtual Research Institute LLC. All rights reserved.
 
 This repository is proprietary and is not open source. Public availability on GitHub
 does not grant permission to copy, modify, distribute, reuse, commercialize, or create
