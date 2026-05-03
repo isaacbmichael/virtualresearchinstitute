@@ -1,6 +1,6 @@
 Proprietary License
 
-Copyright © 2026 Virtual Research Institute, LLC. All rights reserved.
+Copyright © 2026 Virtual Research Institute LLC. All rights reserved.
 
 This repository and its contents are proprietary to Virtual Research Institute, LLC.
 
